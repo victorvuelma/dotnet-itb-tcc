@@ -19,10 +19,14 @@ namespace ITB_TCC_DESKTOP
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.BLUE);
+            UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.SILVER);
 
             _frmTemplate.frmApply(this, lblUix, lblTitulo, picFormIcon, btnSair, btnMinimizar);
-            _frmTemplate.ctrApply(new Control[] { btnLogin, lblLogin, lblSenha, txtLogin, txtSenha, lblESenha });
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

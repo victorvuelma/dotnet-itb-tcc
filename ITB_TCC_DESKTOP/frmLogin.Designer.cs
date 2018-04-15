@@ -51,6 +51,7 @@
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "CLO";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnMinimizar
             // 
@@ -138,7 +139,7 @@
             // 
             this.lblESenha.AutoSize = true;
             this.lblESenha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblESenha.Location = new System.Drawing.Point(94, 137);
+            this.lblESenha.Location = new System.Drawing.Point(94, 144);
             this.lblESenha.Name = "lblESenha";
             this.lblESenha.Size = new System.Drawing.Size(122, 16);
             this.lblESenha.TabIndex = 10;

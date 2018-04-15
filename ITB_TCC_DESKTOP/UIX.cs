@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace UIX
 {
@@ -171,15 +172,15 @@ namespace UIX
             this._style = style;
         }
 
-        public void ctrApply(Control[] controls)
+        public void ctlApply(Control[] controls)
         {
             foreach (Control control in controls)
             {
-                this.ctrApply(control);
+                this.ctlApply(control);
             }
         }
 
-        public void ctrApply(Control control)
+        public void ctlApply(Control control)
         {
             if (control is Button)
             {
@@ -222,6 +223,17 @@ namespace UIX
         public void frmApply(Form frm, Label lblHeader, Label lblTitle, PictureBox picLogo, Button btnClose, Button btnMin)
         {
             UIX.UIXForm.frmApply(frm, lblHeader, lblTitle, picLogo, btnClose, btnMin, Style);
+
+            Control[] ignore = new Control[] { lblHeader, lblTitle, picLogo, btnClose, btnMin };
+
+            foreach(Control ctl in frm.Controls)
+            {
+                if (!ignore.Contains(ctl))
+                {
+                    this.ctlApply(ctl);
+                }
+            }
+
         }
 
         public UIX.UIXStyle Style { get => _style; }
