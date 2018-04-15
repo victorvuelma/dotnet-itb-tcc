@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPedido.Designer.cs">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctCozinha.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,11 +78,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tplBurguerShack.cs" />
+    <Compile Include="uctPedidoNovo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctPedidoNovo.Designer.cs">
+      <DependentUpon>uctPedidoNovo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPadrao.resx">
       <DependentUpon>frmPadrao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="uctPedido.resx">
       <DependentUpon>uctPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctPedidoNovo.resx">
+      <DependentUpon>uctPedidoNovo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\BURGUER_SHACK_DESKTOP.Properties.Resources.datasource" />
     <None Include="Properties\Settings.settings">

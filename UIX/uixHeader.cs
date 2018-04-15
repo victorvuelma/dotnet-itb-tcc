@@ -40,13 +40,13 @@ namespace UIX
             //Calculate buttons
             int nextButtonX = maxX;
             //Close button
-            if (ctl.btnSair != null)
+            if (ctl.btnClose != null)
             {
                 nextButtonX = nextButtonX - style.HeaderButtonSize - style.HeaderButtonSpace;
-                ctl.btnSair.Location = new Point(nextButtonX, style.HeaderButtonSpace);
-                ctl.btnSair.BringToFront();
+                ctl.btnClose.Location = new Point(nextButtonX, style.HeaderButtonSpace);
+                ctl.btnClose.BringToFront();
 
-                uixButton.btnStyleClose(ctl.btnSair, style.HeaderButtonSize, style.HeaderCloseButtonColor);
+                uixButton.btnStyleClose(ctl.btnClose, style.HeaderButtonSize, style.HeaderCloseButtonColor);
             }
             //Minimize button
             if (ctl.btnMin != null)

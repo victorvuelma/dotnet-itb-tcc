@@ -30,7 +30,7 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.picFormIcon = new System.Windows.Forms.PictureBox();
-            this.btnSair = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnMin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).BeginInit();
             this.SuspendLayout();
@@ -53,15 +53,15 @@
             this.picFormIcon.TabIndex = 6;
             this.picFormIcon.TabStop = false;
             // 
-            // btnSair
+            // btnClose
             // 
-            this.btnSair.Location = new System.Drawing.Point(202, 2);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(45, 34);
-            this.btnSair.TabIndex = 5;
-            this.btnSair.Text = "CLO";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(202, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(45, 34);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "CLO";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // btnMin
             // 
@@ -81,10 +81,9 @@
             this.Controls.Add(this.btnMin);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.picFormIcon);
-            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnClose);
             this.Name = "uctUIX";
             this.Size = new System.Drawing.Size(250, 40);
-            this.Load += new System.EventHandler(this.uctUIX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,7 +93,7 @@
         #endregion
         public System.Windows.Forms.Label lblTitulo;
         public System.Windows.Forms.PictureBox picFormIcon;
-        public System.Windows.Forms.Button btnSair;
+        public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.Button btnMin;
     }
 }
