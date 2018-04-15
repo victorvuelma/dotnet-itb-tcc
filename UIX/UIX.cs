@@ -106,12 +106,13 @@ namespace UIX
         private UIXSet _btnColor;
         private UIXSet _grbColor;
         private UIXSet _lblColor;
+        private UIXSet _pnlColor;
         private UIXSet _txtColor;
 
         public UIXStyle(UIXSet formColor, UIXSet headerButtonColor, UIXSet headerCloseButtonColor,
             int headerButtonSize, int headerButtonSpace,
             Font headerFont, Font contentFont,
-            UIXSet btnColor, UIXSet grbColor, UIXSet lblColor, UIXSet txtColor)
+            UIXSet btnColor, UIXSet grbColor, UIXSet lblColor, UIXSet pnlColor, UIXSet txtColor)
         {
             _formColor = formColor;
 
@@ -127,6 +128,7 @@ namespace UIX
             _btnColor = btnColor;
             _grbColor = grbColor;
             _lblColor = lblColor;
+            _pnlColor = pnlColor;
             _txtColor = txtColor;
         }
 
@@ -143,6 +145,7 @@ namespace UIX
         public UIXSet ButtonColor { get => _btnColor; }
         public UIXSet GroupBoxColor { get => _grbColor; }
         public UIXSet LabelColor { get => _lblColor; }
+        public UIXSet PanelColor { get => _pnlColor; }
         public UIXSet TextBoxColor { get => _txtColor; }
 
         public static UIXStyle BLUE = new UIXStyle(
@@ -154,6 +157,7 @@ namespace UIX
                         UIXFont.LATO_BLACK,
             UIXFont.CENTURY_REGULAR,
             UIXSet.BLUE,
+            UIXSet.INDIGO,
             UIXSet.INDIGO,
             UIXSet.INDIGO,
             UIXSet.BLUE
@@ -170,6 +174,7 @@ namespace UIX
             UIXSet.GRAY,
             UIXSet.GRAY,
             UIXSet.GRAY,
+                        UIXSet.GRAY,
             UIXSet.WHITE
         );
 
@@ -262,7 +267,7 @@ namespace UIX
 
         public void pnlApply(Panel pnl)
         {
-            UIXPanel.pnlApply(pnl, Style.FormColor, Style.ContentFont);
+            UIXPanel.pnlApply(pnl, Style.PanelColor, Style.ContentFont);
 
             foreach (Control ctl in pnl.Controls)
             {
@@ -580,7 +585,7 @@ namespace UIX
 
         public static void pnlApply(Panel pnl, UIXSet set)
         {
-            pnl.BackColor = set.LightColor;
+            pnl.BackColor = set.DarkColor;
             pnl.ForeColor = set.ContentColor;
         }
 
