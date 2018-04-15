@@ -97,7 +97,6 @@
             this.Name = "frmPadrao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
-            this.Load += new System.EventHandler(this.frmPadrao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,6 +104,9 @@
         }
 
         #endregion
+
+        private uctPedido uctPedido1;
+        private UIX.uctUIX uctUIX;
 
         private System.Windows.Forms.Label lblUix;
         private System.Windows.Forms.Label lblTitulo;

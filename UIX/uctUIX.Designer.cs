@@ -84,7 +84,7 @@
             this.Controls.Add(this.btnSair);
             this.Name = "ctlUIX";
             this.Size = new System.Drawing.Size(410, 47);
-            this.Load += new System.EventHandler(this.ctlUIX_Load);
+            this.Load += new System.EventHandler(this.uctUIX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

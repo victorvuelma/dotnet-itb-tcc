@@ -22,7 +22,7 @@ namespace UIX
 
         public string UIXTitle { get => _uixTitle; set => _uixTitle = value; }
 
-        private void ctlUIX_Load(object sender, EventArgs e)
+        private void uctUIX_Load(object sender, EventArgs e)
         {
             lblTitulo.Text = UIXTitle;
 
