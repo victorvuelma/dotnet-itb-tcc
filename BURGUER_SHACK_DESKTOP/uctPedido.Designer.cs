@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.pnlFuncoes = new System.Windows.Forms.Panel();
-            this.pnlPreco = new System.Windows.Forms.Panel();
-            this.btnPedido = new System.Windows.Forms.Button();
-            this.grbAdicionarItens = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.grbAlterarItens = new System.Windows.Forms.GroupBox();
-            this.dgvCarrinho = new System.Windows.Forms.DataGridView();
-            this.lblNomeProduto = new System.Windows.Forms.Label();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.dgvProdutos2 = new System.Windows.Forms.DataGridView();
-            this.lblNomeProduto2 = new System.Windows.Forms.Label();
-            this.txtPesquisar2 = new System.Windows.Forms.TextBox();
-            this.grbRemoverProduto = new System.Windows.Forms.GroupBox();
-            this.dgvCarrinho2 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPesquisar3 = new System.Windows.Forms.TextBox();
-            this.ltbProdutos = new System.Windows.Forms.ListBox();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.pnlPreco = new System.Windows.Forms.Panel();
+            this.btnPedido = new System.Windows.Forms.Button();
+            this.grbAdicionarItens = new System.Windows.Forms.GroupBox();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.grbAlterarItens = new System.Windows.Forms.GroupBox();
+            this.dgvProdutos2 = new System.Windows.Forms.DataGridView();
+            this.lblNomeProduto2 = new System.Windows.Forms.Label();
+            this.txtPesquisar2 = new System.Windows.Forms.TextBox();
+            this.dgvCarrinho = new System.Windows.Forms.DataGridView();
+            this.lblNomeProduto = new System.Windows.Forms.Label();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.grbRemoverProduto = new System.Windows.Forms.GroupBox();
+            this.dgvCarrinho2 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPesquisar3 = new System.Windows.Forms.TextBox();
+            this.ltbProdutos = new System.Windows.Forms.ListBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.grpListaPedidos = new System.Windows.Forms.GroupBox();
             this.dgvListaPedidos = new System.Windows.Forms.DataGridView();
@@ -62,8 +62,8 @@
             this.grbAdicionarItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbAlterarItens.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
             this.grbRemoverProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho2)).BeginInit();
             this.grpListaPedidos.SuspendLayout();
@@ -84,171 +84,6 @@
             this.pnlFuncoes.Name = "pnlFuncoes";
             this.pnlFuncoes.Size = new System.Drawing.Size(64, 649);
             this.pnlFuncoes.TabIndex = 1;
-            // 
-            // pnlPreco
-            // 
-            this.pnlPreco.BackColor = System.Drawing.Color.White;
-            this.pnlPreco.Location = new System.Drawing.Point(340, 526);
-            this.pnlPreco.Name = "pnlPreco";
-            this.pnlPreco.Size = new System.Drawing.Size(153, 75);
-            this.pnlPreco.TabIndex = 2;
-            // 
-            // btnPedido
-            // 
-            this.btnPedido.Location = new System.Drawing.Point(340, 604);
-            this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(153, 38);
-            this.btnPedido.TabIndex = 3;
-            this.btnPedido.Text = "Confirmar Pedido";
-            this.btnPedido.UseVisualStyleBackColor = true;
-            // 
-            // grbAdicionarItens
-            // 
-            this.grbAdicionarItens.Controls.Add(this.dgvProdutos);
-            this.grbAdicionarItens.Controls.Add(this.label1);
-            this.grbAdicionarItens.Controls.Add(this.txtPesquisa);
-            this.grbAdicionarItens.Location = new System.Drawing.Point(497, 146);
-            this.grbAdicionarItens.Name = "grbAdicionarItens";
-            this.grbAdicionarItens.Size = new System.Drawing.Size(423, 130);
-            this.grbAdicionarItens.TabIndex = 4;
-            this.grbAdicionarItens.TabStop = false;
-            this.grbAdicionarItens.Text = "ADICIONAR ITENS";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NOME DO PRODUTO:";
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(144, 23);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(273, 21);
-            this.txtPesquisa.TabIndex = 0;
-            // 
-            // dgvProdutos
-            // 
-            this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(6, 47);
-            this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(411, 457);
-            this.dgvProdutos.TabIndex = 2;
-            // 
-            // grbAlterarItens
-            // 
-            this.grbAlterarItens.Controls.Add(this.dgvProdutos2);
-            this.grbAlterarItens.Controls.Add(this.lblNomeProduto2);
-            this.grbAlterarItens.Controls.Add(this.txtPesquisar2);
-            this.grbAlterarItens.Controls.Add(this.dgvCarrinho);
-            this.grbAlterarItens.Controls.Add(this.lblNomeProduto);
-            this.grbAlterarItens.Controls.Add(this.txtPesquisar);
-            this.grbAlterarItens.Location = new System.Drawing.Point(497, 282);
-            this.grbAlterarItens.Name = "grbAlterarItens";
-            this.grbAlterarItens.Size = new System.Drawing.Size(423, 130);
-            this.grbAlterarItens.TabIndex = 5;
-            this.grbAlterarItens.TabStop = false;
-            this.grbAlterarItens.Text = "ALTERAR PEDIDO";
-            // 
-            // dgvCarrinho
-            // 
-            this.dgvCarrinho.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrinho.Location = new System.Drawing.Point(6, 47);
-            this.dgvCarrinho.Name = "dgvCarrinho";
-            this.dgvCarrinho.Size = new System.Drawing.Size(411, 199);
-            this.dgvCarrinho.TabIndex = 2;
-            // 
-            // lblNomeProduto
-            // 
-            this.lblNomeProduto.AutoSize = true;
-            this.lblNomeProduto.Location = new System.Drawing.Point(6, 23);
-            this.lblNomeProduto.Name = "lblNomeProduto";
-            this.lblNomeProduto.Size = new System.Drawing.Size(125, 16);
-            this.lblNomeProduto.TabIndex = 1;
-            this.lblNomeProduto.Text = "NOME DO PRODUTO:";
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.Location = new System.Drawing.Point(144, 23);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(273, 21);
-            this.txtPesquisar.TabIndex = 0;
-            // 
-            // dgvProdutos2
-            // 
-            this.dgvProdutos2.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProdutos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos2.Location = new System.Drawing.Point(6, 305);
-            this.dgvProdutos2.Name = "dgvProdutos2";
-            this.dgvProdutos2.Size = new System.Drawing.Size(411, 199);
-            this.dgvProdutos2.TabIndex = 5;
-            // 
-            // lblNomeProduto2
-            // 
-            this.lblNomeProduto2.AutoSize = true;
-            this.lblNomeProduto2.Location = new System.Drawing.Point(6, 281);
-            this.lblNomeProduto2.Name = "lblNomeProduto2";
-            this.lblNomeProduto2.Size = new System.Drawing.Size(125, 16);
-            this.lblNomeProduto2.TabIndex = 4;
-            this.lblNomeProduto2.Text = "NOME DO PRODUTO:";
-            // 
-            // txtPesquisar2
-            // 
-            this.txtPesquisar2.Location = new System.Drawing.Point(144, 281);
-            this.txtPesquisar2.Name = "txtPesquisar2";
-            this.txtPesquisar2.Size = new System.Drawing.Size(273, 21);
-            this.txtPesquisar2.TabIndex = 3;
-            // 
-            // grbRemoverProduto
-            // 
-            this.grbRemoverProduto.Controls.Add(this.dgvCarrinho2);
-            this.grbRemoverProduto.Controls.Add(this.label3);
-            this.grbRemoverProduto.Controls.Add(this.txtPesquisar3);
-            this.grbRemoverProduto.Location = new System.Drawing.Point(497, 10);
-            this.grbRemoverProduto.Name = "grbRemoverProduto";
-            this.grbRemoverProduto.Size = new System.Drawing.Size(423, 130);
-            this.grbRemoverProduto.TabIndex = 6;
-            this.grbRemoverProduto.TabStop = false;
-            this.grbRemoverProduto.Text = "REMOVER PRODUTO";
-            // 
-            // dgvCarrinho2
-            // 
-            this.dgvCarrinho2.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCarrinho2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrinho2.Location = new System.Drawing.Point(6, 47);
-            this.dgvCarrinho2.Name = "dgvCarrinho2";
-            this.dgvCarrinho2.Size = new System.Drawing.Size(411, 457);
-            this.dgvCarrinho2.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "NOME DO PRODUTO:";
-            // 
-            // txtPesquisar3
-            // 
-            this.txtPesquisar3.Location = new System.Drawing.Point(144, 23);
-            this.txtPesquisar3.Name = "txtPesquisar3";
-            this.txtPesquisar3.Size = new System.Drawing.Size(273, 21);
-            this.txtPesquisar3.TabIndex = 0;
-            // 
-            // ltbProdutos
-            // 
-            this.ltbProdutos.FormattingEnabled = true;
-            this.ltbProdutos.ItemHeight = 16;
-            this.ltbProdutos.Location = new System.Drawing.Point(74, 526);
-            this.ltbProdutos.Name = "ltbProdutos";
-            this.ltbProdutos.Size = new System.Drawing.Size(260, 116);
-            this.ltbProdutos.TabIndex = 7;
             // 
             // btnPedidos
             // 
@@ -321,6 +156,171 @@
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
+            // pnlPreco
+            // 
+            this.pnlPreco.BackColor = System.Drawing.Color.White;
+            this.pnlPreco.Location = new System.Drawing.Point(340, 526);
+            this.pnlPreco.Name = "pnlPreco";
+            this.pnlPreco.Size = new System.Drawing.Size(153, 75);
+            this.pnlPreco.TabIndex = 2;
+            // 
+            // btnPedido
+            // 
+            this.btnPedido.Location = new System.Drawing.Point(340, 604);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(153, 38);
+            this.btnPedido.TabIndex = 3;
+            this.btnPedido.Text = "Confirmar Pedido";
+            this.btnPedido.UseVisualStyleBackColor = true;
+            // 
+            // grbAdicionarItens
+            // 
+            this.grbAdicionarItens.Controls.Add(this.dgvProdutos);
+            this.grbAdicionarItens.Controls.Add(this.label1);
+            this.grbAdicionarItens.Controls.Add(this.txtPesquisa);
+            this.grbAdicionarItens.Location = new System.Drawing.Point(497, 146);
+            this.grbAdicionarItens.Name = "grbAdicionarItens";
+            this.grbAdicionarItens.Size = new System.Drawing.Size(423, 130);
+            this.grbAdicionarItens.TabIndex = 4;
+            this.grbAdicionarItens.TabStop = false;
+            this.grbAdicionarItens.Text = "ADICIONAR ITENS";
+            // 
+            // dgvProdutos
+            // 
+            this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Location = new System.Drawing.Point(6, 47);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.Size = new System.Drawing.Size(411, 457);
+            this.dgvProdutos.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "NOME DO PRODUTO:";
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(144, 23);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(273, 21);
+            this.txtPesquisa.TabIndex = 0;
+            // 
+            // grbAlterarItens
+            // 
+            this.grbAlterarItens.Controls.Add(this.dgvProdutos2);
+            this.grbAlterarItens.Controls.Add(this.lblNomeProduto2);
+            this.grbAlterarItens.Controls.Add(this.txtPesquisar2);
+            this.grbAlterarItens.Controls.Add(this.dgvCarrinho);
+            this.grbAlterarItens.Controls.Add(this.lblNomeProduto);
+            this.grbAlterarItens.Controls.Add(this.txtPesquisar);
+            this.grbAlterarItens.Location = new System.Drawing.Point(70, 10);
+            this.grbAlterarItens.Name = "grbAlterarItens";
+            this.grbAlterarItens.Size = new System.Drawing.Size(423, 510);
+            this.grbAlterarItens.TabIndex = 5;
+            this.grbAlterarItens.TabStop = false;
+            this.grbAlterarItens.Text = "ALTERAR PEDIDO";
+            // 
+            // dgvProdutos2
+            // 
+            this.dgvProdutos2.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProdutos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos2.Location = new System.Drawing.Point(6, 305);
+            this.dgvProdutos2.Name = "dgvProdutos2";
+            this.dgvProdutos2.Size = new System.Drawing.Size(411, 199);
+            this.dgvProdutos2.TabIndex = 5;
+            // 
+            // lblNomeProduto2
+            // 
+            this.lblNomeProduto2.AutoSize = true;
+            this.lblNomeProduto2.Location = new System.Drawing.Point(6, 281);
+            this.lblNomeProduto2.Name = "lblNomeProduto2";
+            this.lblNomeProduto2.Size = new System.Drawing.Size(125, 16);
+            this.lblNomeProduto2.TabIndex = 4;
+            this.lblNomeProduto2.Text = "NOME DO PRODUTO:";
+            // 
+            // txtPesquisar2
+            // 
+            this.txtPesquisar2.Location = new System.Drawing.Point(144, 281);
+            this.txtPesquisar2.Name = "txtPesquisar2";
+            this.txtPesquisar2.Size = new System.Drawing.Size(273, 21);
+            this.txtPesquisar2.TabIndex = 3;
+            // 
+            // dgvCarrinho
+            // 
+            this.dgvCarrinho.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarrinho.Location = new System.Drawing.Point(6, 47);
+            this.dgvCarrinho.Name = "dgvCarrinho";
+            this.dgvCarrinho.Size = new System.Drawing.Size(411, 199);
+            this.dgvCarrinho.TabIndex = 2;
+            // 
+            // lblNomeProduto
+            // 
+            this.lblNomeProduto.AutoSize = true;
+            this.lblNomeProduto.Location = new System.Drawing.Point(6, 23);
+            this.lblNomeProduto.Name = "lblNomeProduto";
+            this.lblNomeProduto.Size = new System.Drawing.Size(125, 16);
+            this.lblNomeProduto.TabIndex = 1;
+            this.lblNomeProduto.Text = "NOME DO PRODUTO:";
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Location = new System.Drawing.Point(144, 23);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(273, 21);
+            this.txtPesquisar.TabIndex = 0;
+            // 
+            // grbRemoverProduto
+            // 
+            this.grbRemoverProduto.Controls.Add(this.dgvCarrinho2);
+            this.grbRemoverProduto.Controls.Add(this.label3);
+            this.grbRemoverProduto.Controls.Add(this.txtPesquisar3);
+            this.grbRemoverProduto.Location = new System.Drawing.Point(497, 10);
+            this.grbRemoverProduto.Name = "grbRemoverProduto";
+            this.grbRemoverProduto.Size = new System.Drawing.Size(423, 130);
+            this.grbRemoverProduto.TabIndex = 6;
+            this.grbRemoverProduto.TabStop = false;
+            this.grbRemoverProduto.Text = "REMOVER PRODUTO";
+            // 
+            // dgvCarrinho2
+            // 
+            this.dgvCarrinho2.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCarrinho2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarrinho2.Location = new System.Drawing.Point(6, 47);
+            this.dgvCarrinho2.Name = "dgvCarrinho2";
+            this.dgvCarrinho2.Size = new System.Drawing.Size(411, 457);
+            this.dgvCarrinho2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 16);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "NOME DO PRODUTO:";
+            // 
+            // txtPesquisar3
+            // 
+            this.txtPesquisar3.Location = new System.Drawing.Point(144, 23);
+            this.txtPesquisar3.Name = "txtPesquisar3";
+            this.txtPesquisar3.Size = new System.Drawing.Size(273, 21);
+            this.txtPesquisar3.TabIndex = 0;
+            // 
+            // ltbProdutos
+            // 
+            this.ltbProdutos.FormattingEnabled = true;
+            this.ltbProdutos.ItemHeight = 16;
+            this.ltbProdutos.Location = new System.Drawing.Point(74, 526);
+            this.ltbProdutos.Name = "ltbProdutos";
+            this.ltbProdutos.Size = new System.Drawing.Size(260, 116);
+            this.ltbProdutos.TabIndex = 7;
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -337,7 +337,7 @@
             this.grpListaPedidos.Controls.Add(this.dgvListaPedidos);
             this.grpListaPedidos.Controls.Add(this.lblIdPedido);
             this.grpListaPedidos.Controls.Add(this.txtIdPedido);
-            this.grpListaPedidos.Location = new System.Drawing.Point(70, 10);
+            this.grpListaPedidos.Location = new System.Drawing.Point(503, 427);
             this.grpListaPedidos.Name = "grpListaPedidos";
             this.grpListaPedidos.Size = new System.Drawing.Size(423, 130);
             this.grpListaPedidos.TabIndex = 6;
@@ -393,8 +393,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.grbAlterarItens.ResumeLayout(false);
             this.grbAlterarItens.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).EndInit();
             this.grbRemoverProduto.ResumeLayout(false);
             this.grbRemoverProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho2)).EndInit();

@@ -15,15 +15,18 @@ namespace BURGUER_SHACK_DESKTOP
         public frmPedido()
         {
             InitializeComponent();
+            uctPedidoNovo.Visible = false;
         }
 
         private void frmPedido_Load(object sender, EventArgs e)
         {
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Garçom";
             tplBurguerShack.CommonTemplate.frmApply(this, uctUIX);
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnNovoPedido_Click(object sender, EventArgs e)
         {
+            uctPedidoNovo.Visible = true;
             uctUIX.UIXTitle = tplBurguerShack.AppName + " - Novo Pedido";
         }
     }

@@ -28,25 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbAdicionarItens = new System.Windows.Forms.GroupBox();
+            this.grbPedidoNovo = new System.Windows.Forms.GroupBox();
+            this.ltbProdutos = new System.Windows.Forms.ListBox();
+            this.btnPedido = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.pnlPreco = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.grbAdicionarItens.SuspendLayout();
+            this.grbPedidoNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
-            // grbAdicionarItens
+            // grbPedidoNovo
             // 
-            this.grbAdicionarItens.Controls.Add(this.dgvProdutos);
-            this.grbAdicionarItens.Controls.Add(this.label1);
-            this.grbAdicionarItens.Controls.Add(this.txtPesquisa);
-            this.grbAdicionarItens.Location = new System.Drawing.Point(5, 5);
-            this.grbAdicionarItens.Name = "grbAdicionarItens";
-            this.grbAdicionarItens.Size = new System.Drawing.Size(420, 620);
-            this.grbAdicionarItens.TabIndex = 5;
-            this.grbAdicionarItens.TabStop = false;
-            this.grbAdicionarItens.Text = "ADICIONAR ITENS";
+            this.grbPedidoNovo.Controls.Add(this.ltbProdutos);
+            this.grbPedidoNovo.Controls.Add(this.btnPedido);
+            this.grbPedidoNovo.Controls.Add(this.dgvProdutos);
+            this.grbPedidoNovo.Controls.Add(this.pnlPreco);
+            this.grbPedidoNovo.Controls.Add(this.label1);
+            this.grbPedidoNovo.Controls.Add(this.txtPesquisa);
+            this.grbPedidoNovo.Location = new System.Drawing.Point(5, 5);
+            this.grbPedidoNovo.Name = "grbPedidoNovo";
+            this.grbPedidoNovo.Size = new System.Drawing.Size(423, 597);
+            this.grbPedidoNovo.TabIndex = 5;
+            this.grbPedidoNovo.TabStop = false;
+            this.grbPedidoNovo.Text = "NOVO PEDIDO";
+            // 
+            // ltbProdutos
+            // 
+            this.ltbProdutos.FormattingEnabled = true;
+            this.ltbProdutos.Location = new System.Drawing.Point(5, 455);
+            this.ltbProdutos.Name = "ltbProdutos";
+            this.ltbProdutos.Size = new System.Drawing.Size(260, 134);
+            this.ltbProdutos.TabIndex = 10;
+            // 
+            // btnPedido
+            // 
+            this.btnPedido.Location = new System.Drawing.Point(271, 550);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(144, 38);
+            this.btnPedido.TabIndex = 9;
+            this.btnPedido.Text = "Confirmar Pedido";
+            this.btnPedido.UseVisualStyleBackColor = true;
             // 
             // dgvProdutos
             // 
@@ -54,8 +77,16 @@
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Location = new System.Drawing.Point(5, 50);
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(410, 457);
+            this.dgvProdutos.Size = new System.Drawing.Size(410, 387);
             this.dgvProdutos.TabIndex = 2;
+            // 
+            // pnlPreco
+            // 
+            this.pnlPreco.BackColor = System.Drawing.Color.White;
+            this.pnlPreco.Location = new System.Drawing.Point(271, 455);
+            this.pnlPreco.Name = "pnlPreco";
+            this.pnlPreco.Size = new System.Drawing.Size(144, 90);
+            this.pnlPreco.TabIndex = 8;
             // 
             // label1
             // 
@@ -77,11 +108,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grbAdicionarItens);
+            this.AutoSize = true;
+            this.Controls.Add(this.grbPedidoNovo);
             this.Name = "uctPedidoNovo";
-            this.Size = new System.Drawing.Size(430, 630);
-            this.grbAdicionarItens.ResumeLayout(false);
-            this.grbAdicionarItens.PerformLayout();
+            this.Size = new System.Drawing.Size(433, 606);
+            this.grbPedidoNovo.ResumeLayout(false);
+            this.grbPedidoNovo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
 
@@ -89,9 +121,12 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbAdicionarItens;
+        private System.Windows.Forms.GroupBox grbPedidoNovo;
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.ListBox ltbProdutos;
+        private System.Windows.Forms.Button btnPedido;
+        private System.Windows.Forms.Panel pnlPreco;
     }
 }
