@@ -76,35 +76,8 @@
             this.btnSair.Text = "CLO";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
-            // uctUIX
+            // ctlPedido1
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(6, 4);
-            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(189, 48);
-            this.uctUIX.TabIndex = 10;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = true;
-            this.uctUIX.UIXTitle = "BurguerShack - ???";
-            // 
-            // uctPedido1
-            // 
-            this.uctPedido1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctPedido1.Location = new System.Drawing.Point(3, 60);
-            this.uctPedido1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctPedido1.Name = "uctPedido1";
-            this.uctPedido1.Size = new System.Drawing.Size(508, 649);
-            this.uctPedido1.TabIndex = 11;
-            // 
-            // picFormIcon
-            // 
-            this.picFormIcon.Location = new System.Drawing.Point(3, 4);
-            this.picFormIcon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picFormIcon.Name = "picFormIcon";
-            this.picFormIcon.Size = new System.Drawing.Size(41, 41);
-            this.picFormIcon.TabIndex = 7;
-            this.picFormIcon.TabStop = false;
             // 
             // frmPadrao
             // 
@@ -138,7 +111,6 @@
         private System.Windows.Forms.PictureBox picFormIcon;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnSair;
-        private UIX.uctUIX uctUIX;
-        private uctPedido uctPedido1;
+
     }
 }
