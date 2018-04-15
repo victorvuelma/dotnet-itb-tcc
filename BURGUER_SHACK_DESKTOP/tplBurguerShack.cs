@@ -11,8 +11,11 @@ namespace BURGUER_SHACK_DESKTOP
     class tplBurguerShack
     {
 
+        private static String appName = "Burguer Shack";
+
         private static Image commonLogo = global::BURGUER_SHACK_DESKTOP.Properties.Resources.menu;
 
         public static Image CommonLogo { get => commonLogo; }
+        public static string AppName { get => appName; }
     }
 }

@@ -12,15 +12,19 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class uctPedido : UserControl
     {
-        public uctPedido()
+
+        private frmPadrao _objPadrao;
+
+        public uctPedido(frmPadrao objPadrao)
         {
             InitializeComponent();
+
+            this._objPadrao = objPadrao;
         }
 
         private void uctPedido_Load(object sender, EventArgs e)
         {
-            uctPedido uctPedido = new uctPedido();
-            uctPedido.Size = new Size(508, 649);
+            this.Size = new Size(508, 649);
             grbAlterarItens.Visible = false;
             grbRemoverProduto.Visible = false;
             grbAdicionarItens.Visible = false;
@@ -29,9 +33,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            frmPadrao objPadrao = new frmPadrao();
+            _objPadrao.uctUIX.UIXTitle = tplBurguerShack.AppName + " - Novo Pedido";
 
-            objPadrao.uctUIX.UIXTitle = "Burguer Shack - Novo Pedido";
             btnPedido.Text = "Confirmar Pedido";
             grbAdicionarItens.Visible = true;
             grbAdicionarItens.Location = new Point(70, 3);
