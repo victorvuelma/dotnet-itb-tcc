@@ -38,7 +38,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(51, 11);
+            this.lblTitulo.Location = new System.Drawing.Point(3, 13);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(54, 13);
             this.lblTitulo.TabIndex = 7;
@@ -49,13 +49,13 @@
             this.picFormIcon.Location = new System.Drawing.Point(3, 4);
             this.picFormIcon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picFormIcon.Name = "picFormIcon";
-            this.picFormIcon.Size = new System.Drawing.Size(41, 41);
+            this.picFormIcon.Size = new System.Drawing.Size(32, 32);
             this.picFormIcon.TabIndex = 6;
             this.picFormIcon.TabStop = false;
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(362, 4);
+            this.btnSair.Location = new System.Drawing.Point(202, 2);
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(45, 34);
@@ -65,7 +65,7 @@
             // 
             // btnMin
             // 
-            this.btnMin.Location = new System.Drawing.Point(311, 4);
+            this.btnMin.Location = new System.Drawing.Point(151, 2);
             this.btnMin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(45, 34);
@@ -73,7 +73,7 @@
             this.btnMin.Text = "MIN";
             this.btnMin.UseVisualStyleBackColor = true;
             // 
-            // ctlUIX
+            // uctUIX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,8 +82,8 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.picFormIcon);
             this.Controls.Add(this.btnSair);
-            this.Name = "ctlUIX";
-            this.Size = new System.Drawing.Size(410, 47);
+            this.Name = "uctUIX";
+            this.Size = new System.Drawing.Size(250, 40);
             this.Load += new System.EventHandler(this.uctUIX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).EndInit();
             this.ResumeLayout(false);
