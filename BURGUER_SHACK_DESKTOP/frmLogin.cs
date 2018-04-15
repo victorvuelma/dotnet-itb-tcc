@@ -20,7 +20,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.SILVER, new UIX.UIXImageTemplate(null, null));
+            UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.SILVER, new UIX.UIXImageTemplate(tplBurguerShack.CommonLogo, null));
 
             _frmTemplate.frmApply(this, ctlUIX1);
         }

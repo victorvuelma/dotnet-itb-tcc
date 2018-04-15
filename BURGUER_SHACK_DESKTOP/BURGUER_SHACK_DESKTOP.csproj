@@ -45,17 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctlCozinha.cs">
+    <Compile Include="uctCozinha.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctlCozinha.Designer.cs">
-      <DependentUpon>ctlCozinha.cs</DependentUpon>
+    <Compile Include="uctCozinha.Designer.cs">
+      <DependentUpon>uctCozinha.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctlPedido.cs">
+    <Compile Include="uctPedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctlPedido.Designer.cs">
-      <DependentUpon>ctlPedido.cs</DependentUpon>
+    <Compile Include="uctPedido.Designer.cs">
+      <DependentUpon>uctPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -71,9 +71,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ctlCozinha.resx">
-      <DependentUpon>ctlCozinha.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="tplBurguerShack.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +88,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="uctPedido.resx">
+      <DependentUpon>uctPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class ctlCozinha : UserControl
+    public partial class uctPedido : UserControl
     {
-        public ctlCozinha()
+        public uctPedido()
         {
             InitializeComponent();
         }
+
     }
 }

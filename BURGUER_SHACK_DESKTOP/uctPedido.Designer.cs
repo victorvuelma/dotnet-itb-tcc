@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class ctlPedido
+    partial class uctPedido
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -38,10 +38,10 @@
             this.txtItens = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.grbNovoPedido = new System.Windows.Forms.GroupBox();
-            this.pnlAlterarPreco = new System.Windows.Forms.Panel();
-            this.btnAlterarPedido = new System.Windows.Forms.Button();
-            this.txtAlterarItens = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAlterarItens = new System.Windows.Forms.TextBox();
+            this.btnAlterarPedido = new System.Windows.Forms.Button();
+            this.pnlAlterarPreco = new System.Windows.Forms.Panel();
             this.pnlFuncoes.SuspendLayout();
             this.grbNovoPedido.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -156,33 +156,6 @@
             this.grbNovoPedido.TabStop = false;
             this.grbNovoPedido.Text = "NOVO PEDIDO";
             // 
-            // pnlAlterarPreco
-            // 
-            this.pnlAlterarPreco.BackColor = System.Drawing.Color.White;
-            this.pnlAlterarPreco.Location = new System.Drawing.Point(276, 517);
-            this.pnlAlterarPreco.Name = "pnlAlterarPreco";
-            this.pnlAlterarPreco.Size = new System.Drawing.Size(153, 75);
-            this.pnlAlterarPreco.TabIndex = 2;
-            // 
-            // btnAlterarPedido
-            // 
-            this.btnAlterarPedido.Location = new System.Drawing.Point(276, 598);
-            this.btnAlterarPedido.Name = "btnAlterarPedido";
-            this.btnAlterarPedido.Size = new System.Drawing.Size(153, 38);
-            this.btnAlterarPedido.TabIndex = 3;
-            this.btnAlterarPedido.Text = "Alterar Pedido";
-            this.btnAlterarPedido.UseVisualStyleBackColor = true;
-            // 
-            // txtAlterarItens
-            // 
-            this.txtAlterarItens.BackColor = System.Drawing.Color.White;
-            this.txtAlterarItens.Location = new System.Drawing.Point(6, 517);
-            this.txtAlterarItens.Multiline = true;
-            this.txtAlterarItens.Name = "txtAlterarItens";
-            this.txtAlterarItens.ReadOnly = true;
-            this.txtAlterarItens.Size = new System.Drawing.Size(264, 119);
-            this.txtAlterarItens.TabIndex = 0;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtAlterarItens);
@@ -195,7 +168,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ALTERAR PEDIDO";
             // 
-            // ctlPedido
+            // txtAlterarItens
+            // 
+            this.txtAlterarItens.BackColor = System.Drawing.Color.White;
+            this.txtAlterarItens.Location = new System.Drawing.Point(6, 517);
+            this.txtAlterarItens.Multiline = true;
+            this.txtAlterarItens.Name = "txtAlterarItens";
+            this.txtAlterarItens.ReadOnly = true;
+            this.txtAlterarItens.Size = new System.Drawing.Size(264, 119);
+            this.txtAlterarItens.TabIndex = 0;
+            // 
+            // btnAlterarPedido
+            // 
+            this.btnAlterarPedido.Location = new System.Drawing.Point(276, 598);
+            this.btnAlterarPedido.Name = "btnAlterarPedido";
+            this.btnAlterarPedido.Size = new System.Drawing.Size(153, 38);
+            this.btnAlterarPedido.TabIndex = 3;
+            this.btnAlterarPedido.Text = "Alterar Pedido";
+            this.btnAlterarPedido.UseVisualStyleBackColor = true;
+            // 
+            // pnlAlterarPreco
+            // 
+            this.pnlAlterarPreco.BackColor = System.Drawing.Color.White;
+            this.pnlAlterarPreco.Location = new System.Drawing.Point(276, 517);
+            this.pnlAlterarPreco.Name = "pnlAlterarPreco";
+            this.pnlAlterarPreco.Size = new System.Drawing.Size(153, 75);
+            this.pnlAlterarPreco.TabIndex = 2;
+            // 
+            // uctPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,9 +203,8 @@
             this.Controls.Add(this.pnlFuncoes);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ctlPedido";
+            this.Name = "uctPedido";
             this.Size = new System.Drawing.Size(508, 649);
-            this.Load += new System.EventHandler(this.ctlPedido_Load);
             this.pnlFuncoes.ResumeLayout(false);
             this.grbNovoPedido.ResumeLayout(false);
             this.grbNovoPedido.PerformLayout();

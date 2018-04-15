@@ -213,9 +213,17 @@ namespace UIX
             {
                 this.lblApply((Label)ctl);
             }
+            else if (ctl is Panel)
+            {
+                this.pnlApply((Panel)ctl);
+            }
             else if (ctl is TextBox)
             {
                 this.txtApply((TextBox)ctl);
+            }
+            else if (ctl is UserControl)
+            {
+                this.uctApply((UserControl)ctl);
             }
         }
 
@@ -227,6 +235,11 @@ namespace UIX
         public void grbApply(GroupBox grb)
         {
             UIX.UIXGroupBox.grbApply(grb, Style.GroupBoxColor);
+
+            foreach (Control ctl in grb.Controls)
+            {
+                ctlApply(ctl);
+            }
         }
 
         public void lblApply(Label lbl)
@@ -234,18 +247,43 @@ namespace UIX
             UIX.UIXLabel.lblApply(lbl, Style.LabelColor);
         }
 
+        public void pnlApply(Panel pnl)
+        {
+            UIX.UIXPanel.pnlApply(pnl, Style.FormColor);
+
+            foreach (Control ctl in pnl.Controls)
+            {
+                ctlApply(ctl);
+            }
+        }
+
         public void txtApply(TextBox txt)
         {
             UIX.UIXTextBox.txtApply(txt, Style.TextBoxColor);
         }
 
-        public void frmApply(Form frm, ctlUIX ctl)
+        public void uctApply(UserControl uct)
+        {
+            UIX.UIXUserControl.uctApply(uct, Style.FormColor);
+
+            foreach (Control ctl in uct.Controls)
+            {
+                ctlApply(ctl);
+            }
+        }
+
+        public void frmApply(Form frm, uctUIX ctl)
         {
             UIX.UIXForm.frmApply(frm, ctl, Style);
 
+            ctl.picFormIcon.Image = ImageTemplate.Logo;
+
             foreach (Control control in frm.Controls)
             {
-                this.ctlApply(control);
+                if (control != ctl)
+                {
+                    this.ctlApply(control);
+                }
             }
 
         }
@@ -259,7 +297,7 @@ namespace UIX
     public class UIXForm
     {
 
-        public static void frmApply(Form frm, ctlUIX ctl, UIXStyle style)
+        public static void frmApply(Form frm, uctUIX ctl, UIXStyle style)
         {
             frm.FormBorderStyle = FormBorderStyle.None;
 
@@ -272,7 +310,7 @@ namespace UIX
     public class UIXHeader
     {
 
-        public static void hdrApply(Form frm, ctlUIX ctl, UIXStyle style)
+        public static void hdrApply(Form frm, uctUIX ctl, UIXStyle style)
         {
             int maxX = frm.Size.Width;
             int maxY = frm.Size.Height;
@@ -501,6 +539,17 @@ namespace UIX
         }
     }
 
+    public class UIXPanel
+    {
+
+        public static void pnlApply(Panel pnl, UIXSet set)
+        {
+            pnl.BackColor = set.LightColor;
+            pnl.ForeColor = set.ContentColor;
+        }
+
+    }
+
     public class UIXTextBox
     {
         public static void txtApply(TextBox txt, UIXSet colorSet)
@@ -511,6 +560,17 @@ namespace UIX
             txt.Margin = new Padding(5);
             txt.Font = UIX.UIXFont.LATO_BLACK(txt.Font.Size);
         }
+    }
+
+    public class UIXUserControl
+    {
+
+        public static void uctApply(UserControl uct, UIXSet set)
+        {
+            uct.BackColor = set.LightColor;
+            uct.ForeColor = set.ContentColor;
+        }
+
     }
 
 }

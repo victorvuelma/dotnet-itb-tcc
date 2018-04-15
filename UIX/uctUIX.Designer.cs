@@ -1,6 +1,6 @@
 ﻿namespace UIX
 {
-    partial class ctlUIX
+    partial class uctUIX
     {
         /// <summary> 
         /// Required designer variable.

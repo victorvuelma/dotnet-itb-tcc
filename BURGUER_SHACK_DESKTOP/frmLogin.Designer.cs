@@ -34,7 +34,7 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblESenha = new System.Windows.Forms.Label();
-            this.ctlUIX1 = new UIX.ctlUIX();
+            this.ctlUIX1 = new UIX.uctUIX();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -135,7 +135,7 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblESenha;
-        private UIX.ctlUIX ctlUIX1;
+        private UIX.uctUIX ctlUIX1;
     }
 }
 

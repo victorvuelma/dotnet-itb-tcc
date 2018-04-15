@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class ctlCozinha
+    partial class uctCozinha
     {
         /// <summary> 
         /// Variável de designer necessária.

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace UIX
 {
 
-    public partial class ctlUIX : UserControl
+    public partial class uctUIX : UserControl
     {
 
         private String _uixTitle = "";
@@ -12,7 +12,7 @@ namespace UIX
         private bool _uixBtnCloseEnabled = true;
         private bool _uixBtnMinEnabled = true;
 
-        public ctlUIX()
+        public uctUIX()
         {
             InitializeComponent();
         }

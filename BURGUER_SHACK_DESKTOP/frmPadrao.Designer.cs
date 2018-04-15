@@ -30,9 +30,11 @@
         {
             this.lblUix = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.picFormIcon = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.uctUIX = new UIX.uctUIX();
+            this.uctPedido1 = new BURGUER_SHACK_DESKTOP.uctPedido();
+            this.picFormIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,15 +56,6 @@
             this.lblTitulo.TabIndex = 8;
             this.lblTitulo.Text = "Burguer Shack - ???";
             // 
-            // picFormIcon
-            // 
-            this.picFormIcon.Location = new System.Drawing.Point(3, 4);
-            this.picFormIcon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picFormIcon.Name = "picFormIcon";
-            this.picFormIcon.Size = new System.Drawing.Size(41, 41);
-            this.picFormIcon.TabIndex = 7;
-            this.picFormIcon.TabStop = false;
-            // 
             // btnMinimizar
             // 
             this.btnMinimizar.Location = new System.Drawing.Point(411, 2);
@@ -83,14 +76,43 @@
             this.btnSair.Text = "CLO";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
-            // ctlPedido1
+            // uctUIX
             // 
+            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.uctUIX.Location = new System.Drawing.Point(6, 4);
+            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctUIX.Name = "uctUIX";
+            this.uctUIX.Size = new System.Drawing.Size(189, 48);
+            this.uctUIX.TabIndex = 10;
+            this.uctUIX.UIXButtonCloseEnabled = true;
+            this.uctUIX.UIXButtonMinEnabled = true;
+            this.uctUIX.UIXTitle = "BurguerShack - ???";
+            // 
+            // uctPedido1
+            // 
+            this.uctPedido1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctPedido1.Location = new System.Drawing.Point(3, 60);
+            this.uctPedido1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctPedido1.Name = "uctPedido1";
+            this.uctPedido1.Size = new System.Drawing.Size(508, 649);
+            this.uctPedido1.TabIndex = 11;
+            // 
+            // picFormIcon
+            // 
+            this.picFormIcon.Location = new System.Drawing.Point(3, 4);
+            this.picFormIcon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picFormIcon.Name = "picFormIcon";
+            this.picFormIcon.Size = new System.Drawing.Size(41, 41);
+            this.picFormIcon.TabIndex = 7;
+            this.picFormIcon.TabStop = false;
             // 
             // frmPadrao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 700);
+            this.ClientSize = new System.Drawing.Size(510, 711);
+            this.Controls.Add(this.uctPedido1);
+            this.Controls.Add(this.uctUIX);
             this.Controls.Add(this.lblUix);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.picFormIcon);
@@ -102,6 +124,7 @@
             this.Name = "frmPadrao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
+            this.Load += new System.EventHandler(this.frmPadrao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,6 +138,7 @@
         private System.Windows.Forms.PictureBox picFormIcon;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnSair;
-
+        private UIX.uctUIX uctUIX;
+        private uctPedido uctPedido1;
     }
 }

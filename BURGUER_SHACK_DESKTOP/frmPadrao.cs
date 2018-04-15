@@ -16,5 +16,12 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
         }
+
+        private void frmPadrao_Load(object sender, EventArgs e)
+        {
+            UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.BLUE, new UIX.UIXImageTemplate(tplBurguerShack.CommonLogo, null));
+
+            _frmTemplate.frmApply(this, uctUIX);
+        }
     }
 }

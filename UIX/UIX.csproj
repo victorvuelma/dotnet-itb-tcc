@@ -49,20 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctlUIX.cs">
+    <Compile Include="uctUIX.cs">
       <SubType>UserControl</SubType>
       <Generator>ctlUIX</Generator>
       <CustomToolNamespace>UIX Control</CustomToolNamespace>
     </Compile>
-    <Compile Include="ctlUIX.Designer.cs">
-      <DependentUpon>ctlUIX.cs</DependentUpon>
+    <Compile Include="uctUIX.Designer.cs">
+      <DependentUpon>uctUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIX.cs" />
-    <EmbeddedResource Include="ctlUIX.resx">
-      <DependentUpon>ctlUIX.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
