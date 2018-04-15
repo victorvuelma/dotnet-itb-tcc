@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
             this.picFormIcon = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblUix = new System.Windows.Forms.Label();
@@ -52,16 +51,6 @@
             this.btnSair.Text = "CLO";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Location = new System.Drawing.Point(294, 2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 34);
-            this.btnMinimizar.TabIndex = 1;
-            this.btnMinimizar.Text = "MIN";
-            this.btnMinimizar.UseVisualStyleBackColor = true;
             // 
             // picFormIcon
             // 
@@ -160,7 +149,6 @@
             this.Controls.Add(this.lblUix);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.picFormIcon);
-            this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnSair);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -178,7 +166,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.PictureBox picFormIcon;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblUix;

@@ -1,23 +1,20 @@
 ﻿using System;
-
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace UIX
 {
-
-    class UIXUtil
+    public class UIXUtil
     {
         public static Color fromRGB(int r, int g, int b)
         {
             return Color.FromArgb(r, g, b);
         }
-
     }
 
-    class UIXColor
+    public class UIXColor
     {
-
         public static Color AQUA_LIGHT = UIX.UIXUtil.fromRGB(26, 188, 156);
         public static Color AQUA_DARK = UIX.UIXUtil.fromRGB(22, 160, 133);
 
@@ -47,7 +44,7 @@ namespace UIX
 
     }
 
-    class UIXFont
+    public class UIXFont
     {
 
         public static Font LATO_BLACK(float size)
@@ -67,7 +64,7 @@ namespace UIX
 
     }
 
-    class UIXSet
+    public class UIXSet
     {
 
         private Color _contentColor;
@@ -96,7 +93,7 @@ namespace UIX
 
     }
 
-    class UIXStyle
+    public class UIXStyle
     {
 
         private UIX.UIXSet _formColor;
@@ -165,41 +162,60 @@ namespace UIX
 
     }
 
-    class UIXTemplate
+    public class UIXImageTemplate
+    {
+
+        private Image _logo;
+        private Icon _icon;
+
+        public UIXImageTemplate(Image logo, Icon icon)
+        {
+            _logo = logo;
+            _icon = icon;
+
+        }
+
+        public Image Logo { get => _logo; }
+        public Icon Icon { get => _icon; }
+    }
+
+    public class UIXTemplate
     {
 
         private UIX.UIXStyle _style;
+        private UIX.UIXImageTemplate _imageTemplate;
 
-        public UIXTemplate(UIXStyle style)
+        public UIXTemplate(UIXStyle style, UIXImageTemplate imageTemplate)
         {
             this._style = style;
+            this._imageTemplate = imageTemplate;
         }
 
-        public void ctrApply(Control[] controls)
+        public void ctlApply(Control[] ctls)
         {
-            foreach (Control control in controls)
+            foreach (Control control in ctls)
             {
-                this.ctrApply(control);
+                this.ctlApply(control);
             }
         }
 
-        public void ctrApply(Control control)
+        public void ctlApply(Control ctl)
         {
-            if (control is Button)
+            if (ctl is Button)
             {
-                this.btnApply((Button)control);
+                this.btnApply((Button)ctl);
             }
-            else if (control is GroupBox)
+            else if (ctl is GroupBox)
             {
-                this.grbApply((GroupBox)control);
+                this.grbApply((GroupBox)ctl);
             }
-            else if (control is Label)
+            else if (ctl is Label)
             {
-                this.lblApply((Label)control);
+                this.lblApply((Label)ctl);
             }
-            else if (control is TextBox)
+            else if (ctl is TextBox)
             {
-                this.txtApply((TextBox)control);
+                this.txtApply((TextBox)ctl);
             }
         }
 
@@ -226,12 +242,26 @@ namespace UIX
         public void frmApply(Form frm, Label lblHeader, Label lblTitle, PictureBox picLogo, Button btnClose, Button btnMin)
         {
             UIX.UIXForm.frmApply(frm, lblHeader, lblTitle, picLogo, btnClose, btnMin, Style);
+
+            Control[] ignore = new Control[] { lblHeader, lblTitle, picLogo, btnClose, btnMin };
+
+            foreach (Control ctl in frm.Controls)
+            {
+                if (!ignore.Contains(ctl))
+                {
+                    this.ctlApply(ctl);
+                }
+            }
+
         }
 
         public UIX.UIXStyle Style { get => _style; }
+
+        public UIX.UIXImageTemplate ImageTemplate { get => _imageTemplate; }
+
     }
 
-    class UIXForm
+    public class UIXForm
     {
 
         public static void frmApply(Form frm, Label lblHeader, Label lblTitle, PictureBox picLogo, Button btnClose, Button btnMin, UIXStyle style)
@@ -244,7 +274,7 @@ namespace UIX
         }
     }
 
-    class UIXHeader
+    public class UIXHeader
     {
 
         public static void hdrApply(Form frm, Label lblHeader, Label lblTitle, PictureBox picLogo, Button btnClose, Button btnMin, UIXStyle style)
@@ -373,7 +403,7 @@ namespace UIX
 
     }
 
-    class UIXButton
+    public class UIXButton
     {
 
         public static void btnApply(Button btn, UIXSet colorSet)
@@ -385,6 +415,7 @@ namespace UIX
             btn.FlatAppearance.MouseOverBackColor = colorSet.DarkColor;
             btn.FlatAppearance.BorderSize = 0;
             btn.ForeColor = colorSet.ContentColor;
+            btn.Cursor = Cursors.Hand;
         }
 
         public static void btnApply(Button btn, UIXSet colorSet, Font font)
@@ -422,7 +453,7 @@ namespace UIX
 
     }
 
-    class UIXCheckBox
+    public class UIXCheckBox
     {
         public static void chkApply(CheckBox box, UIXSet colorSet)
         {
@@ -433,7 +464,7 @@ namespace UIX
         }
     }
 
-    class UIXComboBox
+    public class UIXComboBox
     {
         public static void cboApply(ComboBox box, UIXSet colorSet)
         {
@@ -445,7 +476,7 @@ namespace UIX
         }
     }
 
-    class UIXGroupBox
+    public class UIXGroupBox
     {
         public static void grbApply(GroupBox grb, UIXSet colorSet)
         {
@@ -456,7 +487,7 @@ namespace UIX
         }
     }
 
-    class UIXLabel
+    public class UIXLabel
     {
         public static void lblApply(Label lbl, UIXSet colorSet, Font font)
         {
@@ -471,7 +502,7 @@ namespace UIX
         }
     }
 
-    class UIXListBox
+    public class UIXListBox
     {
         public static void lstApply(ListBox box, UIXSet colorSet)
         {
@@ -479,7 +510,7 @@ namespace UIX
         }
     }
 
-    class UIXTextBox
+    public class UIXTextBox
     {
         public static void txtApply(TextBox txt, UIXSet colorSet)
         {
