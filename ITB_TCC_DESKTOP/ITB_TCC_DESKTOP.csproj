@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctlCozinha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlCozinha.Designer.cs">
+      <DependentUpon>ctlCozinha.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctlPedido.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ITB_TCC_DESKTOP
 {
-    public partial class cltCozinha : UserControl
+    public partial class ctlCozinha : UserControl
     {
-        public cltCozinha()
+        public ctlCozinha()
         {
             InitializeComponent();
         }

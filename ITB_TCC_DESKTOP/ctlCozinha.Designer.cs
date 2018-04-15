@@ -1,6 +1,6 @@
 ﻿namespace ITB_TCC_DESKTOP
 {
-    partial class cltCozinha
+    partial class ctlCozinha
     {
         /// <summary> 
         /// Variável de designer necessária.
