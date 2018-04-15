@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ITB_TCC_DESKTOP
 {
-    public partial class controlGarcom : UserControl
+    public partial class cltCozinha : UserControl
     {
-        public controlGarcom()
+        public cltCozinha()
         {
             InitializeComponent();
         }

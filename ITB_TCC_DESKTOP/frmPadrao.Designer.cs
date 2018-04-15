@@ -83,6 +83,9 @@
             this.btnSair.Text = "CLO";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
+            // ctlPedido1
+            // 
+            // 
             // frmPadrao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -112,5 +115,6 @@
         private System.Windows.Forms.PictureBox picFormIcon;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnSair;
+
     }
 }

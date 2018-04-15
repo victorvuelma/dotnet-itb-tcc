@@ -1,6 +1,6 @@
 ﻿namespace ITB_TCC_DESKTOP
 {
-    partial class controlGarcom
+    partial class cltCozinha
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // controlGarcom
+            // cltCozinha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "controlGarcom";
-            this.Size = new System.Drawing.Size(510, 700);
+            this.Name = "cltCozinha";
+            this.Size = new System.Drawing.Size(767, 374);
             this.ResumeLayout(false);
 
         }
