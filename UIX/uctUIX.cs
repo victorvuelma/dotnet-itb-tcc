@@ -7,8 +7,6 @@ namespace UIX
     public partial class uctUIX : UserControl
     {
 
-        private String _uixTitle = "";
-
         private bool _uixBtnCloseEnabled = true;
         private bool _uixBtnMinEnabled = true;
 
@@ -20,11 +18,10 @@ namespace UIX
         public bool UIXButtonCloseEnabled { get => _uixBtnCloseEnabled; set => _uixBtnCloseEnabled = value; }
         public bool UIXButtonMinEnabled { get => _uixBtnMinEnabled; set => _uixBtnMinEnabled = value; }
 
-        public string UIXTitle { get => _uixTitle; set => _uixTitle = value; }
+        public string UIXTitle { get => lblTitulo.Text; set => lblTitulo.Text = value; }
 
         private void uctUIX_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text = UIXTitle;
 
             btnSair.Enabled = UIXButtonCloseEnabled;
             btnSair.Visible = UIXButtonCloseEnabled;
