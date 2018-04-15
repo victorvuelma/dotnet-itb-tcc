@@ -16,5 +16,10 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
         }
+
+        private void frmPadrao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
