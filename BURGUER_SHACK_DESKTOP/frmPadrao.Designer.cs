@@ -76,8 +76,34 @@
             this.btnSair.Text = "CLO";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
-            // ctlPedido1
+            // uctUIX
             // 
+            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.uctUIX.Location = new System.Drawing.Point(0, 0);
+            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uctUIX.Name = "uctUIX";
+            this.uctUIX.Size = new System.Drawing.Size(250, 39);
+            this.uctUIX.TabIndex = 1;
+            this.uctUIX.UIXButtonCloseEnabled = true;
+            this.uctUIX.UIXButtonMinEnabled = true;
+            this.uctUIX.UIXTitle = "Burguer Shack - ???";
+            // 
+            // uctPedido1
+            // 
+            this.uctPedido1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctPedido1.Location = new System.Drawing.Point(0, 49);
+            this.uctPedido1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctPedido1.Name = "uctPedido1";
+            this.uctPedido1.Size = new System.Drawing.Size(508, 649);
+            this.uctPedido1.TabIndex = 0;
+            // 
+            // picFormIcon
+            // 
+            this.picFormIcon.Location = new System.Drawing.Point(0, 0);
+            this.picFormIcon.Name = "picFormIcon";
+            this.picFormIcon.Size = new System.Drawing.Size(100, 50);
+            this.picFormIcon.TabIndex = 10;
+            this.picFormIcon.TabStop = false;
             // 
             // frmPadrao
             // 
