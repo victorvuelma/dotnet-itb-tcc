@@ -91,6 +91,7 @@
     <EmbeddedResource Include="uctPedido.resx">
       <DependentUpon>uctPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\BURGUER_SHACK_DESKTOP.Properties.Resources.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +128,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hamburger1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hamburguer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hamburguer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedidos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

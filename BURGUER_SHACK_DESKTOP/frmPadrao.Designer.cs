@@ -31,8 +31,8 @@
             this.lblUix = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.uctUIX = new UIX.uctUIX();
-            this.uctPedido1 = new BURGUER_SHACK_DESKTOP.uctPedido();
             this.picFormIcon = new System.Windows.Forms.PictureBox();
+            this.uctPedido1 = new BURGUER_SHACK_DESKTOP.uctPedido();
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,14 @@
             this.uctUIX.UIXButtonMinEnabled = true;
             this.uctUIX.UIXTitle = "Burguer Shack - ???";
             // 
+            // picFormIcon
+            // 
+            this.picFormIcon.Location = new System.Drawing.Point(0, 0);
+            this.picFormIcon.Name = "picFormIcon";
+            this.picFormIcon.Size = new System.Drawing.Size(100, 50);
+            this.picFormIcon.TabIndex = 10;
+            this.picFormIcon.TabStop = false;
+            // 
             // uctPedido1
             // 
             this.uctPedido1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,14 +82,6 @@
             this.uctPedido1.Name = "uctPedido1";
             this.uctPedido1.Size = new System.Drawing.Size(508, 649);
             this.uctPedido1.TabIndex = 0;
-            // 
-            // picFormIcon
-            // 
-            this.picFormIcon.Location = new System.Drawing.Point(0, 0);
-            this.picFormIcon.Name = "picFormIcon";
-            this.picFormIcon.Size = new System.Drawing.Size(100, 50);
-            this.picFormIcon.TabIndex = 10;
-            this.picFormIcon.TabStop = false;
             // 
             // frmPadrao
             // 
@@ -109,11 +109,10 @@
         #endregion
 
         private uctPedido uctPedido1;
-        private UIX.uctUIX uctUIX;
 
         private System.Windows.Forms.Label lblUix;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox picFormIcon;
-
+        public UIX.uctUIX uctUIX;
     }
 }
