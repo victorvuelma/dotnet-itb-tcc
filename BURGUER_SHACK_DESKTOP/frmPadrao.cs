@@ -22,9 +22,7 @@ namespace BURGUER_SHACK_DESKTOP
             uctPedido1.Visible = true;
             uctPedido1.Location = new Point(0, 49);
 
-            UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.BLUE, new UIX.UIXImageTemplate(tplBurguerShack.CommonLogo, null));
-
-            _frmTemplate.frmApply(this, uctUIX);
+            tplBurguerShack.CommonTemplate.frmApply(this, uctUIX);
         }
     }
 }

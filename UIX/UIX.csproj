@@ -59,7 +59,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UIX.cs" />
+    <Compile Include="uixButton.cs" />
+    <Compile Include="uixCheckBox.cs" />
+    <Compile Include="uixColor.cs" />
+    <Compile Include="uixComboBox.cs" />
+    <Compile Include="uixFont.cs" />
+    <Compile Include="uixForm.cs" />
+    <Compile Include="uixGroupBox.cs" />
+    <Compile Include="uixHeader.cs" />
+    <Compile Include="uixImageTemplate.cs" />
+    <Compile Include="uixLabel.cs" />
+    <Compile Include="uixPanel.cs" />
+    <Compile Include="uixSet.cs" />
+    <Compile Include="uixStyle.cs" />
+    <Compile Include="uixTemplate.cs" />
+    <Compile Include="uixTextBox.cs" />
+    <Compile Include="uixUserControl.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UIX;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -20,9 +19,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.SILVER, new UIX.UIXImageTemplate(tplBurguerShack.CommonLogo, null));
+            UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER, tplBurguerShack.CommonImageTemplate);
 
-            _frmTemplate.frmApply(this, ctlUIX1);
+            tplBurguerShack.CommonTemplate.frmApply(this, ctlUIX1);
         }
 
         private void btnSair_Click(object sender, EventArgs e)

@@ -32,7 +32,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.uctUIX = new UIX.uctUIX();
             this.picFormIcon = new System.Windows.Forms.PictureBox();
-            this.uctPedido1 = new BURGUER_SHACK_DESKTOP.uctPedido(this);
+            this.uctPedido1 = new BURGUER_SHACK_DESKTOP.uctPedido();
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).BeginInit();
             this.SuspendLayout();
             // 
