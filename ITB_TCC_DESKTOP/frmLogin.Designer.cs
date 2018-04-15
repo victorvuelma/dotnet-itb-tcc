@@ -93,14 +93,15 @@
             // 
             // ctlUIX1
             // 
-            this.ctlUIX1.Location = new System.Drawing.Point(-5, -3);
+            this.ctlUIX1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ctlUIX1.Location = new System.Drawing.Point(-2, 0);
             this.ctlUIX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ctlUIX1.Name = "ctlUIX1";
-            this.ctlUIX1.Size = new System.Drawing.Size(96, 43);
+            this.ctlUIX1.Size = new System.Drawing.Size(188, 43);
             this.ctlUIX1.TabIndex = 11;
             this.ctlUIX1.UIXButtonCloseEnabled = true;
             this.ctlUIX1.UIXButtonMinEnabled = false;
-            this.ctlUIX1.UIXTitle = "Shack shack";
+            this.ctlUIX1.UIXTitle = "BurgerShack :: Acesso";
             // 
             // frmLogin
             // 
