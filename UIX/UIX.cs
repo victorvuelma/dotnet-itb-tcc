@@ -239,18 +239,13 @@ namespace UIX
             UIX.UIXTextBox.txtApply(txt, Style.TextBoxColor);
         }
 
-        public void frmApply(Form frm, Label lblHeader, Label lblTitle, PictureBox picLogo, Button btnClose, Button btnMin)
+        public void frmApply(Form frm, ctlUIX ctl)
         {
-            UIX.UIXForm.frmApply(frm, lblHeader, lblTitle, picLogo, btnClose, btnMin, Style);
+            UIX.UIXForm.frmApply(frm, ctl, Style);
 
-            Control[] ignore = new Control[] { lblHeader, lblTitle, picLogo, btnClose, btnMin };
-
-            foreach (Control ctl in frm.Controls)
+            foreach (Control control in frm.Controls)
             {
-                if (!ignore.Contains(ctl))
-                {
-                    this.ctlApply(ctl);
-                }
+                this.ctlApply(control);
             }
 
         }
@@ -264,20 +259,20 @@ namespace UIX
     public class UIXForm
     {
 
-        public static void frmApply(Form frm, Label lblHeader, Label lblTitle, PictureBox picLogo, Button btnClose, Button btnMin, UIXStyle style)
+        public static void frmApply(Form frm, ctlUIX ctl, UIXStyle style)
         {
             frm.FormBorderStyle = FormBorderStyle.None;
 
-            UIX.UIXHeader.hdrApply(frm, lblHeader, lblTitle, picLogo, btnClose, btnMin, style);
+            UIX.UIXHeader.hdrApply(frm, ctl, style);
 
-            UIX.UIXHeader.hdrMove(frm, new Control[] { lblHeader, lblTitle, picLogo });
+            UIX.UIXHeader.hdrMove(frm, new Control[] { ctl, ctl.lblTitulo, ctl.picFormIcon });
         }
     }
 
     public class UIXHeader
     {
 
-        public static void hdrApply(Form frm, Label lblHeader, Label lblTitle, PictureBox picLogo, Button btnClose, Button btnMin, UIXStyle style)
+        public static void hdrApply(Form frm, ctlUIX ctl, UIXStyle style)
         {
             int maxX = frm.Size.Width;
             int maxY = frm.Size.Height;
@@ -285,45 +280,41 @@ namespace UIX
             frm.BackColor = style.FormColor.LightColor;
 
             //Apply header bar Style
-            lblHeader.Text = "";
-            lblHeader.AutoSize = false;
-            lblHeader.Size = new Size(maxX, style.HeaderButtonSize + (style.HeaderButtonSpace * 2));
-            lblHeader.Location = new Point(0, 0);
-            lblHeader.BringToFront();
-            UIX.UIXLabel.lblApply(lblHeader, style.FormColor);
-            lblHeader.BackColor = style.FormColor.DarkColor;
+            ctl.Size = new Size(maxX, style.HeaderButtonSize + (style.HeaderButtonSpace * 2));
+            ctl.Location = new Point(0, 0);
+            ctl.BackColor = style.FormColor.DarkColor;
 
             //Apply header title style
-            lblTitle.Location = new Point(style.HeaderButtonSize + (style.HeaderButtonSpace * 2), 12);
-            lblTitle.BringToFront();
-            UIX.UIXLabel.lblApply(lblTitle, style.FormColor, UIX.UIXFont.LATO_BLACK(10f));
-            lblTitle.BackColor = style.FormColor.DarkColor;
+            ctl.lblTitulo.Location = new Point(style.HeaderButtonSize + (style.HeaderButtonSpace * 2), 12);
+            ctl.lblTitulo.BringToFront();
+            UIX.UIXLabel.lblApply(ctl.lblTitulo, style.FormColor, UIX.UIXFont.LATO_BLACK(10f));
+            ctl.lblTitulo.BackColor = style.FormColor.DarkColor;
 
-            picLogo.Location = new Point(style.HeaderButtonSpace, style.HeaderButtonSpace);
-            picLogo.Size = new Size(style.HeaderButtonSize, style.HeaderButtonSize);
-            picLogo.BackColor = style.FormColor.DarkColor;
-            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            picLogo.BringToFront();
+            ctl.picFormIcon.Location = new Point(style.HeaderButtonSpace, style.HeaderButtonSpace);
+            ctl.picFormIcon.Size = new Size(style.HeaderButtonSize, style.HeaderButtonSize);
+            ctl.picFormIcon.BackColor = style.FormColor.DarkColor;
+            ctl.picFormIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            ctl.picFormIcon.BringToFront();
 
             //Calculate buttons
             int nextButtonX = maxX;
             //Close button
-            if (btnClose != null)
+            if (ctl.btnSair != null)
             {
                 nextButtonX = nextButtonX - style.HeaderButtonSize - style.HeaderButtonSpace;
-                btnClose.Location = new Point(nextButtonX, style.HeaderButtonSpace);
-                btnClose.BringToFront();
+                ctl.btnSair.Location = new Point(nextButtonX, style.HeaderButtonSpace);
+                ctl.btnSair.BringToFront();
 
-                UIX.UIXButton.btnStyleClose(btnClose, style.HeaderButtonSize, style.HeaderCloseButtonColor);
+                UIX.UIXButton.btnStyleClose(ctl.btnSair, style.HeaderButtonSize, style.HeaderCloseButtonColor);
             }
             //Minimize button
-            if (btnMin != null)
+            if (ctl.btnMin != null)
             {
                 nextButtonX = nextButtonX - style.HeaderButtonSize - style.HeaderButtonSpace;
-                btnMin.Location = new Point(nextButtonX, style.HeaderButtonSpace);
-                btnMin.BringToFront();
+                ctl.btnMin.Location = new Point(nextButtonX, style.HeaderButtonSpace);
+                ctl.btnMin.BringToFront();
 
-                UIX.UIXButton.btnStyleMinimize(btnMin, style.HeaderButtonSize, style.HeaderButtonColor);
+                UIX.UIXButton.btnStyleMinimize(ctl.btnMin, style.HeaderButtonSize, style.HeaderButtonColor);
             }
         }
 

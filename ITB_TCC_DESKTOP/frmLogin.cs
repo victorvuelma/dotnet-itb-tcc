@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIX;
 
 namespace ITB_TCC_DESKTOP
 {
@@ -21,7 +22,7 @@ namespace ITB_TCC_DESKTOP
         {
             UIX.UIXTemplate _frmTemplate = new UIX.UIXTemplate(UIX.UIXStyle.SILVER, new UIX.UIXImageTemplate(null, null));
 
-            _frmTemplate.frmApply(this, lblUix, lblTitulo, picFormIcon, btnSair, null);
+            _frmTemplate.frmApply(this, ctlUIX1);
         }
 
         private void btnSair_Click(object sender, EventArgs e)
