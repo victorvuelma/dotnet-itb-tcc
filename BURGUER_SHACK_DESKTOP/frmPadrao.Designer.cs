@@ -30,8 +30,6 @@
         {
             this.lblUix = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.uctUIX = new UIX.uctUIX();
             this.uctPedido1 = new BURGUER_SHACK_DESKTOP.uctPedido();
             this.picFormIcon = new System.Windows.Forms.PictureBox();
@@ -55,26 +53,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(115, 16);
             this.lblTitulo.TabIndex = 8;
             this.lblTitulo.Text = "Burguer Shack - ???";
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Location = new System.Drawing.Point(411, 2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 34);
-            this.btnMinimizar.TabIndex = 6;
-            this.btnMinimizar.Text = "MIN";
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(462, 2);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(45, 34);
-            this.btnSair.TabIndex = 5;
-            this.btnSair.Text = "CLO";
-            this.btnSair.UseVisualStyleBackColor = true;
             // 
             // uctUIX
             // 
@@ -109,20 +87,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 711);
+            this.ClientSize = new System.Drawing.Size(510, 699);
             this.Controls.Add(this.uctPedido1);
             this.Controls.Add(this.uctUIX);
             this.Controls.Add(this.lblUix);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.picFormIcon);
-            this.Controls.Add(this.btnMinimizar);
-            this.Controls.Add(this.btnSair);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPadrao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
+            this.Load += new System.EventHandler(this.frmPadrao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFormIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,8 +114,6 @@
         private System.Windows.Forms.Label lblUix;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox picFormIcon;
-        private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnSair;
 
     }
 }

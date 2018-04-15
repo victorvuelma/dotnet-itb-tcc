@@ -28,79 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlFuncoes = new System.Windows.Forms.Panel();
             this.pnlPreco = new System.Windows.Forms.Panel();
             this.txtItens = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.grbNovoPedido = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtAlterarItens = new System.Windows.Forms.TextBox();
-            this.btnAlterarPedido = new System.Windows.Forms.Button();
-            this.pnlAlterarPreco = new System.Windows.Forms.Panel();
+            this.grbAdicionarItens = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.pnlFuncoes.SuspendLayout();
             this.grbNovoPedido.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grbAdicionarItens.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionar.Location = new System.Drawing.Point(2, 72);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(60, 60);
-            this.btnAdicionar.TabIndex = 3;
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemover.Location = new System.Drawing.Point(2, 142);
-            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(60, 60);
-            this.btnRemover.TabIndex = 4;
-            this.btnRemover.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
-            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterar.Location = new System.Drawing.Point(2, 212);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(60, 60);
-            this.btnAlterar.TabIndex = 5;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.menu;
-            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMenu.Location = new System.Drawing.Point(2, 2);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(60, 60);
-            this.btnMenu.TabIndex = 2;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.logout;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(2, 585);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(60, 60);
-            this.btnLogout.TabIndex = 6;
-            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // pnlFuncoes
             // 
@@ -145,7 +90,7 @@
             // 
             // grbNovoPedido
             // 
-            this.grbNovoPedido.Controls.Add(this.groupBox1);
+            this.grbNovoPedido.Controls.Add(this.grbAdicionarItens);
             this.grbNovoPedido.Controls.Add(this.txtItens);
             this.grbNovoPedido.Controls.Add(this.button1);
             this.grbNovoPedido.Controls.Add(this.pnlPreco);
@@ -156,44 +101,99 @@
             this.grbNovoPedido.TabStop = false;
             this.grbNovoPedido.Text = "NOVO PEDIDO";
             // 
-            // groupBox1
+            // grbAdicionarItens
             // 
-            this.groupBox1.Controls.Add(this.txtAlterarItens);
-            this.groupBox1.Controls.Add(this.btnAlterarPedido);
-            this.groupBox1.Controls.Add(this.pnlAlterarPreco);
-            this.groupBox1.Location = new System.Drawing.Point(0, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(435, 642);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ALTERAR PEDIDO";
+            this.grbAdicionarItens.Controls.Add(this.label1);
+            this.grbAdicionarItens.Controls.Add(this.txtPesquisa);
+            this.grbAdicionarItens.Location = new System.Drawing.Point(6, 20);
+            this.grbAdicionarItens.Name = "grbAdicionarItens";
+            this.grbAdicionarItens.Size = new System.Drawing.Size(423, 491);
+            this.grbAdicionarItens.TabIndex = 4;
+            this.grbAdicionarItens.TabStop = false;
+            this.grbAdicionarItens.Text = "ADICIONAR ITENS";
             // 
-            // txtAlterarItens
+            // label1
             // 
-            this.txtAlterarItens.BackColor = System.Drawing.Color.White;
-            this.txtAlterarItens.Location = new System.Drawing.Point(6, 517);
-            this.txtAlterarItens.Multiline = true;
-            this.txtAlterarItens.Name = "txtAlterarItens";
-            this.txtAlterarItens.ReadOnly = true;
-            this.txtAlterarItens.Size = new System.Drawing.Size(264, 119);
-            this.txtAlterarItens.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "NOME DO PRODUTO:";
             // 
-            // btnAlterarPedido
+            // txtPesquisa
             // 
-            this.btnAlterarPedido.Location = new System.Drawing.Point(276, 598);
-            this.btnAlterarPedido.Name = "btnAlterarPedido";
-            this.btnAlterarPedido.Size = new System.Drawing.Size(153, 38);
-            this.btnAlterarPedido.TabIndex = 3;
-            this.btnAlterarPedido.Text = "Alterar Pedido";
-            this.btnAlterarPedido.UseVisualStyleBackColor = true;
+            this.txtPesquisa.Location = new System.Drawing.Point(137, 20);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(280, 21);
+            this.txtPesquisa.TabIndex = 0;
             // 
-            // pnlAlterarPreco
+            // dataGridViewImageColumn1
             // 
-            this.pnlAlterarPreco.BackColor = System.Drawing.Color.White;
-            this.pnlAlterarPreco.Location = new System.Drawing.Point(276, 517);
-            this.pnlAlterarPreco.Name = "pnlAlterarPreco";
-            this.pnlAlterarPreco.Size = new System.Drawing.Size(153, 75);
-            this.pnlAlterarPreco.TabIndex = 2;
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.FillWeight = 200F;
+            this.dataGridViewImageColumn1.HeaderText = "TESTE 1";
+            this.dataGridViewImageColumn1.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 70;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.logout;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Location = new System.Drawing.Point(2, 585);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(60, 60);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.menu;
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenu.Location = new System.Drawing.Point(2, 10);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(60, 60);
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAlterar.Location = new System.Drawing.Point(2, 220);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(60, 60);
+            this.btnAlterar.TabIndex = 5;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemover.Location = new System.Drawing.Point(2, 150);
+            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(60, 60);
+            this.btnRemover.TabIndex = 4;
+            this.btnRemover.UseVisualStyleBackColor = true;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionar.Location = new System.Drawing.Point(2, 80);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(60, 60);
+            this.btnAdicionar.TabIndex = 3;
+            this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // uctPedido
             // 
@@ -208,8 +208,8 @@
             this.pnlFuncoes.ResumeLayout(false);
             this.grbNovoPedido.ResumeLayout(false);
             this.grbNovoPedido.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbAdicionarItens.ResumeLayout(false);
+            this.grbAdicionarItens.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -225,9 +225,9 @@
         private System.Windows.Forms.TextBox txtItens;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox grbNovoPedido;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtAlterarItens;
-        private System.Windows.Forms.Button btnAlterarPedido;
-        private System.Windows.Forms.Panel pnlAlterarPreco;
+        private System.Windows.Forms.GroupBox grbAdicionarItens;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
