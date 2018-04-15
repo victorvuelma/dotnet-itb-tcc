@@ -54,7 +54,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpListaPedidos = new System.Windows.Forms.GroupBox();
             this.dgvListaPedidos = new System.Windows.Forms.DataGridView();
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.txtIdPedido = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos2)).BeginInit();
             this.grbRemoverProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho2)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grpListaPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -260,6 +260,7 @@
             this.btnPedidos.Size = new System.Drawing.Size(60, 60);
             this.btnPedidos.TabIndex = 7;
             this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // btnLogout
             // 
@@ -331,17 +332,17 @@
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // groupBox1
+            // grpListaPedidos
             // 
-            this.groupBox1.Controls.Add(this.dgvListaPedidos);
-            this.groupBox1.Controls.Add(this.lblIdPedido);
-            this.groupBox1.Controls.Add(this.txtIdPedido);
-            this.groupBox1.Location = new System.Drawing.Point(70, 10);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 510);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "LISTA DE PEDIDOS";
+            this.grpListaPedidos.Controls.Add(this.dgvListaPedidos);
+            this.grpListaPedidos.Controls.Add(this.lblIdPedido);
+            this.grpListaPedidos.Controls.Add(this.txtIdPedido);
+            this.grpListaPedidos.Location = new System.Drawing.Point(70, 10);
+            this.grpListaPedidos.Name = "grpListaPedidos";
+            this.grpListaPedidos.Size = new System.Drawing.Size(423, 130);
+            this.grpListaPedidos.TabIndex = 6;
+            this.grpListaPedidos.TabStop = false;
+            this.grpListaPedidos.Text = "LISTA DE PEDIDOS";
             // 
             // dgvListaPedidos
             // 
@@ -357,13 +358,14 @@
             this.lblIdPedido.AutoSize = true;
             this.lblIdPedido.Location = new System.Drawing.Point(6, 23);
             this.lblIdPedido.Name = "lblIdPedido";
-            this.lblIdPedido.Size = new System.Drawing.Size(85, 16);
+            this.lblIdPedido.Size = new System.Drawing.Size(88, 16);
             this.lblIdPedido.TabIndex = 1;
-            this.lblIdPedido.Text = "ID DO PEDIDO";
+            this.lblIdPedido.Text = "ID DO PEDIDO:";
             // 
             // txtIdPedido
             // 
             this.txtIdPedido.Location = new System.Drawing.Point(105, 23);
+            this.txtIdPedido.MaxLength = 4;
             this.txtIdPedido.Name = "txtIdPedido";
             this.txtIdPedido.Size = new System.Drawing.Size(70, 21);
             this.txtIdPedido.TabIndex = 0;
@@ -372,7 +374,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpListaPedidos);
             this.Controls.Add(this.ltbProdutos);
             this.Controls.Add(this.grbAlterarItens);
             this.Controls.Add(this.grbRemoverProduto);
@@ -396,8 +398,8 @@
             this.grbRemoverProduto.ResumeLayout(false);
             this.grbRemoverProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpListaPedidos.ResumeLayout(false);
+            this.grpListaPedidos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPedidos)).EndInit();
             this.ResumeLayout(false);
 
@@ -430,7 +432,7 @@
         private System.Windows.Forms.TextBox txtPesquisar3;
         private System.Windows.Forms.ListBox ltbProdutos;
         private System.Windows.Forms.Button btnPedidos;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpListaPedidos;
         private System.Windows.Forms.DataGridView dgvListaPedidos;
         private System.Windows.Forms.Label lblIdPedido;
         private System.Windows.Forms.TextBox txtIdPedido;

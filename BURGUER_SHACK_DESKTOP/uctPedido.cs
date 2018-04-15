@@ -24,6 +24,7 @@ namespace BURGUER_SHACK_DESKTOP
             grbAlterarItens.Visible = false;
             grbRemoverProduto.Visible = false;
             grbAdicionarItens.Visible = false;
+            grpListaPedidos.Visible = false;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             grbAlterarItens.Visible = false;
             grbRemoverProduto.Visible = false;
+            grpListaPedidos.Visible = false;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             grbAdicionarItens.Visible = false;
             grbRemoverProduto.Visible = false;
+            grpListaPedidos.Visible = false;
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -60,6 +63,19 @@ namespace BURGUER_SHACK_DESKTOP
 
             grbAdicionarItens.Visible = false;
             grbAlterarItens.Visible = false;
+            grpListaPedidos.Visible = false;
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            btnPedido.Text = "Lista de Pedidos";
+            grpListaPedidos.Visible = true;
+            grpListaPedidos.Location = new Point(70, 3);
+            grpListaPedidos.Size = new Size(423, 510);
+
+            grbAdicionarItens.Visible = false;
+            grbAlterarItens.Visible = false;
+            grbRemoverProduto.Visible = false;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -69,5 +85,6 @@ namespace BURGUER_SHACK_DESKTOP
                 Application.Restart();
             }
         }
+
     }
 }
