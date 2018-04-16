@@ -30,9 +30,10 @@
         {
             this.uctUIX = new UIX.uctUIX();
             this.pnlLeftButtons = new System.Windows.Forms.Panel();
+            this.btnAlterarPedido = new System.Windows.Forms.Button();
             this.btnNovoPedido = new System.Windows.Forms.Button();
             this.uctPedidoNovo = new BURGUER_SHACK_DESKTOP.uctPedidoNovo();
-            this.btnAlterarPedido = new System.Windows.Forms.Button();
+            this.uctPedidoAlterar = new BURGUER_SHACK_DESKTOP.uctPedidoAlterar();
             this.pnlLeftButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,17 @@
             this.pnlLeftButtons.Size = new System.Drawing.Size(70, 756);
             this.pnlLeftButtons.TabIndex = 2;
             // 
+            // btnAlterarPedido
+            // 
+            this.btnAlterarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnAlterarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAlterarPedido.Location = new System.Drawing.Point(0, 99);
+            this.btnAlterarPedido.Name = "btnAlterarPedido";
+            this.btnAlterarPedido.Size = new System.Drawing.Size(70, 70);
+            this.btnAlterarPedido.TabIndex = 1;
+            this.btnAlterarPedido.UseVisualStyleBackColor = true;
+            this.btnAlterarPedido.Click += new System.EventHandler(this.btnAlterarPedido_Click);
+            // 
             // btnNovoPedido
             // 
             this.btnNovoPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
@@ -71,27 +83,27 @@
             // uctPedidoNovo
             // 
             this.uctPedidoNovo.AutoSize = true;
-            this.uctPedidoNovo.Location = new System.Drawing.Point(69, 47);
+            this.uctPedidoNovo.Location = new System.Drawing.Point(70, 47);
             this.uctPedidoNovo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctPedidoNovo.Name = "uctPedidoNovo";
             this.uctPedidoNovo.Size = new System.Drawing.Size(502, 745);
             this.uctPedidoNovo.TabIndex = 3;
             // 
-            // btnAlterarPedido
+            // uctPedidoAlterar
             // 
-            this.btnAlterarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnAlterarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterarPedido.Location = new System.Drawing.Point(0, 99);
-            this.btnAlterarPedido.Name = "btnAlterarPedido";
-            this.btnAlterarPedido.Size = new System.Drawing.Size(70, 70);
-            this.btnAlterarPedido.TabIndex = 1;
-            this.btnAlterarPedido.UseVisualStyleBackColor = true;
+            this.uctPedidoAlterar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.uctPedidoAlterar.Location = new System.Drawing.Point(70, 47);
+            this.uctPedidoAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctPedidoAlterar.Name = "uctPedidoAlterar";
+            this.uctPedidoAlterar.Size = new System.Drawing.Size(502, 746);
+            this.uctPedidoAlterar.TabIndex = 4;
             // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 794);
+            this.ClientSize = new System.Drawing.Size(573, 794);
+            this.Controls.Add(this.uctPedidoAlterar);
             this.Controls.Add(this.uctPedidoNovo);
             this.Controls.Add(this.pnlLeftButtons);
             this.Controls.Add(this.uctUIX);
@@ -115,5 +127,6 @@
         private System.Windows.Forms.Button btnNovoPedido;
         private uctPedidoNovo uctPedidoNovo;
         private System.Windows.Forms.Button btnAlterarPedido;
+        private uctPedidoAlterar uctPedidoAlterar;
     }
 }

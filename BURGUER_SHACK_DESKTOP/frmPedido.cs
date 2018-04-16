@@ -27,7 +27,15 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
             uctPedidoNovo.Visible = true;
+            uctPedidoAlterar.Visible = false;
             uctUIX.UIXTitle = tplBurguerShack.AppName + " - Novo Pedido";
+        }
+
+        private void btnAlterarPedido_Click(object sender, EventArgs e)
+        {
+            uctPedidoNovo.Visible = false;
+            uctPedidoAlterar.Visible = true;
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Alterar Pedido";
         }
     }
 }
