@@ -16,6 +16,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
             uctPedidoNovo.Visible = false;
+            uctPedidoAlterar.Visible = false;
+            uctProdutoRemover.Visible = false;
         }
 
         private void frmPedido_Load(object sender, EventArgs e)
@@ -28,6 +30,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctPedidoNovo.Visible = true;
             uctPedidoAlterar.Visible = false;
+            uctProdutoRemover.Visible = false;
             uctUIX.UIXTitle = tplBurguerShack.AppName + " - Novo Pedido";
         }
 
@@ -35,6 +38,15 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctPedidoNovo.Visible = false;
             uctPedidoAlterar.Visible = true;
+            uctProdutoRemover.Visible = false;
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Alterar Pedido";
+        }
+
+        private void btnPedidoRemover_Click(object sender, EventArgs e)
+        {
+            uctPedidoAlterar.Visible = false;
+            uctPedidoNovo.Visible = false;
+            uctProdutoRemover.Visible = true;
             uctUIX.UIXTitle = tplBurguerShack.AppName + " - Alterar Pedido";
         }
     }

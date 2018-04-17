@@ -90,6 +90,12 @@
     <Compile Include="uctPedidoNovo.Designer.cs">
       <DependentUpon>uctPedidoNovo.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctProdutoRemover.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctProdutoRemover.Designer.cs">
+      <DependentUpon>uctProdutoRemover.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoNovo.resx">
       <DependentUpon>uctPedidoNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctProdutoRemover.resx">
+      <DependentUpon>uctProdutoRemover.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\BURGUER_SHACK_DESKTOP.Properties.Resources.datasource" />
     <None Include="Properties\Settings.settings">
@@ -167,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pedidos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removerpedido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedidos1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
