@@ -10,19 +10,18 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class frmPadrao : Form
+    public partial class frmCozinha : Form
     {
-        public frmPadrao()
+        public frmCozinha()
         {
             InitializeComponent();
         }
 
-        private void frmPadrao_Load(object sender, EventArgs e)
+        private void frmCozinha_Load(object sender, EventArgs e)
         {
-            uctPedido1.Visible = true;
-            uctPedido1.Location = new Point(0, 49);
+            UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER, tplBurguerShack.CommonImageTemplate);
 
-            tplBurguerShack.CommonTemplate.frmApply(this, uctUIX);
+            tplBurguerShack.CommonTemplate.frmApply(this, uctUIX1);
         }
     }
 }

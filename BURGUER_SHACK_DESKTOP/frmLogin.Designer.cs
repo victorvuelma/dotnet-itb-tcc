@@ -30,7 +30,7 @@
         {
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblESenha = new System.Windows.Forms.Label();
@@ -55,25 +55,26 @@
             this.lblSenha.TabIndex = 6;
             this.lblSenha.Text = "SENHA";
             // 
-            // txtLogin
+            // txtNome
             // 
-            this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLogin.Location = new System.Drawing.Point(97, 93);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(246, 21);
-            this.txtLogin.TabIndex = 7;
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Location = new System.Drawing.Point(97, 93);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(246, 21);
+            this.txtNome.TabIndex = 7;
             // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSenha.Location = new System.Drawing.Point(97, 119);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(246, 21);
             this.txtSenha.TabIndex = 8;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(271, 139);
+            this.btnLogin.Location = new System.Drawing.Point(271, 140);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(72, 26);
@@ -113,7 +114,7 @@
             this.Controls.Add(this.lblESenha);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,7 +132,7 @@
         #endregion
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblESenha;

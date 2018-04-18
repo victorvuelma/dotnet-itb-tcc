@@ -23,10 +23,5 @@ namespace BURGUER_SHACK_DESKTOP
 
             tplBurguerShack.CommonTemplate.frmApply(this, ctlUIX1);
         }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

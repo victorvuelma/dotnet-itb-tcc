@@ -28,32 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uctUIX = new UIX.uctUIX();
             this.pnlLeftButtons = new System.Windows.Forms.Panel();
-            this.uctPedidoAlterar = new BURGUER_SHACK_DESKTOP.uctPedidoAlterar();
+            this.btnPedidos = new System.Windows.Forms.Button();
             this.btnApagarPedido = new System.Windows.Forms.Button();
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.btnAlterarPedido = new System.Windows.Forms.Button();
             this.btnNovoPedido = new System.Windows.Forms.Button();
-            this.uctPedidoNovo = new BURGUER_SHACK_DESKTOP.uctPedidoNovo();
+            this.uctUIX = new UIX.uctUIX();
+            this.uctPedidos = new BURGUER_SHACK_DESKTOP.uctPedidos();
+            this.uctPedidoRemover = new BURGUER_SHACK_DESKTOP.uctPedidoRemover();
             this.uctProdutoRemover = new BURGUER_SHACK_DESKTOP.uctProdutoRemover();
+            this.uctPedidoNovo = new BURGUER_SHACK_DESKTOP.uctPedidoNovo();
+            this.uctPedidoAlterar = new BURGUER_SHACK_DESKTOP.uctPedidoAlterar();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlLeftButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uctUIX
-            // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(250, 32);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = true;
-            this.uctUIX.UIXTitle = "Titulo UIX";
-            // 
             // pnlLeftButtons
             // 
+            this.pnlLeftButtons.Controls.Add(this.btnLogout);
+            this.pnlLeftButtons.Controls.Add(this.btnPedidos);
             this.pnlLeftButtons.Controls.Add(this.btnApagarPedido);
             this.pnlLeftButtons.Controls.Add(this.btnRemoverProduto);
             this.pnlLeftButtons.Controls.Add(this.btnAlterarPedido);
@@ -63,14 +57,16 @@
             this.pnlLeftButtons.Size = new System.Drawing.Size(70, 756);
             this.pnlLeftButtons.TabIndex = 2;
             // 
-            // uctPedidoAlterar
+            // btnPedidos
             // 
-            this.uctPedidoAlterar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.uctPedidoAlterar.Location = new System.Drawing.Point(70, 38);
-            this.uctPedidoAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctPedidoAlterar.Name = "uctPedidoAlterar";
-            this.uctPedidoAlterar.Size = new System.Drawing.Size(502, 746);
-            this.uctPedidoAlterar.TabIndex = 4;
+            this.btnPedidos.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedidos;
+            this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPedidos.Location = new System.Drawing.Point(0, 327);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(70, 70);
+            this.btnPedidos.TabIndex = 4;
+            this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // btnApagarPedido
             // 
@@ -81,6 +77,7 @@
             this.btnApagarPedido.Size = new System.Drawing.Size(70, 70);
             this.btnApagarPedido.TabIndex = 3;
             this.btnApagarPedido.UseVisualStyleBackColor = true;
+            this.btnApagarPedido.Click += new System.EventHandler(this.btnApagarPedido_Click);
             // 
             // btnRemoverProduto
             // 
@@ -115,6 +112,42 @@
             this.btnNovoPedido.UseVisualStyleBackColor = true;
             this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
             // 
+            // uctUIX
+            // 
+            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.uctUIX.Location = new System.Drawing.Point(0, 0);
+            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uctUIX.Name = "uctUIX";
+            this.uctUIX.Size = new System.Drawing.Size(250, 32);
+            this.uctUIX.TabIndex = 0;
+            this.uctUIX.UIXButtonCloseEnabled = true;
+            this.uctUIX.UIXButtonMinEnabled = true;
+            this.uctUIX.UIXTitle = "Titulo UIX";
+            // 
+            // uctPedidos
+            // 
+            this.uctPedidos.Location = new System.Drawing.Point(70, 38);
+            this.uctPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctPedidos.Name = "uctPedidos";
+            this.uctPedidos.Size = new System.Drawing.Size(510, 767);
+            this.uctPedidos.TabIndex = 8;
+            // 
+            // uctPedidoRemover
+            // 
+            this.uctPedidoRemover.Location = new System.Drawing.Point(70, 38);
+            this.uctPedidoRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctPedidoRemover.Name = "uctPedidoRemover";
+            this.uctPedidoRemover.Size = new System.Drawing.Size(522, 756);
+            this.uctPedidoRemover.TabIndex = 7;
+            // 
+            // uctProdutoRemover
+            // 
+            this.uctProdutoRemover.Location = new System.Drawing.Point(70, 38);
+            this.uctProdutoRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctProdutoRemover.Name = "uctProdutoRemover";
+            this.uctProdutoRemover.Size = new System.Drawing.Size(510, 756);
+            this.uctProdutoRemover.TabIndex = 6;
+            // 
             // uctPedidoNovo
             // 
             this.uctPedidoNovo.AutoSize = true;
@@ -124,19 +157,33 @@
             this.uctPedidoNovo.Size = new System.Drawing.Size(502, 745);
             this.uctPedidoNovo.TabIndex = 5;
             // 
-            // uctProdutoRemover
+            // uctPedidoAlterar
             // 
-            this.uctProdutoRemover.Location = new System.Drawing.Point(70, 38);
-            this.uctProdutoRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctProdutoRemover.Name = "uctProdutoRemover";
-            this.uctProdutoRemover.Size = new System.Drawing.Size(502, 756);
-            this.uctProdutoRemover.TabIndex = 6;
+            this.uctPedidoAlterar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.uctPedidoAlterar.Location = new System.Drawing.Point(70, 38);
+            this.uctPedidoAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctPedidoAlterar.Name = "uctPedidoAlterar";
+            this.uctPedidoAlterar.Size = new System.Drawing.Size(502, 746);
+            this.uctPedidoAlterar.TabIndex = 4;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.logout;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Location = new System.Drawing.Point(0, 671);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(70, 70);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 794);
+            this.Controls.Add(this.uctPedidos);
+            this.Controls.Add(this.uctPedidoRemover);
             this.Controls.Add(this.uctProdutoRemover);
             this.Controls.Add(this.uctPedidoNovo);
             this.Controls.Add(this.uctPedidoAlterar);
@@ -166,6 +213,10 @@
         private System.Windows.Forms.Button btnApagarPedido;
         private uctPedidoNovo uctPedidoNovo;
         private uctProdutoRemover uctProdutoRemover;
+        private uctPedidoRemover uctPedidoRemover;
+        private System.Windows.Forms.Button btnPedidos;
+        private uctPedidos uctPedidos;
+        private System.Windows.Forms.Button btnLogout;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }
