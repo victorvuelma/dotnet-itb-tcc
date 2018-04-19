@@ -51,6 +51,12 @@
     <Compile Include="frmCozinha.Designer.cs">
       <DependentUpon>frmCozinha.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGerenciador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGerenciador.Designer.cs">
+      <DependentUpon>frmGerenciador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="frmCozinha.resx">
       <DependentUpon>frmCozinha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGerenciador.resx">
+      <DependentUpon>frmGerenciador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
