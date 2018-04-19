@@ -32,12 +32,17 @@
             this.uctUIX = new UIX.uctUIX();
             this.pnlLeftButtons = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnPedidos = new System.Windows.Forms.Button();
-            this.btnApagarPedido = new System.Windows.Forms.Button();
-            this.btnRemoverProduto = new System.Windows.Forms.Button();
-            this.btnAlterarPedido = new System.Windows.Forms.Button();
-            this.btnNovoPedido = new System.Windows.Forms.Button();
+            this.btnLista = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.grpAdicionar = new System.Windows.Forms.GroupBox();
+            this.btnProduto = new System.Windows.Forms.Button();
+            this.btnTercerizada = new System.Windows.Forms.Button();
+            this.btnTransportadora = new System.Windows.Forms.Button();
+            this.btnFuncionario = new System.Windows.Forms.Button();
             this.pnlLeftButtons.SuspendLayout();
+            this.grpAdicionar.SuspendLayout();
             this.SuspendLayout();
             // 
             // uctUIX
@@ -54,11 +59,10 @@
             // pnlLeftButtons
             // 
             this.pnlLeftButtons.Controls.Add(this.btnLogout);
-            this.pnlLeftButtons.Controls.Add(this.btnPedidos);
-            this.pnlLeftButtons.Controls.Add(this.btnApagarPedido);
-            this.pnlLeftButtons.Controls.Add(this.btnRemoverProduto);
-            this.pnlLeftButtons.Controls.Add(this.btnAlterarPedido);
-            this.pnlLeftButtons.Controls.Add(this.btnNovoPedido);
+            this.pnlLeftButtons.Controls.Add(this.btnLista);
+            this.pnlLeftButtons.Controls.Add(this.btnRemover);
+            this.pnlLeftButtons.Controls.Add(this.btnModificar);
+            this.pnlLeftButtons.Controls.Add(this.btnAdicionar);
             this.pnlLeftButtons.Location = new System.Drawing.Point(0, 39);
             this.pnlLeftButtons.Name = "pnlLeftButtons";
             this.pnlLeftButtons.Size = new System.Drawing.Size(70, 545);
@@ -74,55 +78,102 @@
             this.btnLogout.TabIndex = 5;
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // btnPedidos
+            // btnLista
             // 
-            this.btnPedidos.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedidos;
-            this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPedidos.Location = new System.Drawing.Point(0, 307);
-            this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Size = new System.Drawing.Size(70, 70);
-            this.btnPedidos.TabIndex = 4;
-            this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnLista.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista1;
+            this.btnLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLista.Location = new System.Drawing.Point(0, 229);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(70, 70);
+            this.btnLista.TabIndex = 4;
+            this.btnLista.UseVisualStyleBackColor = true;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
-            // btnApagarPedido
+            // btnRemover
             // 
-            this.btnApagarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.removerpedido;
-            this.btnApagarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnApagarPedido.Location = new System.Drawing.Point(0, 231);
-            this.btnApagarPedido.Name = "btnApagarPedido";
-            this.btnApagarPedido.Size = new System.Drawing.Size(70, 70);
-            this.btnApagarPedido.TabIndex = 3;
-            this.btnApagarPedido.UseVisualStyleBackColor = true;
+            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
+            this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemover.Location = new System.Drawing.Point(0, 153);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(70, 70);
+            this.btnRemover.TabIndex = 2;
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
-            // btnRemoverProduto
+            // btnModificar
             // 
-            this.btnRemoverProduto.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
-            this.btnRemoverProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoverProduto.Location = new System.Drawing.Point(0, 155);
-            this.btnRemoverProduto.Name = "btnRemoverProduto";
-            this.btnRemoverProduto.Size = new System.Drawing.Size(70, 70);
-            this.btnRemoverProduto.TabIndex = 2;
-            this.btnRemoverProduto.UseVisualStyleBackColor = true;
+            this.btnModificar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModificar.Location = new System.Drawing.Point(0, 77);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(70, 70);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // btnAlterarPedido
+            // btnAdicionar
             // 
-            this.btnAlterarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnAlterarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterarPedido.Location = new System.Drawing.Point(0, 79);
-            this.btnAlterarPedido.Name = "btnAlterarPedido";
-            this.btnAlterarPedido.Size = new System.Drawing.Size(70, 70);
-            this.btnAlterarPedido.TabIndex = 1;
-            this.btnAlterarPedido.UseVisualStyleBackColor = true;
+            this.btnAdicionar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionar.Location = new System.Drawing.Point(0, 1);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(70, 70);
+            this.btnAdicionar.TabIndex = 0;
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // btnNovoPedido
+            // grpAdicionar
             // 
-            this.btnNovoPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnNovoPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNovoPedido.Location = new System.Drawing.Point(0, 3);
-            this.btnNovoPedido.Name = "btnNovoPedido";
-            this.btnNovoPedido.Size = new System.Drawing.Size(70, 70);
-            this.btnNovoPedido.TabIndex = 0;
-            this.btnNovoPedido.UseVisualStyleBackColor = true;
+            this.grpAdicionar.Controls.Add(this.btnProduto);
+            this.grpAdicionar.Controls.Add(this.btnFuncionario);
+            this.grpAdicionar.Controls.Add(this.btnTransportadora);
+            this.grpAdicionar.Controls.Add(this.btnTercerizada);
+            this.grpAdicionar.Location = new System.Drawing.Point(76, 40);
+            this.grpAdicionar.Name = "grpAdicionar";
+            this.grpAdicionar.Size = new System.Drawing.Size(818, 54);
+            this.grpAdicionar.TabIndex = 4;
+            this.grpAdicionar.TabStop = false;
+            this.grpAdicionar.Text = "ADICIONAR";
+            this.grpAdicionar.Visible = false;
+            // 
+            // btnProduto
+            // 
+            this.btnProduto.Location = new System.Drawing.Point(319, 20);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(90, 23);
+            this.btnProduto.TabIndex = 3;
+            this.btnProduto.Text = "Produto";
+            this.btnProduto.UseVisualStyleBackColor = true;
+            // 
+            // btnTercerizada
+            // 
+            this.btnTercerizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTercerizada.Location = new System.Drawing.Point(223, 20);
+            this.btnTercerizada.Name = "btnTercerizada";
+            this.btnTercerizada.Size = new System.Drawing.Size(90, 23);
+            this.btnTercerizada.TabIndex = 2;
+            this.btnTercerizada.Text = "Tercerizada";
+            this.btnTercerizada.UseVisualStyleBackColor = true;
+            // 
+            // btnTransportadora
+            // 
+            this.btnTransportadora.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransportadora.Location = new System.Drawing.Point(102, 20);
+            this.btnTransportadora.Name = "btnTransportadora";
+            this.btnTransportadora.Size = new System.Drawing.Size(115, 23);
+            this.btnTransportadora.TabIndex = 1;
+            this.btnTransportadora.Text = "Transportadora";
+            this.btnTransportadora.UseVisualStyleBackColor = true;
+            // 
+            // btnFuncionario
+            // 
+            this.btnFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuncionario.Location = new System.Drawing.Point(6, 20);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(90, 23);
+            this.btnFuncionario.TabIndex = 0;
+            this.btnFuncionario.Text = "Funcionário";
+            this.btnFuncionario.UseVisualStyleBackColor = true;
             // 
             // frmGerenciador
             // 
@@ -130,6 +181,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 584);
             this.Controls.Add(this.pnlLeftButtons);
+            this.Controls.Add(this.grpAdicionar);
             this.Controls.Add(this.uctUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -138,6 +190,7 @@
             this.Text = "Gerenciador";
             this.Load += new System.EventHandler(this.frmGerenciador_Load);
             this.pnlLeftButtons.ResumeLayout(false);
+            this.grpAdicionar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -147,10 +200,14 @@
         private UIX.uctUIX uctUIX;
         private System.Windows.Forms.Panel pnlLeftButtons;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnPedidos;
-        private System.Windows.Forms.Button btnApagarPedido;
-        private System.Windows.Forms.Button btnRemoverProduto;
-        private System.Windows.Forms.Button btnAlterarPedido;
-        private System.Windows.Forms.Button btnNovoPedido;
+        private System.Windows.Forms.Button btnLista;
+        private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.GroupBox grpAdicionar;
+        private System.Windows.Forms.Button btnTransportadora;
+        private System.Windows.Forms.Button btnFuncionario;
+        private System.Windows.Forms.Button btnTercerizada;
+        private System.Windows.Forms.Button btnProduto;
     }
 }

@@ -22,5 +22,29 @@ namespace BURGUER_SHACK_DESKTOP
             uctUIX.UIXTitle = tplBurguerShack.AppName + " - Gerenciamento";
             tplBurguerShack.CommonTemplate.frmApply(this, uctUIX);
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            grpAdicionar.Visible = true;
+            grpAdicionar.Text = "ADICIONAR";
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            grpAdicionar.Visible = true;
+            grpAdicionar.Text = "MODIFICAR";
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            grpAdicionar.Visible = true;
+            grpAdicionar.Text = "REMOVER";
+        }
+
+        private void btnLista_Click(object sender, EventArgs e)
+        {
+            grpAdicionar.Visible = true;
+            grpAdicionar.Text = "LISTA";
+        }
     }
 }
