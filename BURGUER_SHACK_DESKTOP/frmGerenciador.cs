@@ -26,6 +26,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            EsconderControles();
             grpFuncao.Visible = true;
             grpFuncao.Text = "ADICIONAR";
 
@@ -35,6 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            EsconderControles();
             grpFuncao.Visible = true;
             grpFuncao.Text = "MODIFICAR";
 
@@ -44,6 +46,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
+            EsconderControles();
             grpFuncao.Visible = true;
             grpFuncao.Text = "REMOVER";
 
@@ -53,6 +56,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnLista_Click(object sender, EventArgs e)
         {
+            EsconderControles();
             grpFuncao.Visible = true;
             grpFuncao.Text = "LISTA";
 
@@ -90,25 +94,27 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void VerificaFuncao()
         {
-            if (grpFuncao.Text == "ADICIONAR")
+            if (grpFuncao.Text == "ADICIONAR" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
             {
                 uctFuncionario.Visible = true;
             }
-            else if (grpFuncao.Text == "MODIFICAR")
+            else if (grpFuncao.Text == "MODIFICAR" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
             {
-                /* POR O CODIGO PARA DEIXAR OS TEXTBOX NÃO MODIFICAVEIS AQUI
-                 * NÃO UTILIZAR uctFuncionario.Enable = false; PORQUE DEIXARÁ AS LABEL PRETAS
-                 * TENTAR DEIXAR SOMENTE AS TEXTBOX DESABILITADAS
-                 */
+                uctFuncionario.Visible = true;
             }
-            else if (grpFuncao.Text == "REMOVER")
+            else if (grpFuncao.Text == "REMOVER" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
             {
+                uctFuncionario.Visible = true;
+            }
+            else if (grpFuncao.Text == "LISTA" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
+            {
+                uctFuncionario.Visible = true;
+            }
+        }
 
-            }
-            else
-            {
-
-            }
+        private void EsconderControles()
+        {
+            uctFuncionario.Visible = false;
         }
     }
 }

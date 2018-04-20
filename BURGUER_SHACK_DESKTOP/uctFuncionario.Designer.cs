@@ -165,7 +165,7 @@
             // 
             // mtbCPF
             // 
-            this.mtbCPF.Location = new System.Drawing.Point(47, 59);
+            this.mtbCPF.Location = new System.Drawing.Point(47, 51);
             this.mtbCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbCPF.Mask = "000.000.000-00";
             this.mtbCPF.Name = "mtbCPF";
@@ -175,7 +175,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 59);
+            this.label4.Location = new System.Drawing.Point(9, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 16);
             this.label4.TabIndex = 8;
@@ -196,7 +196,7 @@
             this.grbDadosPessoais.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbDadosPessoais.Name = "grbDadosPessoais";
             this.grbDadosPessoais.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDadosPessoais.Size = new System.Drawing.Size(810, 90);
+            this.grbDadosPessoais.Size = new System.Drawing.Size(810, 81);
             this.grbDadosPessoais.TabIndex = 1;
             this.grbDadosPessoais.TabStop = false;
             this.grbDadosPessoais.Text = "DADOS PESSOAIS *";
@@ -214,7 +214,7 @@
             this.grpContatos.Controls.Add(this.txtEmail);
             this.grpContatos.Controls.Add(this.label6);
             this.grpContatos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpContatos.Location = new System.Drawing.Point(3, 118);
+            this.grpContatos.Location = new System.Drawing.Point(3, 109);
             this.grpContatos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpContatos.Name = "grpContatos";
             this.grpContatos.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -330,11 +330,11 @@
             this.grpEndereco.Controls.Add(this.txtEndereco);
             this.grpEndereco.Controls.Add(this.label14);
             this.grpEndereco.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEndereco.Location = new System.Drawing.Point(3, 213);
+            this.grpEndereco.Location = new System.Drawing.Point(3, 204);
             this.grpEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpEndereco.Name = "grpEndereco";
             this.grpEndereco.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpEndereco.Size = new System.Drawing.Size(810, 98);
+            this.grpEndereco.Size = new System.Drawing.Size(810, 84);
             this.grpEndereco.TabIndex = 3;
             this.grpEndereco.TabStop = false;
             this.grpEndereco.Text = "ENDEREÇO *";
@@ -477,7 +477,7 @@
             this.grpBeneficios.Controls.Add(this.cboAssMedica);
             this.grpBeneficios.Controls.Add(this.label23);
             this.grpBeneficios.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBeneficios.Location = new System.Drawing.Point(3, 385);
+            this.grpBeneficios.Location = new System.Drawing.Point(3, 362);
             this.grpBeneficios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpBeneficios.Name = "grpBeneficios";
             this.grpBeneficios.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -595,7 +595,7 @@
             this.grpFuncionario.Controls.Add(this.label24);
             this.grpFuncionario.Controls.Add(this.label25);
             this.grpFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpFuncionario.Location = new System.Drawing.Point(3, 319);
+            this.grpFuncionario.Location = new System.Drawing.Point(3, 296);
             this.grpFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpFuncionario.Name = "grpFuncionario";
             this.grpFuncionario.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
