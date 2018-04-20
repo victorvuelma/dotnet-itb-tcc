@@ -15,6 +15,7 @@ namespace BURGUER_SHACK_DESKTOP
         public frmGerenciador()
         {
             InitializeComponent();
+            uctFuncionario.Visible = false;
         }
 
         private void frmGerenciador_Load(object sender, EventArgs e)
@@ -25,26 +26,89 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            grpAdicionar.Visible = true;
-            grpAdicionar.Text = "ADICIONAR";
+            grpFuncao.Visible = true;
+            grpFuncao.Text = "ADICIONAR";
+
+            uctFuncionario.lblId.Visible = false;
+            uctFuncionario.txtPesquisa.Visible = false;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            grpAdicionar.Visible = true;
-            grpAdicionar.Text = "MODIFICAR";
+            grpFuncao.Visible = true;
+            grpFuncao.Text = "MODIFICAR";
+
+            uctFuncionario.lblId.Visible = true;
+            uctFuncionario.txtPesquisa.Visible = true;
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            grpAdicionar.Visible = true;
-            grpAdicionar.Text = "REMOVER";
+            grpFuncao.Visible = true;
+            grpFuncao.Text = "REMOVER";
+
+            uctFuncionario.lblId.Visible = true;
+            uctFuncionario.txtPesquisa.Visible = true;
         }
 
         private void btnLista_Click(object sender, EventArgs e)
         {
-            grpAdicionar.Visible = true;
-            grpAdicionar.Text = "LISTA";
+            grpFuncao.Visible = true;
+            grpFuncao.Text = "LISTA";
+
+            uctFuncionario.lblId.Visible = true;
+            uctFuncionario.txtPesquisa.Visible = true;
+        }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Funcionário";
+
+            VerificaFuncao();
+        }
+
+        private void btnTransportadora_Click(object sender, EventArgs e)
+        {
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Transportadora";
+
+            VerificaFuncao();
+        }
+
+        private void btnTercerizada_Click(object sender, EventArgs e)
+        {
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Tercerizada";
+
+            VerificaFuncao();
+        }
+
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Produto";
+
+            VerificaFuncao();
+        }
+
+        private void VerificaFuncao()
+        {
+            if (grpFuncao.Text == "ADICIONAR")
+            {
+                uctFuncionario.Visible = true;
+            }
+            else if (grpFuncao.Text == "MODIFICAR")
+            {
+                /* POR O CODIGO PARA DEIXAR OS TEXTBOX NÃO MODIFICAVEIS AQUI
+                 * NÃO UTILIZAR uctFuncionario.Enable = false; PORQUE DEIXARÁ AS LABEL PRETAS
+                 * TENTAR DEIXAR SOMENTE AS TEXTBOX DESABILITADAS
+                 */
+            }
+            else if (grpFuncao.Text == "REMOVER")
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }
