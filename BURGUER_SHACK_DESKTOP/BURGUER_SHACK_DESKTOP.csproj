@@ -222,5 +222,11 @@
   <ItemGroup>
     <None Include="Resources\lista.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\gerenciador.ico" />
+    <Content Include="Resources\gerenciador.png" />
+    <Content Include="Resources\waiter.ico" />
+    <Content Include="Resources\waiter.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
