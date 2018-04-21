@@ -53,16 +53,16 @@
             this.pnlLeftButtons.Controls.Add(this.btnRemover);
             this.pnlLeftButtons.Controls.Add(this.btnModificar);
             this.pnlLeftButtons.Controls.Add(this.btnAdicionar);
-            this.pnlLeftButtons.Location = new System.Drawing.Point(0, 39);
+            this.pnlLeftButtons.Location = new System.Drawing.Point(0, 40);
             this.pnlLeftButtons.Name = "pnlLeftButtons";
-            this.pnlLeftButtons.Size = new System.Drawing.Size(70, 561);
+            this.pnlLeftButtons.Size = new System.Drawing.Size(90, 560);
             this.pnlLeftButtons.TabIndex = 3;
             // 
             // btnLogout
             // 
-            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.logout;
+            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(0, 488);
+            this.btnLogout.Location = new System.Drawing.Point(10, 478);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(70, 70);
             this.btnLogout.TabIndex = 5;
@@ -70,9 +70,9 @@
             // 
             // btnLista
             // 
-            this.btnLista.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista1;
+            this.btnLista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLista.BackgroundImage")));
             this.btnLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLista.Location = new System.Drawing.Point(0, 229);
+            this.btnLista.Location = new System.Drawing.Point(10, 238);
             this.btnLista.Name = "btnLista";
             this.btnLista.Size = new System.Drawing.Size(70, 70);
             this.btnLista.TabIndex = 4;
@@ -81,9 +81,9 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
+            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
             this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemover.Location = new System.Drawing.Point(0, 153);
+            this.btnRemover.Location = new System.Drawing.Point(10, 162);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(70, 70);
             this.btnRemover.TabIndex = 2;
@@ -92,9 +92,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
             this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModificar.Location = new System.Drawing.Point(0, 77);
+            this.btnModificar.Location = new System.Drawing.Point(10, 86);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(70, 70);
             this.btnModificar.TabIndex = 1;
@@ -103,9 +103,9 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnAdicionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.BackgroundImage")));
             this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionar.Location = new System.Drawing.Point(0, 1);
+            this.btnAdicionar.Location = new System.Drawing.Point(10, 10);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(70, 70);
             this.btnAdicionar.TabIndex = 0;
@@ -118,7 +118,7 @@
             this.grpFuncao.Controls.Add(this.btnFuncionario);
             this.grpFuncao.Controls.Add(this.btnTransportadora);
             this.grpFuncao.Controls.Add(this.btnTercerizada);
-            this.grpFuncao.Location = new System.Drawing.Point(76, 40);
+            this.grpFuncao.Location = new System.Drawing.Point(96, 40);
             this.grpFuncao.Name = "grpFuncao";
             this.grpFuncao.Size = new System.Drawing.Size(818, 54);
             this.grpFuncao.TabIndex = 4;
@@ -178,24 +178,25 @@
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = true;
-            this.uctUIX.UIXTitle = "Titulo UIX";
+            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
+            this.uctUIX.UIXTitle = "Gerenciador";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
             // 
             // uctFuncionario
             // 
             this.uctFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctFuncionario.Location = new System.Drawing.Point(76, 100);
+            this.uctFuncionario.Location = new System.Drawing.Point(102, 100);
             this.uctFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctFuncionario.Name = "uctFuncionario";
-            this.uctFuncionario.Size = new System.Drawing.Size(818, 488);
+            this.uctFuncionario.Size = new System.Drawing.Size(812, 488);
             this.uctFuncionario.TabIndex = 5;
             // 
             // frmGerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.ClientSize = new System.Drawing.Size(920, 600);
             this.Controls.Add(this.uctFuncionario);
             this.Controls.Add(this.pnlLeftButtons);
             this.Controls.Add(this.grpFuncao);

@@ -63,6 +63,11 @@
     <Compile Include="frmPedido.Designer.cs">
       <DependentUpon>frmPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="uctCozinha.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,14 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="uctFuncionario.resx">
       <DependentUpon>uctFuncionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,49 +184,46 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\hamburger.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\adicionar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alterar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hamburger.png" />
+    <None Include="Resources\garcom.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logout.png" />
+    <None Include="Resources\garcom-ico.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\menu.png" />
+    <None Include="Resources\gerenciador.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\remover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hamburger1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hamburguer.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hamburguer2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pedidos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\removerpedido.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pedidos1.png" />
+    <None Include="Resources\gerenciador-ico.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lista.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\gerenciador.ico" />
-    <Content Include="Resources\gerenciador.png" />
-    <Content Include="Resources\waiter.ico" />
-    <Content Include="Resources\waiter.png" />
+    <None Include="Resources\lixo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedidos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remover-menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remover-x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sair.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

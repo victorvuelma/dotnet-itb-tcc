@@ -12,12 +12,10 @@ namespace UIX
     {
 
         private uixStyle _style;
-        private uixImageTemplate _imageTemplate;
 
-        public uixTemplate(uixStyle style, uixImageTemplate imageTemplate)
+        public uixTemplate(uixStyle style)
         {
             this._style = style;
-            this._imageTemplate = imageTemplate;
         }
 
         public void ctlApply(Control[] ctls)
@@ -122,9 +120,7 @@ namespace UIX
         public void frmApply(Form frm, uctUIX ctl)
         {
             uixForm.frmApply(frm, ctl, Style);
-
-            ctl.picFormIcon.Image = ImageTemplate.Logo;
-
+            
             foreach (Control control in frm.Controls)
             {
                 if (control != ctl)
@@ -136,8 +132,6 @@ namespace UIX
         }
 
         public uixStyle Style { get => _style; }
-
-        public uixImageTemplate ImageTemplate { get => _imageTemplate; }
 
     }
 

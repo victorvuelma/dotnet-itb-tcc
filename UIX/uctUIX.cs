@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace UIX
 {
@@ -17,6 +18,8 @@ namespace UIX
 
         public bool UIXButtonCloseEnabled { get => btnClose.Visible; set => btnClose.Visible = value; }
         public bool UIXButtonMinEnabled { get => btnMin.Visible; set => btnMin.Visible = value; }
+
+        public Image UIXImage { get => picFormIcon.Image; set => picFormIcon.Image = value; }
 
         public string UIXTitle { get => lblTitulo.Text; set => lblTitulo.Text = value; }
 

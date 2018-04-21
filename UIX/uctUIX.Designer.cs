@@ -38,7 +38,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(3, 13);
+            this.lblTitulo.Location = new System.Drawing.Point(41, 13);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(54, 13);
             this.lblTitulo.TabIndex = 7;

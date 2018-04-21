@@ -53,16 +53,16 @@
             this.pnlLeftButtons.Controls.Add(this.btnRemoverProduto);
             this.pnlLeftButtons.Controls.Add(this.btnAlterarPedido);
             this.pnlLeftButtons.Controls.Add(this.btnNovoPedido);
-            this.pnlLeftButtons.Location = new System.Drawing.Point(0, 38);
+            this.pnlLeftButtons.Location = new System.Drawing.Point(0, 40);
             this.pnlLeftButtons.Name = "pnlLeftButtons";
-            this.pnlLeftButtons.Size = new System.Drawing.Size(70, 756);
+            this.pnlLeftButtons.Size = new System.Drawing.Size(90, 760);
             this.pnlLeftButtons.TabIndex = 2;
             // 
             // btnLogout
             // 
-            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.logout;
+            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(0, 671);
+            this.btnLogout.Location = new System.Drawing.Point(10, 680);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(70, 70);
             this.btnLogout.TabIndex = 5;
@@ -71,9 +71,9 @@
             // 
             // btnPedidos
             // 
-            this.btnPedidos.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedidos;
+            this.btnPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedidos.BackgroundImage")));
             this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPedidos.Location = new System.Drawing.Point(0, 327);
+            this.btnPedidos.Location = new System.Drawing.Point(10, 314);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(70, 70);
             this.btnPedidos.TabIndex = 4;
@@ -82,9 +82,9 @@
             // 
             // btnApagarPedido
             // 
-            this.btnApagarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.removerpedido;
+            this.btnApagarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
             this.btnApagarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnApagarPedido.Location = new System.Drawing.Point(0, 251);
+            this.btnApagarPedido.Location = new System.Drawing.Point(10, 238);
             this.btnApagarPedido.Name = "btnApagarPedido";
             this.btnApagarPedido.Size = new System.Drawing.Size(70, 70);
             this.btnApagarPedido.TabIndex = 3;
@@ -93,9 +93,9 @@
             // 
             // btnRemoverProduto
             // 
-            this.btnRemoverProduto.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
+            this.btnRemoverProduto.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
             this.btnRemoverProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoverProduto.Location = new System.Drawing.Point(0, 175);
+            this.btnRemoverProduto.Location = new System.Drawing.Point(10, 162);
             this.btnRemoverProduto.Name = "btnRemoverProduto";
             this.btnRemoverProduto.Size = new System.Drawing.Size(70, 70);
             this.btnRemoverProduto.TabIndex = 2;
@@ -104,9 +104,9 @@
             // 
             // btnAlterarPedido
             // 
-            this.btnAlterarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnAlterarPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterarPedido.BackgroundImage")));
             this.btnAlterarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterarPedido.Location = new System.Drawing.Point(0, 99);
+            this.btnAlterarPedido.Location = new System.Drawing.Point(10, 86);
             this.btnAlterarPedido.Name = "btnAlterarPedido";
             this.btnAlterarPedido.Size = new System.Drawing.Size(70, 70);
             this.btnAlterarPedido.TabIndex = 1;
@@ -115,9 +115,9 @@
             // 
             // btnNovoPedido
             // 
-            this.btnNovoPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNovoPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNovoPedido.BackgroundImage")));
             this.btnNovoPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNovoPedido.Location = new System.Drawing.Point(0, 23);
+            this.btnNovoPedido.Location = new System.Drawing.Point(10, 10);
             this.btnNovoPedido.Name = "btnNovoPedido";
             this.btnNovoPedido.Size = new System.Drawing.Size(70, 70);
             this.btnNovoPedido.TabIndex = 0;
@@ -130,15 +130,16 @@
             this.uctUIX.Location = new System.Drawing.Point(0, 0);
             this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(250, 32);
+            this.uctUIX.Size = new System.Drawing.Size(250, 40);
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = true;
-            this.uctUIX.UIXTitle = "Titulo UIX";
+            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
+            this.uctUIX.UIXTitle = "Pedidos";
             // 
             // uctPedidos
             // 
-            this.uctPedidos.Location = new System.Drawing.Point(70, 38);
+            this.uctPedidos.Location = new System.Drawing.Point(90, 40);
             this.uctPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctPedidos.Name = "uctPedidos";
             this.uctPedidos.Size = new System.Drawing.Size(510, 767);
@@ -146,7 +147,7 @@
             // 
             // uctPedidoRemover
             // 
-            this.uctPedidoRemover.Location = new System.Drawing.Point(70, 38);
+            this.uctPedidoRemover.Location = new System.Drawing.Point(90, 40);
             this.uctPedidoRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctPedidoRemover.Name = "uctPedidoRemover";
             this.uctPedidoRemover.Size = new System.Drawing.Size(522, 756);
@@ -154,7 +155,7 @@
             // 
             // uctProdutoRemover
             // 
-            this.uctProdutoRemover.Location = new System.Drawing.Point(70, 38);
+            this.uctProdutoRemover.Location = new System.Drawing.Point(90, 40);
             this.uctProdutoRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctProdutoRemover.Name = "uctProdutoRemover";
             this.uctProdutoRemover.Size = new System.Drawing.Size(510, 756);
@@ -163,7 +164,7 @@
             // uctPedidoNovo
             // 
             this.uctPedidoNovo.AutoSize = true;
-            this.uctPedidoNovo.Location = new System.Drawing.Point(70, 38);
+            this.uctPedidoNovo.Location = new System.Drawing.Point(90, 40);
             this.uctPedidoNovo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctPedidoNovo.Name = "uctPedidoNovo";
             this.uctPedidoNovo.Size = new System.Drawing.Size(502, 745);
@@ -172,7 +173,7 @@
             // uctPedidoAlterar
             // 
             this.uctPedidoAlterar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.uctPedidoAlterar.Location = new System.Drawing.Point(70, 38);
+            this.uctPedidoAlterar.Location = new System.Drawing.Point(90, 40);
             this.uctPedidoAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctPedidoAlterar.Name = "uctPedidoAlterar";
             this.uctPedidoAlterar.Size = new System.Drawing.Size(502, 746);
@@ -182,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 794);
+            this.ClientSize = new System.Drawing.Size(595, 800);
             this.Controls.Add(this.uctPedidos);
             this.Controls.Add(this.uctPedidoRemover);
             this.Controls.Add(this.uctProdutoRemover);

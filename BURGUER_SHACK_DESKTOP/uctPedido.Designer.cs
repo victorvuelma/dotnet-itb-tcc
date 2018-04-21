@@ -99,7 +99,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.logout;
+            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogout.Location = new System.Drawing.Point(2, 582);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -122,7 +122,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
+            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
             this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRemover.Location = new System.Drawing.Point(2, 220);
             this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

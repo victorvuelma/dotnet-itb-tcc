@@ -19,7 +19,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmCozinha_Load(object sender, EventArgs e)
         {
-            UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER, tplBurguerShack.CommonImageTemplate);
+            UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER);
 
             tplBurguerShack.CommonTemplate.frmApply(this, uctUIX1);
         }
