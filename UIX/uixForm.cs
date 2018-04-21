@@ -15,6 +15,9 @@ namespace UIX
         public static void frmApply(Form frm, uctUIX ctl, uixStyle style)
         {
             frm.FormBorderStyle = FormBorderStyle.None;
+            frm.AutoScaleMode = AutoScaleMode.None;
+
+            ctl.AutoScaleMode = AutoScaleMode.None;
 
             uixHeader.hdrApply(frm, ctl, style);
 

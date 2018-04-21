@@ -49,7 +49,7 @@
             this.grbProdutoRemover.Controls.Add(this.txtPesquisa);
             this.grbProdutoRemover.Location = new System.Drawing.Point(5, 5);
             this.grbProdutoRemover.Name = "grbProdutoRemover";
-            this.grbProdutoRemover.Size = new System.Drawing.Size(423, 597);
+            this.grbProdutoRemover.Size = new System.Drawing.Size(420, 600);
             this.grbProdutoRemover.TabIndex = 6;
             this.grbProdutoRemover.TabStop = false;
             this.grbProdutoRemover.Text = "REMOVER PRODUTO";
@@ -91,7 +91,7 @@
             // lblNomeProduto
             // 
             this.lblNomeProduto.AutoSize = true;
-            this.lblNomeProduto.Location = new System.Drawing.Point(6, 23);
+            this.lblNomeProduto.Location = new System.Drawing.Point(5, 20);
             this.lblNomeProduto.Name = "lblNomeProduto";
             this.lblNomeProduto.Size = new System.Drawing.Size(118, 13);
             this.lblNomeProduto.TabIndex = 1;
@@ -104,13 +104,13 @@
             this.txtPesquisa.Size = new System.Drawing.Size(270, 20);
             this.txtPesquisa.TabIndex = 0;
             // 
-            // uctPedidoRemover
+            // uctProdutoRemover
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbProdutoRemover);
-            this.Name = "uctPedidoRemover";
-            this.Size = new System.Drawing.Size(433, 606);
+            this.Name = "uctProdutoRemover";
+            this.Size = new System.Drawing.Size(430, 610);
             this.grbProdutoRemover.ResumeLayout(false);
             this.grbProdutoRemover.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();

@@ -25,12 +25,18 @@ namespace UIX
 
         private void btnMin_Click(object sender, EventArgs e)
         {
-            Min(this, e);
+            if (Min != null)
+            {
+                Min(this, e);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close(this, e);
+            if (Close != null)
+            {
+                Close(this, e);
+            }
         }
 
     }

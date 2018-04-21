@@ -49,7 +49,7 @@
             this.grbPedidoNovo.Controls.Add(this.txtPesquisa);
             this.grbPedidoNovo.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoNovo.Name = "grbPedidoNovo";
-            this.grbPedidoNovo.Size = new System.Drawing.Size(423, 597);
+            this.grbPedidoNovo.Size = new System.Drawing.Size(420, 600);
             this.grbPedidoNovo.TabIndex = 5;
             this.grbPedidoNovo.TabStop = false;
             this.grbPedidoNovo.Text = "NOVO PEDIDO";
@@ -91,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 13);
             this.label1.TabIndex = 1;
@@ -111,7 +111,7 @@
             this.AutoSize = true;
             this.Controls.Add(this.grbPedidoNovo);
             this.Name = "uctPedidoNovo";
-            this.Size = new System.Drawing.Size(433, 606);
+            this.Size = new System.Drawing.Size(430, 610);
             this.grbPedidoNovo.ResumeLayout(false);
             this.grbPedidoNovo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();

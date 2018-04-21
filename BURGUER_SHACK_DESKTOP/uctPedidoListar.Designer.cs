@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.grbProdutoRemover = new System.Windows.Forms.GroupBox();
             this.lblNomeProduto = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.grbProdutoRemover.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvProdutos
+            // dgv
             // 
-            this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(5, 50);
-            this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(410, 541);
-            this.dgvProdutos.TabIndex = 2;
+            this.dgv.BackgroundColor = System.Drawing.Color.White;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(5, 45);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(410, 549);
+            this.dgv.TabIndex = 2;
             // 
             // grbProdutoRemover
             // 
-            this.grbProdutoRemover.Controls.Add(this.dgvProdutos);
+            this.grbProdutoRemover.Controls.Add(this.dgv);
             this.grbProdutoRemover.Controls.Add(this.lblNomeProduto);
             this.grbProdutoRemover.Controls.Add(this.txtPesquisa);
             this.grbProdutoRemover.Location = new System.Drawing.Point(5, 5);
             this.grbProdutoRemover.Name = "grbProdutoRemover";
-            this.grbProdutoRemover.Size = new System.Drawing.Size(423, 597);
+            this.grbProdutoRemover.Size = new System.Drawing.Size(420, 600);
             this.grbProdutoRemover.TabIndex = 8;
             this.grbProdutoRemover.TabStop = false;
             this.grbProdutoRemover.Text = "PEDIDOS";
@@ -60,7 +60,7 @@
             // lblNomeProduto
             // 
             this.lblNomeProduto.AutoSize = true;
-            this.lblNomeProduto.Location = new System.Drawing.Point(6, 23);
+            this.lblNomeProduto.Location = new System.Drawing.Point(5, 20);
             this.lblNomeProduto.Name = "lblNomeProduto";
             this.lblNomeProduto.Size = new System.Drawing.Size(84, 13);
             this.lblNomeProduto.TabIndex = 1;
@@ -68,19 +68,19 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(144, 24);
+            this.txtPesquisa.Location = new System.Drawing.Point(95, 17);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(270, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(319, 20);
             this.txtPesquisa.TabIndex = 0;
             // 
-            // uctPedidos
+            // uctPedidoListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbProdutoRemover);
-            this.Name = "uctPedidos";
-            this.Size = new System.Drawing.Size(433, 606);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
+            this.Name = "uctPedidoListar";
+            this.Size = new System.Drawing.Size(430, 610);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.grbProdutoRemover.ResumeLayout(false);
             this.grbProdutoRemover.PerformLayout();
             this.ResumeLayout(false);
@@ -89,7 +89,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvProdutos;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.GroupBox grbProdutoRemover;
         private System.Windows.Forms.Label lblNomeProduto;
         private System.Windows.Forms.TextBox txtPesquisa;

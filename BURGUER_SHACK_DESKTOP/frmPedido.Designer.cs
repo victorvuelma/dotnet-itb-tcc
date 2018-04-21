@@ -142,7 +142,7 @@
             this.uctPedidos.Location = new System.Drawing.Point(90, 40);
             this.uctPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctPedidos.Name = "uctPedidos";
-            this.uctPedidos.Size = new System.Drawing.Size(510, 767);
+            this.uctPedidos.Size = new System.Drawing.Size(510, 760);
             this.uctPedidos.TabIndex = 8;
             // 
             // uctPedidoRemover

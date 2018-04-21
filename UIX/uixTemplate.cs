@@ -119,8 +119,9 @@ namespace UIX
 
         public void frmApply(Form frm, uctUIX ctl)
         {
+
             uixForm.frmApply(frm, ctl, Style);
-            
+
             foreach (Control control in frm.Controls)
             {
                 if (control != ctl)

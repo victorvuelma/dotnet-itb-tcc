@@ -22,7 +22,7 @@ namespace UIX
         {
             txt.BackColor = colorSet.LightColor;
             txt.ForeColor = colorSet.ContentColor;
-            txt.BorderStyle = BorderStyle.None;
+            txt.BorderStyle = BorderStyle.FixedSingle;
             txt.Margin = new Padding(5);
         }
     }
