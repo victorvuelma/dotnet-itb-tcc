@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class uctPedidos : UserControl
+    public partial class uctPedidoListar : UserControl
     {
-        public uctPedidos()
+        public uctPedidoListar()
         {
             InitializeComponent();
         }

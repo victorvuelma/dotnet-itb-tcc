@@ -37,7 +37,7 @@
             this.btnAlterarPedido = new System.Windows.Forms.Button();
             this.btnNovoPedido = new System.Windows.Forms.Button();
             this.uctUIX = new UIX.uctUIX();
-            this.uctPedidos = new BURGUER_SHACK_DESKTOP.uctPedidos();
+            this.uctPedidos = new BURGUER_SHACK_DESKTOP.uctPedidoListar();
             this.uctPedidoRemover = new BURGUER_SHACK_DESKTOP.uctPedidoRemover();
             this.uctProdutoRemover = new BURGUER_SHACK_DESKTOP.uctProdutoRemover();
             this.uctPedidoNovo = new BURGUER_SHACK_DESKTOP.uctPedidoNovo();
@@ -217,7 +217,7 @@
         private uctProdutoRemover uctProdutoRemover;
         private uctPedidoRemover uctPedidoRemover;
         private System.Windows.Forms.Button btnPedidos;
-        private uctPedidos uctPedidos;
+        private uctPedidoListar uctPedidos;
         private System.Windows.Forms.Button btnLogout;
         //private uctProdutoRemover uctPedidoRemover1;
     }

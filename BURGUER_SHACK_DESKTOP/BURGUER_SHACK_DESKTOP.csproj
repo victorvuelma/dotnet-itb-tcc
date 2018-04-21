@@ -108,11 +108,11 @@
     <Compile Include="uctPedidoRemover.Designer.cs">
       <DependentUpon>uctPedidoRemover.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctPedidos.cs">
+    <Compile Include="uctPedidoListar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctPedidos.Designer.cs">
-      <DependentUpon>uctPedidos.cs</DependentUpon>
+    <Compile Include="uctPedidoListar.Designer.cs">
+      <DependentUpon>uctPedidoListar.cs</DependentUpon>
     </Compile>
     <Compile Include="uctProdutoRemover.cs">
       <SubType>UserControl</SubType>
@@ -157,8 +157,8 @@
     <EmbeddedResource Include="uctPedidoRemover.resx">
       <DependentUpon>uctPedidoRemover.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctPedidos.resx">
-      <DependentUpon>uctPedidos.cs</DependentUpon>
+    <EmbeddedResource Include="uctPedidoListar.resx">
+      <DependentUpon>uctPedidoListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctProdutoRemover.resx">
       <DependentUpon>uctProdutoRemover.cs</DependentUpon>
