@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="msgUIX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="msgUIX.Designer.cs">
+      <DependentUpon>msgUIX.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctUIX.cs">
       <SubType>UserControl</SubType>
       <Generator>ctlUIX</Generator>
