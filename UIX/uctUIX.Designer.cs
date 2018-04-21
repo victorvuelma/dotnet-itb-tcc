@@ -62,6 +62,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "CLO";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnMin
             // 
@@ -72,6 +73,7 @@
             this.btnMin.TabIndex = 9;
             this.btnMin.Text = "MIN";
             this.btnMin.UseVisualStyleBackColor = true;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
             // uctUIX
             // 

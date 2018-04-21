@@ -179,6 +179,8 @@
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = true;
             this.uctUIX.UIXTitle = "Titulo UIX";
+            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
+            this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
             // 
             // uctFuncionario
             // 

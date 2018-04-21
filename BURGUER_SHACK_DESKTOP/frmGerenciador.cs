@@ -116,5 +116,15 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctFuncionario.Visible = false;
         }
+
+        private void uctUIX_Close(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void uctUIX_Min(object sender, EventArgs e)
+        {
+            MessageBox.Show("Não funciona =/");
+        }
     }
 }
