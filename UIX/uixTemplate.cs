@@ -34,6 +34,10 @@ namespace UIX
             {
                 this.btnApply((Button)ctl);
             }
+            else if (ctl is ComboBox)
+            {
+                this.cboApply((ComboBox)ctl);
+            }
             else if (ctl is GroupBox)
             {
                 this.grbApply((GroupBox)ctl);
@@ -63,6 +67,11 @@ namespace UIX
         public void btnApply(Button btn)
         {
             uixButton.btnApply(btn, Style.ButtonColor, Style.ContentFont);
+        }
+
+        public void cboApply(ComboBox cbo)
+        {
+            uixComboBox.cboApply(cbo, Style.ButtonColor, Style.ContentFont);
         }
 
         public void grbApply(GroupBox grb)
