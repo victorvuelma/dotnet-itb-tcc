@@ -69,6 +69,7 @@
     <Compile Include="uixHeader.cs" />
     <Compile Include="uixImageTemplate.cs" />
     <Compile Include="uixLabel.cs" />
+    <Compile Include="uixMaskedTextBox.cs" />
     <Compile Include="uixPanel.cs" />
     <Compile Include="uixSet.cs" />
     <Compile Include="uixStyle.cs" />

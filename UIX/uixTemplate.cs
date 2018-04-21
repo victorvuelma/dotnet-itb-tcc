@@ -46,6 +46,10 @@ namespace UIX
             {
                 this.pnlApply((Panel)ctl);
             }
+            else if (ctl is MaskedTextBox)
+            {
+                this.mtbApply((MaskedTextBox)ctl);
+            }
             else if (ctl is TextBox)
             {
                 this.txtApply((TextBox)ctl);
@@ -74,6 +78,11 @@ namespace UIX
         public void lblApply(Label lbl)
         {
             uixLabel.lblApply(lbl, Style.LabelColor, Style.ContentFont);
+        }
+
+        public void mtbApply(MaskedTextBox mtb)
+        {
+            uixMaskedTextBox.mtbApply(mtb, Style.TextBoxColor, Style.ContentFont);
         }
 
         public void pnlApply(Panel pnl)
