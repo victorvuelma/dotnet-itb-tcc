@@ -28,7 +28,15 @@ namespace UIX
 
         public void ctlApply(Control ctl)
         {
-            if (ctl is Button)
+
+            if (ctl is btnUIX)
+            {
+                btnUIX btn = (btnUIX)ctl;
+                uixButton.btnApply(btn, Style.ButtonColor, Style.ContentFont);
+                btn.BackColor = Style.ButtonColor.LightColor;
+                btn.HoverColor = Style.ButtonColor.DarkColor;
+            }
+            else if (ctl is Button)
             {
                 this.btnApply((Button)ctl);
             }

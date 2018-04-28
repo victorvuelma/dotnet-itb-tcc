@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="btnUIX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="btnUIX.Designer.cs">
+      <DependentUpon>btnUIX.cs</DependentUpon>
+    </Compile>
     <Compile Include="msgUIX.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,19 +69,23 @@
     </Compile>
     <Compile Include="mtbUIX.cs">
       <SubType>UserControl</SubType>
+      <Generator>UIX MaskedTextBox</Generator>
+      <CustomToolNamespace>UIX MaskedTextBox</CustomToolNamespace>
     </Compile>
     <Compile Include="mtbUIX.Designer.cs">
       <DependentUpon>mtbUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="txtUIX.cs">
       <SubType>UserControl</SubType>
+      <CustomToolNamespace>UIX TextBox</CustomToolNamespace>
+      <Generator>UIX TextBox</Generator>
     </Compile>
     <Compile Include="txtUIX.Designer.cs">
       <DependentUpon>txtUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="uctUIX.cs">
       <SubType>UserControl</SubType>
-      <Generator>ctlUIX</Generator>
+      <Generator>UIX Control</Generator>
       <CustomToolNamespace>UIX Control</CustomToolNamespace>
     </Compile>
     <Compile Include="uctUIX.Designer.cs">
@@ -99,6 +109,9 @@
     <Compile Include="uixTemplate.cs" />
     <Compile Include="uixTextBox.cs" />
     <Compile Include="uixUserControl.cs" />
+    <EmbeddedResource Include="btnUIX.resx">
+      <DependentUpon>btnUIX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

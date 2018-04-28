@@ -49,13 +49,13 @@
             this.box.Size = new System.Drawing.Size(100, 20);
             this.box.TabIndex = 1;
             // 
-            // txtUIX
+            // mtbUIX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.box);
             this.Controls.Add(this.lbl);
-            this.Name = "txtUIX";
+            this.Name = "mtbUIX";
             this.Size = new System.Drawing.Size(150, 20);
             this.ResumeLayout(false);
             this.PerformLayout();
