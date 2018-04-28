@@ -16,106 +16,85 @@ namespace BURGUER_SHACK_DESKTOP
         public frmGerenciador()
         {
             InitializeComponent();
-            uctFuncionario.Visible = false;
+            esconderConteudo();
         }
 
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Gerenciamento";
-            tplBurguerShack.CommonTemplate.frmApply(this, uctUIX);
+            uctUIX.UIXTitle = clnTemplate.AppName + " - Gerenciamento";
+            clnTemplate.CommonTemplate.frmApply(this, uctUIX);
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            EsconderControles();
+            esconderConteudo();
             grpFuncao.Visible = true;
             grpFuncao.Text = "ADICIONAR";
 
-            uctFuncionario.lblId.Visible = false;
-            uctFuncionario.txtPesquisa.Visible = false;
+            //pnlConteudo.lblId.Visible = false;
+            //pnlConteudo.txtPesquisa.Visible = false;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            EsconderControles();
+            esconderConteudo();
             grpFuncao.Visible = true;
             grpFuncao.Text = "MODIFICAR";
 
-            uctFuncionario.lblId.Visible = true;
-            uctFuncionario.txtPesquisa.Visible = true;
+            //pnlConteudo.lblId.Visible = true;
+            //pnlConteudo.txtPesquisa.Visible = true;
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            EsconderControles();
+            esconderConteudo();
             grpFuncao.Visible = true;
             grpFuncao.Text = "REMOVER";
 
-            uctFuncionario.lblId.Visible = true;
-            uctFuncionario.txtPesquisa.Visible = true;
+            //pnlConteudo.lblId.Visible = true;
+            //pnlConteudo.txtPesquisa.Visible = true;
         }
 
         private void btnLista_Click(object sender, EventArgs e)
         {
-            EsconderControles();
+            esconderConteudo();
             grpFuncao.Visible = true;
             grpFuncao.Text = "LISTA";
 
-            uctFuncionario.lblId.Visible = true;
-            uctFuncionario.txtPesquisa.Visible = true;
+            //pnlConteudo.lblId.Visible = true;
+            //pnlConteudo.txtPesquisa.Visible = true;
         }
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Funcionário";
-
-            VerificaFuncao();
+            alterarConteudo(new uctGerenFuncionario(), "Funcionário");
         }
 
         private void btnTransportadora_Click(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Transportadora";
-
-            VerificaFuncao();
+            uctUIX.UIXTitle = clnTemplate.AppName + " - Transportadora";
         }
 
         private void btnTercerizada_Click(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Tercerizada";
-
-            VerificaFuncao();
+            alterarConteudo(new uctGerenTerceirizada(), "Terceirizada");
         }
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Produto";
-
-            VerificaFuncao();
+            uctUIX.UIXTitle = clnTemplate.AppName + " - Produto";
         }
 
-        private void VerificaFuncao()
+        private void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            if (grpFuncao.Text == "ADICIONAR" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
-            {
-                uctFuncionario.Visible = true;
-            }
-            else if (grpFuncao.Text == "MODIFICAR" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
-            {
-                uctFuncionario.Visible = true;
-            }
-            else if (grpFuncao.Text == "REMOVER" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
-            {
-                uctFuncionario.Visible = true;
-            }
-            else if (grpFuncao.Text == "LISTA" && uctUIX.UIXTitle == "Burguer Shack - Funcionário")
-            {
-                uctFuncionario.Visible = true;
-            }
+            pnlConteudo.Visible = true;
+
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
-        private void EsconderControles()
+        private void esconderConteudo()
         {
-            uctFuncionario.Visible = false;
+            pnlConteudo.Visible = false;
         }
 
         private void uctUIX_Close(object sender, EventArgs e)
@@ -125,7 +104,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void uctUIX_Min(object sender, EventArgs e)
         {
-            MessageBox.Show("Não funciona =/");
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

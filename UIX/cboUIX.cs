@@ -32,7 +32,7 @@ namespace UIX
 
         public override String Text { get => cbo.Text; set => cbo.Text = value; }
 
-        public Size Size
+        public new Size Size
         {
             get => base.Size;
             set

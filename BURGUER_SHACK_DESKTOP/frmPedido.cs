@@ -19,8 +19,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPedido_Load(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Garçom";
-            tplBurguerShack.CommonTemplate.frmApply(this, uctUIX);
+            uctUIX.UIXTitle = clnTemplate.AppName + " - Garçom";
+            clnTemplate.CommonTemplate.frmApply(this, uctUIX);
         }
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
@@ -36,7 +36,6 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnPedidoRemover_Click(object sender, EventArgs e)
         {
             alterarConteudo(new uctPedidoAlterar(), "Alterar Pedido");
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Alterar Pedido";
         }
 
         private void btnApagarPedido_Click(object sender, EventArgs e)
@@ -49,24 +48,24 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(new uctPedidoListar(), "Pedidos");
         }
 
-        private void alterarConteudo(UserControl conteudo, String titulo)
+        private void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            if(pnlConteudo.Controls.Count == 1)
-            {
-                pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
-            }
-            tplBurguerShack.CommonTemplate.uctApply(conteudo);
-
-            pnlConteudo.Controls.Add(conteudo);
-            conteudo.Location = new Point(0, 0);
-            conteudo.Size = pnlConteudo.Size;
-
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - " + titulo;
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void uctUIX_Min(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void uctUIX_Close(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

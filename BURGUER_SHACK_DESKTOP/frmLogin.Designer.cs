@@ -30,8 +30,8 @@
         {
             this.txtNome = new UIX.txtUIX();
             this.txtSenha = new UIX.txtUIX();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.ctlUIX1 = new UIX.uctUIX();
+            this.btnEntrar = new System.Windows.Forms.Button();
+            this.uctUIX = new UIX.uctUIX();
             this.SuspendLayout();
             // 
             // txtNome
@@ -52,36 +52,36 @@
             this.txtSenha.Size = new System.Drawing.Size(276, 20);
             this.txtSenha.TabIndex = 8;
             // 
-            // btnLogin
+            // btnEntrar
             // 
-            this.btnLogin.Location = new System.Drawing.Point(192, 156);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(96, 31);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "ENTRAR";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnEntrar.Location = new System.Drawing.Point(192, 156);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(96, 31);
+            this.btnEntrar.TabIndex = 9;
+            this.btnEntrar.Text = "ENTRAR";
+            this.btnEntrar.UseVisualStyleBackColor = true;
             // 
-            // ctlUIX1
+            // uctUIX
             // 
-            this.ctlUIX1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ctlUIX1.Location = new System.Drawing.Point(0, 0);
-            this.ctlUIX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ctlUIX1.Name = "ctlUIX1";
-            this.ctlUIX1.Size = new System.Drawing.Size(301, 43);
-            this.ctlUIX1.TabIndex = 11;
-            this.ctlUIX1.UIXButtonCloseEnabled = true;
-            this.ctlUIX1.UIXButtonMinEnabled = false;
-            this.ctlUIX1.UIXImage = null;
-            this.ctlUIX1.UIXTitle = "BurgerShack :: Entrar";
+            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.uctUIX.Location = new System.Drawing.Point(0, 0);
+            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctUIX.Name = "uctUIX";
+            this.uctUIX.Size = new System.Drawing.Size(301, 43);
+            this.uctUIX.TabIndex = 11;
+            this.uctUIX.UIXButtonCloseEnabled = true;
+            this.uctUIX.UIXButtonMinEnabled = false;
+            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
+            this.uctUIX.UIXTitle = "BurgerShack :: Entrar";
             // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(300, 200);
-            this.Controls.Add(this.ctlUIX1);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -97,8 +97,8 @@
         #endregion
         private UIX.txtUIX txtNome;
         private UIX.txtUIX txtSenha;
-        private System.Windows.Forms.Button btnLogin;
-        private UIX.uctUIX ctlUIX1;
+        private System.Windows.Forms.Button btnEntrar;
+        private UIX.uctUIX uctUIX;
     }
 }
 

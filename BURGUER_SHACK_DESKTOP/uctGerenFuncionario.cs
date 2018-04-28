@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class uctTercerizada : UserControl
+    public partial class uctGerenFuncionario : UserControl
     {
-        public uctTercerizada()
+        public uctGerenFuncionario()
         {
             InitializeComponent();
         }

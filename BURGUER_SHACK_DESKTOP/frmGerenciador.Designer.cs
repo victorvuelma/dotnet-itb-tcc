@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciador));
-            this.pnlLeftButtons = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnLista = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -40,32 +40,32 @@
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnTercerizada = new System.Windows.Forms.Button();
             this.uctUIX = new UIX.uctUIX();
-            this.uctFuncionario = new BURGUER_SHACK_DESKTOP.uctFuncionario();
-            this.pnlLeftButtons.SuspendLayout();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.pnlMenu.SuspendLayout();
             this.grpFuncao.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlLeftButtons
+            // pnlMenu
             // 
-            this.pnlLeftButtons.Controls.Add(this.btnLogout);
-            this.pnlLeftButtons.Controls.Add(this.btnLista);
-            this.pnlLeftButtons.Controls.Add(this.btnRemover);
-            this.pnlLeftButtons.Controls.Add(this.btnModificar);
-            this.pnlLeftButtons.Controls.Add(this.btnAdicionar);
-            this.pnlLeftButtons.Location = new System.Drawing.Point(0, 40);
-            this.pnlLeftButtons.Name = "pnlLeftButtons";
-            this.pnlLeftButtons.Size = new System.Drawing.Size(90, 560);
-            this.pnlLeftButtons.TabIndex = 3;
+            this.pnlMenu.Controls.Add(this.btnSair);
+            this.pnlMenu.Controls.Add(this.btnLista);
+            this.pnlMenu.Controls.Add(this.btnRemover);
+            this.pnlMenu.Controls.Add(this.btnModificar);
+            this.pnlMenu.Controls.Add(this.btnAdicionar);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 40);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(90, 560);
+            this.pnlMenu.TabIndex = 3;
             // 
-            // btnLogout
+            // btnSair
             // 
-            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(10, 478);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(70, 70);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnSair.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.Location = new System.Drawing.Point(10, 478);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(70, 70);
+            this.btnSair.TabIndex = 5;
+            this.btnSair.UseVisualStyleBackColor = true;
             // 
             // btnLista
             // 
@@ -148,7 +148,7 @@
             // btnTercerizada
             // 
             this.btnTercerizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTercerizada.Location = new System.Drawing.Point(102, 21);
+            this.btnTercerizada.Location = new System.Drawing.Point(102, 20);
             this.btnTercerizada.Name = "btnTercerizada";
             this.btnTercerizada.Size = new System.Drawing.Size(90, 23);
             this.btnTercerizada.TabIndex = 2;
@@ -161,7 +161,7 @@
             this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.uctUIX.Location = new System.Drawing.Point(0, 0);
             this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(250, 40);
+            this.uctUIX.Size = new System.Drawing.Size(921, 40);
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = true;
@@ -170,22 +170,22 @@
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
             // 
-            // uctFuncionario
+            // pnlConteudo
             // 
-            this.uctFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctFuncionario.Location = new System.Drawing.Point(96, 101);
-            this.uctFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctFuncionario.Name = "uctFuncionario";
-            this.uctFuncionario.Size = new System.Drawing.Size(818, 488);
-            this.uctFuncionario.TabIndex = 5;
+            this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlConteudo.Location = new System.Drawing.Point(96, 101);
+            this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(818, 488);
+            this.pnlConteudo.TabIndex = 5;
             // 
             // frmGerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 600);
-            this.Controls.Add(this.uctFuncionario);
-            this.Controls.Add(this.pnlLeftButtons);
+            this.Controls.Add(this.pnlConteudo);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.grpFuncao);
             this.Controls.Add(this.uctUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -194,7 +194,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador";
             this.Load += new System.EventHandler(this.frmGerenciador_Load);
-            this.pnlLeftButtons.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
             this.grpFuncao.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -203,8 +203,8 @@
         #endregion
 
         private UIX.uctUIX uctUIX;
-        private System.Windows.Forms.Panel pnlLeftButtons;
-        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnLista;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnModificar;
@@ -213,6 +213,6 @@
         private System.Windows.Forms.Button btnFuncionario;
         private System.Windows.Forms.Button btnTercerizada;
         private System.Windows.Forms.Button btnProduto;
-        private uctFuncionario uctFuncionario;
+        private System.Windows.Forms.Panel pnlConteudo;
     }
 }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.btnApagarPedido = new System.Windows.Forms.Button();
             this.btnRemoverProduto = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.Controls.Add(this.btnLogout);
+            this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnPedidos);
             this.pnlMenu.Controls.Add(this.btnApagarPedido);
             this.pnlMenu.Controls.Add(this.btnRemoverProduto);
@@ -54,16 +54,16 @@
             this.pnlMenu.Size = new System.Drawing.Size(90, 760);
             this.pnlMenu.TabIndex = 2;
             // 
-            // btnLogout
+            // btnSair
             // 
-            this.btnLogout.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(10, 680);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(70, 70);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnSair.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.Location = new System.Drawing.Point(10, 680);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(70, 70);
+            this.btnSair.TabIndex = 5;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnPedidos
             // 
@@ -140,6 +140,8 @@
             this.uctUIX.UIXButtonMinEnabled = true;
             this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
             this.uctUIX.UIXTitle = "Pedidos";
+            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
+            this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
             // 
             // frmPedido
             // 
@@ -171,7 +173,7 @@
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.Button btnApagarPedido;
         private System.Windows.Forms.Button btnPedidos;
-        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel pnlConteudo;
         //private uctProdutoRemover uctPedidoRemover1;
     }

@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class uctTercerizada
+    partial class uctGerenTerceirizada
     {
         /// <summary> 
         /// Variável de designer necessária.

@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class tplBurguerShack
+    class clnTemplate
     {
 
         private static String appName = "Burguer Shack";

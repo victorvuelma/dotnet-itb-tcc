@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clnUtil.cs" />
     <Compile Include="frmCozinha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +75,11 @@
     <Compile Include="uctCozinha.Designer.cs">
       <DependentUpon>uctCozinha.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctFuncionario.cs">
+    <Compile Include="uctGerenFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctFuncionario.Designer.cs">
-      <DependentUpon>uctFuncionario.cs</DependentUpon>
+    <Compile Include="uctGerenFuncionario.Designer.cs">
+      <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="uctPedido.cs">
       <SubType>UserControl</SubType>
@@ -94,7 +95,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tplBurguerShack.cs" />
+    <Compile Include="clnTemplate.cs" />
     <Compile Include="uctPedidoAlterar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,11 +126,11 @@
     <Compile Include="uctProdutoRemover.Designer.cs">
       <DependentUpon>uctProdutoRemover.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctTercerizada.cs">
+    <Compile Include="uctGerenTerceirizada.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctTercerizada.Designer.cs">
-      <DependentUpon>uctTercerizada.cs</DependentUpon>
+    <Compile Include="uctGerenTerceirizada.Designer.cs">
+      <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmCozinha.resx">
       <DependentUpon>frmCozinha.cs</DependentUpon>
@@ -148,8 +149,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctFuncionario.resx">
-      <DependentUpon>uctFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="uctGerenFuncionario.resx">
+      <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedido.resx">
       <DependentUpon>uctPedido.cs</DependentUpon>
@@ -169,8 +170,8 @@
     <EmbeddedResource Include="uctProdutoRemover.resx">
       <DependentUpon>uctProdutoRemover.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctTercerizada.resx">
-      <DependentUpon>uctTercerizada.cs</DependentUpon>
+    <EmbeddedResource Include="uctGerenTerceirizada.resx">
+      <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\BURGUER_SHACK_DESKTOP.Properties.Resources.datasource" />
     <None Include="Properties\Settings.settings">
@@ -233,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

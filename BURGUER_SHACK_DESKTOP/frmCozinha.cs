@@ -21,7 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER);
 
-            tplBurguerShack.CommonTemplate.frmApply(this, uctUIX1);
+            clnTemplate.CommonTemplate.frmApply(this, uctUIX1);
         }
     }
 }
