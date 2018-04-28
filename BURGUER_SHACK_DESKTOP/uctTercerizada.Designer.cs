@@ -383,7 +383,7 @@
             this.grpContatos.Size = new System.Drawing.Size(810, 84);
             this.grpContatos.TabIndex = 6;
             this.grpContatos.TabStop = false;
-            this.grpContatos.Text = "MEIOS DE CONTATO *";
+            this.grpContatos.Text = "MEIOS DE CONTATO";
             // 
             // txtRamal
             // 
@@ -433,15 +433,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(599, 21);
+            this.label7.Location = new System.Drawing.Point(589, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 16);
+            this.label7.Size = new System.Drawing.Size(123, 16);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Telefone Comercial:";
+            this.label7.Text = "Telefone Comercial: *";
             // 
             // mtbTelComercial1
             // 
-            this.mtbTelComercial1.Location = new System.Drawing.Point(500, 23);
+            this.mtbTelComercial1.Location = new System.Drawing.Point(488, 23);
             this.mtbTelComercial1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbTelComercial1.Mask = "(00) 0000-0000";
             this.mtbTelComercial1.Name = "mtbTelComercial1";
@@ -451,19 +451,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(380, 21);
+            this.label5.Location = new System.Drawing.Point(355, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 16);
+            this.label5.Size = new System.Drawing.Size(123, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Telefone Comercial:";
+            this.label5.Text = "Telefone Comercial: *";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(52, 23);
+            this.txtEmail.Location = new System.Drawing.Point(66, 23);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(323, 21);
+            this.txtEmail.Size = new System.Drawing.Size(283, 21);
             this.txtEmail.TabIndex = 6;
             // 
             // label6
@@ -471,9 +471,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(8, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 16);
+            this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 2;
-            this.label6.Text = "E-mail:";
+            this.label6.Text = "E-mail: *";
             // 
             // label17
             // 
