@@ -52,7 +52,7 @@
             this.txtCidade = new UIX.txtUIX();
             this.label15 = new System.Windows.Forms.Label();
             this.txtBairro = new UIX.txtUIX();
-            this.cboUF = new System.Windows.Forms.ComboBox();
+            this.cboUF = new UIX.cboUIX();
             this.label12 = new System.Windows.Forms.Label();
             this.mtbCEP = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,21 +60,15 @@
             this.txtEndereco = new UIX.txtUIX();
             this.label14 = new System.Windows.Forms.Label();
             this.grpBeneficios = new System.Windows.Forms.GroupBox();
-            this.cboValeTransporte = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cboTiqueteRefeicao = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cboAuxCreche = new System.Windows.Forms.ComboBox();
-            this.cboAssOdontologica = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cboAssMedica = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.cboValeTransporte = new UIX.cboUIX();
+            this.cboTiqueteRefeicao = new UIX.cboUIX();
+            this.cboAuxCreche = new UIX.cboUIX();
+            this.cboAssOdontologica = new UIX.cboUIX();
+            this.cboAssMedica = new UIX.cboUIX();
             this.grpFuncionario = new System.Windows.Forms.GroupBox();
             this.txtSalario = new UIX.txtUIX();
-            this.cboCargaHoraria = new System.Windows.Forms.ComboBox();
+            this.cboCargaHoraria = new UIX.cboUIX();
             this.txtCargo = new UIX.txtUIX();
-            this.label24 = new System.Windows.Forms.Label();
             this.grbDadosPessoais.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -342,6 +336,7 @@
             // 
             // cboUF
             // 
+            this.cboUF.Campo = "Campo:";
             this.cboUF.FormattingEnabled = true;
             this.cboUF.Location = new System.Drawing.Point(667, 23);
             this.cboUF.Name = "cboUF";
@@ -406,15 +401,10 @@
             // grpBeneficios
             // 
             this.grpBeneficios.Controls.Add(this.cboValeTransporte);
-            this.grpBeneficios.Controls.Add(this.label20);
             this.grpBeneficios.Controls.Add(this.cboTiqueteRefeicao);
-            this.grpBeneficios.Controls.Add(this.label19);
             this.grpBeneficios.Controls.Add(this.cboAuxCreche);
             this.grpBeneficios.Controls.Add(this.cboAssOdontologica);
-            this.grpBeneficios.Controls.Add(this.label18);
-            this.grpBeneficios.Controls.Add(this.label17);
             this.grpBeneficios.Controls.Add(this.cboAssMedica);
-            this.grpBeneficios.Controls.Add(this.label23);
             this.grpBeneficios.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBeneficios.Location = new System.Drawing.Point(3, 362);
             this.grpBeneficios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -427,110 +417,74 @@
             // 
             // cboValeTransporte
             // 
+            this.cboValeTransporte.Campo = "Vale-transporte:";
             this.cboValeTransporte.FormattingEnabled = true;
+            this.cboValeTransporte.Location = new System.Drawing.Point(12, 50);
+            this.cboValeTransporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboValeTransporte.Name = "cboValeTransporte";
+            this.cboValeTransporte.Size = new System.Drawing.Size(151, 25);
+            this.cboValeTransporte.TabIndex = 25;
             this.cboValeTransporte.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.cboValeTransporte.Location = new System.Drawing.Point(106, 51);
-            this.cboValeTransporte.Name = "cboValeTransporte";
-            this.cboValeTransporte.Size = new System.Drawing.Size(57, 24);
-            this.cboValeTransporte.TabIndex = 25;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(9, 51);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(91, 16);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "Vale-transporte";
             // 
             // cboTiqueteRefeicao
             // 
+            this.cboTiqueteRefeicao.Campo = "Tíquete-refeição:";
             this.cboTiqueteRefeicao.FormattingEnabled = true;
+            this.cboTiqueteRefeicao.Location = new System.Drawing.Point(561, 21);
+            this.cboTiqueteRefeicao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboTiqueteRefeicao.Name = "cboTiqueteRefeicao";
+            this.cboTiqueteRefeicao.Size = new System.Drawing.Size(164, 25);
+            this.cboTiqueteRefeicao.TabIndex = 24;
             this.cboTiqueteRefeicao.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.cboTiqueteRefeicao.Location = new System.Drawing.Point(669, 21);
-            this.cboTiqueteRefeicao.Name = "cboTiqueteRefeicao";
-            this.cboTiqueteRefeicao.Size = new System.Drawing.Size(57, 24);
-            this.cboTiqueteRefeicao.TabIndex = 24;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(564, 21);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(99, 16);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "Tíquete-refeição:";
             // 
             // cboAuxCreche
             // 
+            this.cboAuxCreche.Campo = "Auxílio Creche:";
             this.cboAuxCreche.FormattingEnabled = true;
+            this.cboAuxCreche.Location = new System.Drawing.Point(405, 21);
+            this.cboAuxCreche.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboAuxCreche.Name = "cboAuxCreche";
+            this.cboAuxCreche.Size = new System.Drawing.Size(150, 25);
+            this.cboAuxCreche.TabIndex = 23;
             this.cboAuxCreche.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.cboAuxCreche.Location = new System.Drawing.Point(498, 21);
-            this.cboAuxCreche.Name = "cboAuxCreche";
-            this.cboAuxCreche.Size = new System.Drawing.Size(57, 24);
-            this.cboAuxCreche.TabIndex = 23;
             // 
             // cboAssOdontologica
             // 
+            this.cboAssOdontologica.Campo = "Assistência Odontológica:";
             this.cboAssOdontologica.FormattingEnabled = true;
+            this.cboAssOdontologica.Location = new System.Drawing.Point(189, 21);
+            this.cboAssOdontologica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboAssOdontologica.Name = "cboAssOdontologica";
+            this.cboAssOdontologica.Size = new System.Drawing.Size(210, 25);
+            this.cboAssOdontologica.TabIndex = 22;
             this.cboAssOdontologica.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.cboAssOdontologica.Location = new System.Drawing.Point(342, 21);
-            this.cboAssOdontologica.Name = "cboAssOdontologica";
-            this.cboAssOdontologica.Size = new System.Drawing.Size(57, 24);
-            this.cboAssOdontologica.TabIndex = 22;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(405, 21);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(87, 16);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "Auxílio Creche:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(190, 21);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(146, 16);
-            this.label17.TabIndex = 27;
-            this.label17.Text = "Assistência Odontológica:";
             // 
             // cboAssMedica
             // 
+            this.cboAssMedica.Campo = "Assistência Médica:";
             this.cboAssMedica.FormattingEnabled = true;
+            this.cboAssMedica.Location = new System.Drawing.Point(12, 21);
+            this.cboAssMedica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboAssMedica.Name = "cboAssMedica";
+            this.cboAssMedica.Size = new System.Drawing.Size(171, 25);
+            this.cboAssMedica.TabIndex = 21;
             this.cboAssMedica.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.cboAssMedica.Location = new System.Drawing.Point(127, 21);
-            this.cboAssMedica.Name = "cboAssMedica";
-            this.cboAssMedica.Size = new System.Drawing.Size(57, 24);
-            this.cboAssMedica.TabIndex = 21;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 21);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(113, 16);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Assistência Médica:";
             // 
             // grpFuncionario
             // 
             this.grpFuncionario.Controls.Add(this.txtSalario);
             this.grpFuncionario.Controls.Add(this.cboCargaHoraria);
             this.grpFuncionario.Controls.Add(this.txtCargo);
-            this.grpFuncionario.Controls.Add(this.label24);
             this.grpFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFuncionario.Location = new System.Drawing.Point(3, 296);
             this.grpFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -553,13 +507,11 @@
             // 
             // cboCargaHoraria
             // 
+            this.cboCargaHoraria.Campo = "Carga Horária:";
             this.cboCargaHoraria.FormattingEnabled = true;
-            this.cboCargaHoraria.Items.AddRange(new object[] {
-            "Sim",
-            "Não"});
-            this.cboCargaHoraria.Location = new System.Drawing.Point(310, 23);
+            this.cboCargaHoraria.Location = new System.Drawing.Point(218, 23);
             this.cboCargaHoraria.Name = "cboCargaHoraria";
-            this.cboCargaHoraria.Size = new System.Drawing.Size(57, 24);
+            this.cboCargaHoraria.Size = new System.Drawing.Size(149, 24);
             this.cboCargaHoraria.TabIndex = 19;
             // 
             // txtCargo
@@ -571,15 +523,6 @@
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(202, 21);
             this.txtCargo.TabIndex = 18;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(218, 21);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(88, 16);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Carga Horária:";
             // 
             // uctFuncionario
             // 
@@ -603,9 +546,7 @@
             this.grpEndereco.ResumeLayout(false);
             this.grpEndereco.PerformLayout();
             this.grpBeneficios.ResumeLayout(false);
-            this.grpBeneficios.PerformLayout();
             this.grpFuncionario.ResumeLayout(false);
-            this.grpFuncionario.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,26 +580,20 @@
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.MaskedTextBox mtbCEP;
         public System.Windows.Forms.Label label12;
-        public System.Windows.Forms.ComboBox cboUF;
+        public UIX.cboUIX cboUF;
         public UIX.txtUIX txtBairro;
         public UIX.txtUIX txtCidade;
         public System.Windows.Forms.Label label15;
         public UIX.txtUIX txtComplemento;
         public System.Windows.Forms.GroupBox grpBeneficios;
-        public System.Windows.Forms.Label label23;
-        public System.Windows.Forms.ComboBox cboAssMedica;
-        public System.Windows.Forms.Label label17;
-        public System.Windows.Forms.Label label18;
-        public System.Windows.Forms.ComboBox cboAssOdontologica;
-        public System.Windows.Forms.ComboBox cboAuxCreche;
-        public System.Windows.Forms.ComboBox cboTiqueteRefeicao;
-        public System.Windows.Forms.Label label19;
-        public System.Windows.Forms.ComboBox cboValeTransporte;
-        public System.Windows.Forms.Label label20;
+        public UIX.cboUIX cboAssMedica;
+        public UIX.cboUIX cboAssOdontologica;
+        public UIX.cboUIX cboAuxCreche;
+        public UIX.cboUIX cboTiqueteRefeicao;
+        public UIX.cboUIX cboValeTransporte;
         public System.Windows.Forms.GroupBox grpFuncionario;
         public UIX.txtUIX txtCargo;
-        public System.Windows.Forms.Label label24;
-        public System.Windows.Forms.ComboBox cboCargaHoraria;
+        public UIX.cboUIX cboCargaHoraria;
         public UIX.txtUIX txtSalario;
     }
 }
