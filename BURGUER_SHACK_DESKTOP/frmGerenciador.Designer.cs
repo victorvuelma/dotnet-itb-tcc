@@ -186,10 +186,10 @@
             // uctFuncionario
             // 
             this.uctFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctFuncionario.Location = new System.Drawing.Point(102, 100);
+            this.uctFuncionario.Location = new System.Drawing.Point(96, 101);
             this.uctFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctFuncionario.Name = "uctFuncionario";
-            this.uctFuncionario.Size = new System.Drawing.Size(812, 488);
+            this.uctFuncionario.Size = new System.Drawing.Size(818, 488);
             this.uctFuncionario.TabIndex = 5;
             // 
             // frmGerenciador

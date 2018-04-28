@@ -12,6 +12,7 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmGerenciador : Form
     {
+
         public frmGerenciador()
         {
             InitializeComponent();
