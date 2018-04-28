@@ -35,7 +35,7 @@
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(0, 0);
+            this.lbl.Location = new System.Drawing.Point(-3, 0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(43, 13);
             this.lbl.TabIndex = 0;
@@ -44,9 +44,9 @@
             // 
             // box
             // 
-            this.box.Location = new System.Drawing.Point(50, 0);
+            this.box.Location = new System.Drawing.Point(40, 0);
             this.box.Name = "box";
-            this.box.Size = new System.Drawing.Size(99, 20);
+            this.box.Size = new System.Drawing.Size(100, 20);
             this.box.TabIndex = 1;
             // 
             // txtUIX
@@ -64,7 +64,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl;
+        public System.Windows.Forms.Label lbl;
         public System.Windows.Forms.TextBox box;
     }
 }

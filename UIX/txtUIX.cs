@@ -39,5 +39,7 @@ namespace UIX
             }
         }
 
+        public int MaxLength { get => box.MaxLength; set => box.MaxLength = value; }
+
     }
 }
