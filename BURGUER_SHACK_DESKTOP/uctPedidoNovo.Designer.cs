@@ -33,20 +33,18 @@
             this.btnPedido = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.pnlPreco = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new UIX.txtUIX();
             this.grbPedidoNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // grbPedidoNovo
             // 
+            this.grbPedidoNovo.Controls.Add(this.txtPesquisa);
             this.grbPedidoNovo.Controls.Add(this.ltbProdutos);
             this.grbPedidoNovo.Controls.Add(this.btnPedido);
             this.grbPedidoNovo.Controls.Add(this.dgvProdutos);
             this.grbPedidoNovo.Controls.Add(this.pnlPreco);
-            this.grbPedidoNovo.Controls.Add(this.label1);
-            this.grbPedidoNovo.Controls.Add(this.txtPesquisa);
             this.grbPedidoNovo.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoNovo.Name = "grbPedidoNovo";
             this.grbPedidoNovo.Size = new System.Drawing.Size(420, 600);
@@ -88,21 +86,13 @@
             this.pnlPreco.Size = new System.Drawing.Size(144, 90);
             this.pnlPreco.TabIndex = 8;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "NOME DO PRODUTO:";
-            // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(144, 24);
+            this.txtPesquisa.Campo = "NOME DO PRODUTO:";
+            this.txtPesquisa.Location = new System.Drawing.Point(5, 24);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(270, 20);
-            this.txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.Size = new System.Drawing.Size(410, 20);
+            this.txtPesquisa.TabIndex = 18;
             // 
             // uctPedidoNovo
             // 
@@ -113,7 +103,6 @@
             this.Name = "uctPedidoNovo";
             this.Size = new System.Drawing.Size(430, 610);
             this.grbPedidoNovo.ResumeLayout(false);
-            this.grbPedidoNovo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
 
@@ -123,10 +112,9 @@
 
         private System.Windows.Forms.GroupBox grbPedidoNovo;
         private System.Windows.Forms.DataGridView dgvProdutos;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.ListBox ltbProdutos;
         private System.Windows.Forms.Button btnPedido;
         private System.Windows.Forms.Panel pnlPreco;
+        private UIX.txtUIX txtPesquisa;
     }
 }
