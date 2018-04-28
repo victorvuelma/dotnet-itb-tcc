@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.lblId = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new UIX.txtUIX();
+            this.txtNome = new UIX.txtUIX();
             this.label2 = new System.Windows.Forms.Label();
             this.mtbDtNasc = new System.Windows.Forms.MaskedTextBox();
             this.mtbRG = new System.Windows.Forms.MaskedTextBox();
@@ -40,30 +39,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.grpContatos = new System.Windows.Forms.GroupBox();
-            this.txtIDNextel = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txtIDNextel = new UIX.txtUIX();
             this.mtbTelCel2 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.mtbTelCel = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.mtbTelRes = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtEmail = new UIX.txtUIX();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtComplemento = new UIX.txtUIX();
+            this.txtCidade = new UIX.txtUIX();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.txtBairro = new UIX.txtUIX();
             this.cboUF = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.mtbCEP = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.txtNumero = new UIX.txtUIX();
+            this.txtEndereco = new UIX.txtUIX();
             this.label14 = new System.Windows.Forms.Label();
             this.grpBeneficios = new System.Windows.Forms.GroupBox();
             this.cboValeTransporte = new System.Windows.Forms.ComboBox();
@@ -77,12 +71,10 @@
             this.cboAssMedica = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.grpFuncionario = new System.Windows.Forms.GroupBox();
-            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.txtSalario = new UIX.txtUIX();
             this.cboCargaHoraria = new System.Windows.Forms.ComboBox();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.txtCargo = new UIX.txtUIX();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.grbDadosPessoais.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -101,6 +93,7 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.Campo = "Campo:";
             this.txtPesquisa.Location = new System.Drawing.Point(154, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.MaxLength = 5;
@@ -108,22 +101,14 @@
             this.txtPesquisa.Size = new System.Drawing.Size(41, 21);
             this.txtPesquisa.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nome:";
-            // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(57, 23);
+            this.txtNome.Campo = "Nome:";
+            this.txtNome.Location = new System.Drawing.Point(12, 23);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 40;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(326, 21);
+            this.txtNome.Size = new System.Drawing.Size(371, 21);
             this.txtNome.TabIndex = 2;
             // 
             // label2
@@ -186,7 +171,6 @@
             this.grbDadosPessoais.Controls.Add(this.mtbCPF);
             this.grbDadosPessoais.Controls.Add(this.txtNome);
             this.grbDadosPessoais.Controls.Add(this.label4);
-            this.grbDadosPessoais.Controls.Add(this.label1);
             this.grbDadosPessoais.Controls.Add(this.mtbRG);
             this.grbDadosPessoais.Controls.Add(this.label2);
             this.grbDadosPessoais.Controls.Add(this.label3);
@@ -204,7 +188,6 @@
             // grpContatos
             // 
             this.grpContatos.Controls.Add(this.txtIDNextel);
-            this.grpContatos.Controls.Add(this.label9);
             this.grpContatos.Controls.Add(this.mtbTelCel2);
             this.grpContatos.Controls.Add(this.label8);
             this.grpContatos.Controls.Add(this.mtbTelCel);
@@ -212,7 +195,6 @@
             this.grpContatos.Controls.Add(this.mtbTelRes);
             this.grpContatos.Controls.Add(this.label5);
             this.grpContatos.Controls.Add(this.txtEmail);
-            this.grpContatos.Controls.Add(this.label6);
             this.grpContatos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpContatos.Location = new System.Drawing.Point(3, 109);
             this.grpContatos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -225,21 +207,13 @@
             // 
             // txtIDNextel
             // 
-            this.txtIDNextel.Location = new System.Drawing.Point(283, 55);
+            this.txtIDNextel.Campo = "ID Nextel:";
+            this.txtIDNextel.Location = new System.Drawing.Point(218, 55);
             this.txtIDNextel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIDNextel.MaxLength = 9;
             this.txtIDNextel.Name = "txtIDNextel";
-            this.txtIDNextel.Size = new System.Drawing.Size(65, 21);
+            this.txtIDNextel.Size = new System.Drawing.Size(130, 21);
             this.txtIDNextel.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(218, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 16);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "ID Nextel:";
             // 
             // mtbTelCel2
             // 
@@ -297,36 +271,25 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(57, 23);
+            this.txtEmail.Campo = "E-mail:";
+            this.txtEmail.Location = new System.Drawing.Point(10, 23);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(323, 21);
+            this.txtEmail.Size = new System.Drawing.Size(369, 21);
             this.txtEmail.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "E-mail:";
             // 
             // grpEndereco
             // 
             this.grpEndereco.Controls.Add(this.txtComplemento);
-            this.grpEndereco.Controls.Add(this.label16);
             this.grpEndereco.Controls.Add(this.txtCidade);
             this.grpEndereco.Controls.Add(this.label15);
             this.grpEndereco.Controls.Add(this.txtBairro);
-            this.grpEndereco.Controls.Add(this.label13);
             this.grpEndereco.Controls.Add(this.cboUF);
             this.grpEndereco.Controls.Add(this.label12);
             this.grpEndereco.Controls.Add(this.mtbCEP);
             this.grpEndereco.Controls.Add(this.label11);
             this.grpEndereco.Controls.Add(this.txtNumero);
-            this.grpEndereco.Controls.Add(this.label10);
             this.grpEndereco.Controls.Add(this.txtEndereco);
             this.grpEndereco.Controls.Add(this.label14);
             this.grpEndereco.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -341,29 +304,22 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(572, 52);
+            this.txtComplemento.Campo = "Complemento:";
+            this.txtComplemento.Location = new System.Drawing.Point(477, 52);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtComplemento.MaxLength = 100;
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(175, 21);
+            this.txtComplemento.Size = new System.Drawing.Size(270, 21);
             this.txtComplemento.TabIndex = 17;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(477, 50);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(89, 16);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Complemento:";
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(69, 52);
+            this.txtCidade.Campo = "Cidade:";
+            this.txtCidade.Location = new System.Drawing.Point(10, 52);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCidade.MaxLength = 100;
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(175, 21);
+            this.txtCidade.Size = new System.Drawing.Size(234, 21);
             this.txtCidade.TabIndex = 15;
             // 
             // label15
@@ -371,27 +327,18 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(10, 50);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 16);
+            this.label15.Size = new System.Drawing.Size(0, 16);
             this.label15.TabIndex = 22;
-            this.label15.Text = "Cidade:";
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(296, 52);
+            this.txtBairro.Campo = "Bairro:";
+            this.txtBairro.Location = new System.Drawing.Point(250, 52);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(175, 21);
+            this.txtBairro.Size = new System.Drawing.Size(221, 21);
             this.txtBairro.TabIndex = 16;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(250, 50);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 16);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Bairro:";
             // 
             // cboUF
             // 
@@ -430,29 +377,22 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(445, 23);
+            this.txtNumero.Campo = "Número:";
+            this.txtNumero.Location = new System.Drawing.Point(386, 23);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero.MaxLength = 100;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(53, 21);
+            this.txtNumero.Size = new System.Drawing.Size(112, 21);
             this.txtNumero.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(386, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 16);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Número:";
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(77, 23);
+            this.txtEndereco.Campo = "Endereço:";
+            this.txtEndereco.Location = new System.Drawing.Point(10, 23);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(303, 21);
+            this.txtEndereco.Size = new System.Drawing.Size(370, 21);
             this.txtEndereco.TabIndex = 11;
             // 
             // label14
@@ -460,9 +400,8 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(8, 21);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 16);
+            this.label14.Size = new System.Drawing.Size(0, 16);
             this.label14.TabIndex = 2;
-            this.label14.Text = "Endereço:";
             // 
             // grpBeneficios
             // 
@@ -591,9 +530,7 @@
             this.grpFuncionario.Controls.Add(this.txtSalario);
             this.grpFuncionario.Controls.Add(this.cboCargaHoraria);
             this.grpFuncionario.Controls.Add(this.txtCargo);
-            this.grpFuncionario.Controls.Add(this.label22);
             this.grpFuncionario.Controls.Add(this.label24);
-            this.grpFuncionario.Controls.Add(this.label25);
             this.grpFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFuncionario.Location = new System.Drawing.Point(3, 296);
             this.grpFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -606,11 +543,12 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(421, 23);
+            this.txtSalario.Campo = "Salário:";
+            this.txtSalario.Location = new System.Drawing.Point(373, 23);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSalario.MaxLength = 100;
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(86, 21);
+            this.txtSalario.Size = new System.Drawing.Size(134, 21);
             this.txtSalario.TabIndex = 20;
             // 
             // cboCargaHoraria
@@ -626,21 +564,13 @@
             // 
             // txtCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(57, 23);
+            this.txtCargo.Campo = "Cargo:";
+            this.txtCargo.Location = new System.Drawing.Point(10, 23);
             this.txtCargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCargo.MaxLength = 40;
             this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(155, 21);
+            this.txtCargo.Size = new System.Drawing.Size(202, 21);
             this.txtCargo.TabIndex = 18;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(8, 21);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(45, 16);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Cargo:";
             // 
             // label24
             // 
@@ -650,15 +580,6 @@
             this.label24.Size = new System.Drawing.Size(88, 16);
             this.label24.TabIndex = 4;
             this.label24.Text = "Carga Horária:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(373, 21);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(47, 16);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Salário:";
             // 
             // uctFuncionario
             // 
@@ -693,9 +614,8 @@
         #endregion
 
         public System.Windows.Forms.Label lblId;
-        public System.Windows.Forms.TextBox txtPesquisa;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtNome;
+        public UIX.txtUIX txtPesquisa;
+        public UIX.txtUIX txtNome;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.MaskedTextBox mtbDtNasc;
         public System.Windows.Forms.MaskedTextBox mtbRG;
@@ -704,31 +624,26 @@
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.GroupBox grbDadosPessoais;
         public System.Windows.Forms.GroupBox grpContatos;
-        public System.Windows.Forms.TextBox txtEmail;
-        public System.Windows.Forms.Label label6;
+        public UIX.txtUIX txtEmail;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.MaskedTextBox mtbTelRes;
         public System.Windows.Forms.MaskedTextBox mtbTelCel;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.MaskedTextBox mtbTelCel2;
         public System.Windows.Forms.Label label8;
-        public System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox txtIDNextel;
+        public UIX.txtUIX txtIDNextel;
         public System.Windows.Forms.GroupBox grpEndereco;
-        public System.Windows.Forms.TextBox txtEndereco;
+        public UIX.txtUIX txtEndereco;
         public System.Windows.Forms.Label label14;
-        public System.Windows.Forms.TextBox txtNumero;
-        public System.Windows.Forms.Label label10;
+        public UIX.txtUIX txtNumero;
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.MaskedTextBox mtbCEP;
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.ComboBox cboUF;
-        public System.Windows.Forms.TextBox txtBairro;
-        public System.Windows.Forms.Label label13;
-        public System.Windows.Forms.TextBox txtCidade;
+        public UIX.txtUIX txtBairro;
+        public UIX.txtUIX txtCidade;
         public System.Windows.Forms.Label label15;
-        public System.Windows.Forms.TextBox txtComplemento;
-        public System.Windows.Forms.Label label16;
+        public UIX.txtUIX txtComplemento;
         public System.Windows.Forms.GroupBox grpBeneficios;
         public System.Windows.Forms.Label label23;
         public System.Windows.Forms.ComboBox cboAssMedica;
@@ -741,11 +656,9 @@
         public System.Windows.Forms.ComboBox cboValeTransporte;
         public System.Windows.Forms.Label label20;
         public System.Windows.Forms.GroupBox grpFuncionario;
-        public System.Windows.Forms.TextBox txtCargo;
-        public System.Windows.Forms.Label label22;
+        public UIX.txtUIX txtCargo;
         public System.Windows.Forms.Label label24;
-        public System.Windows.Forms.Label label25;
         public System.Windows.Forms.ComboBox cboCargaHoraria;
-        public System.Windows.Forms.TextBox txtSalario;
+        public UIX.txtUIX txtSalario;
     }
 }
