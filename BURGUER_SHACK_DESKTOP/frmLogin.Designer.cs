@@ -28,52 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtNome = new UIX.txtUIX();
+            this.txtSenha = new UIX.txtUIX();
             this.btnLogin = new System.Windows.Forms.Button();
             this.ctlUIX1 = new UIX.uctUIX();
             this.SuspendLayout();
             // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(94, 75);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(39, 13);
-            this.lblLogin.TabIndex = 5;
-            this.lblLogin.Text = "NOME";
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(89, 103);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(44, 13);
-            this.lblSenha.TabIndex = 6;
-            this.lblSenha.Text = "SENHA";
-            // 
             // txtNome
             // 
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(139, 73);
+            this.txtNome.Campo = "NOME:";
+            this.txtNome.Location = new System.Drawing.Point(12, 88);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(246, 20);
+            this.txtNome.Size = new System.Drawing.Size(276, 20);
             this.txtNome.TabIndex = 7;
             // 
             // txtSenha
             // 
-            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSenha.Location = new System.Drawing.Point(139, 101);
+            this.txtSenha.Campo = "SENHA:";
+            this.txtSenha.Location = new System.Drawing.Point(12, 114);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(246, 20);
+            this.txtSenha.Size = new System.Drawing.Size(276, 20);
             this.txtSenha.TabIndex = 8;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(289, 128);
+            this.btnLogin.Location = new System.Drawing.Point(192, 156);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(96, 31);
@@ -87,7 +66,7 @@
             this.ctlUIX1.Location = new System.Drawing.Point(0, 0);
             this.ctlUIX1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ctlUIX1.Name = "ctlUIX1";
-            this.ctlUIX1.Size = new System.Drawing.Size(253, 43);
+            this.ctlUIX1.Size = new System.Drawing.Size(301, 43);
             this.ctlUIX1.TabIndex = 11;
             this.ctlUIX1.UIXButtonCloseEnabled = true;
             this.ctlUIX1.UIXButtonMinEnabled = false;
@@ -98,13 +77,11 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(400, 194);
+            this.ClientSize = new System.Drawing.Size(300, 200);
             this.Controls.Add(this.ctlUIX1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.lblLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLogin";
@@ -112,15 +89,12 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtSenha;
+        private UIX.txtUIX txtNome;
+        private UIX.txtUIX txtSenha;
         private System.Windows.Forms.Button btnLogin;
         private UIX.uctUIX ctlUIX1;
     }

@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCampo = new System.Windows.Forms.Label();
-            this.txtCampo = new System.Windows.Forms.TextBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // lblCampo
+            // lbl
             // 
-            this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(0, 0);
-            this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(43, 13);
-            this.lblCampo.TabIndex = 0;
-            this.lblCampo.Text = "Campo:";
-            this.lblCampo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl.AutoSize = true;
+            this.lbl.Location = new System.Drawing.Point(0, 0);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(43, 13);
+            this.lbl.TabIndex = 0;
+            this.lbl.Text = "Campo:";
+            this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtCampo
+            // box
             // 
-            this.txtCampo.Location = new System.Drawing.Point(50, 0);
-            this.txtCampo.Name = "txtCampo";
-            this.txtCampo.Size = new System.Drawing.Size(99, 20);
-            this.txtCampo.TabIndex = 1;
+            this.box.Location = new System.Drawing.Point(50, 0);
+            this.box.Name = "box";
+            this.box.Size = new System.Drawing.Size(99, 20);
+            this.box.TabIndex = 1;
             // 
             // txtUIX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtCampo);
-            this.Controls.Add(this.lblCampo);
+            this.Controls.Add(this.box);
+            this.Controls.Add(this.lbl);
             this.Name = "txtUIX";
             this.Size = new System.Drawing.Size(150, 20);
             this.ResumeLayout(false);
@@ -64,7 +64,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCampo;
-        private System.Windows.Forms.TextBox txtCampo;
+        private System.Windows.Forms.Label lbl;
+        public System.Windows.Forms.TextBox box;
     }
 }

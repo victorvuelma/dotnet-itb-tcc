@@ -18,15 +18,15 @@ namespace UIX
         }
 
         public String Campo {
-            get => lblCampo.Text;
+            get => lbl.Text;
             set {
-                lblCampo.Text = value;
-                int x = lblCampo.Size.Width - 2;
-                txtCampo.Location = new Point(x, txtCampo.Location.Y);
+                lbl.Text = value;
+                int x = lbl.Size.Width - 2;
+                box.Location = new Point(x, box.Location.Y);
             }
         }
 
-        public String Text { get => txtCampo.Text; set => txtCampo.Text = value; }
+        public override String Text { get => box.Text; set => box.Text = value; }
 
         public Size Size
         {
@@ -34,7 +34,7 @@ namespace UIX
             set
             {
                 Size current = base.Size;
-                txtCampo.Size = new Size(value.Width - lblCampo.Size.Width, txtCampo.Size.Height);
+                box.Size = new Size(value.Width - lbl.Size.Width, box.Size.Height);
                 base.Size = value;
             }
         }
