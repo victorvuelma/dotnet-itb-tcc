@@ -55,6 +55,12 @@
     <Compile Include="msgUIX.Designer.cs">
       <DependentUpon>msgUIX.cs</DependentUpon>
     </Compile>
+    <Compile Include="cboUIX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cboUIX.Designer.cs">
+      <DependentUpon>cboUIX.cs</DependentUpon>
+    </Compile>
     <Compile Include="txtUIX.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +103,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="cboUIX.resx">
+      <DependentUpon>cboUIX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="txtUIX.resx">
       <DependentUpon>txtUIX.cs</DependentUpon>
     </EmbeddedResource>
