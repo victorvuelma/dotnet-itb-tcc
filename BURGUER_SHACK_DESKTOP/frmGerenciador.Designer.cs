@@ -38,7 +38,6 @@
             this.grpFuncao = new System.Windows.Forms.GroupBox();
             this.btnProduto = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
-            this.btnTransportadora = new System.Windows.Forms.Button();
             this.btnTercerizada = new System.Windows.Forms.Button();
             this.uctUIX = new UIX.uctUIX();
             this.uctFuncionario = new BURGUER_SHACK_DESKTOP.uctFuncionario();
@@ -116,7 +115,6 @@
             // 
             this.grpFuncao.Controls.Add(this.btnProduto);
             this.grpFuncao.Controls.Add(this.btnFuncionario);
-            this.grpFuncao.Controls.Add(this.btnTransportadora);
             this.grpFuncao.Controls.Add(this.btnTercerizada);
             this.grpFuncao.Location = new System.Drawing.Point(96, 40);
             this.grpFuncao.Name = "grpFuncao";
@@ -128,7 +126,7 @@
             // 
             // btnProduto
             // 
-            this.btnProduto.Location = new System.Drawing.Point(319, 20);
+            this.btnProduto.Location = new System.Drawing.Point(198, 20);
             this.btnProduto.Name = "btnProduto";
             this.btnProduto.Size = new System.Drawing.Size(90, 23);
             this.btnProduto.TabIndex = 3;
@@ -147,21 +145,10 @@
             this.btnFuncionario.UseVisualStyleBackColor = true;
             this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
             // 
-            // btnTransportadora
-            // 
-            this.btnTransportadora.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransportadora.Location = new System.Drawing.Point(102, 20);
-            this.btnTransportadora.Name = "btnTransportadora";
-            this.btnTransportadora.Size = new System.Drawing.Size(115, 23);
-            this.btnTransportadora.TabIndex = 1;
-            this.btnTransportadora.Text = "Transportadora";
-            this.btnTransportadora.UseVisualStyleBackColor = true;
-            this.btnTransportadora.Click += new System.EventHandler(this.btnTransportadora_Click);
-            // 
             // btnTercerizada
             // 
             this.btnTercerizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTercerizada.Location = new System.Drawing.Point(223, 20);
+            this.btnTercerizada.Location = new System.Drawing.Point(102, 21);
             this.btnTercerizada.Name = "btnTercerizada";
             this.btnTercerizada.Size = new System.Drawing.Size(90, 23);
             this.btnTercerizada.TabIndex = 2;
@@ -223,7 +210,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.GroupBox grpFuncao;
-        private System.Windows.Forms.Button btnTransportadora;
         private System.Windows.Forms.Button btnFuncionario;
         private System.Windows.Forms.Button btnTercerizada;
         private System.Windows.Forms.Button btnProduto;
