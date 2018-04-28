@@ -30,8 +30,7 @@
         {
             this.dgv = new System.Windows.Forms.DataGridView();
             this.grbProdutoRemover = new System.Windows.Forms.GroupBox();
-            this.lblNomeProduto = new System.Windows.Forms.Label();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new UIX.txtUIX();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.grbProdutoRemover.SuspendLayout();
             this.SuspendLayout();
@@ -47,9 +46,8 @@
             // 
             // grbProdutoRemover
             // 
-            this.grbProdutoRemover.Controls.Add(this.dgv);
-            this.grbProdutoRemover.Controls.Add(this.lblNomeProduto);
             this.grbProdutoRemover.Controls.Add(this.txtPesquisa);
+            this.grbProdutoRemover.Controls.Add(this.dgv);
             this.grbProdutoRemover.Location = new System.Drawing.Point(5, 5);
             this.grbProdutoRemover.Name = "grbProdutoRemover";
             this.grbProdutoRemover.Size = new System.Drawing.Size(420, 600);
@@ -57,21 +55,13 @@
             this.grbProdutoRemover.TabStop = false;
             this.grbProdutoRemover.Text = "PEDIDOS";
             // 
-            // lblNomeProduto
-            // 
-            this.lblNomeProduto.AutoSize = true;
-            this.lblNomeProduto.Location = new System.Drawing.Point(5, 20);
-            this.lblNomeProduto.Name = "lblNomeProduto";
-            this.lblNomeProduto.Size = new System.Drawing.Size(84, 13);
-            this.lblNomeProduto.TabIndex = 1;
-            this.lblNomeProduto.Text = "ID DO PEDIDO:";
-            // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(95, 17);
+            this.txtPesquisa.Campo = "ID DO PEDIDO:";
+            this.txtPesquisa.Location = new System.Drawing.Point(7, 20);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(319, 20);
-            this.txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.Size = new System.Drawing.Size(408, 24);
+            this.txtPesquisa.TabIndex = 3;
             // 
             // uctPedidoListar
             // 
@@ -82,7 +72,6 @@
             this.Size = new System.Drawing.Size(430, 610);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.grbProdutoRemover.ResumeLayout(false);
-            this.grbProdutoRemover.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -91,7 +80,6 @@
 
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.GroupBox grbProdutoRemover;
-        private System.Windows.Forms.Label lblNomeProduto;
-        private System.Windows.Forms.TextBox txtPesquisa;
+        private UIX.txtUIX txtPesquisa;
     }
 }

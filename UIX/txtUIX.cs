@@ -21,7 +21,7 @@ namespace UIX
             get => lblCampo.Text;
             set {
                 lblCampo.Text = value;
-                int x = lblCampo.Size.Width;
+                int x = lblCampo.Size.Width - 2;
                 txtCampo.Location = new Point(x, txtCampo.Location.Y);
             }
         }
@@ -34,7 +34,7 @@ namespace UIX
             set
             {
                 Size current = base.Size;
-                txtCampo.Size = new Size(value.Width - lblCampo.Size.Width - 50, txtCampo.Size.Height);
+                txtCampo.Size = new Size(value.Width - lblCampo.Size.Width, txtCampo.Size.Height);
                 base.Size = value;
             }
         }

@@ -35,7 +35,7 @@
             // lblCampo
             // 
             this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(1, 1);
+            this.lblCampo.Location = new System.Drawing.Point(0, 0);
             this.lblCampo.Name = "lblCampo";
             this.lblCampo.Size = new System.Drawing.Size(43, 13);
             this.lblCampo.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // txtCampo
             // 
-            this.txtCampo.Location = new System.Drawing.Point(50, 1);
+            this.txtCampo.Location = new System.Drawing.Point(50, 0);
             this.txtCampo.Name = "txtCampo";
             this.txtCampo.Size = new System.Drawing.Size(99, 20);
             this.txtCampo.TabIndex = 1;
@@ -56,7 +56,7 @@
             this.Controls.Add(this.txtCampo);
             this.Controls.Add(this.lblCampo);
             this.Name = "txtUIX";
-            this.Size = new System.Drawing.Size(152, 24);
+            this.Size = new System.Drawing.Size(150, 20);
             this.ResumeLayout(false);
             this.PerformLayout();
 
