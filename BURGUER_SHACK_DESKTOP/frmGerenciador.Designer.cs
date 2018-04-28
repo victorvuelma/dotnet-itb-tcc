@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciador));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnSair = new UIX.btnUIX();
-            this.btnLista = new UIX.btnUIX();
-            this.btnRemover = new UIX.btnUIX();
-            this.btnModificar = new UIX.btnUIX();
-            this.btnAdicionar = new UIX.btnUIX();
             this.grpFuncao = new System.Windows.Forms.GroupBox();
             this.btnProduto = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnTercerizada = new System.Windows.Forms.Button();
             this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.btnSair = new UIX.btnUIX();
+            this.btnLista = new UIX.btnUIX();
+            this.btnRemover = new UIX.btnUIX();
+            this.btnModificar = new UIX.btnUIX();
+            this.btnAdicionar = new UIX.btnUIX();
             this.uctUIX = new UIX.uctUIX();
             this.pnlMenu.SuspendLayout();
             this.grpFuncao.SuspendLayout();
@@ -56,76 +56,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 560);
             this.pnlMenu.TabIndex = 3;
-            // 
-            // btnSair
-            // 
-            this.btnSair.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSair.Description = "Text";
-            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = null;
-            this.btnSair.Location = new System.Drawing.Point(10, 478);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(70, 70);
-            this.btnSair.TabIndex = 5;
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnLista
-            // 
-            this.btnLista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLista.BackgroundImage")));
-            this.btnLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLista.Description = "Text";
-            this.btnLista.HoverColor = System.Drawing.Color.Transparent;
-            this.btnLista.Image = null;
-            this.btnLista.Location = new System.Drawing.Point(10, 238);
-            this.btnLista.Name = "btnLista";
-            this.btnLista.Size = new System.Drawing.Size(80, 80);
-            this.btnLista.TabIndex = 4;
-            this.btnLista.UseVisualStyleBackColor = true;
-            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
-            this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemover.Description = "Text";
-            this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnRemover.Image = null;
-            this.btnRemover.Location = new System.Drawing.Point(10, 162);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(80, 80);
-            this.btnRemover.TabIndex = 2;
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
-            this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModificar.Description = "Text";
-            this.btnModificar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnModificar.Image = null;
-            this.btnModificar.Location = new System.Drawing.Point(10, 86);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(80, 80);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.BackgroundImage")));
-            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionar.Description = "Text";
-            this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAdicionar.Image = null;
-            this.btnAdicionar.Location = new System.Drawing.Point(10, 10);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
-            this.btnAdicionar.TabIndex = 0;
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // grpFuncao
             // 
@@ -180,6 +110,72 @@
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(818, 488);
             this.pnlConteudo.TabIndex = 5;
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.Description = "Text";
+            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSair.Image = null;
+            this.btnSair.Location = new System.Drawing.Point(10, 470);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(80, 80);
+            this.btnSair.TabIndex = 5;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnLista
+            // 
+            this.btnLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLista.Description = "Lista";
+            this.btnLista.HoverColor = System.Drawing.Color.Transparent;
+            this.btnLista.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
+            this.btnLista.Location = new System.Drawing.Point(10, 280);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(80, 80);
+            this.btnLista.TabIndex = 4;
+            this.btnLista.UseVisualStyleBackColor = true;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemover.Description = "Remover";
+            this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
+            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
+            this.btnRemover.Location = new System.Drawing.Point(10, 190);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(80, 80);
+            this.btnRemover.TabIndex = 2;
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModificar.Description = "Modificar";
+            this.btnModificar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnModificar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnModificar.Location = new System.Drawing.Point(10, 100);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 80);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionar.Description = "Adicionar";
+            this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnAdicionar.Location = new System.Drawing.Point(10, 10);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
+            this.btnAdicionar.TabIndex = 0;
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // uctUIX
             // 

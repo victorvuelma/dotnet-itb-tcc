@@ -21,7 +21,7 @@ namespace UIX
             InitializeComponent();
 
             HoverColor = Color.Transparent;
-                    }
+        }
 
         public new Color BackColor
         {
