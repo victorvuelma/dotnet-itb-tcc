@@ -29,34 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
-            this.pnlLeftButtons = new System.Windows.Forms.Panel();
+            this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.btnApagarPedido = new System.Windows.Forms.Button();
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.btnAlterarPedido = new System.Windows.Forms.Button();
             this.btnNovoPedido = new System.Windows.Forms.Button();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.uctUIX = new UIX.uctUIX();
-            this.uctPedidos = new BURGUER_SHACK_DESKTOP.uctPedidoListar();
-            this.uctPedidoRemover = new BURGUER_SHACK_DESKTOP.uctPedidoRemover();
-            this.uctProdutoRemover = new BURGUER_SHACK_DESKTOP.uctProdutoRemover();
-            this.uctPedidoNovo = new BURGUER_SHACK_DESKTOP.uctPedidoNovo();
-            this.uctPedidoAlterar = new BURGUER_SHACK_DESKTOP.uctPedidoAlterar();
-            this.pnlLeftButtons.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlLeftButtons
+            // pnlMenu
             // 
-            this.pnlLeftButtons.Controls.Add(this.btnLogout);
-            this.pnlLeftButtons.Controls.Add(this.btnPedidos);
-            this.pnlLeftButtons.Controls.Add(this.btnApagarPedido);
-            this.pnlLeftButtons.Controls.Add(this.btnRemoverProduto);
-            this.pnlLeftButtons.Controls.Add(this.btnAlterarPedido);
-            this.pnlLeftButtons.Controls.Add(this.btnNovoPedido);
-            this.pnlLeftButtons.Location = new System.Drawing.Point(0, 40);
-            this.pnlLeftButtons.Name = "pnlLeftButtons";
-            this.pnlLeftButtons.Size = new System.Drawing.Size(90, 760);
-            this.pnlLeftButtons.TabIndex = 2;
+            this.pnlMenu.Controls.Add(this.btnLogout);
+            this.pnlMenu.Controls.Add(this.btnPedidos);
+            this.pnlMenu.Controls.Add(this.btnApagarPedido);
+            this.pnlMenu.Controls.Add(this.btnRemoverProduto);
+            this.pnlMenu.Controls.Add(this.btnAlterarPedido);
+            this.pnlMenu.Controls.Add(this.btnNovoPedido);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 40);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(90, 760);
+            this.pnlMenu.TabIndex = 2;
             // 
             // btnLogout
             // 
@@ -73,7 +69,7 @@
             // 
             this.btnPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedidos.BackgroundImage")));
             this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPedidos.Location = new System.Drawing.Point(10, 314);
+            this.btnPedidos.Location = new System.Drawing.Point(10, 330);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(70, 70);
             this.btnPedidos.TabIndex = 4;
@@ -84,7 +80,7 @@
             // 
             this.btnApagarPedido.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
             this.btnApagarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnApagarPedido.Location = new System.Drawing.Point(10, 238);
+            this.btnApagarPedido.Location = new System.Drawing.Point(10, 250);
             this.btnApagarPedido.Name = "btnApagarPedido";
             this.btnApagarPedido.Size = new System.Drawing.Size(70, 70);
             this.btnApagarPedido.TabIndex = 3;
@@ -95,7 +91,7 @@
             // 
             this.btnRemoverProduto.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
             this.btnRemoverProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemoverProduto.Location = new System.Drawing.Point(10, 162);
+            this.btnRemoverProduto.Location = new System.Drawing.Point(10, 170);
             this.btnRemoverProduto.Name = "btnRemoverProduto";
             this.btnRemoverProduto.Size = new System.Drawing.Size(70, 70);
             this.btnRemoverProduto.TabIndex = 2;
@@ -106,7 +102,7 @@
             // 
             this.btnAlterarPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterarPedido.BackgroundImage")));
             this.btnAlterarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterarPedido.Location = new System.Drawing.Point(10, 86);
+            this.btnAlterarPedido.Location = new System.Drawing.Point(10, 90);
             this.btnAlterarPedido.Name = "btnAlterarPedido";
             this.btnAlterarPedido.Size = new System.Drawing.Size(70, 70);
             this.btnAlterarPedido.TabIndex = 1;
@@ -117,6 +113,7 @@
             // 
             this.btnNovoPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNovoPedido.BackgroundImage")));
             this.btnNovoPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovoPedido.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnNovoPedido.Location = new System.Drawing.Point(10, 10);
             this.btnNovoPedido.Name = "btnNovoPedido";
             this.btnNovoPedido.Size = new System.Drawing.Size(70, 70);
@@ -124,72 +121,33 @@
             this.btnNovoPedido.UseVisualStyleBackColor = true;
             this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
             // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Location = new System.Drawing.Point(90, 40);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(500, 760);
+            this.pnlConteudo.TabIndex = 3;
+            // 
             // uctUIX
             // 
             this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.uctUIX.Location = new System.Drawing.Point(0, 0);
             this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(250, 40);
+            this.uctUIX.Size = new System.Drawing.Size(590, 40);
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = true;
             this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
             this.uctUIX.UIXTitle = "Pedidos";
             // 
-            // uctPedidos
-            // 
-            this.uctPedidos.Location = new System.Drawing.Point(90, 40);
-            this.uctPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctPedidos.Name = "uctPedidos";
-            this.uctPedidos.Size = new System.Drawing.Size(510, 760);
-            this.uctPedidos.TabIndex = 8;
-            // 
-            // uctPedidoRemover
-            // 
-            this.uctPedidoRemover.Location = new System.Drawing.Point(90, 40);
-            this.uctPedidoRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctPedidoRemover.Name = "uctPedidoRemover";
-            this.uctPedidoRemover.Size = new System.Drawing.Size(522, 756);
-            this.uctPedidoRemover.TabIndex = 7;
-            // 
-            // uctProdutoRemover
-            // 
-            this.uctProdutoRemover.Location = new System.Drawing.Point(90, 40);
-            this.uctProdutoRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctProdutoRemover.Name = "uctProdutoRemover";
-            this.uctProdutoRemover.Size = new System.Drawing.Size(510, 756);
-            this.uctProdutoRemover.TabIndex = 6;
-            // 
-            // uctPedidoNovo
-            // 
-            this.uctPedidoNovo.AutoSize = true;
-            this.uctPedidoNovo.Location = new System.Drawing.Point(90, 40);
-            this.uctPedidoNovo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctPedidoNovo.Name = "uctPedidoNovo";
-            this.uctPedidoNovo.Size = new System.Drawing.Size(502, 745);
-            this.uctPedidoNovo.TabIndex = 5;
-            // 
-            // uctPedidoAlterar
-            // 
-            this.uctPedidoAlterar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.uctPedidoAlterar.Location = new System.Drawing.Point(90, 40);
-            this.uctPedidoAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctPedidoAlterar.Name = "uctPedidoAlterar";
-            this.uctPedidoAlterar.Size = new System.Drawing.Size(502, 746);
-            this.uctPedidoAlterar.TabIndex = 4;
-            // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 800);
-            this.Controls.Add(this.uctPedidos);
-            this.Controls.Add(this.uctPedidoRemover);
-            this.Controls.Add(this.uctProdutoRemover);
-            this.Controls.Add(this.uctPedidoNovo);
-            this.Controls.Add(this.uctPedidoAlterar);
-            this.Controls.Add(this.pnlLeftButtons);
+            this.ClientSize = new System.Drawing.Size(590, 800);
+            this.Controls.Add(this.pnlConteudo);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.uctUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -199,27 +157,22 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PEDIDO";
             this.Load += new System.EventHandler(this.frmPedido_Load);
-            this.pnlLeftButtons.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private UIX.uctUIX uctUIX;
-        private System.Windows.Forms.Panel pnlLeftButtons;
+        private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button btnNovoPedido;
         private System.Windows.Forms.Button btnAlterarPedido;
-        private uctPedidoAlterar uctPedidoAlterar;
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.Button btnApagarPedido;
-        private uctPedidoNovo uctPedidoNovo;
-        private uctProdutoRemover uctProdutoRemover;
-        private uctPedidoRemover uctPedidoRemover;
         private System.Windows.Forms.Button btnPedidos;
-        private uctPedidoListar uctPedidos;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel pnlConteudo;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

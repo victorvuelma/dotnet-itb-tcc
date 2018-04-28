@@ -15,11 +15,6 @@ namespace BURGUER_SHACK_DESKTOP
         public frmPedido()
         {
             InitializeComponent();
-            uctPedidoNovo.Visible = false;
-            uctPedidoAlterar.Visible = false;
-            uctProdutoRemover.Visible = false;
-            uctPedidoRemover.Visible = false;
-            uctPedidos.Visible = false;
         }
 
         private void frmPedido_Load(object sender, EventArgs e)
@@ -30,52 +25,43 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
-            uctPedidoNovo.Visible = true;
-            uctPedidoAlterar.Visible = false;
-            uctProdutoRemover.Visible = false;
-            uctPedidoRemover.Visible = false;
-            uctPedidos.Visible = false;
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Novo Pedido";
+            alterarConteudo(new uctPedidoNovo(), "Novo Pedido");
         }
 
         private void btnAlterarPedido_Click(object sender, EventArgs e)
         {
-            uctPedidoNovo.Visible = false;
-            uctPedidoAlterar.Visible = true;
-            uctProdutoRemover.Visible = false;
-            uctPedidoRemover.Visible = false;
-            uctPedidos.Visible = false;
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Alterar Pedido";
+            alterarConteudo(new uctPedidoAlterar(), "Alterar Pedido");
         }
 
         private void btnPedidoRemover_Click(object sender, EventArgs e)
         {
-            uctPedidoAlterar.Visible = false;
-            uctPedidoNovo.Visible = false;
-            uctProdutoRemover.Visible = true;
-            uctPedidoRemover.Visible = false;
-            uctPedidos.Visible = false;
+            alterarConteudo(new uctPedidoAlterar(), "Alterar Pedido");
             uctUIX.UIXTitle = tplBurguerShack.AppName + " - Alterar Pedido";
         }
 
         private void btnApagarPedido_Click(object sender, EventArgs e)
         {
-            uctPedidoAlterar.Visible = false;
-            uctPedidoNovo.Visible = false;
-            uctProdutoRemover.Visible = false;
-            uctPedidoRemover.Visible = true;
-            uctPedidos.Visible = false;
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Remover Pedido";
+            alterarConteudo(new uctPedidoRemover(), "Remover Pedido");
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-            uctPedidoAlterar.Visible = false;
-            uctPedidoNovo.Visible = false;
-            uctProdutoRemover.Visible = false;
-            uctPedidoRemover.Visible = false;
-            uctPedidos.Visible = true;
-            uctUIX.UIXTitle = tplBurguerShack.AppName + " - Pedidos";
+            alterarConteudo(new uctPedidoListar(), "Pedidos");
+        }
+
+        private void alterarConteudo(UserControl conteudo, String titulo)
+        {
+            if(pnlConteudo.Controls.Count == 1)
+            {
+                pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
+            }
+            tplBurguerShack.CommonTemplate.uctApply(conteudo);
+
+            pnlConteudo.Controls.Add(conteudo);
+            conteudo.Location = new Point(0, 0);
+            conteudo.Size = pnlConteudo.Size;
+
+            uctUIX.UIXTitle = tplBurguerShack.AppName + " - " + titulo;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
