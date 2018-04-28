@@ -37,15 +37,17 @@
             // txtNome
             // 
             this.txtNome.Campo = "NOME:";
-            this.txtNome.Location = new System.Drawing.Point(12, 88);
+            this.txtNome.Location = new System.Drawing.Point(17, 88);
+            this.txtNome.MaxLength = 32767;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(276, 20);
+            this.txtNome.Size = new System.Drawing.Size(271, 20);
             this.txtNome.TabIndex = 7;
             // 
             // txtSenha
             // 
             this.txtSenha.Campo = "SENHA:";
             this.txtSenha.Location = new System.Drawing.Point(12, 114);
+            this.txtSenha.MaxLength = 32767;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(276, 20);
             this.txtSenha.TabIndex = 8;

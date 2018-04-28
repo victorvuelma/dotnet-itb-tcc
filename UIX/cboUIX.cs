@@ -25,7 +25,7 @@ namespace UIX
             set
             {
                 lbl.Text = value;
-                int x = lbl.Size.Width - 2;
+                int x = lbl.Size.Width - 5;
                 cbo.Location = new Point(x, cbo.Location.Y);
             }
         }
