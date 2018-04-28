@@ -81,12 +81,6 @@
     <Compile Include="uctGerenFuncionario.Designer.cs">
       <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctPedido.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctPedido.Designer.cs">
-      <DependentUpon>uctPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uctGerenFuncionario.resx">
       <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uctPedido.resx">
-      <DependentUpon>uctPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoAlterar.resx">
       <DependentUpon>uctPedidoAlterar.cs</DependentUpon>
