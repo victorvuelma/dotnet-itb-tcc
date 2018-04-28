@@ -74,6 +74,7 @@
             this.uctUIX.UIXButtonMinEnabled = false;
             this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
             this.uctUIX.UIXTitle = "BurgerShack :: Entrar";
+            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             // 
             // frmLogin
             // 

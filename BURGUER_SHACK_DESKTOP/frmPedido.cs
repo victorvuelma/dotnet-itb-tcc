@@ -55,7 +55,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            Close();
         }
 
         private void uctUIX_Min(object sender, EventArgs e)

@@ -23,5 +23,10 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnTemplate.CommonTemplate.frmApply(this, uctUIX);
         }
+
+        private void uctUIX_Close(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

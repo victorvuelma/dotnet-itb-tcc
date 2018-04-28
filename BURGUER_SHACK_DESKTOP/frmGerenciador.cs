@@ -106,5 +106,10 @@ namespace BURGUER_SHACK_DESKTOP
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

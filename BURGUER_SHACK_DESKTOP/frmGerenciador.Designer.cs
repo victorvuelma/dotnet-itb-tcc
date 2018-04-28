@@ -66,6 +66,7 @@
             this.btnSair.Size = new System.Drawing.Size(70, 70);
             this.btnSair.TabIndex = 5;
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnLista
             // 
