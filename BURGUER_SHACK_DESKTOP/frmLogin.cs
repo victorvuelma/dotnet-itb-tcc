@@ -28,5 +28,33 @@ namespace BURGUER_SHACK_DESKTOP
         {
             Application.Exit();
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            if (txtNome.Text == "garçom" && txtSenha.Text == "123")
+            {
+                frmPedido objfrmPedido = new frmPedido();
+                objfrmPedido.Visible = true;
+                this.Visible = false;
+            }
+            else if (txtNome.Text == "cozinha" && txtSenha.Text == "123")
+            {
+                frmCozinha objfrmCozinha = new frmCozinha();
+                objfrmCozinha.Visible = true;
+                this.Visible = false;
+            }
+            else if (txtNome.Text == "lider" && txtSenha.Text == "123")
+            {
+                frmGerenciador objfrmGerenciador = new frmGerenciador();
+                objfrmGerenciador.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Você deve digitar um login válido!", "Problemas de autenticação");
+                txtNome.Text = "";
+                txtSenha.Text = "";
+            }
+        }
     }
 }
