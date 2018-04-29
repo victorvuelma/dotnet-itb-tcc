@@ -17,6 +17,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
             esconderConteudo();
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void frmGerenciador_Load(object sender, EventArgs e)

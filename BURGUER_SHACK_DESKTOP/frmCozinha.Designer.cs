@@ -28,26 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uctUIX1 = new UIX.uctUIX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.uctUIX1 = new UIX.uctUIX();
+            this.uctCozinha1 = new BURGUER_SHACK_DESKTOP.uctCozinha();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
-            // uctUIX1
-            // 
-            this.uctUIX1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX1.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX1.Name = "uctUIX1";
-            this.uctUIX1.Size = new System.Drawing.Size(250, 40);
-            this.uctUIX1.TabIndex = 0;
-            this.uctUIX1.UIXButtonCloseEnabled = true;
-            this.uctUIX1.UIXButtonMinEnabled = true;
-            this.uctUIX1.UIXTitle = "Titulo UIX";
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.uctCozinha1);
             this.panel1.Controls.Add(this.dgvPedidos);
             this.panel1.Location = new System.Drawing.Point(12, 46);
             this.panel1.Name = "panel1";
@@ -61,6 +52,25 @@
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.Size = new System.Drawing.Size(988, 373);
             this.dgvPedidos.TabIndex = 0;
+            // 
+            // uctUIX1
+            // 
+            this.uctUIX1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.uctUIX1.Location = new System.Drawing.Point(0, 0);
+            this.uctUIX1.Name = "uctUIX1";
+            this.uctUIX1.Size = new System.Drawing.Size(1019, 40);
+            this.uctUIX1.TabIndex = 0;
+            this.uctUIX1.UIXButtonCloseEnabled = true;
+            this.uctUIX1.UIXButtonMinEnabled = true;
+            this.uctUIX1.UIXImage = null;
+            this.uctUIX1.UIXTitle = "Titulo UIX";
+            // 
+            // uctCozinha1
+            // 
+            this.uctCozinha1.Location = new System.Drawing.Point(-12, 0);
+            this.uctCozinha1.Name = "uctCozinha1";
+            this.uctCozinha1.Size = new System.Drawing.Size(857, 379);
+            this.uctCozinha1.TabIndex = 1;
             // 
             // frmCozinha
             // 
@@ -85,5 +95,6 @@
         private UIX.uctUIX uctUIX1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvPedidos;
+        private uctCozinha uctCozinha1;
     }
 }

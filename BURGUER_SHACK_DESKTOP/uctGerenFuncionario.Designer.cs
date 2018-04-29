@@ -164,7 +164,7 @@
             // 
             this.txtContatoNextel.AccessibleName = "ID Nextel";
             this.txtContatoNextel.Campo = "ID Nextel";
-            this.txtContatoNextel.Location = new System.Drawing.Point(405, 49);
+            this.txtContatoNextel.Location = new System.Drawing.Point(405, 50);
             this.txtContatoNextel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContatoNextel.MaxLength = 9;
             this.txtContatoNextel.Name = "txtContatoNextel";
@@ -201,7 +201,7 @@
             // 
             this.mtbContatoTelRes.AccessibleName = "Telefone Residencial*";
             this.mtbContatoTelRes.Campo = "Telefone Residencial*";
-            this.mtbContatoTelRes.Location = new System.Drawing.Point(388, 20);
+            this.mtbContatoTelRes.Location = new System.Drawing.Point(386, 20);
             this.mtbContatoTelRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbContatoTelRes.Mask = "(00) 0000-0000";
             this.mtbContatoTelRes.MaxLength = 32767;
@@ -255,7 +255,7 @@
             // 
             this.txtEndCidade.AccessibleName = "Cidade*";
             this.txtEndCidade.Campo = "Cidade*";
-            this.txtEndCidade.Location = new System.Drawing.Point(415, 49);
+            this.txtEndCidade.Location = new System.Drawing.Point(415, 50);
             this.txtEndCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndCidade.MaxLength = 100;
             this.txtEndCidade.Name = "txtEndCidade";
@@ -266,7 +266,7 @@
             // 
             this.txtEndBairro.AccessibleName = "Bairro*";
             this.txtEndBairro.Campo = "Bairro*";
-            this.txtEndBairro.Location = new System.Drawing.Point(111, 49);
+            this.txtEndBairro.Location = new System.Drawing.Point(111, 50);
             this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndBairro.MaxLength = 100;
             this.txtEndBairro.Name = "txtEndBairro";
@@ -277,12 +277,12 @@
             // 
             this.mtbEndCEP.AccessibleName = "CEP*";
             this.mtbEndCEP.Campo = "CEP*";
-            this.mtbEndCEP.Location = new System.Drawing.Point(10, 49);
+            this.mtbEndCEP.Location = new System.Drawing.Point(10, 50);
             this.mtbEndCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbEndCEP.Mask = "00000-000";
             this.mtbEndCEP.MaxLength = 32767;
             this.mtbEndCEP.Name = "mtbEndCEP";
-            this.mtbEndCEP.Size = new System.Drawing.Size(95, 21);
+            this.mtbEndCEP.Size = new System.Drawing.Size(95, 20);
             this.mtbEndCEP.TabIndex = 4;
             this.mtbEndCEP.ValidatingType = null;
             // 
@@ -291,7 +291,7 @@
             this.cboEndUF.AccessibleName = "Estado*";
             this.cboEndUF.Campo = "Estado*";
             this.cboEndUF.FormattingEnabled = true;
-            this.cboEndUF.Location = new System.Drawing.Point(676, 47);
+            this.cboEndUF.Location = new System.Drawing.Point(676, 50);
             this.cboEndUF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboEndUF.Name = "cboEndUF";
             this.cboEndUF.Size = new System.Drawing.Size(108, 25);
@@ -352,7 +352,7 @@
             this.cboTiqueteRefeicao.AccessibleName = "Tíquete-refeição";
             this.cboTiqueteRefeicao.Campo = "Tíquete-refeição";
             this.cboTiqueteRefeicao.FormattingEnabled = true;
-            this.cboTiqueteRefeicao.Location = new System.Drawing.Point(250, 53);
+            this.cboTiqueteRefeicao.Location = new System.Drawing.Point(189, 50);
             this.cboTiqueteRefeicao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTiqueteRefeicao.Name = "cboTiqueteRefeicao";
             this.cboTiqueteRefeicao.Size = new System.Drawing.Size(164, 25);
@@ -363,7 +363,7 @@
             this.cboAuxCreche.AccessibleName = "Auxílio Creche";
             this.cboAuxCreche.Campo = "Auxílio Creche";
             this.cboAuxCreche.FormattingEnabled = true;
-            this.cboAuxCreche.Location = new System.Drawing.Point(405, 21);
+            this.cboAuxCreche.Location = new System.Drawing.Point(405, 20);
             this.cboAuxCreche.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAuxCreche.Name = "cboAuxCreche";
             this.cboAuxCreche.Size = new System.Drawing.Size(150, 25);
@@ -374,7 +374,7 @@
             this.cboAssOdontologica.AccessibleName = "Assistência Odontológica";
             this.cboAssOdontologica.Campo = "Assistência Odontológica";
             this.cboAssOdontologica.FormattingEnabled = true;
-            this.cboAssOdontologica.Location = new System.Drawing.Point(189, 21);
+            this.cboAssOdontologica.Location = new System.Drawing.Point(189, 20);
             this.cboAssOdontologica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAssOdontologica.Name = "cboAssOdontologica";
             this.cboAssOdontologica.Size = new System.Drawing.Size(210, 25);
@@ -385,7 +385,7 @@
             this.cboAssMedica.AccessibleName = "Assistência Médica";
             this.cboAssMedica.Campo = "Assistência Médica";
             this.cboAssMedica.FormattingEnabled = true;
-            this.cboAssMedica.Location = new System.Drawing.Point(12, 21);
+            this.cboAssMedica.Location = new System.Drawing.Point(12, 20);
             this.cboAssMedica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAssMedica.Name = "cboAssMedica";
             this.cboAssMedica.Size = new System.Drawing.Size(171, 25);
@@ -410,7 +410,7 @@
             // 
             this.txtSalario.AccessibleName = "Salário";
             this.txtSalario.Campo = "Salário";
-            this.txtSalario.Location = new System.Drawing.Point(373, 19);
+            this.txtSalario.Location = new System.Drawing.Point(373, 20);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSalario.MaxLength = 100;
             this.txtSalario.Name = "txtSalario";
@@ -422,7 +422,7 @@
             this.cboCargaHoraria.AccessibleName = "Carga Horária";
             this.cboCargaHoraria.Campo = "Carga Horária";
             this.cboCargaHoraria.FormattingEnabled = true;
-            this.cboCargaHoraria.Location = new System.Drawing.Point(218, 19);
+            this.cboCargaHoraria.Location = new System.Drawing.Point(218, 20);
             this.cboCargaHoraria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCargaHoraria.Name = "cboCargaHoraria";
             this.cboCargaHoraria.Size = new System.Drawing.Size(149, 25);

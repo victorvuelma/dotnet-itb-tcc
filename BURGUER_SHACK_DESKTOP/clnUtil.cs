@@ -12,6 +12,7 @@ using Caelum.Stella.CSharp.Format;
 
 using Caelum.Stella.CSharp.Http;
 using Caelum.Stella.CSharp.Http.Exceptions;
+using static System.Windows.Forms.Control;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -36,6 +37,49 @@ namespace BURGUER_SHACK_DESKTOP
         private static CNPJFormatter _cnpjFormatter = new CNPJFormatter();
 
         private static ViaCEP _viaCep = new ViaCEP();
+
+        public static void atualizarTabIndex(ControlCollection controls)
+        {
+            SortedDictionary<int, SortedDictionary<int, List<Control>>> positionControl = new SortedDictionary<int, SortedDictionary<int, List<Control>>>();
+
+            foreach (Control control in controls)
+            {
+                int Y = control.Location.Y;
+                int X = control.Location.X;
+
+                SortedDictionary<int, List<Control>> yControls = null;
+                if (!positionControl.TryGetValue(Y, out yControls))
+                {
+                    yControls = new SortedDictionary<int, List<Control>>();
+                    positionControl.Add(Y, yControls);
+                }
+
+                List<Control> xControls = null;
+                if (!yControls.TryGetValue(X, out xControls))
+                {
+                    xControls = new List<Control>();
+                    yControls.Add(X, xControls);
+                }
+                xControls.Add(control);
+
+                atualizarTabIndex(control.Controls);
+            }
+
+            int index = 1;
+            foreach (KeyValuePair<int, SortedDictionary<int, List<Control>>> yControls in positionControl)
+            {
+                foreach (KeyValuePair<int, List<Control>> xControls in yControls.Value)
+                {
+                    foreach (Control control in xControls.Value)
+                    {
+                        control.TabIndex = index;
+                        index++;
+                    }
+                }
+            }
+
+            positionControl.Clear();
+        }
 
         public static void definirCEP(UIX.mtbUIX mtbCEP, Control rua, Control bairro, Control cidade, Control estado, Control nr)
         {
@@ -134,6 +178,7 @@ namespace BURGUER_SHACK_DESKTOP
                 pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
             }
 
+            clnUtil.atualizarTabIndex(uctConteudo.Controls);
             clnTemplate.CommonTemplate.uctApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);
