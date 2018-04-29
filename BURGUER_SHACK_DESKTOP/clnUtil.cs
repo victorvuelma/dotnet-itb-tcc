@@ -12,13 +12,26 @@ namespace BURGUER_SHACK_DESKTOP
     class clnUtil
     {
 
+        public static bool validarCNPJ(String cnpj)
+        {
+            //TODO: IMPLEMENTAR
+            return true;
+        }
+
+        public static bool validarCPF(String cpf)
+        {
+            //TODO: IMPLEMENTAR
+            return true;
+        }
+
         public static bool validarEmail(String email)
         {
             try
             {
                 new System.Net.Mail.MailAddress(email);
                 return true;
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 return false;
             }
