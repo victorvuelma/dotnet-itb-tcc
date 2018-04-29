@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.txtPesquisa = new UIX.txtUIX();
-            this.txtNome = new UIX.txtUIX();
-            this.mtbDtNasc = new UIX.mtbUIX();
-            this.mtbRG = new UIX.mtbUIX();
-            this.mtbCPF = new UIX.mtbUIX();
-            this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtDadosNome = new UIX.txtUIX();
+            this.mtbDadosDtNasc = new UIX.mtbUIX();
+            this.mtbDadosRG = new UIX.mtbUIX();
+            this.mtbDadosCPF = new UIX.mtbUIX();
+            this.grbDados = new System.Windows.Forms.GroupBox();
             this.grpContatos = new System.Windows.Forms.GroupBox();
-            this.txtIDNextel = new UIX.txtUIX();
-            this.mtbTelCel2 = new UIX.mtbUIX();
-            this.mtbTelCel = new UIX.mtbUIX();
-            this.mtbTelRes = new UIX.mtbUIX();
-            this.txtEmail = new UIX.txtUIX();
+            this.txtContatoNextel = new UIX.txtUIX();
+            this.mtbContatoTelCel2 = new UIX.mtbUIX();
+            this.mtbContatoTelCel = new UIX.mtbUIX();
+            this.mtbContatoTelRes = new UIX.mtbUIX();
+            this.txtContatoEmail = new UIX.txtUIX();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
-            this.txtComplemento = new UIX.txtUIX();
-            this.txtCidade = new UIX.txtUIX();
-            this.txtBairro = new UIX.txtUIX();
-            this.cboUF = new UIX.cboUIX();
-            this.mtbCEP = new UIX.mtbUIX();
-            this.txtNumero = new UIX.txtUIX();
-            this.txtEndereco = new UIX.txtUIX();
+            this.txtEndComplemento = new UIX.txtUIX();
+            this.txtEndCidade = new UIX.txtUIX();
+            this.txtEndBairro = new UIX.txtUIX();
+            this.mtbEndCEP = new UIX.mtbUIX();
+            this.cboEndUF = new UIX.cboUIX();
+            this.txtEndNr = new UIX.txtUIX();
+            this.txtEndLogradouro = new UIX.txtUIX();
             this.grpBeneficios = new System.Windows.Forms.GroupBox();
             this.cboValeTransporte = new UIX.cboUIX();
             this.cboTiqueteRefeicao = new UIX.cboUIX();
@@ -59,7 +59,7 @@
             this.cboCargaHoraria = new UIX.cboUIX();
             this.txtCargo = new UIX.txtUIX();
             this.btnSalvar = new UIX.btnUIX();
-            this.grbDadosPessoais.SuspendLayout();
+            this.grbDados.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
             this.grpBeneficios.SuspendLayout();
@@ -68,238 +68,257 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.AccessibleName = "Número de Identificação";
             this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.MaxLength = 5;
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(228, 21);
+            this.txtPesquisa.Size = new System.Drawing.Size(227, 21);
             this.txtPesquisa.TabIndex = 1;
             // 
-            // txtNome
+            // txtDadosNome
             // 
-            this.txtNome.Campo = "Nome";
-            this.txtNome.Location = new System.Drawing.Point(12, 23);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNome.MaxLength = 40;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(371, 21);
-            this.txtNome.TabIndex = 2;
+            this.txtDadosNome.AccessibleName = "Nome";
+            this.txtDadosNome.Campo = "Nome";
+            this.txtDadosNome.Location = new System.Drawing.Point(10, 20);
+            this.txtDadosNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDadosNome.MaxLength = 40;
+            this.txtDadosNome.Name = "txtDadosNome";
+            this.txtDadosNome.Size = new System.Drawing.Size(487, 21);
+            this.txtDadosNome.TabIndex = 2;
             // 
-            // mtbDtNasc
+            // mtbDadosDtNasc
             // 
-            this.mtbDtNasc.Campo = "Data de Nascimento";
-            this.mtbDtNasc.Location = new System.Drawing.Point(388, 23);
-            this.mtbDtNasc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbDtNasc.Mask = "00/00/0000";
-            this.mtbDtNasc.MaxLength = 32767;
-            this.mtbDtNasc.Name = "mtbDtNasc";
-            this.mtbDtNasc.Size = new System.Drawing.Size(206, 21);
-            this.mtbDtNasc.TabIndex = 3;
-            this.mtbDtNasc.ValidatingType = typeof(System.DateTime);
+            this.mtbDadosDtNasc.AccessibleName = "Data de Nascimento";
+            this.mtbDadosDtNasc.Campo = "Data de Nascimento";
+            this.mtbDadosDtNasc.Location = new System.Drawing.Point(10, 50);
+            this.mtbDadosDtNasc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbDadosDtNasc.Mask = "00/00/0000";
+            this.mtbDadosDtNasc.MaxLength = 32767;
+            this.mtbDadosDtNasc.Name = "mtbDadosDtNasc";
+            this.mtbDadosDtNasc.Size = new System.Drawing.Size(185, 21);
+            this.mtbDadosDtNasc.TabIndex = 3;
+            this.mtbDadosDtNasc.ValidatingType = typeof(System.DateTime);
             // 
-            // mtbRG
+            // mtbDadosRG
             // 
-            this.mtbRG.Campo = "Registro Geral (RG)";
-            this.mtbRG.Location = new System.Drawing.Point(600, 23);
-            this.mtbRG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbRG.Mask = "00,000,000-0";
-            this.mtbRG.MaxLength = 32767;
-            this.mtbRG.Name = "mtbRG";
-            this.mtbRG.Size = new System.Drawing.Size(204, 21);
-            this.mtbRG.TabIndex = 4;
-            this.mtbRG.ValidatingType = null;
+            this.mtbDadosRG.AccessibleName = "Registro Geral (RG)";
+            this.mtbDadosRG.Campo = "Registro Geral (RG)";
+            this.mtbDadosRG.Location = new System.Drawing.Point(201, 50);
+            this.mtbDadosRG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbDadosRG.Mask = "00,000,000-0";
+            this.mtbDadosRG.MaxLength = 32767;
+            this.mtbDadosRG.Name = "mtbDadosRG";
+            this.mtbDadosRG.Size = new System.Drawing.Size(178, 21);
+            this.mtbDadosRG.TabIndex = 4;
+            this.mtbDadosRG.ValidatingType = null;
             // 
-            // mtbCPF
+            // mtbDadosCPF
             // 
-            this.mtbCPF.Campo = "CPF";
-            this.mtbCPF.Location = new System.Drawing.Point(11, 50);
-            this.mtbCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbCPF.Mask = "000,000,000-00";
-            this.mtbCPF.MaxLength = 32767;
-            this.mtbCPF.Name = "mtbCPF";
-            this.mtbCPF.Size = new System.Drawing.Size(133, 21);
-            this.mtbCPF.TabIndex = 5;
-            this.mtbCPF.ValidatingType = null;
+            this.mtbDadosCPF.AccessibleName = "CPF";
+            this.mtbDadosCPF.Campo = "CPF";
+            this.mtbDadosCPF.Location = new System.Drawing.Point(386, 50);
+            this.mtbDadosCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbDadosCPF.Mask = "000,000,000-00";
+            this.mtbDadosCPF.MaxLength = 32767;
+            this.mtbDadosCPF.Name = "mtbDadosCPF";
+            this.mtbDadosCPF.Size = new System.Drawing.Size(111, 21);
+            this.mtbDadosCPF.TabIndex = 5;
+            this.mtbDadosCPF.ValidatingType = null;
             // 
-            // grbDadosPessoais
+            // grbDados
             // 
-            this.grbDadosPessoais.Controls.Add(this.mtbCPF);
-            this.grbDadosPessoais.Controls.Add(this.txtNome);
-            this.grbDadosPessoais.Controls.Add(this.mtbRG);
-            this.grbDadosPessoais.Controls.Add(this.mtbDtNasc);
-            this.grbDadosPessoais.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDadosPessoais.Location = new System.Drawing.Point(3, 20);
-            this.grbDadosPessoais.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDadosPessoais.Name = "grbDadosPessoais";
-            this.grbDadosPessoais.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDadosPessoais.Size = new System.Drawing.Size(810, 81);
-            this.grbDadosPessoais.TabIndex = 1;
-            this.grbDadosPessoais.TabStop = false;
-            this.grbDadosPessoais.Text = "DADOS PESSOAIS *";
+            this.grbDados.Controls.Add(this.mtbDadosCPF);
+            this.grbDados.Controls.Add(this.txtDadosNome);
+            this.grbDados.Controls.Add(this.mtbDadosRG);
+            this.grbDados.Controls.Add(this.mtbDadosDtNasc);
+            this.grbDados.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDados.Location = new System.Drawing.Point(5, 20);
+            this.grbDados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbDados.Name = "grbDados";
+            this.grbDados.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbDados.Size = new System.Drawing.Size(790, 80);
+            this.grbDados.TabIndex = 1;
+            this.grbDados.TabStop = false;
+            this.grbDados.Text = "DADOS PESSOAIS *";
             // 
             // grpContatos
             // 
-            this.grpContatos.Controls.Add(this.txtIDNextel);
-            this.grpContatos.Controls.Add(this.mtbTelCel2);
-            this.grpContatos.Controls.Add(this.mtbTelCel);
-            this.grpContatos.Controls.Add(this.mtbTelRes);
-            this.grpContatos.Controls.Add(this.txtEmail);
+            this.grpContatos.Controls.Add(this.txtContatoNextel);
+            this.grpContatos.Controls.Add(this.mtbContatoTelCel2);
+            this.grpContatos.Controls.Add(this.mtbContatoTelCel);
+            this.grpContatos.Controls.Add(this.mtbContatoTelRes);
+            this.grpContatos.Controls.Add(this.txtContatoEmail);
             this.grpContatos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpContatos.Location = new System.Drawing.Point(3, 109);
+            this.grpContatos.Location = new System.Drawing.Point(5, 110);
             this.grpContatos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpContatos.Name = "grpContatos";
             this.grpContatos.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpContatos.Size = new System.Drawing.Size(810, 87);
+            this.grpContatos.Size = new System.Drawing.Size(790, 80);
             this.grpContatos.TabIndex = 2;
             this.grpContatos.TabStop = false;
             this.grpContatos.Text = "MEIOS DE CONTATO";
             // 
-            // txtIDNextel
+            // txtContatoNextel
             // 
-            this.txtIDNextel.Campo = "ID Nextel";
-            this.txtIDNextel.Location = new System.Drawing.Point(218, 55);
-            this.txtIDNextel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIDNextel.MaxLength = 9;
-            this.txtIDNextel.Name = "txtIDNextel";
-            this.txtIDNextel.Size = new System.Drawing.Size(130, 21);
-            this.txtIDNextel.TabIndex = 10;
+            this.txtContatoNextel.AccessibleName = "ID Nextel";
+            this.txtContatoNextel.Campo = "ID Nextel";
+            this.txtContatoNextel.Location = new System.Drawing.Point(405, 49);
+            this.txtContatoNextel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtContatoNextel.MaxLength = 9;
+            this.txtContatoNextel.Name = "txtContatoNextel";
+            this.txtContatoNextel.Size = new System.Drawing.Size(129, 21);
+            this.txtContatoNextel.TabIndex = 10;
             // 
-            // mtbTelCel2
+            // mtbContatoTelCel2
             // 
-            this.mtbTelCel2.Campo = "Telefone Celular";
-            this.mtbTelCel2.Location = new System.Drawing.Point(10, 55);
-            this.mtbTelCel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbTelCel2.Mask = "(00) 00000-0000";
-            this.mtbTelCel2.MaxLength = 32767;
-            this.mtbTelCel2.Name = "mtbTelCel2";
-            this.mtbTelCel2.Size = new System.Drawing.Size(202, 21);
-            this.mtbTelCel2.TabIndex = 9;
-            this.mtbTelCel2.ValidatingType = null;
+            this.mtbContatoTelCel2.AccessibleName = "Telefone Celular 2";
+            this.mtbContatoTelCel2.Campo = "Telefone Celular 2";
+            this.mtbContatoTelCel2.Location = new System.Drawing.Point(212, 50);
+            this.mtbContatoTelCel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbContatoTelCel2.Mask = "(00) 00000-0000";
+            this.mtbContatoTelCel2.MaxLength = 32767;
+            this.mtbContatoTelCel2.Name = "mtbContatoTelCel2";
+            this.mtbContatoTelCel2.Size = new System.Drawing.Size(187, 21);
+            this.mtbContatoTelCel2.TabIndex = 9;
+            this.mtbContatoTelCel2.ValidatingType = null;
             // 
-            // mtbTelCel
+            // mtbContatoTelCel
             // 
-            this.mtbTelCel.Campo = "Telefone Celular";
-            this.mtbTelCel.Location = new System.Drawing.Point(616, 23);
-            this.mtbTelCel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbTelCel.Mask = "(00) 00000-0000";
-            this.mtbTelCel.MaxLength = 32767;
-            this.mtbTelCel.Name = "mtbTelCel";
-            this.mtbTelCel.Size = new System.Drawing.Size(188, 21);
-            this.mtbTelCel.TabIndex = 8;
-            this.mtbTelCel.ValidatingType = null;
+            this.mtbContatoTelCel.AccessibleName = "Telefone Celular*";
+            this.mtbContatoTelCel.Campo = "Telefone Celular*";
+            this.mtbContatoTelCel.Location = new System.Drawing.Point(10, 50);
+            this.mtbContatoTelCel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbContatoTelCel.Mask = "(00) 00000-0000";
+            this.mtbContatoTelCel.MaxLength = 32767;
+            this.mtbContatoTelCel.Name = "mtbContatoTelCel";
+            this.mtbContatoTelCel.Size = new System.Drawing.Size(185, 21);
+            this.mtbContatoTelCel.TabIndex = 8;
+            this.mtbContatoTelCel.ValidatingType = null;
             // 
-            // mtbTelRes
+            // mtbContatoTelRes
             // 
-            this.mtbTelRes.Campo = "Telefone Residencial";
-            this.mtbTelRes.Location = new System.Drawing.Point(388, 23);
-            this.mtbTelRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbTelRes.Mask = "(00) 0000-0000";
-            this.mtbTelRes.MaxLength = 32767;
-            this.mtbTelRes.Name = "mtbTelRes";
-            this.mtbTelRes.Size = new System.Drawing.Size(219, 21);
-            this.mtbTelRes.TabIndex = 7;
-            this.mtbTelRes.ValidatingType = null;
+            this.mtbContatoTelRes.AccessibleName = "Telefone Residencial*";
+            this.mtbContatoTelRes.Campo = "Telefone Residencial*";
+            this.mtbContatoTelRes.Location = new System.Drawing.Point(388, 20);
+            this.mtbContatoTelRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbContatoTelRes.Mask = "(00) 0000-0000";
+            this.mtbContatoTelRes.MaxLength = 32767;
+            this.mtbContatoTelRes.Name = "mtbContatoTelRes";
+            this.mtbContatoTelRes.Size = new System.Drawing.Size(205, 21);
+            this.mtbContatoTelRes.TabIndex = 7;
+            this.mtbContatoTelRes.ValidatingType = null;
             // 
-            // txtEmail
+            // txtContatoEmail
             // 
-            this.txtEmail.Campo = "E-mail";
-            this.txtEmail.Location = new System.Drawing.Point(10, 23);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEmail.MaxLength = 40;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(369, 21);
-            this.txtEmail.TabIndex = 6;
+            this.txtContatoEmail.AccessibleName = "E-mail*";
+            this.txtContatoEmail.Campo = "E-mail*";
+            this.txtContatoEmail.Location = new System.Drawing.Point(10, 20);
+            this.txtContatoEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtContatoEmail.MaxLength = 40;
+            this.txtContatoEmail.Name = "txtContatoEmail";
+            this.txtContatoEmail.Size = new System.Drawing.Size(369, 21);
+            this.txtContatoEmail.TabIndex = 6;
             // 
             // grpEndereco
             // 
-            this.grpEndereco.Controls.Add(this.txtComplemento);
-            this.grpEndereco.Controls.Add(this.txtCidade);
-            this.grpEndereco.Controls.Add(this.txtBairro);
-            this.grpEndereco.Controls.Add(this.cboUF);
-            this.grpEndereco.Controls.Add(this.mtbCEP);
-            this.grpEndereco.Controls.Add(this.txtNumero);
-            this.grpEndereco.Controls.Add(this.txtEndereco);
+            this.grpEndereco.Controls.Add(this.txtEndComplemento);
+            this.grpEndereco.Controls.Add(this.txtEndCidade);
+            this.grpEndereco.Controls.Add(this.txtEndBairro);
+            this.grpEndereco.Controls.Add(this.mtbEndCEP);
+            this.grpEndereco.Controls.Add(this.cboEndUF);
+            this.grpEndereco.Controls.Add(this.txtEndNr);
+            this.grpEndereco.Controls.Add(this.txtEndLogradouro);
             this.grpEndereco.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEndereco.Location = new System.Drawing.Point(3, 204);
+            this.grpEndereco.Location = new System.Drawing.Point(5, 200);
             this.grpEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpEndereco.Name = "grpEndereco";
             this.grpEndereco.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpEndereco.Size = new System.Drawing.Size(810, 84);
+            this.grpEndereco.Size = new System.Drawing.Size(790, 80);
             this.grpEndereco.TabIndex = 3;
             this.grpEndereco.TabStop = false;
-            this.grpEndereco.Text = "ENDEREÇO *";
+            this.grpEndereco.Text = "ENDEREÇO";
             // 
-            // txtComplemento
+            // txtEndComplemento
             // 
-            this.txtComplemento.Campo = "Complemento";
-            this.txtComplemento.Location = new System.Drawing.Point(477, 52);
-            this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtComplemento.MaxLength = 100;
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(270, 21);
-            this.txtComplemento.TabIndex = 17;
+            this.txtEndComplemento.AccessibleName = "Complemento";
+            this.txtEndComplemento.Campo = "Complemento";
+            this.txtEndComplemento.Location = new System.Drawing.Point(558, 20);
+            this.txtEndComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndComplemento.MaxLength = 100;
+            this.txtEndComplemento.Name = "txtEndComplemento";
+            this.txtEndComplemento.Size = new System.Drawing.Size(226, 21);
+            this.txtEndComplemento.TabIndex = 3;
             // 
-            // txtCidade
+            // txtEndCidade
             // 
-            this.txtCidade.Campo = "Cidade";
-            this.txtCidade.Location = new System.Drawing.Point(10, 52);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCidade.MaxLength = 100;
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(234, 21);
-            this.txtCidade.TabIndex = 15;
+            this.txtEndCidade.AccessibleName = "Cidade*";
+            this.txtEndCidade.Campo = "Cidade*";
+            this.txtEndCidade.Location = new System.Drawing.Point(415, 49);
+            this.txtEndCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndCidade.MaxLength = 100;
+            this.txtEndCidade.Name = "txtEndCidade";
+            this.txtEndCidade.Size = new System.Drawing.Size(255, 21);
+            this.txtEndCidade.TabIndex = 6;
             // 
-            // txtBairro
+            // txtEndBairro
             // 
-            this.txtBairro.Campo = "Bairro";
-            this.txtBairro.Location = new System.Drawing.Point(250, 52);
-            this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBairro.MaxLength = 100;
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(221, 21);
-            this.txtBairro.TabIndex = 16;
+            this.txtEndBairro.AccessibleName = "Bairro*";
+            this.txtEndBairro.Campo = "Bairro*";
+            this.txtEndBairro.Location = new System.Drawing.Point(107, 49);
+            this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndBairro.MaxLength = 100;
+            this.txtEndBairro.Name = "txtEndBairro";
+            this.txtEndBairro.Size = new System.Drawing.Size(302, 21);
+            this.txtEndBairro.TabIndex = 5;
             // 
-            // cboUF
+            // mtbEndCEP
             // 
-            this.cboUF.Campo = "Estado";
-            this.cboUF.FormattingEnabled = true;
-            this.cboUF.Location = new System.Drawing.Point(616, 23);
-            this.cboUF.Name = "cboUF";
-            this.cboUF.Size = new System.Drawing.Size(108, 24);
-            this.cboUF.TabIndex = 14;
+            this.mtbEndCEP.AccessibleName = "CEP*";
+            this.mtbEndCEP.Campo = "CEP*";
+            this.mtbEndCEP.Location = new System.Drawing.Point(10, 49);
+            this.mtbEndCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbEndCEP.Mask = "00000-000";
+            this.mtbEndCEP.MaxLength = 32767;
+            this.mtbEndCEP.Name = "mtbEndCEP";
+            this.mtbEndCEP.Size = new System.Drawing.Size(91, 21);
+            this.mtbEndCEP.TabIndex = 4;
+            this.mtbEndCEP.ValidatingType = null;
+            this.mtbEndCEP.Validated += new System.EventHandler(this.mtbEndCEP_Validated);
             // 
-            // mtbCEP
+            // cboEndUF
             // 
-            this.mtbCEP.Campo = "CEP";
-            this.mtbCEP.Location = new System.Drawing.Point(504, 23);
-            this.mtbCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbCEP.Mask = "00000-000";
-            this.mtbCEP.MaxLength = 32767;
-            this.mtbCEP.Name = "mtbCEP";
-            this.mtbCEP.Size = new System.Drawing.Size(103, 21);
-            this.mtbCEP.TabIndex = 13;
-            this.mtbCEP.ValidatingType = null;
+            this.cboEndUF.AccessibleName = "Estado*";
+            this.cboEndUF.Campo = "Estado*";
+            this.cboEndUF.FormattingEnabled = true;
+            this.cboEndUF.Location = new System.Drawing.Point(676, 47);
+            this.cboEndUF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboEndUF.Name = "cboEndUF";
+            this.cboEndUF.Size = new System.Drawing.Size(108, 25);
+            this.cboEndUF.TabIndex = 7;
             // 
-            // txtNumero
+            // txtEndNr
             // 
-            this.txtNumero.Campo = "Número";
-            this.txtNumero.Location = new System.Drawing.Point(386, 23);
-            this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNumero.MaxLength = 100;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(112, 21);
-            this.txtNumero.TabIndex = 12;
+            this.txtEndNr.AccessibleName = "Número*";
+            this.txtEndNr.Campo = "Número*";
+            this.txtEndNr.Location = new System.Drawing.Point(432, 20);
+            this.txtEndNr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndNr.MaxLength = 100;
+            this.txtEndNr.Name = "txtEndNr";
+            this.txtEndNr.Size = new System.Drawing.Size(121, 21);
+            this.txtEndNr.TabIndex = 2;
             // 
-            // txtEndereco
+            // txtEndLogradouro
             // 
-            this.txtEndereco.Campo = "Endereço";
-            this.txtEndereco.Location = new System.Drawing.Point(10, 23);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEndereco.MaxLength = 100;
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(370, 21);
-            this.txtEndereco.TabIndex = 11;
+            this.txtEndLogradouro.AccessibleName = "Logradouro*";
+            this.txtEndLogradouro.Campo = "Logradouro*";
+            this.txtEndLogradouro.Location = new System.Drawing.Point(10, 20);
+            this.txtEndLogradouro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndLogradouro.MaxLength = 100;
+            this.txtEndLogradouro.Name = "txtEndLogradouro";
+            this.txtEndLogradouro.Size = new System.Drawing.Size(416, 21);
+            this.txtEndLogradouro.TabIndex = 1;
             // 
             // grpBeneficios
             // 
@@ -313,13 +332,14 @@
             this.grpBeneficios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpBeneficios.Name = "grpBeneficios";
             this.grpBeneficios.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpBeneficios.Size = new System.Drawing.Size(726, 88);
+            this.grpBeneficios.Size = new System.Drawing.Size(697, 88);
             this.grpBeneficios.TabIndex = 5;
             this.grpBeneficios.TabStop = false;
             this.grpBeneficios.Text = "BENEFÍCIOS";
             // 
             // cboValeTransporte
             // 
+            this.cboValeTransporte.AccessibleName = "Vale-transporte";
             this.cboValeTransporte.Campo = "Vale-transporte";
             this.cboValeTransporte.FormattingEnabled = true;
             this.cboValeTransporte.Location = new System.Drawing.Point(12, 50);
@@ -330,6 +350,7 @@
             // 
             // cboTiqueteRefeicao
             // 
+            this.cboTiqueteRefeicao.AccessibleName = "Tíquete-refeição";
             this.cboTiqueteRefeicao.Campo = "Tíquete-refeição";
             this.cboTiqueteRefeicao.FormattingEnabled = true;
             this.cboTiqueteRefeicao.Location = new System.Drawing.Point(250, 53);
@@ -340,6 +361,7 @@
             // 
             // cboAuxCreche
             // 
+            this.cboAuxCreche.AccessibleName = "Auxílio Creche";
             this.cboAuxCreche.Campo = "Auxílio Creche";
             this.cboAuxCreche.FormattingEnabled = true;
             this.cboAuxCreche.Location = new System.Drawing.Point(405, 21);
@@ -350,6 +372,7 @@
             // 
             // cboAssOdontologica
             // 
+            this.cboAssOdontologica.AccessibleName = "Assistência Odontológica";
             this.cboAssOdontologica.Campo = "Assistência Odontológica";
             this.cboAssOdontologica.FormattingEnabled = true;
             this.cboAssOdontologica.Location = new System.Drawing.Point(189, 21);
@@ -360,6 +383,7 @@
             // 
             // cboAssMedica
             // 
+            this.cboAssMedica.AccessibleName = "Assistência Médica";
             this.cboAssMedica.Campo = "Assistência Médica";
             this.cboAssMedica.FormattingEnabled = true;
             this.cboAssMedica.Location = new System.Drawing.Point(12, 21);
@@ -374,19 +398,20 @@
             this.grpFuncionario.Controls.Add(this.cboCargaHoraria);
             this.grpFuncionario.Controls.Add(this.txtCargo);
             this.grpFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpFuncionario.Location = new System.Drawing.Point(3, 296);
+            this.grpFuncionario.Location = new System.Drawing.Point(5, 290);
             this.grpFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpFuncionario.Name = "grpFuncionario";
             this.grpFuncionario.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpFuncionario.Size = new System.Drawing.Size(810, 58);
+            this.grpFuncionario.Size = new System.Drawing.Size(790, 50);
             this.grpFuncionario.TabIndex = 4;
             this.grpFuncionario.TabStop = false;
             this.grpFuncionario.Text = "FUNCIONÁRIO *";
             // 
             // txtSalario
             // 
+            this.txtSalario.AccessibleName = "Salário";
             this.txtSalario.Campo = "Salário";
-            this.txtSalario.Location = new System.Drawing.Point(373, 23);
+            this.txtSalario.Location = new System.Drawing.Point(373, 19);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSalario.MaxLength = 100;
             this.txtSalario.Name = "txtSalario";
@@ -395,17 +420,20 @@
             // 
             // cboCargaHoraria
             // 
+            this.cboCargaHoraria.AccessibleName = "Carga Horária";
             this.cboCargaHoraria.Campo = "Carga Horária";
             this.cboCargaHoraria.FormattingEnabled = true;
-            this.cboCargaHoraria.Location = new System.Drawing.Point(218, 23);
+            this.cboCargaHoraria.Location = new System.Drawing.Point(218, 19);
+            this.cboCargaHoraria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboCargaHoraria.Name = "cboCargaHoraria";
-            this.cboCargaHoraria.Size = new System.Drawing.Size(149, 24);
+            this.cboCargaHoraria.Size = new System.Drawing.Size(149, 25);
             this.cboCargaHoraria.TabIndex = 19;
             // 
             // txtCargo
             // 
+            this.txtCargo.AccessibleName = "Cargo";
             this.txtCargo.Campo = "Cargo";
-            this.txtCargo.Location = new System.Drawing.Point(10, 23);
+            this.txtCargo.Location = new System.Drawing.Point(10, 20);
             this.txtCargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCargo.MaxLength = 40;
             this.txtCargo.Name = "txtCargo";
@@ -418,7 +446,7 @@
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
-            this.btnSalvar.Location = new System.Drawing.Point(729, 369);
+            this.btnSalvar.Location = new System.Drawing.Point(706, 370);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 80);
             this.btnSalvar.TabIndex = 34;
@@ -436,15 +464,14 @@
             this.Controls.Add(this.grpEndereco);
             this.Controls.Add(this.grpContatos);
             this.Controls.Add(this.txtPesquisa);
-            this.Controls.Add(this.grbDadosPessoais);
+            this.Controls.Add(this.grbDados);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctGerenFuncionario";
-            this.Size = new System.Drawing.Size(818, 488);
-            this.grbDadosPessoais.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(800, 470);
+            this.grbDados.ResumeLayout(false);
             this.grpContatos.ResumeLayout(false);
             this.grpEndereco.ResumeLayout(false);
-            this.grpEndereco.PerformLayout();
             this.grpBeneficios.ResumeLayout(false);
             this.grpFuncionario.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -453,25 +480,25 @@
 
         #endregion
         public UIX.txtUIX txtPesquisa;
-        public UIX.txtUIX txtNome;
-        public UIX.mtbUIX mtbDtNasc;
-        public UIX.mtbUIX mtbRG;
-        public UIX.mtbUIX mtbCPF;
-        public System.Windows.Forms.GroupBox grbDadosPessoais;
+        public UIX.txtUIX txtDadosNome;
+        public UIX.mtbUIX mtbDadosDtNasc;
+        public UIX.mtbUIX mtbDadosRG;
+        public UIX.mtbUIX mtbDadosCPF;
+        public System.Windows.Forms.GroupBox grbDados;
         public System.Windows.Forms.GroupBox grpContatos;
-        public UIX.txtUIX txtEmail;
-        public UIX.mtbUIX mtbTelRes;
-        public UIX.mtbUIX mtbTelCel;
-        public UIX.mtbUIX mtbTelCel2;
-        public UIX.txtUIX txtIDNextel;
+        public UIX.txtUIX txtContatoEmail;
+        public UIX.mtbUIX mtbContatoTelRes;
+        public UIX.mtbUIX mtbContatoTelCel;
+        public UIX.mtbUIX mtbContatoTelCel2;
+        public UIX.txtUIX txtContatoNextel;
         public System.Windows.Forms.GroupBox grpEndereco;
-        public UIX.txtUIX txtEndereco;
-        public UIX.txtUIX txtNumero;
-        public UIX.mtbUIX mtbCEP;
-        public UIX.cboUIX cboUF;
-        public UIX.txtUIX txtBairro;
-        public UIX.txtUIX txtCidade;
-        public UIX.txtUIX txtComplemento;
+        public UIX.txtUIX txtEndLogradouro;
+        public UIX.txtUIX txtEndNr;
+        public UIX.mtbUIX mtbEndCEP;
+        public UIX.cboUIX cboEndUF;
+        public UIX.txtUIX txtEndBairro;
+        public UIX.txtUIX txtEndCidade;
+        public UIX.txtUIX txtEndComplemento;
         public System.Windows.Forms.GroupBox grpBeneficios;
         public UIX.cboUIX cboAssMedica;
         public UIX.cboUIX cboAssOdontologica;

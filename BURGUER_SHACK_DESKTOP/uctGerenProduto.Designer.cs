@@ -29,8 +29,19 @@
         private void InitializeComponent()
         {
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtPrecoVenda = new UIX.txtUIX();
+            this.txtPrecoCusto = new UIX.txtUIX();
+            this.txtDataCadastro = new UIX.txtUIX();
             this.txtCodMarca = new System.Windows.Forms.TextBox();
             this.txtCodFornecedor = new System.Windows.Forms.TextBox();
+            this.txtUnidadeEstoque = new UIX.txtUIX();
+            this.txtFornecedor = new UIX.txtUIX();
+            this.txtMarca = new UIX.txtUIX();
+            this.txtICMS = new UIX.txtUIX();
+            this.cboTipo = new UIX.cboUIX();
+            this.txtPeso = new UIX.txtUIX();
+            this.txtDescricao = new UIX.txtUIX();
+            this.txtNome = new UIX.txtUIX();
             this.ckbProdutoInativo = new System.Windows.Forms.CheckBox();
             this.picFotoProduto = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,17 +53,6 @@
             this.btnAdicionar = new UIX.btnUIX();
             this.btnUIX1 = new UIX.btnUIX();
             this.txtPesquisa = new UIX.txtUIX();
-            this.txtPrecoVenda = new UIX.txtUIX();
-            this.txtPrecoCusto = new UIX.txtUIX();
-            this.txtDataCadastro = new UIX.txtUIX();
-            this.txtUnidadeEstoque = new UIX.txtUIX();
-            this.txtFornecedor = new UIX.txtUIX();
-            this.txtMarca = new UIX.txtUIX();
-            this.txtICMS = new UIX.txtUIX();
-            this.cboTipo = new UIX.cboUIX();
-            this.txtPeso = new UIX.txtUIX();
-            this.txtDescricao = new UIX.txtUIX();
-            this.txtNome = new UIX.txtUIX();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoProduto)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,40 @@
             this.grbDadosPessoais.TabStop = false;
             this.grbDadosPessoais.Text = "DADOS DO PRODUTO";
             // 
+            // txtPrecoVenda
+            // 
+            this.txtPrecoVenda.AccessibleName = "Preço de Venda: (R$)*";
+            this.txtPrecoVenda.Campo = "Preço de Venda: (R$)*";
+            this.txtPrecoVenda.Location = new System.Drawing.Point(282, 143);
+            this.txtPrecoVenda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtPrecoVenda.MaxLength = 32767;
+            this.txtPrecoVenda.Name = "txtPrecoVenda";
+            this.txtPrecoVenda.Size = new System.Drawing.Size(203, 26);
+            this.txtPrecoVenda.TabIndex = 19;
+            // 
+            // txtPrecoCusto
+            // 
+            this.txtPrecoCusto.AccessibleName = "Preço de Custo: (R$)*";
+            this.txtPrecoCusto.Campo = "Preço de Custo: (R$)*";
+            this.txtPrecoCusto.Location = new System.Drawing.Point(6, 143);
+            this.txtPrecoCusto.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
+            this.txtPrecoCusto.MaxLength = 32767;
+            this.txtPrecoCusto.Name = "txtPrecoCusto";
+            this.txtPrecoCusto.Size = new System.Drawing.Size(200, 21);
+            this.txtPrecoCusto.TabIndex = 5;
+            // 
+            // txtDataCadastro
+            // 
+            this.txtDataCadastro.AccessibleName = "Data de Cadastro: *";
+            this.txtDataCadastro.Campo = "Data de Cadastro: *";
+            this.txtDataCadastro.Location = new System.Drawing.Point(115, 82);
+            this.txtDataCadastro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDataCadastro.MaxLength = 32767;
+            this.txtDataCadastro.Name = "txtDataCadastro";
+            this.txtDataCadastro.Size = new System.Drawing.Size(210, 20);
+            this.txtDataCadastro.TabIndex = 22;
+            this.txtDataCadastro.Load += new System.EventHandler(this.txtDataCadastro_Load);
+            // 
             // txtCodMarca
             // 
             this.txtCodMarca.Location = new System.Drawing.Point(442, 112);
@@ -95,6 +129,94 @@
             this.txtCodFornecedor.Name = "txtCodFornecedor";
             this.txtCodFornecedor.Size = new System.Drawing.Size(59, 21);
             this.txtCodFornecedor.TabIndex = 15;
+            // 
+            // txtUnidadeEstoque
+            // 
+            this.txtUnidadeEstoque.AccessibleName = "Unidade em Estoque";
+            this.txtUnidadeEstoque.Campo = "Unidade em Estoque";
+            this.txtUnidadeEstoque.Location = new System.Drawing.Point(6, 176);
+            this.txtUnidadeEstoque.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtUnidadeEstoque.MaxLength = 32767;
+            this.txtUnidadeEstoque.Name = "txtUnidadeEstoque";
+            this.txtUnidadeEstoque.Size = new System.Drawing.Size(190, 26);
+            this.txtUnidadeEstoque.TabIndex = 6;
+            // 
+            // txtFornecedor
+            // 
+            this.txtFornecedor.AccessibleName = "Fornecedor";
+            this.txtFornecedor.Campo = "Fornecedor";
+            this.txtFornecedor.Location = new System.Drawing.Point(6, 112);
+            this.txtFornecedor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtFornecedor.MaxLength = 32767;
+            this.txtFornecedor.Name = "txtFornecedor";
+            this.txtFornecedor.Size = new System.Drawing.Size(206, 23);
+            this.txtFornecedor.TabIndex = 3;
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.AccessibleName = "Marca";
+            this.txtMarca.Campo = "Marca";
+            this.txtMarca.Location = new System.Drawing.Point(275, 112);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
+            this.txtMarca.MaxLength = 32767;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(173, 21);
+            this.txtMarca.TabIndex = 8;
+            // 
+            // txtICMS
+            // 
+            this.txtICMS.AccessibleName = "Valor ICMS:* (R$)";
+            this.txtICMS.Campo = "Valor ICMS:* (R$)";
+            this.txtICMS.Location = new System.Drawing.Point(326, 82);
+            this.txtICMS.Margin = new System.Windows.Forms.Padding(3, 11, 3, 11);
+            this.txtICMS.MaxLength = 32767;
+            this.txtICMS.Name = "txtICMS";
+            this.txtICMS.Size = new System.Drawing.Size(157, 21);
+            this.txtICMS.TabIndex = 21;
+            // 
+            // cboTipo
+            // 
+            this.cboTipo.AccessibleName = "Tipo:*";
+            this.cboTipo.Campo = "Tipo:*";
+            this.cboTipo.FormattingEnabled = true;
+            this.cboTipo.Location = new System.Drawing.Point(6, 22);
+            this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboTipo.Name = "cboTipo";
+            this.cboTipo.Size = new System.Drawing.Size(157, 25);
+            this.cboTipo.TabIndex = 9;
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.AccessibleName = "Peso:* (g)";
+            this.txtPeso.Campo = "Peso:* (g)";
+            this.txtPeso.Location = new System.Drawing.Point(6, 82);
+            this.txtPeso.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtPeso.MaxLength = 32767;
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(103, 26);
+            this.txtPeso.TabIndex = 7;
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.AccessibleName = "Descrição:*";
+            this.txtDescricao.Campo = "Descrição:*";
+            this.txtDescricao.Location = new System.Drawing.Point(6, 52);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtDescricao.MaxLength = 32767;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(479, 23);
+            this.txtDescricao.TabIndex = 4;
+            // 
+            // txtNome
+            // 
+            this.txtNome.AccessibleName = "Nome:*";
+            this.txtNome.Campo = "Nome:*";
+            this.txtNome.Location = new System.Drawing.Point(171, 21);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNome.MaxLength = 32767;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(316, 21);
+            this.txtNome.TabIndex = 2;
             // 
             // ckbProdutoInativo
             // 
@@ -197,6 +319,7 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.AccessibleName = "Número de Identificação";
             this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -204,117 +327,6 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(309, 21);
             this.txtPesquisa.TabIndex = 2;
-            // 
-            // txtPrecoVenda
-            // 
-            this.txtPrecoVenda.Campo = "Preço de Venda: (R$)*";
-            this.txtPrecoVenda.Location = new System.Drawing.Point(282, 143);
-            this.txtPrecoVenda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtPrecoVenda.MaxLength = 32767;
-            this.txtPrecoVenda.Name = "txtPrecoVenda";
-            this.txtPrecoVenda.Size = new System.Drawing.Size(203, 26);
-            this.txtPrecoVenda.TabIndex = 19;
-            // 
-            // txtPrecoCusto
-            // 
-            this.txtPrecoCusto.Campo = "Preço de Custo: (R$)*";
-            this.txtPrecoCusto.Location = new System.Drawing.Point(6, 143);
-            this.txtPrecoCusto.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
-            this.txtPrecoCusto.MaxLength = 32767;
-            this.txtPrecoCusto.Name = "txtPrecoCusto";
-            this.txtPrecoCusto.Size = new System.Drawing.Size(200, 21);
-            this.txtPrecoCusto.TabIndex = 5;
-            // 
-            // txtDataCadastro
-            // 
-            this.txtDataCadastro.Campo = "Data de Cadastro: *";
-            this.txtDataCadastro.Location = new System.Drawing.Point(115, 82);
-            this.txtDataCadastro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDataCadastro.MaxLength = 32767;
-            this.txtDataCadastro.Name = "txtDataCadastro";
-            this.txtDataCadastro.Size = new System.Drawing.Size(210, 20);
-            this.txtDataCadastro.TabIndex = 22;
-            this.txtDataCadastro.Load += new System.EventHandler(this.txtDataCadastro_Load);
-            // 
-            // txtUnidadeEstoque
-            // 
-            this.txtUnidadeEstoque.Campo = "Unidade em Estoque";
-            this.txtUnidadeEstoque.Location = new System.Drawing.Point(6, 176);
-            this.txtUnidadeEstoque.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtUnidadeEstoque.MaxLength = 32767;
-            this.txtUnidadeEstoque.Name = "txtUnidadeEstoque";
-            this.txtUnidadeEstoque.Size = new System.Drawing.Size(190, 26);
-            this.txtUnidadeEstoque.TabIndex = 6;
-            // 
-            // txtFornecedor
-            // 
-            this.txtFornecedor.Campo = "Fornecedor";
-            this.txtFornecedor.Location = new System.Drawing.Point(6, 112);
-            this.txtFornecedor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtFornecedor.MaxLength = 32767;
-            this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(206, 23);
-            this.txtFornecedor.TabIndex = 3;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Campo = "Marca";
-            this.txtMarca.Location = new System.Drawing.Point(275, 112);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
-            this.txtMarca.MaxLength = 32767;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(173, 21);
-            this.txtMarca.TabIndex = 8;
-            // 
-            // txtICMS
-            // 
-            this.txtICMS.Campo = "Valor ICMS:* (R$)";
-            this.txtICMS.Location = new System.Drawing.Point(326, 82);
-            this.txtICMS.Margin = new System.Windows.Forms.Padding(3, 11, 3, 11);
-            this.txtICMS.MaxLength = 32767;
-            this.txtICMS.Name = "txtICMS";
-            this.txtICMS.Size = new System.Drawing.Size(157, 21);
-            this.txtICMS.TabIndex = 21;
-            // 
-            // cboTipo
-            // 
-            this.cboTipo.Campo = "Tipo:*";
-            this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(6, 22);
-            this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(157, 25);
-            this.cboTipo.TabIndex = 9;
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Campo = "Peso:* (g)";
-            this.txtPeso.Location = new System.Drawing.Point(6, 82);
-            this.txtPeso.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtPeso.MaxLength = 32767;
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(103, 26);
-            this.txtPeso.TabIndex = 7;
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Campo = "Descrição:*";
-            this.txtDescricao.Location = new System.Drawing.Point(6, 52);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.txtDescricao.MaxLength = 32767;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(479, 23);
-            this.txtDescricao.TabIndex = 4;
-            // 
-            // txtNome
-            // 
-            this.txtNome.Campo = "Nome:*";
-            this.txtNome.Location = new System.Drawing.Point(171, 21);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNome.MaxLength = 32767;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(316, 21);
-            this.txtNome.TabIndex = 2;
             // 
             // uctGerenProduto
             // 
@@ -334,7 +346,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctGerenProduto";
-            this.Size = new System.Drawing.Size(818, 488);
+            this.Size = new System.Drawing.Size(800, 470);
             this.grbDadosPessoais.ResumeLayout(false);
             this.grbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoProduto)).EndInit();

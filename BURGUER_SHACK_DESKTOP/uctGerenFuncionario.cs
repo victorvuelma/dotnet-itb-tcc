@@ -16,5 +16,13 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
         }
+
+        private void mtbEndCEP_Validated(object sender, EventArgs e)
+        {
+            if (clnUtil.validarCEP(mtbEndCEP.Text))
+            {
+                clnUtil.definirEndereco(mtbEndCEP.Text, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF, txtEndNr);
+            }
+        }
     }
 }

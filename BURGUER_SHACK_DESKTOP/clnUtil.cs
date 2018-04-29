@@ -36,6 +36,27 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static ViaCEP _viaCep = new ViaCEP();
 
+        public static void definirEndereco(String cep, Control rua, Control bairro, Control cidade, Control estado, Control  nr)
+        {
+            if (validarCEP(cep))
+            {
+                Endereco end = obterEndereco(cep);
+                if (end != null)
+                {
+                    rua.Text = end.Logradouro;
+                    bairro.Text = end.Bairro;
+                    cidade.Text = end.Localidade;
+                    estado.Text = end.UF;
+                    nr.Focus();
+                }
+                else
+                {
+                    clnMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnMensagem.MSG_ERRO);
+                    rua.Focus();
+                }
+            }
+        }
+
         public static Endereco obterEndereco(String cep)
         {
             try
