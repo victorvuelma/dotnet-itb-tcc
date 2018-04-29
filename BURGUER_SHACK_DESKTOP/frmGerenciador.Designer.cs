@@ -127,7 +127,7 @@
             this.grpFuncao.Controls.Add(this.btnProduto);
             this.grpFuncao.Controls.Add(this.btnFuncionario);
             this.grpFuncao.Controls.Add(this.btnTercerizada);
-            this.grpFuncao.Location = new System.Drawing.Point(110, 40);
+            this.grpFuncao.Location = new System.Drawing.Point(105, 45);
             this.grpFuncao.Name = "grpFuncao";
             this.grpFuncao.Size = new System.Drawing.Size(810, 55);
             this.grpFuncao.TabIndex = 4;
@@ -170,10 +170,10 @@
             // pnlConteudo
             // 
             this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlConteudo.Location = new System.Drawing.Point(100, 100);
+            this.pnlConteudo.Location = new System.Drawing.Point(105, 110);
             this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(818, 488);
+            this.pnlConteudo.Size = new System.Drawing.Size(815, 485);
             this.pnlConteudo.TabIndex = 5;
             // 
             // uctUIX
@@ -181,7 +181,7 @@
             this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.uctUIX.Location = new System.Drawing.Point(0, 0);
             this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(921, 40);
+            this.uctUIX.Size = new System.Drawing.Size(930, 40);
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = true;
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 600);
+            this.ClientSize = new System.Drawing.Size(930, 600);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.grpFuncao);
