@@ -43,13 +43,11 @@
             this.grpEndereco = new System.Windows.Forms.GroupBox();
             this.txtComplemento = new UIX.txtUIX();
             this.txtCidade = new UIX.txtUIX();
-            this.label15 = new System.Windows.Forms.Label();
             this.txtBairro = new UIX.txtUIX();
             this.cboUF = new UIX.cboUIX();
             this.mtbCEP = new UIX.mtbUIX();
             this.txtNumero = new UIX.txtUIX();
             this.txtEndereco = new UIX.txtUIX();
-            this.label14 = new System.Windows.Forms.Label();
             this.grpBeneficios = new System.Windows.Forms.GroupBox();
             this.cboValeTransporte = new UIX.cboUIX();
             this.cboTiqueteRefeicao = new UIX.cboUIX();
@@ -217,13 +215,11 @@
             // 
             this.grpEndereco.Controls.Add(this.txtComplemento);
             this.grpEndereco.Controls.Add(this.txtCidade);
-            this.grpEndereco.Controls.Add(this.label15);
             this.grpEndereco.Controls.Add(this.txtBairro);
             this.grpEndereco.Controls.Add(this.cboUF);
             this.grpEndereco.Controls.Add(this.mtbCEP);
             this.grpEndereco.Controls.Add(this.txtNumero);
             this.grpEndereco.Controls.Add(this.txtEndereco);
-            this.grpEndereco.Controls.Add(this.label14);
             this.grpEndereco.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpEndereco.Location = new System.Drawing.Point(3, 204);
             this.grpEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -253,14 +249,6 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(234, 21);
             this.txtCidade.TabIndex = 15;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(0, 16);
-            this.label15.TabIndex = 22;
             // 
             // txtBairro
             // 
@@ -312,14 +300,6 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(370, 21);
             this.txtEndereco.TabIndex = 11;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 21);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 16);
-            this.label14.TabIndex = 2;
             // 
             // grpBeneficios
             // 
@@ -486,13 +466,11 @@
         public UIX.txtUIX txtIDNextel;
         public System.Windows.Forms.GroupBox grpEndereco;
         public UIX.txtUIX txtEndereco;
-        public System.Windows.Forms.Label label14;
         public UIX.txtUIX txtNumero;
         public UIX.mtbUIX mtbCEP;
         public UIX.cboUIX cboUF;
         public UIX.txtUIX txtBairro;
         public UIX.txtUIX txtCidade;
-        public System.Windows.Forms.Label label15;
         public UIX.txtUIX txtComplemento;
         public System.Windows.Forms.GroupBox grpBeneficios;
         public UIX.cboUIX cboAssMedica;
