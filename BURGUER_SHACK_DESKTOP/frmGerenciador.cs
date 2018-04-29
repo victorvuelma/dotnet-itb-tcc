@@ -82,7 +82,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = clnTemplate.AppName + " - Produto";
+            alterarConteudo(new uctGerenProduto(), "Produto");
         }
 
         private void alterarConteudo(UserControl uctConteudo, String titulo)

@@ -91,7 +91,7 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap erro {
             get {
@@ -101,7 +101,7 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap garcom {
             get {
@@ -161,7 +161,7 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap lista {
             get {
@@ -186,6 +186,16 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap padrao {
+            get {
+                object obj = ResourceManager.GetObject("padrao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -241,7 +251,7 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
         internal static System.Drawing.Icon usuarios_ico {
             get {
