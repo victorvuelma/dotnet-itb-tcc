@@ -22,6 +22,7 @@ namespace UIX
 
         private Font _headerFont;
         private Font _contentFont;
+        private Font _buttonFont;
 
         private uixSet _btnColor;
         private uixSet _grbColor;
@@ -31,7 +32,7 @@ namespace UIX
 
         public uixStyle(uixSet formColor, uixSet headerButtonColor, uixSet headerCloseButtonColor,
             int headerButtonSize, int headerButtonSpace,
-            Font headerFont, Font contentFont,
+            Font headerFont, Font contentFont, Font buttonFont,
             uixSet btnColor, uixSet grbColor, uixSet lblColor, uixSet pnlColor, uixSet txtColor)
         {
             _formColor = formColor;
@@ -41,6 +42,7 @@ namespace UIX
 
             _headerFont = headerFont;
             _contentFont = contentFont;
+            _buttonFont = buttonFont;
 
             _headerButtonSize = headerButtonSize;
             _headerButtonSpace = headerButtonSpace;
@@ -61,6 +63,7 @@ namespace UIX
 
         public Font HeaderFont { get => _headerFont; }
         public Font ContentFont { get => _contentFont; }
+        public Font ButtonFont { get => _buttonFont; }
 
         public uixSet ButtonColor { get => _btnColor; }
         public uixSet GroupBoxColor { get => _grbColor; }
@@ -74,8 +77,9 @@ namespace UIX
             uixSet.RED,
             30,
             5,
-                        uixFont.LATO_BLACK,
+            uixFont.LATO_BLACK,
             uixFont.CENTURY_REGULAR,
+            uixFont.CENTURY_BOLD,
             uixSet.BLUE,
             uixSet.INDIGO,
             uixSet.INDIGO,
@@ -89,12 +93,13 @@ namespace UIX
             uixSet.RED,
             30,
             5,
-                                    uixFont.LATO_BLACK,
-                        uixFont.CENTURY_REGULAR,
+            uixFont.LATO_BLACK,
+            uixFont.CENTURY_REGULAR,
+            uixFont.CENTURY_BOLD,
             uixSet.GRAY,
             uixSet.GRAY,
             uixSet.GRAY,
-                        uixSet.GRAY,
+            uixSet.GRAY,
             uixSet.WHITE
         );
 

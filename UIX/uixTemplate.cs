@@ -32,7 +32,7 @@ namespace UIX
             if (ctl is btnUIX)
             {
                 btnUIX btn = (btnUIX)ctl;
-                uixButton.btnApply(btn, Style.ButtonColor, Style.ContentFont);
+                uixButton.btnApply(btn, Style.ButtonColor, Style.ButtonFont);
                 btn.BackColor = Style.ButtonColor.LightColor;
                 btn.HoverColor = Style.ButtonColor.DarkColor;
             }
@@ -72,7 +72,7 @@ namespace UIX
 
         public void btnApply(Button btn)
         {
-            uixButton.btnApply(btn, Style.ButtonColor, Style.ContentFont);
+            uixButton.btnApply(btn, Style.ButtonColor, Style.ButtonFont);
         }
 
         public void cboApply(ComboBox cbo)
