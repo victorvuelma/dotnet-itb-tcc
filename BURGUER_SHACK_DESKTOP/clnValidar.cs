@@ -13,12 +13,18 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static int VAZIO = 1;
 
-        private List<ValidarData> controlValidar = new List<ValidarData>();
+        private List<ValidarData> _controlValidar = new List<ValidarData>();
+        private string _motivo = "";
+
+        public void addValidacao(Control control, int tipo)
+        {
+            addValidacao(control, new int[] { tipo });
+        }
 
         public void addValidacao(Control control, int[] tipos)
         {
             ValidarData data = null;
-            foreach (ValidarData dt in controlValidar)
+            foreach (ValidarData dt in _controlValidar)
             {
                 if (dt.Control.Equals(control))
                 {
@@ -29,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (data == null)
             {
                 data = new ValidarData(control);
-                controlValidar.Add(data);
+                _controlValidar.Add(data);
             }
 
             data.addValidacoes(tipos);
@@ -38,18 +44,35 @@ namespace BURGUER_SHACK_DESKTOP
         public bool validar()
         {
             bool formValido = true;
+            _motivo = "";
 
-            foreach (ValidarData controlValidar in controlValidar)
+            foreach (ValidarData controlValidar in _controlValidar)
             {
                 bool controlValido = controlValidar.validar();
+
+                string controlMotivo = controlValidar.Motivo;
+                if (controlMotivo.Length > 0)
+                {
+                    _motivo += controlValidar.Control.AccessibleName + " " + controlMotivo;
+                    _motivo += "\n";
+                }
+
                 if (formValido && !controlValido)
                 {
                     formValido = false;
+                    controlValidar.Control.Focus();
                 }
+            }
+
+            if (!formValido)
+            {
+                clnMensagem.mostrarOk("Verifique as informações", Motivo, clnMensagem.MSG_ERRO);
             }
 
             return formValido;
         }
+
+        public string Motivo { get => _motivo; }
 
         class ValidarData
         {
@@ -57,10 +80,14 @@ namespace BURGUER_SHACK_DESKTOP
             private Control _control;
             private List<int> _validacoes;
 
+            private string _motivo;
+
             public ValidarData(Control control)
             {
                 _control = control;
                 _validacoes = new List<int>();
+
+                _motivo = "";
             }
 
             public void addValidacoes(int[] validacoes)
@@ -79,21 +106,25 @@ namespace BURGUER_SHACK_DESKTOP
             public bool validar()
             {
                 bool valido = true;
+                _motivo = "";
 
                 String conteudo = _control.Text;
 
                 foreach (int validador in _validacoes)
                 {
-                    bool res = true;
+                    bool val = true;
+                    string res = "";
                     switch (validador)
                     {
                         case 1:
-                            res = !String.IsNullOrWhiteSpace(conteudo);
+                            val = !String.IsNullOrWhiteSpace(conteudo);
+                            res = "precisa ser preenchido.";
                             break;
                     }
-                    if (!res)
+                    if (!val)
                     {
                         valido = false;
+                        _motivo = res;
                         break;
                     }
                 }
@@ -105,7 +136,8 @@ namespace BURGUER_SHACK_DESKTOP
                         UIX.txtUIX txt = (UIX.txtUIX)_control;
                         UIX.uixTextBox.txtApply(txt.box, UIX.uixSet.RED);
                     }
-                } else
+                }
+                else
                 {
                     if (_control is UIX.txtUIX)
                     {
@@ -113,12 +145,12 @@ namespace BURGUER_SHACK_DESKTOP
                         UIX.uixTextBox.txtApply(txt.box, clnTemplate.CommonTemplate.Style.TextBoxColor);
                     }
                 }
-                
+
                 return valido;
             }
 
             public Control Control { get => _control; }
-
+            public string Motivo { get => _motivo; }
         }
 
     }
