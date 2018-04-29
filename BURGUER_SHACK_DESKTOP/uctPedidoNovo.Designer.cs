@@ -49,14 +49,14 @@
             this.grbPedidoNovo.Controls.Add(this.txtUIX1);
             this.grbPedidoNovo.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoNovo.Name = "grbPedidoNovo";
-            this.grbPedidoNovo.Size = new System.Drawing.Size(420, 600);
+            this.grbPedidoNovo.Size = new System.Drawing.Size(417, 600);
             this.grbPedidoNovo.TabIndex = 5;
             this.grbPedidoNovo.TabStop = false;
             this.grbPedidoNovo.Text = "NOVO PEDIDO";
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "NOME DO PRODUTO";
+            this.txtPesquisa.Campo = "NOME DO PRODUTO:";
             this.txtPesquisa.Location = new System.Drawing.Point(10, 29);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
@@ -99,7 +99,7 @@
             // 
             // txtUIX1
             // 
-            this.txtUIX1.Campo = "ID DO PEDIDO";
+            this.txtUIX1.Campo = "CÓDIGO DO PEDIDO:";
             this.txtUIX1.Location = new System.Drawing.Point(10, 13);
             this.txtUIX1.MaxLength = 32767;
             this.txtUIX1.Name = "txtUIX1";
