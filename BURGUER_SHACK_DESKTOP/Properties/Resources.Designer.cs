@@ -239,5 +239,15 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon usuarios_ico {
+            get {
+                object obj = ResourceManager.GetObject("usuarios_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
