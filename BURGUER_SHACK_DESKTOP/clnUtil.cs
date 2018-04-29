@@ -25,6 +25,7 @@ namespace BURGUER_SHACK_DESKTOP
         public static String MASK_CEP = "00000-000";
 
         public static String MASK_CNPJ = "00,000,000/0000-00";
+        public static String MASK_IE = "000,000,000,000";
         public static String MASK_CPF = "000,000,000-00";
         public static String MASK_RG = "00,000,000-0";
 
