@@ -11,6 +11,8 @@ namespace BURGUER_SHACK_DESKTOP
     class clnValidar
     {
 
+        public static int VAZIO = 1;
+
         private List<ValidarData> controlValidar = new List<ValidarData>();
 
         public void addValidacao(Control control, int[] tipos)
@@ -27,10 +29,10 @@ namespace BURGUER_SHACK_DESKTOP
             if (data == null)
             {
                 data = new ValidarData(control);
+                controlValidar.Add(data);
             }
 
             data.addValidacoes(tipos);
-
         }
 
         public bool validar()
@@ -48,7 +50,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             return formValido;
         }
-        
+
         class ValidarData
         {
 
@@ -76,8 +78,43 @@ namespace BURGUER_SHACK_DESKTOP
 
             public bool validar()
             {
-                //TODO: VALIDAR EFETIVAMENTE.
-                return false;
+                bool valido = true;
+
+                String conteudo = _control.Text;
+
+                foreach (int validador in _validacoes)
+                {
+                    bool res = true;
+                    switch (validador)
+                    {
+                        case 1:
+                            res = !String.IsNullOrWhiteSpace(conteudo);
+                            break;
+                    }
+                    if (!res)
+                    {
+                        valido = false;
+                        break;
+                    }
+                }
+
+                if (!valido)
+                {
+                    if (_control is UIX.txtUIX)
+                    {
+                        UIX.txtUIX txt = (UIX.txtUIX)_control;
+                        UIX.uixTextBox.txtApply(txt.box, UIX.uixSet.RED);
+                    }
+                } else
+                {
+                    if (_control is UIX.txtUIX)
+                    {
+                        UIX.txtUIX txt = (UIX.txtUIX)_control;
+                        UIX.uixTextBox.txtApply(txt.box, clnTemplate.CommonTemplate.Style.TextBoxColor);
+                    }
+                }
+                
+                return valido;
             }
 
             public Control Control { get => _control; }
