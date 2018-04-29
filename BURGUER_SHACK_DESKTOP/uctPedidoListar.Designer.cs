@@ -39,9 +39,9 @@
             // 
             this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(5, 45);
+            this.dgv.Location = new System.Drawing.Point(10, 50);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(410, 549);
+            this.dgv.Size = new System.Drawing.Size(400, 540);
             this.dgv.TabIndex = 2;
             // 
             // grbProdutoRemover
@@ -58,9 +58,10 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Campo = "ID DO PEDIDO:";
-            this.txtPesquisa.Location = new System.Drawing.Point(7, 20);
+            this.txtPesquisa.Location = new System.Drawing.Point(10, 20);
+            this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(408, 24);
+            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
             this.txtPesquisa.TabIndex = 3;
             // 
             // uctPedidoListar
