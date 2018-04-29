@@ -12,6 +12,18 @@ namespace BURGUER_SHACK_DESKTOP
     class clnUtil
     {
 
+        public static bool validarEmail(String email)
+        {
+            try
+            {
+                new System.Net.Mail.MailAddress(email);
+                return true;
+            } catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public static void maskTel(UIX.mtbUIX mtb)
         {
             mtb.Mask = "(00) 0000-0000";
