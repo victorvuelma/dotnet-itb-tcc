@@ -60,6 +60,7 @@
             this.txtSalario = new UIX.txtUIX();
             this.cboCargaHoraria = new UIX.cboUIX();
             this.txtCargo = new UIX.txtUIX();
+            this.btnSalvar = new UIX.btnUIX();
             this.grbDadosPessoais.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -74,7 +75,7 @@
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.MaxLength = 5;
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(195, 21);
+            this.txtPesquisa.Size = new System.Drawing.Size(228, 21);
             this.txtPesquisa.TabIndex = 1;
             // 
             // txtNome
@@ -332,7 +333,7 @@
             this.grpBeneficios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpBeneficios.Name = "grpBeneficios";
             this.grpBeneficios.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpBeneficios.Size = new System.Drawing.Size(810, 84);
+            this.grpBeneficios.Size = new System.Drawing.Size(726, 88);
             this.grpBeneficios.TabIndex = 5;
             this.grpBeneficios.TabStop = false;
             this.grpBeneficios.Text = "BENEFÍCIOS";
@@ -344,14 +345,14 @@
             this.cboValeTransporte.Location = new System.Drawing.Point(12, 50);
             this.cboValeTransporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboValeTransporte.Name = "cboValeTransporte";
-            this.cboValeTransporte.Size = new System.Drawing.Size(151, 25);
+            this.cboValeTransporte.Size = new System.Drawing.Size(150, 25);
             this.cboValeTransporte.TabIndex = 25;
             // 
             // cboTiqueteRefeicao
             // 
             this.cboTiqueteRefeicao.Campo = "Tíquete-refeição:";
             this.cboTiqueteRefeicao.FormattingEnabled = true;
-            this.cboTiqueteRefeicao.Location = new System.Drawing.Point(561, 21);
+            this.cboTiqueteRefeicao.Location = new System.Drawing.Point(250, 53);
             this.cboTiqueteRefeicao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTiqueteRefeicao.Name = "cboTiqueteRefeicao";
             this.cboTiqueteRefeicao.Size = new System.Drawing.Size(164, 25);
@@ -431,10 +432,25 @@
             this.txtCargo.Size = new System.Drawing.Size(202, 21);
             this.txtCargo.TabIndex = 18;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalvar.Description = "Salvar";
+            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnSalvar.Location = new System.Drawing.Point(729, 369);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(84, 80);
+            this.btnSalvar.TabIndex = 34;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
             // uctGerenFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.grpFuncionario);
             this.Controls.Add(this.grpBeneficios);
             this.Controls.Add(this.grpEndereco);
@@ -488,5 +504,6 @@
         public UIX.txtUIX txtCargo;
         public UIX.cboUIX cboCargaHoraria;
         public UIX.txtUIX txtSalario;
+        private UIX.btnUIX btnSalvar;
     }
 }

@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciador));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.grpFuncao = new System.Windows.Forms.GroupBox();
-            this.btnProduto = new System.Windows.Forms.Button();
-            this.btnFuncionario = new System.Windows.Forms.Button();
-            this.btnTercerizada = new System.Windows.Forms.Button();
-            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.btnSair = new UIX.btnUIX();
             this.btnLista = new UIX.btnUIX();
             this.btnRemover = new UIX.btnUIX();
             this.btnModificar = new UIX.btnUIX();
             this.btnAdicionar = new UIX.btnUIX();
+            this.grpFuncao = new System.Windows.Forms.GroupBox();
+            this.btnProduto = new System.Windows.Forms.Button();
+            this.btnFuncionario = new System.Windows.Forms.Button();
+            this.btnTercerizada = new System.Windows.Forms.Button();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.uctUIX = new UIX.uctUIX();
             this.pnlMenu.SuspendLayout();
             this.grpFuncao.SuspendLayout();
@@ -56,60 +56,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 560);
             this.pnlMenu.TabIndex = 3;
-            // 
-            // grpFuncao
-            // 
-            this.grpFuncao.Controls.Add(this.btnProduto);
-            this.grpFuncao.Controls.Add(this.btnFuncionario);
-            this.grpFuncao.Controls.Add(this.btnTercerizada);
-            this.grpFuncao.Location = new System.Drawing.Point(110, 40);
-            this.grpFuncao.Name = "grpFuncao";
-            this.grpFuncao.Size = new System.Drawing.Size(810, 55);
-            this.grpFuncao.TabIndex = 4;
-            this.grpFuncao.TabStop = false;
-            this.grpFuncao.Text = "ADICIONAR";
-            this.grpFuncao.Visible = false;
-            // 
-            // btnProduto
-            // 
-            this.btnProduto.Location = new System.Drawing.Point(198, 20);
-            this.btnProduto.Name = "btnProduto";
-            this.btnProduto.Size = new System.Drawing.Size(90, 23);
-            this.btnProduto.TabIndex = 3;
-            this.btnProduto.Text = "Produto";
-            this.btnProduto.UseVisualStyleBackColor = true;
-            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
-            // 
-            // btnFuncionario
-            // 
-            this.btnFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuncionario.Location = new System.Drawing.Point(6, 20);
-            this.btnFuncionario.Name = "btnFuncionario";
-            this.btnFuncionario.Size = new System.Drawing.Size(90, 23);
-            this.btnFuncionario.TabIndex = 0;
-            this.btnFuncionario.Text = "Funcionário";
-            this.btnFuncionario.UseVisualStyleBackColor = true;
-            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
-            // 
-            // btnTercerizada
-            // 
-            this.btnTercerizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTercerizada.Location = new System.Drawing.Point(102, 20);
-            this.btnTercerizada.Name = "btnTercerizada";
-            this.btnTercerizada.Size = new System.Drawing.Size(90, 23);
-            this.btnTercerizada.TabIndex = 2;
-            this.btnTercerizada.Text = "Tercerizada";
-            this.btnTercerizada.UseVisualStyleBackColor = true;
-            this.btnTercerizada.Click += new System.EventHandler(this.btnTercerizada_Click);
-            // 
-            // pnlConteudo
-            // 
-            this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlConteudo.Location = new System.Drawing.Point(100, 100);
-            this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(818, 488);
-            this.pnlConteudo.TabIndex = 5;
             // 
             // btnSair
             // 
@@ -176,6 +122,60 @@
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
+            // grpFuncao
+            // 
+            this.grpFuncao.Controls.Add(this.btnProduto);
+            this.grpFuncao.Controls.Add(this.btnFuncionario);
+            this.grpFuncao.Controls.Add(this.btnTercerizada);
+            this.grpFuncao.Location = new System.Drawing.Point(110, 40);
+            this.grpFuncao.Name = "grpFuncao";
+            this.grpFuncao.Size = new System.Drawing.Size(810, 55);
+            this.grpFuncao.TabIndex = 4;
+            this.grpFuncao.TabStop = false;
+            this.grpFuncao.Text = "ADICIONAR";
+            this.grpFuncao.Visible = false;
+            // 
+            // btnProduto
+            // 
+            this.btnProduto.Location = new System.Drawing.Point(198, 20);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(90, 23);
+            this.btnProduto.TabIndex = 3;
+            this.btnProduto.Text = "Produto";
+            this.btnProduto.UseVisualStyleBackColor = true;
+            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
+            // 
+            // btnFuncionario
+            // 
+            this.btnFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFuncionario.Location = new System.Drawing.Point(6, 20);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(90, 23);
+            this.btnFuncionario.TabIndex = 0;
+            this.btnFuncionario.Text = "Funcionário";
+            this.btnFuncionario.UseVisualStyleBackColor = true;
+            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
+            // 
+            // btnTercerizada
+            // 
+            this.btnTercerizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTercerizada.Location = new System.Drawing.Point(102, 20);
+            this.btnTercerizada.Name = "btnTercerizada";
+            this.btnTercerizada.Size = new System.Drawing.Size(90, 23);
+            this.btnTercerizada.TabIndex = 2;
+            this.btnTercerizada.Text = "Tercerizada";
+            this.btnTercerizada.UseVisualStyleBackColor = true;
+            this.btnTercerizada.Click += new System.EventHandler(this.btnTercerizada_Click);
+            // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlConteudo.Location = new System.Drawing.Point(100, 100);
+            this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(818, 488);
+            this.pnlConteudo.TabIndex = 5;
             // 
             // uctUIX
             // 

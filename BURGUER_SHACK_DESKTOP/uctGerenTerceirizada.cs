@@ -16,5 +16,10 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -111,10 +111,5 @@ namespace BURGUER_SHACK_DESKTOP
         {
             Close();
         }
-
-        private void btnUIX1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
