@@ -21,12 +21,13 @@ namespace UIX
 
         public String Campo
         {
-            get => lbl.Text;
+            get => AccessibleName;
             set
             {
-                lbl.Text = value;
+                AccessibleName = value;
+                lbl.Text = value + ":";
                 int x = lbl.Size.Width - 5;
-                cbo.Location = new Point(x, cbo.Location.Y);
+                box.Location = new Point(x, box.Location.Y);
             }
         }
 

@@ -12,9 +12,14 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmLogin : Form
     {
+
+        private clnValidar _validar;
+
         public frmLogin()
         {
             InitializeComponent();
+
+            _validar = new clnValidar();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -22,6 +27,9 @@ namespace BURGUER_SHACK_DESKTOP
             UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER);
 
             clnTemplate.CommonTemplate.frmApply(this, uctUIX);
+
+            _validar.addValidacao(txtNome, clnValidar.VAZIO );
+            _validar.addValidacao(txtSenha, clnValidar.VAZIO);
         }
 
         private void uctUIX_Close(object sender, EventArgs e)
@@ -31,6 +39,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            _validar.validar();
+
             if (txtNome.Text == "garçom" && txtSenha.Text == "123")
             {
                 frmPedido objfrmPedido = new frmPedido();
