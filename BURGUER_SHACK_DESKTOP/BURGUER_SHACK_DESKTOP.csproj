@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clnMessage.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="frmCozinha.cs">
       <SubType>Form</SubType>
