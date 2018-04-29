@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uctUIX = new UIX.uctUIX();
             this.btnYes = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
+            this.pic = new System.Windows.Forms.PictureBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.uctUIX = new UIX.uctUIX();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // uctUIX1
-            // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Name = "uctUIX1";
-            this.uctUIX.Size = new System.Drawing.Size(350, 40);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = false;
-            this.uctUIX.UIXImage = null;
-            this.uctUIX.UIXTitle = "Titulo UIX";
             // 
             // btnYes
             // 
@@ -53,6 +44,7 @@
             this.btnYes.TabIndex = 1;
             this.btnYes.Text = "button1";
             this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // btnNo
             // 
@@ -62,18 +54,54 @@
             this.btnNo.TabIndex = 2;
             this.btnNo.Text = "button2";
             this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
+            // 
+            // pic
+            // 
+            this.pic.Location = new System.Drawing.Point(20, 60);
+            this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(100, 100);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic.TabIndex = 3;
+            this.pic.TabStop = false;
+            // 
+            // lbl
+            // 
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Location = new System.Drawing.Point(127, 60);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(211, 90);
+            this.lbl.TabIndex = 4;
+            this.lbl.Text = "aqui é onde o cara da rage e manda a mensagem";
+            // 
+            // uctUIX
+            // 
+            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.uctUIX.Location = new System.Drawing.Point(0, 0);
+            this.uctUIX.Name = "uctUIX";
+            this.uctUIX.Size = new System.Drawing.Size(350, 40);
+            this.uctUIX.TabIndex = 0;
+            this.uctUIX.UIXButtonCloseEnabled = true;
+            this.uctUIX.UIXButtonMinEnabled = false;
+            this.uctUIX.UIXImage = null;
+            this.uctUIX.UIXTitle = "Titulo UIX";
+            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             // 
             // msgUIX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 200);
+            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.pic);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.uctUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "msgUIX";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "msgUIX";
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -81,7 +109,9 @@
         #endregion
 
         private uctUIX uctUIX;
-        private System.Windows.Forms.Button btnYes;
-        private System.Windows.Forms.Button btnNo;
+        public System.Windows.Forms.Button btnYes;
+        public System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.PictureBox pic;
+        private System.Windows.Forms.Label lbl;
     }
 }
