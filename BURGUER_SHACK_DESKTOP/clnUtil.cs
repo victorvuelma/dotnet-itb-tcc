@@ -7,21 +7,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 
+using Caelum.Stella.CSharp.Validation;
+
 namespace BURGUER_SHACK_DESKTOP
 {
     class clnUtil
     {
 
+        private static CPFValidator _cpfValidator = new CPFValidator(false);
+        private static CNPJValidator _cnpjValidator = new CNPJValidator(false);
+
         public static bool validarCNPJ(String cnpj)
         {
-            //TODO: IMPLEMENTAR
-            return true;
+            return _cnpjValidator.IsValid(cnpj);
         }
 
         public static bool validarCPF(String cpf)
         {
-            //TODO: IMPLEMENTAR
-            return true;
+            return _cpfValidator.IsValid(cpf);
         }
 
         public static bool validarEmail(String email)

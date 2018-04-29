@@ -13,7 +13,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static int VAZIO = 1;
 
-
         public static int EMAIL = 10;
         public static int CPF = 11;
         public static int CNPJ = 12;
