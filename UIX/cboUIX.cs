@@ -27,7 +27,7 @@ namespace UIX
                 AccessibleName = value;
                 lbl.Text = value + ":";
                 int x = lbl.Size.Width - 5;
-                box.Location = new Point(x, box.Location.Y);
+                cbo.Location = new Point(x, cbo.Location.Y);
             }
         }
 
