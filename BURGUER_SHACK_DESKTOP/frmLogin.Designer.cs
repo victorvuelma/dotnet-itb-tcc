@@ -33,6 +33,8 @@
             this.txtSenha = new UIX.txtUIX();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.uctUIX = new UIX.uctUIX();
+            this.picVer = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNome
@@ -49,10 +51,10 @@
             // 
             this.txtSenha.AccessibleName = "Senha";
             this.txtSenha.Campo = "Senha";
-            this.txtSenha.Location = new System.Drawing.Point(12, 114);
+            this.txtSenha.Location = new System.Drawing.Point(13, 114);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(276, 20);
+            this.txtSenha.Size = new System.Drawing.Size(275, 20);
             this.txtSenha.TabIndex = 8;
             // 
             // btnEntrar
@@ -72,7 +74,7 @@
             this.uctUIX.Location = new System.Drawing.Point(0, 0);
             this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(301, 43);
+            this.uctUIX.Size = new System.Drawing.Size(319, 43);
             this.uctUIX.TabIndex = 11;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = false;
@@ -80,11 +82,25 @@
             this.uctUIX.UIXTitle = "BurgerShack :: Entrar";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             // 
+            // picVer
+            // 
+            this.picVer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picVer.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.eye;
+            this.picVer.Location = new System.Drawing.Point(294, 107);
+            this.picVer.Name = "picVer";
+            this.picVer.Size = new System.Drawing.Size(27, 25);
+            this.picVer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picVer.TabIndex = 12;
+            this.picVer.TabStop = false;
+            this.picVer.MouseEnter += new System.EventHandler(this.picVer_MouseEnter);
+            this.picVer.MouseLeave += new System.EventHandler(this.picVer_MouseLeave);
+            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(300, 200);
+            this.ClientSize = new System.Drawing.Size(326, 200);
+            this.Controls.Add(this.picVer);
             this.Controls.Add(this.uctUIX);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
@@ -96,6 +112,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picVer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -105,6 +122,7 @@
         private UIX.txtUIX txtSenha;
         private System.Windows.Forms.Button btnEntrar;
         private UIX.uctUIX uctUIX;
+        private System.Windows.Forms.PictureBox picVer;
     }
 }
 

@@ -20,6 +20,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             _validar = new clnValidar();
+            txtSenha.box.PasswordChar = '*';
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -59,6 +60,16 @@ namespace BURGUER_SHACK_DESKTOP
                 objfrmGerenciador.Visible = true;
                 this.Visible = false;
             }
+        }
+
+        private void picVer_MouseEnter(object sender, EventArgs e)
+        {
+            txtSenha.box.PasswordChar = '\0';
+        }
+
+        private void picVer_MouseLeave(object sender, EventArgs e)
+        {
+            txtSenha.box.PasswordChar = '*';
         }
     }
 }

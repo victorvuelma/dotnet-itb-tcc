@@ -173,7 +173,7 @@
             this.pnlConteudo.Location = new System.Drawing.Point(105, 110);
             this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(800, 470);
+            this.pnlConteudo.Size = new System.Drawing.Size(810, 470);
             this.pnlConteudo.TabIndex = 5;
             // 
             // uctUIX

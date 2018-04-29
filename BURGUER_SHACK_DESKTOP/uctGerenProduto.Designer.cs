@@ -231,7 +231,7 @@
             // picFotoProduto
             // 
             this.picFotoProduto.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.padrao;
-            this.picFotoProduto.Location = new System.Drawing.Point(519, 40);
+            this.picFotoProduto.Location = new System.Drawing.Point(515, 39);
             this.picFotoProduto.Name = "picFotoProduto";
             this.picFotoProduto.Size = new System.Drawing.Size(201, 198);
             this.picFotoProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -252,7 +252,7 @@
             // 
             this.groupBox1.Location = new System.Drawing.Point(3, 245);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(711, 240);
+            this.groupBox1.Size = new System.Drawing.Size(711, 224);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ADICIONAIS";
@@ -286,7 +286,7 @@
             this.btnRemover.Description = "Remover";
             this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
             this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
-            this.btnRemover.Location = new System.Drawing.Point(720, 158);
+            this.btnRemover.Location = new System.Drawing.Point(727, 158);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(80, 80);
             this.btnRemover.TabIndex = 25;
@@ -298,7 +298,7 @@
             this.btnAdicionar.Description = "Adicionar";
             this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnAdicionar.Location = new System.Drawing.Point(720, 40);
+            this.btnAdicionar.Location = new System.Drawing.Point(727, 40);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnAdicionar.TabIndex = 0;
@@ -322,10 +322,10 @@
             this.txtPesquisa.AccessibleName = "Número de Identificação";
             this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(309, 21);
+            this.txtPesquisa.Size = new System.Drawing.Size(265, 17);
             this.txtPesquisa.TabIndex = 2;
             // 
             // uctGerenProduto
@@ -346,7 +346,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctGerenProduto";
-            this.Size = new System.Drawing.Size(800, 470);
+            this.Size = new System.Drawing.Size(810, 470);
             this.grbDadosPessoais.ResumeLayout(false);
             this.grbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoProduto)).EndInit();
