@@ -37,7 +37,8 @@
             // 
             // txtNome
             // 
-            this.txtNome.Campo = "NOME:";
+            this.txtNome.AccessibleName = "Nome";
+            this.txtNome.Campo = "Nome";
             this.txtNome.Location = new System.Drawing.Point(17, 88);
             this.txtNome.MaxLength = 32767;
             this.txtNome.Name = "txtNome";
@@ -46,7 +47,8 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Campo = "SENHA:";
+            this.txtSenha.AccessibleName = "Senha";
+            this.txtSenha.Campo = "Senha";
             this.txtSenha.Location = new System.Drawing.Point(12, 114);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.Name = "txtSenha";
