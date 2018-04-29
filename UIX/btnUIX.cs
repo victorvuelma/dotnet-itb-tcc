@@ -59,5 +59,14 @@ namespace UIX
             BackColor = _backColor;
         }
 
+        private void pic_Click(object sender, EventArgs e)
+        {
+            this.OnClick(e);
+        }
+
+        private void lbl_Click(object sender, EventArgs e)
+        {
+            this.OnClick(e);
+        }
     }
 }
