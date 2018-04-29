@@ -38,7 +38,7 @@
             // 
             // btnYes
             // 
-            this.btnYes.Location = new System.Drawing.Point(258, 153);
+            this.btnYes.Location = new System.Drawing.Point(260, 160);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(80, 35);
             this.btnYes.TabIndex = 1;
@@ -48,7 +48,7 @@
             // 
             // btnNo
             // 
-            this.btnNo.Location = new System.Drawing.Point(172, 153);
+            this.btnNo.Location = new System.Drawing.Point(175, 160);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(80, 35);
             this.btnNo.TabIndex = 2;
@@ -58,7 +58,7 @@
             // 
             // pic
             // 
-            this.pic.Location = new System.Drawing.Point(20, 60);
+            this.pic.Location = new System.Drawing.Point(10, 50);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(100, 100);
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -67,10 +67,10 @@
             // 
             // lbl
             // 
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(127, 60);
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Location = new System.Drawing.Point(110, 50);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(211, 90);
+            this.lbl.Size = new System.Drawing.Size(230, 105);
             this.lbl.TabIndex = 4;
             this.lbl.Text = "aqui é onde o cara da rage e manda a mensagem";
             // 
