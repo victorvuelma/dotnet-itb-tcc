@@ -172,8 +172,6 @@
         }
 
         #endregion
-
-        private UIX.uctUIX uctUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnNovoPedido;
         private UIX.btnUIX btnAlterarPedido;
@@ -181,7 +179,8 @@
         private UIX.btnUIX btnApagarPedido;
         private UIX.btnUIX btnPedidos;
         private UIX.btnUIX btnSair;
-        private System.Windows.Forms.Panel pnlConteudo;
+        public UIX.uctUIX uctUIX;
+        public System.Windows.Forms.Panel pnlConteudo;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

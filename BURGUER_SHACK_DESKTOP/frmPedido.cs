@@ -25,7 +25,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctPedidoNovo(), "Novo Pedido");
+            alterarConteudo(new uctPedidoMesa(), "Selecionar Mesa");
         }
 
         private void btnAlterarPedido_Click(object sender, EventArgs e)

@@ -16,5 +16,21 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
         }
+        frmPedido frmPedido = new frmPedido();
+
+        private void btnMesa1_Click(object sender, EventArgs e)
+        {
+            alterarConteudo(new uctPedidoNovo(), "Teste");
+        }
+
+        private void alterarConteudo(UserControl uctConteudo, String titulo)
+        {
+            clnUtil.alterarConteudo(frmPedido.pnlConteudo, uctConteudo, frmPedido.uctUIX, titulo);
+        }
+
+        private void uctPedidoMesa_Load(object sender, EventArgs e)
+        {
+            pnlLivre.BackColor = System.Drawing.Color.White;
+        }
     }
 }
