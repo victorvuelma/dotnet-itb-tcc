@@ -252,7 +252,7 @@
             // 
             this.groupBox1.Location = new System.Drawing.Point(3, 245);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 240);
+            this.groupBox1.Size = new System.Drawing.Size(711, 240);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ADICIONAIS";
@@ -274,7 +274,7 @@
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
-            this.btnSalvar.Location = new System.Drawing.Point(735, 405);
+            this.btnSalvar.Location = new System.Drawing.Point(720, 387);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(80, 80);
             this.btnSalvar.TabIndex = 26;
@@ -286,7 +286,7 @@
             this.btnRemover.Description = "Remover";
             this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
             this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
-            this.btnRemover.Location = new System.Drawing.Point(735, 158);
+            this.btnRemover.Location = new System.Drawing.Point(720, 158);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(80, 80);
             this.btnRemover.TabIndex = 25;
@@ -298,7 +298,7 @@
             this.btnAdicionar.Description = "Adicionar";
             this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnAdicionar.Location = new System.Drawing.Point(735, 40);
+            this.btnAdicionar.Location = new System.Drawing.Point(720, 40);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnAdicionar.TabIndex = 0;
