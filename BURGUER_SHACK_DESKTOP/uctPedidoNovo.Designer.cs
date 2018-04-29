@@ -34,6 +34,7 @@
             this.btnPedido = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.pnlPreco = new System.Windows.Forms.Panel();
+            this.txtUIX1 = new UIX.txtUIX();
             this.grbPedidoNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             this.grbPedidoNovo.Controls.Add(this.btnPedido);
             this.grbPedidoNovo.Controls.Add(this.dgvProdutos);
             this.grbPedidoNovo.Controls.Add(this.pnlPreco);
+            this.grbPedidoNovo.Controls.Add(this.txtUIX1);
             this.grbPedidoNovo.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoNovo.Name = "grbPedidoNovo";
             this.grbPedidoNovo.Size = new System.Drawing.Size(420, 600);
@@ -55,7 +57,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Campo = "NOME DO PRODUTO:";
-            this.txtPesquisa.Location = new System.Drawing.Point(10, 20);
+            this.txtPesquisa.Location = new System.Drawing.Point(10, 29);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
@@ -95,6 +97,15 @@
             this.pnlPreco.Size = new System.Drawing.Size(140, 90);
             this.pnlPreco.TabIndex = 8;
             // 
+            // txtUIX1
+            // 
+            this.txtUIX1.Campo = "ID DO PEDIDO:";
+            this.txtUIX1.Location = new System.Drawing.Point(10, 13);
+            this.txtUIX1.MaxLength = 32767;
+            this.txtUIX1.Name = "txtUIX1";
+            this.txtUIX1.Size = new System.Drawing.Size(164, 19);
+            this.txtUIX1.TabIndex = 19;
+            // 
             // uctPedidoNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,5 +128,6 @@
         private System.Windows.Forms.Button btnPedido;
         private System.Windows.Forms.Panel pnlPreco;
         private UIX.txtUIX txtPesquisa;
+        private UIX.txtUIX txtUIX1;
     }
 }

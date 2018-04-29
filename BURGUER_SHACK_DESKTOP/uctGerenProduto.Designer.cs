@@ -99,7 +99,7 @@
             // ckbProdutoInativo
             // 
             this.ckbProdutoInativo.AutoSize = true;
-            this.ckbProdutoInativo.Location = new System.Drawing.Point(315, 1);
+            this.ckbProdutoInativo.Location = new System.Drawing.Point(315, -2);
             this.ckbProdutoInativo.Name = "ckbProdutoInativo";
             this.ckbProdutoInativo.Size = new System.Drawing.Size(112, 20);
             this.ckbProdutoInativo.TabIndex = 13;
@@ -212,7 +212,7 @@
             this.txtPrecoVenda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtPrecoVenda.MaxLength = 32767;
             this.txtPrecoVenda.Name = "txtPrecoVenda";
-            this.txtPrecoVenda.Size = new System.Drawing.Size(200, 26);
+            this.txtPrecoVenda.Size = new System.Drawing.Size(203, 26);
             this.txtPrecoVenda.TabIndex = 19;
             // 
             // txtPrecoCusto
@@ -303,7 +303,7 @@
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtDescricao.MaxLength = 32767;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(476, 23);
+            this.txtDescricao.Size = new System.Drawing.Size(479, 23);
             this.txtDescricao.TabIndex = 4;
             // 
             // txtNome
@@ -313,7 +313,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(313, 21);
+            this.txtNome.Size = new System.Drawing.Size(316, 21);
             this.txtNome.TabIndex = 2;
             // 
             // uctGerenProduto
