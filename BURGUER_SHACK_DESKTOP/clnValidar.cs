@@ -16,6 +16,7 @@ namespace BURGUER_SHACK_DESKTOP
         public static int EMAIL = 10;
         public static int CPF = 11;
         public static int CNPJ = 12;
+        public static int CEP = 13;
 
         private List<ValidarData> _controlValidar = new List<ValidarData>();
         private string _motivo = "";
@@ -135,6 +136,10 @@ namespace BURGUER_SHACK_DESKTOP
                         case 12:
                             val = clnUtil.validarCNPJ(conteudo);
                             res = "deve conter CNPJ válido.";
+                            break;
+                        case 13:
+                            val = clnUtil.validarCEP(conteudo);
+                            res = "deve conter CEP válido.";
                             break;
                     }
                     if (!val)

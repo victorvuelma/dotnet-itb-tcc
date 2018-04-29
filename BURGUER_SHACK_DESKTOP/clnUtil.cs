@@ -8,23 +8,77 @@ using System.Windows.Forms;
 using System.Drawing;
 
 using Caelum.Stella.CSharp.Validation;
+using Caelum.Stella.CSharp.Format;
+
+using Caelum.Stella.CSharp.Http;
+using Caelum.Stella.CSharp.Http.Exceptions;
 
 namespace BURGUER_SHACK_DESKTOP
 {
     class clnUtil
     {
 
-        private static CPFValidator _cpfValidator = new CPFValidator(false);
-        private static CNPJValidator _cnpjValidator = new CNPJValidator(false);
+        public static String MASK_TEL = "(00) 0000-0000";
+        public static String MASK_CEL = "(00) 00000-0000";
 
-        public static bool validarCNPJ(String cnpj)
+        public static String MASK_DATA = "00/00/0000";
+        public static String MASK_CEP = "00000-000";
+
+        public static String MASK_CNPJ = "00,000,000/0000-00";
+        public static String MASK_CPF = "000,000,000-00";
+        public static String MASK_RG = "00,000,000-0";
+
+        private static CPFValidator _cpfValidator = new CPFValidator();
+        private static CNPJValidator _cnpjValidator = new CNPJValidator();
+
+        private static CPFFormatter _cpfFormatter = new CPFFormatter();
+        private static CNPJFormatter _cnpjFormatter = new CNPJFormatter();
+
+        private static ViaCEP _viaCep = new ViaCEP();
+
+        public static Endereco obterEndereco(String cep)
         {
-            return _cnpjValidator.IsValid(cnpj);
+            try
+            {
+                return _viaCep.GetEndereco(new CEP(cep));
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public static bool validarCEP(String cep)
+        {
+            try
+            {
+                new CEP(cep);
+                return true;
+            }
+            catch (InvalidZipCodeFormat)
+            {
+                return false;
+            }
+        }
+
+        public static String formatarCPF(String cpf)
+        {
+            return _cpfFormatter.Format(cpf);
         }
 
         public static bool validarCPF(String cpf)
         {
             return _cpfValidator.IsValid(cpf);
+        }
+
+        public static String formatarCNPJ(String cnpj)
+        {
+            return _cnpjFormatter.Format(cnpj);
+        }
+
+        public static bool validarCNPJ(String cnpj)
+        {
+            return _cnpjValidator.IsValid(cnpj);
         }
 
         public static bool validarEmail(String email)
@@ -38,31 +92,6 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 return false;
             }
-        }
-
-        public static void maskTel(UIX.mtbUIX mtb)
-        {
-            mtb.Mask = "(00) 0000-0000";
-        }
-
-        public static void maskCel(UIX.mtbUIX mtb)
-        {
-            mtb.Mask = "(00) 00000-0000";
-        }
-
-        public static void maskDN(UIX.mtbUIX mtb)
-        {
-            mtb.Mask = "00/00/0000";
-        }
-
-        public static void maskCPF(UIX.mtbUIX mtb)
-        {
-            mtb.Mask = "000,000,000-00";
-        }
-
-        public static void maskRG(UIX.mtbUIX mtb)
-        {
-            mtb.Mask = "00,000,000-0";
         }
 
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.uctUIX uctUIX, String titulo)
