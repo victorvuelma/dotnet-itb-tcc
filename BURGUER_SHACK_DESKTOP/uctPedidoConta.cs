@@ -50,6 +50,8 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 double valorCompra = Convert.ToDouble(txtValor.Text);
                 double descontoCompra = Convert.ToDouble(txtDesconto.Text);
+                valorCompra = (valorCompra * descontoCompra) / 100;
+                lblTotal.Text = "R$ " + valorCompra;
             }
             catch
             {

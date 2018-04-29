@@ -59,12 +59,6 @@ namespace BURGUER_SHACK_DESKTOP
                 objfrmGerenciador.Visible = true;
                 this.Visible = false;
             }
-            else
-            {
-                MessageBox.Show("Você deve digitar um login válido!", "Problemas de autenticação");
-                txtNome.Text = "";
-                txtSenha.Text = "";
-            }
         }
     }
 }

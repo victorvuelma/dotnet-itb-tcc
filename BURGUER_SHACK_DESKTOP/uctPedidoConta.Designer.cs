@@ -31,15 +31,9 @@
             this.grbPedidoConta = new System.Windows.Forms.GroupBox();
             this.grpInformacoesConta = new System.Windows.Forms.GroupBox();
             this.grpConta = new System.Windows.Forms.GroupBox();
-            this.txtValor = new UIX.txtUIX();
-            this.txtValorDinheiro = new UIX.txtUIX();
             this.rboCartao = new System.Windows.Forms.RadioButton();
             this.rboDinheiro = new System.Windows.Forms.RadioButton();
-            this.cboTributos = new UIX.cboUIX();
-            this.txtDesconto = new UIX.txtUIX();
             this.grpInformacoes = new System.Windows.Forms.GroupBox();
-            this.txtClienteNome = new UIX.txtUIX();
-            this.mtbClienteCPF = new UIX.mtbUIX();
             this.pnlTotal = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -48,6 +42,12 @@
             this.lblTroco = new System.Windows.Forms.Label();
             this.ltbProdutos = new System.Windows.Forms.ListBox();
             this.btnPedido = new System.Windows.Forms.Button();
+            this.txtValor = new UIX.txtUIX();
+            this.txtValorDinheiro = new UIX.txtUIX();
+            this.cboTributos = new UIX.cboUIX();
+            this.txtDesconto = new UIX.txtUIX();
+            this.txtClienteNome = new UIX.txtUIX();
+            this.mtbClienteCPF = new UIX.mtbUIX();
             this.txtCodPedido = new UIX.txtUIX();
             this.grbPedidoConta.SuspendLayout();
             this.grpInformacoesConta.SuspendLayout();
@@ -69,53 +69,34 @@
             this.grbPedidoConta.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoConta.Name = "grbPedidoConta";
             this.grbPedidoConta.Size = new System.Drawing.Size(417, 600);
-            this.grbPedidoConta.TabIndex = 6;
+            this.grbPedidoConta.TabIndex = 1;
             this.grbPedidoConta.TabStop = false;
             this.grbPedidoConta.Text = "CONTA DO PEDIDO";
             // 
             // grpInformacoesConta
             // 
+            this.grpInformacoesConta.Controls.Add(this.txtValor);
             this.grpInformacoesConta.Controls.Add(this.grpConta);
             this.grpInformacoesConta.Controls.Add(this.rboCartao);
             this.grpInformacoesConta.Controls.Add(this.rboDinheiro);
             this.grpInformacoesConta.Controls.Add(this.cboTributos);
-            this.grpInformacoesConta.Controls.Add(this.txtDesconto);
             this.grpInformacoesConta.Location = new System.Drawing.Point(6, 268);
             this.grpInformacoesConta.Name = "grpInformacoesConta";
             this.grpInformacoesConta.Size = new System.Drawing.Size(404, 121);
-            this.grpInformacoesConta.TabIndex = 24;
+            this.grpInformacoesConta.TabIndex = 2;
             this.grpInformacoesConta.TabStop = false;
             this.grpInformacoesConta.Text = "INFORMAÇÕES DA CONTA";
             // 
             // grpConta
             // 
-            this.grpConta.Controls.Add(this.txtValor);
             this.grpConta.Controls.Add(this.txtValorDinheiro);
+            this.grpConta.Controls.Add(this.txtDesconto);
             this.grpConta.Location = new System.Drawing.Point(6, 68);
             this.grpConta.Name = "grpConta";
             this.grpConta.Size = new System.Drawing.Size(392, 47);
-            this.grpConta.TabIndex = 4;
+            this.grpConta.TabIndex = 6;
             this.grpConta.TabStop = false;
-            this.grpConta.Text = "QUANTIDADE";
-            // 
-            // txtValor
-            // 
-            this.txtValor.Campo = "Valor da Compra: (R$)";
-            this.txtValor.Location = new System.Drawing.Point(233, 19);
-            this.txtValor.MaxLength = 32767;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(153, 20);
-            this.txtValor.TabIndex = 1;
-            // 
-            // txtValorDinheiro
-            // 
-            this.txtValorDinheiro.Campo = "Valor em Dinheiro: (R$)";
-            this.txtValorDinheiro.Location = new System.Drawing.Point(6, 20);
-            this.txtValorDinheiro.MaxLength = 32767;
-            this.txtValorDinheiro.Name = "txtValorDinheiro";
-            this.txtValorDinheiro.Size = new System.Drawing.Size(160, 20);
-            this.txtValorDinheiro.TabIndex = 0;
-            this.txtValorDinheiro.Leave += new System.EventHandler(this.txtValorDinheiro_Leave);
+            this.grpConta.Text = "EXTRAS";
             // 
             // rboCartao
             // 
@@ -123,7 +104,7 @@
             this.rboCartao.Location = new System.Drawing.Point(231, 45);
             this.rboCartao.Name = "rboCartao";
             this.rboCartao.Size = new System.Drawing.Size(56, 17);
-            this.rboCartao.TabIndex = 3;
+            this.rboCartao.TabIndex = 5;
             this.rboCartao.Text = "Cartão";
             this.rboCartao.UseVisualStyleBackColor = true;
             this.rboCartao.CheckedChanged += new System.EventHandler(this.rboCartao_CheckedChanged);
@@ -135,30 +116,11 @@
             this.rboDinheiro.Location = new System.Drawing.Point(133, 45);
             this.rboDinheiro.Name = "rboDinheiro";
             this.rboDinheiro.Size = new System.Drawing.Size(64, 17);
-            this.rboDinheiro.TabIndex = 2;
+            this.rboDinheiro.TabIndex = 4;
             this.rboDinheiro.TabStop = true;
             this.rboDinheiro.Text = "Dinheiro";
             this.rboDinheiro.UseVisualStyleBackColor = true;
             this.rboDinheiro.CheckedChanged += new System.EventHandler(this.rboDinheiro_CheckedChanged);
-            // 
-            // cboTributos
-            // 
-            this.cboTributos.Campo = "Tributos:";
-            this.cboTributos.FormattingEnabled = true;
-            this.cboTributos.Location = new System.Drawing.Point(248, 19);
-            this.cboTributos.Name = "cboTributos";
-            this.cboTributos.Size = new System.Drawing.Size(150, 20);
-            this.cboTributos.TabIndex = 1;
-            // 
-            // txtDesconto
-            // 
-            this.txtDesconto.Campo = "Desconto:";
-            this.txtDesconto.Location = new System.Drawing.Point(6, 19);
-            this.txtDesconto.MaxLength = 32767;
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(130, 20);
-            this.txtDesconto.TabIndex = 0;
-            this.txtDesconto.Leave += new System.EventHandler(this.txtDesconto_Leave);
             // 
             // grpInformacoes
             // 
@@ -167,29 +129,9 @@
             this.grpInformacoes.Location = new System.Drawing.Point(6, 503);
             this.grpInformacoes.Name = "grpInformacoes";
             this.grpInformacoes.Size = new System.Drawing.Size(404, 47);
-            this.grpInformacoes.TabIndex = 23;
+            this.grpInformacoes.TabIndex = 7;
             this.grpInformacoes.TabStop = false;
             this.grpInformacoes.Text = "INFORMAÇÕES DO CLIENTE";
-            // 
-            // txtClienteNome
-            // 
-            this.txtClienteNome.Campo = "Nome:";
-            this.txtClienteNome.Location = new System.Drawing.Point(6, 19);
-            this.txtClienteNome.MaxLength = 32767;
-            this.txtClienteNome.Name = "txtClienteNome";
-            this.txtClienteNome.Size = new System.Drawing.Size(252, 20);
-            this.txtClienteNome.TabIndex = 1;
-            // 
-            // mtbClienteCPF
-            // 
-            this.mtbClienteCPF.Campo = "CPF:";
-            this.mtbClienteCPF.Location = new System.Drawing.Point(264, 19);
-            this.mtbClienteCPF.Mask = "";
-            this.mtbClienteCPF.MaxLength = 32767;
-            this.mtbClienteCPF.Name = "mtbClienteCPF";
-            this.mtbClienteCPF.Size = new System.Drawing.Size(134, 20);
-            this.mtbClienteCPF.TabIndex = 0;
-            this.mtbClienteCPF.ValidatingType = null;
             // 
             // pnlTotal
             // 
@@ -198,7 +140,7 @@
             this.pnlTotal.Location = new System.Drawing.Point(210, 395);
             this.pnlTotal.Name = "pnlTotal";
             this.pnlTotal.Size = new System.Drawing.Size(201, 102);
-            this.pnlTotal.TabIndex = 22;
+            this.pnlTotal.TabIndex = 50;
             // 
             // label4
             // 
@@ -227,7 +169,7 @@
             this.pnlTroco.Location = new System.Drawing.Point(6, 395);
             this.pnlTroco.Name = "pnlTroco";
             this.pnlTroco.Size = new System.Drawing.Size(197, 102);
-            this.pnlTroco.TabIndex = 21;
+            this.pnlTroco.TabIndex = 50;
             // 
             // label3
             // 
@@ -271,25 +213,90 @@
             this.ltbProdutos.Location = new System.Drawing.Point(6, 38);
             this.ltbProdutos.Name = "ltbProdutos";
             this.ltbProdutos.Size = new System.Drawing.Size(405, 224);
-            this.ltbProdutos.TabIndex = 20;
+            this.ltbProdutos.TabIndex = 50;
             // 
             // btnPedido
             // 
-            this.btnPedido.Location = new System.Drawing.Point(270, 550);
+            this.btnPedido.Location = new System.Drawing.Point(270, 554);
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(140, 40);
-            this.btnPedido.TabIndex = 9;
+            this.btnPedido.TabIndex = 10;
             this.btnPedido.Text = "Confirmar Pedido";
             this.btnPedido.UseVisualStyleBackColor = true;
             // 
+            // txtValor
+            // 
+            this.txtValor.AccessibleName = "Valor da Compra: (R$)";
+            this.txtValor.Campo = "Valor da Compra: (R$)";
+            this.txtValor.Location = new System.Drawing.Point(6, 19);
+            this.txtValor.MaxLength = 32767;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(153, 20);
+            this.txtValor.TabIndex = 2;
+            // 
+            // txtValorDinheiro
+            // 
+            this.txtValorDinheiro.AccessibleName = "Valor em Dinheiro: (R$)";
+            this.txtValorDinheiro.Campo = "Valor em Dinheiro: (R$)";
+            this.txtValorDinheiro.Location = new System.Drawing.Point(225, 19);
+            this.txtValorDinheiro.MaxLength = 32767;
+            this.txtValorDinheiro.Name = "txtValorDinheiro";
+            this.txtValorDinheiro.Size = new System.Drawing.Size(160, 20);
+            this.txtValorDinheiro.TabIndex = 7;
+            this.txtValorDinheiro.Leave += new System.EventHandler(this.txtValorDinheiro_Leave);
+            // 
+            // cboTributos
+            // 
+            this.cboTributos.AccessibleName = "Tributos";
+            this.cboTributos.Campo = "Tributos";
+            this.cboTributos.FormattingEnabled = true;
+            this.cboTributos.Location = new System.Drawing.Point(248, 19);
+            this.cboTributos.Name = "cboTributos";
+            this.cboTributos.Size = new System.Drawing.Size(150, 20);
+            this.cboTributos.TabIndex = 3;
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.AccessibleName = "Desconto";
+            this.txtDesconto.Campo = "Desconto";
+            this.txtDesconto.Location = new System.Drawing.Point(6, 19);
+            this.txtDesconto.MaxLength = 32767;
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(130, 20);
+            this.txtDesconto.TabIndex = 6;
+            this.txtDesconto.Leave += new System.EventHandler(this.txtDesconto_Leave);
+            // 
+            // txtClienteNome
+            // 
+            this.txtClienteNome.AccessibleName = "Nome";
+            this.txtClienteNome.Campo = "Nome";
+            this.txtClienteNome.Location = new System.Drawing.Point(6, 19);
+            this.txtClienteNome.MaxLength = 32767;
+            this.txtClienteNome.Name = "txtClienteNome";
+            this.txtClienteNome.Size = new System.Drawing.Size(252, 20);
+            this.txtClienteNome.TabIndex = 8;
+            // 
+            // mtbClienteCPF
+            // 
+            this.mtbClienteCPF.AccessibleName = "CPF";
+            this.mtbClienteCPF.Campo = "CPF";
+            this.mtbClienteCPF.Location = new System.Drawing.Point(264, 19);
+            this.mtbClienteCPF.Mask = "";
+            this.mtbClienteCPF.MaxLength = 32767;
+            this.mtbClienteCPF.Name = "mtbClienteCPF";
+            this.mtbClienteCPF.Size = new System.Drawing.Size(134, 20);
+            this.mtbClienteCPF.TabIndex = 9;
+            this.mtbClienteCPF.ValidatingType = null;
+            // 
             // txtCodPedido
             // 
+            this.txtCodPedido.AccessibleName = "CÓDIGO DO PEDIDO:";
             this.txtCodPedido.Campo = "CÓDIGO DO PEDIDO:";
             this.txtCodPedido.Location = new System.Drawing.Point(10, 13);
             this.txtCodPedido.MaxLength = 32767;
             this.txtCodPedido.Name = "txtCodPedido";
             this.txtCodPedido.Size = new System.Drawing.Size(164, 19);
-            this.txtCodPedido.TabIndex = 19;
+            this.txtCodPedido.TabIndex = 1;
             // 
             // uctPedidoConta
             // 
