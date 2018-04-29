@@ -16,6 +16,7 @@ namespace UIX
         public mtbUIX()
         {
             InitializeComponent();
+            
         }
 
         public String Campo
@@ -37,7 +38,7 @@ namespace UIX
             set
             {
                 Size current = base.Size;
-                box.Size = new Size(value.Width - lbl.Size.Width, box.Size.Height);
+                box.Size = new Size(value.Width - lbl.Size.Width , box.Size.Height);
                 base.Size = value;
             }
         }
@@ -49,5 +50,9 @@ namespace UIX
 
         public int MaxLength { get => box.MaxLength; set => box.MaxLength = value; }
 
+        private void mtbUIX_Load(object sender, EventArgs e)
+        {
+            Campo = Campo;
+        }
     }
 }

@@ -69,24 +69,18 @@
     </Compile>
     <Compile Include="mtbUIX.cs">
       <SubType>UserControl</SubType>
-      <Generator>UIX MaskedTextBox</Generator>
-      <CustomToolNamespace>UIX MaskedTextBox</CustomToolNamespace>
     </Compile>
     <Compile Include="mtbUIX.Designer.cs">
       <DependentUpon>mtbUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="txtUIX.cs">
       <SubType>UserControl</SubType>
-      <CustomToolNamespace>UIX TextBox</CustomToolNamespace>
-      <Generator>UIX TextBox</Generator>
     </Compile>
     <Compile Include="txtUIX.Designer.cs">
       <DependentUpon>txtUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="uctUIX.cs">
       <SubType>UserControl</SubType>
-      <Generator>UIX Control</Generator>
-      <CustomToolNamespace>UIX Control</CustomToolNamespace>
     </Compile>
     <Compile Include="uctUIX.Designer.cs">
       <DependentUpon>uctUIX.cs</DependentUpon>

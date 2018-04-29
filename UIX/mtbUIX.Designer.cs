@@ -55,6 +55,7 @@
             this.Controls.Add(this.lbl);
             this.Name = "mtbUIX";
             this.Size = new System.Drawing.Size(150, 20);
+            this.Load += new System.EventHandler(this.mtbUIX_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
