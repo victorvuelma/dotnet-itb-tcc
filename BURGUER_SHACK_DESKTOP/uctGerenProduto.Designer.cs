@@ -197,7 +197,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "Número de Identificação:";
+            this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtPesquisa.MaxLength = 32767;
@@ -238,7 +238,7 @@
             // 
             // txtUnidadeEstoque
             // 
-            this.txtUnidadeEstoque.Campo = "Unidade em Estoque:";
+            this.txtUnidadeEstoque.Campo = "Unidade em Estoque";
             this.txtUnidadeEstoque.Location = new System.Drawing.Point(6, 176);
             this.txtUnidadeEstoque.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtUnidadeEstoque.MaxLength = 32767;
@@ -248,7 +248,7 @@
             // 
             // txtFornecedor
             // 
-            this.txtFornecedor.Campo = "Fornecedor:";
+            this.txtFornecedor.Campo = "Fornecedor";
             this.txtFornecedor.Location = new System.Drawing.Point(6, 112);
             this.txtFornecedor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtFornecedor.MaxLength = 32767;
@@ -258,7 +258,7 @@
             // 
             // txtMarca
             // 
-            this.txtMarca.Campo = "Marca:";
+            this.txtMarca.Campo = "Marca";
             this.txtMarca.Location = new System.Drawing.Point(275, 112);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.txtMarca.MaxLength = 32767;

@@ -40,7 +40,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "NOME DO PRODUTO:";
+            this.txtPesquisa.Campo = "NOME DO PRODUTO";
             this.txtPesquisa.Location = new System.Drawing.Point(10, 20);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";

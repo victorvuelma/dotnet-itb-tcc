@@ -57,7 +57,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "ID DO PEDIDO:";
+            this.txtPesquisa.Campo = "ID DO PEDIDO";
             this.txtPesquisa.Location = new System.Drawing.Point(10, 20);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";

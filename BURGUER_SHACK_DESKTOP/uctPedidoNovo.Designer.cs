@@ -56,7 +56,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "NOME DO PRODUTO:";
+            this.txtPesquisa.Campo = "NOME DO PRODUTO";
             this.txtPesquisa.Location = new System.Drawing.Point(10, 29);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
@@ -99,7 +99,7 @@
             // 
             // txtUIX1
             // 
-            this.txtUIX1.Campo = "ID DO PEDIDO:";
+            this.txtUIX1.Campo = "ID DO PEDIDO";
             this.txtUIX1.Location = new System.Drawing.Point(10, 13);
             this.txtUIX1.MaxLength = 32767;
             this.txtUIX1.Name = "txtUIX1";

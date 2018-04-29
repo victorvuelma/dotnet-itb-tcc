@@ -68,7 +68,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "Número de Identificação:";
+            this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.MaxLength = 5;
@@ -78,7 +78,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Campo = "Nome:";
+            this.txtNome.Campo = "Nome";
             this.txtNome.Location = new System.Drawing.Point(12, 23);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 40;
@@ -88,7 +88,7 @@
             // 
             // mtbDtNasc
             // 
-            this.mtbDtNasc.Campo = "Data de Nascimento:";
+            this.mtbDtNasc.Campo = "Data de Nascimento";
             this.mtbDtNasc.Location = new System.Drawing.Point(388, 23);
             this.mtbDtNasc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbDtNasc.Mask = "00/00/0000";
@@ -100,7 +100,7 @@
             // 
             // mtbRG
             // 
-            this.mtbRG.Campo = "Registro Geral (RG):";
+            this.mtbRG.Campo = "Registro Geral (RG)";
             this.mtbRG.Location = new System.Drawing.Point(600, 23);
             this.mtbRG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbRG.Mask = "00,000,000-0";
@@ -112,7 +112,7 @@
             // 
             // mtbCPF
             // 
-            this.mtbCPF.Campo = "CPF:";
+            this.mtbCPF.Campo = "CPF";
             this.mtbCPF.Location = new System.Drawing.Point(11, 50);
             this.mtbCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbCPF.Mask = "000,000,000-00";
@@ -157,7 +157,7 @@
             // 
             // txtIDNextel
             // 
-            this.txtIDNextel.Campo = "ID Nextel:";
+            this.txtIDNextel.Campo = "ID Nextel";
             this.txtIDNextel.Location = new System.Drawing.Point(218, 55);
             this.txtIDNextel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIDNextel.MaxLength = 9;
@@ -167,7 +167,7 @@
             // 
             // mtbTelCel2
             // 
-            this.mtbTelCel2.Campo = "Telefone Celular:";
+            this.mtbTelCel2.Campo = "Telefone Celular";
             this.mtbTelCel2.Location = new System.Drawing.Point(10, 55);
             this.mtbTelCel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbTelCel2.Mask = "(00) 00000-0000";
@@ -179,7 +179,7 @@
             // 
             // mtbTelCel
             // 
-            this.mtbTelCel.Campo = "Telefone Celular:";
+            this.mtbTelCel.Campo = "Telefone Celular";
             this.mtbTelCel.Location = new System.Drawing.Point(616, 23);
             this.mtbTelCel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbTelCel.Mask = "(00) 00000-0000";
@@ -191,7 +191,7 @@
             // 
             // mtbTelRes
             // 
-            this.mtbTelRes.Campo = "Telefone Residencial:";
+            this.mtbTelRes.Campo = "Telefone Residencial";
             this.mtbTelRes.Location = new System.Drawing.Point(388, 23);
             this.mtbTelRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbTelRes.Mask = "(00) 0000-0000";
@@ -203,7 +203,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Campo = "E-mail:";
+            this.txtEmail.Campo = "E-mail";
             this.txtEmail.Location = new System.Drawing.Point(10, 23);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.MaxLength = 40;
@@ -232,7 +232,7 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Campo = "Complemento:";
+            this.txtComplemento.Campo = "Complemento";
             this.txtComplemento.Location = new System.Drawing.Point(477, 52);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtComplemento.MaxLength = 100;
@@ -242,7 +242,7 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Campo = "Cidade:";
+            this.txtCidade.Campo = "Cidade";
             this.txtCidade.Location = new System.Drawing.Point(10, 52);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCidade.MaxLength = 100;
@@ -252,7 +252,7 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Campo = "Bairro:";
+            this.txtBairro.Campo = "Bairro";
             this.txtBairro.Location = new System.Drawing.Point(250, 52);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBairro.MaxLength = 100;
@@ -262,7 +262,7 @@
             // 
             // cboUF
             // 
-            this.cboUF.Campo = "Estado:";
+            this.cboUF.Campo = "Estado";
             this.cboUF.FormattingEnabled = true;
             this.cboUF.Location = new System.Drawing.Point(616, 23);
             this.cboUF.Name = "cboUF";
@@ -271,7 +271,7 @@
             // 
             // mtbCEP
             // 
-            this.mtbCEP.Campo = "CEP:";
+            this.mtbCEP.Campo = "CEP";
             this.mtbCEP.Location = new System.Drawing.Point(504, 23);
             this.mtbCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbCEP.Mask = "00000-000";
@@ -283,7 +283,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Campo = "Número:";
+            this.txtNumero.Campo = "Número";
             this.txtNumero.Location = new System.Drawing.Point(386, 23);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero.MaxLength = 100;
@@ -293,7 +293,7 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Campo = "Endereço:";
+            this.txtEndereco.Campo = "Endereço";
             this.txtEndereco.Location = new System.Drawing.Point(10, 23);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndereco.MaxLength = 100;
@@ -320,7 +320,7 @@
             // 
             // cboValeTransporte
             // 
-            this.cboValeTransporte.Campo = "Vale-transporte:";
+            this.cboValeTransporte.Campo = "Vale-transporte";
             this.cboValeTransporte.FormattingEnabled = true;
             this.cboValeTransporte.Location = new System.Drawing.Point(12, 50);
             this.cboValeTransporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -330,7 +330,7 @@
             // 
             // cboTiqueteRefeicao
             // 
-            this.cboTiqueteRefeicao.Campo = "Tíquete-refeição:";
+            this.cboTiqueteRefeicao.Campo = "Tíquete-refeição";
             this.cboTiqueteRefeicao.FormattingEnabled = true;
             this.cboTiqueteRefeicao.Location = new System.Drawing.Point(250, 53);
             this.cboTiqueteRefeicao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -340,7 +340,7 @@
             // 
             // cboAuxCreche
             // 
-            this.cboAuxCreche.Campo = "Auxílio Creche:";
+            this.cboAuxCreche.Campo = "Auxílio Creche";
             this.cboAuxCreche.FormattingEnabled = true;
             this.cboAuxCreche.Location = new System.Drawing.Point(405, 21);
             this.cboAuxCreche.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -350,7 +350,7 @@
             // 
             // cboAssOdontologica
             // 
-            this.cboAssOdontologica.Campo = "Assistência Odontológica:";
+            this.cboAssOdontologica.Campo = "Assistência Odontológica";
             this.cboAssOdontologica.FormattingEnabled = true;
             this.cboAssOdontologica.Location = new System.Drawing.Point(189, 21);
             this.cboAssOdontologica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -360,7 +360,7 @@
             // 
             // cboAssMedica
             // 
-            this.cboAssMedica.Campo = "Assistência Médica:";
+            this.cboAssMedica.Campo = "Assistência Médica";
             this.cboAssMedica.FormattingEnabled = true;
             this.cboAssMedica.Location = new System.Drawing.Point(12, 21);
             this.cboAssMedica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -385,7 +385,7 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Campo = "Salário:";
+            this.txtSalario.Campo = "Salário";
             this.txtSalario.Location = new System.Drawing.Point(373, 23);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSalario.MaxLength = 100;
@@ -395,7 +395,7 @@
             // 
             // cboCargaHoraria
             // 
-            this.cboCargaHoraria.Campo = "Carga Horária:";
+            this.cboCargaHoraria.Campo = "Carga Horária";
             this.cboCargaHoraria.FormattingEnabled = true;
             this.cboCargaHoraria.Location = new System.Drawing.Point(218, 23);
             this.cboCargaHoraria.Name = "cboCargaHoraria";
@@ -404,7 +404,7 @@
             // 
             // txtCargo
             // 
-            this.txtCargo.Campo = "Cargo:";
+            this.txtCargo.Campo = "Cargo";
             this.txtCargo.Location = new System.Drawing.Point(10, 23);
             this.txtCargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCargo.MaxLength = 40;

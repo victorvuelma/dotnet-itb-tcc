@@ -90,7 +90,7 @@
             // 
             // txtSite
             // 
-            this.txtSite.Campo = "Site:";
+            this.txtSite.Campo = "Site";
             this.txtSite.Location = new System.Drawing.Point(427, 51);
             this.txtSite.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtSite.MaxLength = 32767;
@@ -100,7 +100,7 @@
             // 
             // mtbCNPJ
             // 
-            this.mtbCNPJ.Campo = "CNPJ:";
+            this.mtbCNPJ.Campo = "CNPJ";
             this.mtbCNPJ.Location = new System.Drawing.Point(6, 51);
             this.mtbCNPJ.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbCNPJ.Mask = "";
@@ -112,7 +112,7 @@
             // 
             // txtNomeFantasia
             // 
-            this.txtNomeFantasia.Campo = "Nome Fantasia:";
+            this.txtNomeFantasia.Campo = "Nome Fantasia";
             this.txtNomeFantasia.Location = new System.Drawing.Point(377, 21);
             this.txtNomeFantasia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtNomeFantasia.MaxLength = 32767;
@@ -122,7 +122,7 @@
             // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.Campo = "Razão Social:";
+            this.txtRazaoSocial.Campo = "Razão Social";
             this.txtRazaoSocial.Location = new System.Drawing.Point(6, 21);
             this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRazaoSocial.MaxLength = 32767;
@@ -132,7 +132,7 @@
             // 
             // mtbInscricaoEstadual
             // 
-            this.mtbInscricaoEstadual.Campo = "Inscrição Estadual:";
+            this.mtbInscricaoEstadual.Campo = "Inscrição Estadual";
             this.mtbInscricaoEstadual.Location = new System.Drawing.Point(170, 51);
             this.mtbInscricaoEstadual.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.mtbInscricaoEstadual.Mask = "";
@@ -163,7 +163,7 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Campo = "Complemento:";
+            this.txtComplemento.Campo = "Complemento";
             this.txtComplemento.Location = new System.Drawing.Point(360, 51);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtComplemento.MaxLength = 32767;
@@ -251,7 +251,7 @@
             // 
             // mtbFax
             // 
-            this.mtbFax.Campo = "FAX:";
+            this.mtbFax.Campo = "FAX";
             this.mtbFax.Location = new System.Drawing.Point(337, 51);
             this.mtbFax.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.mtbFax.Mask = "(00) 00000-0000";
@@ -263,7 +263,7 @@
             // 
             // mtbRamal
             // 
-            this.mtbRamal.Campo = "Ramal:";
+            this.mtbRamal.Campo = "Ramal";
             this.mtbRamal.Location = new System.Drawing.Point(205, 51);
             this.mtbRamal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbRamal.Mask = "";
@@ -275,7 +275,7 @@
             // 
             // mtbContatoTelCelular
             // 
-            this.mtbContatoTelCelular.Campo = "Telefone Celular:";
+            this.mtbContatoTelCelular.Campo = "Telefone Celular";
             this.mtbContatoTelCelular.Location = new System.Drawing.Point(6, 51);
             this.mtbContatoTelCelular.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.mtbContatoTelCelular.Mask = "(00) 00000-0000";
@@ -287,7 +287,7 @@
             // 
             // mtbContatoTelComercial2
             // 
-            this.mtbContatoTelComercial2.Campo = "Telefone Comercial:";
+            this.mtbContatoTelComercial2.Campo = "Telefone Comercial";
             this.mtbContatoTelComercial2.Location = new System.Drawing.Point(579, 23);
             this.mtbContatoTelComercial2.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.mtbContatoTelComercial2.Mask = "(00) 00000-0000";
@@ -339,7 +339,7 @@
             // 
             // txtResEmail
             // 
-            this.txtResEmail.Campo = "Email:";
+            this.txtResEmail.Campo = "Email";
             this.txtResEmail.Location = new System.Drawing.Point(391, 51);
             this.txtResEmail.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtResEmail.MaxLength = 40;
@@ -349,7 +349,7 @@
             // 
             // mtbResTelFixo
             // 
-            this.mtbResTelFixo.Campo = "Telefone Fixo:";
+            this.mtbResTelFixo.Campo = "Telefone Fixo";
             this.mtbResTelFixo.Location = new System.Drawing.Point(6, 51);
             this.mtbResTelFixo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.mtbResTelFixo.Mask = "(00) 00000-0000";
@@ -361,7 +361,7 @@
             // 
             // mtbResTelCel
             // 
-            this.mtbResTelCel.Campo = "Telefone Comercial:";
+            this.mtbResTelCel.Campo = "Telefone Comercial";
             this.mtbResTelCel.Location = new System.Drawing.Point(182, 51);
             this.mtbResTelCel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.mtbResTelCel.Mask = "(00) 00000-0000";
@@ -373,7 +373,7 @@
             // 
             // mtbRG
             // 
-            this.mtbRG.Campo = "Registro Geral:";
+            this.mtbRG.Campo = "Registro Geral";
             this.mtbRG.Location = new System.Drawing.Point(601, 23);
             this.mtbRG.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.mtbRG.Mask = "";
@@ -385,7 +385,7 @@
             // 
             // mtbCPF
             // 
-            this.mtbCPF.Campo = "CPF:";
+            this.mtbCPF.Campo = "CPF";
             this.mtbCPF.Location = new System.Drawing.Point(445, 23);
             this.mtbCPF.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.mtbCPF.Mask = "";
@@ -397,7 +397,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Campo = "Nome:";
+            this.txtNome.Campo = "Nome";
             this.txtNome.Location = new System.Drawing.Point(6, 23);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtNome.MaxLength = 40;
@@ -407,7 +407,7 @@
             // 
             // txtFuncao
             // 
-            this.txtFuncao.Campo = "Cargo/Função:";
+            this.txtFuncao.Campo = "Cargo/Função";
             this.txtFuncao.Location = new System.Drawing.Point(6, 65);
             this.txtFuncao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtFuncao.MaxLength = 32767;
@@ -431,7 +431,7 @@
             // 
             // mtbUIX3
             // 
-            this.mtbUIX3.Campo = "Término do Convênio:";
+            this.mtbUIX3.Campo = "Término do Convênio";
             this.mtbUIX3.Location = new System.Drawing.Point(208, 40);
             this.mtbUIX3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.mtbUIX3.Mask = "";
@@ -443,7 +443,7 @@
             // 
             // mtbUIX2
             // 
-            this.mtbUIX2.Campo = "Inicio do Convênio:";
+            this.mtbUIX2.Campo = "Inicio do Convênio";
             this.mtbUIX2.Location = new System.Drawing.Point(6, 40);
             this.mtbUIX2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbUIX2.Mask = "";
@@ -455,7 +455,7 @@
             // 
             // mtbUIX1
             // 
-            this.mtbUIX1.Campo = "Convênio nº:";
+            this.mtbUIX1.Campo = "Convênio nº";
             this.mtbUIX1.Location = new System.Drawing.Point(456, 15);
             this.mtbUIX1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.mtbUIX1.Mask = "";
@@ -467,7 +467,7 @@
             // 
             // txtUIX1
             // 
-            this.txtUIX1.Campo = "Coornedador do Convênio:";
+            this.txtUIX1.Campo = "Coornedador do Convênio";
             this.txtUIX1.Location = new System.Drawing.Point(6, 15);
             this.txtUIX1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.txtUIX1.MaxLength = 40;
@@ -477,7 +477,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "Número de Identificação:";
+            this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.MaxLength = 32767;

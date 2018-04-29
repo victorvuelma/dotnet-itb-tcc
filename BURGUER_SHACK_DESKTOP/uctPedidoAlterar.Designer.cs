@@ -66,7 +66,7 @@
             // 
             // txtUIX1
             // 
-            this.txtUIX1.Campo = "NOME DO PRODUTO:";
+            this.txtUIX1.Campo = "NOME DO PRODUTO";
             this.txtUIX1.Location = new System.Drawing.Point(10, 245);
             this.txtUIX1.MaxLength = 32767;
             this.txtUIX1.Name = "txtUIX1";
@@ -158,7 +158,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Campo = "NOME DO PRODUTO:";
+            this.txtPesquisa.Campo = "NOME DO PRODUTO";
             this.txtPesquisa.Location = new System.Drawing.Point(10, 29);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
@@ -167,7 +167,7 @@
             // 
             // txtUIX2
             // 
-            this.txtUIX2.Campo = "ID DO PEDIDO:";
+            this.txtUIX2.Campo = "ID DO PEDIDO";
             this.txtUIX2.Location = new System.Drawing.Point(10, 13);
             this.txtUIX2.MaxLength = 32767;
             this.txtUIX2.Name = "txtUIX2";
