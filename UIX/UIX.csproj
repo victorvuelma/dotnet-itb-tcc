@@ -112,6 +112,9 @@
     <EmbeddedResource Include="btnUIX.resx">
       <DependentUpon>btnUIX.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="msgUIX.resx">
+      <DependentUpon>msgUIX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

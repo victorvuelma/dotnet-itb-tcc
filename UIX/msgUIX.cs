@@ -16,5 +16,20 @@ namespace UIX
         {
             InitializeComponent();
         }
+
+        public static msgUIX messageBox(String titulo, Image image, uixTemplate template)
+        {
+            msgUIX msg = new msgUIX();
+
+            msg.uctUIX.UIXTitle = titulo;
+            msg.Text = titulo;
+
+            msg.uctUIX.UIXImage = image;
+
+            template.frmApply(msg, msg.uctUIX);
+
+
+            return msg;
+        }
     }
 }
