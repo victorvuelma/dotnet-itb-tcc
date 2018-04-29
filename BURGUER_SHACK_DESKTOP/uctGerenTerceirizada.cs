@@ -15,11 +15,12 @@ namespace BURGUER_SHACK_DESKTOP
         public uctGerenTerceirizada()
         {
             InitializeComponent();
+
+            clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF, txtEndNr);
+
+            mtbEmpCNPJ.Mask = clnUtil.MASK_CNPJ;
+            mtbEmpIE.Mask = clnUtil.MASK_IE;
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

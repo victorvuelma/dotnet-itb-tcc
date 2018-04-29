@@ -86,7 +86,7 @@
             this.txtDadosNome.MaxLength = 40;
             this.txtDadosNome.Name = "txtDadosNome";
             this.txtDadosNome.Size = new System.Drawing.Size(487, 21);
-            this.txtDadosNome.TabIndex = 2;
+            this.txtDadosNome.TabIndex = 1;
             // 
             // mtbDadosDtNasc
             // 
@@ -98,7 +98,7 @@
             this.mtbDadosDtNasc.MaxLength = 32767;
             this.mtbDadosDtNasc.Name = "mtbDadosDtNasc";
             this.mtbDadosDtNasc.Size = new System.Drawing.Size(185, 21);
-            this.mtbDadosDtNasc.TabIndex = 3;
+            this.mtbDadosDtNasc.TabIndex = 2;
             this.mtbDadosDtNasc.ValidatingType = typeof(System.DateTime);
             // 
             // mtbDadosRG
@@ -111,7 +111,7 @@
             this.mtbDadosRG.MaxLength = 32767;
             this.mtbDadosRG.Name = "mtbDadosRG";
             this.mtbDadosRG.Size = new System.Drawing.Size(178, 21);
-            this.mtbDadosRG.TabIndex = 4;
+            this.mtbDadosRG.TabIndex = 3;
             this.mtbDadosRG.ValidatingType = null;
             // 
             // mtbDadosCPF
@@ -266,11 +266,11 @@
             // 
             this.txtEndBairro.AccessibleName = "Bairro*";
             this.txtEndBairro.Campo = "Bairro*";
-            this.txtEndBairro.Location = new System.Drawing.Point(107, 49);
+            this.txtEndBairro.Location = new System.Drawing.Point(111, 49);
             this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndBairro.MaxLength = 100;
             this.txtEndBairro.Name = "txtEndBairro";
-            this.txtEndBairro.Size = new System.Drawing.Size(302, 21);
+            this.txtEndBairro.Size = new System.Drawing.Size(298, 21);
             this.txtEndBairro.TabIndex = 5;
             // 
             // mtbEndCEP
@@ -282,10 +282,9 @@
             this.mtbEndCEP.Mask = "00000-000";
             this.mtbEndCEP.MaxLength = 32767;
             this.mtbEndCEP.Name = "mtbEndCEP";
-            this.mtbEndCEP.Size = new System.Drawing.Size(91, 21);
+            this.mtbEndCEP.Size = new System.Drawing.Size(95, 21);
             this.mtbEndCEP.TabIndex = 4;
             this.mtbEndCEP.ValidatingType = null;
-            this.mtbEndCEP.Validated += new System.EventHandler(this.mtbEndCEP_Validated);
             // 
             // cboEndUF
             // 
@@ -328,11 +327,11 @@
             this.grpBeneficios.Controls.Add(this.cboAssOdontologica);
             this.grpBeneficios.Controls.Add(this.cboAssMedica);
             this.grpBeneficios.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBeneficios.Location = new System.Drawing.Point(3, 362);
+            this.grpBeneficios.Location = new System.Drawing.Point(5, 350);
             this.grpBeneficios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpBeneficios.Name = "grpBeneficios";
             this.grpBeneficios.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpBeneficios.Size = new System.Drawing.Size(697, 88);
+            this.grpBeneficios.Size = new System.Drawing.Size(700, 80);
             this.grpBeneficios.TabIndex = 5;
             this.grpBeneficios.TabStop = false;
             this.grpBeneficios.Text = "BENEFÍCIOS";
@@ -446,7 +445,7 @@
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
-            this.btnSalvar.Location = new System.Drawing.Point(706, 370);
+            this.btnSalvar.Location = new System.Drawing.Point(711, 350);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 80);
             this.btnSalvar.TabIndex = 34;
@@ -468,7 +467,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctGerenFuncionario";
-            this.Size = new System.Drawing.Size(800, 470);
+            this.Size = new System.Drawing.Size(800, 440);
             this.grbDados.ResumeLayout(false);
             this.grpContatos.ResumeLayout(false);
             this.grpEndereco.ResumeLayout(false);
