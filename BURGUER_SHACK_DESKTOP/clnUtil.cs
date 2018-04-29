@@ -37,7 +37,18 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static ViaCEP _viaCep = new ViaCEP();
 
-        public static void definirEndereco(String cep, Control rua, Control bairro, Control cidade, Control estado, Control  nr)
+        public static void definirCEP(UIX.mtbUIX mtbCEP, Control rua, Control bairro, Control cidade, Control estado, Control nr)
+        {
+            mtbCEP.Validated += (object sender, EventArgs e) =>
+            {
+                if (clnUtil.validarCEP(mtbCEP.Text))
+                {
+                    clnUtil.definirEndereco(mtbCEP.Text, rua, bairro, cidade, estado, nr);
+                }
+            };
+        }
+
+        public static void definirEndereco(String cep, Control rua, Control bairro, Control cidade, Control estado, Control nr)
         {
             if (validarCEP(cep))
             {
