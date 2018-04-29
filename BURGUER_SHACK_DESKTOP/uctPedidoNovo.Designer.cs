@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.grbPedidoNovo = new System.Windows.Forms.GroupBox();
+            this.txtPesquisa = new UIX.txtUIX();
             this.ltbProdutos = new System.Windows.Forms.ListBox();
             this.btnPedido = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.pnlPreco = new System.Windows.Forms.Panel();
-            this.txtPesquisa = new UIX.txtUIX();
             this.grbPedidoNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
@@ -52,19 +52,28 @@
             this.grbPedidoNovo.TabStop = false;
             this.grbPedidoNovo.Text = "NOVO PEDIDO";
             // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Campo = "NOME DO PRODUTO:";
+            this.txtPesquisa.Location = new System.Drawing.Point(10, 20);
+            this.txtPesquisa.MaxLength = 32767;
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
+            this.txtPesquisa.TabIndex = 18;
+            // 
             // ltbProdutos
             // 
             this.ltbProdutos.FormattingEnabled = true;
-            this.ltbProdutos.Location = new System.Drawing.Point(5, 455);
+            this.ltbProdutos.Location = new System.Drawing.Point(10, 455);
             this.ltbProdutos.Name = "ltbProdutos";
-            this.ltbProdutos.Size = new System.Drawing.Size(260, 134);
+            this.ltbProdutos.Size = new System.Drawing.Size(250, 134);
             this.ltbProdutos.TabIndex = 10;
             // 
             // btnPedido
             // 
-            this.btnPedido.Location = new System.Drawing.Point(271, 550);
+            this.btnPedido.Location = new System.Drawing.Point(270, 550);
             this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(144, 38);
+            this.btnPedido.Size = new System.Drawing.Size(140, 40);
             this.btnPedido.TabIndex = 9;
             this.btnPedido.Text = "Confirmar Pedido";
             this.btnPedido.UseVisualStyleBackColor = true;
@@ -73,26 +82,18 @@
             // 
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(5, 50);
+            this.dgvProdutos.Location = new System.Drawing.Point(10, 50);
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(410, 387);
+            this.dgvProdutos.Size = new System.Drawing.Size(400, 390);
             this.dgvProdutos.TabIndex = 2;
             // 
             // pnlPreco
             // 
             this.pnlPreco.BackColor = System.Drawing.Color.White;
-            this.pnlPreco.Location = new System.Drawing.Point(271, 455);
+            this.pnlPreco.Location = new System.Drawing.Point(270, 455);
             this.pnlPreco.Name = "pnlPreco";
-            this.pnlPreco.Size = new System.Drawing.Size(144, 90);
+            this.pnlPreco.Size = new System.Drawing.Size(140, 90);
             this.pnlPreco.TabIndex = 8;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Campo = "NOME DO PRODUTO:";
-            this.txtPesquisa.Location = new System.Drawing.Point(5, 24);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(410, 20);
-            this.txtPesquisa.TabIndex = 18;
             // 
             // uctPedidoNovo
             // 

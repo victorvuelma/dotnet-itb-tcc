@@ -30,8 +30,8 @@
         {
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.grbProdutoRemover = new System.Windows.Forms.GroupBox();
-            this.btnPedido = new System.Windows.Forms.Button();
             this.txtPesquisa = new UIX.txtUIX();
+            this.btnPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbProdutoRemover.SuspendLayout();
             this.SuspendLayout();
@@ -40,9 +40,9 @@
             // 
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(5, 46);
+            this.dgvProdutos.Location = new System.Drawing.Point(10, 50);
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(410, 498);
+            this.dgvProdutos.Size = new System.Drawing.Size(400, 495);
             this.dgvProdutos.TabIndex = 2;
             // 
             // grbProdutoRemover
@@ -57,22 +57,23 @@
             this.grbProdutoRemover.TabStop = false;
             this.grbProdutoRemover.Text = "APAGAR PEDIDO";
             // 
-            // btnPedido
-            // 
-            this.btnPedido.Location = new System.Drawing.Point(271, 550);
-            this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(144, 38);
-            this.btnPedido.TabIndex = 9;
-            this.btnPedido.Text = "Apagar Pedido";
-            this.btnPedido.UseVisualStyleBackColor = true;
-            // 
             // txtPesquisa
             // 
             this.txtPesquisa.Campo = "ID DO PEDIDO:";
-            this.txtPesquisa.Location = new System.Drawing.Point(7, 20);
+            this.txtPesquisa.Location = new System.Drawing.Point(10, 20);
+            this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(407, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
             this.txtPesquisa.TabIndex = 10;
+            // 
+            // btnPedido
+            // 
+            this.btnPedido.Location = new System.Drawing.Point(260, 555);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(150, 40);
+            this.btnPedido.TabIndex = 9;
+            this.btnPedido.Text = "Apagar Pedido";
+            this.btnPedido.UseVisualStyleBackColor = true;
             // 
             // uctPedidoRemover
             // 
