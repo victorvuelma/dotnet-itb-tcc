@@ -230,7 +230,16 @@
     <None Include="Resources\usuarios.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\erro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\confirmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios-ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

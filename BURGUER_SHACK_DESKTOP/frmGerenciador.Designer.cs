@@ -59,11 +59,10 @@
             // 
             // btnSair
             // 
-            this.btnSair.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSair.Description = "Text";
+            this.btnSair.Description = "Sair";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = null;
+            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
             this.btnSair.Location = new System.Drawing.Point(10, 470);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(80, 80);

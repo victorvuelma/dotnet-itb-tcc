@@ -93,6 +93,26 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap confirmar {
+            get {
+                object obj = ResourceManager.GetObject("confirmar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap erro {
+            get {
+                object obj = ResourceManager.GetObject("erro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap garcom {
             get {
                 object obj = ResourceManager.GetObject("garcom", resourceCulture);
@@ -142,6 +162,16 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info {
+            get {
+                object obj = ResourceManager.GetObject("info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap lista {
             get {
@@ -217,6 +247,16 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
             get {
                 object obj = ResourceManager.GetObject("usuarios", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon usuarios_ico {
+            get {
+                object obj = ResourceManager.GetObject("usuarios_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

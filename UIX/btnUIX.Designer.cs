@@ -41,6 +41,7 @@
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
+            this.pic.Click += new System.EventHandler(this.pic_Click);
             this.pic.MouseEnter += new System.EventHandler(this.btnUIX_MouseEnter);
             this.pic.MouseLeave += new System.EventHandler(this.btnUIX_MouseLeave);
             // 
@@ -53,6 +54,7 @@
             this.lbl.TabIndex = 1;
             this.lbl.Text = "Text";
             this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl.Click += new System.EventHandler(this.lbl_Click);
             this.lbl.MouseEnter += new System.EventHandler(this.btnUIX_MouseEnter);
             this.lbl.MouseLeave += new System.EventHandler(this.btnUIX_MouseLeave);
             // 

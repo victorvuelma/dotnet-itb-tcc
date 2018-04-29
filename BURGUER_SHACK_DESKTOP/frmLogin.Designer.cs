@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.txtNome = new UIX.txtUIX();
             this.txtSenha = new UIX.txtUIX();
             this.btnEntrar = new System.Windows.Forms.Button();
@@ -86,6 +87,7 @@
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
