@@ -111,5 +111,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             Close();
         }
+
     }
 }

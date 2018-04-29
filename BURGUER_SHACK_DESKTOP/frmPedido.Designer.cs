@@ -38,11 +38,13 @@
             this.btnNovoPedido = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.uctUIX = new UIX.uctUIX();
+            this.btnFinalizarPedido = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnFinalizarPedido);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnPedidos);
             this.pnlMenu.Controls.Add(this.btnApagarPedido);
@@ -150,6 +152,19 @@
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
             // 
+            // btnFinalizarPedido
+            // 
+            this.btnFinalizarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFinalizarPedido.Description = "Finalizar";
+            this.btnFinalizarPedido.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFinalizarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnFinalizarPedido.Location = new System.Drawing.Point(10, 456);
+            this.btnFinalizarPedido.Name = "btnFinalizarPedido";
+            this.btnFinalizarPedido.Size = new System.Drawing.Size(80, 80);
+            this.btnFinalizarPedido.TabIndex = 7;
+            this.btnFinalizarPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
+            // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -181,6 +196,7 @@
         private UIX.btnUIX btnSair;
         public UIX.uctUIX uctUIX;
         public System.Windows.Forms.Panel pnlConteudo;
+        private UIX.btnUIX btnFinalizarPedido;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

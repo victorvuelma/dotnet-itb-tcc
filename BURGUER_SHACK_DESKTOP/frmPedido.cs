@@ -48,6 +48,11 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(new uctPedidoListar(), "Pedidos");
         }
 
+        private void btnFinalizarPedido_Click(object sender, EventArgs e)
+        {
+                alterarConteudo(new uctPedidoConta(), "Conta");
+        }
+
         private void alterarConteudo(UserControl uctConteudo, String titulo)
         {
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
@@ -67,5 +72,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             Close();
         }
+
     }
 }
