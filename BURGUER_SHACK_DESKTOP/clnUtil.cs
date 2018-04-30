@@ -199,10 +199,16 @@ namespace BURGUER_SHACK_DESKTOP
         {
             _pnlConteudo = pnlConteudo;
             _uixBar = uctUIX;
-
+                       
             if (pnlConteudo.Controls.Count == 1)
             {
-                pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
+                if(!uctConteudo.GetType().Equals(pnlConteudo.Controls[0].GetType()))
+                {
+                    pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
+                } else
+                {
+                    return;
+                }
             }
 
             clnUtil.atualizarTabIndex(uctConteudo.Controls);
