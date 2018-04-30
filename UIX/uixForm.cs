@@ -16,7 +16,7 @@ namespace UIX
         {
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.AutoScaleMode = AutoScaleMode.None;
-            frm.Name = ctl.UIXTitle;
+            frm.Text = ctl.UIXTitle;
 
             ctl.AutoScaleMode = AutoScaleMode.None;
 
