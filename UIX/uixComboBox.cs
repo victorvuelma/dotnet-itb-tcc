@@ -22,7 +22,7 @@ namespace UIX
         public static void cboApply(ComboBox cbo, uixSet colorSet)
         {
             cbo.FlatStyle = FlatStyle.Popup;
-            cbo.BackColor = colorSet.DarkColor;
+            cbo.BackColor = colorSet.LightColor;
             cbo.ForeColor = colorSet.ContentColor;
             cbo.Margin = new Padding(0);
         }
