@@ -38,6 +38,27 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static ViaCEP _viaCep = new ViaCEP();
 
+        public static void adicionarControles(Control onde, List<Control> controles, int espaco)
+        {
+            int X = espaco/2;
+            int Y = espaco;
+            foreach (Control controle in controles)
+            {
+                controle.Location = new Point(X, Y);
+                onde.Controls.Add(controle);
+                X += espaco;
+                X += controle.Height;
+                if ((X + controle.Height) >= onde.Height)
+                {
+                    X = espaco / 2;
+                    Y += espaco;
+                    Y += controle.Width;
+                }
+            }
+
+            clnUtil.atualizarTabIndex(onde.Controls);
+        }
+
         public static void atualizarTabIndex(ControlCollection controls)
         {
             SortedDictionary<int, SortedDictionary<int, List<Control>>> positionControl = new SortedDictionary<int, SortedDictionary<int, List<Control>>>();
@@ -171,8 +192,19 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private static Panel _pnlConteudo;
+        private static UIX.uctUIX _uixBar;
+
+        public static void alterarConteudo(UserControl novoConteudo, String titulo)
+        {
+            alterarConteudo(_pnlConteudo, novoConteudo, _uixBar, titulo);
+        }
+
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.uctUIX uctUIX, String titulo)
         {
+            _pnlConteudo = pnlConteudo;
+            _uixBar = uctUIX;
+
             if (pnlConteudo.Controls.Count == 1)
             {
                 pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
