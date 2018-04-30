@@ -91,6 +91,7 @@
     <Compile Include="uixCheckBox.cs" />
     <Compile Include="uixColor.cs" />
     <Compile Include="uixComboBox.cs" />
+    <Compile Include="uixDataGridView.cs" />
     <Compile Include="uixFont.cs" />
     <Compile Include="uixForm.cs" />
     <Compile Include="uixGroupBox.cs" />

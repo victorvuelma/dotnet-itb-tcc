@@ -31,6 +31,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BURGUER_SHACK_DESKTOP.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Caelum.Stella.CSharp, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Caelum.Stella.CSharp.1.4.7\lib\netstandard1.2\Caelum.Stella.CSharp.dll</HintPath>
