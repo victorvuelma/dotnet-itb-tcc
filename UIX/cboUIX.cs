@@ -31,6 +31,16 @@ namespace UIX
             }
         }
 
+        public new Font Font
+        {
+            get => base.Font;
+            set
+            {
+                base.Font = value;
+                Campo = Campo;
+            }
+        }
+
         public override String Text { get => cbo.Text; set => cbo.Text = value; }
 
         public new Size Size
