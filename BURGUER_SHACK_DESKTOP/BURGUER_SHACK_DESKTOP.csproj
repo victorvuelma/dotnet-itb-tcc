@@ -186,17 +186,17 @@
     <Compile Include="uctPedidoCardapio.Designer.cs">
       <DependentUpon>uctPedidoCardapio.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctPedidoConta.cs">
+    <Compile Include="uctMesaConta.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctPedidoConta.Designer.cs">
-      <DependentUpon>uctPedidoConta.cs</DependentUpon>
+    <Compile Include="uctMesaConta.Designer.cs">
+      <DependentUpon>uctMesaConta.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctPedidoMesa.cs">
+    <Compile Include="uctMesaListar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctPedidoMesa.Designer.cs">
-      <DependentUpon>uctPedidoMesa.cs</DependentUpon>
+    <Compile Include="uctMesaListar.Designer.cs">
+      <DependentUpon>uctMesaListar.cs</DependentUpon>
     </Compile>
     <Compile Include="uctPedidoNovo.cs">
       <SubType>UserControl</SubType>
@@ -260,11 +260,11 @@
     <EmbeddedResource Include="uctPedidoCardapio.resx">
       <DependentUpon>uctPedidoCardapio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctPedidoConta.resx">
-      <DependentUpon>uctPedidoConta.cs</DependentUpon>
+    <EmbeddedResource Include="uctMesaConta.resx">
+      <DependentUpon>uctMesaConta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctPedidoMesa.resx">
-      <DependentUpon>uctPedidoMesa.cs</DependentUpon>
+    <EmbeddedResource Include="uctMesaListar.resx">
+      <DependentUpon>uctMesaListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoNovo.resx">
       <DependentUpon>uctPedidoNovo.cs</DependentUpon>

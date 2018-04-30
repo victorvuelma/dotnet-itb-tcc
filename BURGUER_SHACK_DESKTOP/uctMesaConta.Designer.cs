@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class uctPedidoConta
+    partial class uctMesaConta
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctPedidoConta));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctMesaConta));
             this.grbPedidoConta = new System.Windows.Forms.GroupBox();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.cboImpressora = new System.Windows.Forms.ComboBox();
@@ -283,12 +283,12 @@
             this.txtCodPedido.Size = new System.Drawing.Size(164, 19);
             this.txtCodPedido.TabIndex = 1;
             // 
-            // uctPedidoConta
+            // uctMesaConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbPedidoConta);
-            this.Name = "uctPedidoConta";
+            this.Name = "uctMesaConta";
             this.Size = new System.Drawing.Size(430, 610);
             this.Load += new System.EventHandler(this.uctPedidoConta_Load);
             this.grbPedidoConta.ResumeLayout(false);
