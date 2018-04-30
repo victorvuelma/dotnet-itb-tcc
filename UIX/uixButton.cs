@@ -22,6 +22,10 @@ namespace UIX
             btn.FlatAppearance.BorderSize = 0;
             btn.ForeColor = colorSet.ContentColor;
             btn.Cursor = Cursors.Hand;
+            if(btn is btnUIX)
+            {
+                ((btnUIX)btn).HoverColor = colorSet.DarkColor;
+            }
         }
 
         public static void btnApply(Button btn, uixSet colorSet, Font font)

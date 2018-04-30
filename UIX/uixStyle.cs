@@ -56,7 +56,7 @@ namespace UIX
 
         public uixSet FormColor { get => _formColor; }
         public uixSet HeaderButtonColor { get => _headerButtonColor; }
-        public uixSet HeaderCloseButtonColor { get => _headerCloseButtonColor; }
+        public uixSet WarningButtonColor { get => _headerCloseButtonColor; }
 
         public int HeaderButtonSize { get => _headerButtonSize; }
         public int HeaderButtonSpace { get => _headerButtonSpace; }

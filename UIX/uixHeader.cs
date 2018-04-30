@@ -46,7 +46,7 @@ namespace UIX
                 ctl.btnClose.Location = new Point(nextButtonX, style.HeaderButtonSpace);
                 ctl.btnClose.BringToFront();
 
-                uixButton.btnStyleClose(ctl.btnClose, style.HeaderButtonSize, style.HeaderCloseButtonColor);
+                uixButton.btnStyleClose(ctl.btnClose, style.HeaderButtonSize, style.WarningButtonColor);
             }
             //Minimize button
             if (ctl.btnMin != null)
