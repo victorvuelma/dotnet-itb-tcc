@@ -17,7 +17,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             List<Control> mesas = new List<Control>();
-            for(int i = 1; i <= 24; i++)
+            for(int i = 1; i <= 30; i++)
             {
                 int mesa = i;
 
@@ -36,12 +36,13 @@ namespace BURGUER_SHACK_DESKTOP
                 mesas.Add(btn);
             }
 
-            clnUtil.adicionarControles(grbMesas, mesas, 20);
+            clnUtil.adicionarControles(pnlMesas, mesas, 20);
         }
         
         private void uctPedidoMesa_Load(object sender, EventArgs e)
         {
-            pnlLivre.BackColor = System.Drawing.Color.White;
+            pnlLivre.BackColor = UIX.uixColor.WHITE;
+            pnlMesas.BackColor = grbMesas.BackColor;
         }
 
         public void abrirNovoPedido(int mesa)

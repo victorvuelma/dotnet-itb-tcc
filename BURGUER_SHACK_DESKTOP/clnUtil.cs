@@ -40,19 +40,19 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static void adicionarControles(Control onde, List<Control> controles, int espaco)
         {
-            int X = espaco/2;
-            int Y = espaco;
+            int X = espaco / 2;
+            int Y = espaco / 2;
             foreach (Control controle in controles)
             {
                 controle.Location = new Point(X, Y);
                 onde.Controls.Add(controle);
                 X += espaco;
-                X += controle.Height;
-                if ((X + controle.Height) >= onde.Height)
+                X += controle.Width;
+                if ((X + controle.Width) >= onde.MaximumSize.Width)
                 {
                     X = espaco / 2;
                     Y += espaco;
-                    Y += controle.Width;
+                    Y += controle.Height;
                 }
             }
 

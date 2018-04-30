@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnFinalizarPedido = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
             this.btnApagarPedido = new UIX.btnUIX();
@@ -38,7 +39,6 @@
             this.btnNovoPedido = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.uctUIX = new UIX.uctUIX();
-            this.btnFinalizarPedido = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,19 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 760);
             this.pnlMenu.TabIndex = 2;
+            // 
+            // btnFinalizarPedido
+            // 
+            this.btnFinalizarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFinalizarPedido.Description = "Finalizar";
+            this.btnFinalizarPedido.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFinalizarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnFinalizarPedido.Location = new System.Drawing.Point(10, 460);
+            this.btnFinalizarPedido.Name = "btnFinalizarPedido";
+            this.btnFinalizarPedido.Size = new System.Drawing.Size(80, 80);
+            this.btnFinalizarPedido.TabIndex = 7;
+            this.btnFinalizarPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // btnSair
             // 
@@ -151,19 +164,6 @@
             this.uctUIX.UIXTitle = "Pedidos";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
-            // 
-            // btnFinalizarPedido
-            // 
-            this.btnFinalizarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFinalizarPedido.Description = "Finalizar";
-            this.btnFinalizarPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFinalizarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizarPedido.Location = new System.Drawing.Point(10, 456);
-            this.btnFinalizarPedido.Name = "btnFinalizarPedido";
-            this.btnFinalizarPedido.Size = new System.Drawing.Size(80, 80);
-            this.btnFinalizarPedido.TabIndex = 7;
-            this.btnFinalizarPedido.UseVisualStyleBackColor = true;
-            this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // frmPedido
             // 

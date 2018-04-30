@@ -21,6 +21,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctUIX.UIXTitle = clnTemplate.AppName + " - Garçom";
             clnTemplate.CommonTemplate.frmApply(this, uctUIX);
+
+            UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
         }
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
