@@ -41,7 +41,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            SqlConnection sql = new SqlConnection("Persist Security Info=False;Integrated Security=true;Initial Catalog=Northwind;server=Z:\\Database\\Burguer_Shack.mdf");
+            SqlConnection sql = new SqlConnection("Integrated Security=SSPI; Persist Security Info=False;Initial Catalog=Burguer_Shack;Data Source=DESKTOP-NNGLJE4");
             SqlCommand command = new SqlCommand("select * from FUNCIONARIO where Nome=@Nome and Senha=@Senha", sql);
             command.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
             command.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtSenha.Text;
@@ -53,15 +53,15 @@ namespace BURGUER_SHACK_DESKTOP
                 if (drms.HasRows == false)
                 {
                     throw new Exception("usuario ou senha errado porra");
+                }
                     drms.Read();
                     frmPedido objfrmPedido = new frmPedido();
                     objfrmPedido.Visible = true;
                     this.Visible = false;
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("n foi");
+                MessageBox.Show(ex.Message);
             }
 
             finally
