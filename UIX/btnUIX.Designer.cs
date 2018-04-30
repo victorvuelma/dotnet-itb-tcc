@@ -35,6 +35,7 @@
             // 
             // pic
             // 
+            this.pic.BackColor = System.Drawing.SystemColors.Control;
             this.pic.Location = new System.Drawing.Point(10, 5);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(60, 60);
@@ -62,8 +63,8 @@
             // 
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.pic);
-            this.Name = "btnUIX";
             this.Size = new System.Drawing.Size(80, 80);
+            this.BackColorChanged += new System.EventHandler(this.btnUIX_BackColorChanged);
             this.MouseEnter += new System.EventHandler(this.btnUIX_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.btnUIX_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();

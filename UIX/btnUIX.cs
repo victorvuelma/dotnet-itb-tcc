@@ -21,6 +21,7 @@ namespace UIX
             InitializeComponent();
 
             HoverColor = Color.Transparent;
+
         }
 
         public new Color BackColor
@@ -67,6 +68,11 @@ namespace UIX
         private void lbl_Click(object sender, EventArgs e)
         {
             this.OnClick(e);
+        }
+
+        private void btnUIX_BackColorChanged(object sender, EventArgs e)
+        {
+            BackColor = BackColor;
         }
     }
 }
