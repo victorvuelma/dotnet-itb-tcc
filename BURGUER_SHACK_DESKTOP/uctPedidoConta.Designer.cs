@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctPedidoConta));
             this.grbPedidoConta = new System.Windows.Forms.GroupBox();
             this.grpInformacoesConta = new System.Windows.Forms.GroupBox();
             this.txtValor = new UIX.txtUIX();
@@ -46,9 +47,10 @@
             this.pnlTroco = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTroco = new System.Windows.Forms.Label();
-            this.ltbProdutos = new System.Windows.Forms.ListBox();
-            this.btnPedido = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.txtCodPedido = new UIX.txtUIX();
+            this.impressoraComboBox = new System.Windows.Forms.ComboBox();
+            this.txtProdutos = new System.Windows.Forms.TextBox();
             this.grbPedidoConta.SuspendLayout();
             this.grpInformacoesConta.SuspendLayout();
             this.grpConta.SuspendLayout();
@@ -59,12 +61,13 @@
             // 
             // grbPedidoConta
             // 
+            this.grbPedidoConta.Controls.Add(this.txtProdutos);
+            this.grbPedidoConta.Controls.Add(this.impressoraComboBox);
             this.grbPedidoConta.Controls.Add(this.grpInformacoesConta);
             this.grbPedidoConta.Controls.Add(this.grpInformacoes);
             this.grbPedidoConta.Controls.Add(this.pnlTotal);
             this.grbPedidoConta.Controls.Add(this.pnlTroco);
-            this.grbPedidoConta.Controls.Add(this.ltbProdutos);
-            this.grbPedidoConta.Controls.Add(this.btnPedido);
+            this.grbPedidoConta.Controls.Add(this.btnFinalizar);
             this.grbPedidoConta.Controls.Add(this.txtCodPedido);
             this.grbPedidoConta.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoConta.Name = "grbPedidoConta";
@@ -85,7 +88,6 @@
             this.grpInformacoesConta.Size = new System.Drawing.Size(404, 121);
             this.grpInformacoesConta.TabIndex = 2;
             this.grpInformacoesConta.TabStop = false;
-            this.grpInformacoesConta.Text = " ";
             // 
             // txtValor
             // 
@@ -209,11 +211,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(61, 3);
+            this.label4.Location = new System.Drawing.Point(41, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 18);
+            this.label4.Size = new System.Drawing.Size(114, 18);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Valor Total";
+            this.label4.Text = "VALOR TOTAL";
             // 
             // lblTotal
             // 
@@ -254,48 +256,44 @@
             this.lblTroco.TabIndex = 3;
             this.lblTroco.Text = "R$ 00.00";
             // 
-            // ltbProdutos
+            // btnFinalizar
             // 
-            this.ltbProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ltbProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ltbProdutos.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltbProdutos.FormattingEnabled = true;
-            this.ltbProdutos.ItemHeight = 14;
-            this.ltbProdutos.Items.AddRange(new object[] {
-            "----------------------------------------------------------",
-            "\t\t  Comercio Burguer Shack",
-            "\t\tRua Tuiuva , 180 - Barueri",
-            "\tCNPJ: 67.237.358/0001-03 IE: 008.244.210.461",
-            "----------------------------------------------------------",
-            "DATE\tHOUR\t\tCOO:",
-            "----------------------------------------------------------",
-            "\t\t\tCUPOM FISCAL",
-            "ITEM \tCODIGO \t\tDESCRICAO",
-            "\tQUANT. UNITARIO\t\t\t\tVALOR",
-            "----------------------------------------------------------"});
-            this.ltbProdutos.Location = new System.Drawing.Point(6, 38);
-            this.ltbProdutos.Name = "ltbProdutos";
-            this.ltbProdutos.Size = new System.Drawing.Size(405, 224);
-            this.ltbProdutos.TabIndex = 50;
-            // 
-            // btnPedido
-            // 
-            this.btnPedido.Location = new System.Drawing.Point(270, 554);
-            this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(140, 40);
-            this.btnPedido.TabIndex = 10;
-            this.btnPedido.Text = "Confirmar Pedido";
-            this.btnPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Location = new System.Drawing.Point(270, 554);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(140, 40);
+            this.btnFinalizar.TabIndex = 10;
+            this.btnFinalizar.Text = "Finalizar Pedido";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // txtCodPedido
             // 
             this.txtCodPedido.AccessibleName = "CÓDIGO DO PEDIDO";
             this.txtCodPedido.Campo = "CÓDIGO DO PEDIDO";
-            this.txtCodPedido.Location = new System.Drawing.Point(10, 13);
+            this.txtCodPedido.Location = new System.Drawing.Point(10, 17);
             this.txtCodPedido.MaxLength = 32767;
             this.txtCodPedido.Name = "txtCodPedido";
             this.txtCodPedido.Size = new System.Drawing.Size(164, 19);
             this.txtCodPedido.TabIndex = 1;
+            // 
+            // impressoraComboBox
+            // 
+            this.impressoraComboBox.FormattingEnabled = true;
+            this.impressoraComboBox.Location = new System.Drawing.Point(289, 14);
+            this.impressoraComboBox.Name = "impressoraComboBox";
+            this.impressoraComboBox.Size = new System.Drawing.Size(121, 21);
+            this.impressoraComboBox.TabIndex = 51;
+            // 
+            // txtProdutos
+            // 
+            this.txtProdutos.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.txtProdutos.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdutos.Location = new System.Drawing.Point(5, 40);
+            this.txtProdutos.Multiline = true;
+            this.txtProdutos.Name = "txtProdutos";
+            this.txtProdutos.Size = new System.Drawing.Size(405, 224);
+            this.txtProdutos.TabIndex = 7;
+            this.txtProdutos.Text = resources.GetString("txtProdutos.Text");
             // 
             // uctPedidoConta
             // 
@@ -304,7 +302,9 @@
             this.Controls.Add(this.grbPedidoConta);
             this.Name = "uctPedidoConta";
             this.Size = new System.Drawing.Size(430, 610);
+            this.Load += new System.EventHandler(this.uctPedidoConta_Load);
             this.grbPedidoConta.ResumeLayout(false);
+            this.grbPedidoConta.PerformLayout();
             this.grpInformacoesConta.ResumeLayout(false);
             this.grpInformacoesConta.PerformLayout();
             this.grpConta.ResumeLayout(false);
@@ -320,9 +320,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbPedidoConta;
-        private System.Windows.Forms.Button btnPedido;
+        private System.Windows.Forms.Button btnFinalizar;
         private UIX.txtUIX txtCodPedido;
-        private System.Windows.Forms.ListBox ltbProdutos;
         private System.Windows.Forms.Panel pnlTotal;
         private System.Windows.Forms.Panel pnlTroco;
         private System.Windows.Forms.GroupBox grpInformacoes;
@@ -340,5 +339,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private UIX.txtUIX txtValor;
+        private System.Windows.Forms.ComboBox impressoraComboBox;
+        private System.Windows.Forms.TextBox txtProdutos;
     }
 }
