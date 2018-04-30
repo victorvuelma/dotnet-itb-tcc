@@ -94,7 +94,6 @@
             this.mtbDadosDtNasc.Campo = "Data de Nascimento";
             this.mtbDadosDtNasc.Location = new System.Drawing.Point(10, 50);
             this.mtbDadosDtNasc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbDadosDtNasc.Mask = "00/00/0000";
             this.mtbDadosDtNasc.MaxLength = 32767;
             this.mtbDadosDtNasc.Name = "mtbDadosDtNasc";
             this.mtbDadosDtNasc.Size = new System.Drawing.Size(185, 21);
@@ -107,7 +106,6 @@
             this.mtbDadosRG.Campo = "Registro Geral (RG)";
             this.mtbDadosRG.Location = new System.Drawing.Point(201, 50);
             this.mtbDadosRG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbDadosRG.Mask = "00,000,000-0";
             this.mtbDadosRG.MaxLength = 32767;
             this.mtbDadosRG.Name = "mtbDadosRG";
             this.mtbDadosRG.Size = new System.Drawing.Size(178, 21);
@@ -120,7 +118,6 @@
             this.mtbDadosCPF.Campo = "CPF";
             this.mtbDadosCPF.Location = new System.Drawing.Point(386, 50);
             this.mtbDadosCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbDadosCPF.Mask = "000,000,000-00";
             this.mtbDadosCPF.MaxLength = 32767;
             this.mtbDadosCPF.Name = "mtbDadosCPF";
             this.mtbDadosCPF.Size = new System.Drawing.Size(111, 21);
@@ -177,7 +174,6 @@
             this.mtbContatoTelCel2.Campo = "Telefone Celular 2";
             this.mtbContatoTelCel2.Location = new System.Drawing.Point(212, 50);
             this.mtbContatoTelCel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbContatoTelCel2.Mask = "(00) 00000-0000";
             this.mtbContatoTelCel2.MaxLength = 32767;
             this.mtbContatoTelCel2.Name = "mtbContatoTelCel2";
             this.mtbContatoTelCel2.Size = new System.Drawing.Size(187, 21);
@@ -190,7 +186,6 @@
             this.mtbContatoTelCel.Campo = "Telefone Celular*";
             this.mtbContatoTelCel.Location = new System.Drawing.Point(10, 50);
             this.mtbContatoTelCel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbContatoTelCel.Mask = "(00) 00000-0000";
             this.mtbContatoTelCel.MaxLength = 32767;
             this.mtbContatoTelCel.Name = "mtbContatoTelCel";
             this.mtbContatoTelCel.Size = new System.Drawing.Size(185, 21);
@@ -203,7 +198,6 @@
             this.mtbContatoTelRes.Campo = "Telefone Residencial*";
             this.mtbContatoTelRes.Location = new System.Drawing.Point(386, 20);
             this.mtbContatoTelRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbContatoTelRes.Mask = "(00) 0000-0000";
             this.mtbContatoTelRes.MaxLength = 32767;
             this.mtbContatoTelRes.Name = "mtbContatoTelRes";
             this.mtbContatoTelRes.Size = new System.Drawing.Size(205, 21);
@@ -279,7 +273,6 @@
             this.mtbEndCEP.Campo = "CEP*";
             this.mtbEndCEP.Location = new System.Drawing.Point(10, 50);
             this.mtbEndCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbEndCEP.Mask = "00000-000";
             this.mtbEndCEP.MaxLength = 32767;
             this.mtbEndCEP.Name = "mtbEndCEP";
             this.mtbEndCEP.Size = new System.Drawing.Size(95, 20);
@@ -476,7 +469,7 @@
             this.ResumeLayout(false);
 
         }
-
+        
         #endregion
         public UIX.txtUIX txtPesquisa;
         public UIX.txtUIX txtDadosNome;
