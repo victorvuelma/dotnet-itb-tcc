@@ -46,7 +46,7 @@ namespace BURGUER_SHACK_DESKTOP
             data.addValidacoes(tipos);
         }
 
-        public bool validar()
+        public bool valido()
         {
             bool formValido = true;
             _motivo = "";

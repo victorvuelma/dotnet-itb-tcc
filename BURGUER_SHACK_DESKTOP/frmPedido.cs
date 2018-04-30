@@ -55,7 +55,7 @@ namespace BURGUER_SHACK_DESKTOP
                 alterarConteudo(new uctMesaConta(), "Conta");
         }
 
-        private void alterarConteudo(UserControl uctConteudo, String titulo)
+        public void alterarConteudo(UserControl uctConteudo, String titulo)
         {
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }

@@ -36,7 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
                 mesas.Add(btn);
             }
 
-            clnUtil.adicionarControles(pnlMesas, mesas, 20);
+            clnUtil.adicionarControles(pnlMesas, mesas, 16);
         }
         
         private void uctPedidoMesa_Load(object sender, EventArgs e)
@@ -47,9 +47,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirNovoPedido(int mesa)
         {
+            frmPedido pedido = new frmPedido();
+
             uctPedidoNovo pedidoNovo = new uctPedidoNovo();
             pedidoNovo.MesaAtual = mesa;
-            clnUtil.alterarConteudo(pedidoNovo, "Mesa " + mesa + " - Novo Pedido");
+            
+            pedido.alterarConteudo(pedidoNovo, "Mesa " + mesa + " - Novo Pedido");
+
+            pedido.ShowDialog();
         }
 
     }

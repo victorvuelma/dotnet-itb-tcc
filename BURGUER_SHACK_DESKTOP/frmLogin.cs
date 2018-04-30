@@ -30,7 +30,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnTemplate.CommonTemplate.frmApply(this, uctUIX);
 
-            _validar.addValidacao(txtNome, clnValidar.VAZIO );
+            _validar.addValidacao(txtNome, clnValidar.VAZIO);
             _validar.addValidacao(txtSenha, clnValidar.VAZIO);
         }
 
@@ -39,37 +39,55 @@ namespace BURGUER_SHACK_DESKTOP
             Application.Exit();
         }
 
+        private void picVer_MouseEnter(object sender, EventArgs e)
+        {
+            txtSenha.box.PasswordChar = '\0';
+        }
+
+        private void picVer_MouseLeave(object sender, EventArgs e)
+        {
+            txtSenha.box.PasswordChar = '*';
+        }
+
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            SqlConnection sql = new SqlConnection("Integrated Security=SSPI; Persist Security Info=False;Initial Catalog=Burguer_Shack;Data Source=DESKTOP-NNGLJE4");
-            SqlCommand command = new SqlCommand("select * from FUNCIONARIO where Nome=@Nome and Senha=@Senha", sql);
-            command.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
-            command.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtSenha.Text;
+            if (_validar.valido())
+            {
+                Hide();
 
-            try
-            {
-                sql.Open();
-                SqlDataReader drms = command.ExecuteReader();
-                if (drms.HasRows == false)
-                {
-                    throw new Exception("usuario ou senha errado porra");
-                }
-                    drms.Read();
-                    frmPedido objfrmPedido = new frmPedido();
-                    objfrmPedido.Visible = true;
-                    this.Visible = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                new frmMesa().ShowDialog();
+
+                Application.Restart();
             }
 
-            finally
-            {
-                sql.Close();
-            }
+            //SqlConnection sql = new SqlConnection("Integrated Security=SSPI; Persist Security Info=False;Initial Catalog=Burguer_Shack;Data Source=DESKTOP-NNGLJE4");
+            //SqlCommand command = new SqlCommand("select * from FUNCIONARIO where Nome=@Nome and Senha=@Senha", sql);
+            //command.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
+            //command.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtSenha.Text;
 
-            _validar.validar();
+            //try
+            //{
+            //    sql.Open();
+            //    SqlDataReader drms = command.ExecuteReader();
+            //    if (drms.HasRows == false)
+            //    {
+            //        throw new Exception("usuario ou senha errado porra");
+            //    }
+            //        drms.Read();
+            //        frmPedido objfrmPedido = new frmPedido();
+            //        objfrmPedido.Visible = true;
+            //        this.Visible = false;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            //finally
+            //{
+            //    sql.Close();
+            //}
+
 
             //if (txtNome.Text == "garçom" && txtSenha.Text == "123")
             //{
@@ -91,14 +109,5 @@ namespace BURGUER_SHACK_DESKTOP
             //}
         }
 
-        private void picVer_MouseEnter(object sender, EventArgs e)
-        {
-            txtSenha.box.PasswordChar = '\0';
-        }
-
-        private void picVer_MouseLeave(object sender, EventArgs e)
-        {
-            txtSenha.box.PasswordChar = '*';
-        }
     }
 }

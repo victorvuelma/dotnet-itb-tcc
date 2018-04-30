@@ -195,11 +195,6 @@ namespace BURGUER_SHACK_DESKTOP
         private static Panel _pnlConteudo;
         private static UIX.uctUIX _uixBar;
 
-        public static void alterarConteudo(UserControl novoConteudo, String titulo)
-        {
-            alterarConteudo(_pnlConteudo, novoConteudo, _uixBar, titulo);
-        }
-
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.uctUIX uctUIX, String titulo)
         {
             _pnlConteudo = pnlConteudo;
@@ -222,6 +217,11 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             uctUIX.UIXTitle = clnTemplate.AppName + " - " + titulo;
+        }
+
+        public static void alterarConteudo(UserControl novoConteudo, String titulo)
+        {
+            alterarConteudo(_pnlConteudo, novoConteudo, _uixBar, titulo);
         }
 
     }

@@ -46,7 +46,7 @@
             this.grbMesas.Controls.Add(this.pnlLivre);
             this.grbMesas.Location = new System.Drawing.Point(5, 5);
             this.grbMesas.Name = "grbMesas";
-            this.grbMesas.Size = new System.Drawing.Size(420, 600);
+            this.grbMesas.Size = new System.Drawing.Size(505, 530);
             this.grbMesas.TabIndex = 0;
             this.grbMesas.TabStop = false;
             this.grbMesas.Text = "SELECIONAR MESA";
@@ -55,9 +55,9 @@
             // 
             this.pnlMesas.AutoScroll = true;
             this.pnlMesas.Location = new System.Drawing.Point(5, 10);
-            this.pnlMesas.MaximumSize = new System.Drawing.Size(410, 100000);
+            this.pnlMesas.MaximumSize = new System.Drawing.Size(500, 100000);
             this.pnlMesas.Name = "pnlMesas";
-            this.pnlMesas.Size = new System.Drawing.Size(410, 580);
+            this.pnlMesas.Size = new System.Drawing.Size(495, 515);
             this.pnlMesas.TabIndex = 5;
             // 
             // lblOcupada
@@ -96,14 +96,14 @@
             this.pnlLivre.Size = new System.Drawing.Size(10, 10);
             this.pnlLivre.TabIndex = 1;
             // 
-            // uctPedidoMesa
+            // uctMesaListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbMesas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Name = "uctPedidoMesa";
-            this.Size = new System.Drawing.Size(430, 610);
+            this.Name = "uctMesaListar";
+            this.Size = new System.Drawing.Size(515, 540);
             this.Load += new System.EventHandler(this.uctPedidoMesa_Load);
             this.grbMesas.ResumeLayout(false);
             this.grbMesas.PerformLayout();

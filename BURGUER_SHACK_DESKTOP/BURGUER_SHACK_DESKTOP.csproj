@@ -130,11 +130,23 @@
     <Compile Include="frmGerenciador.Designer.cs">
       <DependentUpon>frmGerenciador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMesa.Designer.cs">
+      <DependentUpon>frmMesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPedido.Designer.cs">
       <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -236,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMesa.resx">
+      <DependentUpon>frmMesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPedido.resx">
       <DependentUpon>frmPedido.cs</DependentUpon>
