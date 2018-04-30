@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctPedidoConta));
             this.grbPedidoConta = new System.Windows.Forms.GroupBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
+            this.cboImpressora = new System.Windows.Forms.ComboBox();
             this.grpInformacoesConta = new System.Windows.Forms.GroupBox();
             this.txtValor = new UIX.txtUIX();
             this.grpConta = new System.Windows.Forms.GroupBox();
@@ -49,8 +51,6 @@
             this.lblTroco = new System.Windows.Forms.Label();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.txtCodPedido = new UIX.txtUIX();
-            this.impressoraComboBox = new System.Windows.Forms.ComboBox();
-            this.txtProdutos = new System.Windows.Forms.TextBox();
             this.grbPedidoConta.SuspendLayout();
             this.grpInformacoesConta.SuspendLayout();
             this.grpConta.SuspendLayout();
@@ -61,8 +61,8 @@
             // 
             // grbPedidoConta
             // 
-            this.grbPedidoConta.Controls.Add(this.txtProdutos);
-            this.grbPedidoConta.Controls.Add(this.impressoraComboBox);
+            this.grbPedidoConta.Controls.Add(this.txtNota);
+            this.grbPedidoConta.Controls.Add(this.cboImpressora);
             this.grbPedidoConta.Controls.Add(this.grpInformacoesConta);
             this.grbPedidoConta.Controls.Add(this.grpInformacoes);
             this.grbPedidoConta.Controls.Add(this.pnlTotal);
@@ -75,6 +75,25 @@
             this.grbPedidoConta.TabIndex = 1;
             this.grbPedidoConta.TabStop = false;
             this.grbPedidoConta.Text = "CONTA DO PEDIDO";
+            // 
+            // txtNota
+            // 
+            this.txtNota.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.txtNota.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNota.Location = new System.Drawing.Point(5, 40);
+            this.txtNota.Multiline = true;
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(405, 224);
+            this.txtNota.TabIndex = 7;
+            this.txtNota.Text = resources.GetString("txtNota.Text");
+            // 
+            // cboImpressora
+            // 
+            this.cboImpressora.FormattingEnabled = true;
+            this.cboImpressora.Location = new System.Drawing.Point(289, 14);
+            this.cboImpressora.Name = "cboImpressora";
+            this.cboImpressora.Size = new System.Drawing.Size(121, 21);
+            this.cboImpressora.TabIndex = 51;
             // 
             // grpInformacoesConta
             // 
@@ -276,25 +295,6 @@
             this.txtCodPedido.Size = new System.Drawing.Size(164, 19);
             this.txtCodPedido.TabIndex = 1;
             // 
-            // impressoraComboBox
-            // 
-            this.impressoraComboBox.FormattingEnabled = true;
-            this.impressoraComboBox.Location = new System.Drawing.Point(289, 14);
-            this.impressoraComboBox.Name = "impressoraComboBox";
-            this.impressoraComboBox.Size = new System.Drawing.Size(121, 21);
-            this.impressoraComboBox.TabIndex = 51;
-            // 
-            // txtProdutos
-            // 
-            this.txtProdutos.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.txtProdutos.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProdutos.Location = new System.Drawing.Point(5, 40);
-            this.txtProdutos.Multiline = true;
-            this.txtProdutos.Name = "txtProdutos";
-            this.txtProdutos.Size = new System.Drawing.Size(405, 224);
-            this.txtProdutos.TabIndex = 7;
-            this.txtProdutos.Text = resources.GetString("txtProdutos.Text");
-            // 
             // uctPedidoConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,7 +339,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private UIX.txtUIX txtValor;
-        private System.Windows.Forms.ComboBox impressoraComboBox;
-        private System.Windows.Forms.TextBox txtProdutos;
+        private System.Windows.Forms.ComboBox cboImpressora;
+        private System.Windows.Forms.TextBox txtNota;
     }
 }

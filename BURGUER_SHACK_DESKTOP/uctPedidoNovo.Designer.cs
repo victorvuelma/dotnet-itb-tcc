@@ -34,7 +34,7 @@
             this.btnPedido = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.pnlPreco = new System.Windows.Forms.Panel();
-            this.txtUIX1 = new UIX.txtUIX();
+            this.txtCodPedido = new UIX.txtUIX();
             this.grbPedidoNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             this.grbPedidoNovo.Controls.Add(this.btnPedido);
             this.grbPedidoNovo.Controls.Add(this.dgvProdutos);
             this.grbPedidoNovo.Controls.Add(this.pnlPreco);
-            this.grbPedidoNovo.Controls.Add(this.txtUIX1);
+            this.grbPedidoNovo.Controls.Add(this.txtCodPedido);
             this.grbPedidoNovo.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoNovo.Name = "grbPedidoNovo";
             this.grbPedidoNovo.Size = new System.Drawing.Size(417, 600);
@@ -56,8 +56,9 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.AccessibleName = "NOME DO PRODUTO";
             this.txtPesquisa.Campo = "NOME DO PRODUTO";
-            this.txtPesquisa.Location = new System.Drawing.Point(10, 29);
+            this.txtPesquisa.Location = new System.Drawing.Point(10, 50);
             this.txtPesquisa.MaxLength = 32767;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
@@ -84,9 +85,9 @@
             // 
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(10, 50);
+            this.dgvProdutos.Location = new System.Drawing.Point(10, 80);
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(400, 390);
+            this.dgvProdutos.Size = new System.Drawing.Size(400, 370);
             this.dgvProdutos.TabIndex = 2;
             // 
             // pnlPreco
@@ -97,14 +98,15 @@
             this.pnlPreco.Size = new System.Drawing.Size(140, 90);
             this.pnlPreco.TabIndex = 8;
             // 
-            // txtUIX1
+            // txtCodPedido
             // 
-            this.txtUIX1.Campo = "CÓDIGO DO PEDIDO";
-            this.txtUIX1.Location = new System.Drawing.Point(10, 13);
-            this.txtUIX1.MaxLength = 32767;
-            this.txtUIX1.Name = "txtUIX1";
-            this.txtUIX1.Size = new System.Drawing.Size(164, 19);
-            this.txtUIX1.TabIndex = 19;
+            this.txtCodPedido.AccessibleName = "CÓDIGO DO PEDIDO";
+            this.txtCodPedido.Campo = "CÓDIGO DO PEDIDO";
+            this.txtCodPedido.Location = new System.Drawing.Point(10, 20);
+            this.txtCodPedido.MaxLength = 32767;
+            this.txtCodPedido.Name = "txtCodPedido";
+            this.txtCodPedido.Size = new System.Drawing.Size(164, 19);
+            this.txtCodPedido.TabIndex = 19;
             // 
             // uctPedidoNovo
             // 
@@ -128,6 +130,6 @@
         private System.Windows.Forms.Button btnPedido;
         private System.Windows.Forms.Panel pnlPreco;
         private UIX.txtUIX txtPesquisa;
-        private UIX.txtUIX txtUIX1;
+        private UIX.txtUIX txtCodPedido;
     }
 }

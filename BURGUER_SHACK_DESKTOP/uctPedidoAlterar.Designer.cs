@@ -34,14 +34,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbPedidoAlterar = new System.Windows.Forms.GroupBox();
+            this.txtPesquisa = new UIX.txtUIX();
+            this.txtUIX2 = new UIX.txtUIX();
             this.txtUIX1 = new UIX.txtUIX();
             this.dgvClienteProduto = new System.Windows.Forms.DataGridView();
             this.ltbProdutos = new System.Windows.Forms.ListBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.pnlPreco = new System.Windows.Forms.Panel();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.txtPesquisa = new UIX.txtUIX();
-            this.txtUIX2 = new UIX.txtUIX();
             this.grbPedidoAlterar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienteProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -64,10 +64,31 @@
             this.grbPedidoAlterar.TabStop = false;
             this.grbPedidoAlterar.Text = "ALTERAR PEDIDO";
             // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.AccessibleName = "NOME DO PRODUTO";
+            this.txtPesquisa.Campo = "NOME DO PRODUTO";
+            this.txtPesquisa.Location = new System.Drawing.Point(10, 50);
+            this.txtPesquisa.MaxLength = 32767;
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
+            this.txtPesquisa.TabIndex = 20;
+            // 
+            // txtUIX2
+            // 
+            this.txtUIX2.AccessibleName = "ID DO PEDIDO";
+            this.txtUIX2.Campo = "ID DO PEDIDO";
+            this.txtUIX2.Location = new System.Drawing.Point(10, 20);
+            this.txtUIX2.MaxLength = 32767;
+            this.txtUIX2.Name = "txtUIX2";
+            this.txtUIX2.Size = new System.Drawing.Size(164, 19);
+            this.txtUIX2.TabIndex = 21;
+            // 
             // txtUIX1
             // 
+            this.txtUIX1.AccessibleName = "NOME DO PRODUTO";
             this.txtUIX1.Campo = "NOME DO PRODUTO";
-            this.txtUIX1.Location = new System.Drawing.Point(10, 245);
+            this.txtUIX1.Location = new System.Drawing.Point(10, 255);
             this.txtUIX1.MaxLength = 32767;
             this.txtUIX1.Name = "txtUIX1";
             this.txtUIX1.Size = new System.Drawing.Size(400, 20);
@@ -93,7 +114,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClienteProduto.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClienteProduto.Location = new System.Drawing.Point(10, 275);
+            this.dgvClienteProduto.Location = new System.Drawing.Point(10, 280);
             this.dgvClienteProduto.Name = "dgvClienteProduto";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -151,28 +172,10 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProdutos.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvProdutos.Location = new System.Drawing.Point(10, 50);
+            this.dgvProdutos.Location = new System.Drawing.Point(10, 80);
             this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(400, 180);
+            this.dgvProdutos.Size = new System.Drawing.Size(400, 170);
             this.dgvProdutos.TabIndex = 2;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Campo = "NOME DO PRODUTO";
-            this.txtPesquisa.Location = new System.Drawing.Point(10, 29);
-            this.txtPesquisa.MaxLength = 32767;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
-            this.txtPesquisa.TabIndex = 20;
-            // 
-            // txtUIX2
-            // 
-            this.txtUIX2.Campo = "ID DO PEDIDO";
-            this.txtUIX2.Location = new System.Drawing.Point(10, 13);
-            this.txtUIX2.MaxLength = 32767;
-            this.txtUIX2.Name = "txtUIX2";
-            this.txtUIX2.Size = new System.Drawing.Size(164, 19);
-            this.txtUIX2.TabIndex = 21;
             // 
             // uctPedidoAlterar
             // 

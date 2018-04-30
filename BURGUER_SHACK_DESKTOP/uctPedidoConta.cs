@@ -82,9 +82,9 @@ namespace BURGUER_SHACK_DESKTOP
             lblTroco.BackColor = UIX.uixColor.INDIGO_DARK;
             label3.BackColor = UIX.uixColor.INDIGO_DARK;
             label4.BackColor = UIX.uixColor.INDIGO_DARK;
-            txtProdutos.BackColor = Color.PaleGoldenrod;
-            txtProdutos.ForeColor = Color.Black;
-            txtProdutos.Font = new Font("Courier New", 8);
+            txtNota.BackColor = Color.PaleGoldenrod;
+            txtNota.ForeColor = Color.Black;
+            txtNota.Font = new Font("Courier New", 8);
 
             cboTributos.Items.Add(new Item("0.0", 1));
             cboTributos.Items.Add(new Item("0.25", 2));
@@ -96,12 +96,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void CarregarListaDeImpressoras()
         {
-            impressoraComboBox.Items.Clear();
+            cboImpressora.Items.Clear();
 
             foreach (var printer in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
             {
-                impressoraComboBox.Items.Add(printer);
-                impressoraComboBox.Text = "Microsoft Print to PDF";
+                cboImpressora.Items.Add(printer);
+                cboImpressora.Text = "Microsoft Print to PDF";
             }
         }
 
@@ -110,7 +110,7 @@ namespace BURGUER_SHACK_DESKTOP
             using (var printDocument = new System.Drawing.Printing.PrintDocument())
             {
                 printDocument.PrintPage += printDocument_PrintPage;
-                printDocument.PrinterSettings.PrinterName = impressoraComboBox.SelectedItem.ToString();
+                printDocument.PrinterSettings.PrinterName = cboImpressora.SelectedItem.ToString();
                 printDocument.Print();
             }
         }
@@ -125,7 +125,7 @@ namespace BURGUER_SHACK_DESKTOP
                 using (var brush = new SolidBrush(Color.Black))
                 {
                     e.Graphics.DrawString(
-                        txtProdutos.Text,
+                        txtNota.Text,
                         font,
                         brush,
                         new RectangleF(0, 0, printDocument.DefaultPageSettings.PrintableArea.Width, printDocument.DefaultPageSettings.PrintableArea.Height));
