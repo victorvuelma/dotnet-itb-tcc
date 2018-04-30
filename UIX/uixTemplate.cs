@@ -85,7 +85,7 @@ namespace UIX
 
         public void dgvApply(DataGridView dgv)
         {
-            uixDataGridView.dgvApply(dgv, Style.TextBoxColor);
+            uixDataGridView.dgvApply(dgv, Style.TextBoxColor, Style.PanelColor);
         }
 
         public void grbApply(GroupBox grb)
