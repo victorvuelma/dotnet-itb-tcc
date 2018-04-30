@@ -16,6 +16,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
             CarregarListaDeImpressoras();
+
+            this.mtbClienteCPF.Mask = clnUtil.MASK_CPF;
         }
 
         private void rboCartao_CheckedChanged(object sender, EventArgs e)
@@ -85,11 +87,6 @@ namespace BURGUER_SHACK_DESKTOP
             txtNota.BackColor = Color.PaleGoldenrod;
             txtNota.ForeColor = Color.Black;
             txtNota.Font = new Font("Courier New", 8);
-
-            cboTributos.Items.Add(new Item("0.0", 1));
-            cboTributos.Items.Add(new Item("0.25", 2));
-            cboTributos.Items.Add(new Item("0.50", 3));
-            cboTributos.Items.Add(new Item("1.0", 4));
         }
 
         //------------------ IMPRESSÃO ------------------//
@@ -132,6 +129,5 @@ namespace BURGUER_SHACK_DESKTOP
                 }
             }
         }
-
     }
 }

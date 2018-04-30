@@ -35,9 +35,9 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(new uctPedidoAlterar(), "Alterar Pedido");
         }
 
-        private void btnPedidoRemover_Click(object sender, EventArgs e)
+        private void btnCardapio_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctPedidoAlterar(), "Alterar Pedido");
+            alterarConteudo(new uctPedidoCardapio(), "Cardápio");
         }
 
         private void btnApagarPedido_Click(object sender, EventArgs e)

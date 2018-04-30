@@ -39,7 +39,6 @@
             this.txtDesconto = new UIX.txtUIX();
             this.rboCartao = new System.Windows.Forms.RadioButton();
             this.rboDinheiro = new System.Windows.Forms.RadioButton();
-            this.cboTributos = new UIX.cboUIX();
             this.grpInformacoes = new System.Windows.Forms.GroupBox();
             this.txtClienteNome = new UIX.txtUIX();
             this.mtbClienteCPF = new UIX.mtbUIX();
@@ -101,7 +100,6 @@
             this.grpInformacoesConta.Controls.Add(this.grpConta);
             this.grpInformacoesConta.Controls.Add(this.rboCartao);
             this.grpInformacoesConta.Controls.Add(this.rboDinheiro);
-            this.grpInformacoesConta.Controls.Add(this.cboTributos);
             this.grpInformacoesConta.Location = new System.Drawing.Point(6, 268);
             this.grpInformacoesConta.Name = "grpInformacoesConta";
             this.grpInformacoesConta.Size = new System.Drawing.Size(404, 121);
@@ -110,8 +108,8 @@
             // 
             // txtValor
             // 
-            this.txtValor.AccessibleName = "Valor da Compra: (R$)";
-            this.txtValor.Campo = "Valor da Compra: (R$)";
+            this.txtValor.AccessibleName = "Valor da Compra (R$)";
+            this.txtValor.Campo = "Valor da Compra (R$)";
             this.txtValor.Location = new System.Drawing.Point(6, 19);
             this.txtValor.MaxLength = 32767;
             this.txtValor.Name = "txtValor";
@@ -130,8 +128,8 @@
             // 
             // txtValorDinheiro
             // 
-            this.txtValorDinheiro.AccessibleName = "Valor em Dinheiro: (R$)";
-            this.txtValorDinheiro.Campo = "Valor em Dinheiro: (R$)";
+            this.txtValorDinheiro.AccessibleName = "Valor em Dinheiro (R$)";
+            this.txtValorDinheiro.Campo = "Valor em Dinheiro (R$)";
             this.txtValorDinheiro.Location = new System.Drawing.Point(225, 19);
             this.txtValorDinheiro.MaxLength = 32767;
             this.txtValorDinheiro.Name = "txtValorDinheiro";
@@ -141,19 +139,19 @@
             // 
             // txtDesconto
             // 
-            this.txtDesconto.AccessibleName = "Desconto";
-            this.txtDesconto.Campo = "Desconto";
+            this.txtDesconto.AccessibleName = "Desconto (R$)";
+            this.txtDesconto.Campo = "Desconto (R$)";
             this.txtDesconto.Location = new System.Drawing.Point(6, 19);
             this.txtDesconto.MaxLength = 32767;
             this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(130, 20);
+            this.txtDesconto.Size = new System.Drawing.Size(135, 20);
             this.txtDesconto.TabIndex = 6;
             this.txtDesconto.Leave += new System.EventHandler(this.txtDesconto_Leave);
             // 
             // rboCartao
             // 
             this.rboCartao.AutoSize = true;
-            this.rboCartao.Location = new System.Drawing.Point(231, 48);
+            this.rboCartao.Location = new System.Drawing.Point(303, 22);
             this.rboCartao.Name = "rboCartao";
             this.rboCartao.Size = new System.Drawing.Size(56, 17);
             this.rboCartao.TabIndex = 5;
@@ -165,7 +163,7 @@
             // 
             this.rboDinheiro.AutoSize = true;
             this.rboDinheiro.Checked = true;
-            this.rboDinheiro.Location = new System.Drawing.Point(133, 48);
+            this.rboDinheiro.Location = new System.Drawing.Point(204, 22);
             this.rboDinheiro.Name = "rboDinheiro";
             this.rboDinheiro.Size = new System.Drawing.Size(64, 17);
             this.rboDinheiro.TabIndex = 4;
@@ -173,16 +171,6 @@
             this.rboDinheiro.Text = "Dinheiro";
             this.rboDinheiro.UseVisualStyleBackColor = true;
             this.rboDinheiro.CheckedChanged += new System.EventHandler(this.rboDinheiro_CheckedChanged);
-            // 
-            // cboTributos
-            // 
-            this.cboTributos.AccessibleName = "Tributos";
-            this.cboTributos.Campo = "Tributos";
-            this.cboTributos.FormattingEnabled = true;
-            this.cboTributos.Location = new System.Drawing.Point(248, 17);
-            this.cboTributos.Name = "cboTributos";
-            this.cboTributos.Size = new System.Drawing.Size(150, 20);
-            this.cboTributos.TabIndex = 3;
             // 
             // grpInformacoes
             // 
@@ -329,7 +317,6 @@
         private UIX.txtUIX txtClienteNome;
         private System.Windows.Forms.GroupBox grpInformacoesConta;
         private UIX.txtUIX txtDesconto;
-        private UIX.cboUIX cboTributos;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.RadioButton rboCartao;
         private System.Windows.Forms.RadioButton rboDinheiro;

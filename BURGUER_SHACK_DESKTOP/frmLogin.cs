@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,26 +41,54 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            SqlConnection sql = new SqlConnection("Persist Security Info=False;Integrated Security=true;Initial Catalog=Northwind;server=Z:\\Database\\Burguer_Shack.mdf");
+            SqlCommand command = new SqlCommand("select * from FUNCIONARIO where Nome=@Nome and Senha=@Senha", sql);
+            command.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
+            command.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtSenha.Text;
+
+            try
+            {
+                sql.Open();
+                SqlDataReader drms = command.ExecuteReader();
+                if (drms.HasRows == false)
+                {
+                    throw new Exception("usuario ou senha errado porra");
+                    drms.Read();
+                    frmPedido objfrmPedido = new frmPedido();
+                    objfrmPedido.Visible = true;
+                    this.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("n foi");
+            }
+
+            finally
+            {
+                sql.Close();
+            }
+
             _validar.validar();
 
-            if (txtNome.Text == "garçom" && txtSenha.Text == "123")
-            {
-                frmPedido objfrmPedido = new frmPedido();
-                objfrmPedido.Visible = true;
-                this.Visible = false;
-            }
-            else if (txtNome.Text == "cozinha" && txtSenha.Text == "123")
-            {
-                frmCozinha objfrmCozinha = new frmCozinha();
-                objfrmCozinha.Visible = true;
-                this.Visible = false;
-            }
-            else if (txtNome.Text == "lider" && txtSenha.Text == "123")
-            {
-                frmGerenciador objfrmGerenciador = new frmGerenciador();
-                objfrmGerenciador.Visible = true;
-                this.Visible = false;
-            }
+            //if (txtNome.Text == "garçom" && txtSenha.Text == "123")
+            //{
+            //    frmPedido objfrmPedido = new frmPedido();
+            //    objfrmPedido.Visible = true;
+            //    this.Visible = false;
+            //}
+            //else if (txtNome.Text == "cozinha" && txtSenha.Text == "123")
+            //{
+            //    frmCozinha objfrmCozinha = new frmCozinha();
+            //    objfrmCozinha.Visible = true;
+            //    this.Visible = false;
+            //}
+            //else if (txtNome.Text == "lider" && txtSenha.Text == "123")
+            //{
+            //    frmGerenciador objfrmGerenciador = new frmGerenciador();
+            //    objfrmGerenciador.Visible = true;
+            //    this.Visible = false;
+            //}
         }
 
         private void picVer_MouseEnter(object sender, EventArgs e)

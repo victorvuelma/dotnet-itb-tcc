@@ -69,22 +69,38 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctGerenFuncionario(), "Funcionário");
-        }
-
-        private void btnTransportadora_Click(object sender, EventArgs e)
-        {
-            uctUIX.UIXTitle = clnTemplate.AppName + " - Transportadora";
+            if (grpFuncao.Text == "LISTA")
+            {
+                alterarConteudo(new uctGerenLista(), "Lista");
+            }
+            else
+            {
+                alterarConteudo(new uctGerenFuncionario(), "Funcionário");
+            }
         }
 
         private void btnTercerizada_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctGerenTerceirizada(), "Terceirizada");
+            if (grpFuncao.Text == "LISTA")
+            {
+                alterarConteudo(new uctGerenLista(), "Lista");
+            }
+            else
+            {
+                alterarConteudo(new uctGerenTerceirizada(), "Terceirizada");
+            }
         }
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctGerenProduto(), "Produto");
+            if (grpFuncao.Text == "LISTA")
+            {
+                alterarConteudo(new uctGerenLista(), "Lista");
+            }
+            else
+            {
+                alterarConteudo(new uctGerenProduto(), "Produto");
+            }
         }
 
         private void alterarConteudo(UserControl uctConteudo, String titulo)
