@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uctCozinha1 = new BURGUER_SHACK_DESKTOP.uctCozinha();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.uctUIX1 = new UIX.uctUIX();
-            this.uctCozinha1 = new BURGUER_SHACK_DESKTOP.uctCozinha();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +44,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(994, 379);
             this.panel1.TabIndex = 1;
+            // 
+            // uctCozinha1
+            // 
+            this.uctCozinha1.Location = new System.Drawing.Point(-12, 0);
+            this.uctCozinha1.Name = "uctCozinha1";
+            this.uctCozinha1.Size = new System.Drawing.Size(857, 379);
+            this.uctCozinha1.TabIndex = 1;
             // 
             // dgvPedidos
             // 
@@ -65,13 +72,6 @@
             this.uctUIX1.UIXImage = null;
             this.uctUIX1.UIXTitle = "Titulo UIX";
             // 
-            // uctCozinha1
-            // 
-            this.uctCozinha1.Location = new System.Drawing.Point(-12, 0);
-            this.uctCozinha1.Name = "uctCozinha1";
-            this.uctCozinha1.Size = new System.Drawing.Size(857, 379);
-            this.uctCozinha1.TabIndex = 1;
-            // 
             // frmCozinha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -81,7 +81,7 @@
             this.Controls.Add(this.uctUIX1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCozinha";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmCozinha";
             this.Load += new System.EventHandler(this.frmCozinha_Load);
             this.panel1.ResumeLayout(false);

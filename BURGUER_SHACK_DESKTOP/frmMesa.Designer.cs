@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMesa));
             this.uctUIX = new UIX.uctUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnSair = new UIX.btnUIX();
             this.btnCardapio = new UIX.btnUIX();
             this.btnFinalizarPedido = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
@@ -38,7 +39,6 @@
             this.btnAlterarPedido = new UIX.btnUIX();
             this.btnMesas = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.btnSair = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,18 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 660);
             this.pnlMenu.TabIndex = 3;
+            // 
+            // btnSair
+            // 
+            this.btnSair.Description = "Sair";
+            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.Location = new System.Drawing.Point(10, 570);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(80, 80);
+            this.btnSair.TabIndex = 6;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnCardapio
             // 
@@ -146,18 +158,6 @@
             this.pnlConteudo.Size = new System.Drawing.Size(600, 660);
             this.pnlConteudo.TabIndex = 4;
             // 
-            // btnSair
-            // 
-            this.btnSair.Description = "Sair";
-            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.Location = new System.Drawing.Point(10, 570);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(80, 80);
-            this.btnSair.TabIndex = 6;
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // frmMesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +169,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMesa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmMesa";
             this.Load += new System.EventHandler(this.frmMesa_Load);
             this.pnlMenu.ResumeLayout(false);

@@ -255,6 +255,9 @@
     <EmbeddedResource Include="frmPedido.resx">
       <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
