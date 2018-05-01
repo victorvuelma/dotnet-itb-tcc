@@ -27,7 +27,7 @@ namespace UIX
                 AccessibleName = value;
                 lbl.Text = value + ":";
                 int x = lbl.Size.Width - 5;
-                box.Location = new Point(x, box.Location.Y);
+                mtb.Location = new Point(x, mtb.Location.Y);
             }
         }
 
@@ -41,7 +41,7 @@ namespace UIX
             }
         }
 
-        public override String Text { get => box.Text; set => box.Text = value; }
+        public override String Text { get => mtb.Text; set => mtb.Text = value; }
 
         public new Size Size
         {
@@ -49,17 +49,17 @@ namespace UIX
             set
             {
                 Size current = base.Size;
-                box.Size = new Size(value.Width - lbl.Size.Width , box.Size.Height);
+                mtb.Size = new Size(value.Width - lbl.Size.Width , mtb.Size.Height);
                 base.Size = value;
             }
         }
 
         [Editor("System.Windows.Forms.Design.MaskPropertyEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        public String Mask { get => box.Mask; set => box.Mask = value; }
+        public String Mask { get => mtb.Mask; set => mtb.Mask = value; }
 
-        public Type ValidatingType { get => box.ValidatingType; set => box.ValidatingType = value; }
+        public Type ValidatingType { get => mtb.ValidatingType; set => mtb.ValidatingType = value; }
 
-        public int MaxLength { get => box.MaxLength; set => box.MaxLength = value; }
+        public int MaxLength { get => mtb.MaxLength; set => mtb.MaxLength = value; }
 
         private void mtbUIX_Load(object sender, EventArgs e)
         {

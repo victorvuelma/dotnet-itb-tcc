@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.lbl = new System.Windows.Forms.Label();
-            this.box = new System.Windows.Forms.MaskedTextBox();
+            this.mtb = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(-3, 0);
+            this.lbl.Location = new System.Drawing.Point(-4, 1);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(43, 13);
             this.lbl.TabIndex = 0;
             this.lbl.Text = "Campo:";
             this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // box
+            // mtb
             // 
-            this.box.Location = new System.Drawing.Point(40, 0);
-            this.box.Name = "box";
-            this.box.Size = new System.Drawing.Size(100, 20);
-            this.box.TabIndex = 1;
+            this.mtb.Location = new System.Drawing.Point(40, 0);
+            this.mtb.Name = "mtb";
+            this.mtb.Size = new System.Drawing.Size(100, 20);
+            this.mtb.TabIndex = 1;
             // 
             // mtbUIX
             // 
-            this.Controls.Add(this.box);
+            this.Controls.Add(this.mtb);
             this.Controls.Add(this.lbl);
             this.Name = "mtbUIX";
             this.Size = new System.Drawing.Size(150, 20);
@@ -64,6 +64,6 @@
         #endregion
 
         public System.Windows.Forms.Label lbl;
-        public System.Windows.Forms.MaskedTextBox box;
+        public System.Windows.Forms.MaskedTextBox mtb;
     }
 }

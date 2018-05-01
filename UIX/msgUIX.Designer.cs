@@ -42,7 +42,7 @@
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(80, 35);
             this.btnYes.TabIndex = 1;
-            this.btnYes.Text = "button1";
+            this.btnYes.Text = "S";
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
@@ -52,7 +52,7 @@
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(80, 35);
             this.btnNo.TabIndex = 2;
-            this.btnNo.Text = "button2";
+            this.btnNo.Text = "N";
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
@@ -72,7 +72,7 @@
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(220, 105);
             this.lbl.TabIndex = 4;
-            this.lbl.Text = "aqui é onde o cara da rage e manda a mensagem";
+            this.lbl.Text = "C";
             // 
             // uctUIX
             // 
@@ -84,7 +84,7 @@
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = false;
             this.uctUIX.UIXImage = null;
-            this.uctUIX.UIXTitle = "Titulo UIX";
+            this.uctUIX.UIXTitle = "T";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             // 
             // msgUIX

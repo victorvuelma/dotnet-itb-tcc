@@ -17,13 +17,15 @@ namespace UIX
             InitializeComponent();
         }
 
-        public String Campo {
+        public String Campo
+        {
             get => AccessibleName;
-            set {
+            set
+            {
                 AccessibleName = value;
                 lbl.Text = value + ":";
                 int x = lbl.Size.Width - 5;
-                box.Location = new Point(x, box.Location.Y);
+                txt.Location = new Point(x, txt.Location.Y);
             }
         }
 
@@ -37,7 +39,7 @@ namespace UIX
             }
         }
 
-        public override String Text { get => box.Text; set => box.Text = value; }
+        public override String Text { get => txt.Text; set => txt.Text = value; }
 
         public new Size Size
         {
@@ -45,12 +47,13 @@ namespace UIX
             set
             {
                 Size current = base.Size;
-                box.Size = new Size(value.Width - lbl.Size.Width, box.Size.Height);
+                txt.Size = new Size(value.Width - lbl.Size.Width, txt.Size.Height);
                 base.Size = value;
             }
         }
 
-        public int MaxLength { get => box.MaxLength; set => box.MaxLength = value; }
+        public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
+        public TextBox Box { get => txt; }
 
     }
 }

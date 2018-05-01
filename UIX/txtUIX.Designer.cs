@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lbl = new System.Windows.Forms.Label();
-            this.box = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl
@@ -44,16 +44,16 @@
             // 
             // box
             // 
-            this.box.Location = new System.Drawing.Point(40, 0);
-            this.box.Name = "box";
-            this.box.Size = new System.Drawing.Size(100, 20);
-            this.box.TabIndex = 1;
+            this.txt.Location = new System.Drawing.Point(40, 0);
+            this.txt.Name = "box";
+            this.txt.Size = new System.Drawing.Size(100, 20);
+            this.txt.TabIndex = 1;
             // 
             // txtUIX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.box);
+            this.Controls.Add(this.txt);
             this.Controls.Add(this.lbl);
             this.Name = "txtUIX";
             this.Size = new System.Drawing.Size(150, 20);
@@ -65,6 +65,6 @@
         #endregion
 
         public System.Windows.Forms.Label lbl;
-        public System.Windows.Forms.TextBox box;
+        public System.Windows.Forms.TextBox txt;
     }
 }
