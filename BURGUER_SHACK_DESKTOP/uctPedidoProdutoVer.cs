@@ -13,13 +13,6 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctPedidoProdutoVer : UserControl
     {
 
-        private int _mesa;
-
-        private frmPedido _frm;
-
-        public int Mesa { get => _mesa; set => _mesa = value; }
-        public frmPedido Frm { get => _frm; set => _frm = value; }
-
         public uctPedidoProdutoVer()
         {
             InitializeComponent();

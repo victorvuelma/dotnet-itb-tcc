@@ -29,9 +29,9 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
-        private void abrirVisualizar()
+        public void abrirVisualizar()
         {
-            alterarConteudo(new uctPedidoProdutoVer(), "Visualizar");
+            alterarConteudo(new uctPedidoProdutoVer(), "Produto :: Visualizar");
         }
 
         private void fechar()
@@ -68,12 +68,16 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            uctPedidoProdutoDetalhes alterar = new uctPedidoProdutoDetalhes();
 
+            alterar.Frm = this;
+
+            alterarConteudo(new uctPedidoProdutoDetalhes(), "Produto :: Alterar");
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if(clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do pedido?", clnMensagem.MSG_INFO))
+            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do pedido?", clnMensagem.MSG_INFO))
             {
 
                 //faz e tal

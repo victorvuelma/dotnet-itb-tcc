@@ -47,7 +47,7 @@
             // 
             // txtDetalhes
             // 
-            this.txtDetalhes.Location = new System.Drawing.Point(7, 22);
+            this.txtDetalhes.Location = new System.Drawing.Point(5, 20);
             this.txtDetalhes.Multiline = true;
             this.txtDetalhes.Name = "txtDetalhes";
             this.txtDetalhes.ReadOnly = true;
