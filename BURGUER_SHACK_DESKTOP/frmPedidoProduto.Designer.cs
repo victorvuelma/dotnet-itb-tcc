@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidoProduto));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnRemover = new UIX.btnUIX();
             this.btnVer = new UIX.btnUIX();
             this.btnVoltar = new UIX.btnUIX();
             this.btnAlterar = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.uctUIX = new UIX.uctUIX();
-            this.btnRemover = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,18 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 400);
             this.pnlMenu.TabIndex = 2;
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Description = "Remover";
+            this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
+            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
+            this.btnRemover.Location = new System.Drawing.Point(10, 190);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(80, 80);
+            this.btnRemover.TabIndex = 8;
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnVer
             // 
@@ -68,7 +80,7 @@
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Description = "Voltar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
             this.btnVoltar.Location = new System.Drawing.Point(10, 310);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(80, 80);
@@ -108,18 +120,6 @@
             this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
             this.uctUIX.UIXTitle = "Pedidos";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Description = "Remover";
-            this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
-            this.btnRemover.Location = new System.Drawing.Point(10, 190);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(80, 80);
-            this.btnRemover.TabIndex = 8;
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // frmPedidoProduto
             // 

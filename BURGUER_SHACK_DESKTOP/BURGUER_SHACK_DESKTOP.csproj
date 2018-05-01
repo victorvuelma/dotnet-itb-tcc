@@ -405,6 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\voltar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
