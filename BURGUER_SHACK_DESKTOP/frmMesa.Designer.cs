@@ -67,12 +67,13 @@
             // 
             this.btnNovoPedido.Description = "Novo Pedido";
             this.btnNovoPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovoPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
+            this.btnNovoPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnNovoPedido.Location = new System.Drawing.Point(10, 10);
             this.btnNovoPedido.Name = "btnNovoPedido";
             this.btnNovoPedido.Size = new System.Drawing.Size(80, 80);
             this.btnNovoPedido.TabIndex = 8;
             this.btnNovoPedido.UseVisualStyleBackColor = true;
+            this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
             // 
             // btnSair
             // 
@@ -109,6 +110,7 @@
             this.btnPedidos.Size = new System.Drawing.Size(80, 80);
             this.btnPedidos.TabIndex = 4;
             this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // pnlConteudo
             // 

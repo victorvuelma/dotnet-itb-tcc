@@ -13,13 +13,13 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctPedidoNovo : UserControl
     {
 
-        private int mesaAtual;
+        private int _mesa;
 
         public uctPedidoNovo()
         {
             InitializeComponent();
         }
 
-        public int MesaAtual { get => mesaAtual; set => mesaAtual = value; }
+        public int Mesa { get => _mesa; set => _mesa = value; }
     }
 }

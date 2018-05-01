@@ -19,7 +19,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPedido_Load(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = clnTemplate.AppName + " - Garçom";
             clnTemplate.CommonTemplate.frmApply(this, uctUIX);
 
             UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
@@ -47,7 +46,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctPedidoListar(), "Pedidos");
+            alterarConteudo(new uctMesaPedidos(), "Pedidos");
         }
 
         private void btnFinalizarPedido_Click(object sender, EventArgs e)
@@ -60,19 +59,27 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            fechar();
+        }
+
+        private void uctUIX_Close(object sender, EventArgs e)
+        {
+            fechar();
+        }
+
+        private void fechar()
+        {
+            if(clnMensagem.mostrarSimNao("Pedido","Deseja cancelar o pedido?", clnMensagem.MSG_ERRO))
+            {
+                Close();
+            }
         }
 
         private void uctUIX_Min(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void uctUIX_Close(object sender, EventArgs e)
-        {
-            Close();
         }
 
     }

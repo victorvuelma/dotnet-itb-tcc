@@ -20,11 +20,11 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
         }
 
-                public int Mesa { get => _mesa; set => _mesa = value; }
+        public int Mesa { get => _mesa; set => _mesa = value; }
 
-        public void abrirNovoPedido()
+        public void abrirPedidos()
         {
-            alterarConteudo(new uctPedidoNovo(), "Mesa " + Mesa + " :: Novo Pedido");
+            alterarConteudo(new uctMesaPedidos(), "Mesa " + Mesa + " :: Pedidos");
         }
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
@@ -38,12 +38,12 @@ namespace BURGUER_SHACK_DESKTOP
 
             UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
 
-            abrirNovoPedido();
+            abrirPedidos();
         }
-
-        private void btnMesas_Click(object sender, EventArgs e)
+        
+        private void btnPedidos_Click(object sender, EventArgs e)
         {
-            abrirNovoPedido();
+            abrirPedidos();
         }
 
         private void btnConta_Click(object sender, EventArgs e)
@@ -61,6 +61,18 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnNovoPedido_Click(object sender, EventArgs e)
+        {
+            frmPedido pedido = new frmPedido();
+
+            uctPedidoNovo pedidoNovo = new uctPedidoNovo();
+            pedidoNovo.Mesa = Mesa;
+
+            pedido.alterarConteudo(pedidoNovo, "Novo Pedido :: Mesa " + Mesa);
+
+            pedido.ShowDialog();
         }
 
     }
