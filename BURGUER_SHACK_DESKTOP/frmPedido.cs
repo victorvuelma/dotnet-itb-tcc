@@ -22,41 +22,18 @@ namespace BURGUER_SHACK_DESKTOP
             clnTemplate.CommonTemplate.frmApply(this, uctUIX);
 
             UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
-        }
 
-        private void btnNovoPedido_Click(object sender, EventArgs e)
-        {
-            alterarConteudo(new uctPedidoNovo(), "Novo Pedido");
-        }
-
-        private void btnAlterarPedido_Click(object sender, EventArgs e)
-        {
-            alterarConteudo(new uctPedidoAlterar(), "Alterar Pedido");
-        }
-
-        private void btnCardapio_Click(object sender, EventArgs e)
-        {
-            alterarConteudo(new uctPrincipalCardapio(), "Cardápio");
-        }
-
-        private void btnApagarPedido_Click(object sender, EventArgs e)
-        {
-            alterarConteudo(new uctPedidoRemover(), "Remover Pedido");
-        }
-
-        private void btnPedidos_Click(object sender, EventArgs e)
-        {
-            alterarConteudo(new uctMesaPedidos(), "Pedidos");
-        }
-
-        private void btnFinalizarPedido_Click(object sender, EventArgs e)
-        {
-                alterarConteudo(new uctMesaConta(), "Conta");
+            abrirProdutos();
         }
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
         {
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
+        }
+
+        private void abrirProdutos()
+        {
+            alterarConteudo(new uctPedidoProdutos(), "Pedido :: Produtos"); 
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -77,10 +54,14 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void uctUIX_Min(object sender, EventArgs e)
+        private void btnProdutos_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            abrirProdutos();
         }
 
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            alterarConteudo(new uctPedidoAdicionar(), "Add");
+        }
     }
 }

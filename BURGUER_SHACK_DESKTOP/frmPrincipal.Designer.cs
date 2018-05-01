@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.uctUIX = new UIX.uctUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -47,7 +48,7 @@
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = true;
-            this.uctUIX.UIXImage = null;
+            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
             this.uctUIX.UIXTitle = "Burguer Shack :: Principal";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
             // 
@@ -84,7 +85,7 @@
             // 
             this.btnCardapio.Description = "Cardápio";
             this.btnCardapio.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedidos1;
+            this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
             this.btnCardapio.Location = new System.Drawing.Point(10, 100);
             this.btnCardapio.Name = "btnCardapio";
             this.btnCardapio.Size = new System.Drawing.Size(80, 80);
@@ -95,7 +96,7 @@
             // 
             this.btnMesas.Description = "Mesas";
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesalivre1;
+            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
             this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMesas.Location = new System.Drawing.Point(10, 10);
             this.btnMesas.Name = "btnMesas";
@@ -114,6 +115,7 @@
             this.Controls.Add(this.uctUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

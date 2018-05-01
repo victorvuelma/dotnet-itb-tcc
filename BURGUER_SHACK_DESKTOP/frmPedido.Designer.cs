@@ -61,7 +61,7 @@
             this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnNovoPedido_Click);
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnFinalizar
             // 
@@ -74,7 +74,6 @@
             this.btnFinalizar.Size = new System.Drawing.Size(80, 80);
             this.btnFinalizar.TabIndex = 7;
             this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // btnSair
             // 
@@ -92,13 +91,13 @@
             // 
             this.btnProdutos.Description = "Produtos";
             this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
             this.btnProdutos.Location = new System.Drawing.Point(10, 100);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(80, 80);
             this.btnProdutos.TabIndex = 1;
             this.btnProdutos.UseVisualStyleBackColor = true;
-            this.btnProdutos.Click += new System.EventHandler(this.btnAlterarPedido_Click);
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // pnlConteudo
             // 
@@ -117,10 +116,9 @@
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = false;
-            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
+            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
             this.uctUIX.UIXTitle = "Pedidos";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
-            this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
             // 
             // frmPedido
             // 

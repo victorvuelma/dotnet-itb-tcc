@@ -17,14 +17,15 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             List<Control> mesas = new List<Control>();
-            for(int i = 1; i <= 30; i++)
+            for(int i = 1; i <= 25; i++)
             {
                 int mesa = i;
 
                 UIX.btnUIX btn = new UIX.btnUIX();
                 btn.Description = "MESA " + mesa;
-                btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesalivre1;
+                btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
                 btn.Name = "btnMesa" + mesa;
+                btn.Size = new Size(100, 100);
 
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -34,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
                 mesas.Add(btn);
             }
 
-            clnUtil.adicionarControles(pnlMesas, mesas, 16);
+            clnUtil.adicionarControles(pnlMesas, mesas, 20);
         }
         
         private void uctPedidoMesa_Load(object sender, EventArgs e)

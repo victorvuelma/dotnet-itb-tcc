@@ -192,6 +192,12 @@
     <Compile Include="uctPedidoAlterar.Designer.cs">
       <DependentUpon>uctPedidoAlterar.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctPedidoAdicionar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctPedidoAdicionar.Designer.cs">
+      <DependentUpon>uctPedidoAdicionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctPrincipalCardapio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,11 +216,11 @@
     <Compile Include="uctPrincipalMesas.Designer.cs">
       <DependentUpon>uctPrincipalMesas.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctPedidoNovo.cs">
+    <Compile Include="uctPedidoProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctPedidoNovo.Designer.cs">
-      <DependentUpon>uctPedidoNovo.cs</DependentUpon>
+    <Compile Include="uctPedidoProdutos.Designer.cs">
+      <DependentUpon>uctPedidoProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="uctPedidoRemover.cs">
       <SubType>UserControl</SubType>
@@ -275,6 +281,9 @@
     <EmbeddedResource Include="uctPedidoAlterar.resx">
       <DependentUpon>uctPedidoAlterar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uctPedidoAdicionar.resx">
+      <DependentUpon>uctPedidoAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uctPrincipalCardapio.resx">
       <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,8 +293,8 @@
     <EmbeddedResource Include="uctPrincipalMesas.resx">
       <DependentUpon>uctPrincipalMesas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctPedidoNovo.resx">
-      <DependentUpon>uctPedidoNovo.cs</DependentUpon>
+    <EmbeddedResource Include="uctPedidoProdutos.resx">
+      <DependentUpon>uctPedidoProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoRemover.resx">
       <DependentUpon>uctPedidoRemover.cs</DependentUpon>
@@ -351,9 +360,6 @@
     <None Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pedidos.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\remover-menos.png" />
   </ItemGroup>
   <ItemGroup>
@@ -381,22 +387,22 @@
     <None Include="Resources\padrao.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mesalivre.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mesalivre1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mesauso.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pagamento.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pedidos1.png" />
+    <None Include="Resources\produto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesauso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

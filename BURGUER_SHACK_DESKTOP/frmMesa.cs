@@ -67,7 +67,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             frmPedido pedido = new frmPedido();
 
-            uctPedidoNovo pedidoNovo = new uctPedidoNovo();
+            uctPedidoProdutos pedidoNovo = new uctPedidoProdutos();
             pedidoNovo.Mesa = Mesa;
 
             pedido.alterarConteudo(pedidoNovo, "Novo Pedido :: Mesa " + Mesa);
