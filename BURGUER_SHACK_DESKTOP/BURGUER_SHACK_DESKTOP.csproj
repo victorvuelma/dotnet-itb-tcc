@@ -35,8 +35,7 @@
     <StartupObject>BURGUER_SHACK_DESKTOP.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>garcom-ico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -394,6 +393,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bebida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="garcom-ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
