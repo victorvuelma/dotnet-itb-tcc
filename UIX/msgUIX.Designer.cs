@@ -68,9 +68,9 @@
             // lbl
             // 
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(110, 50);
+            this.lbl.Location = new System.Drawing.Point(120, 50);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(230, 105);
+            this.lbl.Size = new System.Drawing.Size(220, 105);
             this.lbl.TabIndex = 4;
             this.lbl.Text = "aqui é onde o cara da rage e manda a mensagem";
             // 
