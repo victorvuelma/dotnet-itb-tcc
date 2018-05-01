@@ -44,8 +44,9 @@
             // 
             // cbo
             // 
+            this.cbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbo.FormattingEnabled = true;
-            this.cbo.Location = new System.Drawing.Point(40, 0);
+            this.cbo.Location = new System.Drawing.Point(27, 0);
             this.cbo.Name = "cbo";
             this.cbo.Size = new System.Drawing.Size(100, 21);
             this.cbo.TabIndex = 2;

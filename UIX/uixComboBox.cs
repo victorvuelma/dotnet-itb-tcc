@@ -25,6 +25,7 @@ namespace UIX
             cbo.BackColor = colorSet.LightColor;
             cbo.ForeColor = colorSet.ContentColor;
             cbo.Margin = new Padding(0);
+            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 
