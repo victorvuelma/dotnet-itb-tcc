@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grbAdicionarProduto = new System.Windows.Forms.GroupBox();
+            this.grbAdicional = new System.Windows.Forms.GroupBox();
+            this.txtAdicional = new System.Windows.Forms.TextBox();
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.grbProduto = new System.Windows.Forms.GroupBox();
@@ -41,14 +43,13 @@
             this.btnAcompanhamento = new UIX.btnUIX();
             this.btnLanche = new UIX.btnUIX();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.grbAdicional = new System.Windows.Forms.GroupBox();
-            this.txtAdicional = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new UIX.txtUIX();
             this.grbAdicionarProduto.SuspendLayout();
+            this.grbAdicional.SuspendLayout();
             this.grbDetalhes.SuspendLayout();
             this.grbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbTipo.SuspendLayout();
-            this.grbAdicional.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbAdicionarProduto
@@ -66,23 +67,42 @@
             this.grbAdicionarProduto.TabStop = false;
             this.grbAdicionarProduto.Text = "ADICIONAR PRODUTO";
             // 
+            // grbAdicional
+            // 
+            this.grbAdicional.Controls.Add(this.txtAdicional);
+            this.grbAdicional.Location = new System.Drawing.Point(280, 470);
+            this.grbAdicional.Name = "grbAdicional";
+            this.grbAdicional.Size = new System.Drawing.Size(205, 250);
+            this.grbAdicional.TabIndex = 6;
+            this.grbAdicional.TabStop = false;
+            this.grbAdicional.Text = "INFORMAÇÕES ADICIONAIS";
+            // 
+            // txtAdicional
+            // 
+            this.txtAdicional.Location = new System.Drawing.Point(10, 20);
+            this.txtAdicional.Multiline = true;
+            this.txtAdicional.Name = "txtAdicional";
+            this.txtAdicional.Size = new System.Drawing.Size(190, 220);
+            this.txtAdicional.TabIndex = 0;
+            // 
             // grbDetalhes
             // 
+            this.grbDetalhes.Controls.Add(this.txtQuantidade);
             this.grbDetalhes.Controls.Add(this.txtDetalhes);
             this.grbDetalhes.Location = new System.Drawing.Point(5, 470);
             this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(235, 250);
+            this.grbDetalhes.Size = new System.Drawing.Size(270, 250);
             this.grbDetalhes.TabIndex = 5;
             this.grbDetalhes.TabStop = false;
-            this.grbDetalhes.Text = "DETALHES DO PRODUTO";
+            this.grbDetalhes.Text = "Detalhes";
             // 
             // txtDetalhes
             // 
-            this.txtDetalhes.Location = new System.Drawing.Point(10, 20);
+            this.txtDetalhes.Location = new System.Drawing.Point(5, 50);
             this.txtDetalhes.Multiline = true;
             this.txtDetalhes.Name = "txtDetalhes";
             this.txtDetalhes.ReadOnly = true;
-            this.txtDetalhes.Size = new System.Drawing.Size(220, 220);
+            this.txtDetalhes.Size = new System.Drawing.Size(260, 195);
             this.txtDetalhes.TabIndex = 0;
             // 
             // grbProduto
@@ -202,23 +222,16 @@
             this.btnAdicionar.Text = "Adicionar Produto";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
-            // grbAdicional
+            // txtQuantidade
             // 
-            this.grbAdicional.Controls.Add(this.txtAdicional);
-            this.grbAdicional.Location = new System.Drawing.Point(250, 473);
-            this.grbAdicional.Name = "grbAdicional";
-            this.grbAdicional.Size = new System.Drawing.Size(235, 250);
-            this.grbAdicional.TabIndex = 6;
-            this.grbAdicional.TabStop = false;
-            this.grbAdicional.Text = "INFORMAÇÕES ADICIONAIS";
-            // 
-            // txtAdicional
-            // 
-            this.txtAdicional.Location = new System.Drawing.Point(10, 20);
-            this.txtAdicional.Multiline = true;
-            this.txtAdicional.Name = "txtAdicional";
-            this.txtAdicional.Size = new System.Drawing.Size(220, 220);
-            this.txtAdicional.TabIndex = 0;
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.Location = new System.Drawing.Point(5, 20);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(260, 25);
+            this.txtQuantidade.TabIndex = 3;
             // 
             // uctPedidoAdicionar
             // 
@@ -231,13 +244,13 @@
             this.Name = "uctPedidoAdicionar";
             this.Size = new System.Drawing.Size(500, 800);
             this.grbAdicionarProduto.ResumeLayout(false);
+            this.grbAdicional.ResumeLayout(false);
+            this.grbAdicional.PerformLayout();
             this.grbDetalhes.ResumeLayout(false);
             this.grbDetalhes.PerformLayout();
             this.grbProduto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.grbTipo.ResumeLayout(false);
-            this.grbAdicional.ResumeLayout(false);
-            this.grbAdicional.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -259,5 +272,6 @@
         private System.Windows.Forms.TextBox txtDetalhes;
         private System.Windows.Forms.GroupBox grbAdicional;
         private System.Windows.Forms.TextBox txtAdicional;
+        private UIX.txtUIX txtQuantidade;
     }
 }

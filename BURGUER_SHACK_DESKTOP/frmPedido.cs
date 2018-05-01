@@ -40,7 +40,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if (clnMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnMensagem.MSG_ERRO))
+            if (clnMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnMensagem.MensagemIcone.ERRO))
             {
                 Close();
             }

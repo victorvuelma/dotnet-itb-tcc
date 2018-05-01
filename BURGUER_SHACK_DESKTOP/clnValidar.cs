@@ -71,7 +71,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (!formValido)
             {
-                clnMensagem.mostrarOk("Verifique as informações", Motivo, clnMensagem.MSG_ERRO);
+                clnMensagem.mostrarOk("Verifique as informações", Motivo, clnMensagem.MensagemIcone.ERRO);
             }
 
             return formValido;
@@ -155,7 +155,7 @@ namespace BURGUER_SHACK_DESKTOP
                     if (_control is UIX.txtUIX)
                     {
                         UIX.txtUIX txt = (UIX.txtUIX)_control;
-                        UIX.uixTextBox.txtApply(txt.box, UIX.uixSet.RED);
+                        UIX.uixTextBox.txtApply(txt.txt, UIX.uixSet.RED);
                     }
                 }
                 else
@@ -163,7 +163,7 @@ namespace BURGUER_SHACK_DESKTOP
                     if (_control is UIX.txtUIX)
                     {
                         UIX.txtUIX txt = (UIX.txtUIX)_control;
-                        UIX.uixTextBox.txtApply(txt.box, clnApp.CommonTemplate.Style.TextBoxColor);
+                        UIX.uixTextBox.txtApply(txt.txt, clnApp.CommonTemplate.Style.TextBoxColor);
                     }
                 }
 

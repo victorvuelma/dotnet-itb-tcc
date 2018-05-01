@@ -12,24 +12,27 @@ namespace BURGUER_SHACK_DESKTOP
     class clnMensagem
     {
 
-        public static int MSG_ERRO = 0;
-        public static int MSG_INFO = 1;
-        public static int MSG_OK = 2;
-
+        public enum MensagemIcone
+        {
+            OK,
+            ERRO,
+            INFO
+        }
+        
         public static int OP_OK = 0;
         public static int OP_S_N = 1;
 
-        public static bool mostrarSimNao(String titulo, String mensagem, int icone)
+        public static bool mostrarSimNao(String titulo, String mensagem, MensagemIcone icone)
         {
             return (mostrarMensagem(titulo, mensagem, icone, OP_S_N).resultado == 2);
         }
 
-        public static void mostrarOk(String titulo, String mensagem, int icone)
+        public static void mostrarOk(String titulo, String mensagem, MensagemIcone icone)
         {
             mostrarMensagem(titulo, mensagem, icone, OP_OK);
         }
 
-        private static msgUIX mostrarMensagem(String titulo, String mensagem, int icone, int tipo)
+        private static msgUIX mostrarMensagem(String titulo, String mensagem, MensagemIcone icone, int tipo)
         {
 
             msgUIX msg = msgUIX.messageBox(titulo, mensagem, Icone(icone), clnApp.CommonTemplate);
@@ -52,13 +55,13 @@ namespace BURGUER_SHACK_DESKTOP
             return msg;
         }
 
-        private static Image Icone(int tipo)
+        private static Image Icone(MensagemIcone tipo)
         {
             switch (tipo)
             {
-                case 0:
+                case MensagemIcone.ERRO:
                     return BURGUER_SHACK_DESKTOP.Properties.Resources.erro;
-                case 1:
+                case MensagemIcone.INFO:
                     return BURGUER_SHACK_DESKTOP.Properties.Resources.info;
                 default:
                     return BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;

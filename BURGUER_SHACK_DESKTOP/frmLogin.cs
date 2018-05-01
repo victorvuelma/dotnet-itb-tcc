@@ -21,7 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             _validar = new clnValidar();
-            txtSenha.box.PasswordChar = '*';
+            txtSenha.txt.PasswordChar = '*';
 
             clnUtil.atualizarTabIndex(Controls);
         }
@@ -43,12 +43,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void picVer_MouseEnter(object sender, EventArgs e)
         {
-            txtSenha.box.PasswordChar = '\0';
+            txtSenha.txt.PasswordChar = '\0';
         }
 
         private void picVer_MouseLeave(object sender, EventArgs e)
         {
-            txtSenha.box.PasswordChar = '*';
+            txtSenha.txt.PasswordChar = '*';
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if (clnMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no pedido?", clnMensagem.MSG_ERRO))
+            if (clnMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no pedido?", clnMensagem.MensagemIcone.INFO))
             {
                 Close();
             }
@@ -77,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do pedido?", clnMensagem.MSG_INFO))
+            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do pedido?", clnMensagem.MensagemIcone.ERRO))
             {
 
                 //faz e tal
