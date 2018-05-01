@@ -18,9 +18,12 @@ namespace UIX
 
         public btnUIX()
         {
+            base.Size = new Size(80, 80);
+
             InitializeComponent();
 
             HoverColor = Color.Transparent;
+
 
         }
 
@@ -47,12 +50,33 @@ namespace UIX
             set => pic.Image = value;
         }
 
+        public new Size Size
+        {
+            get => base.Size;
+            set
+            {
+                Size oldSize = base.Size;
+
+                int heightDiff = value.Height - oldSize.Height;
+                int widthDiff = value.Width - oldSize.Width;
+
+                pic.Size = new Size(pic.Size.Width + widthDiff, pic.Size.Height + heightDiff);
+
+                lbl.Size = new Size(value.Width, lbl.Size.Height);
+                int lblY = value.Height - lbl.Height;
+                lbl.Location = new Point( lbl.Location.X, lblY);
+
+                base.Size = value;
+            }
+        }
+
         public Color HoverColor { get => _hoverColor; set => _hoverColor = value; }
 
         private void btnUIX_MouseEnter(object sender, EventArgs e)
         {
             _backColor = BackColor;
             BackColor = HoverColor;
+            Size = Size;
         }
 
         private void btnUIX_MouseLeave(object sender, EventArgs e)
