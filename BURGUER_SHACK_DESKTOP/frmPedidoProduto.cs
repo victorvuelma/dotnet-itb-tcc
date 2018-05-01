@@ -29,14 +29,14 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
-        private void abrirProdutos()
+        private void abrirVisualizar()
         {
-
+            alterarConteudo(new uctPedidoProdutoVer(), "Visualizar");
         }
 
         private void fechar()
         {
-            if (clnMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnMensagem.MSG_ERRO))
+            if (clnMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no pedido?", clnMensagem.MSG_ERRO))
             {
                 Close();
             }
@@ -46,9 +46,9 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnApp.CommonTemplate.frmApply(this, uctUIX);
 
-            UIX.uixButton.btnApply(btnSair, clnApp.CommonTemplate.Style.WarningButtonColor);
+            UIX.uixButton.btnApply(btnRemover, clnApp.CommonTemplate.Style.WarningButtonColor);
 
-            abrirProdutos();
+            abrirVisualizar();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -59,6 +59,26 @@ namespace BURGUER_SHACK_DESKTOP
         private void uctUIX_Close(object sender, EventArgs e)
         {
             fechar();
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            abrirVisualizar();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if(clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do pedido?", clnMensagem.MSG_INFO))
+            {
+
+                //faz e tal
+                Close();
+            }
         }
     }
 }
