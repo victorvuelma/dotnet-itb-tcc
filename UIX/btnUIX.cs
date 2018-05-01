@@ -23,8 +23,7 @@ namespace UIX
             InitializeComponent();
 
             HoverColor = Color.Transparent;
-
-
+            
         }
 
         public new Color BackColor
@@ -35,6 +34,17 @@ namespace UIX
                 pic.BackColor = value;
                 lbl.BackColor = value;
                 base.BackColor = value;
+            }
+        }
+
+        public new Font Font
+        {
+            get => base.Font;
+            set
+            {
+                pic.Font = value;
+                lbl.Font = value;
+                base.Font = value;
             }
         }
 
