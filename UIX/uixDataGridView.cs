@@ -10,16 +10,18 @@ namespace UIX
 {
     class uixDataGridView
     {
-        public static void dgvApply(DataGridView dgv, uixSet cellSet, uixSet headerSet)
+        public static void dgvApply(DataGridView dgv, uixSet cellSet, uixSet headerSet, Font headerFont)
         {
             dgv.AllowDrop = false;
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;
             dgv.AllowUserToResizeColumns = false;
+            dgv.AllowUserToResizeRows = false;
             dgv.ReadOnly = true;
             dgv.RowHeadersVisible = false;
             dgv.MultiSelect = false;
             dgv.EnableHeadersVisualStyles = false;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -46,6 +48,7 @@ namespace UIX
             headerStyle.SelectionBackColor = headerSet.DarkColor;
             headerStyle.SelectionForeColor = headerSet.ContentColor;
             headerStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            headerStyle.Font = headerFont;
 
             foreach (DataGridViewColumn column in dgv.Columns)
             {
@@ -53,14 +56,6 @@ namespace UIX
                 headerCell.Style = headerStyle;
             }
             dgv.TopLeftHeaderCell.Style = headerStyle;
-
-            dgv.CellClick += (object sender, DataGridViewCellEventArgs e) =>
-            {
-                if (e.RowIndex >= 0)
-                {
-                    dgv.Rows[e.RowIndex].Selected = true;
-                }
-            };
         }
 
     }

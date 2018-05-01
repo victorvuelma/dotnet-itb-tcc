@@ -32,7 +32,7 @@ namespace UIX
             if (ctl is btnUIX)
             {
                 btnUIX btn = (btnUIX)ctl;
-                uixButton.btnApply(btn, Style.ButtonColor, Style.ButtonFont);
+                uixButton.btnApply(btn, Style.ButtonColor, Style.BoldFont);
                 btn.HoverColor = Style.ButtonColor.DarkColor;
             }
             else if (ctl is Button)
@@ -75,7 +75,7 @@ namespace UIX
 
         public void btnApply(Button btn)
         {
-            uixButton.btnApply(btn, Style.ButtonColor, Style.ButtonFont);
+            uixButton.btnApply(btn, Style.ButtonColor, Style.BoldFont);
         }
 
         public void cboApply(ComboBox cbo)
@@ -85,7 +85,7 @@ namespace UIX
 
         public void dgvApply(DataGridView dgv)
         {
-            uixDataGridView.dgvApply(dgv, Style.TextBoxColor, Style.PanelColor);
+            uixDataGridView.dgvApply(dgv, Style.TextBoxColor, Style.PanelColor, Style.BoldFont);
         }
 
         public void grbApply(GroupBox grb)

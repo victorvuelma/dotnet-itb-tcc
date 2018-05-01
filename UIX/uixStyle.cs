@@ -63,7 +63,7 @@ namespace UIX
 
         public Font HeaderFont { get => _headerFont; }
         public Font ContentFont { get => _contentFont; }
-        public Font ButtonFont { get => _buttonFont; }
+        public Font BoldFont { get => _buttonFont; }
 
         public uixSet ButtonColor { get => _btnColor; }
         public uixSet GroupBoxColor { get => _grbColor; }
