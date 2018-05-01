@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class uctMesaListar
+    partial class uctPrincipalMesas
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -45,8 +45,10 @@
             this.grbMesas.Controls.Add(this.lblLivre);
             this.grbMesas.Controls.Add(this.pnlLivre);
             this.grbMesas.Location = new System.Drawing.Point(5, 5);
+            this.grbMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbMesas.Name = "grbMesas";
-            this.grbMesas.Size = new System.Drawing.Size(505, 530);
+            this.grbMesas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbMesas.Size = new System.Drawing.Size(890, 790);
             this.grbMesas.TabIndex = 0;
             this.grbMesas.TabStop = false;
             this.grbMesas.Text = "SELECIONAR MESA";
@@ -54,56 +56,58 @@
             // pnlMesas
             // 
             this.pnlMesas.AutoScroll = true;
-            this.pnlMesas.Location = new System.Drawing.Point(5, 10);
-            this.pnlMesas.MaximumSize = new System.Drawing.Size(500, 100000);
+            this.pnlMesas.Location = new System.Drawing.Point(5, 20);
+            this.pnlMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlMesas.MaximumSize = new System.Drawing.Size(880, 123077);
             this.pnlMesas.Name = "pnlMesas";
-            this.pnlMesas.Size = new System.Drawing.Size(495, 515);
+            this.pnlMesas.Size = new System.Drawing.Size(880, 760);
             this.pnlMesas.TabIndex = 5;
             // 
             // lblOcupada
             // 
             this.lblOcupada.AutoSize = true;
-            this.lblOcupada.Location = new System.Drawing.Point(300, 0);
+            this.lblOcupada.Location = new System.Drawing.Point(800, 0);
             this.lblOcupada.Name = "lblOcupada";
-            this.lblOcupada.Size = new System.Drawing.Size(59, 13);
+            this.lblOcupada.Size = new System.Drawing.Size(64, 16);
             this.lblOcupada.TabIndex = 4;
             this.lblOcupada.Text = "OCUPADA";
             // 
             // pnlOcupada
             // 
             this.pnlOcupada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.pnlOcupada.Location = new System.Drawing.Point(290, 0);
+            this.pnlOcupada.Location = new System.Drawing.Point(785, 0);
             this.pnlOcupada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlOcupada.Name = "pnlOcupada";
-            this.pnlOcupada.Size = new System.Drawing.Size(10, 10);
+            this.pnlOcupada.Size = new System.Drawing.Size(15, 15);
             this.pnlOcupada.TabIndex = 3;
             // 
             // lblLivre
             // 
             this.lblLivre.AutoSize = true;
-            this.lblLivre.Location = new System.Drawing.Point(240, 0);
+            this.lblLivre.Location = new System.Drawing.Point(735, 0);
             this.lblLivre.Name = "lblLivre";
-            this.lblLivre.Size = new System.Drawing.Size(38, 13);
+            this.lblLivre.Size = new System.Drawing.Size(36, 16);
             this.lblLivre.TabIndex = 2;
             this.lblLivre.Text = "LIVRE";
             // 
             // pnlLivre
             // 
             this.pnlLivre.BackColor = System.Drawing.Color.White;
-            this.pnlLivre.Location = new System.Drawing.Point(230, 0);
+            this.pnlLivre.Location = new System.Drawing.Point(720, 0);
             this.pnlLivre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLivre.Name = "pnlLivre";
-            this.pnlLivre.Size = new System.Drawing.Size(10, 10);
+            this.pnlLivre.Size = new System.Drawing.Size(15, 15);
             this.pnlLivre.TabIndex = 1;
             // 
             // uctMesaListar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbMesas);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctMesaListar";
-            this.Size = new System.Drawing.Size(515, 540);
+            this.Size = new System.Drawing.Size(900, 800);
             this.Load += new System.EventHandler(this.uctPedidoMesa_Load);
             this.grbMesas.ResumeLayout(false);
             this.grbMesas.PerformLayout();

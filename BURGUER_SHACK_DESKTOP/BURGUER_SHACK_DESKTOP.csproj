@@ -192,11 +192,11 @@
     <Compile Include="uctPedidoAlterar.Designer.cs">
       <DependentUpon>uctPedidoAlterar.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctPedidoCardapio.cs">
+    <Compile Include="uctPrincipalCardapio.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctPedidoCardapio.Designer.cs">
-      <DependentUpon>uctPedidoCardapio.cs</DependentUpon>
+    <Compile Include="uctPrincipalCardapio.Designer.cs">
+      <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </Compile>
     <Compile Include="uctMesaConta.cs">
       <SubType>UserControl</SubType>
@@ -204,11 +204,11 @@
     <Compile Include="uctMesaConta.Designer.cs">
       <DependentUpon>uctMesaConta.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctMesaListar.cs">
+    <Compile Include="uctPrincipalMesas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctMesaListar.Designer.cs">
-      <DependentUpon>uctMesaListar.cs</DependentUpon>
+    <Compile Include="uctPrincipalMesas.Designer.cs">
+      <DependentUpon>uctPrincipalMesas.cs</DependentUpon>
     </Compile>
     <Compile Include="uctPedidoNovo.cs">
       <SubType>UserControl</SubType>
@@ -275,14 +275,14 @@
     <EmbeddedResource Include="uctPedidoAlterar.resx">
       <DependentUpon>uctPedidoAlterar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctPedidoCardapio.resx">
-      <DependentUpon>uctPedidoCardapio.cs</DependentUpon>
+    <EmbeddedResource Include="uctPrincipalCardapio.resx">
+      <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctMesaConta.resx">
       <DependentUpon>uctMesaConta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctMesaListar.resx">
-      <DependentUpon>uctMesaListar.cs</DependentUpon>
+    <EmbeddedResource Include="uctPrincipalMesas.resx">
+      <DependentUpon>uctPrincipalMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoNovo.resx">
       <DependentUpon>uctPedidoNovo.cs</DependentUpon>

@@ -12,6 +12,11 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class uctMesaConta : UserControl
     {
+
+        private int _mesa;
+
+        public int Mesa { get => _mesa; set => _mesa = value; }
+
         public uctMesaConta()
         {
             InitializeComponent();
@@ -128,6 +133,11 @@ namespace BURGUER_SHACK_DESKTOP
                         new RectangleF(0, 0, printDocument.DefaultPageSettings.PrintableArea.Width, printDocument.DefaultPageSettings.PrintableArea.Height));
                 }
             }
+        }
+
+        private void grbPedidoConta_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

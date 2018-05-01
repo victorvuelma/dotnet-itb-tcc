@@ -31,13 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMesa));
             this.uctUIX = new UIX.uctUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnNovoPedido = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
-            this.btnCardapio = new UIX.btnUIX();
-            this.btnFinalizarPedido = new UIX.btnUIX();
+            this.btnConta = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
-            this.btnApagarPedido = new UIX.btnUIX();
-            this.btnAlterarPedido = new UIX.btnUIX();
-            this.btnMesas = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +44,7 @@
             this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.uctUIX.Location = new System.Drawing.Point(0, 0);
             this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(700, 40);
+            this.uctUIX.Size = new System.Drawing.Size(600, 40);
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
             this.uctUIX.UIXButtonMinEnabled = false;
@@ -57,117 +54,74 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnNovoPedido);
             this.pnlMenu.Controls.Add(this.btnSair);
-            this.pnlMenu.Controls.Add(this.btnCardapio);
-            this.pnlMenu.Controls.Add(this.btnFinalizarPedido);
+            this.pnlMenu.Controls.Add(this.btnConta);
             this.pnlMenu.Controls.Add(this.btnPedidos);
-            this.pnlMenu.Controls.Add(this.btnApagarPedido);
-            this.pnlMenu.Controls.Add(this.btnAlterarPedido);
-            this.pnlMenu.Controls.Add(this.btnMesas);
             this.pnlMenu.Location = new System.Drawing.Point(0, 40);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 660);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 700);
             this.pnlMenu.TabIndex = 3;
+            // 
+            // btnNovoPedido
+            // 
+            this.btnNovoPedido.Description = "Novo Pedido";
+            this.btnNovoPedido.HoverColor = System.Drawing.Color.Transparent;
+            this.btnNovoPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
+            this.btnNovoPedido.Location = new System.Drawing.Point(10, 10);
+            this.btnNovoPedido.Name = "btnNovoPedido";
+            this.btnNovoPedido.Size = new System.Drawing.Size(80, 80);
+            this.btnNovoPedido.TabIndex = 8;
+            this.btnNovoPedido.UseVisualStyleBackColor = true;
             // 
             // btnSair
             // 
             this.btnSair.Description = "Sair";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.Location = new System.Drawing.Point(10, 570);
+            this.btnSair.Location = new System.Drawing.Point(10, 610);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(80, 80);
             this.btnSair.TabIndex = 6;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnCardapio
+            // btnConta
             // 
-            this.btnCardapio.Description = "Cardápio";
-            this.btnCardapio.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedidos1;
-            this.btnCardapio.Location = new System.Drawing.Point(10, 394);
-            this.btnCardapio.Name = "btnCardapio";
-            this.btnCardapio.Size = new System.Drawing.Size(80, 80);
-            this.btnCardapio.TabIndex = 2;
-            this.btnCardapio.UseVisualStyleBackColor = true;
-            this.btnCardapio.Visible = false;
-            // 
-            // btnFinalizarPedido
-            // 
-            this.btnFinalizarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFinalizarPedido.Description = "Finalizar";
-            this.btnFinalizarPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFinalizarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizarPedido.Location = new System.Drawing.Point(10, 489);
-            this.btnFinalizarPedido.Name = "btnFinalizarPedido";
-            this.btnFinalizarPedido.Size = new System.Drawing.Size(80, 80);
-            this.btnFinalizarPedido.TabIndex = 7;
-            this.btnFinalizarPedido.UseVisualStyleBackColor = true;
-            this.btnFinalizarPedido.Visible = false;
+            this.btnConta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConta.Description = "Conta";
+            this.btnConta.HoverColor = System.Drawing.Color.Transparent;
+            this.btnConta.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnConta.Location = new System.Drawing.Point(10, 190);
+            this.btnConta.Name = "btnConta";
+            this.btnConta.Size = new System.Drawing.Size(80, 80);
+            this.btnConta.TabIndex = 7;
+            this.btnConta.UseVisualStyleBackColor = true;
+            this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
             // 
             // btnPedidos
             // 
             this.btnPedidos.Description = "Pedidos";
             this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
             this.btnPedidos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
-            this.btnPedidos.Location = new System.Drawing.Point(10, 298);
+            this.btnPedidos.Location = new System.Drawing.Point(10, 100);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(80, 80);
             this.btnPedidos.TabIndex = 4;
             this.btnPedidos.UseVisualStyleBackColor = true;
-            this.btnPedidos.Visible = false;
-            // 
-            // btnApagarPedido
-            // 
-            this.btnApagarPedido.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnApagarPedido.Description = "Apagar";
-            this.btnApagarPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnApagarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
-            this.btnApagarPedido.Location = new System.Drawing.Point(10, 202);
-            this.btnApagarPedido.Name = "btnApagarPedido";
-            this.btnApagarPedido.Size = new System.Drawing.Size(80, 80);
-            this.btnApagarPedido.TabIndex = 3;
-            this.btnApagarPedido.UseVisualStyleBackColor = true;
-            this.btnApagarPedido.Visible = false;
-            // 
-            // btnAlterarPedido
-            // 
-            this.btnAlterarPedido.Description = "Modificar";
-            this.btnAlterarPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAlterarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnAlterarPedido.Location = new System.Drawing.Point(10, 106);
-            this.btnAlterarPedido.Name = "btnAlterarPedido";
-            this.btnAlterarPedido.Size = new System.Drawing.Size(80, 80);
-            this.btnAlterarPedido.TabIndex = 1;
-            this.btnAlterarPedido.UseVisualStyleBackColor = true;
-            this.btnAlterarPedido.Visible = false;
-            // 
-            // btnMesas
-            // 
-            this.btnMesas.Description = "Mesas";
-            this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesalivre1;
-            this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMesas.Location = new System.Drawing.Point(10, 10);
-            this.btnMesas.Name = "btnMesas";
-            this.btnMesas.Size = new System.Drawing.Size(80, 80);
-            this.btnMesas.TabIndex = 0;
-            this.btnMesas.UseVisualStyleBackColor = true;
-            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // pnlConteudo
             // 
             this.pnlConteudo.Location = new System.Drawing.Point(100, 40);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(600, 660);
+            this.pnlConteudo.Size = new System.Drawing.Size(500, 700);
             this.pnlConteudo.TabIndex = 4;
             // 
             // frmMesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 700);
+            this.ClientSize = new System.Drawing.Size(600, 740);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.uctUIX);
@@ -186,13 +140,10 @@
 
         private UIX.uctUIX uctUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnCardapio;
-        private UIX.btnUIX btnFinalizarPedido;
+        private UIX.btnUIX btnConta;
         private UIX.btnUIX btnPedidos;
-        private UIX.btnUIX btnApagarPedido;
-        private UIX.btnUIX btnAlterarPedido;
-        private UIX.btnUIX btnMesas;
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.btnUIX btnSair;
+        private UIX.btnUIX btnNovoPedido;
     }
 }

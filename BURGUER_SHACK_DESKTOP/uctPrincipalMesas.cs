@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class uctMesaListar : UserControl
+    public partial class uctPrincipalMesas : UserControl
     {
-        public uctMesaListar()
+        public uctPrincipalMesas()
         {
             InitializeComponent();
 
@@ -23,14 +23,12 @@ namespace BURGUER_SHACK_DESKTOP
 
                 UIX.btnUIX btn = new UIX.btnUIX();
                 btn.Description = "MESA " + mesa;
-                btn.HoverColor = System.Drawing.Color.Transparent;
                 btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesalivre1;
                 btn.Name = "btnMesa" + mesa;
-                btn.Size = new System.Drawing.Size(80, 80);
 
                 btn.Click += (object sender, EventArgs e) =>
                 {
-                    abrirNovoPedido(mesa);
+                    abrirMesa(mesa);
                 };
 
                 mesas.Add(btn);
@@ -45,16 +43,13 @@ namespace BURGUER_SHACK_DESKTOP
             pnlMesas.BackColor = grbMesas.BackColor;
         }
 
-        public void abrirNovoPedido(int mesa)
+        public void abrirMesa(int mesa)
         {
-            frmPedido pedido = new frmPedido();
+            frmMesa frmMesa = new frmMesa();
 
-            uctPedidoNovo pedidoNovo = new uctPedidoNovo();
-            pedidoNovo.MesaAtual = mesa;
-            
-            pedido.alterarConteudo(pedidoNovo, "Mesa " + mesa + " - Novo Pedido");
+            frmMesa.Mesa = mesa;
 
-            pedido.ShowDialog();
+            frmMesa.ShowDialog();
         }
 
     }

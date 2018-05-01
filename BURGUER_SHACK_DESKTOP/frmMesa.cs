@@ -12,9 +12,24 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmMesa : Form
     {
+
+        private int _mesa;
+
         public frmMesa()
         {
             InitializeComponent();
+        }
+
+                public int Mesa { get => _mesa; set => _mesa = value; }
+
+        public void abrirNovoPedido()
+        {
+            alterarConteudo(new uctPedidoNovo(), "Mesa " + Mesa + " :: Novo Pedido");
+        }
+
+        public void alterarConteudo(UserControl uctConteudo, String titulo)
+        {
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
         private void frmMesa_Load(object sender, EventArgs e)
@@ -23,17 +38,19 @@ namespace BURGUER_SHACK_DESKTOP
 
             UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
 
-            abrirMesas();
+            abrirNovoPedido();
         }
 
-        public void abrirMesas()
+        private void btnMesas_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctMesaListar(), "Mesas");
+            abrirNovoPedido();
         }
 
-        public void alterarConteudo(UserControl uctConteudo, String titulo)
+        private void btnConta_Click(object sender, EventArgs e)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
+            uctMesaConta conta = new uctMesaConta();
+            conta.Mesa = Mesa;
+            alterarConteudo(conta, "Mesa " + Mesa + " :: Conta");
         }
 
         private void uctUIX_Close(object sender, EventArgs e)
@@ -44,11 +61,6 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btnMesas_Click(object sender, EventArgs e)
-        {
-            abrirMesas();
         }
 
     }

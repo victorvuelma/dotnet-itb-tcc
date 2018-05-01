@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class uctPedidoCardapio
+    partial class uctPrincipalCardapio
     {
         /// <summary> 
         /// Variável de designer necessária.

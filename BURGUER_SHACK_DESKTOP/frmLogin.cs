@@ -55,7 +55,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 Hide();
 
-                new frmMesa().ShowDialog();
+                new frmPrincipal().ShowDialog();
 
                 Application.Restart();
             }
