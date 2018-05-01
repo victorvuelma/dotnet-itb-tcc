@@ -25,6 +25,17 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             clnUtil.atualizarTabIndex(Controls);
+
+            dgvProdutos.Rows.Add(2, "1", "Produto 1");
+        }
+
+        private void editarPedidoProduto(int pedidoProduto)
+        {
+            frmPedidoProduto frmPedidoProduto = new frmPedidoProduto();
+
+            MessageBox.Show(pedidoProduto + "");
+
+            frmPedidoProduto.ShowDialog();            
         }
 
         private void btnPedido_Click(object sender, EventArgs e)
@@ -36,6 +47,12 @@ namespace BURGUER_SHACK_DESKTOP
 
                 Frm.Close();
             }
+        }
+
+        private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvProdutos.Rows[e.RowIndex];
+            editarPedidoProduto(row.Index);
         }
     }
 }

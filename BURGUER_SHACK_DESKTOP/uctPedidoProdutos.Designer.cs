@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.grbProdutos = new System.Windows.Forms.GroupBox();
-            this.dgvAdicionarProdutos = new System.Windows.Forms.DataGridView();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.btnPedido = new System.Windows.Forms.Button();
+            this.columnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAdicionarProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // grbProdutos
             // 
-            this.grbProdutos.Controls.Add(this.dgvAdicionarProdutos);
+            this.grbProdutos.Controls.Add(this.dgvProdutos);
             this.grbProdutos.Location = new System.Drawing.Point(5, 5);
             this.grbProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbProdutos.Name = "grbProdutos";
@@ -47,15 +49,19 @@
             this.grbProdutos.TabStop = false;
             this.grbProdutos.Text = "PRODUTOS";
             // 
-            // dgvAdicionarProdutos
+            // dgvProdutos
             // 
-            this.dgvAdicionarProdutos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAdicionarProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdicionarProdutos.Location = new System.Drawing.Point(5, 20);
-            this.dgvAdicionarProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvAdicionarProdutos.Name = "dgvAdicionarProdutos";
-            this.dgvAdicionarProdutos.Size = new System.Drawing.Size(480, 700);
-            this.dgvAdicionarProdutos.TabIndex = 2;
+            this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnQuantidade,
+            this.columnProduto});
+            this.dgvProdutos.Location = new System.Drawing.Point(5, 20);
+            this.dgvProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.Size = new System.Drawing.Size(480, 700);
+            this.dgvProdutos.TabIndex = 2;
+            this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
             // 
             // btnPedido
             // 
@@ -68,6 +74,16 @@
             this.btnPedido.UseVisualStyleBackColor = true;
             this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
+            // columnQuantidade
+            // 
+            this.columnQuantidade.HeaderText = "QUANTIDADE";
+            this.columnQuantidade.Name = "columnQuantidade";
+            // 
+            // columnProduto
+            // 
+            this.columnProduto.HeaderText = "PRODUTO";
+            this.columnProduto.Name = "columnProduto";
+            // 
             // uctPedidoProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -79,7 +95,7 @@
             this.Name = "uctPedidoProdutos";
             this.Size = new System.Drawing.Size(500, 800);
             this.grbProdutos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAdicionarProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,7 +103,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbProdutos;
-        private System.Windows.Forms.DataGridView dgvAdicionarProdutos;
+        private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.Button btnPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnQuantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnProduto;
     }
 }

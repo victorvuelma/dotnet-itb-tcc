@@ -59,7 +59,8 @@ namespace BURGUER_SHACK_DESKTOP
 
                 new frmPrincipal().ShowDialog();
 
-                Application.Restart();
+                //Application.Restart();
+                Application.Exit();
             }
 
             //SqlConnection sql = new SqlConnection("Integrated Security=SSPI; Persist Security Info=False;Initial Catalog=Burguer_Shack;Data Source=DESKTOP-NNGLJE4");
