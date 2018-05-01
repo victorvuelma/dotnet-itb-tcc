@@ -172,7 +172,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="clnTemplate.cs" />
+    <Compile Include="clnApp.cs" />
     <Compile Include="uctGerenLista.cs">
       <SubType>UserControl</SubType>
     </Compile>

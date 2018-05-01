@@ -229,7 +229,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             clnUtil.atualizarTabIndex(uctConteudo.Controls);
-            clnTemplate.CommonTemplate.uctApply(uctConteudo);
+            clnApp.CommonTemplate.uctApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);
             uctConteudo.Location = new Point(0, 0);
@@ -239,7 +239,7 @@ namespace BURGUER_SHACK_DESKTOP
                 pnlConteudo.Visible = true;
             }
 
-            uctUIX.UIXTitle = clnTemplate.AppName + " - " + titulo;
+            uctUIX.UIXTitle = clnApp.AppName + " - " + titulo;
         }
 
         public static void alterarConteudo(UserControl novoConteudo, String titulo)

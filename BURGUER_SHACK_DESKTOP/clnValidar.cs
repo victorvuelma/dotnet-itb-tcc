@@ -163,7 +163,7 @@ namespace BURGUER_SHACK_DESKTOP
                     if (_control is UIX.txtUIX)
                     {
                         UIX.txtUIX txt = (UIX.txtUIX)_control;
-                        UIX.uixTextBox.txtApply(txt.box, clnTemplate.CommonTemplate.Style.TextBoxColor);
+                        UIX.uixTextBox.txtApply(txt.box, clnApp.CommonTemplate.Style.TextBoxColor);
                     }
                 }
 

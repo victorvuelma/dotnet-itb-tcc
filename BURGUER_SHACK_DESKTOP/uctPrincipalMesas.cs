@@ -17,7 +17,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             List<Control> mesas = new List<Control>();
-            for(int i = 1; i <= 25; i++)
+            for(int i = 1; i <= clnApp.RestMesas; i++)
             {
                 int mesa = i;
 

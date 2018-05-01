@@ -31,9 +31,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            clnTemplate.CommonTemplate.frmApply(this, uctUIX);
+            clnApp.CommonTemplate.frmApply(this, uctUIX);
 
-            UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
+            UIX.uixButton.btnApply(btnSair, clnApp.CommonTemplate.Style.WarningButtonColor);
 
             abrirMesas();
         }

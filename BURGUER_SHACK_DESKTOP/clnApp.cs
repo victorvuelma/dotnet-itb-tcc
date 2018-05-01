@@ -8,14 +8,19 @@ using System.Drawing;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnTemplate
+    class clnApp
     {
 
         private static String appName = "Burguer Shack";
                 
         private static UIX.uixTemplate commonTemplate = new UIX.uixTemplate(UIX.uixStyle.BLUE);
 
+        private static int restMesas = 30;
+
         public static string AppName { get => appName; }
+
         public static UIX.uixTemplate CommonTemplate { get => commonTemplate; }
+
+        public static int RestMesas { get => restMesas; set => restMesas = value; }
     }
 }
