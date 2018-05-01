@@ -15,6 +15,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _mesa;
 
+        private frmPedido _frm;
+        
+        public int Mesa { get => _mesa; set => _mesa = value; }
+        public frmPedido Frm { get => _frm; set => _frm = value; }
+
         public uctPedidoProdutos()
         {
             InitializeComponent();
@@ -22,6 +27,15 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarTabIndex(Controls);
         }
 
-        public int Mesa { get => _mesa; set => _mesa = value; }
+        private void btnPedido_Click(object sender, EventArgs e)
+        {
+            if(clnMensagem.mostrarSimNao("Pedido", "Deseja confirmar este pedido?", clnMensagem.MSG_OK))
+            {
+                //Confirma o pedido.
+
+
+                Frm.Close();
+            }
+        }
     }
 }

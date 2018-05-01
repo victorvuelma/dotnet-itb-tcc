@@ -66,6 +66,7 @@
             this.btnPedido.TabIndex = 9;
             this.btnPedido.Text = "Confirmar Pedido";
             this.btnPedido.UseVisualStyleBackColor = true;
+            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
             // uctPedidoProdutos
             // 

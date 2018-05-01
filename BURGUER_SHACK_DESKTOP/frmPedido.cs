@@ -12,6 +12,11 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmPedido : Form
     {
+
+        private int _mesa;
+
+        public int Mesa { get => _mesa; set => _mesa = value; }
+
         public frmPedido()
         {
             InitializeComponent();
@@ -26,7 +31,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirProdutos()
         {
-            alterarConteudo(new uctPedidoProdutos(), "Pedido :: Produtos");
+            uctPedidoProdutos produtos = new uctPedidoProdutos();
+            produtos.Frm = this;
+            produtos.Mesa =  Mesa;
+
+            alterarConteudo(produtos, "Pedido :: Produtos");
         }
 
         private void fechar()
