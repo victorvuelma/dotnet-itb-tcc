@@ -31,8 +31,8 @@
             this.grbProdutos = new System.Windows.Forms.GroupBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.btnPedido = new System.Windows.Forms.Button();
-            this.columnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
@@ -54,8 +54,8 @@
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnQuantidade,
-            this.columnProduto});
+            this.columnProduto,
+            this.columnQuantidade});
             this.dgvProdutos.Location = new System.Drawing.Point(5, 20);
             this.dgvProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvProdutos.Name = "dgvProdutos";
@@ -74,15 +74,15 @@
             this.btnPedido.UseVisualStyleBackColor = true;
             this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
-            // columnQuantidade
-            // 
-            this.columnQuantidade.HeaderText = "QUANTIDADE";
-            this.columnQuantidade.Name = "columnQuantidade";
-            // 
             // columnProduto
             // 
             this.columnProduto.HeaderText = "PRODUTO";
             this.columnProduto.Name = "columnProduto";
+            // 
+            // columnQuantidade
+            // 
+            this.columnQuantidade.HeaderText = "QUANTIDADE";
+            this.columnQuantidade.Name = "columnQuantidade";
             // 
             // uctPedidoProdutos
             // 
@@ -105,7 +105,7 @@
         private System.Windows.Forms.GroupBox grbProdutos;
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.Button btnPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnQuantidade;
     }
 }

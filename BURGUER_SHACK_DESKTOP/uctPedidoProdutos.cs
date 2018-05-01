@@ -12,9 +12,12 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class uctPedidoProdutos : UserControl
     {
+        private int _mesa;
+
         private frmPedido _frm;
-        
+                
         public frmPedido Frm { get => _frm; set => _frm = value; }
+        public int Mesa { get => _mesa; set => _mesa = value; }
 
         public uctPedidoProdutos()
         {
@@ -22,7 +25,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnUtil.atualizarTabIndex(Controls);
 
-            dgvProdutos.Rows.Add("1", "Produto 1");
+            dgvProdutos.Rows.Add("Produto 1", "1");
         }
 
         private void editarPedidoProduto(int pedidoProduto)

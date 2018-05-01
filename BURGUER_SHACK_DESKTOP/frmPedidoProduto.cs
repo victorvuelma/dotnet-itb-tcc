@@ -70,9 +70,9 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctPedidoProdutoDetalhes alterar = new uctPedidoProdutoDetalhes();
 
-            alterar.Frm = this;
+            alterar.Form = this;
 
-            alterarConteudo(new uctPedidoProdutoDetalhes(), "Produto :: Alterar");
+            alterarConteudo(alterar, "Produto :: Alterar");
         }
 
         private void btnRemover_Click(object sender, EventArgs e)

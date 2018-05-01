@@ -75,6 +75,7 @@
             this.btnFinalizar.TabIndex = 7;
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Visible = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnSair
             // 

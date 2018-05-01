@@ -197,6 +197,12 @@
     <Compile Include="uctPedidoAdicionar.Designer.cs">
       <DependentUpon>uctPedidoAdicionar.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctPedidoProdutoIngrediente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctPedidoProdutoIngrediente.Designer.cs">
+      <DependentUpon>uctPedidoProdutoIngrediente.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctPedidoProdutoDetalhes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoAdicionar.resx">
       <DependentUpon>uctPedidoAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctPedidoProdutoIngrediente.resx">
+      <DependentUpon>uctPedidoProdutoIngrediente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoProdutoDetalhes.resx">
       <DependentUpon>uctPedidoProdutoDetalhes.cs</DependentUpon>

@@ -29,7 +29,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
-        private void abrirProdutos()
+        public void abrirProdutos()
         {
             uctPedidoProdutos produtos = new uctPedidoProdutos();
             produtos.Frm = this;
@@ -73,6 +73,11 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             alterarConteudo(new uctPedidoAdicionar(), "Pedido :: Adicionar Produto");
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
