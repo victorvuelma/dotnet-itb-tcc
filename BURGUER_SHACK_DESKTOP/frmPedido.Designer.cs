@@ -44,13 +44,13 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnNovoPedido);
             this.pnlMenu.Controls.Add(this.btnCardapio);
             this.pnlMenu.Controls.Add(this.btnFinalizarPedido);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnPedidos);
             this.pnlMenu.Controls.Add(this.btnApagarPedido);
             this.pnlMenu.Controls.Add(this.btnAlterarPedido);
-            this.pnlMenu.Controls.Add(this.btnNovoPedido);
             this.pnlMenu.Location = new System.Drawing.Point(0, 40);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 760);
@@ -61,7 +61,7 @@
             this.btnCardapio.Description = "Cardápio";
             this.btnCardapio.HoverColor = System.Drawing.Color.Transparent;
             this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedidos1;
-            this.btnCardapio.Location = new System.Drawing.Point(10, 394);
+            this.btnCardapio.Location = new System.Drawing.Point(10, 388);
             this.btnCardapio.Name = "btnCardapio";
             this.btnCardapio.Size = new System.Drawing.Size(80, 80);
             this.btnCardapio.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.btnFinalizarPedido.Description = "Finalizar";
             this.btnFinalizarPedido.HoverColor = System.Drawing.Color.Transparent;
             this.btnFinalizarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizarPedido.Location = new System.Drawing.Point(10, 489);
+            this.btnFinalizarPedido.Location = new System.Drawing.Point(10, 483);
             this.btnFinalizarPedido.Name = "btnFinalizarPedido";
             this.btnFinalizarPedido.Size = new System.Drawing.Size(80, 80);
             this.btnFinalizarPedido.TabIndex = 7;
@@ -98,7 +98,7 @@
             this.btnPedidos.Description = "Pedidos";
             this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
             this.btnPedidos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
-            this.btnPedidos.Location = new System.Drawing.Point(10, 298);
+            this.btnPedidos.Location = new System.Drawing.Point(10, 292);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(80, 80);
             this.btnPedidos.TabIndex = 4;
@@ -111,7 +111,7 @@
             this.btnApagarPedido.Description = "Apagar";
             this.btnApagarPedido.HoverColor = System.Drawing.Color.Transparent;
             this.btnApagarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
-            this.btnApagarPedido.Location = new System.Drawing.Point(10, 202);
+            this.btnApagarPedido.Location = new System.Drawing.Point(10, 196);
             this.btnApagarPedido.Name = "btnApagarPedido";
             this.btnApagarPedido.Size = new System.Drawing.Size(80, 80);
             this.btnApagarPedido.TabIndex = 3;
@@ -123,7 +123,7 @@
             this.btnAlterarPedido.Description = "Modificar";
             this.btnAlterarPedido.HoverColor = System.Drawing.Color.Transparent;
             this.btnAlterarPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnAlterarPedido.Location = new System.Drawing.Point(10, 106);
+            this.btnAlterarPedido.Location = new System.Drawing.Point(10, 100);
             this.btnAlterarPedido.Name = "btnAlterarPedido";
             this.btnAlterarPedido.Size = new System.Drawing.Size(80, 80);
             this.btnAlterarPedido.TabIndex = 1;
@@ -136,7 +136,7 @@
             this.btnNovoPedido.HoverColor = System.Drawing.Color.Transparent;
             this.btnNovoPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnNovoPedido.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNovoPedido.Location = new System.Drawing.Point(10, 10);
+            this.btnNovoPedido.Location = new System.Drawing.Point(10, 5);
             this.btnNovoPedido.Name = "btnNovoPedido";
             this.btnNovoPedido.Size = new System.Drawing.Size(80, 80);
             this.btnNovoPedido.TabIndex = 0;

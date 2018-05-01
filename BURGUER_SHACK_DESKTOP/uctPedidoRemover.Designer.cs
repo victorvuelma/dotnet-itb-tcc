@@ -30,8 +30,8 @@
         {
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.grbProdutoRemover = new System.Windows.Forms.GroupBox();
-            this.txtPesquisa = new UIX.txtUIX();
             this.btnPedido = new System.Windows.Forms.Button();
+            this.txtUIX2 = new UIX.txtUIX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbProdutoRemover.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,7 @@
             // 
             // grbProdutoRemover
             // 
-            this.grbProdutoRemover.Controls.Add(this.txtPesquisa);
+            this.grbProdutoRemover.Controls.Add(this.txtUIX2);
             this.grbProdutoRemover.Controls.Add(this.btnPedido);
             this.grbProdutoRemover.Controls.Add(this.dgvProdutos);
             this.grbProdutoRemover.Location = new System.Drawing.Point(5, 5);
@@ -57,15 +57,6 @@
             this.grbProdutoRemover.TabStop = false;
             this.grbProdutoRemover.Text = "APAGAR PEDIDO";
             // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Campo = "ID DO PEDIDO";
-            this.txtPesquisa.Location = new System.Drawing.Point(10, 20);
-            this.txtPesquisa.MaxLength = 32767;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
-            this.txtPesquisa.TabIndex = 10;
-            // 
             // btnPedido
             // 
             this.btnPedido.Location = new System.Drawing.Point(260, 555);
@@ -74,6 +65,16 @@
             this.btnPedido.TabIndex = 9;
             this.btnPedido.Text = "Apagar Pedido";
             this.btnPedido.UseVisualStyleBackColor = true;
+            // 
+            // txtUIX2
+            // 
+            this.txtUIX2.AccessibleName = "MESA";
+            this.txtUIX2.Campo = "MESA";
+            this.txtUIX2.Location = new System.Drawing.Point(10, 19);
+            this.txtUIX2.MaxLength = 32767;
+            this.txtUIX2.Name = "txtUIX2";
+            this.txtUIX2.Size = new System.Drawing.Size(77, 19);
+            this.txtUIX2.TabIndex = 22;
             // 
             // uctPedidoRemover
             // 
@@ -93,6 +94,6 @@
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.GroupBox grbProdutoRemover;
         private System.Windows.Forms.Button btnPedido;
-        private UIX.txtUIX txtPesquisa;
+        private UIX.txtUIX txtUIX2;
     }
 }

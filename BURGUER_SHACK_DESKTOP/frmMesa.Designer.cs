@@ -91,6 +91,7 @@
             this.btnCardapio.Size = new System.Drawing.Size(80, 80);
             this.btnCardapio.TabIndex = 2;
             this.btnCardapio.UseVisualStyleBackColor = true;
+            this.btnCardapio.Visible = false;
             // 
             // btnFinalizarPedido
             // 
@@ -103,6 +104,7 @@
             this.btnFinalizarPedido.Size = new System.Drawing.Size(80, 80);
             this.btnFinalizarPedido.TabIndex = 7;
             this.btnFinalizarPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedido.Visible = false;
             // 
             // btnPedidos
             // 
@@ -114,6 +116,7 @@
             this.btnPedidos.Size = new System.Drawing.Size(80, 80);
             this.btnPedidos.TabIndex = 4;
             this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Visible = false;
             // 
             // btnApagarPedido
             // 
@@ -126,6 +129,7 @@
             this.btnApagarPedido.Size = new System.Drawing.Size(80, 80);
             this.btnApagarPedido.TabIndex = 3;
             this.btnApagarPedido.UseVisualStyleBackColor = true;
+            this.btnApagarPedido.Visible = false;
             // 
             // btnAlterarPedido
             // 
@@ -137,6 +141,7 @@
             this.btnAlterarPedido.Size = new System.Drawing.Size(80, 80);
             this.btnAlterarPedido.TabIndex = 1;
             this.btnAlterarPedido.UseVisualStyleBackColor = true;
+            this.btnAlterarPedido.Visible = false;
             // 
             // btnMesas
             // 

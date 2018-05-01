@@ -34,19 +34,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbPedidoAlterar = new System.Windows.Forms.GroupBox();
-            this.txtPesquisa = new UIX.txtUIX();
-            this.txtUIX2 = new UIX.txtUIX();
+            this.grpCarrinho = new System.Windows.Forms.GroupBox();
             this.txtUIX1 = new UIX.txtUIX();
             this.dgvClienteProduto = new System.Windows.Forms.DataGridView();
+            this.txtPesquisa = new UIX.txtUIX();
+            this.txtUIX2 = new UIX.txtUIX();
             this.ltbProdutos = new System.Windows.Forms.ListBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.pnlPreco = new System.Windows.Forms.Panel();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.grpCarrinho = new System.Windows.Forms.GroupBox();
             this.grbPedidoAlterar.SuspendLayout();
+            this.grpCarrinho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienteProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
-            this.grpCarrinho.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbPedidoAlterar
@@ -65,25 +65,16 @@
             this.grbPedidoAlterar.TabStop = false;
             this.grbPedidoAlterar.Text = "ALTERAR PEDIDO";
             // 
-            // txtPesquisa
+            // grpCarrinho
             // 
-            this.txtPesquisa.AccessibleName = "NOME DO PRODUTO";
-            this.txtPesquisa.Campo = "NOME DO PRODUTO";
-            this.txtPesquisa.Location = new System.Drawing.Point(10, 50);
-            this.txtPesquisa.MaxLength = 32767;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
-            this.txtPesquisa.TabIndex = 20;
-            // 
-            // txtUIX2
-            // 
-            this.txtUIX2.AccessibleName = "ID DO PEDIDO";
-            this.txtUIX2.Campo = "ID DO PEDIDO";
-            this.txtUIX2.Location = new System.Drawing.Point(10, 20);
-            this.txtUIX2.MaxLength = 32767;
-            this.txtUIX2.Name = "txtUIX2";
-            this.txtUIX2.Size = new System.Drawing.Size(164, 19);
-            this.txtUIX2.TabIndex = 21;
+            this.grpCarrinho.Controls.Add(this.txtUIX1);
+            this.grpCarrinho.Controls.Add(this.dgvClienteProduto);
+            this.grpCarrinho.Location = new System.Drawing.Point(10, 256);
+            this.grpCarrinho.Name = "grpCarrinho";
+            this.grpCarrinho.Size = new System.Drawing.Size(400, 193);
+            this.grpCarrinho.TabIndex = 22;
+            this.grpCarrinho.TabStop = false;
+            this.grpCarrinho.Text = "CARRINHO";
             // 
             // txtUIX1
             // 
@@ -127,6 +118,26 @@
             this.dgvClienteProduto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClienteProduto.Size = new System.Drawing.Size(391, 142);
             this.dgvClienteProduto.TabIndex = 16;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.AccessibleName = "NOME DO PRODUTO";
+            this.txtPesquisa.Campo = "NOME DO PRODUTO";
+            this.txtPesquisa.Location = new System.Drawing.Point(10, 50);
+            this.txtPesquisa.MaxLength = 32767;
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(400, 20);
+            this.txtPesquisa.TabIndex = 20;
+            // 
+            // txtUIX2
+            // 
+            this.txtUIX2.AccessibleName = "MESA";
+            this.txtUIX2.Campo = "MESA";
+            this.txtUIX2.Location = new System.Drawing.Point(10, 20);
+            this.txtUIX2.MaxLength = 32767;
+            this.txtUIX2.Name = "txtUIX2";
+            this.txtUIX2.Size = new System.Drawing.Size(77, 19);
+            this.txtUIX2.TabIndex = 21;
             // 
             // ltbProdutos
             // 
@@ -178,17 +189,6 @@
             this.dgvProdutos.Size = new System.Drawing.Size(400, 170);
             this.dgvProdutos.TabIndex = 2;
             // 
-            // grpCarrinho
-            // 
-            this.grpCarrinho.Controls.Add(this.txtUIX1);
-            this.grpCarrinho.Controls.Add(this.dgvClienteProduto);
-            this.grpCarrinho.Location = new System.Drawing.Point(10, 256);
-            this.grpCarrinho.Name = "grpCarrinho";
-            this.grpCarrinho.Size = new System.Drawing.Size(400, 193);
-            this.grpCarrinho.TabIndex = 22;
-            this.grpCarrinho.TabStop = false;
-            this.grpCarrinho.Text = "CARRINHO";
-            // 
             // uctPedidoAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,9 +198,9 @@
             this.Name = "uctPedidoAlterar";
             this.Size = new System.Drawing.Size(430, 610);
             this.grbPedidoAlterar.ResumeLayout(false);
+            this.grpCarrinho.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienteProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
-            this.grpCarrinho.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

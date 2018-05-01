@@ -34,19 +34,19 @@
             this.btnPedido = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.pnlPreco = new System.Windows.Forms.Panel();
-            this.txtCodPedido = new UIX.txtUIX();
+            this.txtUIX2 = new UIX.txtUIX();
             this.grbPedidoNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // grbPedidoNovo
             // 
+            this.grbPedidoNovo.Controls.Add(this.txtUIX2);
             this.grbPedidoNovo.Controls.Add(this.txtPesquisa);
             this.grbPedidoNovo.Controls.Add(this.ltbProdutos);
             this.grbPedidoNovo.Controls.Add(this.btnPedido);
             this.grbPedidoNovo.Controls.Add(this.dgvProdutos);
             this.grbPedidoNovo.Controls.Add(this.pnlPreco);
-            this.grbPedidoNovo.Controls.Add(this.txtCodPedido);
             this.grbPedidoNovo.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoNovo.Name = "grbPedidoNovo";
             this.grbPedidoNovo.Size = new System.Drawing.Size(417, 600);
@@ -98,15 +98,15 @@
             this.pnlPreco.Size = new System.Drawing.Size(140, 90);
             this.pnlPreco.TabIndex = 8;
             // 
-            // txtCodPedido
+            // txtUIX2
             // 
-            this.txtCodPedido.AccessibleName = "CÓDIGO DO PEDIDO";
-            this.txtCodPedido.Campo = "CÓDIGO DO PEDIDO";
-            this.txtCodPedido.Location = new System.Drawing.Point(10, 20);
-            this.txtCodPedido.MaxLength = 32767;
-            this.txtCodPedido.Name = "txtCodPedido";
-            this.txtCodPedido.Size = new System.Drawing.Size(164, 19);
-            this.txtCodPedido.TabIndex = 19;
+            this.txtUIX2.AccessibleName = "MESA";
+            this.txtUIX2.Campo = "MESA";
+            this.txtUIX2.Location = new System.Drawing.Point(10, 19);
+            this.txtUIX2.MaxLength = 32767;
+            this.txtUIX2.Name = "txtUIX2";
+            this.txtUIX2.Size = new System.Drawing.Size(77, 19);
+            this.txtUIX2.TabIndex = 22;
             // 
             // uctPedidoNovo
             // 
@@ -130,6 +130,6 @@
         private System.Windows.Forms.Button btnPedido;
         private System.Windows.Forms.Panel pnlPreco;
         private UIX.txtUIX txtPesquisa;
-        private UIX.txtUIX txtCodPedido;
+        private UIX.txtUIX txtUIX2;
     }
 }
