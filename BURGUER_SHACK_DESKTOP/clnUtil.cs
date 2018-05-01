@@ -38,6 +38,22 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static ViaCEP _viaCep = new ViaCEP();
 
+        public static void resetarCampos(ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is TextBox || control is MaskedTextBox || control is UIX.txtUIX || control is UIX.mtbUIX)
+                {
+                    control.ResetText();
+                }
+                else
+                if (control is DataGridView)
+                {
+                    ((DataGridView)control).Rows.Clear();
+                }
+            }
+        }
+
         public static void adicionarControles(Control onde, List<Control> controles, int espaco)
         {
             int X = espaco / 2;
@@ -199,13 +215,14 @@ namespace BURGUER_SHACK_DESKTOP
         {
             _pnlConteudo = pnlConteudo;
             _uixBar = uctUIX;
-                       
+
             if (pnlConteudo.Controls.Count == 1)
             {
-                if(!uctConteudo.GetType().Equals(pnlConteudo.Controls[0].GetType()))
+                if (!uctConteudo.GetType().Equals(pnlConteudo.Controls[0].GetType()))
                 {
                     pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
-                } else
+                }
+                else
                 {
                     return;
                 }
