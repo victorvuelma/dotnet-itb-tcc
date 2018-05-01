@@ -91,6 +91,7 @@
             this.btnCardapio.Size = new System.Drawing.Size(80, 80);
             this.btnCardapio.TabIndex = 2;
             this.btnCardapio.UseVisualStyleBackColor = true;
+            this.btnCardapio.Visible = false;
             // 
             // btnMesas
             // 

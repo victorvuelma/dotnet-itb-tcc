@@ -19,15 +19,6 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarTabIndex(Controls);
         }
 
-        private void frmPedido_Load(object sender, EventArgs e)
-        {
-            clnTemplate.CommonTemplate.frmApply(this, uctUIX);
-
-            UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
-
-            abrirProdutos();
-        }
-
         public void alterarConteudo(UserControl uctConteudo, String titulo)
         {
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
@@ -35,7 +26,24 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirProdutos()
         {
-            alterarConteudo(new uctPedidoProdutos(), "Pedido :: Produtos"); 
+            alterarConteudo(new uctPedidoProdutos(), "Pedido :: Produtos");
+        }
+
+        private void fechar()
+        {
+            if (clnMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnMensagem.MSG_ERRO))
+            {
+                Close();
+            }
+        }
+
+        private void frmPedido_Load(object sender, EventArgs e)
+        {
+            clnTemplate.CommonTemplate.frmApply(this, uctUIX);
+
+            UIX.uixButton.btnApply(btnSair, clnTemplate.CommonTemplate.Style.WarningButtonColor);
+
+            abrirProdutos();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -46,14 +54,6 @@ namespace BURGUER_SHACK_DESKTOP
         private void uctUIX_Close(object sender, EventArgs e)
         {
             fechar();
-        }
-
-        private void fechar()
-        {
-            if(clnMensagem.mostrarSimNao("Pedido","Deseja cancelar o pedido?", clnMensagem.MSG_ERRO))
-            {
-                Close();
-            }
         }
 
         private void btnProdutos_Click(object sender, EventArgs e)

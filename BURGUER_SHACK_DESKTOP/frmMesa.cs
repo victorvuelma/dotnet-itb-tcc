@@ -15,15 +15,15 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _mesa;
 
+        public int Mesa { get => _mesa; set => _mesa = value; }
+        
         public frmMesa()
         {
             InitializeComponent();
 
             clnUtil.atualizarTabIndex(Controls);
         }
-
-        public int Mesa { get => _mesa; set => _mesa = value; }
-
+        
         public void abrirPedidos()
         {
             alterarConteudo(new uctMesaPedidos(), "Mesa " + Mesa + " :: Pedidos");

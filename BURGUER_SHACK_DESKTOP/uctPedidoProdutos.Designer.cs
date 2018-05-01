@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.grbProdutos = new System.Windows.Forms.GroupBox();
-            this.btnPedido = new System.Windows.Forms.Button();
             this.dgvAdicionarProdutos = new System.Windows.Forms.DataGridView();
+            this.btnPedido = new System.Windows.Forms.Button();
             this.grbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdicionarProdutos)).BeginInit();
             this.SuspendLayout();
@@ -47,16 +47,6 @@
             this.grbProdutos.TabStop = false;
             this.grbProdutos.Text = "PRODUTOS";
             // 
-            // btnPedido
-            // 
-            this.btnPedido.Location = new System.Drawing.Point(345, 745);
-            this.btnPedido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(150, 50);
-            this.btnPedido.TabIndex = 9;
-            this.btnPedido.Text = "Confirmar Pedido";
-            this.btnPedido.UseVisualStyleBackColor = true;
-            // 
             // dgvAdicionarProdutos
             // 
             this.dgvAdicionarProdutos.BackgroundColor = System.Drawing.Color.White;
@@ -67,7 +57,17 @@
             this.dgvAdicionarProdutos.Size = new System.Drawing.Size(480, 700);
             this.dgvAdicionarProdutos.TabIndex = 2;
             // 
-            // uctPedidoNovo
+            // btnPedido
+            // 
+            this.btnPedido.Location = new System.Drawing.Point(345, 745);
+            this.btnPedido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(150, 50);
+            this.btnPedido.TabIndex = 9;
+            this.btnPedido.Text = "Confirmar Pedido";
+            this.btnPedido.UseVisualStyleBackColor = true;
+            // 
+            // uctPedidoProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,7 +75,7 @@
             this.Controls.Add(this.grbProdutos);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "uctPedidoNovo";
+            this.Name = "uctPedidoProdutos";
             this.Size = new System.Drawing.Size(500, 800);
             this.grbProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdicionarProdutos)).EndInit();

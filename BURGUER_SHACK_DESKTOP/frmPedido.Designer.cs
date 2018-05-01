@@ -74,6 +74,7 @@
             this.btnFinalizar.Size = new System.Drawing.Size(80, 80);
             this.btnFinalizar.TabIndex = 7;
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Visible = false;
             // 
             // btnSair
             // 

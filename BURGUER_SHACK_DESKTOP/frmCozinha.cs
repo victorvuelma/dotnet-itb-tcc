@@ -15,6 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
         public frmCozinha()
         {
             InitializeComponent();
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void frmCozinha_Load(object sender, EventArgs e)
@@ -22,8 +24,6 @@ namespace BURGUER_SHACK_DESKTOP
             UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER);
 
             clnTemplate.CommonTemplate.frmApply(this, uctUIX1);
-
-            clnUtil.atualizarTabIndex(Controls);
         }
     }
 }

@@ -39,12 +39,6 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnUtil.atualizarTabIndex(Controls);
         }
-        
-        private void uctPedidoMesa_Load(object sender, EventArgs e)
-        {
-            pnlLivre.BackColor = UIX.uixColor.WHITE;
-            pnlMesas.BackColor = grbMesas.BackColor;
-        }
 
         public void abrirMesa(int mesa)
         {
@@ -53,6 +47,12 @@ namespace BURGUER_SHACK_DESKTOP
             frmMesa.Mesa = mesa;
 
             frmMesa.ShowDialog();
+        }
+
+        private void uctPedidoMesa_Load(object sender, EventArgs e)
+        {
+            pnlLivre.BackColor = UIX.uixColor.WHITE;
+            pnlMesas.BackColor = grbMesas.BackColor;
         }
 
     }
