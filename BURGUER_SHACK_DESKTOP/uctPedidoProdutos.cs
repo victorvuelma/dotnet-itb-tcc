@@ -18,6 +18,8 @@ namespace BURGUER_SHACK_DESKTOP
         public uctPedidoProdutos()
         {
             InitializeComponent();
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         public int Mesa { get => _mesa; set => _mesa = value; }

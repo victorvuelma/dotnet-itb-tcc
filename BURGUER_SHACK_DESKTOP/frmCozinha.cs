@@ -22,6 +22,8 @@ namespace BURGUER_SHACK_DESKTOP
             UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER);
 
             clnTemplate.CommonTemplate.frmApply(this, uctUIX1);
+
+            clnUtil.atualizarTabIndex(Controls);
         }
     }
 }

@@ -23,6 +23,8 @@ namespace BURGUER_SHACK_DESKTOP
             CarregarListaDeImpressoras();
 
             this.mtbClienteCPF.Mask = clnUtil.MASK_CPF;
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void rboCartao_CheckedChanged(object sender, EventArgs e)

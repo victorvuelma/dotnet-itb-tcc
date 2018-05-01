@@ -22,6 +22,8 @@ namespace BURGUER_SHACK_DESKTOP
 
             _validar = new clnValidar();
             txtSenha.box.PasswordChar = '*';
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

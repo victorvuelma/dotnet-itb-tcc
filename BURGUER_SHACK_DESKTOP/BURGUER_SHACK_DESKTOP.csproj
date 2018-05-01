@@ -399,10 +399,19 @@
     <None Include="Resources\mesa.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pedido.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\mesauso.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pedido.png" />
+    <None Include="Resources\sobremesa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\batatas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bebida.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

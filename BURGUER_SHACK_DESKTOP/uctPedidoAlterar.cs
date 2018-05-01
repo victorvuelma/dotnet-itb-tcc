@@ -15,6 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
         public uctPedidoAlterar()
         {
             InitializeComponent();
+
+            clnUtil.atualizarTabIndex(Controls);
         }
     }
 }

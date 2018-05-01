@@ -15,6 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
         public frmPrincipal()
         {
             InitializeComponent();
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         public void abrirMesas()

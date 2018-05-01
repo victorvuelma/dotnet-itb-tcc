@@ -36,6 +36,8 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             clnUtil.adicionarControles(pnlMesas, mesas, 20);
+
+            clnUtil.atualizarTabIndex(Controls);
         }
         
         private void uctPedidoMesa_Load(object sender, EventArgs e)

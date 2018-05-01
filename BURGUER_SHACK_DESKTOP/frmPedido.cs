@@ -15,6 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
         public frmPedido()
         {
             InitializeComponent();
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void frmPedido_Load(object sender, EventArgs e)
@@ -61,7 +63,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctPedidoAdicionar(), "Add");
+            alterarConteudo(new uctPedidoAdicionar(), "Pedido :: Adicionar Produto");
         }
     }
 }

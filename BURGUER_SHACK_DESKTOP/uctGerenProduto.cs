@@ -16,6 +16,8 @@ namespace BURGUER_SHACK_DESKTOP
         public uctGerenProduto()
         {
             InitializeComponent();
+
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void txtDataCadastro_Load(object sender, EventArgs e)
