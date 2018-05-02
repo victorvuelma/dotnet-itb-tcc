@@ -17,7 +17,7 @@ namespace BURGUER_SHACK_DESKTOP
         public bool Uso { get => _uso; set => _uso = value; }
 
         
-        public List<clnMesa> getMesas()
+        public List<clnMesa> obterMesas()
         {
             List<clnMesa> mesas = new List<clnMesa>();
 

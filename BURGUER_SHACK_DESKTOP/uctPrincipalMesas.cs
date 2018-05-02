@@ -25,7 +25,7 @@ namespace BURGUER_SHACK_DESKTOP
             pnlMesas.Controls.Clear();
 
             List<Control> mesaControles = new List<Control>();
-            foreach (clnMesa mesa in new clnMesa().getMesas())
+            foreach (clnMesa mesa in new clnMesa().obterMesas())
             {
                 UIX.btnUIX btn = new UIX.btnUIX();
                 btn.Description = "MESA " + mesa.Cod;

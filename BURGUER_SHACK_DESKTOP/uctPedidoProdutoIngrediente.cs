@@ -15,9 +15,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private bool _add;
         private frmPedidoProduto _frm;
+
+        private clnPedidoProdutoIngrediente _pedidoIngrediente;
         
         public frmPedidoProduto Frm { get => _frm; set => _frm = value; }
         public bool Add { get => _add; set => _add = value; }
+        public clnPedidoProdutoIngrediente PedidoIngrediente { get => _pedidoIngrediente; set => _pedidoIngrediente = value; }
 
         public uctPedidoProdutoIngrediente()
         {
@@ -25,15 +28,16 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnUtil.atualizarTabIndex(Controls);
 
-            List<Control> ingredientes = new List<Control>();
-            for (int i = 1; i <= 10; i++)
-            {
-                int ingrediente = i;
+            clnIngrediente objIngredientes = new clnIngrediente();
+            //definir o tipo do ingrediente
 
+            List<Control> ingredienteControles = new List<Control>();
+            foreach (clnIngrediente ingrediente in objIngredientes.obterPorTipo())
+            {
                 UIX.btnUIX btn = new UIX.btnUIX();
-                btn.Description = "INGREDIENTE " + ingrediente;
-                btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
-                btn.Name = "btnIngrediente" + ingrediente;
+                btn.Description = "INGREDIENTE " + ingrediente.Nome;
+                btn.Image = ingrediente.Imagem;
+                btn.Name = "btnIngrediente" + ingrediente.Cod;
                 btn.Size = new Size(75, 75);
 
                 btn.Click += (object sender, EventArgs e) =>
@@ -41,21 +45,23 @@ namespace BURGUER_SHACK_DESKTOP
                     selecionaIngrediente(ingrediente);
                 };
 
-                ingredientes.Add(btn);
+                ingredienteControles.Add(btn);
             }
 
-            clnUtil.adicionarControles(pnlIngredientes, ingredientes, 10);
+            clnUtil.adicionarControles(pnlIngredientes, ingredienteControles, 10);
 
             clnUtil.atualizarTabIndex(pnlIngredientes.Controls);
         }
 
-        private void selecionaIngrediente(int ingrediente)
+        private void selecionaIngrediente(clnIngrediente ingrediente)
         {
             grbIngrediente.Visible = true;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+
+
             Frm.abrirVisualizar();
         }
 

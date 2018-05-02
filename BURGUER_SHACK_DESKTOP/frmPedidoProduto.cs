@@ -14,7 +14,6 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private clnPedidoProduto _objPedidoProduto;
-
         private bool _remover;
 
         private int _mesa;
@@ -86,9 +85,12 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctPedidoProdutoDetalhes alterar = new uctPedidoProdutoDetalhes();
 
+            alterar.ObjPedidoProduto = ObjPedidoProduto;
             alterar.Frm = this;
 
             alterarConteudo(alterar, "Produto :: Alterar");
+
+            ObjPedidoProduto = alterar.ObjPedidoProduto;
         }
 
         private void btnRemover_Click(object sender, EventArgs e)

@@ -15,9 +15,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private frmPedido _frm;
         private clnPedidoProduto _objPedidoProduto;
+        private List<clnPedidoProdutoIngrediente> _objIngredientes;
 
         public clnPedidoProduto ObjPedidoProduto { get => _objPedidoProduto; set => _objPedidoProduto = value; }
         public frmPedido Frm { get => _frm; set => _frm = value; }
+        public List<clnPedidoProdutoIngrediente> ObjIngredientes { get => _objIngredientes; set => _objIngredientes = value; }
 
         public uctPedidoAdicionar()
         {
@@ -53,13 +55,13 @@ namespace BURGUER_SHACK_DESKTOP
 
             List<Control> produtoControles = new List<Control>();
 
-            foreach (clnProduto produto in objProduto.getProdutos())
+            foreach (clnProduto produto in objProduto.localizarPorNomeCategoria())
             {
                 UIX.btnUIX btn = new UIX.btnUIX();
                 btn.Description = produto.Nome;
                 btn.Name = "btnProduto" + produto.Cod;
                 btn.Size = new Size(100, 100);
-                btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
+                btn.Image = produto.Imagem;
 
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -78,16 +80,26 @@ namespace BURGUER_SHACK_DESKTOP
             pnlProdutos.Visible = true;
         }
 
-        private void selecionaProduto(clnProduto produto)
+        private void selecionaProduto(clnProduto objProduto)
         {
             frmPedidoProduto frmEditarProduto = new frmPedidoProduto();
 
-            clnPedidoProduto pedidoProduto = new clnPedidoProduto();
-            pedidoProduto.Produto = produto.Cod;
-            pedidoProduto.Quantidade = 1;
-            pedidoProduto.Ingredientes = new List<int>(produto.Ingredientes);
+            clnPedidoProduto objPedidoProduto = new clnPedidoProduto();
+            objPedidoProduto.Produto = objProduto.Cod;
+            objPedidoProduto.Quantidade = 1;
 
-            frmEditarProduto.ObjPedidoProduto = pedidoProduto;
+            List<clnPedidoProdutoIngrediente> objPedidoIngredientes = new List<clnPedidoProdutoIngrediente>();
+            foreach (clnProdutoIngrediente objProdutoIngrediente in objProduto.Ingredientes)
+            {
+                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente();
+                objPedidoIngrediente.Ingrediente = objProdutoIngrediente.Ingrediente;
+                objPedidoIngrediente.Quantidade = objProdutoIngrediente.Quantidade;
+
+                objPedidoIngredientes.Add(objPedidoIngrediente);
+            }
+            objPedidoProduto.Ingredientes = objPedidoIngredientes;
+
+            frmEditarProduto.ObjPedidoProduto = objPedidoProduto;
             frmEditarProduto.btnRemover.Visible = false;
             frmEditarProduto.btnVoltar.Description = "Cancelar";
 
@@ -96,16 +108,16 @@ namespace BURGUER_SHACK_DESKTOP
             //O pedido não foi cancelado
             if (frmEditarProduto.ObjPedidoProduto != null)
             {
-                pedidoProduto = frmEditarProduto.ObjPedidoProduto;
+                objPedidoProduto = frmEditarProduto.ObjPedidoProduto;
 
                 clnUtil.resetarCampos(grbDetalhes.Controls);
-                txtQuantidade.Text = "1";
+                txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
                 grbDetalhes.Show();
 
                 clnUtil.resetarCampos(grbAdicional.Controls);
                 grbAdicional.Show();
 
-                ObjPedidoProduto = pedidoProduto;
+                ObjPedidoProduto = objPedidoProduto;
             }
         }
 
@@ -143,7 +155,7 @@ namespace BURGUER_SHACK_DESKTOP
                 ObjPedidoProduto.Adicional = txtAdicional.Text;
                 ObjPedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                Frm.addProduto(ObjPedidoProduto);
+                Frm.addProduto(ObjPedidoProduto, ObjIngredientes);
             }
             else
             {

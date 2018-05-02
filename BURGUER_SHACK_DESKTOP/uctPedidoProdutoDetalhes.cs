@@ -12,10 +12,10 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class uctPedidoProdutoDetalhes : UserControl
     {
-        
+
         private frmPedidoProduto _frm;
         private clnPedidoProduto _objPedidoProduto;
-        
+
         public frmPedidoProduto Frm { get => _frm; set => _frm = value; }
         public clnPedidoProduto ObjPedidoProduto { get => _objPedidoProduto; set => _objPedidoProduto = value; }
 
@@ -24,12 +24,13 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             clnUtil.atualizarTabIndex(Controls);
-
-            dgvIngredientes.Rows.Add("Ingrediente 1",1);
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            //valida quantidade
+            ObjPedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+
             Frm.abrirVisualizar();
         }
 
@@ -53,6 +54,27 @@ namespace BURGUER_SHACK_DESKTOP
             adicionarIngrediente.txtQuantidade.Text = "1";
 
             Frm.alterarConteudo(adicionarIngrediente, "Produto :: Adicionar Ingrediente");
+        }
+
+        private void exibirIngredientes()
+        {
+            dgvIngredientes.Rows.Clear();
+
+            foreach (clnPedidoProdutoIngrediente objPedidoIngrediente in ObjPedidoProduto.Ingredientes)
+            {
+                clnIngrediente objIngrediente = new clnIngrediente();
+                objIngrediente.Cod = objPedidoIngrediente.Ingrediente;
+                objIngrediente = objIngrediente.obterPorCodigo();
+
+                dgvIngredientes.Rows.Add(objIngrediente.Nome, objPedidoIngrediente.Quantidade);
+            }
+        }
+
+        private void uctPedidoProdutoDetalhes_Load(object sender, EventArgs e)
+        {
+            txtQuantidade.Text = Convert.ToString(ObjPedidoProduto.Quantidade);
+
+            exibirIngredientes();
         }
     }
 }

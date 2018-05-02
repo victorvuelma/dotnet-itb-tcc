@@ -119,7 +119,9 @@
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
     <Compile Include="clnPedidoProduto.cs" />
+    <Compile Include="clnPedidoProdutoIngrediente.cs" />
     <Compile Include="clnProduto.cs" />
+    <Compile Include="clnProdutoIngrediente.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnValidar.cs" />
     <Compile Include="frmCozinha.cs">
@@ -425,6 +427,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\modelo.png" />
     <None Include="Resources\mesauso.png" />
     <None Include="Resources\voltar.png" />
   </ItemGroup>

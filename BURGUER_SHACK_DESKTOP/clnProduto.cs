@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -16,15 +17,18 @@ namespace BURGUER_SHACK_DESKTOP
         private String _nome;
         private double _valor;
 
-        private List<int> _ingredientes = new List<int>();
+        private Image _imagem;
+
+        private List<clnProdutoIngrediente> _ingredientes;
 
         public int Cod { get => _cod; set => _cod = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public double Valor { get => _valor; set => _valor = value; }
-        public List<int> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public List<clnProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
         public int Categoria { get => _categoria; set => _categoria = value; }
+        public Image Imagem { get => _imagem; set => _imagem = value; }
 
-        public List<clnProduto> getProdutos()
+        public List<clnProduto> localizarPorNomeCategoria()
         {
             List<clnProduto> produtos = new List<clnProduto>();
 
@@ -37,7 +41,12 @@ namespace BURGUER_SHACK_DESKTOP
                     produto.Nome = "Produto " + i;
                     produto.Valor = i * 10.0d;
                     produto.Categoria = i % 3;
-                    produto.Ingredientes.Add(1);
+
+                    produto.Imagem = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
+
+                    clnProdutoIngrediente produtoIngredientes = new clnProdutoIngrediente();
+                    produtoIngredientes.Produto = produto.Cod;
+                    produto.Ingredientes = produtoIngredientes.obterPorProduto();
 
                     produtos.Add(produto);
                 }

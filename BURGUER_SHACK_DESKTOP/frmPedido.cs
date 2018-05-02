@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(uctProdutos, "Pedido :: Produtos");
         }
 
-        public void addProduto(clnPedidoProduto pedidoProduto)
+        public void addProduto(clnPedidoProduto pedidoProduto, List<clnPedidoProdutoIngrediente> pedidoIngredientes)
         {
             _objPedidosProdutos.Add(pedidoProduto);
 

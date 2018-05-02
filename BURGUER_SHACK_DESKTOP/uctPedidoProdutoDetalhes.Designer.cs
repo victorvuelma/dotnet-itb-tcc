@@ -119,6 +119,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctPedidoProdutoDetalhes";
             this.Size = new System.Drawing.Size(400, 400);
+            this.Load += new System.EventHandler(this.uctPedidoProdutoDetalhes_Load);
             this.grbDetalhes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).EndInit();
             this.ResumeLayout(false);
