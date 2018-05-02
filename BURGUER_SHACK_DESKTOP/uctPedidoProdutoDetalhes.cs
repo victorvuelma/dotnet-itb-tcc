@@ -39,6 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
             uctPedidoProdutoIngrediente alterarIngrediente = new uctPedidoProdutoIngrediente();
 
             alterarIngrediente.Frm = Frm;
+            alterarIngrediente.PedidoIngrediente = ObjPedidoProduto.Ingredientes[e.RowIndex];
 
             Frm.alterarConteudo(alterarIngrediente, "Produto :: Alterar Ingrediente");
         }
@@ -48,7 +49,6 @@ namespace BURGUER_SHACK_DESKTOP
             uctPedidoProdutoIngrediente adicionarIngrediente = new uctPedidoProdutoIngrediente();
 
             adicionarIngrediente.Frm = Frm;
-            adicionarIngrediente.btnAlterar.Visible = false;
             adicionarIngrediente.btnRemover.Visible = false;
             adicionarIngrediente.grbIngrediente.Visible = false;
             adicionarIngrediente.txtQuantidade.Text = "1";

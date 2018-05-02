@@ -44,6 +44,13 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(uctVer, "Produto :: Visualizar");
         }
 
+        public void removerIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
+        {
+            ObjPedidoProduto.Ingredientes.Remove(pedidoIngrediente);
+
+            clnMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnMensagem.MensagemIcone.ERRO);
+        }
+
         private void fechar()
         {
             if (clnMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no produto?", clnMensagem.MensagemIcone.INFO))

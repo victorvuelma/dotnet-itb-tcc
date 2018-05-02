@@ -54,7 +54,7 @@
             this.txtDetalhes.ReadOnly = true;
             this.txtDetalhes.Size = new System.Drawing.Size(380, 310);
             this.txtDetalhes.TabIndex = 0;
-            this.txtDetalhes.Text = "Aqui vai o conteudo maneiro";
+            this.txtDetalhes.Text = "Detalhes";
             // 
             // btnConfirmar
             // 

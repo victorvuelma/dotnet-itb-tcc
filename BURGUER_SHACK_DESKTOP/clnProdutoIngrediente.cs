@@ -33,7 +33,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             List<clnProdutoIngrediente> produtoIngredientes = new List<clnProdutoIngrediente>();
 
-            for (int i = 1; i <= 32; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 clnProdutoIngrediente produtoIngrediente = new clnProdutoIngrediente();
 

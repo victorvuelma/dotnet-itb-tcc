@@ -34,7 +34,6 @@
             this.lblIngredienteNome = new System.Windows.Forms.Label();
             this.picIngrediente = new System.Windows.Forms.PictureBox();
             this.btnRemover = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
             this.txtQuantidade = new UIX.txtUIX();
             this.grbIngredienteNovo = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -90,6 +89,7 @@
             this.picIngrediente.Location = new System.Drawing.Point(5, 20);
             this.picIngrediente.Name = "picIngrediente";
             this.picIngrediente.Size = new System.Drawing.Size(70, 70);
+            this.picIngrediente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIngrediente.TabIndex = 0;
             this.picIngrediente.TabStop = false;
             // 
@@ -101,15 +101,7 @@
             this.btnRemover.TabIndex = 7;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(320, 110);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 25);
-            this.btnAlterar.TabIndex = 8;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // txtQuantidade
             // 
@@ -120,7 +112,7 @@
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(309, 20);
+            this.txtQuantidade.Size = new System.Drawing.Size(390, 20);
             this.txtQuantidade.TabIndex = 9;
             // 
             // grbIngredienteNovo
@@ -173,7 +165,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbIngredienteNovo);
             this.Controls.Add(this.txtQuantidade);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.grbIngrediente);
@@ -181,6 +172,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctPedidoProdutoIngrediente";
             this.Size = new System.Drawing.Size(400, 400);
+            this.Load += new System.EventHandler(this.uctPedidoProdutoIngrediente_Load);
             this.grbIngrediente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).EndInit();
             this.grbIngredienteNovo.ResumeLayout(false);
@@ -196,7 +188,6 @@
         private System.Windows.Forms.GroupBox grbIngredienteNovo;
         public System.Windows.Forms.GroupBox grbIngrediente;
         public System.Windows.Forms.Button btnRemover;
-        public System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Panel pnlIngredientes;
         public System.Windows.Forms.Button btnPesquisar;
         public UIX.txtUIX txtQuantidade;
