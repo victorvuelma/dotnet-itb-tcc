@@ -54,6 +54,14 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        //https://stackoverflow.com/questions/17188966/how-to-replace-list-item-in-best-way
+        public static void trocarValor<T>(List<T> lista, T valorAntigo, T valorNovo)
+        {
+            int index = lista.IndexOf(valorAntigo);
+            if (index != -1)
+                lista[index] = valorNovo;
+        }
+
         public static void adicionarControles(Control onde, List<Control> controles, int espaco)
         {
             int X = espaco / 2;
