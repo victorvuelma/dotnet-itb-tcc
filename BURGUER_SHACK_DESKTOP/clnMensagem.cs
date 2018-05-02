@@ -18,7 +18,7 @@ namespace BURGUER_SHACK_DESKTOP
             ERRO,
             INFO
         }
-        
+
         public static int OP_OK = 0;
         public static int OP_S_N = 1;
 
@@ -46,7 +46,7 @@ namespace BURGUER_SHACK_DESKTOP
                 case 1:
                     msg.btnYes.Text = "Sim";
                     msg.btnNo.Text = "Não";
-                    uixButton.btnApply(msg.btnNo, clnApp.CommonTemplate.Style.WarningButtonColor, clnApp.CommonTemplate.Style.ContentFont);
+                    uixButton.btnApply(msg.btnYes, clnApp.CommonTemplate.Style.WarningButtonColor);
                     break;
             }
 
