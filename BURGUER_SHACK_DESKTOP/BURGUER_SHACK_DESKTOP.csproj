@@ -114,7 +114,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clnIngrediente.cs" />
     <Compile Include="clnMensagem.cs" />
+    <Compile Include="clnMesa.cs" />
+    <Compile Include="clnPedido.cs" />
+    <Compile Include="clnProduto.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnValidar.cs" />
     <Compile Include="frmCozinha.cs">
