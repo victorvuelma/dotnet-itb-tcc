@@ -30,11 +30,11 @@
         {
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.dgvIngredientes = new System.Windows.Forms.DataGridView();
+            this.columnIngrediente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.txtQuantidade = new UIX.txtUIX();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.columnIngrediente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredientes)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,16 @@
             this.dgvIngredientes.TabIndex = 2;
             this.dgvIngredientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientes_CellClick);
             // 
+            // columnIngrediente
+            // 
+            this.columnIngrediente.HeaderText = "INGREDIENTE";
+            this.columnIngrediente.Name = "columnIngrediente";
+            // 
+            // columnQuantidade
+            // 
+            this.columnQuantidade.HeaderText = "QUANTIDADE";
+            this.columnQuantidade.Name = "columnQuantidade";
+            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Location = new System.Drawing.Point(290, 360);
@@ -78,6 +88,7 @@
             // txtQuantidade
             // 
             this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.Location = new System.Drawing.Point(5, 5);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -95,16 +106,6 @@
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // columnIngrediente
-            // 
-            this.columnIngrediente.HeaderText = "INGREDIENTE";
-            this.columnIngrediente.Name = "columnIngrediente";
-            // 
-            // columnQuantidade
-            // 
-            this.columnQuantidade.HeaderText = "QUANTIDADE";
-            this.columnQuantidade.Name = "columnQuantidade";
             // 
             // uctPedidoProdutoDetalhes
             // 

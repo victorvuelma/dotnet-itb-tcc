@@ -32,6 +32,7 @@
             this.grbAdicional = new System.Windows.Forms.GroupBox();
             this.txtAdicional = new System.Windows.Forms.TextBox();
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
+            this.txtQuantidade = new UIX.txtUIX();
             this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.grbProduto = new System.Windows.Forms.GroupBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
@@ -43,7 +44,6 @@
             this.btnAcompanhamento = new UIX.btnUIX();
             this.btnLanche = new UIX.btnUIX();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.txtQuantidade = new UIX.txtUIX();
             this.grbAdicionarProduto.SuspendLayout();
             this.grbAdicional.SuspendLayout();
             this.grbDetalhes.SuspendLayout();
@@ -96,6 +96,18 @@
             this.grbDetalhes.TabStop = false;
             this.grbDetalhes.Text = "Detalhes";
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.Location = new System.Drawing.Point(5, 20);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(260, 25);
+            this.txtQuantidade.TabIndex = 3;
+            // 
             // txtDetalhes
             // 
             this.txtDetalhes.Location = new System.Drawing.Point(5, 50);
@@ -138,6 +150,7 @@
             // txtProdutoPesquisar
             // 
             this.txtProdutoPesquisar.AccessibleName = "Produto";
+            this.txtProdutoPesquisar.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtProdutoPesquisar.Campo = "Produto";
             this.txtProdutoPesquisar.Location = new System.Drawing.Point(10, 20);
             this.txtProdutoPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -221,17 +234,6 @@
             this.btnAdicionar.TabIndex = 9;
             this.btnAdicionar.Text = "Adicionar Produto";
             this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(5, 20);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(260, 25);
-            this.txtQuantidade.TabIndex = 3;
             // 
             // uctPedidoAdicionar
             // 

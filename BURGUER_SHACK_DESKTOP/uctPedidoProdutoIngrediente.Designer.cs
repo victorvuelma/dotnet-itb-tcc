@@ -30,16 +30,16 @@
         {
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
+            this.lblIngredienteDesc = new System.Windows.Forms.Label();
+            this.lblIngredienteNome = new System.Windows.Forms.Label();
+            this.picIngrediente = new System.Windows.Forms.PictureBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.picIngrediente = new System.Windows.Forms.PictureBox();
-            this.lblIngredienteNome = new System.Windows.Forms.Label();
-            this.lblIngredienteDesc = new System.Windows.Forms.Label();
             this.txtQuantidade = new UIX.txtUIX();
             this.grbIngredienteNovo = new System.Windows.Forms.GroupBox();
-            this.pnlIngredientes = new System.Windows.Forms.Panel();
-            this.txtPesquisa = new UIX.txtUIX();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisa = new UIX.txtUIX();
+            this.pnlIngredientes = new System.Windows.Forms.Panel();
             this.grbIngrediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).BeginInit();
             this.grbIngredienteNovo.SuspendLayout();
@@ -69,6 +69,30 @@
             this.grbIngrediente.TabStop = false;
             this.grbIngrediente.Text = "INGREDIENTE";
             // 
+            // lblIngredienteDesc
+            // 
+            this.lblIngredienteDesc.Location = new System.Drawing.Point(80, 40);
+            this.lblIngredienteDesc.Name = "lblIngredienteDesc";
+            this.lblIngredienteDesc.Size = new System.Drawing.Size(300, 50);
+            this.lblIngredienteDesc.TabIndex = 2;
+            this.lblIngredienteDesc.Text = "Descrição do ingrediente";
+            // 
+            // lblIngredienteNome
+            // 
+            this.lblIngredienteNome.Location = new System.Drawing.Point(80, 20);
+            this.lblIngredienteNome.Name = "lblIngredienteNome";
+            this.lblIngredienteNome.Size = new System.Drawing.Size(300, 20);
+            this.lblIngredienteNome.TabIndex = 1;
+            this.lblIngredienteNome.Text = "Nome do Ingrediente";
+            // 
+            // picIngrediente
+            // 
+            this.picIngrediente.Location = new System.Drawing.Point(5, 20);
+            this.picIngrediente.Name = "picIngrediente";
+            this.picIngrediente.Size = new System.Drawing.Size(70, 70);
+            this.picIngrediente.TabIndex = 0;
+            this.picIngrediente.TabStop = false;
+            // 
             // btnRemover
             // 
             this.btnRemover.Location = new System.Drawing.Point(203, 360);
@@ -87,33 +111,10 @@
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // picIngrediente
-            // 
-            this.picIngrediente.Location = new System.Drawing.Point(5, 20);
-            this.picIngrediente.Name = "picIngrediente";
-            this.picIngrediente.Size = new System.Drawing.Size(70, 70);
-            this.picIngrediente.TabIndex = 0;
-            this.picIngrediente.TabStop = false;
-            // 
-            // lblIngredienteNome
-            // 
-            this.lblIngredienteNome.Location = new System.Drawing.Point(80, 20);
-            this.lblIngredienteNome.Name = "lblIngredienteNome";
-            this.lblIngredienteNome.Size = new System.Drawing.Size(300, 20);
-            this.lblIngredienteNome.TabIndex = 1;
-            this.lblIngredienteNome.Text = "Nome do Ingrediente";
-            // 
-            // lblIngredienteDesc
-            // 
-            this.lblIngredienteDesc.Location = new System.Drawing.Point(80, 40);
-            this.lblIngredienteDesc.Name = "lblIngredienteDesc";
-            this.lblIngredienteDesc.Size = new System.Drawing.Size(300, 50);
-            this.lblIngredienteDesc.TabIndex = 2;
-            this.lblIngredienteDesc.Text = "Descrição do ingrediente";
-            // 
             // txtQuantidade
             // 
             this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.Location = new System.Drawing.Point(5, 110);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -136,26 +137,6 @@
             this.grbIngredienteNovo.TabStop = false;
             this.grbIngredienteNovo.Text = "SELECIONE O NOVO INGREDIENTE";
             // 
-            // pnlIngredientes
-            // 
-            this.pnlIngredientes.AutoScroll = true;
-            this.pnlIngredientes.Location = new System.Drawing.Point(6, 45);
-            this.pnlIngredientes.MaximumSize = new System.Drawing.Size(380, 10000);
-            this.pnlIngredientes.Name = "pnlIngredientes";
-            this.pnlIngredientes.Size = new System.Drawing.Size(380, 160);
-            this.pnlIngredientes.TabIndex = 0;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.AccessibleName = "Ingrediente";
-            this.txtPesquisa.Campo = "Ingrediente";
-            this.txtPesquisa.Location = new System.Drawing.Point(5, 20);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtPesquisa.MaxLength = 32767;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(268, 25);
-            this.txtPesquisa.TabIndex = 10;
-            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(280, 20);
@@ -164,6 +145,27 @@
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.AccessibleName = "Ingrediente";
+            this.txtPesquisa.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtPesquisa.Campo = "Ingrediente";
+            this.txtPesquisa.Location = new System.Drawing.Point(5, 20);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPesquisa.MaxLength = 32767;
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(268, 25);
+            this.txtPesquisa.TabIndex = 10;
+            // 
+            // pnlIngredientes
+            // 
+            this.pnlIngredientes.AutoScroll = true;
+            this.pnlIngredientes.Location = new System.Drawing.Point(6, 45);
+            this.pnlIngredientes.MaximumSize = new System.Drawing.Size(380, 10000);
+            this.pnlIngredientes.Name = "pnlIngredientes";
+            this.pnlIngredientes.Size = new System.Drawing.Size(380, 160);
+            this.pnlIngredientes.TabIndex = 0;
             // 
             // uctPedidoProdutoIngrediente
             // 
