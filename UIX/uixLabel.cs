@@ -20,7 +20,10 @@ namespace UIX
         public static void lblApply(Label lbl, uixSet colorSet)
         {
             lbl.BackColor = colorSet.LightColor;
-            lbl.ForeColor = colorSet.ContentColor;
+            if (lbl.ForeColor == Control.DefaultForeColor)
+            {
+                lbl.ForeColor = colorSet.ContentColor;
+            }
         }
     }
 }

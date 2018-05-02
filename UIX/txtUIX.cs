@@ -71,7 +71,7 @@ namespace UIX
         {
             if(allowedChars.Count() >= 1)
             {
-                if (!allowedChars.Contains(e.KeyChar))
+                if (!char.IsControl(e.KeyChar) && !allowedChars.Contains(e.KeyChar))
                 {
                     e.Handled = true;
                 }   

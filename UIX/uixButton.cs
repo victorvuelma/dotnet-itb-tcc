@@ -15,14 +15,17 @@ namespace UIX
         public static void btnApply(Button btn, uixSet colorSet)
         {
             btn.FlatStyle = FlatStyle.Flat;
-            btn.BackColor = colorSet.LightColor;
             btn.FlatAppearance.BorderColor = colorSet.DarkColor;
             btn.FlatAppearance.MouseDownBackColor = colorSet.DarkColor;
             btn.FlatAppearance.MouseOverBackColor = colorSet.DarkColor;
             btn.FlatAppearance.BorderSize = 0;
-            btn.ForeColor = colorSet.ContentColor;
+            if (btn.ForeColor == Control.DefaultForeColor)
+            {
+                btn.ForeColor = colorSet.ContentColor;
+            }
+            btn.BackColor = colorSet.LightColor;
             btn.Cursor = Cursors.Hand;
-            if(btn is btnUIX)
+            if (btn is btnUIX)
             {
                 ((btnUIX)btn).HoverColor = colorSet.DarkColor;
             }

@@ -95,6 +95,10 @@ namespace UIX
             foreach (Control ctl in grb.Controls)
             {
                 ctlApply(ctl);
+                if(ctl is Panel)
+                {
+                    ctl.BackColor = grb.BackColor;
+                }
             }
         }
 
