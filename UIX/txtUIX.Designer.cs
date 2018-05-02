@@ -42,12 +42,13 @@
             this.lbl.Text = "Campo:";
             this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // box
+            // txt
             // 
             this.txt.Location = new System.Drawing.Point(40, 0);
-            this.txt.Name = "box";
+            this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(100, 20);
             this.txt.TabIndex = 1;
+            this.txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txtUIX
             // 

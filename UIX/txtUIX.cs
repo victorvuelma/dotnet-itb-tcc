@@ -12,6 +12,10 @@ namespace UIX
 {
     public partial class txtUIX : UserControl
     {
+
+        private uixAllowedChars _allowedChars = uixAllowedChars.ALL;
+        private char[] allowedChars = new char[] { };
+
         public txtUIX()
         {
             InitializeComponent();
@@ -54,6 +58,24 @@ namespace UIX
 
         public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
         public TextBox Box { get => txt; }
+        public uixAllowedChars AllowedChars
+        {
+            get => _allowedChars; set
+            {
+                allowedChars = uixUtil.getChars(value);
+                _allowedChars = value;
+            }
+        }
 
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(allowedChars.Count() >= 1)
+            {
+                if (!allowedChars.Contains(e.KeyChar))
+                {
+                    e.Handled = true;
+                }   
+            }
+        }
     }
 }
