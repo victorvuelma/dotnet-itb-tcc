@@ -30,9 +30,9 @@
         {
             this.grbProdutos = new System.Windows.Forms.GroupBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.btnPedido = new System.Windows.Forms.Button();
             this.columnProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPedido = new System.Windows.Forms.Button();
             this.grbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,16 @@
             this.dgvProdutos.TabIndex = 2;
             this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
             // 
+            // columnProduto
+            // 
+            this.columnProduto.HeaderText = "PRODUTO";
+            this.columnProduto.Name = "columnProduto";
+            // 
+            // columnQuantidade
+            // 
+            this.columnQuantidade.HeaderText = "QUANTIDADE";
+            this.columnQuantidade.Name = "columnQuantidade";
+            // 
             // btnPedido
             // 
             this.btnPedido.Location = new System.Drawing.Point(345, 745);
@@ -74,16 +84,6 @@
             this.btnPedido.UseVisualStyleBackColor = true;
             this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
-            // columnProduto
-            // 
-            this.columnProduto.HeaderText = "PRODUTO";
-            this.columnProduto.Name = "columnProduto";
-            // 
-            // columnQuantidade
-            // 
-            this.columnQuantidade.HeaderText = "QUANTIDADE";
-            this.columnQuantidade.Name = "columnQuantidade";
-            // 
             // uctPedidoProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -94,6 +94,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctPedidoProdutos";
             this.Size = new System.Drawing.Size(500, 800);
+            this.Load += new System.EventHandler(this.uctPedidoProdutos_Load);
             this.grbProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.ResumeLayout(false);

@@ -35,7 +35,7 @@
             this.txtQuantidade = new UIX.txtUIX();
             this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.grbProduto = new System.Windows.Forms.GroupBox();
-            this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.pnlProdutos = new System.Windows.Forms.Panel();
             this.btnProdutoPesquisar = new System.Windows.Forms.Button();
             this.txtProdutoPesquisar = new UIX.txtUIX();
             this.grbTipo = new System.Windows.Forms.GroupBox();
@@ -48,7 +48,6 @@
             this.grbAdicional.SuspendLayout();
             this.grbDetalhes.SuspendLayout();
             this.grbProduto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbTipo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,7 +118,7 @@
             // 
             // grbProduto
             // 
-            this.grbProduto.Controls.Add(this.dgvProdutos);
+            this.grbProduto.Controls.Add(this.pnlProdutos);
             this.grbProduto.Controls.Add(this.btnProdutoPesquisar);
             this.grbProduto.Controls.Add(this.txtProdutoPesquisar);
             this.grbProduto.Location = new System.Drawing.Point(5, 160);
@@ -129,14 +128,13 @@
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "SELECIONE O PRODUTO";
             // 
-            // dgvProdutos
+            // pnlProdutos
             // 
-            this.dgvProdutos.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Location = new System.Drawing.Point(10, 50);
-            this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(460, 240);
-            this.dgvProdutos.TabIndex = 2;
+            this.pnlProdutos.Location = new System.Drawing.Point(10, 50);
+            this.pnlProdutos.MaximumSize = new System.Drawing.Size(460, 10000);
+            this.pnlProdutos.Name = "pnlProdutos";
+            this.pnlProdutos.Size = new System.Drawing.Size(460, 240);
+            this.pnlProdutos.TabIndex = 3;
             // 
             // btnProdutoPesquisar
             // 
@@ -234,6 +232,7 @@
             this.btnAdicionar.TabIndex = 9;
             this.btnAdicionar.Text = "Adicionar Produto";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // uctPedidoAdicionar
             // 
@@ -251,7 +250,6 @@
             this.grbDetalhes.ResumeLayout(false);
             this.grbDetalhes.PerformLayout();
             this.grbProduto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
             this.grbTipo.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -269,11 +267,11 @@
         private System.Windows.Forms.GroupBox grbProduto;
         private System.Windows.Forms.Button btnProdutoPesquisar;
         private UIX.txtUIX txtProdutoPesquisar;
-        private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.GroupBox grbDetalhes;
         private System.Windows.Forms.TextBox txtDetalhes;
         private System.Windows.Forms.GroupBox grbAdicional;
         private System.Windows.Forms.TextBox txtAdicional;
         private UIX.txtUIX txtQuantidade;
+        private System.Windows.Forms.Panel pnlProdutos;
     }
 }

@@ -13,9 +13,15 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedidoProduto : Form
     {
 
+        private clnPedidoProduto _objPedidoProduto;
+
+        private bool _remover;
+
         private int _mesa;
 
         public int Mesa { get => _mesa; set => _mesa = value; }
+        public clnPedidoProduto ObjPedidoProduto { get => _objPedidoProduto; set => _objPedidoProduto = value; }
+        public bool Remover { get => _remover; set => _remover = value; }
 
         public frmPedidoProduto()
         {
@@ -31,13 +37,23 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirVisualizar()
         {
-            alterarConteudo(new uctPedidoProdutoVer(), "Produto :: Visualizar");
+            uctPedidoProdutoVer uctVer = new uctPedidoProdutoVer();
+
+            uctVer.Frm = this;
+            uctVer.ObjPedidoProduto = ObjPedidoProduto;
+
+            alterarConteudo(uctVer, "Produto :: Visualizar");
         }
 
         private void fechar()
         {
-            if (clnMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no pedido?", clnMensagem.MensagemIcone.INFO))
+            if (clnMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no produto?", clnMensagem.MensagemIcone.INFO))
             {
+                //Novo Pedido - Cancelado
+                //Edicao - Sem alteracoes.
+                ObjPedidoProduto = null;
+                Remover = false;
+
                 Close();
             }
         }
@@ -70,15 +86,17 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctPedidoProdutoDetalhes alterar = new uctPedidoProdutoDetalhes();
 
-            alterar.Form = this;
+            alterar.Frm = this;
 
             alterarConteudo(alterar, "Produto :: Alterar");
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do pedido?", clnMensagem.MensagemIcone.ERRO))
+            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnMensagem.MensagemIcone.ERRO))
             {
+                ObjPedidoProduto = null;
+                Remover = true;
 
                 //faz e tal
                 Close();

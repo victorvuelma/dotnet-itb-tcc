@@ -13,6 +13,12 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctPedidoProdutoVer : UserControl
     {
 
+        private frmPedidoProduto _frm;
+        private clnPedidoProduto _objPedidoProduto;
+
+        public frmPedidoProduto Frm { get => _frm; set => _frm = value; }
+        public clnPedidoProduto ObjPedidoProduto { get => _objPedidoProduto; set => _objPedidoProduto = value; }
+
         public uctPedidoProdutoVer()
         {
             InitializeComponent();
@@ -29,5 +35,9 @@ namespace BURGUER_SHACK_DESKTOP
             frmPedidoProduto.ShowDialog();
         }
 
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            _frm.Close();
+        }
     }
 }

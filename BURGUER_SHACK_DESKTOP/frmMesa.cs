@@ -16,14 +16,14 @@ namespace BURGUER_SHACK_DESKTOP
         private int _mesa;
 
         public int Mesa { get => _mesa; set => _mesa = value; }
-        
+
         public frmMesa()
         {
             InitializeComponent();
 
             clnUtil.atualizarTabIndex(Controls);
         }
-        
+
         public void abrirPedidos()
         {
             alterarConteudo(new uctMesaPedidos(), "Mesa " + Mesa + " :: Pedidos");
@@ -42,7 +42,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             abrirPedidos();
         }
-        
+
         private void btnPedidos_Click(object sender, EventArgs e)
         {
             abrirPedidos();
@@ -50,9 +50,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConta_Click(object sender, EventArgs e)
         {
-            uctMesaConta conta = new uctMesaConta();
-            conta.Mesa = Mesa;
-            alterarConteudo(conta, "Mesa " + Mesa + " :: Conta");
+            uctMesaConta uctConta = new uctMesaConta();
+            uctConta.Mesa = Mesa;
+            alterarConteudo(uctConta, "Mesa " + Mesa + " :: Conta");
         }
 
         private void uctUIX_Close(object sender, EventArgs e)
@@ -67,11 +67,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
-            frmPedido pedido = new frmPedido();
+            frmPedido frmNovoPedido = new frmPedido();
 
-            pedido.abrirProdutos();
+            frmNovoPedido.ObjPedido = new clnPedido();
+            frmNovoPedido.ObjPedidosProdutos = new List<clnPedidoProduto>();
             
-            pedido.ShowDialog();
+            frmNovoPedido.ShowDialog();
         }
 
     }

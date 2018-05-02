@@ -15,24 +15,53 @@ namespace BURGUER_SHACK_DESKTOP
         private int _mesa;
 
         private frmPedido _frm;
-                
+
+        private List<clnPedidoProduto> _objPedidoProdutos;
+
         public frmPedido Frm { get => _frm; set => _frm = value; }
         public int Mesa { get => _mesa; set => _mesa = value; }
+        internal List<clnPedidoProduto> ObjPedidoProdutos { get => _objPedidoProdutos; set => _objPedidoProdutos = value; }
 
         public uctPedidoProdutos()
         {
             InitializeComponent();
 
             clnUtil.atualizarTabIndex(Controls);
-
-            dgvProdutos.Rows.Add("Produto 1", "1");
         }
 
-        private void editarPedidoProduto(int pedidoProduto)
+        private void editarPedidoProduto(clnPedidoProduto pedidoProduto)
         {
-            frmPedidoProduto frmPedidoProduto = new frmPedidoProduto();
+            frmPedidoProduto frmEditarProduto = new frmPedidoProduto();
 
-            frmPedidoProduto.ShowDialog();
+            frmEditarProduto.ObjPedidoProduto = pedidoProduto;
+
+            frmEditarProduto.ShowDialog();
+
+            if (frmEditarProduto.Remover)
+            {
+                ObjPedidoProdutos.Remove(pedidoProduto);
+                clnMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnMensagem.MensagemIcone.INFO);
+
+                exibeProdutos();
+            }
+            else if(frmEditarProduto.ObjPedidoProduto != null)
+            {
+                //Atualizar pedido produto na lista.
+                clnUtil.trocarValor(ObjPedidoProdutos, pedidoProduto, frmEditarProduto.ObjPedidoProduto);
+
+                exibeProdutos();
+            }
+        }
+
+        private void exibeProdutos()
+        {
+            dgvProdutos.Rows.Clear();
+
+            foreach (clnPedidoProduto pedidoProduto in ObjPedidoProdutos)
+            {
+                dgvProdutos.Rows.Add(pedidoProduto.Produto, pedidoProduto.Quantidade);
+            }
+
         }
 
         private void btnPedido_Click(object sender, EventArgs e)
@@ -47,7 +76,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            editarPedidoProduto(e.RowIndex);
+            editarPedidoProduto(ObjPedidoProdutos[e.RowIndex]);
+        }
+
+        private void uctPedidoProdutos_Load(object sender, EventArgs e)
+        {
+            exibeProdutos();
         }
     }
 }

@@ -13,9 +13,11 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctPedidoProdutoDetalhes : UserControl
     {
         
-        private frmPedidoProduto _form;
+        private frmPedidoProduto _frm;
+        private clnPedidoProduto _objPedidoProduto;
         
-        public frmPedidoProduto Form { get => _form; set => _form = value; }
+        public frmPedidoProduto Frm { get => _frm; set => _frm = value; }
+        public clnPedidoProduto ObjPedidoProduto { get => _objPedidoProduto; set => _objPedidoProduto = value; }
 
         public uctPedidoProdutoDetalhes()
         {
@@ -28,29 +30,29 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Form.abrirVisualizar();
+            Frm.abrirVisualizar();
         }
 
         private void dgvIngredientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             uctPedidoProdutoIngrediente alterarIngrediente = new uctPedidoProdutoIngrediente();
 
-            alterarIngrediente.Frm = Form;
+            alterarIngrediente.Frm = Frm;
 
-            Form.alterarConteudo(alterarIngrediente, "Produto :: Alterar Ingrediente");
+            Frm.alterarConteudo(alterarIngrediente, "Produto :: Alterar Ingrediente");
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             uctPedidoProdutoIngrediente adicionarIngrediente = new uctPedidoProdutoIngrediente();
 
-            adicionarIngrediente.Frm = Form;
+            adicionarIngrediente.Frm = Frm;
             adicionarIngrediente.btnAlterar.Visible = false;
             adicionarIngrediente.btnRemover.Visible = false;
             adicionarIngrediente.grbIngrediente.Visible = false;
             adicionarIngrediente.txtQuantidade.Text = "1";
 
-            Form.alterarConteudo(adicionarIngrediente, "Produto :: Adicionar Ingrediente");
+            Frm.alterarConteudo(adicionarIngrediente, "Produto :: Adicionar Ingrediente");
         }
     }
 }

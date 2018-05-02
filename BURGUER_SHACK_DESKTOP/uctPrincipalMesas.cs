@@ -16,43 +16,62 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
 
-            List<Control> mesas = new List<Control>();
-            for(int i = 1; i <= clnApp.RestMesas; i++)
-            {
-                int mesa = i;
+            mostrarMesas();
+        }
 
+        private void mostrarMesas()
+        {
+            pnlMesas.Visible = false;
+            pnlMesas.Controls.Clear();
+
+            List<Control> mesaControles = new List<Control>();
+            foreach (clnMesa mesa in new clnMesa().getMesas())
+            {
                 UIX.btnUIX btn = new UIX.btnUIX();
-                btn.Description = "MESA " + mesa;
-                btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-                btn.Name = "btnMesa" + mesa;
+                btn.Description = "MESA " + mesa.Cod;
+                btn.Name = "btnMesa" + mesa.Cod;
                 btn.Size = new Size(100, 100);
+                if (mesa.Uso)
+                {
+                    btn.ForeColor = pnlOcupada.BackColor;
+                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;
+                } else
+                {
+                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+                }
 
                 btn.Click += (object sender, EventArgs e) =>
                 {
                     abrirMesa(mesa);
                 };
-
-                mesas.Add(btn);
+                
+                mesaControles.Add(btn);
             }
+            
+            clnUtil.adicionarControles(pnlMesas, mesaControles, 20);
+            
+            clnApp.CommonTemplate.pnlApply(pnlMesas);
 
-            clnUtil.adicionarControles(pnlMesas, mesas, 20);
+            clnUtil.atualizarTabIndex(pnlMesas.Controls);
 
-            clnUtil.atualizarTabIndex(Controls);
+            pnlMesas.Visible = true;
         }
 
-        public void abrirMesa(int mesa)
+        public void abrirMesa(clnMesa mesa)
         {
             frmMesa frmMesa = new frmMesa();
 
-            frmMesa.Mesa = mesa;
+            frmMesa.Mesa = mesa.Cod;
 
             frmMesa.ShowDialog();
+
+            mostrarMesas();
         }
 
         private void uctPedidoMesa_Load(object sender, EventArgs e)
         {
             pnlLivre.BackColor = UIX.uixColor.WHITE;
-            pnlMesas.BackColor = grbMesas.BackColor;
+            pnlOcupada.BackColor = UIX.uixColor.INDIGO_DARK;
         }
 
     }

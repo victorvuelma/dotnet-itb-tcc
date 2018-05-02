@@ -118,6 +118,7 @@
     <Compile Include="clnMensagem.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
+    <Compile Include="clnPedidoProduto.cs" />
     <Compile Include="clnProduto.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnValidar.cs" />
@@ -414,9 +415,6 @@
     <None Include="Resources\pedido.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mesauso.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\sobremesa.png" />
   </ItemGroup>
   <ItemGroup>
@@ -427,6 +425,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\mesauso.png" />
     <None Include="Resources\voltar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

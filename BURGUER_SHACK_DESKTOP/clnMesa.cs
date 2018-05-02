@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnMesa
+    public class clnMesa
     {
 
         private int _cod;

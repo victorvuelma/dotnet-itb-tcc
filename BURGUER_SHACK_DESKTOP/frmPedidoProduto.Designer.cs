@@ -148,8 +148,8 @@
         private UIX.btnUIX btnAlterar;
         public UIX.uctUIX uctUIX;
         public System.Windows.Forms.Panel pnlConteudo;
-        private UIX.btnUIX btnVoltar;
-        private UIX.btnUIX btnRemover;
+        public UIX.btnUIX btnVoltar;
+        public UIX.btnUIX btnRemover;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

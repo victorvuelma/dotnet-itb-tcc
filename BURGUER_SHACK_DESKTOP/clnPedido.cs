@@ -11,5 +11,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _cod;
 
+        private int _mesa;
+        
+        public int Cod { get => _cod; set => _cod = value; }
+        public int Mesa { get => _mesa; set => _mesa = value; }
     }
 }

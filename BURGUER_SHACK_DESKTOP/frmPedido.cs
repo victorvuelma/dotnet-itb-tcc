@@ -13,9 +13,14 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedido : Form
     {
 
+        private clnPedido _objPedido;
+        private List<clnPedidoProduto> _objPedidosProdutos;
+
         private int _mesa;
 
         public int Mesa { get => _mesa; set => _mesa = value; }
+        internal clnPedido ObjPedido { get => _objPedido; set => _objPedido = value; }
+        internal List<clnPedidoProduto> ObjPedidosProdutos { get => _objPedidosProdutos; set => _objPedidosProdutos = value; }
 
         public frmPedido()
         {
@@ -31,11 +36,20 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirProdutos()
         {
-            uctPedidoProdutos produtos = new uctPedidoProdutos();
-            produtos.Frm = this;
-            produtos.Mesa =  Mesa;
+            uctPedidoProdutos uctProdutos = new uctPedidoProdutos();
 
-            alterarConteudo(produtos, "Pedido :: Produtos");
+            uctProdutos.Frm = this;
+            uctProdutos.Mesa = Mesa;
+            uctProdutos.ObjPedidoProdutos = ObjPedidosProdutos;
+
+            alterarConteudo(uctProdutos, "Pedido :: Produtos");
+        }
+
+        public void addProduto(clnPedidoProduto pedidoProduto)
+        {
+            _objPedidosProdutos.Add(pedidoProduto);
+
+            abrirProdutos();
         }
 
         private void fechar()
@@ -72,12 +86,20 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            alterarConteudo(new uctPedidoAdicionar(), "Pedido :: Adicionar Produto");
+            uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar();
+
+            uctAdicionar.Frm = this;
+
+            alterarConteudo(uctAdicionar, "Pedido :: Adicionar Produto");
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-
+            if (clnMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnMensagem.MensagemIcone.OK))
+            {
+                Close();
+            }
         }
+
     }
 }
