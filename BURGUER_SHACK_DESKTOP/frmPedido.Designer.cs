@@ -47,7 +47,7 @@
             this.pnlMenu.Controls.Add(this.btnProdutos);
             this.pnlMenu.Location = new System.Drawing.Point(0, 40);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 800);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 700);
             this.pnlMenu.TabIndex = 2;
             // 
             // btnAdicionar
@@ -69,7 +69,7 @@
             this.btnFinalizar.Description = "Finalizar";
             this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
             this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizar.Location = new System.Drawing.Point(10, 620);
+            this.btnFinalizar.Location = new System.Drawing.Point(10, 610);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(80, 80);
             this.btnFinalizar.TabIndex = 7;
@@ -105,7 +105,7 @@
             // 
             this.pnlConteudo.Location = new System.Drawing.Point(100, 40);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(500, 800);
+            this.pnlConteudo.Size = new System.Drawing.Size(500, 700);
             this.pnlConteudo.TabIndex = 3;
             // 
             // uctUIX
@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 840);
+            this.ClientSize = new System.Drawing.Size(600, 740);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.uctUIX);
