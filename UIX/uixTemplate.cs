@@ -150,6 +150,7 @@ namespace UIX
                 }
             }
 
+            uixForm.applyMargin(frm, Style);
         }
 
         public uixStyle Style { get => _style; }

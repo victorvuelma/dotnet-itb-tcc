@@ -25,6 +25,7 @@ namespace UIX
             }
             btn.BackColor = colorSet.LightColor;
             btn.Cursor = Cursors.Hand;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
             if (btn is btnUIX)
             {
                 ((btnUIX)btn).HoverColor = colorSet.DarkColor;

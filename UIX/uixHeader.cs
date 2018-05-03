@@ -17,8 +17,6 @@ namespace UIX
             int maxX = frm.Size.Width;
             int maxY = frm.Size.Height;
 
-            frm.BackColor = style.FormColor.LightColor;
-
             //Apply header bar Style
             ctl.Size = new Size(maxX, style.HeaderButtonSize + (style.HeaderButtonSpace * 2));
             ctl.Location = new Point(0, 0);
