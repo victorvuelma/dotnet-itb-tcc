@@ -29,7 +29,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(cboTipo.Text) || String.IsNullOrWhiteSpace(txtNome.Text) ||
+            if (String.IsNullOrWhiteSpace(txtNome.Text) ||
                 String.IsNullOrWhiteSpace(txtDescricao.Text) || String.IsNullOrWhiteSpace(txtDataCadastro.Text) ||
                 String.IsNullOrWhiteSpace(txtPeso.Text) || String.IsNullOrWhiteSpace(txtICMS.Text) ||
                 String.IsNullOrWhiteSpace(txtPrecoCusto.Text) || String.IsNullOrWhiteSpace(txtPrecoVenda.Text) ||
@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-
+                MessageBox.Show("Salvo!");
             }
         }
 

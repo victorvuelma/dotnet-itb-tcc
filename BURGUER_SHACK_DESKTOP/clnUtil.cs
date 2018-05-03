@@ -128,8 +128,9 @@ namespace BURGUER_SHACK_DESKTOP
             positionControl.Clear();
         }
 
-        public static void definirCEP(UIX.mtbUIX mtbCEP, Control rua, Control bairro, Control cidade, Control estado, Control nr)
+        public static void definirCEP(UIX.mtbUIX mtbCEP, Control rua, Control bairro, Control cidade, ComboBox estado, Control nr)
         {
+            addUFs(estado);
             mtbCEP.Validated += (object sender, EventArgs e) =>
             {
                 if (clnUtil.validarCEP(mtbCEP.Text))
@@ -139,7 +140,12 @@ namespace BURGUER_SHACK_DESKTOP
             };
         }
 
-        public static void definirEndereco(String cep, Control rua, Control bairro, Control cidade, Control estado, Control nr)
+        public static void addUFs(ComboBox cbo)
+        {
+            cbo.Items.AddRange(new String[] { "AC", "AL", "AM", "AP", "BA", "CE", "ES", "GO", "MA", "MG", "MT", "MS", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
+        }
+
+        public static void definirEndereco(String cep, Control rua, Control bairro, Control cidade, ComboBox estado, Control nr)
         {
             if (validarCEP(cep))
             {

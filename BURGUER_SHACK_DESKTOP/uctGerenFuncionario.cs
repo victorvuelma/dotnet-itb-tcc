@@ -27,7 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
             this.mtbContatoTelCel2.Mask = clnUtil.MASK_CEL;
             this.mtbContatoTelRes.Mask = clnUtil.MASK_TEL;
 
-            clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF, txtEndNr);
+            clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr);
         }
         
     }
