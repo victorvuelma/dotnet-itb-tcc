@@ -19,7 +19,7 @@ namespace BURGUER_SHACK_DESKTOP
         private int _tipo;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public string Nome { get => _nome; set => _nome = value; }
+        public String Nome { get => _nome; set => _nome = value; }
         public double Valor { get => _valor; set => _valor = value; }
         public Image Imagem { get => _imagem; set => _imagem = value; }
         public int Tipo { get => _tipo; set => _tipo = value; }

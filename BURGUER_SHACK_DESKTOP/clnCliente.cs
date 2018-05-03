@@ -19,10 +19,10 @@ namespace BURGUER_SHACK_DESKTOP
         private String _contatoEmail;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public string Nome { get => _nome; set => _nome = value; }
-        public string DocCPF { get => _docCPF; set => _docCPF = value; }
-        public string ContatoTelCel { get => _contatoTelCel; set => _contatoTelCel = value; }
-        public string ContatoTelRes { get => _contatoTelRes; set => _contatoTelRes = value; }
-        public string ContatoEmail { get => _contatoEmail; set => _contatoEmail = value; }
+        public String Nome { get => _nome; set => _nome = value; }
+        public String DocCPF { get => _docCPF; set => _docCPF = value; }
+        public String ContatoTelCel { get => _contatoTelCel; set => _contatoTelCel = value; }
+        public String ContatoTelRes { get => _contatoTelRes; set => _contatoTelRes = value; }
+        public String ContatoEmail { get => _contatoEmail; set => _contatoEmail = value; }
     }
 }

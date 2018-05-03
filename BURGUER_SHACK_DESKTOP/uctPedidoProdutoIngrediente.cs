@@ -15,6 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private frmPedidoProduto _form;
 
+        private clnValidar _validar;
+
         private bool _add;
         private clnPedidoProdutoIngrediente _pedidoIngrediente;
         private clnPedidoProdutoIngrediente _pedidoIngredienteSubstituir;
@@ -28,7 +30,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
 
-            clnUtil.atualizarTabIndex(Controls);
+            _validar = new clnValidar();
+            _validar.addValidacao(txtQuantidade, new clnValidar.ValidarTipo[] { clnValidar.ValidarTipo.VAZIO, clnValidar.ValidarTipo.INT });
         }
 
         private void selecionaIngrediente(clnIngrediente ingrediente)
@@ -40,6 +43,14 @@ namespace BURGUER_SHACK_DESKTOP
             PedidoIngrediente = new clnPedidoProdutoIngrediente();
             PedidoIngrediente.Quantidade = 1;
             PedidoIngrediente.Ingrediente = ingrediente.Cod;
+            if (PedidoIngredienteSubstituir != null && PedidoIngredienteSubstituir.Substituindo)
+            {
+                PedidoIngrediente.Substituindo = true;
+            }
+            else
+            {
+                PedidoIngrediente.Substituindo = false;
+            }
         }
 
         private void exibirIngrediente(clnIngrediente ingrediente)
@@ -55,16 +66,18 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (PedidoIngrediente != null)
             {
-                //valida quantidade
-                PedidoIngrediente.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+                if (_validar.valido())
+                {
+                    PedidoIngrediente.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                if (PedidoIngredienteSubstituir != null)
-                {
-                    Form.substiuiIngrediente(PedidoIngredienteSubstituir, PedidoIngrediente);
-                }
-                else
-                {
-                    Form.adicionaIngrediente(PedidoIngrediente);
+                    if (PedidoIngredienteSubstituir != null)
+                    {
+                        Form.substiuiIngrediente(PedidoIngredienteSubstituir, PedidoIngrediente);
+                    }
+                    else
+                    {
+                        Form.adicionaIngrediente(PedidoIngrediente);
+                    }
                 }
             }
             else
@@ -131,7 +144,10 @@ namespace BURGUER_SHACK_DESKTOP
             if (PedidoIngredienteSubstituir != null)
             {
                 txtQuantidade.Text = Convert.ToString(PedidoIngredienteSubstituir.Quantidade);
-                txtQuantidade.Enabled = false;
+                if (PedidoIngredienteSubstituir.Substituindo)
+                {
+                    txtQuantidade.Enabled = false;
+                }
 
                 clnIngrediente objIngrediente = new clnIngrediente();
                 objIngrediente.Cod = PedidoIngredienteSubstituir.Ingrediente;
@@ -142,6 +158,8 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 txtQuantidade.Text = "1";
             }
+
+            UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.WarningButtonColor);
         }
     }
 }

@@ -15,6 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private frmPedido _form;
 
+        private clnValidar _validar;
+
         private clnPedidoProduto _pedidoProduto;
         private List<clnPedidoProdutoIngrediente> _ingredientes;
 
@@ -25,6 +27,9 @@ namespace BURGUER_SHACK_DESKTOP
         public uctPedidoAdicionar()
         {
             InitializeComponent();
+
+            _validar = new clnValidar();
+            _validar.addValidacao(txtQuantidade, new clnValidar.ValidarTipo[] { clnValidar.ValidarTipo.VAZIO, clnValidar.ValidarTipo.INT });
 
             grbProduto.Hide();
 
@@ -89,6 +94,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente();
                 objPedidoIngrediente.Ingrediente = objProdutoIngrediente.Ingrediente;
                 objPedidoIngrediente.Quantidade = objProdutoIngrediente.Quantidade;
+                objPedidoIngrediente.Substituindo = true;
 
                 objPedidoIngredientes.Add(objPedidoIngrediente);
             }
@@ -120,11 +126,13 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (PedidoProduto != null)
             {
-                //VALIDA QUANTIDADE
-                PedidoProduto.Adicional = txtAdicional.Text;
-                PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+                if (_validar.valido())
+                {
+                    PedidoProduto.Adicional = txtAdicional.Text;
+                    PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                Form.addProduto(PedidoProduto, Ingredientes);
+                    Form.addProduto(PedidoProduto, Ingredientes);
+                }
             }
             else
             {

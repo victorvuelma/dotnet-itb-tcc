@@ -17,11 +17,12 @@ namespace BURGUER_SHACK_DESKTOP
             EMAIL,
             CPF,
             CNPJ,
-            CEP
+            CEP,
+            INT
         }
 
         private List<ValidarData> _controlValidar = new List<ValidarData>();
-        private string _motivo = "";
+        private String _motivo = "";
 
         public void addValidacao(Control control, ValidarTipo tipo)
         {
@@ -57,7 +58,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 bool controlValido = controlValidar.validar();
 
-                string controlMotivo = controlValidar.Motivo;
+                String controlMotivo = controlValidar.Motivo;
                 if (controlMotivo.Length > 0)
                 {
                     _motivo += controlValidar.Control.AccessibleName + " " + controlMotivo;
@@ -79,7 +80,7 @@ namespace BURGUER_SHACK_DESKTOP
             return formValido;
         }
 
-        public string Motivo { get => _motivo; }
+        public String Motivo { get => _motivo; }
 
         class ValidarData
         {
@@ -87,7 +88,7 @@ namespace BURGUER_SHACK_DESKTOP
             private Control _control;
             private List<ValidarTipo> _validacoes;
 
-            private string _motivo;
+            private String _motivo;
 
             public ValidarData(Control control)
             {
@@ -120,7 +121,7 @@ namespace BURGUER_SHACK_DESKTOP
                 foreach (ValidarTipo tipo in _validacoes)
                 {
                     bool val = true;
-                    string res = "";
+                    String res = "";
                     switch (tipo)
                     {
                         case ValidarTipo.VAZIO:
@@ -142,6 +143,10 @@ namespace BURGUER_SHACK_DESKTOP
                         case ValidarTipo.CEP:
                             val = clnUtil.validarCEP(conteudo);
                             res = "deve conter CEP válido.";
+                            break;
+                        case ValidarTipo.INT:
+                            val = clnUtil.validarInt(conteudo);
+                            res = "deve conter um número inteiro.";
                             break;
                     }
                     if (!val)
@@ -173,7 +178,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             public Control Control { get => _control; }
-            public string Motivo { get => _motivo; }
+            public String Motivo { get => _motivo; }
         }
 
     }

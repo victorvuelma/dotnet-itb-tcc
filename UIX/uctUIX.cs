@@ -21,7 +21,7 @@ namespace UIX
 
         public Image UIXImage { get => picFormIcon.Image; set => picFormIcon.Image = value; }
 
-        public string UIXTitle { get => lblTitulo.Text; set => lblTitulo.Text = value; }
+        public String UIXTitle { get => lblTitulo.Text; set => lblTitulo.Text = value; }
 
         private void btnMin_Click(object sender, EventArgs e)
         {

@@ -13,7 +13,7 @@ namespace BURGUER_SHACK_DESKTOP
         private String _nome;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public string Nome { get => _nome; set => _nome = value; }
+        public String Nome { get => _nome; set => _nome = value; }
 
         public clnIngredienteTipo obterPorCodigo()
         {

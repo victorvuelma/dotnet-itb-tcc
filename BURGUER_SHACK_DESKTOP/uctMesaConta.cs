@@ -37,8 +37,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void txtValorDinheiro_Leave(object sender, EventArgs e)
         {
-            string valorTroco1 = txtValor.Text;
-            string valorTroco2 = txtValorDinheiro.Text;
+            String valorTroco1 = txtValor.Text;
+            String valorTroco2 = txtValorDinheiro.Text;
             try
             {
                 double Troco1 = Convert.ToDouble(valorTroco1);
@@ -70,13 +70,13 @@ namespace BURGUER_SHACK_DESKTOP
 
         private class Item
         {
-            public string Name;
+            public String Name;
             public int Value;
-            public Item(string name, int value)
+            public Item(String name, int value)
             {
                 Name = name; Value = value;
             }
-            public override string ToString()
+            public override String ToString()
             {
                 return Name;
             }

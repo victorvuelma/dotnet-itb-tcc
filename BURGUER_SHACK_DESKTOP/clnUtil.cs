@@ -185,6 +185,12 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        public static bool validarInt(String inteiro)
+        {
+            int r;
+            return Int32.TryParse(inteiro, out r);
+        }
+
         public static String formatarCPF(String cpf)
         {
             return _cpfFormatter.Format(cpf);

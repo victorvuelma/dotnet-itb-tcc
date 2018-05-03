@@ -20,9 +20,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void txtDataCadastro_Load(object sender, EventArgs e)
         {
-            string dia = DateTime.Now.Day.ToString();
-            string mes = DateTime.Now.Month.ToString();
-            string ano = DateTime.Now.Year.ToString();
+            String dia = DateTime.Now.Day.ToString();
+            String mes = DateTime.Now.Month.ToString();
+            String ano = DateTime.Now.Year.ToString();
 
             txtDataCadastro.Text = dia + "/" + mes + "/" + ano;
         }

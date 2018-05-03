@@ -22,7 +22,7 @@ namespace BURGUER_SHACK_DESKTOP
         private List<clnProdutoIngrediente> _ingredientes;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public string Nome { get => _nome; set => _nome = value; }
+        public String Nome { get => _nome; set => _nome = value; }
         public double Valor { get => _valor; set => _valor = value; }
         public List<clnProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
         public int Categoria { get => _categoria; set => _categoria = value; }

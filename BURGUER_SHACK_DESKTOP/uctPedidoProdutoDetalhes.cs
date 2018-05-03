@@ -15,6 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private frmPedidoProduto _form;
 
+        private clnValidar _validar;
+
         private clnPedidoProduto _pedidoProduto;
 
         public frmPedidoProduto Form { get => _form; set => _form = value; }
@@ -23,6 +25,9 @@ namespace BURGUER_SHACK_DESKTOP
         public uctPedidoProdutoDetalhes()
         {
             InitializeComponent();
+
+            _validar = new clnValidar();
+            _validar.addValidacao(txtQuantidade, new clnValidar.ValidarTipo[] { clnValidar.ValidarTipo.VAZIO, clnValidar.ValidarTipo.INT });
         }
 
         private void exibirIngredientes()
@@ -62,10 +67,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            //valida quantidade
-            PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+            if (_validar.valido())
+            {
+                PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-            Form.abrirVisualizar();
+                Form.abrirVisualizar();
+            }
         }
 
         private void dgvIngredientes_CellClick(object sender, DataGridViewCellEventArgs e)

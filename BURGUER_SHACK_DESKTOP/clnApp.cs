@@ -19,7 +19,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static int restMesas = 30;
 
-        public static string AppName { get => appName; }
+        public static String AppName { get => appName; }
 
         public static UIX.uixTemplate AppVisualTemplate { get => appVisualTemplate; }
 

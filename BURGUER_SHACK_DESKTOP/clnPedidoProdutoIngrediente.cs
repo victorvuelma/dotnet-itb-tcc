@@ -14,9 +14,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _quantidade;
 
+        private bool _substituindo;
+
         public int Ingrediente { get => _ingrediente; set => _ingrediente = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
         public int PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
+        public bool Substituindo { get => _substituindo; set => _substituindo = value; }
 
         public clnPedidoProdutoIngrediente localizaPorPedidoProduto()
         {

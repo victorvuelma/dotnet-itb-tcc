@@ -24,7 +24,7 @@ namespace BURGUER_SHACK_DESKTOP
         public int Pedido { get => _pedido; set => _pedido = value; }
         public List<clnPedidoProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
-        public string Adicional { get => _adicional; set => _adicional = value; }
+        public String Adicional { get => _adicional; set => _adicional = value; }
         public int Cod { get => _cod; set => _cod = value; }
 
         public List<clnPedidoProduto> obterPorPedido()

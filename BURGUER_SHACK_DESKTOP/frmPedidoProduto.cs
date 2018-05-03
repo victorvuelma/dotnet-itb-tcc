@@ -42,11 +42,21 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal void removerIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
         {
-            PedidoProduto.Ingredientes.Remove(pedidoIngrediente);
+            if (PedidoProduto.Ingredientes.Count > 1)
+            {
+                PedidoProduto.Ingredientes.Remove(pedidoIngrediente);
 
-            abrirDetalhes();
+                abrirDetalhes();
 
-            clnMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnMensagem.MensagemIcone.ERRO);
+                clnMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnMensagem.MensagemIcone.ERRO);
+            } else
+            {
+                PedidoProduto.Ingredientes.Remove(pedidoIngrediente);
+
+                abrirDetalhes();
+
+                clnMensagem.mostrarOk("Produto", "Você não pode remover o unico ingrediente do produto.", clnMensagem.MensagemIcone.ERRO);
+            }
         }
 
         internal void adicionaIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
