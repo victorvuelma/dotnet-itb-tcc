@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Drawing;
+using UIX;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -12,15 +13,17 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private static String appName = "Burguer Shack";
-                
-        private static UIX.uixTemplate commonTemplate = new UIX.uixTemplate(UIX.uixStyle.BLUE);
+
+        private static UIX.uixStyle appVisualStyle = UIX.uixStyle.BLUE;
+        private static UIX.uixTemplate appVisualTemplate = new UIX.uixTemplate(AppVisualStyle);
 
         private static int restMesas = 30;
 
         public static string AppName { get => appName; }
 
-        public static UIX.uixTemplate CommonTemplate { get => commonTemplate; }
+        public static UIX.uixTemplate AppVisualTemplate { get => appVisualTemplate; }
 
         public static int RestMesas { get => restMesas; set => restMesas = value; }
+        public static uixStyle AppVisualStyle { get => appVisualStyle; set => appVisualStyle = value; }
     }
 }

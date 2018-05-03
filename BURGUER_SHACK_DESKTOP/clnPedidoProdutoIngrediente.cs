@@ -13,20 +13,19 @@ namespace BURGUER_SHACK_DESKTOP
         private int _ingrediente;
 
         private int _quantidade;
-        
+
         public int Ingrediente { get => _ingrediente; set => _ingrediente = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
         public int PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
 
         public clnPedidoProdutoIngrediente localizaPorPedidoProduto()
         {
-            clnPedidoProdutoIngrediente pedidoIngrediente = new clnPedidoProdutoIngrediente();
+            clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente();
+            objPedidoIngrediente.PedidoProduto = PedidoProduto;
+            objPedidoIngrediente.Ingrediente = 1;
+            objPedidoIngrediente.Quantidade = 1;
 
-            pedidoIngrediente.PedidoProduto = PedidoProduto;
-            pedidoIngrediente.Ingrediente = 1;
-            pedidoIngrediente.Quantidade = 1;
-
-            return pedidoIngrediente;
+            return objPedidoIngrediente;
         }
 
     }

@@ -13,9 +13,9 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctMesaConta : UserControl
     {
 
-        private int _mesa;
+        private int _atendimento;
 
-        public int Mesa { get => _mesa; set => _mesa = value; }
+        public int Atendimento { get => _atendimento; set => _atendimento = value; }
 
         public uctMesaConta()
         {
@@ -23,8 +23,6 @@ namespace BURGUER_SHACK_DESKTOP
             CarregarListaDeImpressoras();
 
             this.mtbClienteCPF.Mask = clnUtil.MASK_CPF;
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void rboCartao_CheckedChanged(object sender, EventArgs e)

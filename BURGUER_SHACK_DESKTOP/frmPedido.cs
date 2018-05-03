@@ -13,14 +13,14 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedido : Form
     {
 
-        private clnPedido _objPedido;
-        private List<clnPedidoProduto> _objPedidosProdutos;
+        private clnPedido _pedido;
+        private List<clnPedidoProduto> _pedidosProdutos;
 
         private int _mesa;
 
         public int Mesa { get => _mesa; set => _mesa = value; }
-        internal clnPedido ObjPedido { get => _objPedido; set => _objPedido = value; }
-        internal List<clnPedidoProduto> ObjPedidosProdutos { get => _objPedidosProdutos; set => _objPedidosProdutos = value; }
+        internal clnPedido Pedido { get => _pedido; set => _pedido = value; }
+        internal List<clnPedidoProduto> PedidosProdutos { get => _pedidosProdutos; set => _pedidosProdutos = value; }
 
         public frmPedido()
         {
@@ -37,17 +37,16 @@ namespace BURGUER_SHACK_DESKTOP
         public void abrirProdutos()
         {
             uctPedidoProdutos uctProdutos = new uctPedidoProdutos();
-
-            uctProdutos.Frm = this;
-            uctProdutos.Mesa = Mesa;
-            uctProdutos.ObjPedidoProdutos = ObjPedidosProdutos;
+            uctProdutos.Form = this;
+            uctProdutos.Atendimento = Mesa;
+            uctProdutos.PedidoProdutos = PedidosProdutos;
 
             alterarConteudo(uctProdutos, "Pedido :: Produtos");
         }
 
         public void addProduto(clnPedidoProduto pedidoProduto, List<clnPedidoProdutoIngrediente> pedidoIngredientes)
         {
-            _objPedidosProdutos.Add(pedidoProduto);
+            PedidosProdutos.Add(pedidoProduto);
 
             abrirProdutos();
         }
@@ -60,11 +59,27 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void finalizar()
+        {
+            if (clnMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnMensagem.MensagemIcone.OK))
+            {
+                Close();
+            }
+        }
+
+        private void abrirAdicionarProduto()
+        {
+            uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar();
+            uctAdicionar.Form = this;
+
+            alterarConteudo(uctAdicionar, "Pedido :: Adicionar Produto");
+        }
+
         private void frmPedido_Load(object sender, EventArgs e)
         {
-            clnApp.CommonTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
 
-            UIX.uixButton.btnApply(btnSair, clnApp.CommonTemplate.Style.WarningButtonColor);
+            UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.WarningButtonColor);
 
             abrirProdutos();
         }
@@ -86,19 +101,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar();
-
-            uctAdicionar.Frm = this;
-
-            alterarConteudo(uctAdicionar, "Pedido :: Adicionar Produto");
+            abrirAdicionarProduto();
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnMensagem.MensagemIcone.OK))
-            {
-                Close();
-            }
+            finalizar();
         }
 
     }

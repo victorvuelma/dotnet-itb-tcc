@@ -16,20 +16,28 @@ namespace BURGUER_SHACK_DESKTOP
         public int Cod { get => _cod; set => _cod = value; }
         public bool Uso { get => _uso; set => _uso = value; }
 
-        
+
         public List<clnMesa> obterMesas()
         {
-            List<clnMesa> mesas = new List<clnMesa>();
-
+            List<clnMesa> objMesas = new List<clnMesa>();
             for (int i = 1; i <= 25; i++)
             {
-                clnMesa mesa = new clnMesa();
-                mesa.Cod = i;
-                mesa.Uso = (i % 3 == 0);
-                mesas.Add(mesa);
+                clnMesa objMesa = new clnMesa();
+                objMesa.Cod = i;
+
+                objMesas.Add(objMesa.obterPorCodigo());
             }
 
-            return mesas;
+            return objMesas;
+        }
+
+        public clnMesa obterPorCodigo()
+        {
+            clnMesa objMesa = new clnMesa();
+            objMesa.Cod = Cod;
+            objMesa.Uso = (Cod % 3 == 0);
+
+            return objMesa;
         }
 
     }

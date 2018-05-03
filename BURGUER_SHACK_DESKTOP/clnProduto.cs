@@ -28,31 +28,37 @@ namespace BURGUER_SHACK_DESKTOP
         public int Categoria { get => _categoria; set => _categoria = value; }
         public Image Imagem { get => _imagem; set => _imagem = value; }
 
-        public List<clnProduto> localizarPorNomeCategoria()
+        public List<clnProduto> obterPorNomeCategoria()
         {
-            List<clnProduto> produtos = new List<clnProduto>();
-
+            List<clnProduto> objProdutos = new List<clnProduto>();
             for (int i = 0; i <= 24; i++)
             {
                 if (Categoria == i % 5)
                 {
-                    clnProduto produto = new clnProduto();
-                    produto.Cod = i;
-                    produto.Nome = "Produto " + i;
-                    produto.Valor = i * 10.0d;
-                    produto.Categoria = i % 3;
+                    clnProduto objProduto = new clnProduto();
+                    objProduto.Cod = i;
 
-                    produto.Imagem = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
-
-                    clnProdutoIngrediente produtoIngredientes = new clnProdutoIngrediente();
-                    produtoIngredientes.Produto = produto.Cod;
-                    produto.Ingredientes = produtoIngredientes.obterPorProduto();
-
-                    produtos.Add(produto);
+                    objProdutos.Add(objProduto.obterPorCodigo());
                 }
             }
 
-            return produtos;
+            return objProdutos;
+        }
+
+        public clnProduto obterPorCodigo()
+        {
+            clnProduto objProduto = new clnProduto();
+            objProduto.Cod = Cod;
+            objProduto.Nome = "Produto " + Cod;
+            objProduto.Valor = Cod * 10.0d;
+            objProduto.Categoria = Cod % 3;
+            objProduto.Imagem = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
+
+            clnProdutoIngrediente objProdutoIngredientes = new clnProdutoIngrediente();
+            objProdutoIngredientes.Produto = objProduto.Cod;
+            objProduto.Ingredientes = objProdutoIngredientes.obterPorProduto();
+
+            return objProduto;
         }
 
     }

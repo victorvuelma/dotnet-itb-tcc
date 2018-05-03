@@ -120,7 +120,9 @@ namespace BURGUER_SHACK_DESKTOP
                         control.TabIndex = index;
                         index++;
                     }
+                    xControls.Value.Clear();
                 }
+                yControls.Value.Clear();
             }
 
             positionControl.Clear();
@@ -216,19 +218,15 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private static Panel _pnlConteudo;
-        private static UIX.uctUIX _uixBar;
-
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.uctUIX uctUIX, String titulo)
         {
-            _pnlConteudo = pnlConteudo;
-            _uixBar = uctUIX;
-
             if (pnlConteudo.Controls.Count == 1)
             {
-                if (!uctConteudo.GetType().Equals(pnlConteudo.Controls[0].GetType()))
+                Control controlAnterior = pnlConteudo.Controls[0];
+                if (!uctConteudo.GetType().Equals(controlAnterior.GetType()))
                 {
-                    pnlConteudo.Controls.Remove(pnlConteudo.Controls[0]);
+                    controlAnterior.Controls.Clear();
+                    pnlConteudo.Controls.Remove(controlAnterior);
                 }
                 else
                 {
@@ -237,7 +235,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             clnUtil.atualizarTabIndex(uctConteudo.Controls);
-            clnApp.CommonTemplate.uctApply(uctConteudo);
+            clnApp.AppVisualTemplate.uctApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);
             uctConteudo.Location = new Point(0, 0);
@@ -248,11 +246,6 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             uctUIX.UIXTitle = clnApp.AppName + " - " + titulo;
-        }
-
-        public static void alterarConteudo(UserControl novoConteudo, String titulo)
-        {
-            alterarConteudo(_pnlConteudo, novoConteudo, _uixBar, titulo);
         }
 
     }

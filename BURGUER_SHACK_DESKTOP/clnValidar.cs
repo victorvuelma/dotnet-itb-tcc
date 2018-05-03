@@ -11,22 +11,24 @@ namespace BURGUER_SHACK_DESKTOP
     class clnValidar
     {
 
-        public static int VAZIO = 1;
-
-        public static int EMAIL = 10;
-        public static int CPF = 11;
-        public static int CNPJ = 12;
-        public static int CEP = 13;
+        public enum ValidarTipo
+        {
+            VAZIO,
+            EMAIL,
+            CPF,
+            CNPJ,
+            CEP
+        }
 
         private List<ValidarData> _controlValidar = new List<ValidarData>();
         private string _motivo = "";
 
-        public void addValidacao(Control control, int tipo)
+        public void addValidacao(Control control, ValidarTipo tipo)
         {
-            addValidacao(control, new int[] { tipo });
+            addValidacao(control, new ValidarTipo[] { tipo });
         }
 
-        public void addValidacao(Control control, int[] tipos)
+        public void addValidacao(Control control, ValidarTipo[] tipos)
         {
             ValidarData data = null;
             foreach (ValidarData dt in _controlValidar)
@@ -83,27 +85,27 @@ namespace BURGUER_SHACK_DESKTOP
         {
 
             private Control _control;
-            private List<int> _validacoes;
+            private List<ValidarTipo> _validacoes;
 
             private string _motivo;
 
             public ValidarData(Control control)
             {
                 _control = control;
-                _validacoes = new List<int>();
+                _validacoes = new List<ValidarTipo>();
 
                 _motivo = "";
             }
 
-            public void addValidacoes(int[] validacoes)
+            public void addValidacoes(ValidarTipo[] tiposValidacao)
             {
-                foreach (int validacao in validacoes)
+                foreach (ValidarTipo tipoValidacao in tiposValidacao)
                 {
-                    addValidacao(validacao);
+                    addValidacao(tipoValidacao);
                 }
             }
 
-            public void addValidacao(int validacao)
+            public void addValidacao(ValidarTipo validacao)
             {
                 _validacoes.Add(validacao);
             }
@@ -115,29 +117,29 @@ namespace BURGUER_SHACK_DESKTOP
 
                 String conteudo = _control.Text;
 
-                foreach (int validador in _validacoes)
+                foreach (ValidarTipo tipo in _validacoes)
                 {
                     bool val = true;
                     string res = "";
-                    switch (validador)
+                    switch (tipo)
                     {
-                        case 1:
+                        case ValidarTipo.VAZIO:
                             val = !String.IsNullOrWhiteSpace(conteudo);
                             res = "precisa ser preenchido.";
                             break;
-                        case 10:
+                        case ValidarTipo.EMAIL:
                             val = clnUtil.validarEmail(conteudo);
                             res = "deve conter um e-mail válido.";
                             break;
-                        case 11:
+                        case ValidarTipo.CPF:
                             val = clnUtil.validarCPF(conteudo);
                             res = "deve conter CPF válido.";
                             break;
-                        case 12:
+                        case ValidarTipo.CNPJ:
                             val = clnUtil.validarCNPJ(conteudo);
                             res = "deve conter CNPJ válido.";
                             break;
-                        case 13:
+                        case ValidarTipo.CEP:
                             val = clnUtil.validarCEP(conteudo);
                             res = "deve conter CEP válido.";
                             break;
@@ -163,7 +165,7 @@ namespace BURGUER_SHACK_DESKTOP
                     if (_control is UIX.txtUIX)
                     {
                         UIX.txtUIX txt = (UIX.txtUIX)_control;
-                        UIX.uixTextBox.txtApply(txt.txt, clnApp.CommonTemplate.Style.TextBoxColor);
+                        UIX.uixTextBox.txtApply(txt.txt, clnApp.AppVisualStyle.TextBoxColor);
                     }
                 }
 

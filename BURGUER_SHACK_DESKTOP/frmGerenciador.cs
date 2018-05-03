@@ -24,7 +24,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
             uctUIX.UIXTitle = clnApp.AppName + " - Gerenciamento";
-            clnApp.CommonTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

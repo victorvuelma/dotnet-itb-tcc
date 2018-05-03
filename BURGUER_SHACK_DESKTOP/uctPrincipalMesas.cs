@@ -35,24 +35,21 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     btn.ForeColor = pnlOcupada.BackColor;
                     btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;
-                } else
+                }
+                else
                 {
                     btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
                 }
-
                 btn.Click += (object sender, EventArgs e) =>
                 {
                     abrirMesa(mesa);
                 };
-                
+
                 mesaControles.Add(btn);
             }
-            
             clnUtil.adicionarControles(pnlMesas, mesaControles, 20);
-            
-            clnApp.CommonTemplate.pnlApply(pnlMesas);
 
-            clnUtil.atualizarTabIndex(pnlMesas.Controls);
+            clnApp.AppVisualTemplate.pnlApply(pnlMesas);
 
             pnlMesas.Visible = true;
         }
@@ -60,7 +57,6 @@ namespace BURGUER_SHACK_DESKTOP
         public void abrirMesa(clnMesa mesa)
         {
             frmMesa frmMesa = new frmMesa();
-
             frmMesa.Mesa = mesa.Cod;
 
             frmMesa.ShowDialog();

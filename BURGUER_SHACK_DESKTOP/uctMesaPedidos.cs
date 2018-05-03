@@ -15,8 +15,6 @@ namespace BURGUER_SHACK_DESKTOP
         public uctMesaPedidos()
         {
             InitializeComponent();
-
-            clnUtil.atualizarTabIndex(Controls);
         }
     }
 }

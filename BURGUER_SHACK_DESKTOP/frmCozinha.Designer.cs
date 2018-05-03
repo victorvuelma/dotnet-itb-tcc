@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.uctCozinha1 = new BURGUER_SHACK_DESKTOP.uctCozinha();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
-            this.uctUIX1 = new UIX.uctUIX();
+            this.uctUIX = new UIX.uctUIX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
@@ -62,15 +62,15 @@
             // 
             // uctUIX1
             // 
-            this.uctUIX1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX1.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX1.Name = "uctUIX1";
-            this.uctUIX1.Size = new System.Drawing.Size(1019, 40);
-            this.uctUIX1.TabIndex = 0;
-            this.uctUIX1.UIXButtonCloseEnabled = true;
-            this.uctUIX1.UIXButtonMinEnabled = true;
-            this.uctUIX1.UIXImage = null;
-            this.uctUIX1.UIXTitle = "Titulo UIX";
+            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.uctUIX.Location = new System.Drawing.Point(0, 0);
+            this.uctUIX.Name = "uctUIX1";
+            this.uctUIX.Size = new System.Drawing.Size(1019, 40);
+            this.uctUIX.TabIndex = 0;
+            this.uctUIX.UIXButtonCloseEnabled = true;
+            this.uctUIX.UIXButtonMinEnabled = true;
+            this.uctUIX.UIXImage = null;
+            this.uctUIX.UIXTitle = "Titulo UIX";
             // 
             // frmCozinha
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 437);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.uctUIX1);
+            this.Controls.Add(this.uctUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCozinha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -92,7 +92,7 @@
 
         #endregion
 
-        private UIX.uctUIX uctUIX1;
+        private UIX.uctUIX uctUIX;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvPedidos;
         private uctCozinha uctCozinha1;

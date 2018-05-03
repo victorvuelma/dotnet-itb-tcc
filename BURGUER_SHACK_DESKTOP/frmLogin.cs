@@ -20,20 +20,19 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnValidar();
             txtSenha.txt.PasswordChar = '*';
 
             clnUtil.atualizarTabIndex(Controls);
+
+            _validar = new clnValidar();
+            _validar.addValidacao(txtNome, clnValidar.ValidarTipo.VAZIO);
+            _validar.addValidacao(txtSenha, clnValidar.ValidarTipo.VAZIO);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            UIX.uixTemplate _frmTemplate = new UIX.uixTemplate(UIX.uixStyle.SILVER);
 
-            clnApp.CommonTemplate.frmApply(this, uctUIX);
-
-            _validar.addValidacao(txtNome, clnValidar.VAZIO);
-            _validar.addValidacao(txtSenha, clnValidar.VAZIO);
+            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
         }
 
         private void uctUIX_Close(object sender, EventArgs e)

@@ -24,21 +24,37 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarTabIndex(Controls);
         }
 
-        public void abrirPedidos()
-        {
-            alterarConteudo(new uctMesaPedidos(), "Mesa " + Mesa + " :: Pedidos");
-        }
-
         public void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, "Mesa " + Mesa + " :: " + titulo);
+        }
+
+        public void abrirPedidos()
+        {
+            alterarConteudo(new uctMesaPedidos(), "Pedidos");
+        }
+
+        private void abrirConta()
+        {
+            uctMesaConta uctConta = new uctMesaConta();
+            uctConta.Atendimento = Mesa;
+            alterarConteudo(uctConta, "Conta");
+        }
+
+        private void abrirNovoPedido()
+        {
+            frmPedido frmNovoPedido = new frmPedido();
+            frmNovoPedido.Pedido = new clnPedido();
+            frmNovoPedido.PedidosProdutos = new List<clnPedidoProduto>();
+
+            frmNovoPedido.ShowDialog();
         }
 
         private void frmMesa_Load(object sender, EventArgs e)
         {
-            clnApp.CommonTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
 
-            UIX.uixButton.btnApply(btnSair, clnApp.CommonTemplate.Style.WarningButtonColor);
+            UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.WarningButtonColor);
 
             abrirPedidos();
         }
@@ -50,10 +66,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConta_Click(object sender, EventArgs e)
         {
-            uctMesaConta uctConta = new uctMesaConta();
-            uctConta.Mesa = Mesa;
-            alterarConteudo(uctConta, "Mesa " + Mesa + " :: Conta");
+            abrirConta();
         }
+
 
         private void uctUIX_Close(object sender, EventArgs e)
         {
@@ -67,12 +82,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
-            frmPedido frmNovoPedido = new frmPedido();
-
-            frmNovoPedido.ObjPedido = new clnPedido();
-            frmNovoPedido.ObjPedidosProdutos = new List<clnPedidoProduto>();
-            
-            frmNovoPedido.ShowDialog();
+            abrirNovoPedido();
         }
 
     }

@@ -13,13 +13,10 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedidoProduto : Form
     {
 
-        private clnPedidoProduto _objPedidoProduto;
+        private clnPedidoProduto _pedidoProduto;
         private bool _remover;
 
-        private int _mesa;
-
-        public int Mesa { get => _mesa; set => _mesa = value; }
-        public clnPedidoProduto ObjPedidoProduto { get => _objPedidoProduto; set => _objPedidoProduto = value; }
+        public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
         public bool Remover { get => _remover; set => _remover = value; }
 
         public frmPedidoProduto()
@@ -34,21 +31,51 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
-        public void abrirVisualizar()
+        internal void abrirVisualizar()
         {
             uctPedidoProdutoVer uctVer = new uctPedidoProdutoVer();
-
-            uctVer.Frm = this;
-            uctVer.ObjPedidoProduto = ObjPedidoProduto;
+            uctVer.Form = this;
+            uctVer.PedidoProduto = PedidoProduto;
 
             alterarConteudo(uctVer, "Produto :: Visualizar");
         }
 
-        public void removerIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
+        internal void removerIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
         {
-            ObjPedidoProduto.Ingredientes.Remove(pedidoIngrediente);
+            PedidoProduto.Ingredientes.Remove(pedidoIngrediente);
+
+            abrirDetalhes();
 
             clnMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnMensagem.MensagemIcone.ERRO);
+        }
+
+        internal void adicionaIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
+        {
+            PedidoProduto.Ingredientes.Add(pedidoIngrediente);
+
+            abrirDetalhes();
+
+            clnMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso.", clnMensagem.MensagemIcone.OK);
+        }
+
+        internal void substiuiIngrediente(clnPedidoProdutoIngrediente pedidoIngredienteSubstituir, clnPedidoProdutoIngrediente pedidoIngrediente)
+        {
+            clnUtil.trocarValor(PedidoProduto.Ingredientes, pedidoIngredienteSubstituir, pedidoIngrediente);
+
+            abrirDetalhes();
+
+            clnMensagem.mostrarOk("Produto", "Ingrediente alterado com sucesso.", clnMensagem.MensagemIcone.OK);
+        }
+
+        private void abrirDetalhes()
+        {
+            uctPedidoProdutoDetalhes uctAlterar = new uctPedidoProdutoDetalhes();
+            uctAlterar.PedidoProduto = PedidoProduto;
+            uctAlterar.Form = this;
+
+            alterarConteudo(uctAlterar, "Produto :: Alterar");
+
+            PedidoProduto = uctAlterar.PedidoProduto;
         }
 
         private void fechar()
@@ -57,18 +84,30 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 //Novo Pedido - Cancelado
                 //Edicao - Sem alteracoes.
-                ObjPedidoProduto = null;
+                PedidoProduto = null;
                 Remover = false;
 
                 Close();
             }
         }
 
+        private void removerProduto()
+        {
+            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnMensagem.MensagemIcone.ERRO))
+            {
+                PedidoProduto = null;
+                Remover = true;
+
+                //faz e tal
+                Close();
+            }
+        }
+
         private void frmPedidoProduto_Load(object sender, EventArgs e)
         {
-            clnApp.CommonTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
 
-            UIX.uixButton.btnApply(btnRemover, clnApp.CommonTemplate.Style.WarningButtonColor);
+            UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.WarningButtonColor);
 
             abrirVisualizar();
         }
@@ -90,26 +129,13 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            uctPedidoProdutoDetalhes alterar = new uctPedidoProdutoDetalhes();
-
-            alterar.ObjPedidoProduto = ObjPedidoProduto;
-            alterar.Frm = this;
-
-            alterarConteudo(alterar, "Produto :: Alterar");
-
-            ObjPedidoProduto = alterar.ObjPedidoProduto;
+            abrirDetalhes();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnMensagem.MensagemIcone.ERRO))
-            {
-                ObjPedidoProduto = null;
-                Remover = true;
-
-                //faz e tal
-                Close();
-            }
+            removerProduto();
         }
+
     }
 }

@@ -12,42 +12,39 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class uctPedidoProdutos : UserControl
     {
-        private int _mesa;
 
-        private frmPedido _frm;
+        private frmPedido _form;
 
-        private List<clnPedidoProduto> _objPedidoProdutos;
+        private int _atendimento;
+        private List<clnPedidoProduto> _pedidoProdutos;
 
-        public frmPedido Frm { get => _frm; set => _frm = value; }
-        public int Mesa { get => _mesa; set => _mesa = value; }
-        internal List<clnPedidoProduto> ObjPedidoProdutos { get => _objPedidoProdutos; set => _objPedidoProdutos = value; }
+        public frmPedido Form { get => _form; set => _form = value; }
+        public int Atendimento { get => _atendimento; set => _atendimento = value; }
+        internal List<clnPedidoProduto> PedidoProdutos { get => _pedidoProdutos; set => _pedidoProdutos = value; }
 
         public uctPedidoProdutos()
         {
             InitializeComponent();
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void editarPedidoProduto(clnPedidoProduto pedidoProduto)
         {
             frmPedidoProduto frmEditarProduto = new frmPedidoProduto();
-
-            frmEditarProduto.ObjPedidoProduto = pedidoProduto;
+            frmEditarProduto.PedidoProduto = pedidoProduto;
 
             frmEditarProduto.ShowDialog();
 
             if (frmEditarProduto.Remover)
             {
-                ObjPedidoProdutos.Remove(pedidoProduto);
+                PedidoProdutos.Remove(pedidoProduto);
                 clnMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnMensagem.MensagemIcone.INFO);
 
                 exibeProdutos();
             }
-            else if(frmEditarProduto.ObjPedidoProduto != null)
+            else if (frmEditarProduto.PedidoProduto != null)
             {
                 //Atualizar pedido produto na lista.
-                clnUtil.trocarValor(ObjPedidoProdutos, pedidoProduto, frmEditarProduto.ObjPedidoProduto);
+                clnUtil.trocarValor(PedidoProdutos, pedidoProduto, frmEditarProduto.PedidoProduto);
 
                 exibeProdutos();
             }
@@ -57,8 +54,12 @@ namespace BURGUER_SHACK_DESKTOP
         {
             dgvProdutos.Rows.Clear();
 
-            foreach (clnPedidoProduto pedidoProduto in ObjPedidoProdutos)
+            foreach (clnPedidoProduto pedidoProduto in PedidoProdutos)
             {
+                clnProduto objProduto = new clnProduto();
+                objProduto.Cod = pedidoProduto.Produto;
+                objProduto = objProduto.obterPorCodigo();
+
                 dgvProdutos.Rows.Add(pedidoProduto.Produto, pedidoProduto.Quantidade);
             }
 
@@ -70,13 +71,13 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 //Confirma o pedido.
 
-                Frm.Close();
+                Form.Close();
             }
         }
 
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            editarPedidoProduto(ObjPedidoProdutos[e.RowIndex]);
+            editarPedidoProduto(PedidoProdutos[e.RowIndex]);
         }
 
         private void uctPedidoProdutos_Load(object sender, EventArgs e)

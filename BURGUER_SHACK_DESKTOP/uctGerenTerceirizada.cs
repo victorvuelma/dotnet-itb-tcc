@@ -34,8 +34,6 @@ namespace BURGUER_SHACK_DESKTOP
             this.mtbCtrConvTermino.Mask = clnUtil.MASK_DATA;
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF, txtEndNr);
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
     }
