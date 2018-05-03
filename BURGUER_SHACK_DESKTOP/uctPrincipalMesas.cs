@@ -68,6 +68,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             pnlLivre.BackColor = UIX.uixColor.WHITE;
             pnlOcupada.BackColor = UIX.uixColor.INDIGO_DARK;
+
+            pnlMesas.BackColor = BackColor;
         }
 
     }

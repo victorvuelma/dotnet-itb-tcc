@@ -98,7 +98,7 @@ namespace BURGUER_SHACK_DESKTOP
             foreach (clnIngrediente ingrediente in objIngredientes.obterPorTipo())
             {
                 UIX.btnUIX btn = new UIX.btnUIX();
-                btn.Description = "INGREDIENTE " + ingrediente.Nome;
+                btn.Description = ingrediente.Nome;
                 btn.Image = ingrediente.Imagem;
                 btn.Name = "btnIngrediente" + ingrediente.Cod;
                 btn.Size = new Size(75, 75);

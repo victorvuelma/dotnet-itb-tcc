@@ -77,7 +77,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            editarPedidoProduto(PedidoProdutos[e.RowIndex]);
+            if (e.RowIndex >= 0)
+            {
+                editarPedidoProduto(PedidoProdutos[e.RowIndex]);
+            }
         }
 
         private void uctPedidoProdutos_Load(object sender, EventArgs e)

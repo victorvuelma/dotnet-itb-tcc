@@ -29,6 +29,14 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
         }
 
+        private void fechar()
+        {
+            if(clnMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnMensagem.MensagemIcone.INFO))
+            {
+                Close();
+            }
+        }
+
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             clnApp.AppVisualTemplate.frmApply(this, uctUIX);
@@ -45,12 +53,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            fechar();
         }
 
         private void uctUIX_Close(object sender, EventArgs e)
         {
-            Close();
+            fechar();
         }
 
     }

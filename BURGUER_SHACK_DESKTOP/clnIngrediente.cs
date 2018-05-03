@@ -28,7 +28,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngrediente = new clnIngrediente();
             objIngrediente.Cod = Cod;
-            objIngrediente.Nome = "Ingrediente " + Cod;
+            objIngrediente.Nome = nomes[Cod % 7];
             objIngrediente.Valor = Cod * 15.5;
             objIngrediente.Imagem = global::BURGUER_SHACK_DESKTOP.Properties.Resources.modelo;
             objIngrediente.Tipo = 1;
@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
         public List<clnIngrediente> obterPorTipo()
         {
             List<clnIngrediente> objIngredientes = new List<clnIngrediente>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 7; i++)
             {
                 clnIngrediente objIngrediente = new clnIngrediente();
                 objIngrediente.Cod = i;
@@ -49,6 +49,8 @@ namespace BURGUER_SHACK_DESKTOP
 
             return objIngredientes;
         }
+
+        private String[] nomes = new String[] { "Hambuguer", "Queijo", "Pão", "Alface", "Tomate", "Maionese", "Bacon", "Cheddar" };
 
     }
 }

@@ -47,7 +47,7 @@
             this.uctUIX.Size = new System.Drawing.Size(1000, 40);
             this.uctUIX.TabIndex = 0;
             this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = true;
+            this.uctUIX.UIXButtonMinEnabled = false;
             this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
             this.uctUIX.UIXTitle = "Burguer Shack :: Principal";
             this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 840);
+            this.ClientSize = new System.Drawing.Size(1000, 749);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.uctUIX);
