@@ -24,21 +24,21 @@ namespace UIX
         {
             msgUIX msg = new msgUIX();
 
-            msg.uctUIX.UIXTitle = titulo;
+            msg.hdrUIX.UIXTitle = titulo;
             msg.Text = titulo;
 
             msg.lbl.Text = mensagem;
 
-            msg.uctUIX.UIXImage = image;
+            msg.hdrUIX.UIXImage = image;
 
             msg.pic.Image = image;
 
-            template.frmApply(msg, msg.uctUIX);
+            template.frmApply(msg, msg.hdrUIX);
 
             return msg;
         }
 
-        private void uctUIX_Close(object sender, EventArgs e)
+        private void hdrUIX_Close(object sender, EventArgs e)
         {
             resultado = 0;
 

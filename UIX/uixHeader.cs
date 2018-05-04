@@ -12,7 +12,7 @@ namespace UIX
     public class uixHeader
     {
 
-        public static void hdrApply(Form frm, uctUIX ctl, uixStyle style)
+        public static void hdrApply(Form frm, hdrUIX ctl, uixStyle style)
         {
             int maxX = frm.Size.Width;
             int maxY = frm.Size.Height;
@@ -23,28 +23,27 @@ namespace UIX
             ctl.BackColor = style.FormColor.DarkColor;
 
             //Apply header title style
-            ctl.lblTitulo.Location = new Point(style.HeaderButtonSize + (style.HeaderButtonSpace * 2), 12);
-            ctl.lblTitulo.BringToFront();
-            uixLabel.lblApply(ctl.lblTitulo, style.FormColor, style.HeaderFont);
-            ctl.lblTitulo.Font = uixFont.fontSize(ctl.lblTitulo.Font, 10f);
-            ctl.lblTitulo.BackColor = style.FormColor.DarkColor;
+            ctl.lbl.BringToFront();
+            uixLabel.lblApply(ctl.lbl, style.FormColor, style.HeaderFont);
+            ctl.lbl.Font = uixFont.fontSize(ctl.lbl.Font, 12.5f);
+            ctl.lbl.BackColor = style.FormColor.DarkColor;
 
-            ctl.picFormIcon.Location = new Point(style.HeaderButtonSpace, style.HeaderButtonSpace);
-            ctl.picFormIcon.Size = new Size(style.HeaderButtonSize, style.HeaderButtonSize);
-            ctl.picFormIcon.BackColor = style.FormColor.DarkColor;
-            ctl.picFormIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            ctl.picFormIcon.BringToFront();
+            ctl.pic.Location = new Point(style.HeaderButtonSpace, style.HeaderButtonSpace);
+            ctl.pic.Size = new Size(style.HeaderButtonSize, style.HeaderButtonSize);
+            ctl.pic.BackColor = style.FormColor.DarkColor;
+            ctl.pic.SizeMode = PictureBoxSizeMode.Zoom;
+            ctl.pic.BringToFront();
 
             //Calculate buttons
             int nextButtonX = maxX;
             //Close button
-            if (ctl.btnClose != null)
+            if (ctl.btnClo != null)
             {
                 nextButtonX = nextButtonX - style.HeaderButtonSize - style.HeaderButtonSpace;
-                ctl.btnClose.Location = new Point(nextButtonX, style.HeaderButtonSpace);
-                ctl.btnClose.BringToFront();
+                ctl.btnClo.Location = new Point(nextButtonX, style.HeaderButtonSpace);
+                ctl.btnClo.BringToFront();
 
-                uixButton.btnStyleClose(ctl.btnClose, style.HeaderButtonSize, style.WarningButtonColor);
+                uixButton.btnStyleClose(ctl.btnClo, style.HeaderButtonSize, style.WarningButtonColor);
             }
             //Minimize button
             if (ctl.btnMin != null)
@@ -55,11 +54,12 @@ namespace UIX
 
                 uixButton.btnStyleMinimize(ctl.btnMin, style.HeaderButtonSize, style.HeaderButtonColor);
             }
+            
+            ctl.lbl.Size = new Size(nextButtonX - 10, ctl.Height);
         }
 
         public static void hdrMove(Form frm, Control[] controls)
         {
-
             HeaderData data = new HeaderData(frm);
 
             foreach (Control control in controls)

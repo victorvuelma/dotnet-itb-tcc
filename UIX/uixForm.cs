@@ -12,7 +12,7 @@ namespace UIX
     public class uixForm
     {
 
-        public static void frmApply(Form frm, uctUIX ctl, uixStyle style)
+        public static void frmApply(Form frm, hdrUIX ctl, uixStyle style)
         {
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.AutoScaleMode = AutoScaleMode.None;
@@ -23,7 +23,7 @@ namespace UIX
 
             uixHeader.hdrApply(frm, ctl, style);
 
-            uixHeader.hdrMove(frm, new Control[] { ctl, ctl.lblTitulo, ctl.picFormIcon });
+            uixHeader.hdrMove(frm, new Control[] { ctl, ctl.lbl, ctl.pic });
         }
 
         public static void applyMargin(Form frm, uixStyle style)

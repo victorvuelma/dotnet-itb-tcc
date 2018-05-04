@@ -79,11 +79,11 @@
     <Compile Include="txtUIX.Designer.cs">
       <DependentUpon>txtUIX.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctUIX.cs">
+    <Compile Include="hdrUIX.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctUIX.Designer.cs">
-      <DependentUpon>uctUIX.cs</DependentUpon>
+    <Compile Include="hdrUIX.Designer.cs">
+      <DependentUpon>hdrUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="txtUIX.resx">
       <DependentUpon>txtUIX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctUIX.resx">
-      <DependentUpon>uctUIX.cs</DependentUpon>
+    <EmbeddedResource Include="hdrUIX.resx">
+      <DependentUpon>hdrUIX.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

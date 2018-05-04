@@ -5,10 +5,10 @@ using System.Drawing;
 namespace UIX
 {
 
-    public partial class uctUIX : UserControl
+    public partial class hdrUIX : UserControl
     {
 
-        public uctUIX()
+        public hdrUIX()
         {
             InitializeComponent();
         }
@@ -16,12 +16,12 @@ namespace UIX
         public event EventHandler Close;
         public event EventHandler Min;
 
-        public bool UIXButtonCloseEnabled { get => btnClose.Visible; set => btnClose.Visible = value; }
+        public bool UIXButtonCloseEnabled { get => btnClo.Visible; set => btnClo.Visible = value; }
         public bool UIXButtonMinEnabled { get => btnMin.Visible; set => btnMin.Visible = value; }
 
-        public Image UIXImage { get => picFormIcon.Image; set => picFormIcon.Image = value; }
+        public Image UIXImage { get => pic.Image; set => pic.Image = value; }
 
-        public String UIXTitle { get => lblTitulo.Text; set => lblTitulo.Text = value; }
+        public String UIXTitle { get => lbl.Text; set => lbl.Text = value; }
 
         private void btnMin_Click(object sender, EventArgs e)
         {

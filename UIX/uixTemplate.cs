@@ -137,7 +137,7 @@ namespace UIX
             }
         }
 
-        public void frmApply(Form frm, uctUIX ctl)
+        public void frmApply(Form frm, hdrUIX ctl)
         {
 
             uixForm.frmApply(frm, ctl, Style);

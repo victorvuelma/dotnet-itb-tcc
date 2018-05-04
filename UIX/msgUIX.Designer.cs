@@ -32,7 +32,7 @@
             this.btnNo = new System.Windows.Forms.Button();
             this.pic = new System.Windows.Forms.PictureBox();
             this.lbl = new System.Windows.Forms.Label();
-            this.uctUIX = new UIX.uctUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,18 +74,18 @@
             this.lbl.TabIndex = 4;
             this.lbl.Text = "C";
             // 
-            // uctUIX
+            // hdrUIX
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(350, 40);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = false;
-            this.uctUIX.UIXImage = null;
-            this.uctUIX.UIXTitle = "T";
-            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(350, 40);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = false;
+            this.hdrUIX.UIXImage = null;
+            this.hdrUIX.UIXTitle = "T";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // msgUIX
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.pic);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
-            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "msgUIX";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -108,7 +108,7 @@
 
         #endregion
 
-        private uctUIX uctUIX;
+        private hdrUIX hdrUIX;
         public System.Windows.Forms.Button btnYes;
         public System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.PictureBox pic;
