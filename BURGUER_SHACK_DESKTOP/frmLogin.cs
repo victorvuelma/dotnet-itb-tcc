@@ -32,10 +32,10 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
-            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
         }
 
-        private void uctUIX_Close(object sender, EventArgs e)
+        private void hdrUIX_Close(object sender, EventArgs e)
         {
             if (clnMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnMensagem.MensagemIcone.ERRO))
             {

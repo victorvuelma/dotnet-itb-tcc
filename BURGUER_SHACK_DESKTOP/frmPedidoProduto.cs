@@ -28,7 +28,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
         }
 
         internal void abrirVisualizar()
@@ -115,7 +115,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPedidoProduto_Load(object sender, EventArgs e)
         {
-            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
 
             UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.WarningButtonColor);
 
@@ -127,7 +127,7 @@ namespace BURGUER_SHACK_DESKTOP
             fechar();
         }
 
-        private void uctUIX_Close(object sender, EventArgs e)
+        private void hdrUIX_Close(object sender, EventArgs e)
         {
             fechar();
         }

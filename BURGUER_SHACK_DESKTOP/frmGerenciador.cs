@@ -23,8 +23,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
-            uctUIX.UIXTitle = clnApp.AppName + " - Gerenciamento";
-            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
+            hdrUIX.UIXTitle = clnApp.AppName + " - Gerenciamento";
+            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             pnlConteudo.Visible = true;
 
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, titulo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
         }
 
         private void esconderConteudo()
@@ -115,12 +115,12 @@ namespace BURGUER_SHACK_DESKTOP
             pnlConteudo.Visible = false;
         }
 
-        private void uctUIX_Close(object sender, EventArgs e)
+        private void hdrUIX_Close(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void uctUIX_Min(object sender, EventArgs e)
+        private void hdrUIX_Min(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }

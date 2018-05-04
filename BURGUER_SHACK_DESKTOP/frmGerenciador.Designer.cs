@@ -40,7 +40,7 @@
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnTercerizada = new System.Windows.Forms.Button();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.uctUIX = new UIX.uctUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.grpFuncao.SuspendLayout();
             this.SuspendLayout();
@@ -176,19 +176,19 @@
             this.pnlConteudo.Size = new System.Drawing.Size(810, 470);
             this.pnlConteudo.TabIndex = 5;
             // 
-            // uctUIX
+            // hdrUIX
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(930, 40);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = true;
-            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
-            this.uctUIX.UIXTitle = "Gerenciador";
-            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
-            this.uctUIX.Min += new System.EventHandler(this.uctUIX_Min);
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(930, 40);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = true;
+            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
+            this.hdrUIX.UIXTitle = "Gerenciador";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
+            this.hdrUIX.Min += new System.EventHandler(this.hdrUIX_Min);
             // 
             // frmGerenciador
             // 
@@ -198,7 +198,7 @@
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.grpFuncao);
-            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGerenciador";
@@ -213,7 +213,7 @@
 
         #endregion
 
-        private UIX.uctUIX uctUIX;
+        private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnSair;
         private UIX.btnUIX btnLista;

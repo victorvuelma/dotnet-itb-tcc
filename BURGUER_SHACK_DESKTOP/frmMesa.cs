@@ -26,7 +26,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, uctUIX, "Mesa " + Mesa + " :: " + titulo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Mesa " + Mesa + " :: " + titulo);
         }
 
         public void abrirPedidos()
@@ -52,7 +52,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmMesa_Load(object sender, EventArgs e)
         {
-            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
 
             UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.WarningButtonColor);
 
@@ -70,7 +70,7 @@ namespace BURGUER_SHACK_DESKTOP
         }
 
 
-        private void uctUIX_Close(object sender, EventArgs e)
+        private void hdrUIX_Close(object sender, EventArgs e)
         {
             Close();
         }

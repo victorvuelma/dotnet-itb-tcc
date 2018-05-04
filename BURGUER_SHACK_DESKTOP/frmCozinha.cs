@@ -21,7 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmCozinha_Load(object sender, EventArgs e)
         {
-            clnApp.AppVisualTemplate.frmApply(this, uctUIX);
+            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
         }
     }
 }

@@ -35,7 +35,7 @@
             this.btnVoltar = new UIX.btnUIX();
             this.btnAlterar = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.uctUIX = new UIX.uctUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,19 +107,19 @@
             this.pnlConteudo.Size = new System.Drawing.Size(400, 400);
             this.pnlConteudo.TabIndex = 3;
             // 
-            // uctUIX
+            // hdrUIX
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(500, 40);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = false;
-            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.uctUIX.UIXTitle = "Pedidos";
-            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(500, 40);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = false;
+            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
+            this.hdrUIX.UIXTitle = "Pedidos";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmPedidoProduto
             // 
@@ -128,7 +128,7 @@
             this.ClientSize = new System.Drawing.Size(500, 440);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -146,7 +146,7 @@
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnVer;
         private UIX.btnUIX btnAlterar;
-        public UIX.uctUIX uctUIX;
+        public UIX.hdrUIX hdrUIX;
         public System.Windows.Forms.Panel pnlConteudo;
         public UIX.btnUIX btnVoltar;
         public UIX.btnUIX btnRemover;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.uctUIX = new UIX.uctUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnSair = new UIX.btnUIX();
@@ -38,25 +38,25 @@
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uctUIX
+            // hdrUIX
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(1000, 40);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = false;
-            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
-            this.uctUIX.UIXTitle = "Burguer Shack :: Principal";
-            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(1030, 50);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = false;
+            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
+            this.hdrUIX.UIXTitle = "Burguer Shack :: Principal";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // pnlConteudo
             // 
-            this.pnlConteudo.Location = new System.Drawing.Point(100, 40);
+            this.pnlConteudo.Location = new System.Drawing.Point(130, 50);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(900, 800);
+            this.pnlConteudo.Size = new System.Drawing.Size(900, 650);
             this.pnlConteudo.TabIndex = 6;
             // 
             // pnlMenu
@@ -64,9 +64,9 @@
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnCardapio);
             this.pnlMenu.Controls.Add(this.btnMesas);
-            this.pnlMenu.Location = new System.Drawing.Point(0, 40);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 800);
+            this.pnlMenu.Size = new System.Drawing.Size(130, 650);
             this.pnlMenu.TabIndex = 5;
             // 
             // btnSair
@@ -74,9 +74,9 @@
             this.btnSair.Description = "Sair";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.Location = new System.Drawing.Point(10, 710);
+            this.btnSair.Location = new System.Drawing.Point(15, 530);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(80, 80);
+            this.btnSair.Size = new System.Drawing.Size(100, 100);
             this.btnSair.TabIndex = 6;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -86,9 +86,9 @@
             this.btnCardapio.Description = "Cardápio";
             this.btnCardapio.HoverColor = System.Drawing.Color.Transparent;
             this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.btnCardapio.Location = new System.Drawing.Point(10, 100);
+            this.btnCardapio.Location = new System.Drawing.Point(15, 130);
             this.btnCardapio.Name = "btnCardapio";
-            this.btnCardapio.Size = new System.Drawing.Size(80, 80);
+            this.btnCardapio.Size = new System.Drawing.Size(100, 100);
             this.btnCardapio.TabIndex = 2;
             this.btnCardapio.UseVisualStyleBackColor = true;
             this.btnCardapio.Visible = false;
@@ -99,9 +99,9 @@
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
             this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMesas.Location = new System.Drawing.Point(10, 10);
+            this.btnMesas.Location = new System.Drawing.Point(15, 15);
             this.btnMesas.Name = "btnMesas";
-            this.btnMesas.Size = new System.Drawing.Size(80, 80);
+            this.btnMesas.Size = new System.Drawing.Size(100, 100);
             this.btnMesas.TabIndex = 0;
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
@@ -110,10 +110,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 749);
+            this.ClientSize = new System.Drawing.Size(1030, 700);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -129,7 +129,7 @@
 
         #endregion
 
-        private UIX.uctUIX uctUIX;
+        private UIX.hdrUIX hdrUIX;
         public System.Windows.Forms.Panel pnlConteudo;
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnSair;

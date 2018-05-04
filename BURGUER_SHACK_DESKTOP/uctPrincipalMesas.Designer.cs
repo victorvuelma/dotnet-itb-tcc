@@ -99,15 +99,15 @@
             this.pnlLivre.Size = new System.Drawing.Size(15, 15);
             this.pnlLivre.TabIndex = 1;
             // 
-            // uctMesaListar
+            // uctPrincipalMesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbMesas);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "uctMesaListar";
-            this.Size = new System.Drawing.Size(900, 800);
+            this.Name = "uctPrincipalMesas";
+            this.Size = new System.Drawing.Size(900, 650);
             this.Load += new System.EventHandler(this.uctPedidoMesa_Load);
             this.grbMesas.ResumeLayout(false);
             this.grbMesas.PerformLayout();

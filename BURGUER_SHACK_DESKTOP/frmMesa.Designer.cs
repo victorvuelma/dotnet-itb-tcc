@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMesa));
-            this.uctUIX = new UIX.uctUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnNovoPedido = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
@@ -39,18 +39,18 @@
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uctUIX
+            // hdrUIX
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(600, 40);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = false;
-            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.uctUIX.UIXTitle = "Mesas";
-            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(600, 40);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = false;
+            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.hdrUIX.UIXTitle = "Mesas";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // pnlMenu
             // 
@@ -126,7 +126,7 @@
             this.ClientSize = new System.Drawing.Size(600, 740);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMesa";
@@ -140,7 +140,7 @@
 
         #endregion
 
-        private UIX.uctUIX uctUIX;
+        private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnConta;
         private UIX.btnUIX btnPedidos;

@@ -51,6 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnApp.AppVisualTemplate.pnlApply(pnlMesas);
 
+            pnlMesas.BackColor = BackColor;
             pnlMesas.Visible = true;
         }
 
@@ -68,8 +69,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             pnlLivre.BackColor = UIX.uixColor.WHITE;
             pnlOcupada.BackColor = UIX.uixColor.INDIGO_DARK;
-
-            pnlMesas.BackColor = BackColor;
         }
 
     }

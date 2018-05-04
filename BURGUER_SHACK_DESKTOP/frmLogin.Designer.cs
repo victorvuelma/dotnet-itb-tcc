@@ -33,7 +33,7 @@
             this.picVer = new System.Windows.Forms.PictureBox();
             this.picUser = new System.Windows.Forms.PictureBox();
             this.lblProgram = new System.Windows.Forms.Label();
-            this.uctUIX = new UIX.uctUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.txtSenha = new UIX.txtUIX();
             this.txtNome = new UIX.txtUIX();
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
@@ -83,19 +83,19 @@
             this.lblProgram.Text = "BurguerShack :: Versão 1.0 :: Copyright 2018";
             this.lblProgram.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // uctUIX
+            // hdrUIX
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctUIX.Name = "uctUIX";
-            this.uctUIX.Size = new System.Drawing.Size(500, 40);
-            this.uctUIX.TabIndex = 11;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = false;
-            this.uctUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
-            this.uctUIX.UIXTitle = "BurgerShack :: Acessar o Sistema";
-            this.uctUIX.Close += new System.EventHandler(this.uctUIX_Close);
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(500, 40);
+            this.hdrUIX.TabIndex = 11;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = false;
+            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
+            this.hdrUIX.UIXTitle = "BurgerShack :: Acessar o Sistema";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // txtSenha
             // 
@@ -127,7 +127,7 @@
             this.Controls.Add(this.lblProgram);
             this.Controls.Add(this.picUser);
             this.Controls.Add(this.picVer);
-            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.hdrUIX);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtNome);
@@ -148,7 +148,7 @@
         private UIX.txtUIX txtNome;
         private UIX.txtUIX txtSenha;
         private System.Windows.Forms.Button btnEntrar;
-        private UIX.uctUIX uctUIX;
+        private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.PictureBox picVer;
         private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Label lblProgram;

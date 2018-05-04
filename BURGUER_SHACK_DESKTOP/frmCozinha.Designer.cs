@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.uctCozinha1 = new BURGUER_SHACK_DESKTOP.uctCozinha();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
-            this.uctUIX = new UIX.uctUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
@@ -60,17 +60,17 @@
             this.dgvPedidos.Size = new System.Drawing.Size(988, 373);
             this.dgvPedidos.TabIndex = 0;
             // 
-            // uctUIX1
+            // hdrUIX
             // 
-            this.uctUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.uctUIX.Location = new System.Drawing.Point(0, 0);
-            this.uctUIX.Name = "uctUIX1";
-            this.uctUIX.Size = new System.Drawing.Size(1019, 40);
-            this.uctUIX.TabIndex = 0;
-            this.uctUIX.UIXButtonCloseEnabled = true;
-            this.uctUIX.UIXButtonMinEnabled = true;
-            this.uctUIX.UIXImage = null;
-            this.uctUIX.UIXTitle = "Titulo UIX";
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(1019, 40);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = true;
+            this.hdrUIX.UIXImage = null;
+            this.hdrUIX.UIXTitle = "Titulo UIX";
             // 
             // frmCozinha
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 437);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.uctUIX);
+            this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCozinha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -92,7 +92,7 @@
 
         #endregion
 
-        private UIX.uctUIX uctUIX;
+        private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvPedidos;
         private uctCozinha uctCozinha1;

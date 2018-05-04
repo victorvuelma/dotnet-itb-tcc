@@ -230,7 +230,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.uctUIX uctUIX, String titulo)
+        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo)
         {
             if (pnlConteudo.Controls.Count == 1)
             {
@@ -257,7 +257,7 @@ namespace BURGUER_SHACK_DESKTOP
                 pnlConteudo.Visible = true;
             }
 
-            uctUIX.UIXTitle = clnApp.AppName + " - " + titulo;
+            hdrUIX.UIXTitle = clnApp.AppName + " - " + titulo;
         }
 
     }
