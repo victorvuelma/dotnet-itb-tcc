@@ -23,6 +23,18 @@ namespace UIX
 
         public String UIXTitle { get => lbl.Text; set => lbl.Text = value; }
 
+        public new Size Size
+        {
+            get => base.Size;
+            set
+            {
+                base.Size = value;
+                lbl.Size = new Size(value.Width, value.Height);
+                btnClo.Location = new Point(value.Width - 50, 10);
+                btnMin.Location = new Point(value.Width - 100, 10);
+            }
+        }
+
         private void btnMin_Click(object sender, EventArgs e)
         {
             if (Min != null)

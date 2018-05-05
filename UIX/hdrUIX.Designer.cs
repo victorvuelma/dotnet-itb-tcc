@@ -51,6 +51,7 @@
             this.pic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(40, 40);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic.TabIndex = 6;
             this.pic.TabStop = false;
             // 
@@ -82,9 +83,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Controls.Add(this.btnMin);
+            this.Controls.Add(this.btnClo);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.pic);
-            this.Controls.Add(this.btnClo);
             this.Name = "hdrUIX";
             this.Size = new System.Drawing.Size(250, 50);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
