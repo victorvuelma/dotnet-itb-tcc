@@ -29,6 +29,5 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr);
         }
-        
     }
 }
