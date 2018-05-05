@@ -24,12 +24,12 @@ namespace UIX
         {
             msgUIX msg = new msgUIX();
 
-            msg.hdrUIX.UIXTitle = titulo;
+            msg.hdrUIX.Text = titulo;
             msg.Text = titulo;
 
             msg.lbl.Text = mensagem;
 
-            msg.hdrUIX.UIXImage = image;
+            msg.hdrUIX.Image = image;
 
             msg.pic.Image = image;
 

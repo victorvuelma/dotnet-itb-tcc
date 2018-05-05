@@ -16,12 +16,12 @@ namespace UIX
         public event EventHandler Close;
         public event EventHandler Min;
 
-        public bool UIXButtonCloseEnabled { get => btnClo.Visible; set => btnClo.Visible = value; }
-        public bool UIXButtonMinEnabled { get => btnMin.Visible; set => btnMin.Visible = value; }
+        public bool ButtonCloseEnabled { get => btnClo.Visible; set => btnClo.Visible = value; }
+        public bool ButtonMinEnabled { get => btnMin.Visible; set => btnMin.Visible = value; }
 
-        public Image UIXImage { get => pic.Image; set => pic.Image = value; }
+        public Image Image { get => pic.Image; set => pic.Image = value; }
 
-        public String UIXTitle { get => lbl.Text; set => lbl.Text = value; }
+        public new String Text { get => lbl.Text; set => lbl.Text = value; }
 
         public new Size Size
         {

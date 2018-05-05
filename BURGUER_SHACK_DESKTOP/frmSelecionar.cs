@@ -26,7 +26,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 value = clnApp.AppName + " :: " + value;
                 Text = value;
-                hdrUIX.UIXTitle = value;
+                hdrUIX.Text = value;
             }
         }
 
@@ -34,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             set
             {
-                hdrUIX.UIXImage = value;
+                hdrUIX.Image = value;
             }
         }
 

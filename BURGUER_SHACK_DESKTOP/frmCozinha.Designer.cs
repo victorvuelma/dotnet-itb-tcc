@@ -67,10 +67,10 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(1019, 40);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = true;
-            this.hdrUIX.UIXImage = null;
-            this.hdrUIX.UIXTitle = "Titulo UIX";
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = true;
+            this.hdrUIX.Image = null;
+            this.hdrUIX.Text = "Titulo UIX";
             // 
             // frmCozinha
             // 

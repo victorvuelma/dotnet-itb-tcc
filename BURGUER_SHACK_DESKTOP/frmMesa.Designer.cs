@@ -113,10 +113,10 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(600, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = false;
-            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.hdrUIX.UIXTitle = "Mesa";
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.hdrUIX.Text = "Mesa";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmMesa

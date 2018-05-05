@@ -83,10 +83,10 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(350, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = false;
-            this.hdrUIX.UIXImage = null;
-            this.hdrUIX.UIXTitle = "T";
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = null;
+            this.hdrUIX.Text = "T";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // msgUIX

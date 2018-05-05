@@ -23,7 +23,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
-            hdrUIX.UIXTitle = clnApp.AppName + " - Gerenciamento";
+            hdrUIX.Text = clnApp.AppName + " - Gerenciamento";
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
         }
 

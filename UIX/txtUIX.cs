@@ -57,7 +57,7 @@ namespace UIX
         }
 
         public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
-        public TextBox Box { get => txt; }
+
         public uixAllowedChars AllowedChars
         {
             get => _allowedChars; set

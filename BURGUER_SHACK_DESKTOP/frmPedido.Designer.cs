@@ -116,10 +116,10 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(550, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = false;
-            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.hdrUIX.UIXTitle = "Pedido";
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
+            this.hdrUIX.Text = "Pedido";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmPedido

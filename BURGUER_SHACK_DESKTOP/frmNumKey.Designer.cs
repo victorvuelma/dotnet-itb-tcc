@@ -56,10 +56,10 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(220, 50);
             this.hdrUIX.TabIndex = 31;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = true;
-            this.hdrUIX.UIXImage = null;
-            this.hdrUIX.UIXTitle = "";
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = true;
+            this.hdrUIX.Image = null;
+            this.hdrUIX.Text = "";
             // 
             // btnCorrigir
             // 

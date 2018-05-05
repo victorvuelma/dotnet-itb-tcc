@@ -153,10 +153,10 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(750, 50);
             this.hdrUIX.TabIndex = 4;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = false;
-            this.hdrUIX.UIXImage = null;
-            this.hdrUIX.UIXTitle = "Selecione";
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = null;
+            this.hdrUIX.Text = "Selecione";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmSelecionar

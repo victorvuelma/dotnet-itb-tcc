@@ -91,10 +91,10 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(500, 50);
             this.hdrUIX.TabIndex = 11;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = false;
-            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
-            this.hdrUIX.UIXTitle = "Acesso ao Sistema";
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
+            this.hdrUIX.Text = "Acesso ao Sistema";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // txtSenha
