@@ -69,6 +69,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.AccessibleName = "Número de Identificação";
+            this.txtPesquisa.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -80,6 +81,7 @@
             // txtDadosNome
             // 
             this.txtDadosNome.AccessibleName = "Nome";
+            this.txtDadosNome.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtDadosNome.Campo = "Nome";
             this.txtDadosNome.Location = new System.Drawing.Point(10, 20);
             this.txtDadosNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -94,6 +96,7 @@
             this.mtbDadosDtNasc.Campo = "Data de Nascimento";
             this.mtbDadosDtNasc.Location = new System.Drawing.Point(10, 50);
             this.mtbDadosDtNasc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbDadosDtNasc.Mask = "";
             this.mtbDadosDtNasc.MaxLength = 32767;
             this.mtbDadosDtNasc.Name = "mtbDadosDtNasc";
             this.mtbDadosDtNasc.Size = new System.Drawing.Size(185, 21);
@@ -106,6 +109,7 @@
             this.mtbDadosRG.Campo = "Registro Geral (RG)";
             this.mtbDadosRG.Location = new System.Drawing.Point(201, 50);
             this.mtbDadosRG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbDadosRG.Mask = "";
             this.mtbDadosRG.MaxLength = 32767;
             this.mtbDadosRG.Name = "mtbDadosRG";
             this.mtbDadosRG.Size = new System.Drawing.Size(178, 21);
@@ -118,6 +122,7 @@
             this.mtbDadosCPF.Campo = "CPF";
             this.mtbDadosCPF.Location = new System.Drawing.Point(386, 50);
             this.mtbDadosCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbDadosCPF.Mask = "";
             this.mtbDadosCPF.MaxLength = 32767;
             this.mtbDadosCPF.Name = "mtbDadosCPF";
             this.mtbDadosCPF.Size = new System.Drawing.Size(111, 21);
@@ -160,6 +165,7 @@
             // txtContatoNextel
             // 
             this.txtContatoNextel.AccessibleName = "ID Nextel";
+            this.txtContatoNextel.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtContatoNextel.Campo = "ID Nextel";
             this.txtContatoNextel.Location = new System.Drawing.Point(405, 50);
             this.txtContatoNextel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -174,6 +180,7 @@
             this.mtbContatoTelCel2.Campo = "Telefone Celular 2";
             this.mtbContatoTelCel2.Location = new System.Drawing.Point(212, 50);
             this.mtbContatoTelCel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbContatoTelCel2.Mask = "";
             this.mtbContatoTelCel2.MaxLength = 32767;
             this.mtbContatoTelCel2.Name = "mtbContatoTelCel2";
             this.mtbContatoTelCel2.Size = new System.Drawing.Size(187, 21);
@@ -186,6 +193,7 @@
             this.mtbContatoTelCel.Campo = "Telefone Celular*";
             this.mtbContatoTelCel.Location = new System.Drawing.Point(10, 50);
             this.mtbContatoTelCel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbContatoTelCel.Mask = "";
             this.mtbContatoTelCel.MaxLength = 32767;
             this.mtbContatoTelCel.Name = "mtbContatoTelCel";
             this.mtbContatoTelCel.Size = new System.Drawing.Size(185, 21);
@@ -198,6 +206,7 @@
             this.mtbContatoTelRes.Campo = "Telefone Residencial*";
             this.mtbContatoTelRes.Location = new System.Drawing.Point(386, 20);
             this.mtbContatoTelRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbContatoTelRes.Mask = "";
             this.mtbContatoTelRes.MaxLength = 32767;
             this.mtbContatoTelRes.Name = "mtbContatoTelRes";
             this.mtbContatoTelRes.Size = new System.Drawing.Size(205, 21);
@@ -207,6 +216,7 @@
             // txtContatoEmail
             // 
             this.txtContatoEmail.AccessibleName = "E-mail*";
+            this.txtContatoEmail.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtContatoEmail.Campo = "E-mail*";
             this.txtContatoEmail.Location = new System.Drawing.Point(10, 20);
             this.txtContatoEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -237,6 +247,7 @@
             // txtEndComplemento
             // 
             this.txtEndComplemento.AccessibleName = "Complemento";
+            this.txtEndComplemento.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndComplemento.Campo = "Complemento";
             this.txtEndComplemento.Location = new System.Drawing.Point(558, 20);
             this.txtEndComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -248,6 +259,7 @@
             // txtEndCidade
             // 
             this.txtEndCidade.AccessibleName = "Cidade*";
+            this.txtEndCidade.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndCidade.Campo = "Cidade*";
             this.txtEndCidade.Location = new System.Drawing.Point(415, 50);
             this.txtEndCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -259,6 +271,7 @@
             // txtEndBairro
             // 
             this.txtEndBairro.AccessibleName = "Bairro*";
+            this.txtEndBairro.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndBairro.Campo = "Bairro*";
             this.txtEndBairro.Location = new System.Drawing.Point(111, 50);
             this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -273,6 +286,7 @@
             this.mtbEndCEP.Campo = "CEP*";
             this.mtbEndCEP.Location = new System.Drawing.Point(10, 50);
             this.mtbEndCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbEndCEP.Mask = "";
             this.mtbEndCEP.MaxLength = 32767;
             this.mtbEndCEP.Name = "mtbEndCEP";
             this.mtbEndCEP.Size = new System.Drawing.Size(95, 20);
@@ -293,6 +307,7 @@
             // txtEndNr
             // 
             this.txtEndNr.AccessibleName = "Número*";
+            this.txtEndNr.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndNr.Campo = "Número*";
             this.txtEndNr.Location = new System.Drawing.Point(432, 20);
             this.txtEndNr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -304,6 +319,7 @@
             // txtEndLogradouro
             // 
             this.txtEndLogradouro.AccessibleName = "Logradouro*";
+            this.txtEndLogradouro.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndLogradouro.Campo = "Logradouro*";
             this.txtEndLogradouro.Location = new System.Drawing.Point(10, 20);
             this.txtEndLogradouro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -402,6 +418,7 @@
             // txtSalario
             // 
             this.txtSalario.AccessibleName = "Salário";
+            this.txtSalario.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtSalario.Campo = "Salário";
             this.txtSalario.Location = new System.Drawing.Point(373, 20);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -424,6 +441,7 @@
             // txtCargo
             // 
             this.txtCargo.AccessibleName = "Cargo";
+            this.txtCargo.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtCargo.Campo = "Cargo";
             this.txtCargo.Location = new System.Drawing.Point(10, 20);
             this.txtCargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -445,6 +463,7 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // uctGerenFuncionario
             // 
