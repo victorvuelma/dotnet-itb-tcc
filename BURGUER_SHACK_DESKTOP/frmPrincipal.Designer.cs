@@ -49,7 +49,7 @@
             this.hdrUIX.UIXButtonCloseEnabled = true;
             this.hdrUIX.UIXButtonMinEnabled = false;
             this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
-            this.hdrUIX.UIXTitle = "Burguer Shack :: Principal";
+            this.hdrUIX.UIXTitle = "Principal";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // pnlConteudo

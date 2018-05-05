@@ -118,7 +118,7 @@
             this.hdrUIX.UIXButtonCloseEnabled = true;
             this.hdrUIX.UIXButtonMinEnabled = false;
             this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.hdrUIX.UIXTitle = "Pedidos";
+            this.hdrUIX.UIXTitle = "Produto";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmPedidoProduto
@@ -135,7 +135,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPedidoProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PEDIDO";
+            this.Text = "Produto";
             this.Load += new System.EventHandler(this.frmPedidoProduto_Load);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);

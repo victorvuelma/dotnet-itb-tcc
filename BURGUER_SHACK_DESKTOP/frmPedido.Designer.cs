@@ -45,9 +45,9 @@
             this.pnlMenu.Controls.Add(this.btnFinalizar);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnProdutos);
-            this.pnlMenu.Location = new System.Drawing.Point(0, 40);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 700);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 600);
             this.pnlMenu.TabIndex = 2;
             // 
             // btnAdicionar
@@ -56,9 +56,9 @@
             this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAdicionar.Location = new System.Drawing.Point(10, 10);
+            this.btnAdicionar.Location = new System.Drawing.Point(5, 5);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
+            this.btnAdicionar.Size = new System.Drawing.Size(90, 90);
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -69,9 +69,9 @@
             this.btnFinalizar.Description = "Finalizar";
             this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
             this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizar.Location = new System.Drawing.Point(10, 610);
+            this.btnFinalizar.Location = new System.Drawing.Point(5, 505);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(80, 80);
+            this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
             this.btnFinalizar.TabIndex = 7;
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Visible = false;
@@ -94,18 +94,18 @@
             this.btnProdutos.Description = "Produtos";
             this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
             this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
-            this.btnProdutos.Location = new System.Drawing.Point(10, 100);
+            this.btnProdutos.Location = new System.Drawing.Point(5, 105);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(80, 80);
+            this.btnProdutos.Size = new System.Drawing.Size(90, 90);
             this.btnProdutos.TabIndex = 1;
             this.btnProdutos.UseVisualStyleBackColor = true;
             this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // pnlConteudo
             // 
-            this.pnlConteudo.Location = new System.Drawing.Point(100, 40);
+            this.pnlConteudo.Location = new System.Drawing.Point(100, 50);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(500, 700);
+            this.pnlConteudo.Size = new System.Drawing.Size(450, 600);
             this.pnlConteudo.TabIndex = 3;
             // 
             // hdrUIX
@@ -114,19 +114,19 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(600, 40);
+            this.hdrUIX.Size = new System.Drawing.Size(550, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.UIXButtonCloseEnabled = true;
             this.hdrUIX.UIXButtonMinEnabled = false;
             this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.hdrUIX.UIXTitle = "Pedidos";
+            this.hdrUIX.UIXTitle = "Pedido";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 740);
+            this.ClientSize = new System.Drawing.Size(550, 650);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
@@ -136,7 +136,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PEDIDO";
+            this.Text = "Pedido";
             this.Load += new System.EventHandler(this.frmPedido_Load);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);

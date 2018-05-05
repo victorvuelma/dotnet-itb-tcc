@@ -116,7 +116,7 @@
             this.hdrUIX.UIXButtonCloseEnabled = true;
             this.hdrUIX.UIXButtonMinEnabled = false;
             this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.hdrUIX.UIXTitle = "Mesas";
+            this.hdrUIX.UIXTitle = "Mesa";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmMesa
@@ -131,7 +131,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Mesas";
+            this.Text = "Mesa";
             this.Load += new System.EventHandler(this.frmMesa_Load);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);

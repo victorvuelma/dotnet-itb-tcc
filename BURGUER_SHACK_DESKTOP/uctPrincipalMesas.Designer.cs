@@ -48,7 +48,7 @@
             this.grbMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbMesas.Name = "grbMesas";
             this.grbMesas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbMesas.Size = new System.Drawing.Size(890, 790);
+            this.grbMesas.Size = new System.Drawing.Size(890, 640);
             this.grbMesas.TabIndex = 0;
             this.grbMesas.TabStop = false;
             this.grbMesas.Text = "SELECIONAR MESA";
@@ -56,11 +56,11 @@
             // pnlMesas
             // 
             this.pnlMesas.AutoScroll = true;
-            this.pnlMesas.Location = new System.Drawing.Point(5, 20);
+            this.pnlMesas.Location = new System.Drawing.Point(5, 15);
             this.pnlMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlMesas.MaximumSize = new System.Drawing.Size(880, 123077);
             this.pnlMesas.Name = "pnlMesas";
-            this.pnlMesas.Size = new System.Drawing.Size(880, 760);
+            this.pnlMesas.Size = new System.Drawing.Size(880, 620);
             this.pnlMesas.TabIndex = 5;
             // 
             // lblOcupada

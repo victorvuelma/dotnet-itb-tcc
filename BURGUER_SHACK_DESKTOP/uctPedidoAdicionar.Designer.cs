@@ -61,7 +61,7 @@
             this.grbAdicionarProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbAdicionarProduto.Name = "grbAdicionarProduto";
             this.grbAdicionarProduto.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbAdicionarProduto.Size = new System.Drawing.Size(490, 730);
+            this.grbAdicionarProduto.Size = new System.Drawing.Size(440, 591);
             this.grbAdicionarProduto.TabIndex = 5;
             this.grbAdicionarProduto.TabStop = false;
             this.grbAdicionarProduto.Text = "ADICIONAR PRODUTO";
@@ -69,7 +69,7 @@
             // grbAdicional
             // 
             this.grbAdicional.Controls.Add(this.txtAdicional);
-            this.grbAdicional.Location = new System.Drawing.Point(280, 470);
+            this.grbAdicional.Location = new System.Drawing.Point(281, 300);
             this.grbAdicional.Name = "grbAdicional";
             this.grbAdicional.Size = new System.Drawing.Size(205, 250);
             this.grbAdicional.TabIndex = 6;
@@ -88,7 +88,7 @@
             // 
             this.grbDetalhes.Controls.Add(this.txtQuantidade);
             this.grbDetalhes.Controls.Add(this.txtDetalhes);
-            this.grbDetalhes.Location = new System.Drawing.Point(5, 470);
+            this.grbDetalhes.Location = new System.Drawing.Point(5, 300);
             this.grbDetalhes.Name = "grbDetalhes";
             this.grbDetalhes.Size = new System.Drawing.Size(270, 250);
             this.grbDetalhes.TabIndex = 5;
@@ -121,9 +121,9 @@
             this.grbProduto.Controls.Add(this.pnlProdutos);
             this.grbProduto.Controls.Add(this.btnProdutoPesquisar);
             this.grbProduto.Controls.Add(this.txtProdutoPesquisar);
-            this.grbProduto.Location = new System.Drawing.Point(5, 160);
+            this.grbProduto.Location = new System.Drawing.Point(5, 140);
             this.grbProduto.Name = "grbProduto";
-            this.grbProduto.Size = new System.Drawing.Size(480, 300);
+            this.grbProduto.Size = new System.Drawing.Size(430, 150);
             this.grbProduto.TabIndex = 4;
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "SELECIONE O PRODUTO";
@@ -163,9 +163,9 @@
             this.grbTipo.Controls.Add(this.btnBebida);
             this.grbTipo.Controls.Add(this.btnAcompanhamento);
             this.grbTipo.Controls.Add(this.btnLanche);
-            this.grbTipo.Location = new System.Drawing.Point(5, 20);
+            this.grbTipo.Location = new System.Drawing.Point(5, 15);
             this.grbTipo.Name = "grbTipo";
-            this.grbTipo.Size = new System.Drawing.Size(480, 130);
+            this.grbTipo.Size = new System.Drawing.Size(430, 120);
             this.grbTipo.TabIndex = 0;
             this.grbTipo.TabStop = false;
             this.grbTipo.Text = "TIPO DO PRODUTO";
@@ -173,11 +173,12 @@
             // btnSobremesa
             // 
             this.btnSobremesa.Description = "Sobremesa";
+            this.btnSobremesa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSobremesa.HoverColor = System.Drawing.Color.Transparent;
             this.btnSobremesa.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sobremesa;
-            this.btnSobremesa.Location = new System.Drawing.Point(370, 20);
+            this.btnSobremesa.Location = new System.Drawing.Point(335, 20);
             this.btnSobremesa.Name = "btnSobremesa";
-            this.btnSobremesa.Size = new System.Drawing.Size(100, 100);
+            this.btnSobremesa.Size = new System.Drawing.Size(90, 90);
             this.btnSobremesa.TabIndex = 3;
             this.btnSobremesa.Text = "btnUIX3";
             this.btnSobremesa.UseVisualStyleBackColor = true;
@@ -186,11 +187,12 @@
             // btnBebida
             // 
             this.btnBebida.Description = "Bebida";
+            this.btnBebida.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBebida.HoverColor = System.Drawing.Color.Transparent;
             this.btnBebida.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.bebida;
-            this.btnBebida.Location = new System.Drawing.Point(250, 20);
+            this.btnBebida.Location = new System.Drawing.Point(225, 20);
             this.btnBebida.Name = "btnBebida";
-            this.btnBebida.Size = new System.Drawing.Size(100, 100);
+            this.btnBebida.Size = new System.Drawing.Size(90, 90);
             this.btnBebida.TabIndex = 2;
             this.btnBebida.Text = "btnUIX2";
             this.btnBebida.UseVisualStyleBackColor = true;
@@ -198,13 +200,13 @@
             // 
             // btnAcompanhamento
             // 
-            this.btnAcompanhamento.Description = "Acompanhamento";
-            this.btnAcompanhamento.Font = new System.Drawing.Font("Century Gothic", 6.75F);
+            this.btnAcompanhamento.Description = "Guarnição";
+            this.btnAcompanhamento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcompanhamento.HoverColor = System.Drawing.Color.Transparent;
             this.btnAcompanhamento.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.batatas;
-            this.btnAcompanhamento.Location = new System.Drawing.Point(130, 20);
+            this.btnAcompanhamento.Location = new System.Drawing.Point(115, 20);
             this.btnAcompanhamento.Name = "btnAcompanhamento";
-            this.btnAcompanhamento.Size = new System.Drawing.Size(100, 100);
+            this.btnAcompanhamento.Size = new System.Drawing.Size(90, 90);
             this.btnAcompanhamento.TabIndex = 1;
             this.btnAcompanhamento.Text = "btnUIX1";
             this.btnAcompanhamento.UseVisualStyleBackColor = true;
@@ -213,11 +215,12 @@
             // btnLanche
             // 
             this.btnLanche.Description = "Lanche";
+            this.btnLanche.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanche.HoverColor = System.Drawing.Color.Transparent;
             this.btnLanche.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
-            this.btnLanche.Location = new System.Drawing.Point(10, 20);
+            this.btnLanche.Location = new System.Drawing.Point(5, 20);
             this.btnLanche.Name = "btnLanche";
-            this.btnLanche.Size = new System.Drawing.Size(100, 100);
+            this.btnLanche.Size = new System.Drawing.Size(90, 90);
             this.btnLanche.TabIndex = 0;
             this.btnLanche.Text = "btnUIX1";
             this.btnLanche.UseVisualStyleBackColor = true;
@@ -225,7 +228,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(295, 740);
+            this.btnAdicionar.Location = new System.Drawing.Point(295, 540);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(200, 50);
@@ -243,7 +246,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctPedidoAdicionar";
-            this.Size = new System.Drawing.Size(500, 800);
+            this.Size = new System.Drawing.Size(450, 600);
             this.grbAdicionarProduto.ResumeLayout(false);
             this.grbAdicional.ResumeLayout(false);
             this.grbAdicional.PerformLayout();
