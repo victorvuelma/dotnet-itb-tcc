@@ -28,10 +28,10 @@ namespace BURGUER_SHACK_DESKTOP
         public int Categoria { get => _categoria; set => _categoria = value; }
         public Image Imagem { get => _imagem; set => _imagem = value; }
 
-        public List<clnProduto> obterPorNomeCategoria()
+        public List<clnProduto> obterPorCategoria()
         {
             List<clnProduto> objProdutos = new List<clnProduto>();
-            for (int i = 0; i <= 24; i++)
+            for (int i = 0; i <= 100; i++)
             {
                 if (Categoria == i % 5)
                 {

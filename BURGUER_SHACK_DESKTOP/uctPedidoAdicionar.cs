@@ -31,34 +31,47 @@ namespace BURGUER_SHACK_DESKTOP
             _validar = new clnValidar();
             _validar.addValidacao(txtQuantidade, new clnValidar.ValidarTipo[] { clnValidar.ValidarTipo.VAZIO, clnValidar.ValidarTipo.INT });
 
-            grbProduto.Hide();
-
             esconderDetalhes();
         }
 
         private void selecionaCategoria(int categoria)
         {
-            clnUtil.resetarCampos(grbProduto.Controls);
-            grbProduto.Show();
 
             PedidoProduto = null;
 
             esconderDetalhes();
 
-            carregaProdutos(categoria);
+            selecionarProduto(categoria);
+
+            //carregaProdutos(categoria);
+        }
+
+        private void selecionarProduto(int categoria)
+        {
+            frmSelecionar frmSelecionarProduto = new frmSelecionar();
+            frmSelecionarProduto.Icone = BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
+            frmSelecionarProduto.Titulo = "Selecione o produto";
+
+            clnSelecionarProduto objSelecionar = new clnSelecionarProduto();
+
+            clnProduto objProdutos = new clnProduto();
+            objProdutos.Categoria = categoria;
+
+            objSelecionar.Opcoes = objProdutos.obterPorCategoria();
+
+            frmSelecionarProduto.ObjSelecionar = objSelecionar;
+
+            frmSelecionarProduto.ShowDialog();
         }
 
         private void carregaProdutos(int categoria)
         {
-            pnlProdutos.Visible = false;
-            pnlProdutos.Controls.Clear();
 
             clnProduto objProdutos = new clnProduto();
             objProdutos.Categoria = categoria;
-            objProdutos.Nome = txtProdutoPesquisar.Text;
 
             List<Control> produtoControles = new List<Control>();
-            foreach (clnProduto objProduto in objProdutos.obterPorNomeCategoria())
+            foreach (clnProduto objProduto in objProdutos.obterPorCategoria())
             {
                 UIX.btnUIX btn = new UIX.btnUIX();
                 btn.Description = objProduto.Nome;
@@ -73,11 +86,6 @@ namespace BURGUER_SHACK_DESKTOP
                 produtoControles.Add(btn);
             }
 
-            clnUtil.adicionarControles(pnlProdutos, produtoControles, 10);
-
-            clnApp.AppVisualTemplate.pnlApply(pnlProdutos);
-
-            pnlProdutos.Visible = true;
         }
 
         private void selecionaProduto(clnProduto objProduto)
@@ -169,6 +177,36 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             adicionarProduto();
+        }
+
+        class clnSelecionarProduto : clnSelecionar<clnProduto>
+        {
+
+            internal override string Detalhes(clnProduto obj)
+            {
+                String detalhes = "";
+                detalhes += "Categoria: " + obj.Categoria;
+                detalhes += "\n";
+                detalhes += "Código: " + obj.Cod;
+
+                return detalhes;
+            }
+
+            internal override Image Imagem(clnProduto obj)
+            {
+                return obj.Imagem;
+            }
+
+            internal override string Nome(clnProduto obj)
+            {
+                return obj.Nome;
+            }
+
+            internal override int Cod(clnProduto obj)
+            {
+                return obj.Cod;
+            }
+
         }
 
     }

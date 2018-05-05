@@ -34,10 +34,6 @@
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.txtQuantidade = new UIX.txtUIX();
             this.txtDetalhes = new System.Windows.Forms.TextBox();
-            this.grbProduto = new System.Windows.Forms.GroupBox();
-            this.pnlProdutos = new System.Windows.Forms.Panel();
-            this.btnProdutoPesquisar = new System.Windows.Forms.Button();
-            this.txtProdutoPesquisar = new UIX.txtUIX();
             this.grbTipo = new System.Windows.Forms.GroupBox();
             this.btnSobremesa = new UIX.btnUIX();
             this.btnBebida = new UIX.btnUIX();
@@ -47,7 +43,6 @@
             this.grbAdicionarProduto.SuspendLayout();
             this.grbAdicional.SuspendLayout();
             this.grbDetalhes.SuspendLayout();
-            this.grbProduto.SuspendLayout();
             this.grbTipo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +50,6 @@
             // 
             this.grbAdicionarProduto.Controls.Add(this.grbAdicional);
             this.grbAdicionarProduto.Controls.Add(this.grbDetalhes);
-            this.grbAdicionarProduto.Controls.Add(this.grbProduto);
             this.grbAdicionarProduto.Controls.Add(this.grbTipo);
             this.grbAdicionarProduto.Location = new System.Drawing.Point(5, 5);
             this.grbAdicionarProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -115,47 +109,6 @@
             this.txtDetalhes.ReadOnly = true;
             this.txtDetalhes.Size = new System.Drawing.Size(260, 195);
             this.txtDetalhes.TabIndex = 0;
-            // 
-            // grbProduto
-            // 
-            this.grbProduto.Controls.Add(this.pnlProdutos);
-            this.grbProduto.Controls.Add(this.btnProdutoPesquisar);
-            this.grbProduto.Controls.Add(this.txtProdutoPesquisar);
-            this.grbProduto.Location = new System.Drawing.Point(5, 140);
-            this.grbProduto.Name = "grbProduto";
-            this.grbProduto.Size = new System.Drawing.Size(430, 150);
-            this.grbProduto.TabIndex = 4;
-            this.grbProduto.TabStop = false;
-            this.grbProduto.Text = "SELECIONE O PRODUTO";
-            // 
-            // pnlProdutos
-            // 
-            this.pnlProdutos.Location = new System.Drawing.Point(10, 50);
-            this.pnlProdutos.MaximumSize = new System.Drawing.Size(460, 10000);
-            this.pnlProdutos.Name = "pnlProdutos";
-            this.pnlProdutos.Size = new System.Drawing.Size(460, 240);
-            this.pnlProdutos.TabIndex = 3;
-            // 
-            // btnProdutoPesquisar
-            // 
-            this.btnProdutoPesquisar.Location = new System.Drawing.Point(370, 20);
-            this.btnProdutoPesquisar.Name = "btnProdutoPesquisar";
-            this.btnProdutoPesquisar.Size = new System.Drawing.Size(100, 22);
-            this.btnProdutoPesquisar.TabIndex = 1;
-            this.btnProdutoPesquisar.Text = "Pesquisar";
-            this.btnProdutoPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // txtProdutoPesquisar
-            // 
-            this.txtProdutoPesquisar.AccessibleName = "Produto";
-            this.txtProdutoPesquisar.AllowedChars = UIX.uixAllowedChars.ALL;
-            this.txtProdutoPesquisar.Campo = "Produto";
-            this.txtProdutoPesquisar.Location = new System.Drawing.Point(10, 20);
-            this.txtProdutoPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtProdutoPesquisar.MaxLength = 32767;
-            this.txtProdutoPesquisar.Name = "txtProdutoPesquisar";
-            this.txtProdutoPesquisar.Size = new System.Drawing.Size(350, 22);
-            this.txtProdutoPesquisar.TabIndex = 0;
             // 
             // grbTipo
             // 
@@ -252,7 +205,6 @@
             this.grbAdicional.PerformLayout();
             this.grbDetalhes.ResumeLayout(false);
             this.grbDetalhes.PerformLayout();
-            this.grbProduto.ResumeLayout(false);
             this.grbTipo.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -267,14 +219,10 @@
         private UIX.btnUIX btnSobremesa;
         private UIX.btnUIX btnBebida;
         private UIX.btnUIX btnAcompanhamento;
-        private System.Windows.Forms.GroupBox grbProduto;
-        private System.Windows.Forms.Button btnProdutoPesquisar;
-        private UIX.txtUIX txtProdutoPesquisar;
         private System.Windows.Forms.GroupBox grbDetalhes;
         private System.Windows.Forms.TextBox txtDetalhes;
         private System.Windows.Forms.GroupBox grbAdicional;
         private System.Windows.Forms.TextBox txtAdicional;
         private UIX.txtUIX txtQuantidade;
-        private System.Windows.Forms.Panel pnlProdutos;
     }
 }
