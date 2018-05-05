@@ -42,10 +42,10 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(364, 199);
+            this.btnEntrar.Location = new System.Drawing.Point(360, 200);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(96, 31);
+            this.btnEntrar.Size = new System.Drawing.Size(100, 30);
             this.btnEntrar.TabIndex = 9;
             this.btnEntrar.Text = "ACESSAR";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -76,12 +76,12 @@
             // 
             // lblProgram
             // 
-            this.lblProgram.Location = new System.Drawing.Point(0, 280);
+            this.lblProgram.Location = new System.Drawing.Point(0, 245);
             this.lblProgram.Name = "lblProgram";
-            this.lblProgram.Size = new System.Drawing.Size(500, 20);
+            this.lblProgram.Size = new System.Drawing.Size(500, 25);
             this.lblProgram.TabIndex = 14;
             this.lblProgram.Text = "BurguerShack :: Versão 1.0 :: Copyright 2018";
-            this.lblProgram.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblProgram.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // hdrUIX
             // 
@@ -89,20 +89,21 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(500, 40);
+            this.hdrUIX.Size = new System.Drawing.Size(500, 50);
             this.hdrUIX.TabIndex = 11;
             this.hdrUIX.UIXButtonCloseEnabled = true;
             this.hdrUIX.UIXButtonMinEnabled = false;
             this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
-            this.hdrUIX.UIXTitle = "BurgerShack :: Acessar o Sistema";
+            this.hdrUIX.UIXTitle = "Acesso ao Sistema";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // txtSenha
             // 
             this.txtSenha.AccessibleName = "Senha";
+            this.txtSenha.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtSenha.Campo = "Senha";
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(190, 145);
+            this.txtSenha.Location = new System.Drawing.Point(190, 140);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(270, 30);
@@ -111,9 +112,10 @@
             // txtNome
             // 
             this.txtNome.AccessibleName = "Nome";
+            this.txtNome.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtNome.Campo = "Nome";
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(190, 110);
+            this.txtNome.Location = new System.Drawing.Point(190, 100);
             this.txtNome.MaxLength = 32767;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(270, 30);
@@ -123,7 +125,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(500, 300);
+            this.ClientSize = new System.Drawing.Size(500, 270);
             this.Controls.Add(this.lblProgram);
             this.Controls.Add(this.picUser);
             this.Controls.Add(this.picVer);

@@ -29,28 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMesa));
-            this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.btnNovoPedido = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnConta = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
-            this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // hdrUIX
-            // 
-            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
-            this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(600, 40);
-            this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.UIXButtonCloseEnabled = true;
-            this.hdrUIX.UIXButtonMinEnabled = false;
-            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.hdrUIX.UIXTitle = "Mesas";
-            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // pnlMenu
             // 
@@ -58,19 +45,26 @@
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnConta);
             this.pnlMenu.Controls.Add(this.btnPedidos);
-            this.pnlMenu.Location = new System.Drawing.Point(0, 40);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 700);
+            this.pnlMenu.Size = new System.Drawing.Size(130, 650);
             this.pnlMenu.TabIndex = 3;
+            // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Location = new System.Drawing.Point(130, 50);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(500, 650);
+            this.pnlConteudo.TabIndex = 4;
             // 
             // btnNovoPedido
             // 
             this.btnNovoPedido.Description = "Novo Pedido";
             this.btnNovoPedido.HoverColor = System.Drawing.Color.Transparent;
             this.btnNovoPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnNovoPedido.Location = new System.Drawing.Point(10, 10);
+            this.btnNovoPedido.Location = new System.Drawing.Point(15, 15);
             this.btnNovoPedido.Name = "btnNovoPedido";
-            this.btnNovoPedido.Size = new System.Drawing.Size(80, 80);
+            this.btnNovoPedido.Size = new System.Drawing.Size(100, 100);
             this.btnNovoPedido.TabIndex = 8;
             this.btnNovoPedido.UseVisualStyleBackColor = true;
             this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
@@ -80,9 +74,9 @@
             this.btnSair.Description = "Sair";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.Location = new System.Drawing.Point(10, 610);
+            this.btnSair.Location = new System.Drawing.Point(15, 530);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(80, 80);
+            this.btnSair.Size = new System.Drawing.Size(100, 100);
             this.btnSair.TabIndex = 6;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -93,9 +87,9 @@
             this.btnConta.Description = "Conta";
             this.btnConta.HoverColor = System.Drawing.Color.Transparent;
             this.btnConta.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnConta.Location = new System.Drawing.Point(10, 190);
+            this.btnConta.Location = new System.Drawing.Point(15, 245);
             this.btnConta.Name = "btnConta";
-            this.btnConta.Size = new System.Drawing.Size(80, 80);
+            this.btnConta.Size = new System.Drawing.Size(100, 100);
             this.btnConta.TabIndex = 7;
             this.btnConta.UseVisualStyleBackColor = true;
             this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
@@ -105,25 +99,31 @@
             this.btnPedidos.Description = "Pedidos";
             this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
             this.btnPedidos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.btnPedidos.Location = new System.Drawing.Point(10, 100);
+            this.btnPedidos.Location = new System.Drawing.Point(15, 130);
             this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Size = new System.Drawing.Size(80, 80);
+            this.btnPedidos.Size = new System.Drawing.Size(100, 100);
             this.btnPedidos.TabIndex = 4;
             this.btnPedidos.UseVisualStyleBackColor = true;
             this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
-            // pnlConteudo
+            // hdrUIX
             // 
-            this.pnlConteudo.Location = new System.Drawing.Point(100, 40);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(500, 700);
-            this.pnlConteudo.TabIndex = 4;
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(630, 50);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.UIXButtonCloseEnabled = true;
+            this.hdrUIX.UIXButtonMinEnabled = false;
+            this.hdrUIX.UIXImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.hdrUIX.UIXTitle = "Mesas";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmMesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 740);
+            this.ClientSize = new System.Drawing.Size(630, 700);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);

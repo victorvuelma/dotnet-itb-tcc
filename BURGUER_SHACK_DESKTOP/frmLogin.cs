@@ -21,6 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             txtSenha.txt.PasswordChar = '*';
+            hdrUIX.UIXTitle = clnApp.AppName + " :: Acesso ao Sistema";
 
             clnUtil.atualizarTabIndex(Controls);
 
