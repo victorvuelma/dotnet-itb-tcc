@@ -44,7 +44,7 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(1030, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(1000, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.UIXButtonCloseEnabled = true;
             this.hdrUIX.UIXButtonMinEnabled = false;
@@ -54,7 +54,7 @@
             // 
             // pnlConteudo
             // 
-            this.pnlConteudo.Location = new System.Drawing.Point(130, 50);
+            this.pnlConteudo.Location = new System.Drawing.Point(100, 50);
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(900, 650);
             this.pnlConteudo.TabIndex = 6;
@@ -66,7 +66,7 @@
             this.pnlMenu.Controls.Add(this.btnMesas);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(130, 650);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 650);
             this.pnlMenu.TabIndex = 5;
             // 
             // btnSair
@@ -74,9 +74,9 @@
             this.btnSair.Description = "Sair";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.Location = new System.Drawing.Point(15, 530);
+            this.btnSair.Location = new System.Drawing.Point(5, 555);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(100, 100);
+            this.btnSair.Size = new System.Drawing.Size(90, 90);
             this.btnSair.TabIndex = 6;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -86,9 +86,9 @@
             this.btnCardapio.Description = "Cardápio";
             this.btnCardapio.HoverColor = System.Drawing.Color.Transparent;
             this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.btnCardapio.Location = new System.Drawing.Point(15, 130);
+            this.btnCardapio.Location = new System.Drawing.Point(5, 105);
             this.btnCardapio.Name = "btnCardapio";
-            this.btnCardapio.Size = new System.Drawing.Size(100, 100);
+            this.btnCardapio.Size = new System.Drawing.Size(90, 90);
             this.btnCardapio.TabIndex = 2;
             this.btnCardapio.UseVisualStyleBackColor = true;
             this.btnCardapio.Visible = false;
@@ -99,9 +99,9 @@
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
             this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMesas.Location = new System.Drawing.Point(15, 15);
+            this.btnMesas.Location = new System.Drawing.Point(5, 5);
             this.btnMesas.Name = "btnMesas";
-            this.btnMesas.Size = new System.Drawing.Size(100, 100);
+            this.btnMesas.Size = new System.Drawing.Size(90, 90);
             this.btnMesas.TabIndex = 0;
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 700);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
@@ -120,7 +120,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmPrincipal";
+            this.Text = "Principal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -38,9 +38,10 @@
             // 
             // btnYes
             // 
-            this.btnYes.Location = new System.Drawing.Point(260, 160);
+            this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYes.Location = new System.Drawing.Point(260, 170);
             this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(80, 35);
+            this.btnYes.Size = new System.Drawing.Size(80, 40);
             this.btnYes.TabIndex = 1;
             this.btnYes.Text = "S";
             this.btnYes.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // btnNo
             // 
-            this.btnNo.Location = new System.Drawing.Point(175, 160);
+            this.btnNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNo.Location = new System.Drawing.Point(170, 170);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(80, 35);
+            this.btnNo.Size = new System.Drawing.Size(80, 40);
             this.btnNo.TabIndex = 2;
             this.btnNo.Text = "N";
             this.btnNo.UseVisualStyleBackColor = true;
@@ -58,7 +60,7 @@
             // 
             // pic
             // 
-            this.pic.Location = new System.Drawing.Point(10, 50);
+            this.pic.Location = new System.Drawing.Point(10, 60);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(100, 100);
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -68,9 +70,9 @@
             // lbl
             // 
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(120, 50);
+            this.lbl.Location = new System.Drawing.Point(120, 60);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(220, 105);
+            this.lbl.Size = new System.Drawing.Size(220, 100);
             this.lbl.TabIndex = 4;
             this.lbl.Text = "C";
             // 
@@ -79,7 +81,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(350, 40);
+            this.hdrUIX.Size = new System.Drawing.Size(350, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.UIXButtonCloseEnabled = true;
             this.hdrUIX.UIXButtonMinEnabled = false;
@@ -91,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 200);
+            this.ClientSize = new System.Drawing.Size(350, 220);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.pic);
             this.Controls.Add(this.btnNo);
@@ -100,7 +102,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "msgUIX";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "msgUIX";
+            this.Text = "Mensagem ";
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
 
