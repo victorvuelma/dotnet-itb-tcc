@@ -32,13 +32,13 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.txtQuantidade = new UIX.txtUIX();
             this.lblNome = new System.Windows.Forms.Label();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.pnlOpcoes = new System.Windows.Forms.Panel();
-            this.txtQuantidade = new UIX.txtUIX();
             this.txtPesquisa = new UIX.txtUIX();
+            this.pnlOpcoes = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
             this.grbDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -74,6 +74,18 @@
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(165, 150);
             this.lblDesc.TabIndex = 3;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.Location = new System.Drawing.Point(10, 400);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(165, 20);
+            this.txtQuantidade.TabIndex = 2;
             // 
             // lblNome
             // 
@@ -111,27 +123,7 @@
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // pnlOpcoes
-            // 
-            this.pnlOpcoes.AutoScroll = true;
-            this.pnlOpcoes.Location = new System.Drawing.Point(5, 50);
-            this.pnlOpcoes.MaximumSize = new System.Drawing.Size(540, 1000);
-            this.pnlOpcoes.Name = "pnlOpcoes";
-            this.pnlOpcoes.Size = new System.Drawing.Size(540, 425);
-            this.pnlOpcoes.TabIndex = 0;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.ALL;
-            this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(10, 400);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(165, 20);
-            this.txtQuantidade.TabIndex = 2;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
@@ -144,18 +136,28 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(440, 25);
             this.txtPesquisa.TabIndex = 1;
+            this.txtPesquisa.Leave += new System.EventHandler(this.txtPesquisa_Leave);
+            // 
+            // pnlOpcoes
+            // 
+            this.pnlOpcoes.AutoScroll = true;
+            this.pnlOpcoes.Location = new System.Drawing.Point(5, 50);
+            this.pnlOpcoes.MaximumSize = new System.Drawing.Size(540, 1000);
+            this.pnlOpcoes.Name = "pnlOpcoes";
+            this.pnlOpcoes.Size = new System.Drawing.Size(540, 425);
+            this.pnlOpcoes.TabIndex = 0;
             // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = null;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(750, 50);
             this.hdrUIX.TabIndex = 4;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = null;
             this.hdrUIX.Title = "Selecione";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 

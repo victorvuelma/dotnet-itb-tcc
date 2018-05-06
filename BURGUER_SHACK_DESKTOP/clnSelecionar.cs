@@ -84,7 +84,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (obj is T)
             {
-                return Nome((T)obj);
+                return Detalhes((T)obj);
             }
             return null;
         }
