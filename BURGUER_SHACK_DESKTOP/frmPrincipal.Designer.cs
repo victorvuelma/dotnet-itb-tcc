@@ -49,7 +49,7 @@
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
             this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
-            this.hdrUIX.Text = "Principal";
+            this.hdrUIX.Title = "Principal";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // pnlConteudo

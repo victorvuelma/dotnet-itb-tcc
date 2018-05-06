@@ -118,7 +118,7 @@
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
             this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.hdrUIX.Text = "Produto";
+            this.hdrUIX.Title = "Produto";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmPedidoProduto

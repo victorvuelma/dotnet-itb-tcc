@@ -26,7 +26,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 value = clnApp.AppName + " :: " + value;
                 Text = value;
-                hdrUIX.Text = value;
+                hdrUIX.Title = value;
             }
         }
 

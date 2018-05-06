@@ -93,7 +93,7 @@
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = true;
             this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
-            this.hdrUIX.Text = "Gerenciador";
+            this.hdrUIX.Title = "Gerenciador";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             this.hdrUIX.Min += new System.EventHandler(this.hdrUIX_Min);
             // 

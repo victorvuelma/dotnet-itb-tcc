@@ -257,7 +257,7 @@ namespace BURGUER_SHACK_DESKTOP
                 pnlConteudo.Visible = true;
             }
 
-            hdrUIX.Text = clnApp.AppName + " - " + titulo;
+            hdrUIX.Title = clnApp.AppName + " - " + titulo;
         }
 
     }

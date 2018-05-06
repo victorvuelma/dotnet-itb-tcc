@@ -94,7 +94,7 @@
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
             this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.usuarios;
-            this.hdrUIX.Text = "Acesso ao Sistema";
+            this.hdrUIX.Title = "Acesso ao Sistema";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // txtSenha

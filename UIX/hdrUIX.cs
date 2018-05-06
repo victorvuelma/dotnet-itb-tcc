@@ -21,7 +21,7 @@ namespace UIX
 
         public Image Image { get => pic.Image; set => pic.Image = value; }
 
-        public new String Text { get => lbl.Text; set => lbl.Text = value; }
+        public String Title { get => lbl.Text; set => lbl.Text = value; }
 
         public new Size Size
         {

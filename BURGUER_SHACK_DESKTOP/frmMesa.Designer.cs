@@ -116,7 +116,7 @@
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
             this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.hdrUIX.Text = "Mesa";
+            this.hdrUIX.Title = "Mesa";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmMesa

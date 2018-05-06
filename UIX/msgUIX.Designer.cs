@@ -86,7 +86,7 @@
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
             this.hdrUIX.Image = null;
-            this.hdrUIX.Text = "T";
+            this.hdrUIX.Title = "T";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // msgUIX

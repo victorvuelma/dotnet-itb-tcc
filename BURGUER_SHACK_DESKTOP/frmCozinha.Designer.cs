@@ -70,7 +70,7 @@
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = true;
             this.hdrUIX.Image = null;
-            this.hdrUIX.Text = "Titulo UIX";
+            this.hdrUIX.Title = "Titulo UIX";
             // 
             // frmCozinha
             // 

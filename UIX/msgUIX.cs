@@ -24,7 +24,7 @@ namespace UIX
         {
             msgUIX msg = new msgUIX();
 
-            msg.hdrUIX.Text = titulo;
+            msg.hdrUIX.Title = titulo;
             msg.Text = titulo;
 
             msg.lbl.Text = mensagem;
