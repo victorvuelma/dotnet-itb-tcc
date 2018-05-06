@@ -178,6 +178,12 @@
     <Compile Include="frmNumBoard.Designer.cs">
       <DependentUpon>frmNumBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="msgGerenciador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="msgGerenciador.Designer.cs">
+      <DependentUpon>msgGerenciador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNumBoard.resx">
       <DependentUpon>frmNumBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="msgGerenciador.resx">
+      <DependentUpon>msgGerenciador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -451,6 +460,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\funcionario.png" />
+    <None Include="Resources\terceirizada.png" />
     <None Include="Resources\calculadora.png" />
     <None Include="Resources\modelo.png" />
     <None Include="Resources\mesauso.png" />
