@@ -160,12 +160,6 @@
     <Compile Include="frmPedido.Designer.cs">
       <DependentUpon>frmPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNumKey.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNumKey.Designer.cs">
-      <DependentUpon>frmNumKey.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +171,12 @@
     </Compile>
     <Compile Include="frmSelecionar.Designer.cs">
       <DependentUpon>frmSelecionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNumBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNumBoard.Designer.cs">
+      <DependentUpon>frmNumBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -288,9 +288,6 @@
     <EmbeddedResource Include="frmMesa.resx">
       <DependentUpon>frmMesa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNumKey.resx">
-      <DependentUpon>frmNumKey.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPedidoProduto.resx">
       <DependentUpon>frmPedidoProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelecionar.resx">
       <DependentUpon>frmSelecionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNumBoard.resx">
+      <DependentUpon>frmNumBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -451,6 +451,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\calculadora.png" />
     <None Include="Resources\modelo.png" />
     <None Include="Resources\mesauso.png" />
     <None Include="Resources\voltar.png" />

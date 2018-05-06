@@ -38,6 +38,40 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static ViaCEP _viaCep = new ViaCEP();
 
+        public static void abrirNumBoard(UIX.txtUIX txt)
+        {
+            if (txt.AllowedChars == UIX.uixAllowedChars.INT)
+            {
+                abrirNumBoard(txt.txt, frmNumBoard.NumBoardMode.INT);
+            }
+            else
+            {
+                abrirNumBoard(txt.txt, frmNumBoard.NumBoardMode.DOUBLE);
+            }
+        }
+
+        public static void abrirNumBoard(UIX.mtbUIX masked, frmNumBoard.NumBoardMode mode)
+        {
+            abrirNumBoard(masked.mtb, mode);
+        }
+
+        public static void abrirNumBoard(TextBoxBase box, frmNumBoard.NumBoardMode mode)
+        {
+            box.Click += (object sender, EventArgs args) =>
+            {
+                frmNumBoard numBoard = new frmNumBoard();
+                numBoard.NumeroPadrao = box.Text;
+                numBoard.Input = box;
+
+                if (mode == frmNumBoard.NumBoardMode.DOUBLE)
+                {
+                    numBoard.btnPoint.Hide();
+                }
+
+                numBoard.ShowDialog();
+            };
+        }
+
         public static void resetarCampos(ControlCollection controls)
         {
             foreach (Control control in controls)
