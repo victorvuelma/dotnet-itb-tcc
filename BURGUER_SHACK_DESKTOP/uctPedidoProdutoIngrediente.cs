@@ -88,7 +88,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void exibirIngredientes()
         {
-            pnlIngredientes.Visible = false;
             pnlIngredientes.Controls.Clear();
 
             clnIngrediente objIngredientes = new clnIngrediente();
@@ -110,10 +109,6 @@ namespace BURGUER_SHACK_DESKTOP
                 ingredienteControles.Add(btn);
             }
             clnUtil.adicionarControles(pnlIngredientes, ingredienteControles, 10);
-
-            clnApp.AppVisualTemplate.pnlApply(pnlIngredientes);
-
-            pnlIngredientes.Visible = true;
         }
 
         private void removerIngrediente()

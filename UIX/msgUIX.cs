@@ -30,7 +30,6 @@ namespace UIX
             msg.lbl.Text = mensagem;
 
             msg.hdrUIX.Image = image;
-
             msg.pic.Image = image;
 
             template.frmApply(msg, msg.hdrUIX);

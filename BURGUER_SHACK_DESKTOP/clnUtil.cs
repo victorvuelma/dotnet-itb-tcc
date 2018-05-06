@@ -38,6 +38,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static ViaCEP _viaCep = new ViaCEP();
 
+        // ---- NUMBOARD
         public static void abrirNumBoard(UIX.txtUIX txt)
         {
             if (txt.AllowedChars == UIX.uixAllowedChars.INT)
@@ -71,6 +72,7 @@ namespace BURGUER_SHACK_DESKTOP
                 numBoard.ShowDialog();
             };
         }
+        // --- NUMBOARD
 
         public static void resetarCampos(ControlCollection controls)
         {
@@ -96,17 +98,19 @@ namespace BURGUER_SHACK_DESKTOP
                 lista[index] = valorNovo;
         }
 
-        public static void adicionarControles(Control onde, List<Control> controles, int espaco)
+        public static void adicionarControles(Panel panel, List<Control> controles, int espaco)
         {
+            panel.Hide();
+
             int X = espaco / 2;
             int Y = espaco / 2;
             foreach (Control controle in controles)
             {
                 controle.Location = new Point(X, Y);
-                onde.Controls.Add(controle);
+                panel.Controls.Add(controle);
                 X += espaco;
                 X += controle.Width;
-                if ((X + controle.Width) >= onde.MaximumSize.Width)
+                if ((X + controle.Width) >= panel.MaximumSize.Width)
                 {
                     X = espaco / 2;
                     Y += espaco;
@@ -114,7 +118,10 @@ namespace BURGUER_SHACK_DESKTOP
                 }
             }
 
-            clnUtil.atualizarTabIndex(onde.Controls);
+            clnApp.AppVisualTemplate.pnlApply(panel);
+            clnUtil.atualizarTabIndex(panel.Controls);
+
+            panel.Show();
         }
 
         public static void atualizarTabIndex(ControlCollection controls)
@@ -162,45 +169,51 @@ namespace BURGUER_SHACK_DESKTOP
             positionControl.Clear();
         }
 
-        public static void definirCEP(UIX.mtbUIX mtbCEP, Control rua, Control bairro, Control cidade, ComboBox estado, Control nr)
+        public static void addUFs(ComboBox cbo)
         {
-            addUFs(estado);
+            cbo.Items.AddRange(new String[] { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" });
+        }
+
+        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox ctlUF, Control ctlNr)
+        {
+            addUFs(ctlUF);
             mtbCEP.Validated += (object sender, EventArgs e) =>
             {
                 if (clnUtil.validarCEP(mtbCEP.Text))
                 {
-                    clnUtil.definirEndereco(mtbCEP.Text, rua, bairro, cidade, estado, nr);
+                    clnUtil.definirEndereco(mtbCEP.Text, ctlRua, ctlBairro, ctlCidade, ctlUF, ctlNr);
                 }
             };
         }
 
-        public static void addUFs(ComboBox cbo)
-        {
-            cbo.Items.AddRange(new String[] { "AC", "AL", "AM", "AP", "BA", "CE", "ES", "GO", "MA", "MG", "MT", "MS", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
-        }
-
-        public static void definirEndereco(String cep, Control rua, Control bairro, Control cidade, ComboBox estado, Control nr)
+        public static void definirEndereco(String cep, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
         {
             if (validarCEP(cep))
             {
                 Endereco end = obterEndereco(cep);
                 if (end != null)
                 {
-                    rua.Text = end.Logradouro;
-                    bairro.Text = end.Bairro;
-                    cidade.Text = end.Localidade;
-                    estado.Text = end.UF;
-                    nr.Focus();
+                    ctlRua.Text = end.Logradouro;
+                    ctlBairro.Text = end.Bairro;
+                    ctlCidade.Text = end.Localidade;
+                    cboUF.Text = end.UF;
+                    ctlNr.Focus();
                 }
                 else
                 {
                     clnMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnMensagem.MensagemIcone.INFO);
-                    rua.Focus();
+                    ctlRua.Focus();
                 }
             }
         }
 
         public static Endereco obterEndereco(String cep)
+        {
+            // PEGAR DO BANCO, SE NÃO..
+            return obterEnderecoViaCep(cep);
+        }
+
+        public static Endereco obterEnderecoViaCep(String cep)
         {
             try
             {

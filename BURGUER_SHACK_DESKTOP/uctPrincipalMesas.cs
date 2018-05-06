@@ -21,7 +21,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void mostrarMesas()
         {
-            pnlMesas.Visible = false;
             pnlMesas.Controls.Clear();
 
             List<Control> mesaControles = new List<Control>();
@@ -49,10 +48,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             clnUtil.adicionarControles(pnlMesas, mesaControles, 20);
 
-            clnApp.AppVisualTemplate.pnlApply(pnlMesas);
-
             pnlMesas.BackColor = BackColor;
-            pnlMesas.Visible = true;
         }
 
         public void abrirMesa(clnMesa mesa)

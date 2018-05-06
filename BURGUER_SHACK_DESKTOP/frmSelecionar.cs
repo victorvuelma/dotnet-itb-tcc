@@ -42,12 +42,13 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmSelecionar_Load(object sender, EventArgs e)
         {
-            mostrarOpcoes();
+            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
 
             grbDetalhes.Hide();
             btnConfirmar.Hide();
 
-            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            mostrarOpcoes();
         }
 
         private void mostrarOpcoes()
@@ -69,7 +70,6 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             clnUtil.adicionarControles(pnlOpcoes, opcoesControles, 20);
-            clnApp.AppVisualTemplate.pnlApply(pnlOpcoes);
 
             pnlOpcoes.BackColor = grbOpcoes.BackColor;
         }

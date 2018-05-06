@@ -34,7 +34,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static msgUIX mostrarMensagem(String titulo, String mensagem, MensagemIcone icone, int tipo)
         {
-
             msgUIX msg = msgUIX.messageBox(titulo, mensagem, Icone(icone), clnApp.AppVisualTemplate);
 
             switch (tipo)
