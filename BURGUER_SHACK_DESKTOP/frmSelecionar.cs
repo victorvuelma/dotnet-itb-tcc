@@ -14,10 +14,27 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmSelecionar : Form
     {
 
+        private String _selecionando;
         private clnSelecionar _objSelecionar;
         private clnValidar _validar;
 
         private List<object> _opcoes;
+        private int _quantidade;
+
+        public String Selecionando
+        {
+            get => _selecionando;
+            set
+            {
+                _selecionando = value;
+                value = clnApp.AppName + " :: " + value;
+                Text = value;
+                hdrUIX.Title = value;
+            }
+        }
+        public Image Icone { set => hdrUIX.Image = value; }
+        internal clnSelecionar ObjSelecionar { get => _objSelecionar; set => _objSelecionar = value; }
+        public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
         public frmSelecionar()
         {
@@ -28,19 +45,6 @@ namespace BURGUER_SHACK_DESKTOP
 
             _opcoes = new List<object>();
         }
-
-        public String Titulo
-        {
-            set
-            {
-                value = clnApp.AppName + " :: " + value;
-                Text = value;
-                hdrUIX.Title = value;
-            }
-        }
-
-        public Image Icone { set { hdrUIX.Image = value; } }
-        internal clnSelecionar ObjSelecionar { get => _objSelecionar; set => _objSelecionar = value; }
 
         private void mostrarOpcoes()
         {
@@ -72,16 +76,21 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (ObjSelecionar.setSelecionado(obj))
             {
-                grbDetalhes.Hide();
-
-                picImagem.Image = ObjSelecionar.getImagem(obj);
-                lblNome.Text = ObjSelecionar.getNome(obj);
-                lblDesc.Text = ObjSelecionar.getDetalhes(obj);
-                txtQuantidade.Text = "1";
-
-                grbDetalhes.Show();
-                btnConfirmar.Show();
+                exibirOpcao(obj);
             }
+        }
+
+        private void exibirOpcao(object obj)
+        {
+            grbDetalhes.Hide();
+
+            picImagem.Image = ObjSelecionar.getImagem(obj);
+            lblNome.Text = ObjSelecionar.getNome(obj);
+            lblDesc.Text = ObjSelecionar.getDetalhes(obj);
+            txtQuantidade.Text = "1";
+
+            grbDetalhes.Show();
+            btnConfirmar.Show();
         }
 
         private void realizaPesquisa()
@@ -96,7 +105,6 @@ namespace BURGUER_SHACK_DESKTOP
                     _opcoes.Add(opcao);
                 }
             }
-
             mostrarOpcoes();
         }
 
@@ -104,13 +112,15 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
+                Quantidade = Convert.ToInt32(txtQuantidade.Text);
+
                 Close();
             }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao("", "Deseja realmente cancelar?", clnMensagem.MensagemIcone.INFO))
+            if (clnMensagem.mostrarSimNao(Selecionando, "Deseja realmente cancelar?", clnMensagem.MensagemIcone.INFO))
             {
                 ObjSelecionar.setSelecionado(null);
 
@@ -128,6 +138,12 @@ namespace BURGUER_SHACK_DESKTOP
             btnConfirmar.Hide();
 
             realizaPesquisa();
+
+            if (ObjSelecionar.getSelecionado() != null)
+            {
+                exibirOpcao(ObjSelecionar.getSelecionado());
+                txtQuantidade.Text = Convert.ToString(Quantidade);
+            }
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

@@ -15,13 +15,12 @@ namespace BURGUER_SHACK_DESKTOP
         public frmCozinha()
         {
             InitializeComponent();
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void frmCozinha_Load(object sender, EventArgs e)
         {
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
         }
     }
 }

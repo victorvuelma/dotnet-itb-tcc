@@ -11,18 +11,10 @@ namespace BURGUER_SHACK_DESKTOP
     class clnValidar
     {
 
-        public enum ValidarTipo
-        {
-            VAZIO,
-            EMAIL,
-            CPF,
-            CNPJ,
-            CEP,
-            INT
-        }
-
-        private List<ValidarData> _controlValidar = new List<ValidarData>();
+        private List<ValidarData> _controles = new List<ValidarData>();
         private String _motivo = "";
+
+        public String Motivo { get => _motivo; }
 
         public void addValidacao(Control control, ValidarTipo tipo)
         {
@@ -32,7 +24,7 @@ namespace BURGUER_SHACK_DESKTOP
         public void addValidacao(Control control, ValidarTipo[] tipos)
         {
             ValidarData data = null;
-            foreach (ValidarData dt in _controlValidar)
+            foreach (ValidarData dt in _controles)
             {
                 if (dt.Control.Equals(control))
                 {
@@ -43,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (data == null)
             {
                 data = new ValidarData(control);
-                _controlValidar.Add(data);
+                _controles.Add(data);
             }
 
             data.addValidacoes(tipos);
@@ -54,7 +46,7 @@ namespace BURGUER_SHACK_DESKTOP
             bool formValido = true;
             _motivo = "";
 
-            foreach (ValidarData controlValidar in _controlValidar)
+            foreach (ValidarData controlValidar in _controles)
             {
                 bool controlValido = controlValidar.validar();
 
@@ -80,8 +72,6 @@ namespace BURGUER_SHACK_DESKTOP
             return formValido;
         }
 
-        public String Motivo { get => _motivo; }
-
         class ValidarData
         {
 
@@ -89,6 +79,9 @@ namespace BURGUER_SHACK_DESKTOP
             private List<ValidarTipo> _validacoes;
 
             private String _motivo;
+
+            public Control Control { get => _control; }
+            public String Motivo { get => _motivo; }
 
             public ValidarData(Control control)
             {
@@ -125,7 +118,7 @@ namespace BURGUER_SHACK_DESKTOP
                     switch (tipo)
                     {
                         case ValidarTipo.VAZIO:
-                            val = !String.IsNullOrWhiteSpace(conteudo);
+                            val = !clnUtil.vazio(conteudo);
                             res = "precisa ser preenchido.";
                             break;
                         case ValidarTipo.EMAIL:
@@ -159,17 +152,15 @@ namespace BURGUER_SHACK_DESKTOP
 
                 if (!valido)
                 {
-                    if (_control is UIX.txtUIX)
+                    if (_control is UIX.txtUIX txt)
                     {
-                        UIX.txtUIX txt = (UIX.txtUIX)_control;
                         UIX.uixTextBox.txtApply(txt.txt, UIX.uixSet.RED);
                     }
                 }
                 else
                 {
-                    if (_control is UIX.txtUIX)
+                    if (_control is UIX.txtUIX txt)
                     {
-                        UIX.txtUIX txt = (UIX.txtUIX)_control;
                         UIX.uixTextBox.txtApply(txt.txt, clnApp.AppVisualStyle.TextBoxColor);
                     }
                 }
@@ -177,8 +168,16 @@ namespace BURGUER_SHACK_DESKTOP
                 return valido;
             }
 
-            public Control Control { get => _control; }
-            public String Motivo { get => _motivo; }
+        }
+
+        public enum ValidarTipo
+        {
+            VAZIO,
+            EMAIL,
+            CPF,
+            CNPJ,
+            CEP,
+            INT
         }
 
     }

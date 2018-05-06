@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uctCozinha1 = new BURGUER_SHACK_DESKTOP.uctCozinha();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.hdrUIX = new UIX.hdrUIX();
             this.panel1.SuspendLayout();
@@ -38,19 +37,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.uctCozinha1);
             this.panel1.Controls.Add(this.dgvPedidos);
             this.panel1.Location = new System.Drawing.Point(12, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(994, 379);
             this.panel1.TabIndex = 1;
-            // 
-            // uctCozinha1
-            // 
-            this.uctCozinha1.Location = new System.Drawing.Point(-12, 0);
-            this.uctCozinha1.Name = "uctCozinha1";
-            this.uctCozinha1.Size = new System.Drawing.Size(857, 379);
-            this.uctCozinha1.TabIndex = 1;
             // 
             // dgvPedidos
             // 
@@ -63,13 +54,13 @@
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = true;
+            this.hdrUIX.Image = null;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(1019, 40);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = true;
-            this.hdrUIX.Image = null;
             this.hdrUIX.Title = "Titulo UIX";
             // 
             // frmCozinha
@@ -95,6 +86,5 @@
         private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvPedidos;
-        private uctCozinha uctCozinha1;
     }
 }

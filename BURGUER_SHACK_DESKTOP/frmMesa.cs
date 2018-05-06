@@ -20,8 +20,6 @@ namespace BURGUER_SHACK_DESKTOP
         public frmMesa()
         {
             InitializeComponent();
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
@@ -31,28 +29,35 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirPedidos()
         {
-            alterarConteudo(new uctMesaPedidos(), "Pedidos");
+            uctMesaPedidos uctPedidos = new uctMesaPedidos
+            {
+            };
+            alterarConteudo(uctPedidos, "Pedidos");
         }
 
         private void abrirConta()
         {
-            uctMesaConta uctConta = new uctMesaConta();
-            uctConta.Atendimento = Mesa;
+            uctMesaConta uctConta = new uctMesaConta
+            {
+                Atendimento = Mesa
+            };
             alterarConteudo(uctConta, "Conta");
         }
 
         private void abrirNovoPedido()
         {
-            frmPedido frmNovoPedido = new frmPedido();
-            frmNovoPedido.Pedido = new clnPedido();
-            frmNovoPedido.PedidosProdutos = new List<clnPedidoProduto>();
-
+            frmPedido frmNovoPedido = new frmPedido
+            {
+                Pedido = new clnPedido(),
+                PedidosProdutos = new List<clnPedidoProduto>()
+            };
             frmNovoPedido.ShowDialog();
         }
 
         private void frmMesa_Load(object sender, EventArgs e)
         {
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
 
             UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.WarningButtonColor);
 
@@ -68,7 +73,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             abrirConta();
         }
-
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {

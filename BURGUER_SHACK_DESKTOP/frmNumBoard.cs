@@ -15,13 +15,13 @@ namespace BURGUER_SHACK_DESKTOP
 
         private TextBoxBase _base;
 
+        public String NumeroPadrao { get => lblNum.Text.Replace(',', '.'); set => lblNum.Text = value.Replace('.', ','); }
+        public TextBoxBase Input { get => _base; set => _base = value; }
+
         public frmNumBoard()
         {
             InitializeComponent();
         }
-
-        public String NumeroPadrao { get => lblNum.Text.Replace(',', '.'); set => lblNum.Text = value.Replace('.', ','); }
-        public TextBoxBase Input { get => _base; set => _base = value; }
 
         private void adicionar(char numero)
         {
@@ -30,10 +30,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void atualizar(string text)
         {
-            lblNum.Text = text;
+            NumeroPadrao = text;
             if (Input != null)
             {
-                Input.Text = lblNum.Text.Replace(",", ".");
+                Input.Text = NumeroPadrao;
             }
         }
 

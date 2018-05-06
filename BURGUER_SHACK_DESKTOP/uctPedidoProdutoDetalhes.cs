@@ -13,13 +13,13 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctPedidoProdutoDetalhes : UserControl
     {
 
-        private frmPedidoProduto _form;
+        private frmPedidoProduto _formProduto;
 
         private clnValidar _validar;
 
         private clnPedidoProduto _pedidoProduto;
 
-        public frmPedidoProduto Form { get => _form; set => _form = value; }
+        public frmPedidoProduto FormProduto { get => _formProduto; set => _formProduto = value; }
         public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
 
         public uctPedidoProdutoDetalhes()
@@ -36,8 +36,10 @@ namespace BURGUER_SHACK_DESKTOP
 
             foreach (clnPedidoProdutoIngrediente objPedidoIngrediente in PedidoProduto.Ingredientes)
             {
-                clnIngrediente objIngrediente = new clnIngrediente();
-                objIngrediente.Cod = objPedidoIngrediente.Ingrediente;
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = objPedidoIngrediente.Ingrediente
+                };
                 objIngrediente = objIngrediente.obterPorCodigo();
 
                 dgvIngredientes.Rows.Add(objIngrediente.Nome, objPedidoIngrediente.Quantidade);
@@ -46,23 +48,26 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void alterarIngrediente(clnPedidoProdutoIngrediente objIngrediente)
         {
-            uctPedidoProdutoIngrediente uctAlterarIngrediente = new uctPedidoProdutoIngrediente();
+            uctPedidoProdutoIngrediente uctAlterarIngrediente = new uctPedidoProdutoIngrediente
+            {
+                Form = FormProduto,
+                PedidoIngredienteSubstituir = objIngrediente
+            };
 
-            uctAlterarIngrediente.Form = Form;
-            uctAlterarIngrediente.PedidoIngredienteSubstituir = objIngrediente;
-
-            Form.alterarConteudo(uctAlterarIngrediente, "Produto :: Alterar Ingrediente");
+            FormProduto.alterarConteudo(uctAlterarIngrediente, "Produto :: Alterar Ingrediente");
         }
 
         private void abrirAdicionarIngrediente()
         {
-            uctPedidoProdutoIngrediente uctAdicionarIngrediente = new uctPedidoProdutoIngrediente();
-            uctAdicionarIngrediente.Form = Form;
+            uctPedidoProdutoIngrediente uctAdicionarIngrediente = new uctPedidoProdutoIngrediente
+            {
+                Form = FormProduto
+            };
             uctAdicionarIngrediente.btnRemover.Visible = false;
             uctAdicionarIngrediente.grbIngrediente.Visible = false;
             uctAdicionarIngrediente.txtQuantidade.Text = "1";
 
-            Form.alterarConteudo(uctAdicionarIngrediente, "Produto :: Adicionar Ingrediente");
+            FormProduto.alterarConteudo(uctAdicionarIngrediente, "Produto :: Adicionar Ingrediente");
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -71,7 +76,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                Form.abrirVisualizar();
+                FormProduto.abrirVisualizar();
             }
         }
 

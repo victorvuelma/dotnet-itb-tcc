@@ -21,6 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void msgGerenciador_Load(object sender, EventArgs e)
         {
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void btnFuncionário_Click(object sender, EventArgs e)

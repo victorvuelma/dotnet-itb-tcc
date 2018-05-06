@@ -29,9 +29,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void editarPedidoProduto(clnPedidoProduto pedidoProduto)
         {
-            frmPedidoProduto frmEditarProduto = new frmPedidoProduto();
-            frmEditarProduto.PedidoProduto = pedidoProduto;
-
+            frmPedidoProduto frmEditarProduto = new frmPedidoProduto
+            {
+                PedidoProduto = pedidoProduto
+            };
             frmEditarProduto.ShowDialog();
 
             if (frmEditarProduto.Remover)
@@ -39,30 +40,30 @@ namespace BURGUER_SHACK_DESKTOP
                 PedidoProdutos.Remove(pedidoProduto);
                 clnMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnMensagem.MensagemIcone.INFO);
 
-                exibeProdutos();
+                exibirProdutos();
             }
             else if (frmEditarProduto.PedidoProduto != null)
             {
-                //Atualizar pedido produto na lista.
-                clnUtil.trocarValor(PedidoProdutos, pedidoProduto, frmEditarProduto.PedidoProduto);
+                clnUtil.listTrocar(PedidoProdutos, pedidoProduto, frmEditarProduto.PedidoProduto);
 
-                exibeProdutos();
+                exibirProdutos();
             }
         }
 
-        private void exibeProdutos()
+        private void exibirProdutos()
         {
             dgvProdutos.Rows.Clear();
 
             foreach (clnPedidoProduto pedidoProduto in PedidoProdutos)
             {
-                clnProduto objProduto = new clnProduto();
-                objProduto.Cod = pedidoProduto.Produto;
+                clnProduto objProduto = new clnProduto
+                {
+                    Cod = pedidoProduto.Produto
+                };
                 objProduto = objProduto.obterPorCodigo();
 
-                dgvProdutos.Rows.Add(pedidoProduto.Produto, pedidoProduto.Quantidade);
+                dgvProdutos.Rows.Add(objProduto.Nome, pedidoProduto.Quantidade);
             }
-
         }
 
         private void btnPedido_Click(object sender, EventArgs e)
@@ -85,7 +86,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void uctPedidoProdutos_Load(object sender, EventArgs e)
         {
-            exibeProdutos();
+            exibirProdutos();
         }
     }
 }

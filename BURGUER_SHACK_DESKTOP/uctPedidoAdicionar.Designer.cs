@@ -200,6 +200,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctPedidoAdicionar";
             this.Size = new System.Drawing.Size(450, 600);
+            this.Load += new System.EventHandler(this.uctPedidoAdicionar_Load);
             this.grbAdicionarProduto.ResumeLayout(false);
             this.grbAdicional.ResumeLayout(false);
             this.grbAdicional.PerformLayout();

@@ -15,8 +15,6 @@ namespace BURGUER_SHACK_DESKTOP
         public uctPrincipalMesas()
         {
             InitializeComponent();
-
-            mostrarMesas();
         }
 
         private void mostrarMesas()
@@ -24,13 +22,15 @@ namespace BURGUER_SHACK_DESKTOP
             pnlMesas.Controls.Clear();
 
             List<Control> mesaControles = new List<Control>();
-            foreach (clnMesa mesa in new clnMesa().obterMesas())
+            foreach (clnMesa objMesa in new clnMesa().obterMesas())
             {
-                UIX.btnUIX btn = new UIX.btnUIX();
-                btn.Description = "MESA " + mesa.Cod;
-                btn.Name = "btnMesa" + mesa.Cod;
-                btn.Size = new Size(100, 100);
-                if (mesa.Uso)
+                UIX.btnUIX btn = new UIX.btnUIX
+                {
+                    Description = "MESA " + objMesa.Cod,
+                    Name = "btnMesa" + objMesa.Cod,
+                    Size = new Size(100, 100)
+                };
+                if (objMesa.Uso)
                 {
                     btn.ForeColor = pnlOcupada.BackColor;
                     btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;
@@ -41,7 +41,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
                 btn.Click += (object sender, EventArgs e) =>
                 {
-                    abrirMesa(mesa);
+                    abrirMesa(objMesa);
                 };
 
                 mesaControles.Add(btn);
@@ -53,9 +53,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirMesa(clnMesa mesa)
         {
-            frmMesa frmMesa = new frmMesa();
-            frmMesa.Mesa = mesa.Cod;
-
+            frmMesa frmMesa = new frmMesa
+            {
+                Mesa = mesa.Cod
+            };
             frmMesa.ShowDialog();
 
             mostrarMesas();
@@ -65,6 +66,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             pnlLivre.BackColor = UIX.uixColor.WHITE;
             pnlOcupada.BackColor = UIX.uixColor.INDIGO_DARK;
+
+            mostrarMesas();
         }
 
     }

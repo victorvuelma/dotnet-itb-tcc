@@ -12,21 +12,18 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmPedido : Form
     {
+        private int _atendimento;
 
         private clnPedido _pedido;
         private List<clnPedidoProduto> _pedidosProdutos;
 
-        private int _mesa;
-
-        public int Mesa { get => _mesa; set => _mesa = value; }
+        internal int Atendimento { get => _atendimento; set => _atendimento = value; }
         internal clnPedido Pedido { get => _pedido; set => _pedido = value; }
         internal List<clnPedidoProduto> PedidosProdutos { get => _pedidosProdutos; set => _pedidosProdutos = value; }
 
         public frmPedido()
         {
             InitializeComponent();
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
@@ -34,12 +31,14 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
         }
 
-        public void abrirProdutos()
+        private void abrirProdutos()
         {
-            uctPedidoProdutos uctProdutos = new uctPedidoProdutos();
-            uctProdutos.Form = this;
-            uctProdutos.Atendimento = Mesa;
-            uctProdutos.PedidoProdutos = PedidosProdutos;
+            uctPedidoProdutos uctProdutos = new uctPedidoProdutos
+            {
+                Form = this,
+                Atendimento = Atendimento,
+                PedidoProdutos = PedidosProdutos
+            };
 
             alterarConteudo(uctProdutos, "Pedido :: Produtos");
         }
@@ -66,11 +65,13 @@ namespace BURGUER_SHACK_DESKTOP
                 Close();
             }
         }
-
+        
         private void abrirAdicionarProduto()
         {
-            uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar();
-            uctAdicionar.Form = this;
+            uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar
+            {
+                Form = this
+            };
 
             alterarConteudo(uctAdicionar, "Pedido :: Adicionar Produto");
         }
@@ -78,6 +79,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmPedido_Load(object sender, EventArgs e)
         {
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
 
             UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.WarningButtonColor);
 

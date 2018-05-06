@@ -23,8 +23,6 @@ namespace BURGUER_SHACK_DESKTOP
             txtSenha.txt.PasswordChar = '*';
             hdrUIX.Title = clnApp.AppName + " :: Acesso ao Sistema";
 
-            clnUtil.atualizarTabIndex(Controls);
-
             _validar = new clnValidar();
             _validar.addValidacao(txtNome, clnValidar.ValidarTipo.VAZIO);
             _validar.addValidacao(txtSenha, clnValidar.ValidarTipo.VAZIO);
@@ -32,8 +30,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -71,57 +69,9 @@ namespace BURGUER_SHACK_DESKTOP
 
             }
 
-            //Application.Restart();
             Application.Restart();
         }
 
-        //SqlConnection sql = new SqlConnection("Integrated Security=SSPI; Persist Security Info=False;Initial Catalog=Burguer_Shack;Data Source=DESKTOP-NNGLJE4");
-        //SqlCommand command = new SqlCommand("select * from FUNCIONARIO where Nome=@Nome and Senha=@Senha", sql);
-        //command.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
-        //command.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtSenha.Text;
-
-        //try
-        //{
-        //    sql.Open();
-        //    SqlDataReader drms = command.ExecuteReader();
-        //    if (drms.HasRows == false)
-        //    {
-        //        throw new Exception("usuario ou senha errado porra");
-        //    }
-        //        drms.Read();
-        //        frmPedido objfrmPedido = new frmPedido();
-        //        objfrmPedido.Visible = true;
-        //        this.Visible = false;
-        //}
-        //catch (Exception ex)
-        //{
-        //    MessageBox.Show(ex.Message);
-        //}
-
-        //finally
-        //{
-        //    sql.Close();
-        //}
-
-
-        //if (txtNome.Text == "garçom" && txtSenha.Text == "123")
-        //{
-        //    frmPedido objfrmPedido = new frmPedido();
-        //    objfrmPedido.Visible = true;
-        //    this.Visible = false;
-        //}
-        //else if (txtNome.Text == "cozinha" && txtSenha.Text == "123")
-        //{
-        //    frmCozinha objfrmCozinha = new frmCozinha();
-        //    objfrmCozinha.Visible = true;
-        //    this.Visible = false;
-        //}
-        //else if (txtNome.Text == "lider" && txtSenha.Text == "123")
-        //{
-        //    frmGerenciador objfrmGerenciador = new frmGerenciador();
-        //    objfrmGerenciador.Visible = true;
-        //    this.Visible = false;
-        //}
     }
 
 }

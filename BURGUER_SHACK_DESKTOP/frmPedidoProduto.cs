@@ -22,8 +22,6 @@ namespace BURGUER_SHACK_DESKTOP
         public frmPedidoProduto()
         {
             InitializeComponent();
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
@@ -33,9 +31,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal void abrirVisualizar()
         {
-            uctPedidoProdutoVer uctVer = new uctPedidoProdutoVer();
-            uctVer.Form = this;
-            uctVer.PedidoProduto = PedidoProduto;
+            uctPedidoProdutoVer uctVer = new uctPedidoProdutoVer
+            {
+                Form = this,
+                PedidoProduto = PedidoProduto
+            };
 
             alterarConteudo(uctVer, "Produto :: Visualizar");
         }
@@ -49,13 +49,10 @@ namespace BURGUER_SHACK_DESKTOP
                 abrirDetalhes();
 
                 clnMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnMensagem.MensagemIcone.ERRO);
-            } else
+            }
+            else
             {
-                PedidoProduto.Ingredientes.Remove(pedidoIngrediente);
-
-                abrirDetalhes();
-
-                clnMensagem.mostrarOk("Produto", "Você não pode remover o unico ingrediente do produto.", clnMensagem.MensagemIcone.ERRO);
+                clnMensagem.mostrarOk("Produto", "Você não pode remover o único ingrediente do produto.", clnMensagem.MensagemIcone.ERRO);
             }
         }
 
@@ -70,7 +67,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal void substiuiIngrediente(clnPedidoProdutoIngrediente pedidoIngredienteSubstituir, clnPedidoProdutoIngrediente pedidoIngrediente)
         {
-            clnUtil.trocarValor(PedidoProduto.Ingredientes, pedidoIngredienteSubstituir, pedidoIngrediente);
+            clnUtil.listTrocar(PedidoProduto.Ingredientes, pedidoIngredienteSubstituir, pedidoIngrediente);
 
             abrirDetalhes();
 
@@ -79,9 +76,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirDetalhes()
         {
-            uctPedidoProdutoDetalhes uctAlterar = new uctPedidoProdutoDetalhes();
-            uctAlterar.PedidoProduto = PedidoProduto;
-            uctAlterar.Form = this;
+            uctPedidoProdutoDetalhes uctAlterar = new uctPedidoProdutoDetalhes
+            {
+                PedidoProduto = PedidoProduto,
+                FormProduto = this
+            };
 
             alterarConteudo(uctAlterar, "Produto :: Alterar");
 
@@ -108,7 +107,6 @@ namespace BURGUER_SHACK_DESKTOP
                 PedidoProduto = null;
                 Remover = true;
 
-                //faz e tal
                 Close();
             }
         }
@@ -116,6 +114,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmPedidoProduto_Load(object sender, EventArgs e)
         {
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
 
             UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.WarningButtonColor);
 

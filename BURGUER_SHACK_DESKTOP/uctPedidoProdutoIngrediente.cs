@@ -40,9 +40,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             txtQuantidade.Text = "1";
 
-            PedidoIngrediente = new clnPedidoProdutoIngrediente();
-            PedidoIngrediente.Quantidade = 1;
-            PedidoIngrediente.Ingrediente = ingrediente.Cod;
+            PedidoIngrediente = new clnPedidoProdutoIngrediente
+            {
+                Quantidade = 1,
+                Ingrediente = ingrediente.Cod
+            };
             if (PedidoIngredienteSubstituir != null && PedidoIngredienteSubstituir.Substituindo)
             {
                 PedidoIngrediente.Substituindo = true;
@@ -96,11 +98,13 @@ namespace BURGUER_SHACK_DESKTOP
             List<Control> ingredienteControles = new List<Control>();
             foreach (clnIngrediente ingrediente in objIngredientes.obterPorTipo())
             {
-                UIX.btnUIX btn = new UIX.btnUIX();
-                btn.Description = ingrediente.Nome;
-                btn.Image = ingrediente.Imagem;
-                btn.Name = "btnIngrediente" + ingrediente.Cod;
-                btn.Size = new Size(75, 75);
+                UIX.btnUIX btn = new UIX.btnUIX
+                {
+                    Description = ingrediente.Nome,
+                    Image = ingrediente.Imagem,
+                    Name = "btnIngrediente" + ingrediente.Cod,
+                    Size = new Size(75, 75)
+                };
                 btn.Click += (object sender, EventArgs e) =>
                 {
                     selecionaIngrediente(ingrediente);
@@ -144,10 +148,13 @@ namespace BURGUER_SHACK_DESKTOP
                     txtQuantidade.Enabled = false;
                 }
 
-                clnIngrediente objIngrediente = new clnIngrediente();
-                objIngrediente.Cod = PedidoIngredienteSubstituir.Ingrediente;
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = PedidoIngredienteSubstituir.Ingrediente
+                };
+                objIngrediente = objIngrediente.obterPorCodigo();
 
-                exibirIngrediente(objIngrediente.obterPorCodigo());
+                exibirIngrediente(objIngrediente);
             }
             else
             {

@@ -60,9 +60,11 @@ namespace BURGUER_SHACK_DESKTOP
         {
             box.Click += (object sender, EventArgs args) =>
             {
-                frmNumBoard numBoard = new frmNumBoard();
-                numBoard.NumeroPadrao = box.Text;
-                numBoard.Input = box;
+                frmNumBoard numBoard = new frmNumBoard
+                {
+                    NumeroPadrao = box.Text,
+                    Input = box
+                };
 
                 if (mode == frmNumBoard.NumBoardMode.DOUBLE)
                 {
@@ -91,7 +93,7 @@ namespace BURGUER_SHACK_DESKTOP
         }
 
         //https://stackoverflow.com/questions/17188966/how-to-replace-list-item-in-best-way
-        public static void trocarValor<T>(List<T> lista, T valorAntigo, T valorNovo)
+        public static void listTrocar<T>(List<T> lista, T valorAntigo, T valorNovo)
         {
             int index = lista.IndexOf(valorAntigo);
             if (index != -1)
@@ -133,15 +135,13 @@ namespace BURGUER_SHACK_DESKTOP
                 int Y = control.Location.Y;
                 int X = control.Location.X;
 
-                SortedDictionary<int, List<Control>> yControls = null;
-                if (!positionControl.TryGetValue(Y, out yControls))
+                if (!positionControl.TryGetValue(Y, out SortedDictionary<int, List<Control>> yControls))
                 {
                     yControls = new SortedDictionary<int, List<Control>>();
                     positionControl.Add(Y, yControls);
                 }
 
-                List<Control> xControls = null;
-                if (!yControls.TryGetValue(X, out xControls))
+                if (!yControls.TryGetValue(X, out List<Control> xControls))
                 {
                     xControls = new List<Control>();
                     yControls.Add(X, xControls);
@@ -225,6 +225,11 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        public static bool vazio(String str)
+        {
+            return String.IsNullOrWhiteSpace(str);
+        }
+
         public static bool validarCEP(String cep)
         {
             try
@@ -240,8 +245,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static bool validarInt(String inteiro)
         {
-            int r;
-            return Int32.TryParse(inteiro, out r);
+            return Int32.TryParse(inteiro, out int r);
         }
 
         public static String formatarCPF(String cpf)
