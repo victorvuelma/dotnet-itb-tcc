@@ -30,12 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciador));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.btnAdicionar = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnLista = new UIX.btnUIX();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
-            this.btnAdicionar = new UIX.btnUIX();
+            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
+            this.dgvTercerizada = new System.Windows.Forms.DataGridView();
+            this.dgvProduto = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PIC = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -48,14 +57,17 @@
             this.pnlMenu.Size = new System.Drawing.Size(100, 549);
             this.pnlMenu.TabIndex = 3;
             // 
-            // pnlConteudo
+            // btnAdicionar
             // 
-            this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlConteudo.Location = new System.Drawing.Point(105, 50);
-            this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(810, 530);
-            this.pnlConteudo.TabIndex = 5;
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionar.Description = "Adicionar";
+            this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
+            this.btnAdicionar.Location = new System.Drawing.Point(10, 6);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
+            this.btnAdicionar.TabIndex = 6;
+            this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // btnSair
             // 
@@ -83,47 +95,100 @@
             this.btnLista.UseVisualStyleBackColor = true;
             this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlConteudo.Location = new System.Drawing.Point(106, 267);
+            this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(812, 538);
+            this.pnlConteudo.TabIndex = 5;
+            // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = true;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(930, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = true;
-            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
             this.hdrUIX.Title = "Gerenciador";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             this.hdrUIX.Min += new System.EventHandler(this.hdrUIX_Min);
             // 
-            // btnAdicionar
+            // dgvFuncionario
             // 
-            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionar.Description = "Adicionar";
-            this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
-            this.btnAdicionar.Location = new System.Drawing.Point(10, 6);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
-            this.btnAdicionar.TabIndex = 6;
-            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.dgvFuncionario.AllowUserToAddRows = false;
+            this.dgvFuncionario.AllowUserToDeleteRows = false;
+            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
+            this.Nome});
+            this.dgvFuncionario.Location = new System.Drawing.Point(106, 57);
+            this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.ReadOnly = true;
+            this.dgvFuncionario.Size = new System.Drawing.Size(806, 498);
+            this.dgvFuncionario.TabIndex = 0;
+            // 
+            // dgvTercerizada
+            // 
+            this.dgvTercerizada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTercerizada.Location = new System.Drawing.Point(408, 181);
+            this.dgvTercerizada.Name = "dgvTercerizada";
+            this.dgvTercerizada.Size = new System.Drawing.Size(240, 150);
+            this.dgvTercerizada.TabIndex = 1;
+            this.dgvTercerizada.Visible = false;
+            // 
+            // dgvProduto
+            // 
+            this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PIC});
+            this.dgvProduto.Location = new System.Drawing.Point(106, 81);
+            this.dgvProduto.Name = "dgvProduto";
+            this.dgvProduto.Size = new System.Drawing.Size(806, 474);
+            this.dgvProduto.TabIndex = 2;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "COD";
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "NOME";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // PIC
+            // 
+            this.PIC.HeaderText = "IMAGEM";
+            this.PIC.Name = "PIC";
             // 
             // frmGerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 600);
+            this.Controls.Add(this.dgvTercerizada);
+            this.Controls.Add(this.dgvProduto);
+            this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGerenciador";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador";
             this.Load += new System.EventHandler(this.frmGerenciador_Load);
             this.pnlMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,5 +201,11 @@
         private UIX.btnUIX btnLista;
         private System.Windows.Forms.Panel pnlConteudo;
         private UIX.btnUIX btnAdicionar;
+        public System.Windows.Forms.DataGridView dgvProduto;
+        public System.Windows.Forms.DataGridView dgvTercerizada;
+        public System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewImageColumn PIC;
     }
 }
