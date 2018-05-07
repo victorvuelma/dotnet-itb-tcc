@@ -106,12 +106,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void realizaPesquisa()
         {
-            String pesquisa = txtPesquisa.Text;
             _opcoes.Clear();
 
+            String pesquisa = txtPesquisa.Text.ToLower();
             foreach (object opcao in ObjSelecionar.getOpcoes())
             {
-                if (clnUtil.vazio(pesquisa) || ObjSelecionar.getNome(opcao).Contains(pesquisa))
+                if (clnUtil.vazio(pesquisa) || ObjSelecionar.getNome(opcao).ToLower().Contains(pesquisa))
                 {
                     _opcoes.Add(opcao);
                 }
