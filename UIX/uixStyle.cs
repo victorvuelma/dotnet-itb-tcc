@@ -25,6 +25,7 @@ namespace UIX
         private Font _buttonFont;
 
         private uixSet _btnColor;
+        private uixSet _btnImageColor;
         private uixSet _grbColor;
         private uixSet _lblColor;
         private uixSet _pnlColor;
@@ -33,7 +34,7 @@ namespace UIX
         public uixStyle(uixSet formColor, uixSet headerButtonColor, uixSet headerCloseButtonColor,
             int headerButtonSize, int headerButtonSpace,
             Font headerFont, Font contentFont, Font buttonFont,
-            uixSet btnColor, uixSet grbColor, uixSet lblColor, uixSet pnlColor, uixSet txtColor)
+            uixSet btnColor, uixSet btnImageColor, uixSet grbColor, uixSet lblColor, uixSet pnlColor, uixSet txtColor)
         {
             _formColor = formColor;
 
@@ -48,6 +49,7 @@ namespace UIX
             _headerButtonSpace = headerButtonSpace;
 
             _btnColor = btnColor;
+            _btnImageColor = btnImageColor;
             _grbColor = grbColor;
             _lblColor = lblColor;
             _pnlColor = pnlColor;
@@ -66,6 +68,7 @@ namespace UIX
         public Font BoldFont { get => _buttonFont; }
 
         public uixSet ButtonColor { get => _btnColor; }
+        public uixSet ButtonImageColor { get => _btnImageColor; set => _btnImageColor = value; }
         public uixSet GroupBoxColor { get => _grbColor; }
         public uixSet LabelColor { get => _lblColor; }
         public uixSet PanelColor { get => _pnlColor; }
@@ -81,6 +84,7 @@ namespace UIX
             uixFont.CENTURY_REGULAR,
             uixFont.CENTURY_BOLD,
             uixSet.BLUE,
+            uixSet.WHITE,
             uixSet.INDIGO,
             uixSet.INDIGO,
             uixSet.INDIGO,
@@ -97,6 +101,7 @@ namespace UIX
             uixFont.CENTURY_REGULAR,
             uixFont.CENTURY_BOLD,
             uixSet.GRAY,
+            uixSet.WHITE,
             uixSet.GRAY,
             uixSet.GRAY,
             uixSet.GRAY,
