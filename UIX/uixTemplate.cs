@@ -138,14 +138,14 @@ namespace UIX
             }
         }
 
-        public void frmApply(Form frm, hdrUIX ctl)
+        public void frmApply(Form frm, hdrUIX hdr)
         {
 
-            uixForm.frmApply(frm, ctl, Style);
+            uixForm.frmApply(frm, hdr, Style);
 
             foreach (Control control in frm.Controls)
             {
-                if (control != ctl)
+                if (control != hdr)
                 {
                     this.ctlApply(control);
                 }

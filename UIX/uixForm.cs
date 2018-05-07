@@ -12,18 +12,18 @@ namespace UIX
     public class uixForm
     {
 
-        public static void frmApply(Form frm, hdrUIX ctl, uixStyle style)
+        public static void frmApply(Form frm, hdrUIX hdr, uixStyle style)
         {
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.AutoScaleMode = AutoScaleMode.None;
-            frm.Text = ctl.Title;
+            frm.Text = hdr.Title;
             frm.BackColor = style.FormColor.LightColor;
 
-            ctl.AutoScaleMode = AutoScaleMode.None;
+            hdr.AutoScaleMode = AutoScaleMode.None;
 
-            uixHeader.hdrApply(frm, ctl, style);
+            uixHeader.hdrApply(frm, hdr, style);
 
-            uixHeader.hdrMove(frm, new Control[] { ctl, ctl.lbl, ctl.pic });
+            uixHeader.hdrMove(frm, new Control[] { hdr, hdr.lbl, hdr.pic });
         }
 
         public static void applyMargin(Form frm, uixStyle style)

@@ -12,50 +12,50 @@ namespace UIX
     public class uixHeader
     {
 
-        public static void hdrApply(Form frm, hdrUIX ctl, uixStyle style)
+        public static void hdrApply(Form frm, hdrUIX hdr, uixStyle style)
         {
             int maxX = frm.Size.Width;
             int maxY = frm.Size.Height;
 
             //Apply header bar Style
-            ctl.Size = new Size(maxX, style.HeaderButtonSize + (style.HeaderButtonSpace * 2));
-            ctl.Location = new Point(0, 0);
-            ctl.BackColor = style.FormColor.DarkColor;
+            hdr.Size = new Size(maxX, style.HeaderButtonSize + (style.HeaderButtonSpace * 2));
+            hdr.Location = new Point(0, 0);
+            hdr.BackColor = style.FormColor.DarkColor;
 
             //Apply header title style
-            ctl.lbl.BringToFront();
-            uixLabel.lblApply(ctl.lbl, style.FormColor, style.HeaderFont);
-            ctl.lbl.Font = uixFont.fontSize(ctl.lbl.Font, 12.5f);
-            ctl.lbl.BackColor = style.FormColor.DarkColor;
+            hdr.lbl.BringToFront();
+            uixLabel.lblApply(hdr.lbl, style.FormColor, style.HeaderFont);
+            hdr.lbl.Font = uixFont.fontSize(hdr.lbl.Font, 12.5f);
+            hdr.lbl.BackColor = style.FormColor.DarkColor;
 
-            ctl.pic.Location = new Point(style.HeaderButtonSpace, style.HeaderButtonSpace);
-            ctl.pic.Size = new Size(style.HeaderButtonSize, style.HeaderButtonSize);
-            ctl.pic.BackColor = style.FormColor.DarkColor;
-            ctl.pic.SizeMode = PictureBoxSizeMode.Zoom;
-            ctl.pic.BringToFront();
+            hdr.pic.Location = new Point(style.HeaderButtonSpace, style.HeaderButtonSpace);
+            hdr.pic.Size = new Size(style.HeaderButtonSize, style.HeaderButtonSize);
+            hdr.pic.BackColor = style.FormColor.DarkColor;
+            hdr.pic.SizeMode = PictureBoxSizeMode.Zoom;
+            hdr.pic.BringToFront();
 
             //Calculate buttons
             int nextButtonX = maxX;
             //Close button
-            if (ctl.btnClo != null)
+            if (hdr.btnClo != null)
             {
                 nextButtonX = nextButtonX - style.HeaderButtonSize - style.HeaderButtonSpace;
-                ctl.btnClo.Location = new Point(nextButtonX, style.HeaderButtonSpace);
-                ctl.btnClo.BringToFront();
+                hdr.btnClo.Location = new Point(nextButtonX, style.HeaderButtonSpace);
+                hdr.btnClo.BringToFront();
 
-                uixButton.btnStyleClose(ctl.btnClo, style.HeaderButtonSize, style.WarningButtonColor);
+                uixButton.btnStyleClose(hdr.btnClo, style.HeaderButtonSize, style.WarningButtonColor);
             }
             //Minimize button
-            if (ctl.btnMin != null)
+            if (hdr.btnMin != null)
             {
                 nextButtonX = nextButtonX - style.HeaderButtonSize - style.HeaderButtonSpace;
-                ctl.btnMin.Location = new Point(nextButtonX, style.HeaderButtonSpace);
-                ctl.btnMin.BringToFront();
+                hdr.btnMin.Location = new Point(nextButtonX, style.HeaderButtonSpace);
+                hdr.btnMin.BringToFront();
 
-                uixButton.btnStyleMinimize(ctl.btnMin, style.HeaderButtonSize, style.HeaderButtonColor);
+                uixButton.btnStyleMinimize(hdr.btnMin, style.HeaderButtonSize, style.HeaderButtonColor);
             }
             
-            ctl.lbl.Size = new Size(nextButtonX - 10, ctl.Height);
+            hdr.lbl.Size = new Size(nextButtonX - 10, hdr.Height);
         }
 
         public static void hdrMove(Form frm, Control[] controls)
