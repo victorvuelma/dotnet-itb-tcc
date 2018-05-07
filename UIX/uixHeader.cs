@@ -43,7 +43,7 @@ namespace UIX
                 hdr.btnClo.Location = new Point(nextButtonX, style.HeaderButtonSpace);
                 hdr.btnClo.BringToFront();
 
-                uixButton.btnStyleClose(hdr.btnClo, style.HeaderButtonSize, style.WarningButtonColor);
+                uixButton.btnStyleClose(hdr.btnClo, style.HeaderButtonSize, style.ButtonWarningColor);
             }
             //Minimize button
             if (hdr.btnMin != null)

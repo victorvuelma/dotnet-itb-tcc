@@ -59,7 +59,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.WarningButtonColor);
+            UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.ButtonWarningColor);
 
             abrirPedidos();
         }

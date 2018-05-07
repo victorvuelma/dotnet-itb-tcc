@@ -43,16 +43,9 @@ namespace BURGUER_SHACK_DESKTOP
             PedidoIngrediente = new clnPedidoProdutoIngrediente
             {
                 Quantidade = 1,
-                Ingrediente = ingrediente.Cod
+                Ingrediente = ingrediente.Cod,
+                ProdutoQuantidade = PedidoIngredienteSubstituir.ProdutoQuantidade
             };
-            if (PedidoIngredienteSubstituir != null && PedidoIngredienteSubstituir.Substituindo)
-            {
-                PedidoIngrediente.Substituindo = true;
-            }
-            else
-            {
-                PedidoIngrediente.Substituindo = false;
-            }
         }
 
         private void exibirIngrediente(clnIngrediente ingrediente)
@@ -143,10 +136,6 @@ namespace BURGUER_SHACK_DESKTOP
             if (PedidoIngredienteSubstituir != null)
             {
                 txtQuantidade.Text = Convert.ToString(PedidoIngredienteSubstituir.Quantidade);
-                if (PedidoIngredienteSubstituir.Substituindo)
-                {
-                    txtQuantidade.Enabled = false;
-                }
 
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
@@ -161,7 +150,7 @@ namespace BURGUER_SHACK_DESKTOP
                 txtQuantidade.Text = "1";
             }
 
-            UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.WarningButtonColor);
+            UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.ButtonWarningColor);
         }
     }
 }

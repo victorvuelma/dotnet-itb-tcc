@@ -40,6 +40,31 @@ namespace BURGUER_SHACK_DESKTOP
 
             selecionarProduto(categoria);
         }
+        
+        private void selecionaProduto(clnProduto objProduto, int quantidade)
+        {
+            List<clnPedidoProdutoIngrediente> objIngredientes = new List<clnPedidoProdutoIngrediente>();
+            foreach (clnProdutoIngrediente objIngrediente in objProduto.Ingredientes)
+            {
+                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
+                {
+                    Ingrediente = objIngrediente.Ingrediente,
+                    Quantidade = objIngrediente.Quantidade,
+                    ProdutoQuantidade = objIngrediente.Quantidade
+                };
+                objIngredientes.Add(objPedidoIngrediente);
+            }
+
+            clnPedidoProduto objPedido = new clnPedidoProduto
+            {
+                Produto = objProduto.Cod,
+                Quantidade = quantidade,
+                Adicional = ""
+            };
+            PedidoProduto = objPedido;
+
+            exibirProduto(objProduto, objPedido);
+        }
 
         private void selecionarProduto(int categoria)
         {
@@ -53,88 +78,61 @@ namespace BURGUER_SHACK_DESKTOP
                 Opcoes = objProdutos.obterPorCategoria()
             };
 
-            frmSelecionar frmSelecionarProduto = new frmSelecionar
+            frmSelecionar frmSelecionar = new frmSelecionar
             {
                 Icone = BURGUER_SHACK_DESKTOP.Properties.Resources.produto,
-                Selecionando = "Selecione o produto",
+                Selecionando = "Produtos",
                 ObjSelecionar = objSelecionar
             };
+            frmSelecionar.ShowDialog();
 
-            frmSelecionarProduto.ShowDialog();            
+            if (objSelecionar.Selecionado != null)
+            {
+                selecionaProduto(objSelecionar.Selecionado, frmSelecionar.Quantidade);
+            }
         }
 
-        private void carregaProdutos(int categoria)
+        private void alterarProduto()
         {
+            clnProduto objProdutoAtual = new clnProduto
+            {
+                Cod = PedidoProduto.Produto
+            };
+            objProdutoAtual = objProdutoAtual.obterPorCodigo();
+
             clnProduto objProdutos = new clnProduto
             {
-                Categoria = categoria
+                Categoria = objProdutoAtual.Categoria
             };
 
-            List<Control> produtoControles = new List<Control>();
-            foreach (clnProduto objProduto in objProdutos.obterPorCategoria())
+            clnSelecionarProduto objSelecionar = new clnSelecionarProduto
             {
-                UIX.btnUIX btn = new UIX.btnUIX
-                {
-                    Description = objProduto.Nome,
-                    Name = "btnProduto" + objProduto.Cod,
-                    Size = new Size(100, 100),
-                    Image = objProduto.Imagem
-                };
-                btn.Click += (object sender, EventArgs e) =>
-                {
-                    selecionaProduto(objProduto);
-                };
+                Opcoes = objProdutos.obterPorCategoria(),
+                Selecionado = objProdutoAtual
+            };
 
-                produtoControles.Add(btn);
+            frmSelecionar frmSelecionar = new frmSelecionar
+            {
+                ObjSelecionar = objSelecionar
+            };
+            frmSelecionar.ShowDialog();
+
+            if (objSelecionar.getSelecionado() != null)
+            {
+                selecionaProduto(objSelecionar.Selecionado, frmSelecionar.Quantidade);
             }
-
         }
 
-        private void selecionaProduto(clnProduto objProduto)
+        private void exibirProduto(clnProduto objProduto, clnPedidoProduto objPedidoProduto)
         {
-            List<clnPedidoProdutoIngrediente> objPedidoIngredientes = new List<clnPedidoProdutoIngrediente>();
-            foreach (clnProdutoIngrediente objProdutoIngrediente in objProduto.Ingredientes)
-            {
-                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
-                {
-                    Ingrediente = objProdutoIngrediente.Ingrediente,
-                    Quantidade = objProdutoIngrediente.Quantidade,
-                    Substituindo = true
-                };
+            grbProduto.Hide();
 
-                objPedidoIngredientes.Add(objPedidoIngrediente);
-            }
+            picProduto.Image = objProduto.Imagem;
+            lblProdutoNome.Text = objProduto.Nome;
+            //lblDetalhes.Text = objPedidoProduto.Detalhes;
+            txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
 
-            clnPedidoProduto objPedidoProduto = new clnPedidoProduto
-            {
-                Produto = objProduto.Cod,
-                Quantidade = 1,
-                Ingredientes = objPedidoIngredientes
-            };
-
-            frmPedidoProduto frmEditarProduto = new frmPedidoProduto
-            {
-                PedidoProduto = objPedidoProduto
-            };
-            frmEditarProduto.btnRemover.Visible = false;
-            frmEditarProduto.btnVoltar.Description = "Cancelar";
-
-            frmEditarProduto.ShowDialog();
-
-            //O pedido não foi cancelado
-            if (frmEditarProduto.PedidoProduto != null)
-            {
-                objPedidoProduto = frmEditarProduto.PedidoProduto;
-
-                clnUtil.resetarCampos(grbDetalhes.Controls);
-                txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
-                grbDetalhes.Show();
-
-                clnUtil.resetarCampos(grbAdicional.Controls);
-                grbAdicional.Show();
-
-                PedidoProduto = objPedidoProduto;
-            }
+            grbProduto.Show();
         }
 
         private void adicionarProduto()
@@ -143,7 +141,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 if (_validar.valido())
                 {
-                    PedidoProduto.Adicional = txtAdicional.Text;
+                    //PedidoProduto.Adicional = txtAdicional.Text;
                     PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
                     Form.addProduto(PedidoProduto, Ingredientes);
@@ -155,10 +153,15 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void abrirIngredientes()
+        {
+            
+        }
+
         private void esconderDetalhes()
         {
             grbDetalhes.Hide();
-            grbAdicional.Hide();
+            //grbAdicional.Hide();
         }
 
         private void btnLanche_Click(object sender, EventArgs e)
@@ -188,7 +191,19 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void uctPedidoAdicionar_Load(object sender, EventArgs e)
         {
+            grbProduto.Hide();
+
             esconderDetalhes();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            alterarProduto();
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            abrirIngredientes();
         }
 
         class clnSelecionarProduto : clnSelecionar<clnProduto>

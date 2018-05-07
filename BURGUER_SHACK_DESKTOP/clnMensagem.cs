@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
                 case 1:
                     msg.btnYes.Text = "Sim";
                     msg.btnNo.Text = "Não";
-                    uixButton.btnApply(msg.btnYes, clnApp.AppVisualStyle.WarningButtonColor);
+                    uixButton.btnApply(msg.btnYes, clnApp.AppVisualStyle.ButtonWarningColor);
                     break;
             }
 

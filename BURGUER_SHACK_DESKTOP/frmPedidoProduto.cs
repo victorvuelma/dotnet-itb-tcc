@@ -116,7 +116,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.WarningButtonColor);
+            UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.ButtonWarningColor);
 
             abrirVisualizar();
         }
