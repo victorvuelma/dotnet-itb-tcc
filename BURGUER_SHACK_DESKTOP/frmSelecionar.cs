@@ -69,6 +69,15 @@ namespace BURGUER_SHACK_DESKTOP
             }
             clnUtil.adicionarControles(pnlOpcoes, opcoesControles, 20);
 
+            foreach (Control control in opcoesControles)
+            {
+                if (control is Button btn)
+                {
+                    UIX.uixButton.btnApply(btn, clnApp.AppVisualStyle.ButtonImageColor);
+                    btn.ForeColor = clnApp.AppVisualStyle.ButtonImageColor.ContentColor;
+                }
+            }
+
             pnlOpcoes.BackColor = grbOpcoes.BackColor;
         }
 

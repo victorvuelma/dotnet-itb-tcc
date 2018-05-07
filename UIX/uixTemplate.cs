@@ -13,6 +13,8 @@ namespace UIX
 
         private uixStyle _style;
 
+        public uixStyle Style { get => _style; }
+
         public uixTemplate(uixStyle style)
         {
             this._style = style;
@@ -29,47 +31,46 @@ namespace UIX
         public void ctlApply(Control ctl)
         {
 
-            if (ctl is btnUIX)
+            if (ctl is btnUIX uixBtn)
             {
-                btnUIX btn = (btnUIX)ctl;
-                uixButton.btnApply(btn, Style.ButtonColor, Style.BoldFont);
-                btn.HoverColor = Style.ButtonColor.DarkColor;
+                uixButton.btnApply(uixBtn, Style.ButtonColor, Style.BoldFont);
+                uixBtn.HoverColor = Style.ButtonColor.DarkColor;
             }
-            else if (ctl is Button)
+            else if (ctl is Button btn)
             {
-                this.btnApply((Button)ctl);
+                this.btnApply(btn);
             }
-            else if (ctl is ComboBox)
+            else if (ctl is ComboBox cbo)
             {
-                this.cboApply((ComboBox)ctl);
+                this.cboApply(cbo);
             }
-            else if(ctl is DataGridView)
+            else if (ctl is DataGridView dgv)
             {
-                this.dgvApply((DataGridView)ctl);
+                this.dgvApply(dgv);
             }
-            else if (ctl is GroupBox)
+            else if (ctl is GroupBox grb)
             {
-                this.grbApply((GroupBox)ctl);
+                this.grbApply(grb);
             }
-            else if (ctl is Label)
+            else if (ctl is Label lbl)
             {
-                this.lblApply((Label)ctl);
+                this.lblApply(lbl);
             }
-            else if (ctl is Panel)
+            else if (ctl is Panel pnl)
             {
-                this.pnlApply((Panel)ctl);
+                this.pnlApply(pnl);
             }
-            else if (ctl is MaskedTextBox)
+            else if (ctl is MaskedTextBox mtb)
             {
-                this.mtbApply((MaskedTextBox)ctl);
+                this.mtbApply(mtb);
             }
-            else if (ctl is TextBox)
+            else if (ctl is TextBox txt)
             {
-                this.txtApply((TextBox)ctl);
+                this.txtApply(txt);
             }
-            else if (ctl is UserControl)
+            else if (ctl is UserControl uct)
             {
-                this.uctApply((UserControl)ctl);
+                this.uctApply(uct);
             }
         }
 
@@ -152,8 +153,6 @@ namespace UIX
 
             uixForm.applyMargin(frm, Style);
         }
-
-        public uixStyle Style { get => _style; }
 
     }
 
