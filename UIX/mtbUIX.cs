@@ -16,7 +16,7 @@ namespace UIX
         public mtbUIX()
         {
             InitializeComponent();
-            
+
         }
 
         public String Campo
@@ -49,7 +49,7 @@ namespace UIX
             set
             {
                 Size current = base.Size;
-                mtb.Size = new Size(value.Width - lbl.Size.Width , mtb.Size.Height);
+                mtb.Size = new Size(value.Width - lbl.Size.Width, mtb.Size.Height);
                 base.Size = value;
             }
         }
@@ -64,6 +64,11 @@ namespace UIX
         private void mtbUIX_Load(object sender, EventArgs e)
         {
             Campo = Campo;
+        }
+
+        private void mtb_Click(object sender, EventArgs e)
+        {
+            mtb.SelectionStart = 0;
         }
     }
 }

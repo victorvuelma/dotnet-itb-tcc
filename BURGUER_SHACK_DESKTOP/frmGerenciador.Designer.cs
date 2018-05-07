@@ -36,11 +36,17 @@
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
-            this.dgvTercerizada = new System.Windows.Forms.DataGridView();
-            this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTercerizada = new System.Windows.Forms.DataGridView();
+            this.razaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.PIC = new System.Windows.Forms.DataGridViewImageColumn();
+            this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
+            this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
+            this.uctGerenTerceirizada = new BURGUER_SHACK_DESKTOP.uctGerenTerceirizada();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).BeginInit();
@@ -68,6 +74,7 @@
             this.btnAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnAdicionar.TabIndex = 6;
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnSair
             // 
@@ -98,10 +105,10 @@
             // pnlConteudo
             // 
             this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlConteudo.Location = new System.Drawing.Point(106, 267);
+            this.pnlConteudo.Location = new System.Drawing.Point(106, 57);
             this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(812, 538);
+            this.pnlConteudo.Size = new System.Drawing.Size(818, 538);
             this.pnlConteudo.TabIndex = 5;
             // 
             // hdrUIX
@@ -125,31 +132,14 @@
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
-            this.Nome});
-            this.dgvFuncionario.Location = new System.Drawing.Point(106, 57);
+            this.Nome,
+            this.Cargo,
+            this.Salario});
+            this.dgvFuncionario.Location = new System.Drawing.Point(930, 495);
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.ReadOnly = true;
-            this.dgvFuncionario.Size = new System.Drawing.Size(806, 498);
+            this.dgvFuncionario.Size = new System.Drawing.Size(100, 100);
             this.dgvFuncionario.TabIndex = 0;
-            // 
-            // dgvTercerizada
-            // 
-            this.dgvTercerizada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTercerizada.Location = new System.Drawing.Point(408, 181);
-            this.dgvTercerizada.Name = "dgvTercerizada";
-            this.dgvTercerizada.Size = new System.Drawing.Size(240, 150);
-            this.dgvTercerizada.TabIndex = 1;
-            this.dgvTercerizada.Visible = false;
-            // 
-            // dgvProduto
-            // 
-            this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PIC});
-            this.dgvProduto.Location = new System.Drawing.Point(106, 81);
-            this.dgvProduto.Name = "dgvProduto";
-            this.dgvProduto.Size = new System.Drawing.Size(806, 474);
-            this.dgvProduto.TabIndex = 2;
             // 
             // Código
             // 
@@ -163,18 +153,86 @@
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
             // 
+            // Cargo
+            // 
+            this.Cargo.HeaderText = "CARGO";
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
+            // 
+            // Salario
+            // 
+            this.Salario.HeaderText = "SALÁRIO";
+            this.Salario.Name = "Salario";
+            this.Salario.ReadOnly = true;
+            // 
+            // dgvTercerizada
+            // 
+            this.dgvTercerizada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTercerizada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.razaoSocial});
+            this.dgvTercerizada.Location = new System.Drawing.Point(930, 283);
+            this.dgvTercerizada.Name = "dgvTercerizada";
+            this.dgvTercerizada.Size = new System.Drawing.Size(100, 100);
+            this.dgvTercerizada.TabIndex = 1;
+            this.dgvTercerizada.Visible = false;
+            // 
+            // razaoSocial
+            // 
+            this.razaoSocial.HeaderText = "RAZÃO SOCIAL";
+            this.razaoSocial.Name = "razaoSocial";
+            // 
+            // dgvProduto
+            // 
+            this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PIC});
+            this.dgvProduto.Location = new System.Drawing.Point(930, 389);
+            this.dgvProduto.Name = "dgvProduto";
+            this.dgvProduto.Size = new System.Drawing.Size(100, 100);
+            this.dgvProduto.TabIndex = 2;
+            // 
             // PIC
             // 
             this.PIC.HeaderText = "IMAGEM";
             this.PIC.Name = "PIC";
+            // 
+            // uctGerenFuncionario
+            // 
+            this.uctGerenFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctGerenFuncionario.Location = new System.Drawing.Point(930, 176);
+            this.uctGerenFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenFuncionario.Name = "uctGerenFuncionario";
+            this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenFuncionario.TabIndex = 0;
+            // 
+            // uctGerenProduto
+            // 
+            this.uctGerenProduto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.uctGerenProduto.Location = new System.Drawing.Point(930, 119);
+            this.uctGerenProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenProduto.Name = "uctGerenProduto";
+            this.uctGerenProduto.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenProduto.TabIndex = 1;
+            // 
+            // uctGerenTerceirizada
+            // 
+            this.uctGerenTerceirizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctGerenTerceirizada.Location = new System.Drawing.Point(930, 68);
+            this.uctGerenTerceirizada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenTerceirizada.Name = "uctGerenTerceirizada";
+            this.uctGerenTerceirizada.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenTerceirizada.TabIndex = 2;
             // 
             // frmGerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 600);
+            this.Controls.Add(this.uctGerenProduto);
+            this.Controls.Add(this.uctGerenTerceirizada);
             this.Controls.Add(this.dgvTercerizada);
             this.Controls.Add(this.dgvProduto);
+            this.Controls.Add(this.uctGerenFuncionario);
             this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
@@ -204,8 +262,14 @@
         public System.Windows.Forms.DataGridView dgvProduto;
         public System.Windows.Forms.DataGridView dgvTercerizada;
         public System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.DataGridViewImageColumn PIC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razaoSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewImageColumn PIC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Salario;
+        private uctGerenFuncionario uctGerenFuncionario;
+        private uctGerenProduto uctGerenProduto;
+        private uctGerenTerceirizada uctGerenTerceirizada;
     }
 }

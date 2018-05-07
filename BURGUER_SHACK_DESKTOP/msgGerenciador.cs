@@ -16,7 +16,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
         }
-        public int clicouEm = 0;
+        public static int clicouEm = 0;
+        public static int adicionar = 0;
 
         private void msgGerenciador_Load(object sender, EventArgs e)
         {
@@ -26,33 +27,52 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnFuncionário_Click(object sender, EventArgs e)
         {
-            frmGerenciador frm = new frmGerenciador();
-            frm.dgvFuncionario.Visible = true;
-            frm.dgvTercerizada.Visible = false;
-            frm.dgvProduto.Visible = false;
-            clicouEm = 1;
+            if (hdrUIX.Title == "Adicionar")
+            {
+                adicionar = 1;
+                Close();
+            }
+            else
+            {
+                clicouEm = 1;
+                Close();
+            }
         }
 
         private void btnTerceirizada_Click(object sender, EventArgs e)
         {
-            frmGerenciador frm = new frmGerenciador();
-            frm.dgvFuncionario.Visible = false;
-            frm.dgvTercerizada.Visible = true;
-            frm.dgvProduto.Visible = false;
-            clicouEm = 2;
+
+            if (hdrUIX.Title == "Adicionar")
+            {
+                adicionar = 2;
+                Close();
+            }
+            else
+            {
+                clicouEm = 2;
+                Close();
+            }
         }
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-            frmGerenciador frm = new frmGerenciador();
-            frm.dgvFuncionario.Visible = false;
-            frm.dgvTercerizada.Visible = false;
-            frm.dgvProduto.Visible = true;
-            clicouEm = 3;
+
+            if (hdrUIX.Title == "Adicionar")
+            {
+                adicionar = 3;
+                Close();
+            }
+            else
+            {
+                clicouEm = 3;
+                Close();
+            }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
+            clicouEm = -1;
+            adicionar = -1;
             Close();
         }
     }

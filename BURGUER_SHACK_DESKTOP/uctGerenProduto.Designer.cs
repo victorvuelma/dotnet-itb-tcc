@@ -37,7 +37,6 @@
             this.txtUnidadeEstoque = new UIX.txtUIX();
             this.txtFornecedor = new UIX.txtUIX();
             this.txtMarca = new UIX.txtUIX();
-            this.txtICMS = new UIX.txtUIX();
             this.cboTipo = new UIX.cboUIX();
             this.txtPeso = new UIX.txtUIX();
             this.txtDescricao = new UIX.txtUIX();
@@ -67,7 +66,6 @@
             this.grbDadosPessoais.Controls.Add(this.txtUnidadeEstoque);
             this.grbDadosPessoais.Controls.Add(this.txtFornecedor);
             this.grbDadosPessoais.Controls.Add(this.txtMarca);
-            this.grbDadosPessoais.Controls.Add(this.txtICMS);
             this.grbDadosPessoais.Controls.Add(this.cboTipo);
             this.grbDadosPessoais.Controls.Add(this.txtPeso);
             this.grbDadosPessoais.Controls.Add(this.txtDescricao);
@@ -85,6 +83,7 @@
             // txtPrecoVenda
             // 
             this.txtPrecoVenda.AccessibleName = "Preço de Venda: (R$)*";
+            this.txtPrecoVenda.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtPrecoVenda.Campo = "Preço de Venda: (R$)*";
             this.txtPrecoVenda.Location = new System.Drawing.Point(282, 143);
             this.txtPrecoVenda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
@@ -96,6 +95,7 @@
             // txtPrecoCusto
             // 
             this.txtPrecoCusto.AccessibleName = "Preço de Custo: (R$)*";
+            this.txtPrecoCusto.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtPrecoCusto.Campo = "Preço de Custo: (R$)*";
             this.txtPrecoCusto.Location = new System.Drawing.Point(6, 143);
             this.txtPrecoCusto.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
@@ -107,6 +107,7 @@
             // txtDataCadastro
             // 
             this.txtDataCadastro.AccessibleName = "Data de Cadastro: *";
+            this.txtDataCadastro.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtDataCadastro.Campo = "Data de Cadastro: *";
             this.txtDataCadastro.Location = new System.Drawing.Point(115, 82);
             this.txtDataCadastro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -133,6 +134,7 @@
             // txtUnidadeEstoque
             // 
             this.txtUnidadeEstoque.AccessibleName = "Unidade em Estoque";
+            this.txtUnidadeEstoque.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtUnidadeEstoque.Campo = "Unidade em Estoque";
             this.txtUnidadeEstoque.Location = new System.Drawing.Point(6, 176);
             this.txtUnidadeEstoque.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
@@ -144,6 +146,7 @@
             // txtFornecedor
             // 
             this.txtFornecedor.AccessibleName = "Fornecedor";
+            this.txtFornecedor.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtFornecedor.Campo = "Fornecedor";
             this.txtFornecedor.Location = new System.Drawing.Point(6, 112);
             this.txtFornecedor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -155,6 +158,7 @@
             // txtMarca
             // 
             this.txtMarca.AccessibleName = "Marca";
+            this.txtMarca.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtMarca.Campo = "Marca";
             this.txtMarca.Location = new System.Drawing.Point(275, 112);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
@@ -162,17 +166,6 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(173, 21);
             this.txtMarca.TabIndex = 8;
-            // 
-            // txtICMS
-            // 
-            this.txtICMS.AccessibleName = "Valor ICMS:* (R$)";
-            this.txtICMS.Campo = "Valor ICMS:* (R$)";
-            this.txtICMS.Location = new System.Drawing.Point(326, 82);
-            this.txtICMS.Margin = new System.Windows.Forms.Padding(3, 11, 3, 11);
-            this.txtICMS.MaxLength = 32767;
-            this.txtICMS.Name = "txtICMS";
-            this.txtICMS.Size = new System.Drawing.Size(157, 21);
-            this.txtICMS.TabIndex = 21;
             // 
             // cboTipo
             // 
@@ -188,6 +181,7 @@
             // txtPeso
             // 
             this.txtPeso.AccessibleName = "Peso:* (g)";
+            this.txtPeso.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtPeso.Campo = "Peso:* (g)";
             this.txtPeso.Location = new System.Drawing.Point(6, 82);
             this.txtPeso.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
@@ -199,6 +193,7 @@
             // txtDescricao
             // 
             this.txtDescricao.AccessibleName = "Descrição:*";
+            this.txtDescricao.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtDescricao.Campo = "Descrição:*";
             this.txtDescricao.Location = new System.Drawing.Point(6, 52);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -210,6 +205,7 @@
             // txtNome
             // 
             this.txtNome.AccessibleName = "Nome:*";
+            this.txtNome.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtNome.Campo = "Nome:*";
             this.txtNome.Location = new System.Drawing.Point(171, 21);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -320,6 +316,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.AccessibleName = "Número de Identificação";
+            this.txtPesquisa.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -327,6 +324,7 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(265, 17);
             this.txtPesquisa.TabIndex = 2;
+            this.txtPesquisa.Visible = false;
             // 
             // uctGerenProduto
             // 
@@ -371,7 +369,6 @@
         private System.Windows.Forms.TextBox txtCodFornecedor;
         private UIX.txtUIX txtPrecoVenda;
         private System.Windows.Forms.TextBox txtCodMarca;
-        private UIX.txtUIX txtICMS;
         private System.Windows.Forms.PictureBox picFotoProduto;
         private System.Windows.Forms.Label label1;
         private UIX.btnUIX btnUIX1;

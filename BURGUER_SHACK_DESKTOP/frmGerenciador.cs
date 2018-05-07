@@ -27,79 +27,112 @@ namespace BURGUER_SHACK_DESKTOP
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-
-            //pnlConteudo.lblId.Visible = false;
-            //pnlConteudo.txtPesquisa.Visible = false;
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            //pnlConteudo.lblId.Visible = true;
-            //pnlConteudo.txtPesquisa.Visible = true;
-        }
-
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-
-            //pnlConteudo.lblId.Visible = true;
-            //pnlConteudo.txtPesquisa.Visible = true;
-        }
-
         public static void listagemGerenciamento()
         {
             msgGerenciador msg = new msgGerenciador();
-            frmGerenciador frm = new frmGerenciador();
             msg.hdrUIX.Title = "Listagem";
-            msg.lbl.Text = "Escolhe uma entre três opções abaixo para ver lista completa.";
-
-            switch (msg.clicouEm)
-            {
-                case 1:
-                    frm.dgvFuncionario.Visible = true;
-                    frm.dgvProduto.Visible = false;
-                    frm.dgvTercerizada.Visible = false;
-                    break;
-                case 2:
-                    frm.dgvFuncionario.Visible = false;
-                    frm.dgvTercerizada.Visible = true;
-                    frm.dgvProduto.Visible = false;
-                    break;
-                case 3:
-                    frm.dgvFuncionario.Visible = false;
-                    frm.dgvTercerizada.Visible = false;
-                    frm.dgvProduto.Visible = true;
-                    break;
-            }
-
+            msg.lbl.Text = "Escolhe uma entre as três opções abaixo para ver lista completa.";
             msg.ShowDialog();
-        }
+        } 
 
         private void btnLista_Click(object sender, EventArgs e)
         {
-            msgGerenciador msg = new msgGerenciador();
-            frmGerenciador frm = new frmGerenciador();
             listagemGerenciamento();
-            switch (msg.clicouEm)
+            
+            switch (msgGerenciador.clicouEm)
             {
                 case 1:
-                    frm.dgvFuncionario.Visible = true;
-                    frm.dgvProduto.Visible = false;
-                    frm.dgvTercerizada.Visible = false;
+                    dgvFuncionario.Visible = true;
+                    dgvFuncionario.Location = pnlConteudo.Location;
+                    dgvFuncionario.Size = pnlConteudo.Size;
+
+                    dgvProduto.Visible = false;
+                    dgvProduto.Location = new Point(930, 495);
+                    dgvProduto.Size = new Size(100,100);
+
+                    dgvTercerizada.Visible = false;
+                    dgvTercerizada.Location = new Point(930, 495);
+                    dgvTercerizada.Size = new Size(100, 100);
+
+                    uctGerenFuncionario.Visible = false;
+                    uctGerenProduto.Visible = false;
+                    uctGerenTerceirizada.Visible = false;
                     break;
                 case 2:
-                    frm.dgvFuncionario.Visible = false;
-                    frm.dgvTercerizada.Visible = true;
-                    frm.dgvProduto.Visible = false;
+                    dgvFuncionario.Visible = false;
+                    dgvFuncionario.Location = new Point(930, 495);
+                    dgvFuncionario.Size = new Size(100, 100);
+
+                    dgvTercerizada.Visible = true;
+                    dgvTercerizada.Location = pnlConteudo.Location;
+                    dgvTercerizada.Size = pnlConteudo.Size;
+
+                    dgvProduto.Visible = false;
+                    dgvProduto.Location = new Point(930, 495);
+                    dgvProduto.Size = new Size(100, 100);
+
+                    uctGerenFuncionario.Visible = false;
+                    uctGerenProduto.Visible = false;
+                    uctGerenTerceirizada.Visible = false;
                     break;
                 case 3:
-                    frm.dgvFuncionario.Visible = false;
-                    frm.dgvTercerizada.Visible = false;
-                    frm.dgvProduto.Visible = true;
+                    dgvFuncionario.Visible = false;
+                    dgvFuncionario.Location = new Point(930, 495);
+                    dgvFuncionario.Size = new Size(100, 100);
+
+                    dgvTercerizada.Visible = false;
+                    dgvTercerizada.Location = new Point(930, 495);
+                    dgvTercerizada.Size = new Size(100, 100);
+
+                    dgvProduto.Visible = true;
+                    dgvProduto.Location = pnlConteudo.Location;
+                    dgvProduto.Size = pnlConteudo.Size;
+
+                    uctGerenFuncionario.Visible = false;
+                    uctGerenProduto.Visible = false;
+                    uctGerenTerceirizada.Visible = false;
                     break;
             }
         }
+
+        private static void adicionarGerenciamento()
+        {
+            msgGerenciador msg = new msgGerenciador();
+            msg.hdrUIX.Title = "Adicionar";
+            msg.lbl.Text = "Escolhe uma entre as três opções abaixo para adicionar.";
+            msg.ShowDialog();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            adicionarGerenciamento();
+
+            switch (msgGerenciador.adicionar)
+            {
+                case 1:
+                    uctGerenFuncionario.Visible = true;
+                    uctGerenFuncionario.Location = pnlConteudo.Location;
+                    uctGerenFuncionario.Size = pnlConteudo.Size;
+                    uctGerenProduto.Visible = false;
+                    uctGerenTerceirizada.Visible = false;
+                    break;
+                case 2:
+                    uctGerenTerceirizada.Visible = true;
+                    uctGerenTerceirizada.Location = pnlConteudo.Location;
+                    uctGerenTerceirizada.Size = pnlConteudo.Size;
+                    uctGerenFuncionario.Visible = false;
+                    uctGerenProduto.Visible = false;
+                    break;
+                case 3:
+                    uctGerenProduto.Visible = true;
+                    uctGerenProduto.Location = pnlConteudo.Location;
+                    uctGerenProduto.Size = pnlConteudo.Size;
+                    uctGerenFuncionario.Visible = false;
+                    uctGerenTerceirizada.Visible = false;
+                    break;
+            }
+        }
+
 
         private void alterarConteudo(UserControl uctConteudo, String titulo)
         {

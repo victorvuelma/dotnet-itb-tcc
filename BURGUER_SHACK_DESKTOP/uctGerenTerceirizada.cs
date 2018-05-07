@@ -28,7 +28,6 @@ namespace BURGUER_SHACK_DESKTOP
             this.mtbCntTelCom.Mask = clnUtil.MASK_TEL;
             this.mtbCntTelCom2.Mask = clnUtil.MASK_TEL;
             this.mtbCntTelCel.Mask = clnUtil.MASK_CEL;
-            this.mtbCntFax.Mask = clnUtil.MASK_TEL;
             this.mtbEndCEP.Mask = clnUtil.MASK_CEP;
             this.mtbCtrConvInicio.Mask = clnUtil.MASK_DATA;
             this.mtbCtrConvTermino.Mask = clnUtil.MASK_DATA;
@@ -36,5 +35,10 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr);
         }
 
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

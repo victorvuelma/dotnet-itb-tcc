@@ -31,7 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (String.IsNullOrWhiteSpace(txtNome.Text) ||
                 String.IsNullOrWhiteSpace(txtDescricao.Text) || String.IsNullOrWhiteSpace(txtDataCadastro.Text) ||
-                String.IsNullOrWhiteSpace(txtPeso.Text) || String.IsNullOrWhiteSpace(txtICMS.Text) ||
+                String.IsNullOrWhiteSpace(txtPeso.Text) ||
                 String.IsNullOrWhiteSpace(txtPrecoCusto.Text) || String.IsNullOrWhiteSpace(txtPrecoVenda.Text) ||
                 picFotoProduto.Image == Properties.Resources.padrao)
             {

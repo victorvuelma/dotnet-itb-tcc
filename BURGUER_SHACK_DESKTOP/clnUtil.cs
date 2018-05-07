@@ -171,7 +171,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static void addUFs(ComboBox cbo)
         {
-            cbo.Items.AddRange(new String[] { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" });
+            cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
         }
 
         public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox ctlUF, Control ctlNr)
@@ -310,6 +310,5 @@ namespace BURGUER_SHACK_DESKTOP
 
             hdrUIX.Title = clnApp.AppName + " - " + titulo;
         }
-
     }
 }
