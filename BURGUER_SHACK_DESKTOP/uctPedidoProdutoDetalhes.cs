@@ -36,13 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             foreach (clnPedidoProdutoIngrediente objPedidoIngrediente in PedidoProduto.Ingredientes)
             {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = objPedidoIngrediente.Ingrediente
-                };
-                objIngrediente = objIngrediente.obterPorCodigo();
-
-                dgvIngredientes.Rows.Add(objIngrediente.Nome, objPedidoIngrediente.Quantidade);
+                dgvIngredientes.Rows.Add(objPedidoIngrediente.Ingrediente.Nome, objPedidoIngrediente.Quantidade);
             }
         }
 

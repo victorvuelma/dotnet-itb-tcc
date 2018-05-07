@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnIngrediente
+    public class clnIngrediente
     {
 
         private int _cod;

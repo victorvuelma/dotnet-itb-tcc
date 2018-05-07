@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class frmAlteraIngrediente
+    partial class frmPedidoIngrediente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hdrUIX = new UIX.hdrUIX();
             this.grbAntigo = new System.Windows.Forms.GroupBox();
-            this.picAntigo = new System.Windows.Forms.PictureBox();
-            this.lblAntigoNome = new System.Windows.Forms.Label();
-            this.lblQuantidade = new System.Windows.Forms.Label();
             this.btnEscolher = new System.Windows.Forms.Button();
+            this.lblQuantidade = new System.Windows.Forms.Label();
+            this.lblAntigoNome = new System.Windows.Forms.Label();
+            this.picAntigo = new System.Windows.Forms.PictureBox();
             this.grbNovo = new System.Windows.Forms.GroupBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.lblNovoNome = new System.Windows.Forms.Label();
             this.picNovo = new System.Windows.Forms.PictureBox();
-            this.txtQuantidade = new UIX.txtUIX();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtQuantidade = new UIX.txtUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.grbAntigo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAntigo)).BeginInit();
             this.grbNovo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNovo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // hdrUIX
-            // 
-            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = true;
-            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
-            this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(325, 50);
-            this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.Title = "Alterar Ingrediente";
             // 
             // grbAntigo
             // 
@@ -72,22 +60,15 @@
             this.grbAntigo.TabStop = false;
             this.grbAntigo.Text = "Alterar:";
             // 
-            // picAntigo
+            // btnEscolher
             // 
-            this.picAntigo.Location = new System.Drawing.Point(10, 20);
-            this.picAntigo.Name = "picAntigo";
-            this.picAntigo.Size = new System.Drawing.Size(130, 130);
-            this.picAntigo.TabIndex = 0;
-            this.picAntigo.TabStop = false;
-            // 
-            // lblAntigoNome
-            // 
-            this.lblAntigoNome.Location = new System.Drawing.Point(5, 160);
-            this.lblAntigoNome.Name = "lblAntigoNome";
-            this.lblAntigoNome.Size = new System.Drawing.Size(140, 30);
-            this.lblAntigoNome.TabIndex = 1;
-            this.lblAntigoNome.Text = "N";
-            this.lblAntigoNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEscolher.Location = new System.Drawing.Point(10, 235);
+            this.btnEscolher.Name = "btnEscolher";
+            this.btnEscolher.Size = new System.Drawing.Size(130, 35);
+            this.btnEscolher.TabIndex = 3;
+            this.btnEscolher.Text = "Escolher";
+            this.btnEscolher.UseVisualStyleBackColor = true;
+            this.btnEscolher.Click += new System.EventHandler(this.btnEscolher_Click);
             // 
             // lblQuantidade
             // 
@@ -98,14 +79,23 @@
             this.lblQuantidade.Text = "Q";
             this.lblQuantidade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnEscolher
+            // lblAntigoNome
             // 
-            this.btnEscolher.Location = new System.Drawing.Point(10, 235);
-            this.btnEscolher.Name = "btnEscolher";
-            this.btnEscolher.Size = new System.Drawing.Size(130, 35);
-            this.btnEscolher.TabIndex = 3;
-            this.btnEscolher.Text = "Escolher";
-            this.btnEscolher.UseVisualStyleBackColor = true;
+            this.lblAntigoNome.Location = new System.Drawing.Point(5, 160);
+            this.lblAntigoNome.Name = "lblAntigoNome";
+            this.lblAntigoNome.Size = new System.Drawing.Size(140, 30);
+            this.lblAntigoNome.TabIndex = 1;
+            this.lblAntigoNome.Text = "N";
+            this.lblAntigoNome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picAntigo
+            // 
+            this.picAntigo.Location = new System.Drawing.Point(10, 20);
+            this.picAntigo.Name = "picAntigo";
+            this.picAntigo.Size = new System.Drawing.Size(130, 130);
+            this.picAntigo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAntigo.TabIndex = 0;
+            this.picAntigo.TabStop = false;
             // 
             // grbNovo
             // 
@@ -143,19 +133,9 @@
             this.picNovo.Location = new System.Drawing.Point(10, 20);
             this.picNovo.Name = "picNovo";
             this.picNovo.Size = new System.Drawing.Size(130, 130);
+            this.picNovo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNovo.TabIndex = 0;
             this.picNovo.TabStop = false;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
-            this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(10, 200);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(130, 25);
-            this.txtQuantidade.TabIndex = 4;
             // 
             // btnRemover
             // 
@@ -175,7 +155,30 @@
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             // 
-            // frmAlteraIngrediente
+            // txtQuantidade
+            // 
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.Location = new System.Drawing.Point(10, 200);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(130, 25);
+            this.txtQuantidade.TabIndex = 4;
+            // 
+            // hdrUIX
+            // 
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(325, 50);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.Title = "Pedido Ingrediente";
+            // 
+            // frmPedidoIngrediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,9 +189,9 @@
             this.Controls.Add(this.grbAntigo);
             this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAlteraIngrediente";
+            this.Name = "frmPedidoIngrediente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Alterar Ingrediente";
+            this.Text = "Pedido Ingrediente";
             this.Load += new System.EventHandler(this.frmAlteraIngrediente_Load);
             this.grbAntigo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAntigo)).EndInit();

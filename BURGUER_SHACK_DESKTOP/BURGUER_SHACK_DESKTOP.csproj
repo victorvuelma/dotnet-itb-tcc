@@ -130,11 +130,11 @@
     <Compile Include="clnSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnValidar.cs" />
-    <Compile Include="frmAlteraIngrediente.cs">
+    <Compile Include="frmPedidoIngrediente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlteraIngrediente.Designer.cs">
-      <DependentUpon>frmAlteraIngrediente.cs</DependentUpon>
+    <Compile Include="frmPedidoIngrediente.Designer.cs">
+      <DependentUpon>frmPedidoIngrediente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCozinha.cs">
       <SubType>Form</SubType>
@@ -288,8 +288,8 @@
     <Compile Include="uctGerenTerceirizada.Designer.cs">
       <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmAlteraIngrediente.resx">
-      <DependentUpon>frmAlteraIngrediente.cs</DependentUpon>
+    <EmbeddedResource Include="frmPedidoIngrediente.resx">
+      <DependentUpon>frmPedidoIngrediente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCozinha.resx">
       <DependentUpon>frmCozinha.cs</DependentUpon>

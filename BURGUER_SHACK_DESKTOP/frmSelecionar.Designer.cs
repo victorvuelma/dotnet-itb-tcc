@@ -195,8 +195,8 @@
         private UIX.txtUIX txtPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.PictureBox picImagem;
-        private UIX.txtUIX txtQuantidade;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblDesc;
+        public UIX.txtUIX txtQuantidade;
     }
 }
