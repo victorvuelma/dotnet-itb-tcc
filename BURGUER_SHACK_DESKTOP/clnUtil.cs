@@ -310,6 +310,5 @@ namespace BURGUER_SHACK_DESKTOP
 
             hdrUIX.Title = clnApp.AppName + " - " + titulo;
         }
-
     }
 }

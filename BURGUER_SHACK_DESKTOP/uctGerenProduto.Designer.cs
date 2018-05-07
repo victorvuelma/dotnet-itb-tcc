@@ -37,7 +37,6 @@
             this.txtUnidadeEstoque = new UIX.txtUIX();
             this.txtFornecedor = new UIX.txtUIX();
             this.txtMarca = new UIX.txtUIX();
-            this.txtICMS = new UIX.txtUIX();
             this.cboTipo = new UIX.cboUIX();
             this.txtPeso = new UIX.txtUIX();
             this.txtDescricao = new UIX.txtUIX();
@@ -67,7 +66,6 @@
             this.grbDadosPessoais.Controls.Add(this.txtUnidadeEstoque);
             this.grbDadosPessoais.Controls.Add(this.txtFornecedor);
             this.grbDadosPessoais.Controls.Add(this.txtMarca);
-            this.grbDadosPessoais.Controls.Add(this.txtICMS);
             this.grbDadosPessoais.Controls.Add(this.cboTipo);
             this.grbDadosPessoais.Controls.Add(this.txtPeso);
             this.grbDadosPessoais.Controls.Add(this.txtDescricao);
@@ -168,18 +166,6 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(173, 21);
             this.txtMarca.TabIndex = 8;
-            // 
-            // txtICMS
-            // 
-            this.txtICMS.AccessibleName = "Valor ICMS:* (R$)";
-            this.txtICMS.AllowedChars = UIX.uixAllowedChars.ALL;
-            this.txtICMS.Campo = "Valor ICMS:* (R$)";
-            this.txtICMS.Location = new System.Drawing.Point(326, 82);
-            this.txtICMS.Margin = new System.Windows.Forms.Padding(3, 11, 3, 11);
-            this.txtICMS.MaxLength = 32767;
-            this.txtICMS.Name = "txtICMS";
-            this.txtICMS.Size = new System.Drawing.Size(157, 21);
-            this.txtICMS.TabIndex = 21;
             // 
             // cboTipo
             // 
@@ -383,7 +369,6 @@
         private System.Windows.Forms.TextBox txtCodFornecedor;
         private UIX.txtUIX txtPrecoVenda;
         private System.Windows.Forms.TextBox txtCodMarca;
-        private UIX.txtUIX txtICMS;
         private System.Windows.Forms.PictureBox picFotoProduto;
         private System.Windows.Forms.Label label1;
         private UIX.btnUIX btnUIX1;
