@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIX;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -72,6 +73,15 @@ namespace BURGUER_SHACK_DESKTOP
             Application.Restart();
         }
 
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (txtUIX.confirmar)
+            {
+                case 1:
+                    btnEntrar.PerformClick();
+                    break;
+            }
+         }
     }
 
 }

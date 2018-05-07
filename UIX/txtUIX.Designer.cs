@@ -48,6 +48,7 @@
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(100, 20);
             this.txt.TabIndex = 1;
+            this.txt.KeyDown += new System.Windows.Forms.KeyEventHandler(txtUIX.txt_KeyDown);
             this.txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txtUIX
@@ -58,6 +59,7 @@
             this.Controls.Add(this.lbl);
             this.Name = "txtUIX";
             this.Size = new System.Drawing.Size(150, 20);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUIX_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIX;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -101,6 +102,17 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void finalizar()
+        {
+            if (clnMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", clnMensagem.MensagemIcone.ERRO))
+            {
+                Close();
+            }
+        }
 
+        private void hdrUIX_Close(object sender, EventArgs e)
+        {
+            finalizar();
+        }
     }
 }

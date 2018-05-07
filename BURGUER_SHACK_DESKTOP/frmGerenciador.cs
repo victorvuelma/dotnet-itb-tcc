@@ -115,6 +115,10 @@ namespace BURGUER_SHACK_DESKTOP
                     uctGerenFuncionario.Size = pnlConteudo.Size;
                     uctGerenProduto.Visible = false;
                     uctGerenTerceirizada.Visible = false;
+
+                    dgvFuncionario.Visible = false;
+                    dgvTercerizada.Visible = false;
+                    dgvProduto.Visible = false;
                     break;
                 case 2:
                     uctGerenTerceirizada.Visible = true;
@@ -122,6 +126,10 @@ namespace BURGUER_SHACK_DESKTOP
                     uctGerenTerceirizada.Size = pnlConteudo.Size;
                     uctGerenFuncionario.Visible = false;
                     uctGerenProduto.Visible = false;
+
+                    dgvFuncionario.Visible = false;
+                    dgvTercerizada.Visible = false;
+                    dgvProduto.Visible = false;
                     break;
                 case 3:
                     uctGerenProduto.Visible = true;
@@ -129,6 +137,10 @@ namespace BURGUER_SHACK_DESKTOP
                     uctGerenProduto.Size = pnlConteudo.Size;
                     uctGerenFuncionario.Visible = false;
                     uctGerenTerceirizada.Visible = false;
+
+                    dgvFuncionario.Visible = false;
+                    dgvTercerizada.Visible = false;
+                    dgvProduto.Visible = false;
                     break;
             }
         }

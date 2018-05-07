@@ -34,12 +34,12 @@
             this.lblAntigoNome = new System.Windows.Forms.Label();
             this.picAntigo = new System.Windows.Forms.PictureBox();
             this.grbNovo = new System.Windows.Forms.GroupBox();
+            this.txtQuantidade = new UIX.txtUIX();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.lblNovoNome = new System.Windows.Forms.Label();
             this.picNovo = new System.Windows.Forms.PictureBox();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txtQuantidade = new UIX.txtUIX();
             this.hdrUIX = new UIX.hdrUIX();
             this.grbAntigo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAntigo)).BeginInit();
@@ -110,6 +110,17 @@
             this.grbNovo.TabStop = false;
             this.grbNovo.Text = "Novo:";
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.Location = new System.Drawing.Point(10, 200);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(130, 25);
+            this.txtQuantidade.TabIndex = 4;
+            // 
             // btnAlterar
             // 
             this.btnAlterar.Location = new System.Drawing.Point(10, 235);
@@ -155,17 +166,6 @@
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
-            this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(10, 200);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(130, 25);
-            this.txtQuantidade.TabIndex = 4;
-            // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -177,6 +177,7 @@
             this.hdrUIX.Size = new System.Drawing.Size(325, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Pedido Ingrediente";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmPedidoIngrediente
             // 
