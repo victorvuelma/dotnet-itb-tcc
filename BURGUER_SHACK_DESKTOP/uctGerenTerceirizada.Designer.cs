@@ -56,19 +56,19 @@
             this.txtCtrCoord = new UIX.txtUIX();
             this.txtPesquisa = new UIX.txtUIX();
             this.btnSalvar = new UIX.btnUIX();
-            this.grpEndereco = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEndComplemento = new UIX.txtUIX();
             this.txtEndCidade = new UIX.txtUIX();
             this.txtEndBairro = new UIX.txtUIX();
             this.mtbEndCEP = new UIX.mtbUIX();
             this.cboEndUF = new UIX.cboUIX();
-            this.txtEndNr = new UIX.txtUIX();
             this.txtEndLogradouro = new UIX.txtUIX();
+            this.txtEndNr = new UIX.txtUIX();
             this.grbDadosEmpresa.SuspendLayout();
             this.grpContato.SuspendLayout();
             this.grpDadosResponsavel.SuspendLayout();
             this.grpContrato.SuspendLayout();
-            this.grpEndereco.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbDadosEmpresa
@@ -91,6 +91,7 @@
             // txtEmpSite
             // 
             this.txtEmpSite.AccessibleName = "Site";
+            this.txtEmpSite.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEmpSite.Campo = "Site";
             this.txtEmpSite.Location = new System.Drawing.Point(352, 50);
             this.txtEmpSite.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -115,6 +116,7 @@
             // txtEmpNomeFantasia
             // 
             this.txtEmpNomeFantasia.AccessibleName = "Nome Fantasia";
+            this.txtEmpNomeFantasia.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEmpNomeFantasia.Campo = "Nome Fantasia";
             this.txtEmpNomeFantasia.Location = new System.Drawing.Point(386, 20);
             this.txtEmpNomeFantasia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -126,6 +128,7 @@
             // txtEmpRazaoSocial
             // 
             this.txtEmpRazaoSocial.AccessibleName = "Razão Social*";
+            this.txtEmpRazaoSocial.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEmpRazaoSocial.Campo = "Razão Social*";
             this.txtEmpRazaoSocial.Location = new System.Drawing.Point(5, 20);
             this.txtEmpRazaoSocial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -233,6 +236,7 @@
             // txtCntEmail
             // 
             this.txtCntEmail.AccessibleName = "Email:*";
+            this.txtCntEmail.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtCntEmail.Campo = "Email:*";
             this.txtCntEmail.Location = new System.Drawing.Point(5, 20);
             this.txtCntEmail.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
@@ -262,6 +266,7 @@
             // txtResEmail
             // 
             this.txtResEmail.AccessibleName = "Email";
+            this.txtResEmail.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtResEmail.Campo = "Email";
             this.txtResEmail.Location = new System.Drawing.Point(365, 50);
             this.txtResEmail.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -325,6 +330,7 @@
             // txtResNome
             // 
             this.txtResNome.AccessibleName = "Nome";
+            this.txtResNome.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtResNome.Campo = "Nome";
             this.txtResNome.Location = new System.Drawing.Point(5, 20);
             this.txtResNome.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -336,6 +342,7 @@
             // txtCtrCargo
             // 
             this.txtCtrCargo.AccessibleName = "Cargo/Função";
+            this.txtCtrCargo.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtCtrCargo.Campo = "Cargo/Função";
             this.txtCtrCargo.Location = new System.Drawing.Point(365, 50);
             this.txtCtrCargo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -400,6 +407,7 @@
             // txtCtrCoord
             // 
             this.txtCtrCoord.AccessibleName = "Coornedador do Convênio";
+            this.txtCtrCoord.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtCtrCoord.Campo = "Coornedador do Convênio";
             this.txtCtrCoord.Location = new System.Drawing.Point(5, 20);
             this.txtCtrCoord.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
@@ -411,6 +419,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.AccessibleName = "Número de Identificação";
+            this.txtPesquisa.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtPesquisa.Campo = "Número de Identificação";
             this.txtPesquisa.Location = new System.Drawing.Point(0, 1);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -418,6 +427,7 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(227, 21);
             this.txtPesquisa.TabIndex = 1;
+            this.txtPesquisa.Visible = false;
             // 
             // btnSalvar
             // 
@@ -432,31 +442,33 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // grpEndereco
+            // groupBox1
             // 
-            this.grpEndereco.Controls.Add(this.txtEndComplemento);
-            this.grpEndereco.Controls.Add(this.txtEndCidade);
-            this.grpEndereco.Controls.Add(this.txtEndBairro);
-            this.grpEndereco.Controls.Add(this.mtbEndCEP);
-            this.grpEndereco.Controls.Add(this.cboEndUF);
-            this.grpEndereco.Controls.Add(this.txtEndNr);
-            this.grpEndereco.Controls.Add(this.txtEndLogradouro);
-            this.grpEndereco.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEndereco.Location = new System.Drawing.Point(5, 265);
-            this.grpEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpEndereco.Name = "grpEndereco";
-            this.grpEndereco.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpEndereco.Size = new System.Drawing.Size(790, 80);
-            this.grpEndereco.TabIndex = 32;
-            this.grpEndereco.TabStop = false;
-            this.grpEndereco.Text = "ENDEREÇO";
+            this.groupBox1.Controls.Add(this.txtEndComplemento);
+            this.groupBox1.Controls.Add(this.txtEndCidade);
+            this.groupBox1.Controls.Add(this.txtEndBairro);
+            this.groupBox1.Controls.Add(this.mtbEndCEP);
+            this.groupBox1.Controls.Add(this.cboEndUF);
+            this.groupBox1.Controls.Add(this.txtEndLogradouro);
+            this.groupBox1.Controls.Add(this.txtEndNr);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(5, 267);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(790, 80);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ENDEREÇO";
             // 
             // txtEndComplemento
             // 
             this.txtEndComplemento.AccessibleName = "Complemento";
+            this.txtEndComplemento.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndComplemento.Campo = "Complemento";
-            this.txtEndComplemento.Location = new System.Drawing.Point(558, 20);
+            this.txtEndComplemento.Location = new System.Drawing.Point(441, 51);
             this.txtEndComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndComplemento.MaxLength = 100;
             this.txtEndComplemento.Name = "txtEndComplemento";
@@ -466,35 +478,37 @@
             // txtEndCidade
             // 
             this.txtEndCidade.AccessibleName = "Cidade*";
+            this.txtEndCidade.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndCidade.Campo = "Cidade*";
-            this.txtEndCidade.Location = new System.Drawing.Point(415, 50);
+            this.txtEndCidade.Location = new System.Drawing.Point(604, 22);
             this.txtEndCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndCidade.MaxLength = 100;
             this.txtEndCidade.Name = "txtEndCidade";
-            this.txtEndCidade.Size = new System.Drawing.Size(255, 21);
+            this.txtEndCidade.Size = new System.Drawing.Size(180, 21);
             this.txtEndCidade.TabIndex = 6;
             // 
             // txtEndBairro
             // 
             this.txtEndBairro.AccessibleName = "Bairro*";
+            this.txtEndBairro.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndBairro.Campo = "Bairro*";
-            this.txtEndBairro.Location = new System.Drawing.Point(107, 50);
+            this.txtEndBairro.Location = new System.Drawing.Point(10, 51);
             this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndBairro.MaxLength = 100;
             this.txtEndBairro.Name = "txtEndBairro";
-            this.txtEndBairro.Size = new System.Drawing.Size(302, 21);
+            this.txtEndBairro.Size = new System.Drawing.Size(298, 21);
             this.txtEndBairro.TabIndex = 5;
             // 
             // mtbEndCEP
             // 
             this.mtbEndCEP.AccessibleName = "CEP*";
             this.mtbEndCEP.Campo = "CEP*";
-            this.mtbEndCEP.Location = new System.Drawing.Point(10, 50);
+            this.mtbEndCEP.Location = new System.Drawing.Point(12, 22);
             this.mtbEndCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbEndCEP.Mask = "00000-000";
+            this.mtbEndCEP.Mask = "";
             this.mtbEndCEP.MaxLength = 32767;
             this.mtbEndCEP.Name = "mtbEndCEP";
-            this.mtbEndCEP.Size = new System.Drawing.Size(91, 21);
+            this.mtbEndCEP.Size = new System.Drawing.Size(95, 20);
             this.mtbEndCEP.TabIndex = 4;
             this.mtbEndCEP.ValidatingType = null;
             // 
@@ -503,39 +517,41 @@
             this.cboEndUF.AccessibleName = "Estado*";
             this.cboEndUF.Campo = "Estado*";
             this.cboEndUF.FormattingEnabled = true;
-            this.cboEndUF.Location = new System.Drawing.Point(676, 50);
+            this.cboEndUF.Location = new System.Drawing.Point(490, 22);
             this.cboEndUF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboEndUF.Name = "cboEndUF";
             this.cboEndUF.Size = new System.Drawing.Size(108, 25);
             this.cboEndUF.TabIndex = 7;
             // 
+            // txtEndLogradouro
+            // 
+            this.txtEndLogradouro.AccessibleName = "Logradouro*";
+            this.txtEndLogradouro.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtEndLogradouro.Campo = "Logradouro*";
+            this.txtEndLogradouro.Location = new System.Drawing.Point(113, 22);
+            this.txtEndLogradouro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEndLogradouro.MaxLength = 100;
+            this.txtEndLogradouro.Name = "txtEndLogradouro";
+            this.txtEndLogradouro.Size = new System.Drawing.Size(371, 21);
+            this.txtEndLogradouro.TabIndex = 1;
+            // 
             // txtEndNr
             // 
             this.txtEndNr.AccessibleName = "Número*";
+            this.txtEndNr.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEndNr.Campo = "Número*";
-            this.txtEndNr.Location = new System.Drawing.Point(432, 20);
+            this.txtEndNr.Location = new System.Drawing.Point(314, 51);
             this.txtEndNr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndNr.MaxLength = 100;
             this.txtEndNr.Name = "txtEndNr";
             this.txtEndNr.Size = new System.Drawing.Size(121, 21);
             this.txtEndNr.TabIndex = 2;
             // 
-            // txtEndLogradouro
-            // 
-            this.txtEndLogradouro.AccessibleName = "Logradouro*";
-            this.txtEndLogradouro.Campo = "Logradouro*";
-            this.txtEndLogradouro.Location = new System.Drawing.Point(10, 20);
-            this.txtEndLogradouro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEndLogradouro.MaxLength = 100;
-            this.txtEndLogradouro.Name = "txtEndLogradouro";
-            this.txtEndLogradouro.Size = new System.Drawing.Size(416, 21);
-            this.txtEndLogradouro.TabIndex = 1;
-            // 
             // uctGerenTerceirizada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grpEndereco);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.grpContrato);
@@ -550,7 +566,7 @@
             this.grpContato.ResumeLayout(false);
             this.grpDadosResponsavel.ResumeLayout(false);
             this.grpContrato.ResumeLayout(false);
-            this.grpEndereco.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -584,13 +600,13 @@
         private UIX.mtbUIX mtbCtrConvInicio;
         private UIX.mtbUIX mtbCtrConvTermino;
         private UIX.btnUIX btnSalvar;
-        public System.Windows.Forms.GroupBox grpEndereco;
+        public System.Windows.Forms.GroupBox groupBox1;
         public UIX.txtUIX txtEndComplemento;
         public UIX.txtUIX txtEndCidade;
         public UIX.txtUIX txtEndBairro;
         public UIX.mtbUIX mtbEndCEP;
         public UIX.cboUIX cboEndUF;
-        public UIX.txtUIX txtEndNr;
         public UIX.txtUIX txtEndLogradouro;
+        public UIX.txtUIX txtEndNr;
     }
 }
