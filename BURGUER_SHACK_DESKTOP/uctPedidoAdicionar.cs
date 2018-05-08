@@ -44,17 +44,22 @@ namespace BURGUER_SHACK_DESKTOP
         private void selecionaProduto(clnProduto objProduto, int quantidade)
         {
             List<clnPedidoProdutoIngrediente> objIngredientes = new List<clnPedidoProdutoIngrediente>();
-            foreach (clnProdutoIngrediente objProdutoIngrediente in objProduto.Ingredientes)
+            foreach (int codIngrediente in objProduto.Ingredientes)
             {
+                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                {
+                    Ingrediente = codIngrediente,
+                    Produto = objProduto.Cod
+                }.obterPorProdutoIngrediente();
+
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
-                    Cod = objProdutoIngrediente.Ingrediente
-                };
-                objIngrediente = objIngrediente.obterPorCodigo();
+                    Cod = codIngrediente
+                }.obterPorCodigo();
 
                 clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
                 {
-                    Ingrediente = objIngrediente,
+                    Ingrediente = codIngrediente,
                     Quantidade = objProdutoIngrediente.Quantidade,
                     ProdutoQuantidade = objProdutoIngrediente.Quantidade
                 };
@@ -104,8 +109,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnProduto objProdutoAtual = new clnProduto
             {
                 Cod = PedidoProduto.Produto
-            };
-            objProdutoAtual = objProdutoAtual.obterPorCodigo();
+            }.obterPorCodigo();
 
             clnProduto objProdutos = new clnProduto
             {

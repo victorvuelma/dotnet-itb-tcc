@@ -44,15 +44,33 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void exibirIngredienteAntigo(clnPedidoProdutoIngrediente objIngrediente)
+        private void exibirIngredienteAntigo(clnPedidoProdutoIngrediente objPedidoIngrediente)
         {
-            picAntigo.Image = objIngrediente.Ingrediente.Imagem;
-            lblAntigoNome.Text = objIngrediente.Ingrediente.Nome;
-            lblQuantidade.Text = "Quantidade: " + objIngrediente.Quantidade;
+            clnIngrediente objIngrediente = new clnIngrediente
+            {
+                Cod = objPedidoIngrediente.Ingrediente
+            }.obterPorCodigo();
+
+            picAntigo.Image = objIngrediente.Imagem;
+            lblAntigoNome.Text = objIngrediente.Nome;
+            lblQuantidade.Text = "Quantidade: " + objPedidoIngrediente.Quantidade;
 
             picAntigo.Show();
             lblAntigoNome.Show();
             lblQuantidade.Show();
+        }
+
+        private void finalizar()
+        {
+            if (clnMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", clnMensagem.MensagemIcone.ERRO))
+            {
+                Close();
+            }
+        }
+
+        private void hdrUIX_Close(object sender, EventArgs e)
+        {
+            finalizar();
         }
 
         private void frmAlteraIngrediente_Load(object sender, EventArgs e)
@@ -80,7 +98,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             internal override int Cod(clnPedidoProdutoIngrediente obj)
             {
-                return obj.Ingrediente.Cod;
+                return obj.Ingrediente;
             }
 
             internal override string Detalhes(clnPedidoProdutoIngrediente obj)
@@ -93,26 +111,24 @@ namespace BURGUER_SHACK_DESKTOP
 
             internal override Image Imagem(clnPedidoProdutoIngrediente obj)
             {
-                return obj.Ingrediente.Imagem;
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = obj.Ingrediente
+                }.obterPorCodigo();
+
+                return objIngrediente.Imagem;
             }
 
             internal override string Nome(clnPedidoProdutoIngrediente obj)
             {
-                return obj.Ingrediente.Nome;
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = obj.Ingrediente
+                }.obterPorCodigo();
+
+                return objIngrediente.Nome;
             }
         }
 
-        private void finalizar()
-        {
-            if (clnMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", clnMensagem.MensagemIcone.ERRO))
-            {
-                Close();
-            }
-        }
-
-        private void hdrUIX_Close(object sender, EventArgs e)
-        {
-            finalizar();
-        }
     }
 }

@@ -19,12 +19,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private Image _imagem;
 
-        private List<clnProdutoIngrediente> _ingredientes;
+        private List<int> _ingredientes;
 
         public int Cod { get => _cod; set => _cod = value; }
         public String Nome { get => _nome; set => _nome = value; }
         public double Valor { get => _valor; set => _valor = value; }
-        public List<clnProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public List<int> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
         public int Categoria { get => _categoria; set => _categoria = value; }
         public Image Imagem { get => _imagem; set => _imagem = value; }
 

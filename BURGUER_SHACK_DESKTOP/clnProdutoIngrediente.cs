@@ -28,17 +28,12 @@ namespace BURGUER_SHACK_DESKTOP
             return objProdutoIngrediente;
         }
 
-        public List<clnProdutoIngrediente> obterPorProduto()
+        public List<int> obterPorProduto()
         {
-            List<clnProdutoIngrediente> objProdutoIngredientes = new List<clnProdutoIngrediente>();
+            List<int> objProdutoIngredientes = new List<int>();
             for (int i = 1; i <= 5; i++)
             {
-                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente();
-                objProdutoIngrediente.Produto = Produto;
-                objProdutoIngrediente.Quantidade = i % 3 + 1;
-                objProdutoIngrediente.Ingrediente = i % 5 + 1;
-
-                objProdutoIngredientes.Add(objProdutoIngrediente);
+                objProdutoIngredientes.Add(i);
             }
 
             return objProdutoIngredientes;

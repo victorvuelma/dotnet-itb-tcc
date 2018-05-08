@@ -43,7 +43,7 @@ namespace BURGUER_SHACK_DESKTOP
             PedidoIngrediente = new clnPedidoProdutoIngrediente
             {
                 Quantidade = 1,
-                Ingrediente = ingrediente,
+                Ingrediente = ingrediente.Cod,
                 ProdutoQuantidade = PedidoIngredienteSubstituir.ProdutoQuantidade
             };
         }
@@ -137,7 +137,12 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 txtQuantidade.Text = Convert.ToString(PedidoIngredienteSubstituir.Quantidade);
 
-                exibirIngrediente(PedidoIngredienteSubstituir.Ingrediente);
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = PedidoIngredienteSubstituir.Ingrediente
+                }.obterPorCodigo();
+
+                exibirIngrediente(objIngrediente);
             }
             else
             {
