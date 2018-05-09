@@ -51,7 +51,7 @@
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(185, 50);
             this.btnConfirmar.TabIndex = 7;
-            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -121,7 +121,7 @@
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(95, 25);
             this.btnPesquisar.TabIndex = 2;
-            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.Text = "&Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 

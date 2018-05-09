@@ -88,6 +88,8 @@ namespace BURGUER_SHACK_DESKTOP
             if (ObjSelecionar.setSelecionado(obj))
             {
                 exibirOpcao(obj);
+
+                txtQuantidade.Focus();
             }
         }
 
