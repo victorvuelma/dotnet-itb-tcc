@@ -55,7 +55,7 @@
             this.Nome,
             this.Cargo,
             this.Salario});
-            this.dgvFuncionario.Location = new System.Drawing.Point(245, 217);
+            this.dgvFuncionario.Location = new System.Drawing.Point(664, 395);
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.ReadOnly = true;
             this.dgvFuncionario.Size = new System.Drawing.Size(100, 100);
@@ -91,7 +91,7 @@
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PIC});
-            this.dgvProduto.Location = new System.Drawing.Point(33, 217);
+            this.dgvProduto.Location = new System.Drawing.Point(508, 324);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.Size = new System.Drawing.Size(100, 100);
             this.dgvProduto.TabIndex = 5;
@@ -107,7 +107,7 @@
             this.dgvTercerizada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTercerizada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.razaoSocial});
-            this.dgvTercerizada.Location = new System.Drawing.Point(139, 217);
+            this.dgvTercerizada.Location = new System.Drawing.Point(628, 172);
             this.dgvTercerizada.Name = "dgvTercerizada";
             this.dgvTercerizada.Size = new System.Drawing.Size(100, 100);
             this.dgvTercerizada.TabIndex = 4;
@@ -120,10 +120,10 @@
             // 
             // pnlConteudo
             // 
+            this.pnlConteudo.Controls.Add(this.dgvProduto);
+            this.pnlConteudo.Controls.Add(this.dgvFuncionario);
             this.pnlConteudo.Controls.Add(this.hdrUIX);
             this.pnlConteudo.Controls.Add(this.dgvTercerizada);
-            this.pnlConteudo.Controls.Add(this.dgvFuncionario);
-            this.pnlConteudo.Controls.Add(this.dgvProduto);
             this.pnlConteudo.Location = new System.Drawing.Point(3, 3);
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(812, 532);
@@ -148,7 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConteudo);
             this.Name = "uctGerenDGV";
-            this.Size = new System.Drawing.Size(818, 538);
+            this.Size = new System.Drawing.Size(907, 538);
             this.Load += new System.EventHandler(this.uctGerenDGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
