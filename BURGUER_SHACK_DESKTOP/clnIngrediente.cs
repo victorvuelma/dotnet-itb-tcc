@@ -50,6 +50,20 @@ namespace BURGUER_SHACK_DESKTOP
             return objIngredientes;
         }
 
+        internal List<clnIngrediente> obterIngredientes()
+        {
+            List<clnIngrediente> objIngredientes = new List<clnIngrediente>();
+            for (int i = 0; i < 7; i++)
+            {
+                clnIngrediente objIngrediente = new clnIngrediente();
+                objIngrediente.Cod = i;
+
+                objIngredientes.Add(objIngrediente.obterPorCodigo());
+            }
+
+            return objIngredientes;
+        }
+
         private String[] nomes = new String[] { "Hambuguer", "Queijo", "Pão", "Alface", "Tomate", "Maionese", "Bacon", "Cheddar" };
 
     }

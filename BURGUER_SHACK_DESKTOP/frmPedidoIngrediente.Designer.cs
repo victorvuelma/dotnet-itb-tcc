@@ -66,7 +66,7 @@
             this.btnEscolher.Name = "btnEscolher";
             this.btnEscolher.Size = new System.Drawing.Size(130, 35);
             this.btnEscolher.TabIndex = 3;
-            this.btnEscolher.Text = "Escolher";
+            this.btnEscolher.Text = "&Escolher";
             this.btnEscolher.UseVisualStyleBackColor = true;
             this.btnEscolher.Click += new System.EventHandler(this.btnEscolher_Click);
             // 
@@ -127,8 +127,9 @@
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(130, 35);
             this.btnAlterar.TabIndex = 3;
-            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Text = "&Adicionar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // lblNovoNome
             // 
@@ -154,8 +155,10 @@
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(100, 40);
             this.btnRemover.TabIndex = 4;
-            this.btnRemover.Text = "Remover";
+            this.btnRemover.Text = "&Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Visible = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnConfirmar
             // 
@@ -163,8 +166,8 @@
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(100, 40);
             this.btnConfirmar.TabIndex = 5;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Text = "&Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
             // hdrUIX
             // 
