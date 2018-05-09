@@ -33,6 +33,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
+
+            txtNome.txt.Focus();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
