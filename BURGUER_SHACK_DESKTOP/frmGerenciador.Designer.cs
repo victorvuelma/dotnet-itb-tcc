@@ -35,7 +35,6 @@
             this.btnLista = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
-            this.uctGerenDGV = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
             this.uctGerenTerceirizada = new BURGUER_SHACK_DESKTOP.uctGerenTerceirizada();
             this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
             this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
@@ -94,7 +93,6 @@
             // 
             // pnlConteudo
             // 
-            this.pnlConteudo.Controls.Add(this.uctGerenDGV);
             this.pnlConteudo.Controls.Add(this.uctGerenTerceirizada);
             this.pnlConteudo.Controls.Add(this.uctGerenProduto);
             this.pnlConteudo.Controls.Add(this.uctGerenFuncionario);
@@ -118,15 +116,6 @@
             this.hdrUIX.Title = "Gerenciador";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             this.hdrUIX.Min += new System.EventHandler(this.hdrUIX_Min);
-            // 
-            // uctGerenDGV
-            // 
-            this.uctGerenDGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.uctGerenDGV.Location = new System.Drawing.Point(743, 0);
-            this.uctGerenDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenDGV.Name = "uctGerenDGV";
-            this.uctGerenDGV.Size = new System.Drawing.Size(119, 109);
-            this.uctGerenDGV.TabIndex = 3;
             // 
             // uctGerenTerceirizada
             // 
@@ -186,6 +175,5 @@
         private uctGerenProduto uctGerenProduto;
         private uctGerenTerceirizada uctGerenTerceirizada;
         public System.Windows.Forms.Panel pnlConteudo;
-        private uctGerenDGV uctGerenDGV;
     }
 }

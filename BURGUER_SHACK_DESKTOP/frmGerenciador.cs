@@ -43,13 +43,13 @@ namespace BURGUER_SHACK_DESKTOP
             switch (msgGerenciador.clicouEm)
             {
                 case 1:
-                    alterarConteudo(uctGerenDGV, "Lista de Funcionários");
+                    alterarConteudo(new uctGerenDGV(), "Lista de Funcionários");
                     break;
                 case 2:
-                    alterarConteudo(uctGerenDGV, "Lista de Tercerizadas");
+                    alterarConteudo(new uctGerenDGV(), "Lista de Tercerizadas");
                     break;
                 case 3:
-                    alterarConteudo(uctGerenDGV, "Lista de Produtos");
+                    alterarConteudo(new uctGerenDGV(), "Lista de Produtos");
                     break;
             }
         }
