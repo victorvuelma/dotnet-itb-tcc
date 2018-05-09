@@ -42,55 +42,13 @@ namespace BURGUER_SHACK_DESKTOP
             switch (msgGerenciador.clicouEm)
             {
                 case 1:
-                    dgvFuncionario.Visible = true;
-                    dgvFuncionario.Location = pnlConteudo.Location;
-                    dgvFuncionario.Size = pnlConteudo.Size;
-
-                    dgvProduto.Visible = false;
-                    dgvProduto.Location = new Point(930, 495);
-                    dgvProduto.Size = new Size(100,100);
-
-                    dgvTercerizada.Visible = false;
-                    dgvTercerizada.Location = new Point(930, 495);
-                    dgvTercerizada.Size = new Size(100, 100);
-
-                    uctGerenFuncionario.Visible = false;
-                    uctGerenProduto.Visible = false;
-                    uctGerenTerceirizada.Visible = false;
+                    alterarConteudo(uctGerenFuncionario, "Lista de Funcionários");
                     break;
                 case 2:
-                    dgvFuncionario.Visible = false;
-                    dgvFuncionario.Location = new Point(930, 495);
-                    dgvFuncionario.Size = new Size(100, 100);
-
-                    dgvTercerizada.Visible = true;
-                    dgvTercerizada.Location = pnlConteudo.Location;
-                    dgvTercerizada.Size = pnlConteudo.Size;
-
-                    dgvProduto.Visible = false;
-                    dgvProduto.Location = new Point(930, 495);
-                    dgvProduto.Size = new Size(100, 100);
-
-                    uctGerenFuncionario.Visible = false;
-                    uctGerenProduto.Visible = false;
-                    uctGerenTerceirizada.Visible = false;
+                    alterarConteudo(uctGerenTerceirizada, "Lista de Tercerizadas");
                     break;
                 case 3:
-                    dgvFuncionario.Visible = false;
-                    dgvFuncionario.Location = new Point(930, 495);
-                    dgvFuncionario.Size = new Size(100, 100);
-
-                    dgvTercerizada.Visible = false;
-                    dgvTercerizada.Location = new Point(930, 495);
-                    dgvTercerizada.Size = new Size(100, 100);
-
-                    dgvProduto.Visible = true;
-                    dgvProduto.Location = pnlConteudo.Location;
-                    dgvProduto.Size = pnlConteudo.Size;
-
-                    uctGerenFuncionario.Visible = false;
-                    uctGerenProduto.Visible = false;
-                    uctGerenTerceirizada.Visible = false;
+                    alterarConteudo(uctGerenProduto, "Lista de Produtos");
                     break;
             }
         }
@@ -110,37 +68,13 @@ namespace BURGUER_SHACK_DESKTOP
             switch (msgGerenciador.adicionar)
             {
                 case 1:
-                    uctGerenFuncionario.Visible = true;
-                    uctGerenFuncionario.Location = pnlConteudo.Location;
-                    uctGerenFuncionario.Size = pnlConteudo.Size;
-                    uctGerenProduto.Visible = false;
-                    uctGerenTerceirizada.Visible = false;
-
-                    dgvFuncionario.Visible = false;
-                    dgvTercerizada.Visible = false;
-                    dgvProduto.Visible = false;
+                    alterarConteudo(uctGerenFuncionario, "Adicionar Funcionário");
                     break;
                 case 2:
-                    uctGerenTerceirizada.Visible = true;
-                    uctGerenTerceirizada.Location = pnlConteudo.Location;
-                    uctGerenTerceirizada.Size = pnlConteudo.Size;
-                    uctGerenFuncionario.Visible = false;
-                    uctGerenProduto.Visible = false;
-
-                    dgvFuncionario.Visible = false;
-                    dgvTercerizada.Visible = false;
-                    dgvProduto.Visible = false;
+                    alterarConteudo(uctGerenTerceirizada, "Adicionar Tercerizada");
                     break;
                 case 3:
-                    uctGerenProduto.Visible = true;
-                    uctGerenProduto.Location = pnlConteudo.Location;
-                    uctGerenProduto.Size = pnlConteudo.Size;
-                    uctGerenFuncionario.Visible = false;
-                    uctGerenTerceirizada.Visible = false;
-
-                    dgvFuncionario.Visible = false;
-                    dgvTercerizada.Visible = false;
-                    dgvProduto.Visible = false;
+                    alterarConteudo(uctGerenTerceirizada, "Adicionar Produto");
                     break;
             }
         }
