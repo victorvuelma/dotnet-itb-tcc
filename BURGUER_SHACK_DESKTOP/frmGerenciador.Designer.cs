@@ -44,10 +44,11 @@
             this.razaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.PIC = new System.Windows.Forms.DataGridViewImageColumn();
-            this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
-            this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
             this.uctGerenTerceirizada = new BURGUER_SHACK_DESKTOP.uctGerenTerceirizada();
+            this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
+            this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
             this.pnlMenu.SuspendLayout();
+            this.pnlConteudo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
@@ -104,6 +105,12 @@
             // 
             // pnlConteudo
             // 
+            this.pnlConteudo.Controls.Add(this.uctGerenTerceirizada);
+            this.pnlConteudo.Controls.Add(this.uctGerenProduto);
+            this.pnlConteudo.Controls.Add(this.dgvFuncionario);
+            this.pnlConteudo.Controls.Add(this.dgvProduto);
+            this.pnlConteudo.Controls.Add(this.uctGerenFuncionario);
+            this.pnlConteudo.Controls.Add(this.dgvTercerizada);
             this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlConteudo.Location = new System.Drawing.Point(106, 57);
             this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -135,7 +142,7 @@
             this.Nome,
             this.Cargo,
             this.Salario});
-            this.dgvFuncionario.Location = new System.Drawing.Point(930, 495);
+            this.dgvFuncionario.Location = new System.Drawing.Point(627, 396);
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.ReadOnly = true;
             this.dgvFuncionario.Size = new System.Drawing.Size(100, 100);
@@ -170,7 +177,7 @@
             this.dgvTercerizada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTercerizada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.razaoSocial});
-            this.dgvTercerizada.Location = new System.Drawing.Point(930, 283);
+            this.dgvTercerizada.Location = new System.Drawing.Point(521, 396);
             this.dgvTercerizada.Name = "dgvTercerizada";
             this.dgvTercerizada.Size = new System.Drawing.Size(100, 100);
             this.dgvTercerizada.TabIndex = 1;
@@ -186,7 +193,7 @@
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PIC});
-            this.dgvProduto.Location = new System.Drawing.Point(930, 389);
+            this.dgvProduto.Location = new System.Drawing.Point(415, 396);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.Size = new System.Drawing.Size(100, 100);
             this.dgvProduto.TabIndex = 2;
@@ -196,44 +203,38 @@
             this.PIC.HeaderText = "IMAGEM";
             this.PIC.Name = "PIC";
             // 
-            // uctGerenFuncionario
-            // 
-            this.uctGerenFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctGerenFuncionario.Location = new System.Drawing.Point(930, 176);
-            this.uctGerenFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenFuncionario.Name = "uctGerenFuncionario";
-            this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
-            this.uctGerenFuncionario.TabIndex = 0;
-            // 
-            // uctGerenProduto
-            // 
-            this.uctGerenProduto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.uctGerenProduto.Location = new System.Drawing.Point(930, 119);
-            this.uctGerenProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenProduto.Name = "uctGerenProduto";
-            this.uctGerenProduto.Size = new System.Drawing.Size(100, 100);
-            this.uctGerenProduto.TabIndex = 1;
-            // 
             // uctGerenTerceirizada
             // 
             this.uctGerenTerceirizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctGerenTerceirizada.Location = new System.Drawing.Point(930, 68);
+            this.uctGerenTerceirizada.Location = new System.Drawing.Point(463, 218);
             this.uctGerenTerceirizada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctGerenTerceirizada.Name = "uctGerenTerceirizada";
             this.uctGerenTerceirizada.Size = new System.Drawing.Size(100, 100);
             this.uctGerenTerceirizada.TabIndex = 2;
             // 
+            // uctGerenProduto
+            // 
+            this.uctGerenProduto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.uctGerenProduto.Location = new System.Drawing.Point(318, 218);
+            this.uctGerenProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenProduto.Name = "uctGerenProduto";
+            this.uctGerenProduto.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenProduto.TabIndex = 1;
+            // 
+            // uctGerenFuncionario
+            // 
+            this.uctGerenFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctGerenFuncionario.Location = new System.Drawing.Point(595, 218);
+            this.uctGerenFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenFuncionario.Name = "uctGerenFuncionario";
+            this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenFuncionario.TabIndex = 0;
+            // 
             // frmGerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 600);
-            this.Controls.Add(this.uctGerenProduto);
-            this.Controls.Add(this.uctGerenTerceirizada);
-            this.Controls.Add(this.dgvTercerizada);
-            this.Controls.Add(this.dgvProduto);
-            this.Controls.Add(this.uctGerenFuncionario);
-            this.Controls.Add(this.dgvFuncionario);
+            this.ClientSize = new System.Drawing.Size(991, 600);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
@@ -244,6 +245,7 @@
             this.Text = "Gerenciador";
             this.Load += new System.EventHandler(this.frmGerenciador_Load);
             this.pnlMenu.ResumeLayout(false);
+            this.pnlConteudo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();

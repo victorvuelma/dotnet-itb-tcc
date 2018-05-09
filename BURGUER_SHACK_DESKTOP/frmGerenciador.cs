@@ -74,7 +74,7 @@ namespace BURGUER_SHACK_DESKTOP
                     alterarConteudo(uctGerenTerceirizada, "Adicionar Tercerizada");
                     break;
                 case 3:
-                    alterarConteudo(uctGerenTerceirizada, "Adicionar Produto");
+                    alterarConteudo(uctGerenProduto, "Adicionar Produto");
                     break;
             }
         }
