@@ -201,6 +201,12 @@
     <Compile Include="uctCozinha.Designer.cs">
       <DependentUpon>uctCozinha.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctGerenDGV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctGerenDGV.Designer.cs">
+      <DependentUpon>uctGerenDGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctGerenFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,6 +319,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctGerenDGV.resx">
+      <DependentUpon>uctGerenDGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctGerenFuncionario.resx">
       <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
