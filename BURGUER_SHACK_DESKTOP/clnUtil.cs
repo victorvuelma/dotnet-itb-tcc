@@ -286,15 +286,20 @@ namespace BURGUER_SHACK_DESKTOP
             if (pnlConteudo.Controls.Count == 1)
             {
                 Control controlAnterior = pnlConteudo.Controls[0];
-                if (!uctConteudo.GetType().Equals(controlAnterior.GetType()))
+                if (uctConteudo == null || !uctConteudo.GetType().Equals(controlAnterior.GetType()))
                 {
                     controlAnterior.Controls.Clear();
+                    controlAnterior.Dispose();
                     pnlConteudo.Controls.Remove(controlAnterior);
                 }
                 else
                 {
                     return;
                 }
+            }
+            if (uctConteudo == null)
+            {
+                return;
             }
 
             clnUtil.atualizarTabIndex(uctConteudo.Controls);
