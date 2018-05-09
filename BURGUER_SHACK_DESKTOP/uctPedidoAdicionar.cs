@@ -206,6 +206,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void uctPedidoAdicionar_Load(object sender, EventArgs e)
         {
+            clnUtil.abrirNumBoard(txtQuantidade);
+
             grbProduto.Hide();
 
             esconderDetalhes();

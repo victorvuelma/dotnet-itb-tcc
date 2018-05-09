@@ -234,6 +234,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnUtil.atualizarTabIndex(Controls);
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.abrirNumBoard(txtQuantidade);
 
             UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.ButtonWarningColor);
 
