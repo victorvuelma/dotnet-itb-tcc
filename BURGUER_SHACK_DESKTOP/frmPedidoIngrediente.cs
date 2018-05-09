@@ -28,6 +28,8 @@ namespace BURGUER_SHACK_DESKTOP
         public frmPedidoIngrediente()
         {
             InitializeComponent();
+
+            hdrUIX.Title = clnApp.AppName + " :: Ingredientes";
         }
 
         private void esconderBotoes()
@@ -251,6 +253,24 @@ namespace BURGUER_SHACK_DESKTOP
             escolherAntigo();
         }
 
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            removerIngrediente();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (IngredienteAntigo != null)
+            {
+                escolherAlterar();
+            }
+            else
+            {
+                escolherAdicionar();
+            }
+        }
+
         class clnSelecionarIngrediente : clnSelecionar<clnPedidoProdutoIngrediente>
         {
             internal override int Cod(clnPedidoProdutoIngrediente obj)
@@ -287,21 +307,5 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-            removerIngrediente();
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            if (IngredienteAntigo != null)
-            {
-                escolherAlterar();
-            }
-            else
-            {
-                escolherAdicionar();
-            }
-        }
     }
 }
