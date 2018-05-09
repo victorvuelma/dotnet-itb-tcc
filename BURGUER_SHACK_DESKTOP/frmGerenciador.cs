@@ -37,18 +37,19 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnLista_Click(object sender, EventArgs e)
         {
+            alterarConteudo(null, "aaaaaaaaaa");
             listagemGerenciamento();
             
             switch (msgGerenciador.clicouEm)
             {
                 case 1:
-                    alterarConteudo(new uctGerenDGV(), "Lista de Funcionários");
+                    alterarConteudo(uctGerenDGV, "Lista de Funcionários");
                     break;
                 case 2:
-                    alterarConteudo(new uctGerenDGV(), "Lista de Tercerizadas");
+                    alterarConteudo(uctGerenDGV, "Lista de Tercerizadas");
                     break;
                 case 3:
-                    alterarConteudo(new uctGerenDGV(), "Lista de Produtos");
+                    alterarConteudo(uctGerenDGV, "Lista de Produtos");
                     break;
             }
         }
@@ -63,6 +64,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            alterarConteudo(null, "a");
             adicionarGerenciamento();
 
             switch (msgGerenciador.adicionar)
@@ -82,8 +84,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            pnlConteudo.Visible = true;
-
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
         }
 
