@@ -45,30 +45,6 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void alterarIngrediente(clnPedidoProdutoIngrediente objIngrediente)
-        {
-            uctPedidoProdutoIngrediente uctAlterarIngrediente = new uctPedidoProdutoIngrediente
-            {
-                Form = FormProduto,
-                PedidoIngredienteSubstituir = objIngrediente
-            };
-
-            FormProduto.alterarConteudo(uctAlterarIngrediente, "Produto :: Alterar Ingrediente");
-        }
-
-        private void abrirAdicionarIngrediente()
-        {
-            uctPedidoProdutoIngrediente uctAdicionarIngrediente = new uctPedidoProdutoIngrediente
-            {
-                Form = FormProduto
-            };
-            uctAdicionarIngrediente.btnRemover.Visible = false;
-            uctAdicionarIngrediente.grbIngrediente.Visible = false;
-            uctAdicionarIngrediente.txtQuantidade.Text = "1";
-
-            FormProduto.alterarConteudo(uctAdicionarIngrediente, "Produto :: Adicionar Ingrediente");
-        }
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (_validar.valido())
@@ -79,24 +55,16 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void dgvIngredientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                alterarIngrediente(PedidoProduto.Ingredientes[e.RowIndex]);
-            }
-        }
-
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            abrirAdicionarIngrediente();
-        }
-
         private void uctPedidoProdutoDetalhes_Load(object sender, EventArgs e)
         {
             txtQuantidade.Text = Convert.ToString(PedidoProduto.Quantidade);
 
             exibirIngredientes();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

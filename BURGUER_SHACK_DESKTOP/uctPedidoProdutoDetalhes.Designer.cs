@@ -63,7 +63,6 @@
             this.dgvIngredientes.Name = "dgvIngredientes";
             this.dgvIngredientes.Size = new System.Drawing.Size(380, 280);
             this.dgvIngredientes.TabIndex = 2;
-            this.dgvIngredientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientes_CellClick);
             // 
             // columnIngrediente
             // 
