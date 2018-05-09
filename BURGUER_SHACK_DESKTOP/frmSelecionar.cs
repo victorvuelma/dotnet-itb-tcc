@@ -79,6 +79,7 @@ namespace BURGUER_SHACK_DESKTOP
                     btn.ForeColor = clnApp.AppVisualStyle.ButtonImageColor.ContentColor;
                 }
             }
+            opcoesControles.Clear();
 
             pnlOpcoes.BackColor = grbOpcoes.BackColor;
         }

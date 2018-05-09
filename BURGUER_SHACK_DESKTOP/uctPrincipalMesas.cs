@@ -47,6 +47,7 @@ namespace BURGUER_SHACK_DESKTOP
                 mesaControles.Add(btn);
             }
             clnUtil.adicionarControles(pnlMesas, mesaControles, 20);
+            mesaControles.Clear();
 
             pnlMesas.BackColor = BackColor;
         }
