@@ -33,13 +33,14 @@ namespace BURGUER_SHACK_DESKTOP
             msg.hdrUIX.Title = "Listagem";
             msg.lbl.Text = "Escolhe uma entre as três opções abaixo para ver lista completa.";
             msg.ShowDialog();
-        } 
+        }
 
         private void btnLista_Click(object sender, EventArgs e)
         {
+            uctGerenDGV.hdrUIX.Title = "batata";
             alterarConteudo(null, "aaaaaaaaaa");
             listagemGerenciamento();
-            
+
             switch (msgGerenciador.clicouEm)
             {
                 case 1:
@@ -64,19 +65,22 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            alterarConteudo(null, "a");
+            uctGerenDGV uctGerenDGV = new uctGerenDGV();
+            uctGerenDGV.hdrUIX.Title = "arroz";
+            pnlConteudo.Visible = false;
+            uctGerenDGV.Visible = false;
             adicionarGerenciamento();
 
             switch (msgGerenciador.adicionar)
             {
                 case 1:
-                    alterarConteudo(uctGerenFuncionario, "Adicionar Funcionário");
+                    alterarConteudo(uctGerenDGV, "Testes");
                     break;
                 case 2:
-                    alterarConteudo(uctGerenTerceirizada, "Adicionar Tercerizada");
+                    alterarConteudo(uctGerenDGV, "Adicionar kk");
                     break;
                 case 3:
-                    alterarConteudo(uctGerenProduto, "Adicionar Produto");
+                    alterarConteudo(uctGerenDGV, "Adicionar Produto");
                     break;
             }
         }

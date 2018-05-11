@@ -38,6 +38,7 @@
             this.uctGerenTerceirizada = new BURGUER_SHACK_DESKTOP.uctGerenTerceirizada();
             this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
             this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
+            this.uctGerenDGV = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
             this.pnlMenu.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +94,7 @@
             // 
             // pnlConteudo
             // 
+            this.pnlConteudo.Controls.Add(this.uctGerenDGV);
             this.pnlConteudo.Controls.Add(this.uctGerenTerceirizada);
             this.pnlConteudo.Controls.Add(this.uctGerenProduto);
             this.pnlConteudo.Controls.Add(this.uctGerenFuncionario);
@@ -144,6 +146,15 @@
             this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
             this.uctGerenFuncionario.TabIndex = 0;
             // 
+            // uctGerenDGV
+            // 
+            this.uctGerenDGV.Location = new System.Drawing.Point(3, 4);
+            this.uctGerenDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenDGV.Name = "uctGerenDGV";
+            this.uctGerenDGV.Size = new System.Drawing.Size(812, 530);
+            this.uctGerenDGV.TabIndex = 3;
+            this.uctGerenDGV.Visible = false;
+            // 
             // frmGerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,5 +186,6 @@
         private uctGerenProduto uctGerenProduto;
         private uctGerenTerceirizada uctGerenTerceirizada;
         public System.Windows.Forms.Panel pnlConteudo;
+        private uctGerenDGV uctGerenDGV;
     }
 }

@@ -39,6 +39,9 @@
             this.razaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
+            this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
+            this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
+            this.uctGerenTerceirizada = new BURGUER_SHACK_DESKTOP.uctGerenTerceirizada();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).BeginInit();
@@ -120,6 +123,9 @@
             // 
             // pnlConteudo
             // 
+            this.pnlConteudo.Controls.Add(this.uctGerenTerceirizada);
+            this.pnlConteudo.Controls.Add(this.uctGerenProduto);
+            this.pnlConteudo.Controls.Add(this.uctGerenFuncionario);
             this.pnlConteudo.Controls.Add(this.dgvProduto);
             this.pnlConteudo.Controls.Add(this.dgvFuncionario);
             this.pnlConteudo.Controls.Add(this.hdrUIX);
@@ -142,14 +148,45 @@
             this.hdrUIX.Title = "Título";
             this.hdrUIX.Visible = false;
             // 
+            // uctGerenFuncionario
+            // 
+            this.uctGerenFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctGerenFuncionario.Location = new System.Drawing.Point(9, 88);
+            this.uctGerenFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenFuncionario.Name = "uctGerenFuncionario";
+            this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenFuncionario.TabIndex = 7;
+            this.uctGerenFuncionario.Visible = false;
+            // 
+            // uctGerenProduto
+            // 
+            this.uctGerenProduto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.uctGerenProduto.Location = new System.Drawing.Point(129, 88);
+            this.uctGerenProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenProduto.Name = "uctGerenProduto";
+            this.uctGerenProduto.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenProduto.TabIndex = 8;
+            this.uctGerenProduto.Visible = false;
+            // 
+            // uctGerenTerceirizada
+            // 
+            this.uctGerenTerceirizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctGerenTerceirizada.Location = new System.Drawing.Point(235, 88);
+            this.uctGerenTerceirizada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenTerceirizada.Name = "uctGerenTerceirizada";
+            this.uctGerenTerceirizada.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenTerceirizada.TabIndex = 9;
+            this.uctGerenTerceirizada.Visible = false;
+            // 
             // uctGerenDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlConteudo);
             this.Name = "uctGerenDGV";
-            this.Size = new System.Drawing.Size(907, 538);
+            this.Size = new System.Drawing.Size(818, 538);
             this.Load += new System.EventHandler(this.uctGerenDGV_Load);
+            this.VisibleChanged += new System.EventHandler(this.uctGerenDGV_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).EndInit();
@@ -170,6 +207,9 @@
         public System.Windows.Forms.DataGridView dgvTercerizada;
         private System.Windows.Forms.DataGridViewTextBoxColumn razaoSocial;
         private System.Windows.Forms.Panel pnlConteudo;
-        private UIX.hdrUIX hdrUIX;
+        private uctGerenTerceirizada uctGerenTerceirizada;
+        private uctGerenProduto uctGerenProduto;
+        private uctGerenFuncionario uctGerenFuncionario;
+        public UIX.hdrUIX hdrUIX;
     }
 }
