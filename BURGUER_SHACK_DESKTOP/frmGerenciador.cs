@@ -27,31 +27,18 @@ namespace BURGUER_SHACK_DESKTOP
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
         }
 
+        private void alterarConteudo(UserControl uctConteudo, String titulo)
+        {
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
+        }
+
+
         public static void listagemGerenciamento()
         {
             msgGerenciador msg = new msgGerenciador();
             msg.hdrUIX.Title = "Listagem";
             msg.lbl.Text = "Escolhe uma entre as três opções abaixo para ver lista completa.";
             msg.ShowDialog();
-        } 
-
-        private void btnLista_Click(object sender, EventArgs e)
-        {
-            alterarConteudo(null, "aaaaaaaaaa");
-            listagemGerenciamento();
-            
-            switch (msgGerenciador.clicouEm)
-            {
-                case 1:
-                    alterarConteudo(new uctGerenDGV(), "Lista de Funcionários");
-                    break;
-                case 2:
-                    alterarConteudo(new uctGerenDGV(), "Lista de Tercerizadas");
-                    break;
-                case 3:
-                    alterarConteudo(new uctGerenDGV(), "Lista de Produtos");
-                    break;
-            }
         }
 
         private static void adicionarGerenciamento()
@@ -62,31 +49,20 @@ namespace BURGUER_SHACK_DESKTOP
             msg.ShowDialog();
         }
 
+        private void btnLista_Click(object sender, EventArgs e)
+        {
+            listagemGerenciamento();
+        }
+
+        uctGerenDGV apelido = new uctGerenDGV();
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            alterarConteudo(null, "a");
+            apelido.Visible = true;
+
             adicionarGerenciamento();
-
-            switch (msgGerenciador.adicionar)
-            {
-                case 1:
-                    alterarConteudo(uctGerenFuncionario, "Adicionar Funcionário");
-                    break;
-                case 2:
-                    alterarConteudo(uctGerenTerceirizada, "Adicionar Tercerizada");
-                    break;
-                case 3:
-                    alterarConteudo(uctGerenProduto, "Adicionar Produto");
-                    break;
-            }
+            alterarConteudo(new uctGerenDGV(), "Testando");
         }
-
-
-        private void alterarConteudo(UserControl uctConteudo, String titulo)
-        {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
-        }
-
+        
         private void esconderConteudo()
         {
             pnlConteudo.Visible = false;

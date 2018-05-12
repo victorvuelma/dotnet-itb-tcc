@@ -16,11 +16,13 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
         }
-        public static int clicouEm = 0;
-        public static int adicionar = 0;
+        public static bool[] listagemVar = new bool[10];
+        public static bool[] adicionarVar = new bool[10];
 
         private void msgGerenciador_Load(object sender, EventArgs e)
         {
+            listagemVar[1] = false;
+            adicionarVar[1] = false;
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
         }
@@ -29,50 +31,55 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (hdrUIX.Title == "Adicionar")
             {
-                adicionar = 1;
+                adicionarVar[1] = true;
+                listagemVar[1] = false;
                 Close();
             }
-            else
+            else if (hdrUIX.Title == "Listagem")
             {
-                clicouEm = 1;
+                listagemVar[1] = true;
+                adicionarVar[1] = false;
                 Close();
             }
         }
 
         private void btnTerceirizada_Click(object sender, EventArgs e)
         {
-
             if (hdrUIX.Title == "Adicionar")
             {
-                adicionar = 2;
+                adicionarVar[2] = true;
+                listagemVar[2] = false;
                 Close();
             }
-            else
+            else if (hdrUIX.Title == "Listagem")
             {
-                clicouEm = 2;
+                listagemVar[2] = true;
+                adicionarVar[2] = false;
                 Close();
             }
+
         }
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-
             if (hdrUIX.Title == "Adicionar")
             {
-                adicionar = 3;
+                adicionarVar[3] = true;
+                listagemVar[3] = false;
                 Close();
             }
-            else
+            else if (hdrUIX.Title == "Listagem")
             {
-                clicouEm = 3;
+                listagemVar[3] = true;
+                adicionarVar[3] = false;
                 Close();
             }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            clicouEm = -1;
-            adicionar = -1;
+            adicionarVar[1] = false; adicionarVar[2] = false; adicionarVar[3] = false;
+            listagemVar[1] = false; listagemVar[2] = false; listagemVar[3] = false;
             Close();
         }
     }
