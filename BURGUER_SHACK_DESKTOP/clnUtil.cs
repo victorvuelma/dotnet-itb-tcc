@@ -268,12 +268,12 @@ namespace BURGUER_SHACK_DESKTOP
             return _cnpjValidator.IsValid(cnpj);
         }
 
-        public static bool validarEmail(String email)
+        public static bool validarEmail(String mail)
         {
             try
             {
-                new System.Net.Mail.MailAddress(email);
-                return true;
+                System.Net.Mail.MailAddress mailAddress  = new System.Net.Mail.MailAddress(mail);
+                return mailAddress.Address.ToLower().Equals(mail.ToLower());
             }
             catch (Exception)
             {
