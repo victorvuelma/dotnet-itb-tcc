@@ -34,11 +34,12 @@
             this.btnSair = new UIX.btnUIX();
             this.btnLista = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.hdrUIX = new UIX.hdrUIX();
+            this.uctGerenDGV = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
             this.uctGerenTerceirizada = new BURGUER_SHACK_DESKTOP.uctGerenTerceirizada();
             this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
             this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
-            this.uctGerenDGV = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
+            this.hdrUIX = new UIX.hdrUIX();
+            this.uctGerenDGV1 = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
             this.pnlMenu.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // pnlConteudo
             // 
+            this.pnlConteudo.Controls.Add(this.uctGerenDGV1);
             this.pnlConteudo.Controls.Add(this.uctGerenDGV);
             this.pnlConteudo.Controls.Add(this.uctGerenTerceirizada);
             this.pnlConteudo.Controls.Add(this.uctGerenProduto);
@@ -105,19 +107,14 @@
             this.pnlConteudo.Size = new System.Drawing.Size(818, 538);
             this.pnlConteudo.TabIndex = 5;
             // 
-            // hdrUIX
+            // uctGerenDGV
             // 
-            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = true;
-            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
-            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
-            this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(930, 50);
-            this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.Title = "Gerenciador";
-            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
-            this.hdrUIX.Min += new System.EventHandler(this.hdrUIX_Min);
+            this.uctGerenDGV.Location = new System.Drawing.Point(3, 4);
+            this.uctGerenDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenDGV.Name = "uctGerenDGV";
+            this.uctGerenDGV.Size = new System.Drawing.Size(812, 530);
+            this.uctGerenDGV.TabIndex = 3;
+            this.uctGerenDGV.Visible = false;
             // 
             // uctGerenTerceirizada
             // 
@@ -146,14 +143,27 @@
             this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
             this.uctGerenFuncionario.TabIndex = 0;
             // 
-            // uctGerenDGV
+            // hdrUIX
             // 
-            this.uctGerenDGV.Location = new System.Drawing.Point(3, 4);
-            this.uctGerenDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenDGV.Name = "uctGerenDGV";
-            this.uctGerenDGV.Size = new System.Drawing.Size(812, 530);
-            this.uctGerenDGV.TabIndex = 3;
-            this.uctGerenDGV.Visible = false;
+            this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = true;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
+            this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Name = "hdrUIX";
+            this.hdrUIX.Size = new System.Drawing.Size(930, 50);
+            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.Title = "Gerenciador";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
+            this.hdrUIX.Min += new System.EventHandler(this.hdrUIX_Min);
+            // 
+            // uctGerenDGV1
+            // 
+            this.uctGerenDGV1.Location = new System.Drawing.Point(6, 4);
+            this.uctGerenDGV1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenDGV1.Name = "uctGerenDGV1";
+            this.uctGerenDGV1.Size = new System.Drawing.Size(809, 530);
+            this.uctGerenDGV1.TabIndex = 4;
             // 
             // frmGerenciador
             // 
@@ -187,5 +197,6 @@
         private uctGerenTerceirizada uctGerenTerceirizada;
         public System.Windows.Forms.Panel pnlConteudo;
         private uctGerenDGV uctGerenDGV;
+        private uctGerenDGV uctGerenDGV1;
     }
 }

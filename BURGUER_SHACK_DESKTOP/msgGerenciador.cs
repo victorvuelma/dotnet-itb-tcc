@@ -26,7 +26,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
         }
-
+        uctGerenDGV uctGerenDGV = new uctGerenDGV();
         private void btnFuncionário_Click(object sender, EventArgs e)
         {
             if (hdrUIX.Title == "Adicionar")
@@ -62,6 +62,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
+            
             if (hdrUIX.Title == "Adicionar")
             {
                 adicionarVar[3] = true;
