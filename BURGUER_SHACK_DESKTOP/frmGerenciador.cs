@@ -57,9 +57,10 @@ namespace BURGUER_SHACK_DESKTOP
         uctGerenDGV apelido = new uctGerenDGV();
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            apelido.Visible = true;
+
             adicionarGerenciamento();
             alterarConteudo(new uctGerenDGV(), "Testando");
-            apelido.atualizarConteudo();
         }
         
         private void esconderConteudo()

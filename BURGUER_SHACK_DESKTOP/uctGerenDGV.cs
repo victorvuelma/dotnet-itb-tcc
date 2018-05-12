@@ -14,7 +14,7 @@ namespace BURGUER_SHACK_DESKTOP
     {
         private Control[] uctGeren;
         private DataGridView[] dgvGeren;
-        public uctGerenDGV()
+        public uctGerenDGV() 
         {
             InitializeComponent();
             uctGeren = new Control[] { uctGerenFuncionario, uctGerenTerceirizada, uctGerenProduto};
@@ -25,7 +25,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             atualizarConteudo();
         }
-
         public void atualizarConteudo()
         {
             uctGeren[0].Visible = false; uctGeren[1].Visible = false; uctGeren[2].Visible = false;
@@ -69,6 +68,11 @@ namespace BURGUER_SHACK_DESKTOP
             {
 
             }
+        }
+
+        private void uctGerenDGV_VisibleChanged(object sender, EventArgs e)
+        {
+            atualizarConteudo();
         }
     }
 }

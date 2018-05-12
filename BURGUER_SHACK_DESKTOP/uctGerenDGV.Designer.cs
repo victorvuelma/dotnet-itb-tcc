@@ -186,6 +186,7 @@
             this.Name = "uctGerenDGV";
             this.Size = new System.Drawing.Size(818, 538);
             this.Load += new System.EventHandler(this.uctGerenDGV_Load);
+            this.VisibleChanged += new System.EventHandler(this.uctGerenDGV_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTercerizada)).EndInit();
