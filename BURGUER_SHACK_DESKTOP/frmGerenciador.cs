@@ -85,5 +85,10 @@ namespace BURGUER_SHACK_DESKTOP
             Close();
         }
 
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            frmEstoque frmEstoque = new frmEstoque();
+            frmEstoque.ShowDialog();
+        }
     }
 }

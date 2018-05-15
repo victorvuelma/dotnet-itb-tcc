@@ -30,22 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciador));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnEstoque = new UIX.btnUIX();
             this.btnAdicionar = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnLista = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.hdrUIX = new UIX.hdrUIX();
+            this.uctGerenDGV1 = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
             this.uctGerenDGV = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
             this.uctGerenTerceirizada = new BURGUER_SHACK_DESKTOP.uctGerenTerceirizada();
             this.uctGerenProduto = new BURGUER_SHACK_DESKTOP.uctGerenProduto();
             this.uctGerenFuncionario = new BURGUER_SHACK_DESKTOP.uctGerenFuncionario();
-            this.hdrUIX = new UIX.hdrUIX();
-            this.uctGerenDGV1 = new BURGUER_SHACK_DESKTOP.uctGerenDGV();
             this.pnlMenu.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnEstoque);
             this.pnlMenu.Controls.Add(this.btnAdicionar);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnLista);
@@ -53,6 +55,19 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 549);
             this.pnlMenu.TabIndex = 3;
+            // 
+            // btnEstoque
+            // 
+            this.btnEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstoque.Description = "Estoque";
+            this.btnEstoque.HoverColor = System.Drawing.Color.Transparent;
+            this.btnEstoque.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.estoque;
+            this.btnEstoque.Location = new System.Drawing.Point(10, 379);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(80, 80);
+            this.btnEstoque.TabIndex = 7;
+            this.btnEstoque.UseVisualStyleBackColor = true;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnAdicionar
             // 
@@ -104,44 +119,8 @@
             this.pnlConteudo.Location = new System.Drawing.Point(106, 57);
             this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(818, 538);
+            this.pnlConteudo.Size = new System.Drawing.Size(824, 538);
             this.pnlConteudo.TabIndex = 5;
-            // 
-            // uctGerenDGV
-            // 
-            this.uctGerenDGV.Location = new System.Drawing.Point(3, 4);
-            this.uctGerenDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenDGV.Name = "uctGerenDGV";
-            this.uctGerenDGV.Size = new System.Drawing.Size(812, 530);
-            this.uctGerenDGV.TabIndex = 3;
-            this.uctGerenDGV.Visible = false;
-            // 
-            // uctGerenTerceirizada
-            // 
-            this.uctGerenTerceirizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctGerenTerceirizada.Location = new System.Drawing.Point(969, 218);
-            this.uctGerenTerceirizada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenTerceirizada.Name = "uctGerenTerceirizada";
-            this.uctGerenTerceirizada.Size = new System.Drawing.Size(100, 100);
-            this.uctGerenTerceirizada.TabIndex = 2;
-            // 
-            // uctGerenProduto
-            // 
-            this.uctGerenProduto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.uctGerenProduto.Location = new System.Drawing.Point(824, 218);
-            this.uctGerenProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenProduto.Name = "uctGerenProduto";
-            this.uctGerenProduto.Size = new System.Drawing.Size(100, 100);
-            this.uctGerenProduto.TabIndex = 1;
-            // 
-            // uctGerenFuncionario
-            // 
-            this.uctGerenFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uctGerenFuncionario.Location = new System.Drawing.Point(1101, 218);
-            this.uctGerenFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctGerenFuncionario.Name = "uctGerenFuncionario";
-            this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
-            this.uctGerenFuncionario.TabIndex = 0;
             // 
             // hdrUIX
             // 
@@ -159,17 +138,53 @@
             // 
             // uctGerenDGV1
             // 
-            this.uctGerenDGV1.Location = new System.Drawing.Point(6, 4);
+            this.uctGerenDGV1.Location = new System.Drawing.Point(2, 62);
             this.uctGerenDGV1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.uctGerenDGV1.Name = "uctGerenDGV1";
-            this.uctGerenDGV1.Size = new System.Drawing.Size(809, 530);
+            this.uctGerenDGV1.Size = new System.Drawing.Size(591, 328);
             this.uctGerenDGV1.TabIndex = 4;
+            // 
+            // uctGerenDGV
+            // 
+            this.uctGerenDGV.Location = new System.Drawing.Point(4, 21);
+            this.uctGerenDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenDGV.Name = "uctGerenDGV";
+            this.uctGerenDGV.Size = new System.Drawing.Size(635, 332);
+            this.uctGerenDGV.TabIndex = 3;
+            this.uctGerenDGV.Visible = false;
+            // 
+            // uctGerenTerceirizada
+            // 
+            this.uctGerenTerceirizada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctGerenTerceirizada.Location = new System.Drawing.Point(493, 210);
+            this.uctGerenTerceirizada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenTerceirizada.Name = "uctGerenTerceirizada";
+            this.uctGerenTerceirizada.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenTerceirizada.TabIndex = 2;
+            // 
+            // uctGerenProduto
+            // 
+            this.uctGerenProduto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.uctGerenProduto.Location = new System.Drawing.Point(31, 166);
+            this.uctGerenProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenProduto.Name = "uctGerenProduto";
+            this.uctGerenProduto.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenProduto.TabIndex = 1;
+            // 
+            // uctGerenFuncionario
+            // 
+            this.uctGerenFuncionario.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctGerenFuncionario.Location = new System.Drawing.Point(455, 290);
+            this.uctGerenFuncionario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctGerenFuncionario.Name = "uctGerenFuncionario";
+            this.uctGerenFuncionario.Size = new System.Drawing.Size(100, 100);
+            this.uctGerenFuncionario.TabIndex = 0;
             // 
             // frmGerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 600);
+            this.ClientSize = new System.Drawing.Size(933, 600);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
@@ -198,5 +213,6 @@
         public System.Windows.Forms.Panel pnlConteudo;
         private uctGerenDGV uctGerenDGV;
         private uctGerenDGV uctGerenDGV1;
+        private UIX.btnUIX btnEstoque;
     }
 }
