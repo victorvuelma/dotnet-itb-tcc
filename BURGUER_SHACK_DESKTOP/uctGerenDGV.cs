@@ -29,45 +29,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctGeren[0].Visible = false; uctGeren[1].Visible = false; uctGeren[2].Visible = false;
             dgvGeren[0].Visible = false; dgvGeren[1].Visible = false; dgvGeren[2].Visible = false;
-            if (msgGerenciador.adicionarVar[1] == true)
-            {
-                uctGerenTerceirizada.Visible = false;
-                uctGerenProduto.Visible = false;
-
-                uctGerenFuncionario.Size = pnlConteudo.Size;
-                uctGerenFuncionario.Location = pnlConteudo.Location;
-                uctGerenFuncionario.Visible = true;
-            }
-            else if (msgGerenciador.adicionarVar[2] == true)
-            {
-                uctGerenFuncionario.Visible = false;
-                uctGerenProduto.Visible = false;
-
-                uctGerenTerceirizada.Size = pnlConteudo.Size;
-                uctGerenTerceirizada.Location = pnlConteudo.Location;
-                uctGerenTerceirizada.Visible = true;
-            }
-            else if (msgGerenciador.adicionarVar[3] == true)
-            {
-                uctGerenFuncionario.Visible = false;
-                uctGerenTerceirizada.Visible = false;
-
-                uctGerenProduto.Size = pnlConteudo.Size;
-                uctGerenProduto.Location = pnlConteudo.Location;
-                uctGerenProduto.Visible = true;
-            }
-            else if (msgGerenciador.listagemVar[1] == true)
-            {
-
-            }
-            else if (msgGerenciador.listagemVar[2] == true)
-            {
-
-            }
-            else if (msgGerenciador.listagemVar[3] == true)
-            {
-
-            }
         }
 
         private void uctGerenDGV_VisibleChanged(object sender, EventArgs e)

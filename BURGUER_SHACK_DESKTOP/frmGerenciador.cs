@@ -31,10 +31,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
         }
-        uctGerenDGV apelido = new uctGerenDGV();
 
-
-        public static void listagemGerenciamento()
+        public void listagemGerenciamento()
         {
             msgGerenciador msg = new msgGerenciador();
             msg.hdrUIX.Title = "Listagem";
@@ -42,14 +40,23 @@ namespace BURGUER_SHACK_DESKTOP
             msg.ShowDialog();
         }
 
-        private static void adicionarGerenciamento()
+        private void adicionarGerenciamento()
         {
-        uctGerenDGV apelido = new uctGerenDGV();
             msgGerenciador msg = new msgGerenciador();
             msg.hdrUIX.Title = "Adicionar";
             msg.lbl.Text = "Escolhe uma entre as três opções abaixo para adicionar.";
-            apelido.CreateControl();
             msg.ShowDialog();
+            if (msg.GerentType == 1)
+            {
+                alterarConteudo(new uctGerenFuncionario(), "");
+            }
+            else if (msg.GerentType == 2)
+            {
+                alterarConteudo(new uctGerenTerceirizada(), "");
+            } else
+            {
+                alterarConteudo(new uctGerenProduto(), "");
+            }
         }
 
         private void btnLista_Click(object sender, EventArgs e)
@@ -59,12 +66,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            apelido.Visible = true;
-
             adicionarGerenciamento();
-            alterarConteudo(uctGerenDGV1, "Testando");
         }
-        
+
         private void esconderConteudo()
         {
             pnlConteudo.Visible = false;

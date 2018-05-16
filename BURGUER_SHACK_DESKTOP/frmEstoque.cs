@@ -23,7 +23,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             hdrUIX.Title = clnApp.AppName + " - Estoque";
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
-            exibirProdutos();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

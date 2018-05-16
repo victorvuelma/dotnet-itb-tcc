@@ -31,7 +31,7 @@
             this.hdrUIX = new UIX.hdrUIX();
             this.btnProduto = new UIX.btnUIX();
             this.btnTerceirizada = new UIX.btnUIX();
-            this.btnFuncionário = new UIX.btnUIX();
+            this.btnFuncionario = new UIX.btnUIX();
             this.lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -72,18 +72,18 @@
             this.btnTerceirizada.UseVisualStyleBackColor = true;
             this.btnTerceirizada.Click += new System.EventHandler(this.btnTerceirizada_Click);
             // 
-            // btnFuncionário
+            // btnFuncionario
             // 
-            this.btnFuncionário.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFuncionário.Description = "Funcionário";
-            this.btnFuncionário.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFuncionário.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.funcionario;
-            this.btnFuncionário.Location = new System.Drawing.Point(162, 105);
-            this.btnFuncionário.Name = "btnFuncionário";
-            this.btnFuncionário.Size = new System.Drawing.Size(80, 80);
-            this.btnFuncionário.TabIndex = 4;
-            this.btnFuncionário.UseVisualStyleBackColor = true;
-            this.btnFuncionário.Click += new System.EventHandler(this.btnFuncionário_Click);
+            this.btnFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFuncionario.Description = "Funcionário";
+            this.btnFuncionario.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFuncionario.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.funcionario;
+            this.btnFuncionario.Location = new System.Drawing.Point(162, 105);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(80, 80);
+            this.btnFuncionario.TabIndex = 4;
+            this.btnFuncionario.UseVisualStyleBackColor = true;
+            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
             // 
             // lbl
             // 
@@ -99,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 197);
             this.Controls.Add(this.lbl);
-            this.Controls.Add(this.btnFuncionário);
+            this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.btnTerceirizada);
             this.Controls.Add(this.btnProduto);
             this.Controls.Add(this.hdrUIX);
@@ -118,6 +118,6 @@
         public UIX.hdrUIX hdrUIX;
         public UIX.btnUIX btnProduto;
         public UIX.btnUIX btnTerceirizada;
-        public UIX.btnUIX btnFuncionário;
+        public UIX.btnUIX btnFuncionario;
     }
 }
