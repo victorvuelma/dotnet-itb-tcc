@@ -227,11 +227,11 @@
     <Compile Include="uctGerenFuncionario.Designer.cs">
       <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmAcesso.Designer.cs">
+      <DependentUpon>frmAcesso.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -308,8 +308,8 @@
     <EmbeddedResource Include="frmGerenciador.resx">
       <DependentUpon>frmGerenciador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmAcesso.resx">
+      <DependentUpon>frmAcesso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAtendimento.resx">
       <DependentUpon>frmAtendimento.cs</DependentUpon>

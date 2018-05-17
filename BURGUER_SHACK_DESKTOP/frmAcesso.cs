@@ -12,12 +12,12 @@ using UIX;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class frmLogin : Form
+    public partial class frmAcesso : Form
     {
 
         private clnUtilValidar _validar;
 
-        public frmLogin()
+        public frmAcesso()
         {
             InitializeComponent();
 
