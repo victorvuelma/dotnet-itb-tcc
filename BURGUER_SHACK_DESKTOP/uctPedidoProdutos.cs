@@ -52,17 +52,43 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void exibirProdutos()
         {
-            dgvProdutos.Rows.Clear();
+            pnlProdutos.Controls.Clear();
 
-            foreach (clnPedidoProduto pedidoProduto in PedidoProdutos)
+            List<Control> opcoesControles = new List<Control>();
+            foreach (clnPedidoProduto objPedidoProuduto in PedidoProdutos)
             {
                 clnProduto objProduto = new clnProduto
                 {
-                    Cod = pedidoProduto.CodProduto
+                    Cod = objPedidoProuduto.CodProduto
                 }.obterPorCodigo();
 
-                dgvProdutos.Rows.Add(objProduto.Nome, pedidoProduto.Quantidade);
+                UIX.btnUIX btn = new UIX.btnUIX
+                {
+                    Description = objProduto.Nome,
+                    Name = "btnProduto" + objProduto.Cod,
+                    Size = new Size(110, 110),
+                    Image = objProduto.Imagem
+                };
+                btn.Click += (object sender, EventArgs e) =>
+                {
+                    editarPedidoProduto(objPedidoProuduto);
+                };
+
+                opcoesControles.Add(btn);
             }
+            clnUtil.adicionarControles(pnlProdutos, opcoesControles, 20);
+
+            foreach (Control control in opcoesControles)
+            {
+                if (control is Button btn)
+                {
+                    UIX.uixButton.btnApply(btn, App.AppVisualStyle.ButtonImageColor);
+                    btn.ForeColor = App.AppVisualStyle.ButtonImageColor.ContentColor;
+                }
+            }
+            opcoesControles.Clear();
+
+            pnlProdutos.BackColor = grbProdutos.BackColor;
         }
 
         private void btnPedido_Click(object sender, EventArgs e)
@@ -72,14 +98,6 @@ namespace BURGUER_SHACK_DESKTOP
                 //Confirma o pedido.
 
                 Form.Close();
-            }
-        }
-
-        private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                editarPedidoProduto(PedidoProdutos[e.RowIndex]);
             }
         }
 
