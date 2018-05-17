@@ -9,14 +9,18 @@ namespace BURGUER_SHACK_DESKTOP
     class clnAtendimento
     {
 
-        private int _mesa;
+        private int _cod;
+        private List<int> _codMesas;
 
-        private DateTime _tempoInicio;
+        private DateTime _inicio;
+        private DateTime _fim;
 
-        private bool _status;
+        private bool _finalizado;
 
-        public int Mesa { get => _mesa; set => _mesa = value; }
-        public DateTime TempoInicio { get => _tempoInicio; set => _tempoInicio = value; }
-        public bool Status { get => _status; set => _status = value; }
+        public int Cod { get => _cod; set => _cod = value; }
+        public List<int> CodMesas { get => _codMesas; set => _codMesas = value; }
+        public DateTime Inicio { get => _inicio; set => _inicio = value; }
+        public DateTime Fim { get => _fim; set => _fim = value; }
+        public bool Finalizado { get => _finalizado; set => _finalizado = value; }
     }
 }

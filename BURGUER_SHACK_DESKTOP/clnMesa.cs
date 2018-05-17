@@ -11,10 +11,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _cod;
 
-        private bool _uso;
+        private bool _ocupada;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public bool Uso { get => _uso; set => _uso = value; }
+        public bool Ocupada { get => _ocupada; set => _ocupada = value; }
 
 
         public List<clnMesa> obterMesas()
@@ -35,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnMesa objMesa = new clnMesa();
             objMesa.Cod = Cod;
-            objMesa.Uso = (Cod % 3 == 0);
+            objMesa.Ocupada = (Cod % 3 == 0);
 
             return objMesa;
         }

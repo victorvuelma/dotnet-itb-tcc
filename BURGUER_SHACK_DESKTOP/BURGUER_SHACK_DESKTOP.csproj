@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clnAtendimento.cs" />
+    <Compile Include="clnCargo.cs" />
     <Compile Include="clnCliente.cs" />
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
@@ -123,9 +124,9 @@
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
     <Compile Include="clnPedidoProduto.cs" />
-    <Compile Include="clnPedidoProdutoIngrediente.cs" />
+    <Compile Include="clnPedidoReceita.cs" />
     <Compile Include="clnProduto.cs" />
-    <Compile Include="clnProdutoIngrediente.cs" />
+    <Compile Include="clnProdutoReceita.cs" />
     <Compile Include="clnReserva.cs" />
     <Compile Include="clnSelecionar.cs" />
     <Compile Include="clnUtil.cs" />

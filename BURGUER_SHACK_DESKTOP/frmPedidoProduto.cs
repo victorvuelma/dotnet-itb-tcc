@@ -40,7 +40,7 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(uctVer, "Produto :: Visualizar");
         }
 
-        internal void removerIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
+        internal void removerIngrediente(clnPedidoReceita pedidoIngrediente)
         {
             if (PedidoProduto.Ingredientes.Count > 1)
             {
@@ -56,7 +56,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        internal void adicionaIngrediente(clnPedidoProdutoIngrediente pedidoIngrediente)
+        internal void adicionaIngrediente(clnPedidoReceita pedidoIngrediente)
         {
             PedidoProduto.Ingredientes.Add(pedidoIngrediente);
 
@@ -65,7 +65,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso.", clnMensagem.MensagemIcone.OK);
         }
 
-        internal void substiuiIngrediente(clnPedidoProdutoIngrediente pedidoIngredienteSubstituir, clnPedidoProdutoIngrediente pedidoIngrediente)
+        internal void substiuiIngrediente(clnPedidoReceita pedidoIngredienteSubstituir, clnPedidoReceita pedidoIngrediente)
         {
             clnUtil.listTrocar(PedidoProduto.Ingredientes, pedidoIngredienteSubstituir, pedidoIngrediente);
 

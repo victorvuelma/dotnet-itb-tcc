@@ -12,17 +12,18 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _cod;
 
+        private int _codTipo;
+
         private String _nome;
         private double _valor;
 
         private Image _imagem;
-        private int _tipo;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public String Nome { get => _nome; set => _nome = value; }
+        public int CodTipo { get => _codTipo; set => _codTipo = value; }
+        public string Nome { get => _nome; set => _nome = value; }
         public double Valor { get => _valor; set => _valor = value; }
         public Image Imagem { get => _imagem; set => _imagem = value; }
-        public int Tipo { get => _tipo; set => _tipo = value; }
 
         public clnIngrediente obterPorCodigo()
         {
@@ -31,7 +32,7 @@ namespace BURGUER_SHACK_DESKTOP
             objIngrediente.Nome = nomes[Cod % 7];
             objIngrediente.Valor = Cod * 15.5;
             objIngrediente.Imagem = global::BURGUER_SHACK_DESKTOP.Properties.Resources.modelo;
-            objIngrediente.Tipo = 1;
+            objIngrediente.CodTipo = 1;
 
             return objIngrediente;
         }

@@ -12,20 +12,20 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _cod;
 
-        private int _categoria;
+        private int _codTipo;
+        private List<int> _codReceitas;
 
         private String _nome;
+        private String _descricao;
         private double _valor;
 
         private Image _imagem;
 
-        private List<int> _ingredientes;
-
         public int Cod { get => _cod; set => _cod = value; }
         public String Nome { get => _nome; set => _nome = value; }
         public double Valor { get => _valor; set => _valor = value; }
-        public List<int> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
-        public int Categoria { get => _categoria; set => _categoria = value; }
+        public List<int> CodReceitas { get => _codReceitas; set => _codReceitas = value; }
+        public int CodTipo { get => _codTipo; set => _codTipo = value; }
         public Image Imagem { get => _imagem; set => _imagem = value; }
 
         public List<clnProduto> obterPorCategoria()
@@ -33,7 +33,7 @@ namespace BURGUER_SHACK_DESKTOP
             List<clnProduto> objProdutos = new List<clnProduto>();
             for (int i = 0; i <= 100; i++)
             {
-                if (Categoria == i % 5)
+                if (CodTipo == i % 5)
                 {
                     clnProduto objProduto = new clnProduto();
                     objProduto.Cod = i;
@@ -51,12 +51,12 @@ namespace BURGUER_SHACK_DESKTOP
             objProduto.Cod = Cod;
             objProduto.Nome = "Produto " + Cod;
             objProduto.Valor = Cod * 10.0d;
-            objProduto.Categoria = Cod % 3;
+            objProduto.CodTipo = Cod % 3;
             objProduto.Imagem = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
 
-            clnProdutoIngrediente objProdutoIngredientes = new clnProdutoIngrediente();
-            objProdutoIngredientes.Produto = objProduto.Cod;
-            objProduto.Ingredientes = objProdutoIngredientes.obterPorProduto();
+            clnProdutoReceita objProdutoIngredientes = new clnProdutoReceita();
+            objProdutoIngredientes.CodProduto = objProduto.Cod;
+            objProduto.CodReceitas = objProdutoIngredientes.obterPorProduto();
 
             return objProduto;
         }

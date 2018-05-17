@@ -30,7 +30,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Name = "btnMesa" + objMesa.Cod,
                     Size = new Size(100, 100)
                 };
-                if (objMesa.Uso)
+                if (objMesa.Ocupada)
                 {
                     btn.ForeColor = pnlOcupada.BackColor;
                     btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;

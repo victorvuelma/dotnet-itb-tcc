@@ -18,11 +18,11 @@ namespace BURGUER_SHACK_DESKTOP
         private clnValidar _validar;
 
         private clnPedidoProduto _pedidoProduto;
-        private List<clnPedidoProdutoIngrediente> _ingredientes;
+        private List<clnPedidoReceita> _ingredientes;
 
         public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
         public frmPedido Form { get => _form; set => _form = value; }
-        public List<clnPedidoProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public List<clnPedidoReceita> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
 
         public uctPedidoAdicionar()
         {
@@ -43,13 +43,13 @@ namespace BURGUER_SHACK_DESKTOP
         
         private void selecionaProduto(clnProduto objProduto, int quantidade)
         {
-            List<clnPedidoProdutoIngrediente> objIngredientes = new List<clnPedidoProdutoIngrediente>();
-            foreach (int codIngrediente in objProduto.Ingredientes)
+            List<clnPedidoReceita> objIngredientes = new List<clnPedidoReceita>();
+            foreach (int codIngrediente in objProduto.CodReceitas)
             {
-                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                clnProdutoReceita objProdutoIngrediente = new clnProdutoReceita
                 {
-                    Ingrediente = codIngrediente,
-                    Produto = objProduto.Cod
+                    CodIngrediente = codIngrediente,
+                    CodProduto = objProduto.Cod
                 }.obterPorProdutoIngrediente();
 
                 clnIngrediente objIngrediente = new clnIngrediente
@@ -57,7 +57,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = codIngrediente
                 }.obterPorCodigo();
 
-                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
+                clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
                 {
                     Ingrediente = codIngrediente,
                     Quantidade = objProdutoIngrediente.Quantidade,
@@ -68,7 +68,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnPedidoProduto objPedido = new clnPedidoProduto
             {
-                Produto = objProduto.Cod,
+                CodProduto = objProduto.Cod,
                 Quantidade = quantidade,
                 Adicional = "",
                 Ingredientes = objIngredientes
@@ -82,7 +82,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnProduto objProdutos = new clnProduto
             {
-                Categoria = categoria
+                CodTipo = categoria
             };
 
             clnSelecionarProduto objSelecionar = new clnSelecionarProduto
@@ -108,12 +108,12 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnProduto objProdutoAtual = new clnProduto
             {
-                Cod = PedidoProduto.Produto
+                Cod = PedidoProduto.CodProduto
             }.obterPorCodigo();
 
             clnProduto objProdutos = new clnProduto
             {
-                Categoria = objProdutoAtual.Categoria
+                CodTipo = objProdutoAtual.CodTipo
             };
 
             clnSelecionarProduto objSelecionar = new clnSelecionarProduto
@@ -229,7 +229,7 @@ namespace BURGUER_SHACK_DESKTOP
             internal override string Detalhes(clnProduto obj)
             {
                 String detalhes = "";
-                detalhes += "Categoria: " + obj.Categoria;
+                detalhes += "Categoria: " + obj.CodTipo;
                 detalhes += "\n";
                 detalhes += "Código: " + obj.Cod;
 

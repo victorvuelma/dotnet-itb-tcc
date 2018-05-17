@@ -11,23 +11,23 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _cod;
 
-        //funcionario
-        //cliente
-        private int _agendadoPor;
-        private int _agendadoPara;
+        private int _codCliente;
+        private int _codFuncionario;
+        private List<int> _codMesas;
 
-        private DateTime _dataAgendamento;
-        private DateTime _dataAgendada;
+        private DateTime _quando;
+        private DateTime _agendado;
 
+        private String _estado;
         private int _pessoas;
-        private List<int> _mesas;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public int AgendadoPor { get => _agendadoPor; set => _agendadoPor = value; }
-        public int AgendadoPara { get => _agendadoPara; set => _agendadoPara = value; }
-        public DateTime DataAgendamento { get => _dataAgendamento; set => _dataAgendamento = value; }
-        public DateTime DataAgendada { get => _dataAgendada; set => _dataAgendada = value; }
+        public int CodCliente { get => _codCliente; set => _codCliente = value; }
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+        public List<int> CodMesas { get => _codMesas; set => _codMesas = value; }
+        public DateTime Quando { get => _quando; set => _quando = value; }
+        public DateTime Agendado { get => _agendado; set => _agendado = value; }
+        public string Estado { get => _estado; set => _estado = value; }
         public int Pessoas { get => _pessoas; set => _pessoas = value; }
-        public List<int> Mesas { get => _mesas; set => _mesas = value; }
     }
 }

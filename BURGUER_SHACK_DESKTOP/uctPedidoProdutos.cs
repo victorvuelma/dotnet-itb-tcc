@@ -58,7 +58,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 clnProduto objProduto = new clnProduto
                 {
-                    Cod = pedidoProduto.Produto
+                    Cod = pedidoProduto.CodProduto
                 }.obterPorCodigo();
 
                 dgvProdutos.Rows.Add(objProduto.Nome, pedidoProduto.Quantidade);

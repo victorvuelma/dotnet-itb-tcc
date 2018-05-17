@@ -34,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             dgvIngredientes.Rows.Clear();
 
-            foreach (clnPedidoProdutoIngrediente objPedidoIngrediente in PedidoProduto.Ingredientes)
+            foreach (clnPedidoReceita objPedidoIngrediente in PedidoProduto.Ingredientes)
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
