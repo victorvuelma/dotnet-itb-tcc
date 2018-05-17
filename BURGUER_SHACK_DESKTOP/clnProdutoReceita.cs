@@ -47,5 +47,9 @@ namespace BURGUER_SHACK_DESKTOP
             return objProdutoIngredientes;
         }
 
+        internal clnProdutoReceita obterPorCodigo()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

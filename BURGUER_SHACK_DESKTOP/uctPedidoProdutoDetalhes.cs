@@ -38,7 +38,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
-                    Cod = objPedidoIngrediente.Ingrediente
+                    Cod = objPedidoIngrediente.CodIngrediente
                 }.obterPorCodigo();
 
                 dgvIngredientes.Rows.Add(objIngrediente.Nome, objPedidoIngrediente.Quantidade);

@@ -27,6 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
         public List<int> CodReceitas { get => _codReceitas; set => _codReceitas = value; }
         public int CodTipo { get => _codTipo; set => _codTipo = value; }
         public Image Imagem { get => _imagem; set => _imagem = value; }
+        public string Descricao { get => _descricao; set => _descricao = value; }
 
         public List<clnProduto> obterPorCategoria()
         {

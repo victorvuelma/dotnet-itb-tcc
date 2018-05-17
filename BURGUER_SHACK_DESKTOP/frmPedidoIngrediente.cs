@@ -42,7 +42,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngredienteAntigo = new clnIngrediente
             {
-                Cod = IngredienteAntigo.Ingrediente
+                Cod = IngredienteAntigo.CodIngrediente
             }.obterPorCodigo();
 
             clnIngrediente objIngredientes = new clnIngrediente
@@ -56,8 +56,8 @@ namespace BURGUER_SHACK_DESKTOP
                 clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
                 {
                     Quantidade = IngredienteAntigo.Quantidade,
-                    ProdutoQuantidade = IngredienteAntigo.ProdutoQuantidade,
-                    Ingrediente = objIngrediente.Cod
+                    CodReceita = IngredienteAntigo.CodReceita,
+                    CodIngrediente = objIngrediente.Cod
                 };
                 objPedidoIngredientes.Add(objPedidoIngrediente);
             }
@@ -99,8 +99,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
                 {
                     Quantidade = 1,
-                    ProdutoQuantidade = 0,
-                    Ingrediente = objIngrediente.Cod
+                    CodIngrediente = objIngrediente.Cod
                 };
                 objPedidoIngredientes.Add(objPedidoIngrediente);
             }
@@ -137,7 +136,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngrediente = new clnIngrediente
             {
-                Cod = objPedidoIngrediente.Ingrediente
+                Cod = objPedidoIngrediente.CodIngrediente
             }.obterPorCodigo();
 
             picNovo.Image = objIngrediente.Imagem;
@@ -186,7 +185,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngrediente = new clnIngrediente
             {
-                Cod = objPedidoIngrediente.Ingrediente
+                Cod = objPedidoIngrediente.CodIngrediente
             }.obterPorCodigo();
 
             picAntigo.Image = objIngrediente.Imagem;
@@ -276,7 +275,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             internal override int Cod(clnPedidoReceita obj)
             {
-                return obj.Ingrediente;
+                return obj.Cod;
             }
 
             internal override string Detalhes(clnPedidoReceita obj)
@@ -291,7 +290,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
-                    Cod = obj.Ingrediente
+                    Cod = obj.CodIngrediente
                 }.obterPorCodigo();
 
                 return objIngrediente.Imagem;
@@ -301,7 +300,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
-                    Cod = obj.Ingrediente
+                    Cod = obj.CodIngrediente
                 }.obterPorCodigo();
 
                 return objIngrediente.Nome;
