@@ -17,14 +17,14 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
             esconderConteudo();
-
-            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
             hdrUIX.Title = clnApp.AppName + " - Gerenciamento";
+
             clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
         }
 
         private void alterarConteudo(UserControl uctConteudo, String titulo)
@@ -53,7 +53,8 @@ namespace BURGUER_SHACK_DESKTOP
             else if (msg.GerentType == 2)
             {
                 alterarConteudo(new uctGerenTerceirizada(), "");
-            } else
+            }
+            else
             {
                 alterarConteudo(new uctGerenProduto(), "");
             }
