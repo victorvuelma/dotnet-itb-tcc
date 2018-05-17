@@ -21,9 +21,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
-            hdrUIX.Title = clnApp.AppName + " - Gerenciamento";
+            hdrUIX.Title = App.AppName + " - Gerenciamento";
 
-            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
         }
 

@@ -160,11 +160,23 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            frmPedidoIngrediente frmIngredientes = new frmPedidoIngrediente {
-                Ingredientes = PedidoProduto.Ingredientes
+            clnVisualizarPedidoIngrediente objVisualizar = new clnVisualizarPedidoIngrediente
+            {
+                Opcoes = PedidoProduto.Ingredientes
             };
 
-            frmIngredientes.ShowDialog();
+            frmVisualizar frmVisualizar = new frmVisualizar
+            {
+                ObjVisualizar = objVisualizar
+            };
+
+            frmVisualizar.Show();
+
+            //frmPedidoIngrediente frmIngredientes = new frmPedidoIngrediente {
+            //    Ingredientes = PedidoProduto.Ingredientes
+            //};
+
+            //frmIngredientes.ShowDialog();
         }
 
         private void esconderDetalhes()
@@ -245,6 +257,50 @@ namespace BURGUER_SHACK_DESKTOP
                 return obj.Cod;
             }
 
+        }
+
+        class clnVisualizarPedidoIngrediente : clnVisualizar<clnPedidoReceita>
+        {
+
+            internal override string Detalhes(clnPedidoReceita obj)
+            {
+                String detalhes = "";
+                detalhes += "Quantidade: " + obj.Quantidade;
+                detalhes += "\n";
+                detalhes += "Código: " + obj.Cod;
+
+                return detalhes;
+            }
+
+            internal override Image Imagem(clnPedidoReceita obj)
+            {
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = obj.CodIngrediente
+                }.obterPorCodigo();
+
+                return objIngrediente.Imagem;
+            }
+
+            internal override string Nome(clnPedidoReceita obj)
+            {
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = obj.CodIngrediente
+                }.obterPorCodigo();
+
+                return objIngrediente.Nome;
+            }
+
+            internal override int Cod(clnPedidoReceita obj)
+            {
+                return obj.Cod;
+            }
+
+            internal override void Abrir(clnPedidoReceita obj)
+            {
+                throw new NotImplementedException();
+            }
         }
 
     }

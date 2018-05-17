@@ -29,7 +29,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
 
-            hdrUIX.Title = clnApp.AppName + " :: Ingredientes";
+            hdrUIX.Title = App.AppName + " :: Ingredientes";
         }
 
         private void esconderBotoes()
@@ -232,10 +232,10 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmAlteraIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarTabIndex(Controls);
-            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.abrirNumBoard(txtQuantidade);
 
-            UIX.uixButton.btnApply(btnRemover, clnApp.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnRemover, App.AppVisualStyle.ButtonWarningColor);
 
             picAntigo.Hide();
             lblAntigoNome.Hide();

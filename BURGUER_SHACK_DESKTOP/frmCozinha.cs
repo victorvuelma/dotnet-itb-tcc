@@ -19,7 +19,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmCozinha_Load(object sender, EventArgs e)
         {
-            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
         }
     }

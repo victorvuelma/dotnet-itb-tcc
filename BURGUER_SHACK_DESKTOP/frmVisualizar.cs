@@ -11,15 +11,13 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class frmSelecionar : Form
+    public partial class frmVisualizar : Form
     {
 
         private String _selecionando;
-        private clnSelecionar _objSelecionar;
-        private clnValidar _validar;
+        private clnVisualizar _objVisualizar;
 
         private List<object> _opcoes;
-        private int _quantidade;
 
         public String Selecionando
         {
@@ -33,17 +31,11 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
         public Image Icone { set => hdrUIX.Image = value; }
-        internal clnSelecionar ObjSelecionar { get => _objSelecionar; set => _objSelecionar = value; }
-        public int Quantidade { get => _quantidade; set => _quantidade = value; }
+        internal clnVisualizar ObjVisualizar { get => _objVisualizar; set => _objVisualizar = value; }
 
-        public frmSelecionar()
+        public frmVisualizar()
         {
             InitializeComponent();
-
-            Quantidade = 1;
-
-            _validar = new clnValidar();
-            _validar.addValidacao(txtQuantidade, new clnValidar.ValidarTipo[] { clnValidar.ValidarTipo.VAZIO, clnValidar.ValidarTipo.INT });
 
             _opcoes = new List<object>();
         }
@@ -57,14 +49,14 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 UIX.btnUIX btn = new UIX.btnUIX
                 {
-                    Description = ObjSelecionar.getNome(obj),
-                    Name = "btnSelecionar" + ObjSelecionar.getCod(obj),
+                    Description = ObjVisualizar.getNome(obj),
+                    Name = "btnVisualizar" + ObjVisualizar.getCod(obj),
                     Size = new Size(110, 110),
-                    Image = ObjSelecionar.getImagem(obj)
+                    Image = ObjVisualizar.getImagem(obj)
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
-                    selecionaOpcao(obj);
+                    ObjVisualizar.abrir(obj);
                 };
 
                 opcoesControles.Add(btn);
@@ -84,37 +76,14 @@ namespace BURGUER_SHACK_DESKTOP
             pnlOpcoes.BackColor = grbOpcoes.BackColor;
         }
 
-        private void selecionaOpcao(object obj)
-        {
-            if (ObjSelecionar.setSelecionado(obj))
-            {
-                exibirOpcao(obj);
-
-                txtQuantidade.Focus();
-            }
-        }
-
-        private void exibirOpcao(object obj)
-        {
-            grbDetalhes.Hide();
-
-            picImagem.Image = ObjSelecionar.getImagem(obj);
-            lblNome.Text = ObjSelecionar.getNome(obj);
-            lblDesc.Text = ObjSelecionar.getDetalhes(obj);
-            txtQuantidade.Text = "1";
-
-            grbDetalhes.Show();
-            btnConfirmar.Show();
-        }
-
         private void realizaPesquisa()
         {
             _opcoes.Clear();
 
             String pesquisa = txtPesquisa.Text.ToLower();
-            foreach (object opcao in ObjSelecionar.getOpcoes())
+            foreach (object opcao in ObjVisualizar.getOpcoes())
             {
-                if (clnUtil.vazio(pesquisa) || ObjSelecionar.getNome(opcao).ToLower().Contains(pesquisa))
+                if (clnUtil.vazio(pesquisa) || ObjVisualizar.getNome(opcao).ToLower().Contains(pesquisa))
                 {
                     _opcoes.Add(opcao);
                 }
@@ -122,42 +91,17 @@ namespace BURGUER_SHACK_DESKTOP
             exibirOpcoes();
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-            if (_validar.valido())
-            {
-                Quantidade = Convert.ToInt32(txtQuantidade.Text);
-
-                Close();
-            }
-        }
-
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao(Selecionando, "Deseja realmente cancelar?", clnMensagem.MensagemIcone.INFO))
-            {
-                ObjSelecionar.setSelecionado(null);
-
-                Close();
-            }
+            Close();
         }
 
         private void frmSelecionar_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
-            clnUtil.abrirNumBoard(txtQuantidade);
-
-            grbDetalhes.Hide();
-            btnConfirmar.Hide();
 
             realizaPesquisa();
-
-            if (ObjSelecionar.getSelecionado() != null)
-            {
-                exibirOpcao(ObjSelecionar.getSelecionado());
-                txtQuantidade.Text = Convert.ToString(Quantidade);
-            }
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

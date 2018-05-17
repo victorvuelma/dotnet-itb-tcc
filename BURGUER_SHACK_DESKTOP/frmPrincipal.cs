@@ -37,10 +37,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            UIX.uixButton.btnApply(btnSair, clnApp.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnSair, App.AppVisualStyle.ButtonWarningColor);
 
             abrirMesas();
         }

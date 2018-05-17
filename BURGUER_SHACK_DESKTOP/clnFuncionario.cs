@@ -31,7 +31,12 @@ namespace BURGUER_SHACK_DESKTOP
         private String _contatoTelRes;
         private String _contatoEmail;
 
+        private String _login;
+        private String _senha;
+
         public int Cod { get => _cod; set => _cod = value; }
+        public int CodCargo { get => _codCargo; set => _codCargo = value; }
+        public int CodEndereco { get => _codEndereco; set => _codEndereco = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public Image Foto { get => _foto; set => _foto = value; }
         public string Sexo { get => _sexo; set => _sexo = value; }
@@ -43,7 +48,7 @@ namespace BURGUER_SHACK_DESKTOP
         public string ContatoTelCel { get => _contatoTelCel; set => _contatoTelCel = value; }
         public string ContatoTelRes { get => _contatoTelRes; set => _contatoTelRes = value; }
         public string ContatoEmail { get => _contatoEmail; set => _contatoEmail = value; }
-        public int CodEndereco { get => _codEndereco; set => _codEndereco = value; }
-        public int CodCargo { get => _codCargo; set => _codCargo = value; }
+        public string Login { get => _login; set => _login = value; }
+        public string Senha { get => _senha; set => _senha = value; }
     }
 }

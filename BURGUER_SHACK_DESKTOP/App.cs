@@ -9,7 +9,7 @@ using UIX;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnApp
+    class App
     {
 
         private static String appName = "Burguer Shack";

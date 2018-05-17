@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirMesa(clnMesa mesa)
         {
-            frmMesa frmMesa = new frmMesa
+            frmAtendimento frmMesa = new frmAtendimento
             {
                 Mesa = mesa.Cod
             };

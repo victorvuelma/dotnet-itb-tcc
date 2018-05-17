@@ -35,7 +35,7 @@
             this.lblProgram = new System.Windows.Forms.Label();
             this.hdrUIX = new UIX.hdrUIX();
             this.txtSenha = new UIX.txtUIX();
-            this.txtNome = new UIX.txtUIX();
+            this.txtUsuario = new UIX.txtUIX();
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
@@ -110,17 +110,17 @@
             this.txtSenha.TabIndex = 8;
             this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
-            // txtNome
+            // txtUsuario
             // 
-            this.txtNome.AccessibleName = "Nome";
-            this.txtNome.AllowedChars = UIX.uixAllowedChars.ALL;
-            this.txtNome.Campo = "Nome";
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(190, 100);
-            this.txtNome.MaxLength = 32767;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(270, 30);
-            this.txtNome.TabIndex = 7;
+            this.txtUsuario.AccessibleName = "Usuário";
+            this.txtUsuario.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtUsuario.Campo = "Usuário";
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(190, 100);
+            this.txtUsuario.MaxLength = 32767;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(270, 30);
+            this.txtUsuario.TabIndex = 7;
             // 
             // frmLogin
             // 
@@ -133,7 +133,7 @@
             this.Controls.Add(this.hdrUIX);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -148,7 +148,7 @@
         }
 
         #endregion
-        private UIX.txtUIX txtNome;
+        private UIX.txtUIX txtUsuario;
         private UIX.txtUIX txtSenha;
         private System.Windows.Forms.Button btnEntrar;
         private UIX.hdrUIX hdrUIX;

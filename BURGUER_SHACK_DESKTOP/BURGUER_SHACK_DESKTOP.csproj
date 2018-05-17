@@ -128,6 +128,7 @@
     <Compile Include="clnProduto.cs" />
     <Compile Include="clnProdutoReceita.cs" />
     <Compile Include="clnReserva.cs" />
+    <Compile Include="clnVisualizar.cs" />
     <Compile Include="clnSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnValidar.cs" />
@@ -136,6 +137,12 @@
     </Compile>
     <Compile Include="frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualizar.Designer.cs">
+      <DependentUpon>frmVisualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPedidoIngrediente.cs">
       <SubType>Form</SubType>
@@ -155,11 +162,11 @@
     <Compile Include="frmGerenciador.Designer.cs">
       <DependentUpon>frmGerenciador.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMesa.cs">
+    <Compile Include="frmAtendimento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMesa.Designer.cs">
-      <DependentUpon>frmMesa.cs</DependentUpon>
+    <Compile Include="frmAtendimento.Designer.cs">
+      <DependentUpon>frmAtendimento.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPedidoProduto.cs">
       <SubType>Form</SubType>
@@ -228,7 +235,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="clnApp.cs" />
+    <Compile Include="App.cs" />
     <Compile Include="uctGerenProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,8 +311,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMesa.resx">
-      <DependentUpon>frmMesa.cs</DependentUpon>
+    <EmbeddedResource Include="frmAtendimento.resx">
+      <DependentUpon>frmAtendimento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPedidoProduto.resx">
       <DependentUpon>frmPedidoProduto.cs</DependentUpon>
@@ -315,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizar.resx">
+      <DependentUpon>frmVisualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelecionar.resx">
       <DependentUpon>frmSelecionar.cs</DependentUpon>

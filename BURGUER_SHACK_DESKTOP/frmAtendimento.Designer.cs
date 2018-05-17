@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class frmMesa
+    partial class frmAtendimento
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMesa));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAtendimento));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnNovoPedido = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
-            this.btnConta = new UIX.btnUIX();
+            this.btnFinalizar = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
@@ -43,7 +43,7 @@
             // 
             this.pnlMenu.Controls.Add(this.btnNovoPedido);
             this.pnlMenu.Controls.Add(this.btnSair);
-            this.pnlMenu.Controls.Add(this.btnConta);
+            this.pnlMenu.Controls.Add(this.btnFinalizar);
             this.pnlMenu.Controls.Add(this.btnPedidos);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
@@ -74,18 +74,18 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnConta
+            // btnFinalizar
             // 
-            this.btnConta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConta.Description = "Conta";
-            this.btnConta.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConta.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnConta.Location = new System.Drawing.Point(5, 205);
-            this.btnConta.Name = "btnConta";
-            this.btnConta.Size = new System.Drawing.Size(90, 90);
-            this.btnConta.TabIndex = 7;
-            this.btnConta.UseVisualStyleBackColor = true;
-            this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
+            this.btnFinalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFinalizar.Description = "Finalizar";
+            this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnFinalizar.Location = new System.Drawing.Point(5, 205);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
+            this.btnFinalizar.TabIndex = 7;
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnConta_Click);
             // 
             // btnPedidos
             // 
@@ -109,17 +109,17 @@
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(600, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.hdrUIX.Title = "Mesa";
+            this.hdrUIX.Title = "Atendimento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
-            // frmMesa
+            // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +129,7 @@
             this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmMesa";
+            this.Name = "frmAtendimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mesa";
             this.Load += new System.EventHandler(this.frmMesa_Load);
@@ -142,7 +142,7 @@
 
         private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnConta;
+        private UIX.btnUIX btnFinalizar;
         private UIX.btnUIX btnPedidos;
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.btnUIX btnSair;

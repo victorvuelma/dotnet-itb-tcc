@@ -34,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static msgUIX mostrarMensagem(String titulo, String mensagem, MensagemIcone icone, int tipo)
         {
-            msgUIX msg = msgUIX.messageBox(titulo, mensagem, Icone(icone), clnApp.AppVisualTemplate);
+            msgUIX msg = msgUIX.messageBox(titulo, mensagem, Icone(icone), App.AppVisualTemplate);
 
             switch (tipo)
             {
@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
                 case 1:
                     msg.btnYes.Text = "Sim";
                     msg.btnNo.Text = "Não";
-                    uixButton.btnApply(msg.btnYes, clnApp.AppVisualStyle.ButtonWarningColor);
+                    uixButton.btnApply(msg.btnYes, App.AppVisualStyle.ButtonWarningColor);
                     break;
             }
 

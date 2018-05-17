@@ -22,26 +22,26 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             txtSenha.txt.PasswordChar = '*';
-            hdrUIX.Title = clnApp.AppName + " :: Acesso ao Sistema";
+            hdrUIX.Title = App.AppName + " :: Acesso ao Sistema";
 
             _validar = new clnValidar();
-            _validar.addValidacao(txtNome, clnValidar.ValidarTipo.VAZIO);
+            _validar.addValidacao(txtUsuario, clnValidar.ValidarTipo.VAZIO);
             _validar.addValidacao(txtSenha, clnValidar.ValidarTipo.VAZIO);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            clnApp.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            txtNome.txt.Focus();
+            txtUsuario.txt.Focus();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
             if (clnMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnMensagem.MensagemIcone.ERRO))
             {
-                Application.Exit();
+                System.Windows.Forms.Application.Exit();
             }
         }
 
@@ -59,9 +59,14 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
+                //clnFuncionario objFuncionario = new clnFuncionario()
+                //{
+                //    Login = txtUsuario.Text
+                //}.obterPorLogin();
+
                 Hide();
 
-                if (txtNome.Text.ToLower().Equals("gerente"))
+                if (txtUsuario.Text.ToLower().Equals("gerente"))
                 {
                     new frmGerenciador().ShowDialog();
                 }
@@ -72,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             }
 
-            Application.Restart();
+            System.Windows.Forms.Application.Restart();
         }
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e)
