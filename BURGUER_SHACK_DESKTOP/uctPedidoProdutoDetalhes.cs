@@ -15,7 +15,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private frmPedidoProduto _formProduto;
 
-        private clnValidar _validar;
+        private clnUtilValidar _validar;
 
         private clnPedidoProduto _pedidoProduto;
 
@@ -26,23 +26,23 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnValidar();
-            _validar.addValidacao(txtQuantidade, new clnValidar.ValidarTipo[] { clnValidar.ValidarTipo.VAZIO, clnValidar.ValidarTipo.INT });
+            _validar = new clnUtilValidar();
+            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.VAZIO, clnUtilValidar.ValidarTipo.INT });
         }
 
         private void exibirIngredientes()
         {
             dgvIngredientes.Rows.Clear();
 
-            foreach (clnPedidoReceita objPedidoIngrediente in PedidoProduto.Ingredientes)
-            {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = objPedidoIngrediente.CodIngrediente
-                }.obterPorCodigo();
+            //foreach (clnPedidoReceita objPedidoIngrediente in erro)
+            //{
+            //    clnIngrediente objIngrediente = new clnIngrediente
+            //    {
+            //        Cod = objPedidoIngrediente.CodIngrediente
+            //    }.obterPorCodigo();
 
-                dgvIngredientes.Rows.Add(objIngrediente.Nome, objPedidoIngrediente.Quantidade);
-            }
+            //    dgvIngredientes.Rows.Add(objIngrediente.Nome, objPedidoIngrediente.Quantidade);
+            //}
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

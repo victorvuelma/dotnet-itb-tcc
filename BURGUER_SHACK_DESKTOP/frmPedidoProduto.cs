@@ -14,10 +14,13 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private clnPedidoProduto _pedidoProduto;
+        private List<clnPedidoReceita> _ingredientes;
+
         private bool _remover;
 
         public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
         public bool Remover { get => _remover; set => _remover = value; }
+        public List<clnPedidoReceita> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
 
         public frmPedidoProduto()
         {
@@ -42,36 +45,36 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal void removerIngrediente(clnPedidoReceita pedidoIngrediente)
         {
-            if (PedidoProduto.Ingredientes.Count > 1)
+            if (Ingredientes.Count > 1)
             {
-                PedidoProduto.Ingredientes.Remove(pedidoIngrediente);
+                Ingredientes.Remove(pedidoIngrediente);
 
                 abrirDetalhes();
 
-                clnMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnUtilMensagem.MensagemIcone.ERRO);
             }
             else
             {
-                clnMensagem.mostrarOk("Produto", "Você não pode remover o único ingrediente do produto.", clnMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Produto", "Você não pode remover o único ingrediente do produto.", clnUtilMensagem.MensagemIcone.ERRO);
             }
         }
 
         internal void adicionaIngrediente(clnPedidoReceita pedidoIngrediente)
         {
-            PedidoProduto.Ingredientes.Add(pedidoIngrediente);
+            Ingredientes.Add(pedidoIngrediente);
 
             abrirDetalhes();
 
-            clnMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso.", clnMensagem.MensagemIcone.OK);
+            clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso.", clnUtilMensagem.MensagemIcone.OK);
         }
 
         internal void substiuiIngrediente(clnPedidoReceita pedidoIngredienteSubstituir, clnPedidoReceita pedidoIngrediente)
         {
-            clnUtil.listTrocar(PedidoProduto.Ingredientes, pedidoIngredienteSubstituir, pedidoIngrediente);
+            clnUtil.listTrocar(Ingredientes, pedidoIngredienteSubstituir, pedidoIngrediente);
 
             abrirDetalhes();
 
-            clnMensagem.mostrarOk("Produto", "Ingrediente alterado com sucesso.", clnMensagem.MensagemIcone.OK);
+            clnUtilMensagem.mostrarOk("Produto", "Ingrediente alterado com sucesso.", clnUtilMensagem.MensagemIcone.OK);
         }
 
         private void abrirDetalhes()
@@ -89,7 +92,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if (clnMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no produto?", clnMensagem.MensagemIcone.INFO))
+            if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no produto?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 //Novo Pedido - Cancelado
                 //Edicao - Sem alteracoes.
@@ -102,7 +105,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void removerProduto()
         {
-            if (clnMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnMensagem.MensagemIcone.ERRO))
+            if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnUtilMensagem.MensagemIcone.ERRO))
             {
                 PedidoProduto = null;
                 Remover = true;

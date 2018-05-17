@@ -38,7 +38,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (frmEditarProduto.Remover)
             {
                 PedidoProdutos.Remove(pedidoProduto);
-                clnMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnMensagem.MensagemIcone.INFO);
+                clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnUtilMensagem.MensagemIcone.INFO);
 
                 exibirProdutos();
             }
@@ -67,7 +67,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao("Pedido", "Deseja confirmar este pedido?", clnMensagem.MensagemIcone.OK))
+            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja confirmar este pedido?", clnUtilMensagem.MensagemIcone.OK))
             {
                 //Confirma o pedido.
 

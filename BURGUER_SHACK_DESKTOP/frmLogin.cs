@@ -15,7 +15,7 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmLogin : Form
     {
 
-        private clnValidar _validar;
+        private clnUtilValidar _validar;
 
         public frmLogin()
         {
@@ -24,9 +24,9 @@ namespace BURGUER_SHACK_DESKTOP
             txtSenha.txt.PasswordChar = '*';
             hdrUIX.Title = App.AppName + " :: Acesso ao Sistema";
 
-            _validar = new clnValidar();
-            _validar.addValidacao(txtUsuario, clnValidar.ValidarTipo.VAZIO);
-            _validar.addValidacao(txtSenha, clnValidar.ValidarTipo.VAZIO);
+            _validar = new clnUtilValidar();
+            _validar.addValidacao(txtUsuario, clnUtilValidar.ValidarTipo.VAZIO);
+            _validar.addValidacao(txtSenha, clnUtilValidar.ValidarTipo.VAZIO);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnMensagem.MensagemIcone.ERRO))
+            if (clnUtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.ERRO))
             {
                 System.Windows.Forms.Application.Exit();
             }

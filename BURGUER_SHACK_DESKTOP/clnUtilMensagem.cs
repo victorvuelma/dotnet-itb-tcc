@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnMensagem
+    class clnUtilMensagem
     {
 
         public enum MensagemIcone

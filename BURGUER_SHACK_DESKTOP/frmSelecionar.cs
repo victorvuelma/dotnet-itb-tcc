@@ -15,8 +15,8 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private String _selecionando;
-        private clnSelecionar _objSelecionar;
-        private clnValidar _validar;
+        private clnUtilSelecionar _objSelecionar;
+        private clnUtilValidar _validar;
 
         private List<object> _opcoes;
         private int _quantidade;
@@ -33,7 +33,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
         public Image Icone { set => hdrUIX.Image = value; }
-        internal clnSelecionar ObjSelecionar { get => _objSelecionar; set => _objSelecionar = value; }
+        internal clnUtilSelecionar ObjSelecionar { get => _objSelecionar; set => _objSelecionar = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
         public frmSelecionar()
@@ -42,8 +42,8 @@ namespace BURGUER_SHACK_DESKTOP
 
             Quantidade = 1;
 
-            _validar = new clnValidar();
-            _validar.addValidacao(txtQuantidade, new clnValidar.ValidarTipo[] { clnValidar.ValidarTipo.VAZIO, clnValidar.ValidarTipo.INT });
+            _validar = new clnUtilValidar();
+            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.VAZIO, clnUtilValidar.ValidarTipo.INT });
 
             _opcoes = new List<object>();
         }
@@ -134,7 +134,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnMensagem.mostrarSimNao(Selecionando, "Deseja realmente cancelar?", clnMensagem.MensagemIcone.INFO))
+            if (clnUtilMensagem.mostrarSimNao(Selecionando, "Deseja realmente cancelar?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 ObjSelecionar.setSelecionado(null);
 

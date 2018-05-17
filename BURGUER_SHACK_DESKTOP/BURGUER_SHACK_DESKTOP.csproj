@@ -120,7 +120,7 @@
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
     <Compile Include="clnIngredienteTipo.cs" />
-    <Compile Include="clnMensagem.cs" />
+    <Compile Include="clnUtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
     <Compile Include="clnPedidoProduto.cs" />
@@ -128,10 +128,10 @@
     <Compile Include="clnProduto.cs" />
     <Compile Include="clnProdutoReceita.cs" />
     <Compile Include="clnReserva.cs" />
-    <Compile Include="clnVisualizar.cs" />
-    <Compile Include="clnSelecionar.cs" />
+    <Compile Include="clnUtilVisualizar.cs" />
+    <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
-    <Compile Include="clnValidar.cs" />
+    <Compile Include="clnUtilValidar.cs" />
     <Compile Include="frmEstoque.cs">
       <SubType>Form</SubType>
     </Compile>

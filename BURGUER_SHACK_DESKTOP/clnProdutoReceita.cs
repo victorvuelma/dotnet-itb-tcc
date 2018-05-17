@@ -49,7 +49,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal clnProdutoReceita obterPorCodigo()
         {
-            throw new NotImplementedException();
+            clnProdutoReceita objProdutoIngrediente = new clnProdutoReceita();
+            objProdutoIngrediente.Cod = Cod;
+            objProdutoIngrediente.CodIngrediente = Cod  % 3;
+            objProdutoIngrediente.Alterar = Cod % 2 == 0;
+            objProdutoIngrediente.Remover = Cod % 3 == 0;
+            objProdutoIngrediente.Quantidade = 1;
+
+            return objProdutoIngrediente;
         }
     }
 }

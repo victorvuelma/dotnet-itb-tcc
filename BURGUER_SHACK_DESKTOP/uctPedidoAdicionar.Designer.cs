@@ -30,20 +30,20 @@
         {
             this.grbAdicionarProduto = new System.Windows.Forms.GroupBox();
             this.grbProduto = new System.Windows.Forms.GroupBox();
+            this.txtQuantidade = new UIX.txtUIX();
             this.btnIngredientes = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.lblDetalhes = new System.Windows.Forms.Label();
             this.lblProdutoNome = new System.Windows.Forms.Label();
             this.picProduto = new System.Windows.Forms.PictureBox();
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
-            this.txtQuantidade = new UIX.txtUIX();
-            this.txtDetalhes = new System.Windows.Forms.TextBox();
+            this.lblDetalhes = new System.Windows.Forms.Label();
             this.grbTipo = new System.Windows.Forms.GroupBox();
             this.btnSobremesa = new UIX.btnUIX();
             this.btnBebida = new UIX.btnUIX();
             this.btnAcompanhamento = new UIX.btnUIX();
             this.btnLanche = new UIX.btnUIX();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.txtAdicional = new System.Windows.Forms.TextBox();
             this.grbAdicionarProduto.SuspendLayout();
             this.grbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).BeginInit();
@@ -60,17 +60,17 @@
             this.grbAdicionarProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbAdicionarProduto.Name = "grbAdicionarProduto";
             this.grbAdicionarProduto.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbAdicionarProduto.Size = new System.Drawing.Size(440, 591);
+            this.grbAdicionarProduto.Size = new System.Drawing.Size(440, 535);
             this.grbAdicionarProduto.TabIndex = 5;
             this.grbAdicionarProduto.TabStop = false;
             this.grbAdicionarProduto.Text = "ADICIONAR PRODUTO";
             // 
             // grbProduto
             // 
+            this.grbProduto.Controls.Add(this.txtAdicional);
             this.grbProduto.Controls.Add(this.txtQuantidade);
             this.grbProduto.Controls.Add(this.btnIngredientes);
             this.grbProduto.Controls.Add(this.btnAlterar);
-            this.grbProduto.Controls.Add(this.lblDetalhes);
             this.grbProduto.Controls.Add(this.lblProdutoNome);
             this.grbProduto.Controls.Add(this.picProduto);
             this.grbProduto.Location = new System.Drawing.Point(5, 140);
@@ -79,6 +79,18 @@
             this.grbProduto.TabIndex = 4;
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "PRODUTO";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.Location = new System.Drawing.Point(130, 145);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(170, 25);
+            this.txtQuantidade.TabIndex = 3;
             // 
             // btnIngredientes
             // 
@@ -102,14 +114,6 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // lblDetalhes
-            // 
-            this.lblDetalhes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalhes.Location = new System.Drawing.Point(130, 50);
-            this.lblDetalhes.Name = "lblDetalhes";
-            this.lblDetalhes.Size = new System.Drawing.Size(295, 90);
-            this.lblDetalhes.TabIndex = 2;
-            // 
             // lblProdutoNome
             // 
             this.lblProdutoNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,34 +134,20 @@
             // 
             // grbDetalhes
             // 
-            this.grbDetalhes.Controls.Add(this.txtDetalhes);
+            this.grbDetalhes.Controls.Add(this.lblDetalhes);
             this.grbDetalhes.Location = new System.Drawing.Point(4, 331);
             this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(430, 228);
+            this.grbDetalhes.Size = new System.Drawing.Size(430, 200);
             this.grbDetalhes.TabIndex = 5;
             this.grbDetalhes.TabStop = false;
-            this.grbDetalhes.Text = "Detalhes";
+            this.grbDetalhes.Text = "DETALHES";
             // 
-            // txtQuantidade
+            // lblDetalhes
             // 
-            this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
-            this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(130, 145);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(170, 25);
-            this.txtQuantidade.TabIndex = 3;
-            // 
-            // txtDetalhes
-            // 
-            this.txtDetalhes.Location = new System.Drawing.Point(5, 55);
-            this.txtDetalhes.Multiline = true;
-            this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.ReadOnly = true;
-            this.txtDetalhes.Size = new System.Drawing.Size(420, 165);
-            this.txtDetalhes.TabIndex = 0;
+            this.lblDetalhes.Location = new System.Drawing.Point(5, 20);
+            this.lblDetalhes.Name = "lblDetalhes";
+            this.lblDetalhes.Size = new System.Drawing.Size(419, 174);
+            this.lblDetalhes.TabIndex = 0;
             // 
             // grbTipo
             // 
@@ -230,7 +220,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(295, 540);
+            this.btnAdicionar.Location = new System.Drawing.Point(245, 546);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(200, 50);
@@ -238,6 +228,15 @@
             this.btnAdicionar.Text = "Adicionar Produto";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
+            // txtAdicional
+            // 
+            this.txtAdicional.Location = new System.Drawing.Point(130, 50);
+            this.txtAdicional.Multiline = true;
+            this.txtAdicional.Name = "txtAdicional";
+            this.txtAdicional.ReadOnly = true;
+            this.txtAdicional.Size = new System.Drawing.Size(295, 90);
+            this.txtAdicional.TabIndex = 1;
             // 
             // uctPedidoAdicionar
             // 
@@ -252,6 +251,7 @@
             this.Load += new System.EventHandler(this.uctPedidoAdicionar_Load);
             this.grbAdicionarProduto.ResumeLayout(false);
             this.grbProduto.ResumeLayout(false);
+            this.grbProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).EndInit();
             this.grbDetalhes.ResumeLayout(false);
             this.grbDetalhes.PerformLayout();
@@ -270,13 +270,13 @@
         private UIX.btnUIX btnBebida;
         private UIX.btnUIX btnAcompanhamento;
         private System.Windows.Forms.GroupBox grbDetalhes;
-        private System.Windows.Forms.TextBox txtDetalhes;
+        private System.Windows.Forms.Label lblDetalhes;
         private UIX.txtUIX txtQuantidade;
         private System.Windows.Forms.GroupBox grbProduto;
         private System.Windows.Forms.PictureBox picProduto;
         private System.Windows.Forms.Label lblProdutoNome;
-        private System.Windows.Forms.Label lblDetalhes;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIngredientes;
+        private System.Windows.Forms.TextBox txtAdicional;
     }
 }

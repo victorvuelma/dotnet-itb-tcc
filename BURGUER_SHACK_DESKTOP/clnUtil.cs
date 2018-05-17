@@ -201,7 +201,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
                 else
                 {
-                    clnMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnMensagem.MensagemIcone.INFO);
+                    clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnUtilMensagem.MensagemIcone.INFO);
                     ctlRua.Focus();
                 }
             }

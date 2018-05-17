@@ -13,18 +13,17 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _codProduto;
         private int _codPedido;
+        private List<int> _codIngredientes;
 
         private int _quantidade;
         private String _adicional;
-
-        private List<clnPedidoReceita> _ingredientes;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodProduto { get => _codProduto; set => _codProduto = value; }
         public int CodPedido { get => _codPedido; set => _codPedido = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
         public string Adicional { get => _adicional; set => _adicional = value; }
-        public List<clnPedidoReceita> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public List<int> CodIngredientes { get => _codIngredientes; set => _codIngredientes = value; }
 
         public List<clnPedidoProduto> obterPorPedido()
         {

@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
 
-    abstract class clnVisualizar
+    abstract class clnUtilVisualizar
     {
 
         public abstract IList getOpcoes();
@@ -26,7 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
 
     }
 
-    abstract class clnVisualizar<T> : clnVisualizar
+    abstract class clnVisualizar<T> : clnUtilVisualizar
     {
         private List<T> _opcoes;
 

@@ -29,7 +29,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if(clnMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnMensagem.MensagemIcone.INFO))
+            if(clnUtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 Close();
             }

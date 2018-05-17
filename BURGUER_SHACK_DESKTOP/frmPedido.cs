@@ -52,7 +52,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if (clnMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnMensagem.MensagemIcone.ERRO))
+            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnUtilMensagem.MensagemIcone.ERRO))
             {
                 Close();
             }
@@ -60,7 +60,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void finalizar()
         {
-            if (clnMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnMensagem.MensagemIcone.OK))
+            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
             {
                 Close();
             }

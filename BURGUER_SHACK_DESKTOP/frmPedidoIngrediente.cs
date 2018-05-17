@@ -14,14 +14,9 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedidoIngrediente : Form
     {
 
-        private List<clnPedidoReceita> _ingredientes;
-
-        private bool _remover;
         private clnPedidoReceita _ingredienteAntigo;
         private clnPedidoReceita _ingredienteNovo;
 
-        public List<clnPedidoReceita> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
-        public bool Remover { get => _remover; set => _remover = value; }
         public clnPedidoReceita IngredienteAntigo { get => _ingredienteAntigo; set => _ingredienteAntigo = value; }
         public clnPedidoReceita IngredienteNovo { get => _ingredienteNovo; set => _ingredienteNovo = value; }
 
@@ -30,12 +25,6 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             hdrUIX.Title = App.AppName + " :: Ingredientes";
-        }
-
-        private void esconderBotoes()
-        {
-            btnConfirmar.Hide();
-            btnRemover.Hide();
         }
 
         private void escolherAlterar()
@@ -75,133 +64,36 @@ namespace BURGUER_SHACK_DESKTOP
             };
             frmSelecionar.ShowDialog();
 
-            esconderBotoes();
-            btnConfirmar.Show();
-
             if (objSelecionar.Selecionado != null)
             {
                 objSelecionar.Selecionado.Quantidade = frmSelecionar.Quantidade;
                 IngredienteNovo = objSelecionar.Selecionado;
 
-                exibirIngredienteNovo(objSelecionar.Selecionado);
+                exibirIngrediente(objSelecionar.Selecionado);
             }
         }
 
-        private void escolherAdicionar()
-        {
-            clnIngrediente objIngredientes = new clnIngrediente
-            {
-            };
-
-            List<clnPedidoReceita> objPedidoIngredientes = new List<clnPedidoReceita>();
-            foreach (clnIngrediente objIngrediente in objIngredientes.obterIngredientes())
-            {
-                clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
-                {
-                    Quantidade = 1,
-                    CodIngrediente = objIngrediente.Cod
-                };
-                objPedidoIngredientes.Add(objPedidoIngrediente);
-            }
-
-            clnSelecionarIngrediente objSelecionar = new clnSelecionarIngrediente
-            {
-                Opcoes = objPedidoIngredientes,
-                Selecionado = IngredienteNovo
-            };
-
-            frmSelecionar frmSelecionar = new frmSelecionar
-            {
-                ObjSelecionar = objSelecionar,                
-                Quantidade = ((IngredienteNovo == null) ? 1 : IngredienteNovo.Quantidade)
-            };
-            frmSelecionar.ShowDialog();
-
-            esconderBotoes();
-            btnConfirmar.Show();
-
-            if (objSelecionar.Selecionado != null)
-            {
-                grbAntigo.Hide();
-
-                objSelecionar.Selecionado.Quantidade = frmSelecionar.Quantidade;
-
-                IngredienteNovo = objSelecionar.Selecionado;
-
-                exibirIngredienteNovo(objSelecionar.Selecionado);
-            }
-        }
-
-        private void exibirIngredienteNovo(clnPedidoReceita objPedidoIngrediente)
+        private void exibirIngrediente(clnPedidoReceita objPedidoIngrediente)
         {
             clnIngrediente objIngrediente = new clnIngrediente
             {
                 Cod = objPedidoIngrediente.CodIngrediente
             }.obterPorCodigo();
 
-            picNovo.Image = objIngrediente.Imagem;
-            lblNovoNome.Text = objIngrediente.Nome;
+            picIngrediente.Image = objIngrediente.Imagem;
+            lblNome.Text = objIngrediente.Nome;
             txtQuantidade.Text = Convert.ToString(objPedidoIngrediente.Quantidade);
 
-            picNovo.Show();
-            lblNovoNome.Show();
+            picIngrediente.Show();
+            lblNome.Show();
             txtQuantidade.Show();
-        }
-
-        private void escolherAntigo()
-        {
-            clnSelecionarIngrediente objSelecionar = new clnSelecionarIngrediente
-            {
-                Opcoes = Ingredientes,
-                Selecionado = IngredienteAntigo
-            };
-
-            frmSelecionar frmSelecionar = new frmSelecionar
-            {
-                ObjSelecionar = objSelecionar,
-                Selecionando = "Selecione o ingrediente para alterar",
-            };
-            frmSelecionar.txtQuantidade.Hide();
-            frmSelecionar.ShowDialog();
-
-            esconderBotoes();
-            btnAlterar.Text = "&Alterar";
-            btnRemover.Show();
-
-            if (objSelecionar.Selecionado != null)
-            {
-                exibirIngredienteAntigo(objSelecionar.Selecionado);
-                IngredienteAntigo = objSelecionar.Selecionado;
-
-                IngredienteNovo = null;
-
-                picNovo.Hide();
-                lblNovoNome.Hide();
-                txtQuantidade.Hide();
-            }
-        }
-
-        private void exibirIngredienteAntigo(clnPedidoReceita objPedidoIngrediente)
-        {
-            clnIngrediente objIngrediente = new clnIngrediente
-            {
-                Cod = objPedidoIngrediente.CodIngrediente
-            }.obterPorCodigo();
-
-            picAntigo.Image = objIngrediente.Imagem;
-            lblAntigoNome.Text = objIngrediente.Nome;
-            lblQuantidade.Text = "Quantidade: " + objPedidoIngrediente.Quantidade;
-
-            picAntigo.Show();
-            lblAntigoNome.Show();
-            lblQuantidade.Show();
         }
 
         private void finalizar()
         {
-            if (clnMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", clnMensagem.MensagemIcone.ERRO))
+            if (clnUtilMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", clnUtilMensagem.MensagemIcone.ERRO))
             {
-                IngredienteAntigo = null;
+                IngredienteNovo = IngredienteAntigo;
 
                 Close();
             }
@@ -209,18 +101,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void removerIngrediente()
         {
-            if (IngredienteAntigo != null)
+            if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente remover este ingrediente?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                if (clnMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente remover este ingrediente?", clnMensagem.MensagemIcone.INFO))
-                {
-                    Remover = true;
+                IngredienteNovo = null;
 
-                    Close();
-                }
-            }
-            else
-            {
-                clnMensagem.mostrarOk("Ingrediente", "Selecione um ingrediente para remover.", clnMensagem.MensagemIcone.ERRO);
+                Close();
             }
         }
 
@@ -231,28 +116,21 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmAlteraIngrediente_Load(object sender, EventArgs e)
         {
-            clnUtil.atualizarTabIndex(Controls);
             App.AppVisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarTabIndex(Controls);
             clnUtil.abrirNumBoard(txtQuantidade);
 
             UIX.uixButton.btnApply(btnRemover, App.AppVisualStyle.ButtonWarningColor);
 
-            picAntigo.Hide();
-            lblAntigoNome.Hide();
-            lblQuantidade.Hide();
-
-            picNovo.Hide();
-            lblNovoNome.Hide();
+            picIngrediente.Hide();
+            lblNome.Hide();
             txtQuantidade.Hide();
 
-            esconderBotoes();
+            if (IngredienteAntigo != null)
+            {
+                exibirIngrediente(IngredienteAntigo);
+            }
         }
-
-        private void btnEscolher_Click(object sender, EventArgs e)
-        {
-            escolherAntigo();
-        }
-
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
@@ -261,14 +139,17 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (IngredienteAntigo != null)
+            escolherAlterar();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if(IngredienteNovo == null)
             {
-                escolherAlterar();
+                IngredienteNovo = IngredienteAntigo;
             }
-            else
-            {
-                escolherAdicionar();
-            }
+
+            Close();
         }
 
         class clnSelecionarIngrediente : clnSelecionar<clnPedidoReceita>

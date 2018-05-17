@@ -15,7 +15,7 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private String _selecionando;
-        private clnVisualizar _objVisualizar;
+        private clnUtilVisualizar _objVisualizar;
 
         private List<object> _opcoes;
 
@@ -31,7 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
         public Image Icone { set => hdrUIX.Image = value; }
-        internal clnVisualizar ObjVisualizar { get => _objVisualizar; set => _objVisualizar = value; }
+        internal clnUtilVisualizar ObjVisualizar { get => _objVisualizar; set => _objVisualizar = value; }
 
         public frmVisualizar()
         {
@@ -57,6 +57,7 @@ namespace BURGUER_SHACK_DESKTOP
                 btn.Click += (object sender, EventArgs e) =>
                 {
                     ObjVisualizar.abrir(obj);
+                    realizaPesquisa();
                 };
 
                 opcoesControles.Add(btn);

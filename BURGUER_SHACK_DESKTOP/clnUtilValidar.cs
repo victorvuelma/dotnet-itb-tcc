@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnValidar
+    class clnUtilValidar
     {
 
         private List<ValidarData> _controles = new List<ValidarData>();
@@ -66,7 +66,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (!formValido)
             {
-                clnMensagem.mostrarOk("Verifique as informações", Motivo, clnMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Verifique as informações", Motivo, clnUtilMensagem.MensagemIcone.ERRO);
             }
 
             return formValido;
