@@ -11,10 +11,7 @@ namespace BURGUER_SHACK_DESKTOP
     class clnUtilValidar
     {
 
-        private List<ValidarData> _controles = new List<ValidarData>();
-        private String _motivo = "";
-
-        public String Motivo { get => _motivo; }
+        private List<ValidarData> _validarControles = new List<ValidarData>();
 
         public void addValidacao(Control control, ValidarTipo tipo)
         {
@@ -24,7 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
         public void addValidacao(Control control, ValidarTipo[] tipos)
         {
             ValidarData data = null;
-            foreach (ValidarData dt in _controles)
+            foreach (ValidarData dt in _validarControles)
             {
                 if (dt.Control.Equals(control))
                 {
@@ -35,7 +32,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (data == null)
             {
                 data = new ValidarData(control);
-                _controles.Add(data);
+                _validarControles.Add(data);
             }
 
             data.addValidacoes(tipos);
@@ -44,17 +41,19 @@ namespace BURGUER_SHACK_DESKTOP
         public bool valido()
         {
             bool formValido = true;
-            _motivo = "";
 
-            foreach (ValidarData controlValidar in _controles)
+            StringBuilder motivoBuilder = new StringBuilder();
+            foreach (ValidarData controlValidar in _validarControles)
             {
                 bool controlValido = controlValidar.validar();
 
-                String controlMotivo = controlValidar.Motivo;
-                if (controlMotivo.Length > 0)
+                String motivoControl = controlValidar.Motivo;
+                if (motivoControl.Length > 0)
                 {
-                    _motivo += controlValidar.Control.AccessibleName + " " + controlMotivo;
-                    _motivo += "\n";
+                    motivoBuilder.Append(controlValidar.Control.AccessibleName);
+                    motivoBuilder.Append(' ');
+                    motivoBuilder.Append(motivoControl);
+                    motivoBuilder.Append('\n');
                 }
 
                 if (formValido && !controlValido)
@@ -66,7 +65,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (!formValido)
             {
-                clnUtilMensagem.mostrarOk("Verifique as informações", Motivo, clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString(), clnUtilMensagem.MensagemIcone.ERRO);
             }
 
             return formValido;
