@@ -60,14 +60,14 @@
             this.txtQuantidade.Location = new System.Drawing.Point(145, 125);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(130, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(169, 25);
             this.txtQuantidade.TabIndex = 4;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(300, 115);
+            this.btnAlterar.Location = new System.Drawing.Point(320, 115);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(130, 35);
+            this.btnAlterar.Size = new System.Drawing.Size(115, 35);
             this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;

@@ -67,5 +67,31 @@ namespace BURGUER_SHACK_DESKTOP
 
         private String[] nomes = new String[] { "Hambuguer", "Queijo", "Pão", "Alface", "Tomate", "Maionese", "Bacon", "Cheddar" };
 
+        public class clnSelecionarIngrediente : clnUtilSelecionar<clnIngrediente>
+        {
+            internal override int Cod(clnIngrediente obj)
+            {
+                return obj.Cod;
+            }
+
+            internal override string Detalhes(clnIngrediente obj)
+            {
+                string detalhes = "";
+                detalhes += "Valor: " + obj.Valor;
+
+                return detalhes;
+            }
+
+            internal override Image Imagem(clnIngrediente obj)
+            {
+                return obj.Imagem;
+            }
+
+            internal override string Nome(clnIngrediente obj)
+            {
+                return obj.Nome;
+            }
+        }
+
     }
 }

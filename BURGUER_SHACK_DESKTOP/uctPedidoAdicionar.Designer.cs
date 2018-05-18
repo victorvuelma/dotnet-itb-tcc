@@ -30,6 +30,8 @@
         {
             this.grbAdicionarProduto = new System.Windows.Forms.GroupBox();
             this.grbProduto = new System.Windows.Forms.GroupBox();
+            this.btnIngredienteAdd = new System.Windows.Forms.Button();
+            this.txtAdicional = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new UIX.txtUIX();
             this.btnIngredientes = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -43,7 +45,6 @@
             this.btnAcompanhamento = new UIX.btnUIX();
             this.btnLanche = new UIX.btnUIX();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.txtAdicional = new System.Windows.Forms.TextBox();
             this.grbAdicionarProduto.SuspendLayout();
             this.grbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).BeginInit();
@@ -67,6 +68,7 @@
             // 
             // grbProduto
             // 
+            this.grbProduto.Controls.Add(this.btnIngredienteAdd);
             this.grbProduto.Controls.Add(this.txtAdicional);
             this.grbProduto.Controls.Add(this.txtQuantidade);
             this.grbProduto.Controls.Add(this.btnIngredientes);
@@ -80,6 +82,25 @@
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "PRODUTO";
             // 
+            // btnIngredienteAdd
+            // 
+            this.btnIngredienteAdd.Location = new System.Drawing.Point(270, 145);
+            this.btnIngredienteAdd.Name = "btnIngredienteAdd";
+            this.btnIngredienteAdd.Size = new System.Drawing.Size(30, 30);
+            this.btnIngredienteAdd.TabIndex = 13;
+            this.btnIngredienteAdd.Text = "+";
+            this.btnIngredienteAdd.UseVisualStyleBackColor = true;
+            this.btnIngredienteAdd.Click += new System.EventHandler(this.btnIngredienteAdd_Click);
+            // 
+            // txtAdicional
+            // 
+            this.txtAdicional.Location = new System.Drawing.Point(130, 50);
+            this.txtAdicional.Multiline = true;
+            this.txtAdicional.Name = "txtAdicional";
+            this.txtAdicional.ReadOnly = true;
+            this.txtAdicional.Size = new System.Drawing.Size(295, 90);
+            this.txtAdicional.TabIndex = 1;
+            // 
             // txtQuantidade
             // 
             this.txtQuantidade.AccessibleName = "Quantidade";
@@ -89,7 +110,7 @@
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(170, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(135, 25);
             this.txtQuantidade.TabIndex = 3;
             // 
             // btnIngredientes
@@ -229,15 +250,6 @@
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // txtAdicional
-            // 
-            this.txtAdicional.Location = new System.Drawing.Point(130, 50);
-            this.txtAdicional.Multiline = true;
-            this.txtAdicional.Name = "txtAdicional";
-            this.txtAdicional.ReadOnly = true;
-            this.txtAdicional.Size = new System.Drawing.Size(295, 90);
-            this.txtAdicional.TabIndex = 1;
-            // 
             // uctPedidoAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -254,7 +266,6 @@
             this.grbProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).EndInit();
             this.grbDetalhes.ResumeLayout(false);
-            this.grbDetalhes.PerformLayout();
             this.grbTipo.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -278,5 +289,6 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIngredientes;
         private System.Windows.Forms.TextBox txtAdicional;
+        public System.Windows.Forms.Button btnIngredienteAdd;
     }
 }

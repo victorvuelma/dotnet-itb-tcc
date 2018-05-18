@@ -51,7 +51,6 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                FormProduto.abrirVisualizar();
             }
         }
 

@@ -167,7 +167,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnVisualizarPedidoIngrediente objVisualizar = new clnVisualizarPedidoIngrediente
+            clnPedidoReceita.clnVisualizarPedidoIngrediente objVisualizar = new clnPedidoReceita.clnVisualizarPedidoIngrediente
             {
                 Opcoes = Ingredientes
             };
@@ -180,6 +180,35 @@ namespace BURGUER_SHACK_DESKTOP
             frmVisualizar.Show();
 
             exibirDetalhes();
+        }
+
+        private void adicionarIngrediente()
+        {
+            clnIngrediente objIngredientes = new clnIngrediente();
+
+            clnIngrediente.clnSelecionarIngrediente objSelecionar = new clnIngrediente.clnSelecionarIngrediente
+            {
+                Opcoes = objIngredientes.obterIngredientes()
+            };
+
+            frmSelecionar frmSelecionar = new frmSelecionar
+            {
+                ObjSelecionar = objSelecionar,
+                Selecionando = "Adicionar um Ingrediente"
+            };
+            frmSelecionar.ShowDialog();
+
+            if (objSelecionar.getSelecionado() != null)
+            {
+                clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
+                {
+                    Quantidade = frmSelecionar.Quantidade,
+                    CodIngrediente = objSelecionar.Selecionado.Cod
+                };
+
+                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                Ingredientes.Add(objPedidoIngrediente);
+            }
         }
 
         private void btnLanche_Click(object sender, EventArgs e)
@@ -220,12 +249,17 @@ namespace BURGUER_SHACK_DESKTOP
             alterarProduto();
         }
 
+        private void btnIngredienteAdd_Click(object sender, EventArgs e)
+        {
+            adicionarIngrediente();
+        }
+
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
             abrirIngredientes();
         }
 
-        class clnSelecionarProduto : clnSelecionar<clnProduto>
+        class clnSelecionarProduto : clnUtilSelecionar<clnProduto>
         {
 
             internal override string Detalhes(clnProduto obj)
@@ -253,78 +287,6 @@ namespace BURGUER_SHACK_DESKTOP
                 return obj.Cod;
             }
 
-        }
-
-        class clnVisualizarPedidoIngrediente : clnVisualizar<clnPedidoReceita>
-        {
-
-            internal override string Detalhes(clnPedidoReceita obj)
-            {
-                String detalhes = "";
-                detalhes += "Quantidade: " + obj.Quantidade;
-                detalhes += "\n";
-                detalhes += "Código: " + obj.Cod;
-
-                return detalhes;
-            }
-
-            internal override Image Imagem(clnPedidoReceita obj)
-            {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = obj.CodIngrediente
-                }.obterPorCodigo();
-
-                return objIngrediente.Imagem;
-            }
-
-            internal override string Nome(clnPedidoReceita obj)
-            {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = obj.CodIngrediente
-                }.obterPorCodigo();
-
-                return objIngrediente.Nome;
-            }
-
-            internal override int Cod(clnPedidoReceita obj)
-            {
-                return obj.Cod;
-            }
-
-            internal override void Abrir(clnPedidoReceita obj)
-            {
-                clnProdutoReceita objProdutoReceita = new clnProdutoReceita
-                {
-                    Cod = obj.CodReceita
-                }.obterPorCodigo();
-
-                if (objProdutoReceita.Alterar || objProdutoReceita.Remover)
-                {
-                    frmPedidoIngrediente frmIngrediente = new frmPedidoIngrediente
-                    {
-                        IngredienteAntigo = obj
-                    };
-                    frmIngrediente.btnAlterar.Visible = objProdutoReceita.Alterar;
-                    frmIngrediente.btnRemover.Visible = objProdutoReceita.Remover;
-                    frmIngrediente.ShowDialog();
-
-                    if (frmIngrediente.IngredienteNovo == null)
-                    {
-                        Opcoes.Remove(frmIngrediente.IngredienteAntigo);
-                    }
-                    else if (frmIngrediente.IngredienteAntigo != frmIngrediente.IngredienteNovo)
-                    {
-                        clnUtil.listTrocar(Opcoes, frmIngrediente.IngredienteAntigo, frmIngrediente.IngredienteNovo);
-                    }
-                }
-                else
-                {
-                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
-                }
-
-            }
         }
 
     }

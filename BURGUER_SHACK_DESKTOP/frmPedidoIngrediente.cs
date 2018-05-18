@@ -51,7 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objPedidoIngredientes.Add(objPedidoIngrediente);
             }
 
-            clnSelecionarIngrediente objSelecionar = new clnSelecionarIngrediente
+            clnPedidoReceita.clnSelecionarPedidoIngrediente objSelecionar = new clnPedidoReceita.clnSelecionarPedidoIngrediente
             {
                 Opcoes = objPedidoIngredientes,
                 Selecionado = IngredienteNovo
@@ -93,8 +93,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (clnUtilMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", clnUtilMensagem.MensagemIcone.ERRO))
             {
-                IngredienteNovo = IngredienteAntigo;
-
                 Close();
             }
         }
@@ -128,6 +126,8 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (IngredienteAntigo != null)
             {
+                IngredienteNovo = IngredienteAntigo;
+
                 exibirIngrediente(IngredienteAntigo);
             }
         }
@@ -150,42 +150,6 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             Close();
-        }
-
-        class clnSelecionarIngrediente : clnSelecionar<clnPedidoReceita>
-        {
-            internal override int Cod(clnPedidoReceita obj)
-            {
-                return obj.Cod;
-            }
-
-            internal override string Detalhes(clnPedidoReceita obj)
-            {
-                string detalhes = "";
-                detalhes += "Quantidade: " + obj.Quantidade;
-
-                return detalhes;
-            }
-
-            internal override Image Imagem(clnPedidoReceita obj)
-            {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = obj.CodIngrediente
-                }.obterPorCodigo();
-
-                return objIngrediente.Imagem;
-            }
-
-            internal override string Nome(clnPedidoReceita obj)
-            {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = obj.CodIngrediente
-                }.obterPorCodigo();
-
-                return objIngrediente.Nome;
-            }
         }
 
     }

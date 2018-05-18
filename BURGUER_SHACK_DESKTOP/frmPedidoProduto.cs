@@ -16,10 +16,7 @@ namespace BURGUER_SHACK_DESKTOP
         private clnPedidoProduto _pedidoProduto;
         private List<clnPedidoReceita> _ingredientes;
 
-        private bool _remover;
-
         public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
-        public bool Remover { get => _remover; set => _remover = value; }
         public List<clnPedidoReceita> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
 
         public frmPedidoProduto()
@@ -27,79 +24,62 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
         }
 
-        public void alterarConteudo(UserControl uctConteudo, String titulo)
-        {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
-        }
-
-        internal void abrirVisualizar()
-        {
-            uctPedidoProdutoVer uctVer = new uctPedidoProdutoVer
-            {
-                Form = this,
-                PedidoProduto = PedidoProduto
-            };
-
-            alterarConteudo(uctVer, "Produto :: Visualizar");
-        }
-
-        internal void removerIngrediente(clnPedidoReceita pedidoIngrediente)
-        {
-            if (Ingredientes.Count > 1)
-            {
-                Ingredientes.Remove(pedidoIngrediente);
-
-                abrirDetalhes();
-
-                clnUtilMensagem.mostrarOk("Produto", "Ingrediente removido do produto.", clnUtilMensagem.MensagemIcone.ERRO);
-            }
-            else
-            {
-                clnUtilMensagem.mostrarOk("Produto", "Você não pode remover o único ingrediente do produto.", clnUtilMensagem.MensagemIcone.ERRO);
-            }
-        }
-
-        internal void adicionaIngrediente(clnPedidoReceita pedidoIngrediente)
-        {
-            Ingredientes.Add(pedidoIngrediente);
-
-            abrirDetalhes();
-
-            clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso.", clnUtilMensagem.MensagemIcone.OK);
-        }
-
-        internal void substiuiIngrediente(clnPedidoReceita pedidoIngredienteSubstituir, clnPedidoReceita pedidoIngrediente)
-        {
-            clnUtil.listTrocar(Ingredientes, pedidoIngredienteSubstituir, pedidoIngrediente);
-
-            abrirDetalhes();
-
-            clnUtilMensagem.mostrarOk("Produto", "Ingrediente alterado com sucesso.", clnUtilMensagem.MensagemIcone.OK);
-        }
-
-        private void abrirDetalhes()
-        {
-            uctPedidoProdutoDetalhes uctAlterar = new uctPedidoProdutoDetalhes
-            {
-                PedidoProduto = PedidoProduto,
-                FormProduto = this
-            };
-
-            alterarConteudo(uctAlterar, "Produto :: Alterar");
-
-            PedidoProduto = uctAlterar.PedidoProduto;
-        }
-
         private void fechar()
         {
             if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no produto?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                //Novo Pedido - Cancelado
-                //Edicao - Sem alteracoes.
-                PedidoProduto = null;
-                Remover = false;
-
                 Close();
+            }
+        }
+
+        private void abrirIngredientes()
+        {
+            clnPedidoReceita.clnVisualizarPedidoIngrediente objVisualizar = new clnPedidoReceita.clnVisualizarPedidoIngrediente
+            {
+                Opcoes = Ingredientes
+            };
+
+            frmVisualizar frmVisualizar = new frmVisualizar
+            {
+                ObjVisualizar = objVisualizar
+            };
+            frmVisualizar.Show();
+        }
+
+        private void exibirProduto(clnProduto objProduto, clnPedidoProduto objPedidoProduto)
+        {
+            picProduto.Image = objProduto.Imagem;
+            lblProdutoNome.Text = objProduto.Nome;
+            txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
+            txtAdicional.Text = objPedidoProduto.Adicional;
+        }
+
+        private void adicionarIngrediente()
+        {
+            clnIngrediente objIngredientes = new clnIngrediente();
+
+            clnIngrediente.clnSelecionarIngrediente objSelecionar = new clnIngrediente.clnSelecionarIngrediente
+            {
+                Opcoes = objIngredientes.obterIngredientes()
+            };
+
+            frmSelecionar frmSelecionar = new frmSelecionar
+            {
+                ObjSelecionar = objSelecionar,
+                Selecionando = "Adicionar um Ingrediente"
+            };
+            frmSelecionar.ShowDialog();
+
+            if (objSelecionar.getSelecionado() != null)
+            {
+                clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
+                {
+                    Quantidade = frmSelecionar.Quantidade,
+                    CodIngrediente = objSelecionar.Selecionado.Cod
+                };
+
+                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                Ingredientes.Add(objPedidoIngrediente);
             }
         }
 
@@ -108,7 +88,6 @@ namespace BURGUER_SHACK_DESKTOP
             if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnUtilMensagem.MensagemIcone.ERRO))
             {
                 PedidoProduto = null;
-                Remover = true;
 
                 Close();
             }
@@ -121,12 +100,12 @@ namespace BURGUER_SHACK_DESKTOP
 
             UIX.uixButton.btnApply(btnRemover, App.AppVisualStyle.ButtonWarningColor);
 
-            abrirVisualizar();
-        }
+            clnProduto objProduto = new clnProduto
+            {
+                Cod = PedidoProduto.CodProduto
+            }.obterPorCodigo();
 
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            fechar();
+            exibirProduto(objProduto, PedidoProduto);
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -134,14 +113,9 @@ namespace BURGUER_SHACK_DESKTOP
             fechar();
         }
 
-        private void btnVer_Click(object sender, EventArgs e)
+        private void btnIngredientes_Click(object sender, EventArgs e)
         {
-            abrirVisualizar();
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            abrirDetalhes();
+            abrirIngredientes();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -149,5 +123,9 @@ namespace BURGUER_SHACK_DESKTOP
             removerProduto();
         }
 
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace BURGUER_SHACK_DESKTOP
 {
 
-    abstract class clnUtilVisualizar
+    public abstract class clnUtilVisualizar
     {
 
         public abstract IList getOpcoes();
@@ -27,7 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
 
     }
 
-    abstract class clnVisualizar<T> : clnUtilVisualizar
+    public abstract class clnUtilVisualizar<T> : clnUtilVisualizar
     {
         private List<T> _opcoes;
 

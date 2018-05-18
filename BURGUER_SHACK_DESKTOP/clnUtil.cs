@@ -100,6 +100,12 @@ namespace BURGUER_SHACK_DESKTOP
                 lista[index] = valorNovo;
         }
 
+        public static void dictTrocar<T, C>(Dictionary<T, C> dict, T chaveAntiga, T chaveNova, C conteudoNova)
+        {
+            dict.Remove(chaveAntiga);
+            dict.Add(chaveNova, conteudoNova);
+        }
+
         public static void adicionarControles(Panel panel, List<Control> controles, int espaco)
         {
             panel.Hide();
@@ -272,7 +278,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             try
             {
-                System.Net.Mail.MailAddress mailAddress  = new System.Net.Mail.MailAddress(mail);
+                System.Net.Mail.MailAddress mailAddress = new System.Net.Mail.MailAddress(mail);
                 return mailAddress.Address.ToLower().Equals(mail.ToLower());
             }
             catch (Exception)

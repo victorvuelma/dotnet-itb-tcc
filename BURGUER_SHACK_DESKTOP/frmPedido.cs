@@ -12,14 +12,14 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmPedido : Form
     {
-        private int _atendimento;
+        private int _codAtendimento;
 
         private clnPedido _pedido;
-        private List<clnPedidoProduto> _pedidosProdutos;
+        private Dictionary<clnPedidoProduto, List<clnPedidoReceita>> _pedidosProdutos;
 
-        internal int Atendimento { get => _atendimento; set => _atendimento = value; }
+        internal int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
         internal clnPedido Pedido { get => _pedido; set => _pedido = value; }
-        internal List<clnPedidoProduto> PedidosProdutos { get => _pedidosProdutos; set => _pedidosProdutos = value; }
+        internal Dictionary<clnPedidoProduto, List<clnPedidoReceita>> PedidosProdutos { get => _pedidosProdutos; set => _pedidosProdutos = value; }
 
         public frmPedido()
         {
@@ -36,7 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
             uctPedidoProdutos uctProdutos = new uctPedidoProdutos
             {
                 Form = this,
-                Atendimento = Atendimento,
+                Atendimento = CodAtendimento,
                 PedidoProdutos = PedidosProdutos
             };
 
@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void addProduto(clnPedidoProduto pedidoProduto, List<clnPedidoReceita> pedidoIngredientes)
         {
-            PedidosProdutos.Add(pedidoProduto);
+            PedidosProdutos.Add(pedidoProduto, pedidoIngredientes);
 
             abrirProdutos();
         }
@@ -65,7 +65,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Close();
             }
         }
-        
+
         private void abrirAdicionarProduto()
         {
             uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar

@@ -9,7 +9,7 @@ using System.Drawing;
 namespace BURGUER_SHACK_DESKTOP
 {
 
-    abstract class clnUtilSelecionar
+    public abstract class clnUtilSelecionar
     {
 
         public abstract object getSelecionado();
@@ -28,7 +28,7 @@ namespace BURGUER_SHACK_DESKTOP
 
     }
 
-    abstract class clnSelecionar<T> : clnUtilSelecionar
+    public abstract class clnUtilSelecionar<T> : clnUtilSelecionar
     {
         private List<T> _opcoes;
         private T _selecionado;
