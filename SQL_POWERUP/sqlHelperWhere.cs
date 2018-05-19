@@ -9,24 +9,27 @@ namespace SQL_POWERUP
     public class sqlHelperWhere
     {
 
-        private List<sqlObjWhere> _whereParams = new List<sqlObjWhere>();
+        private List<sqlObjWhere> _params = new List<sqlObjWhere>();
+
+        public List<sqlObjWhere> Params { get => _params; set => _params = value; }
 
         public sqlHelperWhere where(sqlObjWhere objWhere)
         {
-            foreach (sqlObjWhere whereParam in _whereParams)
+            foreach (sqlObjWhere whereParam in Params)
             {
-                if (whereParam.Where.ToLower().Equals(objWhere.Where.ToLower()))
+                if (whereParam.Where.Equals(objWhere.Where, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    _whereParams.Remove(whereParam);
+                    Params.Remove(whereParam);
                     break;
                 }
             }
-            _whereParams.Add(objWhere);
+            Params.Add(objWhere);
             return this;
         }
 
         public sqlHelperWhere where(String column, sqlObjWhere.whereOperation operation, Object val)
         {
+            column = column.ToUpper();
             return where(new sqlObjWhere
             {
                 Where = column,
@@ -40,17 +43,32 @@ namespace SQL_POWERUP
             return where(column, sqlObjWhere.whereOperation.EQUALS, val);
         }
 
-        internal String generate()
+        internal void generate(StringBuilder builder)
         {
-            if (_whereParams.Count == 0)
+            if (Params.Count > 0)
             {
-                return "";
-            }
-            else
-            {
-                return sqlUtil.generateWhere(_whereParams);
+                StringBuilder paramsBuilder = new StringBuilder();
+
+                for (int i = 0; i < Params.Count; i++)
+                {
+                    sqlObjWhere objWhere = Params[i];
+                    paramsBuilder.Append(objWhere.Where).Append(' ');
+                    switch (objWhere.Operation)
+                    {
+                        case sqlObjWhere.whereOperation.EQUALS:
+                            paramsBuilder.Append('=');
+                            break;
+                    }
+                    paramsBuilder.Append(' ').Append(sqlUtil.prepareVal(objWhere.Val));
+                    if (i < Params.Count - 1)
+                    {
+                        paramsBuilder.Append(' ').Append(objWhere.Association).Append(' ');
+                    }
+                }
+
+                builder.Append(" WHERE ").Append(paramsBuilder);
             }
         }
-
     }
+
 }

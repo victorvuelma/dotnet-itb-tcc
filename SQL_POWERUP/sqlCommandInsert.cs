@@ -16,9 +16,8 @@ namespace SQL_POWERUP
         private String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
-            commandBuilder.Append("INSERT INTO ");
-            commandBuilder.Append(Table);
-            commandBuilder.Append(Insert.generateForValues());
+            commandBuilder.Append("INSERT INTO ").Append(Table);
+            Insert.generateValues(commandBuilder);
 
             return commandBuilder.ToString();
         }

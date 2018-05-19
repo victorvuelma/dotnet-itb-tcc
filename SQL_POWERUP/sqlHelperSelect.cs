@@ -9,7 +9,19 @@ namespace SQL_POWERUP
     public class sqlHelperSelect
     {
 
-        private List<String> _selectParams = new List<String>();
+        private List<String> _tableColumns = new List<String>();
+
+        public List<string> TableColumns { get => _tableColumns; set => _tableColumns = value; }
+
+        public sqlHelperSelect select(String param)
+        {
+            param = param.ToUpper();
+            if (!TableColumns.Contains(param))
+            {
+                TableColumns.Add(param);
+            }
+            return this;
+        }
 
         public sqlHelperSelect selects(String[] selectParams)
         {
@@ -20,21 +32,15 @@ namespace SQL_POWERUP
             return this;
         }
 
-        public sqlHelperSelect select(String param)
+        internal void generate(StringBuilder builder)
         {
-            _selectParams.Add(param);
-            return this;
-        }
-
-        internal String generate()
-        {
-            if (_selectParams.Count == 0)
+            if (TableColumns.Count > 0)
             {
-                return "*";
+                sqlUtil.separeWithComma(builder, TableColumns);
             }
             else
             {
-                return sqlUtil.separeWithComma(_selectParams);
+                builder.Append('*');
             }
         }
 

@@ -16,9 +16,8 @@ namespace SQL_POWERUP
         private String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
-            commandBuilder.Append("DELETE FROM ");
-            commandBuilder.Append(Table);
-            commandBuilder.Append(Where.generate());
+            commandBuilder.Append("DELETE FROM ").Append(Table);
+            Where.generate(commandBuilder);
 
             return commandBuilder.ToString();
         }

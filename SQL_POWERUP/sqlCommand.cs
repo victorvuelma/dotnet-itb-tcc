@@ -11,6 +11,6 @@ namespace SQL_POWERUP
 
         private String _table;
 
-        public string Table { get => _table; set => _table = value; }
+        public string Table { get => _table; set => _table = value.ToUpper(); }
     }
 }

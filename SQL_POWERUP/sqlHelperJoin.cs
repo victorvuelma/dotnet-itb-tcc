@@ -9,7 +9,9 @@ namespace SQL_POWERUP
     public class sqlHelperJoin
     {
 
-        private List<sqlObjJoin> _joinParams = new List<sqlObjJoin>();
+        private List<sqlObjJoin> _params = new List<sqlObjJoin>();
+
+        public List<sqlObjJoin> Params { get => _params; set => _params = value; }
 
         public sqlHelperJoin innerJoin(String table, String column, String other)
         {
@@ -33,6 +35,9 @@ namespace SQL_POWERUP
 
         public sqlHelperJoin join(String table, String column, String other, sqlObjJoin.joinType type)
         {
+            table = table.ToUpper();
+            column = column.ToUpper();
+            other = column.ToUpper();
             return join(new sqlObjJoin
             {
                 Table = table,
@@ -44,40 +49,28 @@ namespace SQL_POWERUP
 
         public sqlHelperJoin join(sqlObjJoin objJoin)
         {
-            foreach (sqlObjJoin joinParam in _joinParams)
+            foreach (sqlObjJoin joinParam in Params)
             {
-                if (joinParam.Table.ToLower().Equals(objJoin.Table.ToLower()))
+                if (joinParam.Table.Equals(objJoin.Table, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    _joinParams.Remove(joinParam);
+                    Params.Remove(joinParam);
                     break;
                 }
             }
-            _joinParams.Add(objJoin);
+            Params.Add(objJoin);
             return this;
         }
 
-        internal String generate()
+        internal void generate(StringBuilder builder)
         {
-            if (_joinParams.Count > 0)
+            if (Params.Count > 0)
             {
-                StringBuilder joinBuilder = new StringBuilder();
-                foreach (sqlObjJoin objJoin in _joinParams)
+                foreach (sqlObjJoin objJoin in Params)
                 {
-                    joinBuilder.Append(' ');
-                    joinBuilder.Append(objJoin.JoinType.ToString().ToUpper());
-                    joinBuilder.Append(" JOIN ");
-                    joinBuilder.Append(objJoin.Table);
-                    joinBuilder.Append(" ON ");
-                    joinBuilder.Append(objJoin.Left);
-                    joinBuilder.Append(" = ");
-                    joinBuilder.Append(objJoin.Right);
+                    builder.Append(' ').Append(objJoin.JoinType.ToString().ToUpper())
+                                .Append(" JOIN ").Append(objJoin.Table).Append(" ON ")
+                                .Append(" = ").Append(objJoin.Right);
                 }
-
-                return joinBuilder.ToString();
-            }
-            else
-            {
-                return "";
             }
         }
 

@@ -11,41 +11,62 @@ namespace SQL_POWERUP
 
         private Dictionary<String, object> _values = new Dictionary<string, object>();
 
+        public Dictionary<string, object> Values { get => _values; set => _values = value; }
+
         public sqlHelperValue with(String column, object val)
         {
-            if (_values.ContainsKey(column))
+            column = column.ToUpper();
+            if (Values.ContainsKey(column))
             {
-                _values.Remove(column);
+                Values.Remove(column);
             }
-            _values.Add(column, val);
+            Values.Add(column, val);
             return this;
         }
 
-        internal String generateForValues()
+        public sqlHelperValue with(KeyValuePair<String, object> columnValue)
         {
-            StringBuilder valuesBuilder = new StringBuilder();
-
-            foreach (KeyValuePair<String, object> columnValue in _values)
-            {
-                if (valuesBuilder.Length > 0)
-                {
-                    valuesBuilder.Append(", ");
-                }
-                valuesBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
-            }
-
-            return " (" + sqlUtil.separeWithComma(_values.Keys.ToList()) + ") VALUES (" + valuesBuilder.ToString() + ")";
+            return with(columnValue.Key, columnValue.Value);
         }
 
-        internal string generateForSet()
+        internal void generateValues(StringBuilder builder)
         {
-            if (_values.Count > 0)
+            if (Values.Count > 0)
             {
-                return sqlUtil.generateSet(_values);
+                StringBuilder valuesBuilder = new StringBuilder();
+
+                foreach (KeyValuePair<String, object> columnValue in Values)
+                {
+                    if (valuesBuilder.Length > 0)
+                    {
+                        valuesBuilder.Append(", ");
+                    }
+                    valuesBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
+                }
+
+                builder.Append(" (");
+                sqlUtil.separeWithComma(builder, Values.Keys.ToList());
+                builder.Append(") VALUES (").Append(valuesBuilder).Append(')');
             }
-            else
+        }
+
+        internal void generateSet(StringBuilder builder)
+        {
+            if (Values.Count > 0)
             {
-                return "";
+                StringBuilder setBuilder = new StringBuilder();
+                foreach (KeyValuePair<string, object> columnValue in Values)
+                {
+                    if (setBuilder.Length > 0)
+                    {
+                        setBuilder.Append(", ");
+                    }
+                    setBuilder.Append(columnValue.Key);
+                    setBuilder.Append(" = ");
+                    setBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
+                }
+
+                builder.Append(" SET ").Append(setBuilder);
             }
         }
 

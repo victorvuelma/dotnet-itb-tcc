@@ -18,10 +18,9 @@ namespace SQL_POWERUP
         private String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
-            commandBuilder.Append("UPDATE ");
-            commandBuilder.Append(Table);
-            commandBuilder.Append(Where.generate());
-            commandBuilder.Append(Set.generateForSet());
+            commandBuilder.Append("UPDATE ").Append(Table);
+            Where.generate(commandBuilder);
+            Set.generateSet(commandBuilder);
 
             return commandBuilder.ToString();
         }

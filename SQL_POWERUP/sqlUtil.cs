@@ -20,7 +20,7 @@ namespace SQL_POWERUP
             {
                 return "'" + str + "'";
             }
-            foreach(char ch in str)
+            foreach (char ch in str)
             {
                 if (!Char.IsLetterOrDigit(ch))
                 {
@@ -30,65 +30,17 @@ namespace SQL_POWERUP
             return str;
         }
 
-        internal static String separeWithComma(List<String> elements)
+        internal static void separeWithComma(StringBuilder builder, List<String> elements)
         {
-            StringBuilder columnBuilder = new StringBuilder();
-
             foreach (String column in elements)
             {
-                if (columnBuilder.Length > 0)
+                if (builder.Length > 0)
                 {
-                    columnBuilder.Append(", ");
+                    builder.Append(", ");
                 }
-                columnBuilder.Append(column);
+                builder.Append(column);
             }
-
-            return columnBuilder.ToString();
         }
 
-        internal static string generateSet(Dictionary<String, object> columnValues)
-        {
-            StringBuilder setBuilder = new StringBuilder();
-            foreach (KeyValuePair<string, object> columnValue in columnValues)
-            {
-                if (setBuilder.Length > 0)
-                {
-                    setBuilder.Append(", ");
-                }
-                setBuilder.Append(columnValue.Key);
-                setBuilder.Append(" = ");
-                setBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
-            }
-
-            return " SET " + setBuilder.ToString();
-        }
-
-        internal static string generateWhere(List<sqlObjWhere> whereParams)
-        {
-            StringBuilder paramsBuilder = new StringBuilder();
-
-            for (int i = 0; i < whereParams.Count; i++)
-            {
-                sqlObjWhere objWhere = whereParams[i];
-                paramsBuilder.Append(objWhere.Where);
-                paramsBuilder.Append(' ');
-                switch (objWhere.Operation)
-                {
-                    case sqlObjWhere.whereOperation.EQUALS:
-                        paramsBuilder.Append('=');
-                        break;
-                }
-                paramsBuilder.Append(' ');
-                paramsBuilder.Append(sqlUtil.prepareVal(objWhere.Val));
-                if (i < whereParams.Count - 1)
-                {
-                    paramsBuilder.Append(' ');
-                    paramsBuilder.Append(objWhere.Association.ToString());
-                    paramsBuilder.Append(' ');
-                }
-            }
-
-            return " WHERE " + paramsBuilder.ToString();
-        }
     }
 }
