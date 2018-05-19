@@ -12,9 +12,20 @@ namespace SQL_POWERUP
         internal static String prepareVal(object val)
         {
             String str = val.ToString();
+            if (val is string)
+            {
+                return "'" + str + "'";
+            }
             if (str.Contains(' '))
             {
                 return "'" + str + "'";
+            }
+            foreach(char ch in str)
+            {
+                if (!Char.IsLetterOrDigit(ch))
+                {
+                    return "'" + str + "'";
+                }
             }
             return str;
         }
@@ -49,7 +60,7 @@ namespace SQL_POWERUP
                 setBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
             }
 
-            return setBuilder.ToString();
+            return " SET " + setBuilder.ToString();
         }
 
         internal static string generateWhere(List<sqlObjWhere> whereParams)

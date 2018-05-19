@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SQL_POWERUP
 {
-    class sqlCommandUpdate : sqlCommand
+    public class sqlCommandUpdate : sqlCommand
     {
 
         private sqlHelperWhere _where = new sqlHelperWhere();
         private sqlHelperValue _set = new sqlHelperValue();
 
-        internal sqlHelperWhere Where { get => _where; set => _where = value; }
-        internal sqlHelperValue Set { get => _set; set => _set = value; }
+        public sqlHelperWhere Where { get => _where; set => _where = value; }
+        public sqlHelperValue Set { get => _set; set => _set = value; }
 
         private String generateCommand()
         {

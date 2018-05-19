@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace SQL_POWERUP
 {
-    class sqlHelperValue
+    public class sqlHelperValue
     {
 
         private Dictionary<String, object> _values = new Dictionary<string, object>();
 
-        public void value(String column, object val)
+        public sqlHelperValue with(String column, object val)
         {
             if (_values.ContainsKey(column))
             {
                 _values.Remove(column);
             }
             _values.Add(column, val);
+            return this;
         }
 
         internal String generateForValues()

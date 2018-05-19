@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SQL_POWERUP
 {
-    class sqlCommandDelete : sqlCommand
+    public class sqlCommandDelete : sqlCommand
     {
 
         private sqlHelperWhere _where = new sqlHelperWhere();
 
-        internal sqlHelperWhere Where { get => _where; set => _where = value; }
+        public sqlHelperWhere Where { get => _where; set => _where = value; }
 
         private String generateCommand()
         {

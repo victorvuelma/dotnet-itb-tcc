@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SQL_POWERUP
 {
-    class sqlCommandInsert : sqlCommand
+    public class sqlCommandInsert : sqlCommand
     {
 
-        private sqlHelperValue _insert;
+        private sqlHelperValue _insert = new sqlHelperValue();
 
         public sqlHelperValue Insert { get => _insert; set => _insert = value; }
 
