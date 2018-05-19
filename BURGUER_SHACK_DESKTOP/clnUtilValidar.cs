@@ -11,6 +11,16 @@ namespace BURGUER_SHACK_DESKTOP
     class clnUtilValidar
     {
 
+        public enum ValidarTipo
+        {
+            VAZIO,
+            EMAIL,
+            CPF,
+            CNPJ,
+            CEP,
+            INT
+        }
+
         private List<ValidarData> _validarControles = new List<ValidarData>();
 
         public void addValidacao(Control control, ValidarTipo tipo)
@@ -50,12 +60,8 @@ namespace BURGUER_SHACK_DESKTOP
                 String motivoControl = controlValidar.Motivo;
                 if (motivoControl.Length > 0)
                 {
-                    motivoBuilder.Append(controlValidar.Control.AccessibleName);
-                    motivoBuilder.Append(' ');
-                    motivoBuilder.Append(motivoControl);
-                    motivoBuilder.Append('\n');
+                    motivoBuilder.Append(controlValidar.Control.AccessibleName).Append(' ').Append(motivoControl).Append('\n');
                 }
-
                 if (formValido && !controlValido)
                 {
                     formValido = false;
@@ -109,7 +115,6 @@ namespace BURGUER_SHACK_DESKTOP
                 _motivo = "";
 
                 String conteudo = _control.Text;
-
                 foreach (ValidarTipo tipo in _validacoes)
                 {
                     bool val = true;
@@ -149,11 +154,12 @@ namespace BURGUER_SHACK_DESKTOP
                     }
                 }
 
+
                 if (!valido)
                 {
                     if (_control is UIX.txtUIX txt)
                     {
-                        UIX.uixTextBox.txtApply(txt.txt, UIX.uixSet.RED);
+                        UIX.uixTextBox.txtApply(txt.txt, App.AppVisualStyle.TextBoxWarningColor);
                     }
                 }
                 else
@@ -167,16 +173,6 @@ namespace BURGUER_SHACK_DESKTOP
                 return valido;
             }
 
-        }
-
-        public enum ValidarTipo
-        {
-            VAZIO,
-            EMAIL,
-            CPF,
-            CNPJ,
-            CEP,
-            INT
         }
 
     }
