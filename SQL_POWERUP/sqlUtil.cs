@@ -9,6 +9,16 @@ namespace SQL_POWERUP
     class sqlUtil
     {
 
+        internal static String prepareVal(object val)
+        {
+            String str = val.ToString();
+            if (str.Contains(' '))
+            {
+                return "'" + str + "'";
+            }
+            return str;
+        }
+
         internal static String separeWithComma(List<String> elements)
         {
             StringBuilder columnBuilder = new StringBuilder();
@@ -23,6 +33,51 @@ namespace SQL_POWERUP
             }
 
             return columnBuilder.ToString();
+        }
+
+        internal static string generateSet(Dictionary<String, object> columnValues)
+        {
+            StringBuilder setBuilder = new StringBuilder();
+            foreach (KeyValuePair<string, object> columnValue in columnValues)
+            {
+                if (setBuilder.Length > 0)
+                {
+                    setBuilder.Append(", ");
+                }
+                setBuilder.Append(columnValue.Key);
+                setBuilder.Append(" = ");
+                setBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
+            }
+
+            return setBuilder.ToString();
+        }
+
+        internal static string generateWhere(List<sqlObjWhere> whereParams)
+        {
+            StringBuilder paramsBuilder = new StringBuilder();
+
+            for (int i = 0; i < whereParams.Count; i++)
+            {
+                sqlObjWhere objWhere = whereParams[i];
+                paramsBuilder.Append(objWhere.Where);
+                paramsBuilder.Append(' ');
+                switch (objWhere.Operation)
+                {
+                    case sqlObjWhere.whereOperation.EQUALS:
+                        paramsBuilder.Append('=');
+                        break;
+                }
+                paramsBuilder.Append(' ');
+                paramsBuilder.Append(sqlUtil.prepareVal(objWhere.Val));
+                if (i < whereParams.Count - 1)
+                {
+                    paramsBuilder.Append(' ');
+                    paramsBuilder.Append(objWhere.Association.ToString());
+                    paramsBuilder.Append(' ');
+                }
+            }
+
+            return " WHERE " + paramsBuilder.ToString();
         }
     }
 }

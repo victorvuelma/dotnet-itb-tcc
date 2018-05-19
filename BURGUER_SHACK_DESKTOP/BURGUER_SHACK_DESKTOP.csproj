@@ -392,6 +392,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SQL_POWERUP\SQL_POWERUP.csproj">
+      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
+      <Name>SQL_POWERUP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIX\UIX.csproj">
       <Project>{23c69ba9-632d-47df-b963-927e43f5f800}</Project>
       <Name>UIX</Name>
