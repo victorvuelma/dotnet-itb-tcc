@@ -32,14 +32,16 @@ namespace SQL_POWERUP
 
         internal static void separeWithComma(StringBuilder builder, List<String> elements)
         {
+            StringBuilder commaBuilder = new StringBuilder();
             foreach (String column in elements)
             {
-                if (builder.Length > 0)
+                if (commaBuilder.Length > 0)
                 {
-                    builder.Append(", ");
+                    commaBuilder.Append(", ");
                 }
-                builder.Append(column);
+                commaBuilder.Append(column);
             }
+            builder.Append(commaBuilder);
         }
 
     }
