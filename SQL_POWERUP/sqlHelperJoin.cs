@@ -11,7 +11,7 @@ namespace SQL_POWERUP
 
         private List<sqlObjJoin> _params = new List<sqlObjJoin>();
 
-        public List<sqlObjJoin> Params { get => _params; set => _params = value; }
+        public List<sqlObjJoin> Params { get => _params; }
 
         public sqlHelperJoin innerJoin(String table, String column, String other)
         {
@@ -49,11 +49,11 @@ namespace SQL_POWERUP
 
         public sqlHelperJoin join(sqlObjJoin objJoin)
         {
-            foreach (sqlObjJoin joinParam in Params)
+            foreach (sqlObjJoin objParam in Params)
             {
-                if (joinParam.Table.Equals(objJoin.Table, StringComparison.CurrentCultureIgnoreCase))
+                if (objParam.Table.Equals(objJoin.Table, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    Params.Remove(joinParam);
+                    Params.Remove(objParam);
                     break;
                 }
             }

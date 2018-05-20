@@ -15,11 +15,11 @@ namespace SQL_POWERUP
 
         public sqlHelperWhere where(sqlObjWhere objWhere)
         {
-            foreach (sqlObjWhere whereParam in Params)
+            foreach (sqlObjWhere objParam in Params)
             {
-                if (whereParam.Where.Equals(objWhere.Where, StringComparison.CurrentCultureIgnoreCase))
+                if (objParam.Where.Equals(objWhere.Where, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    Params.Remove(whereParam);
+                    Params.Remove(objParam);
                     break;
                 }
             }

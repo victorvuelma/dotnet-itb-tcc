@@ -9,15 +9,30 @@ namespace SQL_POWERUP
     public class sqlCommandInsert : sqlCommand
     {
 
-        private sqlHelperValue _insert = new sqlHelperValue();
+        private sqlHelperValue _insert;
 
-        public sqlHelperValue Insert { get => _insert; set => _insert = value; }
+        public sqlCommandInsert table(String table)
+        {
+            Table = table;
+            return this;
+        }
 
-        private String generateCommand()
+        public sqlHelperValue Insert
+        {
+            get
+            {
+                if (_insert == null)
+                    return _insert = new sqlHelperValue();
+                return _insert;
+            }
+        }
+
+        protected override String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
             commandBuilder.Append("INSERT INTO ").Append(Table);
-            Insert.generateValues(commandBuilder);
+            if (_insert != null)
+                _insert.generateValues(commandBuilder);
 
             return commandBuilder.ToString();
         }

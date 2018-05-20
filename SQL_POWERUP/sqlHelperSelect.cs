@@ -9,23 +9,48 @@ namespace SQL_POWERUP
     public class sqlHelperSelect
     {
 
-        private List<String> _tableColumns = new List<String>();
+        private List<sqlObjSelect> _params = new List<sqlObjSelect>();
 
-        public List<string> TableColumns { get => _tableColumns; set => _tableColumns = value; }
+        public List<sqlObjSelect> Params { get => _params; }
 
-        public sqlHelperSelect select(String param)
+        public sqlHelperSelect select(sqlObjSelect objSelect)
         {
-            param = param.ToUpper();
-            if (!TableColumns.Contains(param))
+            foreach (sqlObjSelect objParam in Params)
             {
-                TableColumns.Add(param);
+                if (objParam.TableColumn.Equals(objSelect.TableColumn, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    Params.Remove(objParam);
+                    break;
+                }
             }
+            Params.Add(objSelect);
             return this;
         }
 
-        public sqlHelperSelect selects(String[] selectParams)
+        public sqlHelperSelect select(String tableColumn, sqlObjSelect.selectOperation operation, String asName)
         {
-            foreach (String param in selectParams)
+            tableColumn = tableColumn.ToUpper();
+            return select(new sqlObjSelect
+            {
+                TableColumn = tableColumn,
+                As = asName,
+                Operation = operation
+            });
+        }
+
+        public sqlHelperSelect select(String tableColumn, String asName)
+        {
+            return select(tableColumn, sqlObjSelect.selectOperation.NONE, asName);
+        }
+
+        public sqlHelperSelect select(String tableColumn)
+        {
+            return select(tableColumn, null);
+        }
+
+        public sqlHelperSelect selects(String[] tableColumns)
+        {
+            foreach (String param in tableColumns)
             {
                 select(param);
             }
@@ -34,9 +59,30 @@ namespace SQL_POWERUP
 
         internal void generate(StringBuilder builder)
         {
-            if (TableColumns.Count > 0)
+            if (Params.Count > 0)
             {
-                sqlUtil.separeWithComma(builder, TableColumns);
+                StringBuilder selectBuilder = new StringBuilder();
+                foreach (sqlObjSelect objSelect in Params)
+                {
+                    if (selectBuilder.Length > 0)
+                    {
+                        selectBuilder.Append(", ");
+                    }
+                    if (objSelect.Operation != sqlObjSelect.selectOperation.NONE)
+                    {
+                        selectBuilder.Append(objSelect.Operation.ToString()).Append('(').Append(objSelect.TableColumn).Append(')');
+                    }
+                    else
+                    {
+                        selectBuilder.Append(objSelect.TableColumn);
+                    }
+                    if (!String.IsNullOrWhiteSpace(objSelect.As))
+                    {
+                        selectBuilder.Append(" AS ").Append(objSelect.As);
+                    }
+                }
+
+                builder.Append(selectBuilder);
             }
             else
             {

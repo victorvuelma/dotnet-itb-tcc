@@ -9,19 +9,33 @@ namespace SQL_POWERUP
     public class sqlCommandDelete : sqlCommand
     {
 
-        private sqlHelperWhere _where = new sqlHelperWhere();
+        private sqlHelperWhere _where;
 
-        public sqlHelperWhere Where { get => _where; set => _where = value; }
+        public sqlCommandDelete table(String table)
+        {
+            Table = table;
+            return this;
+        }
 
-        private String generateCommand()
+        public sqlHelperWhere Where
+        {
+            get
+            {
+                if (_where == null)
+                    return _where = new sqlHelperWhere();
+                return _where;
+            }
+        }
+
+        protected override String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
             commandBuilder.Append("DELETE FROM ").Append(Table);
-            Where.generate(commandBuilder);
+            if (_where != null)
+                _where.generate(commandBuilder);
 
             return commandBuilder.ToString();
         }
-
 
     }
 }

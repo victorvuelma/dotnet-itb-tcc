@@ -46,6 +46,7 @@
     <Compile Include="sqlCommandDelete.cs" />
     <Compile Include="sqlHelperJoin.cs" />
     <Compile Include="sqlHelperSelect.cs" />
+    <Compile Include="sqlObjSelect.cs" />
     <Compile Include="sqlObjJoin.cs" />
     <Compile Include="sqlCommandSelect.cs" />
     <Compile Include="sqlHelperValue.cs" />

@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace SQL_POWERUP
 {
-    public class sqlCommand
+    public abstract class sqlCommand
     {
 
         private String _table;
 
-        public string Table { get => _table; set => _table = value.ToUpper(); }
+        internal string Table { get => _table; set => _table = value.ToUpper(); }
+
+        protected abstract String generateCommand();
     }
 }
