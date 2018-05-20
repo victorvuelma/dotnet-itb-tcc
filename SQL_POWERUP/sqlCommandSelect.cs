@@ -53,9 +53,14 @@ namespace SQL_POWERUP
             return this;
         }
 
-        public sqlCommandSelect groupBy(String group)
+        public sqlCommandSelect groupBy(String tableColumn)
         {
-            Group = group;
+            tableColumn = tableColumn.ToUpper();
+            if (!Select.included(tableColumn))
+            {
+                Select.select(tableColumn);
+            }
+            Group = tableColumn;
             return this;
         }
 
@@ -67,7 +72,7 @@ namespace SQL_POWERUP
             }
         }
 
-        protected override String generateCommand()
+        public override String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
             commandBuilder.Append("SELECT ");

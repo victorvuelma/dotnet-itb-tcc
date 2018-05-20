@@ -68,8 +68,8 @@ namespace SQL_POWERUP
                 foreach (sqlObjJoin objJoin in Params)
                 {
                     builder.Append(' ').Append(objJoin.JoinType.ToString().ToUpper())
-                                .Append(" JOIN ").Append(objJoin.Table).Append(" ON ")
-                                .Append(" = ").Append(objJoin.Right);
+                           .Append(" JOIN ").Append(objJoin.Table).Append(" ON ")
+                           .Append(objJoin.Left).Append(" = ").Append(objJoin.Right);
                 }
             }
         }

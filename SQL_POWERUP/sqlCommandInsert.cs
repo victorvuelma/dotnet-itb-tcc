@@ -27,7 +27,7 @@ namespace SQL_POWERUP
             }
         }
 
-        protected override String generateCommand()
+        public override String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
             commandBuilder.Append("INSERT INTO ").Append(Table);

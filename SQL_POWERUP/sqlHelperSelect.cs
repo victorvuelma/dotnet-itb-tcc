@@ -13,6 +13,20 @@ namespace SQL_POWERUP
 
         public List<sqlObjSelect> Params { get => _params; }
 
+
+        internal bool included(String tableColumn)
+        {
+            tableColumn = tableColumn.ToUpper();
+            foreach (sqlObjSelect objParam in Params)
+            {
+                if (objParam.TableColumn.Equals(tableColumn, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public sqlHelperSelect select(sqlObjSelect objSelect)
         {
             foreach (sqlObjSelect objParam in Params)
@@ -30,6 +44,7 @@ namespace SQL_POWERUP
         public sqlHelperSelect select(String tableColumn, sqlObjSelect.selectOperation operation, String asName)
         {
             tableColumn = tableColumn.ToUpper();
+            asName = asName.ToUpper();
             return select(new sqlObjSelect
             {
                 TableColumn = tableColumn,
@@ -45,7 +60,7 @@ namespace SQL_POWERUP
 
         public sqlHelperSelect select(String tableColumn)
         {
-            return select(tableColumn, null);
+            return select(tableColumn, "");
         }
 
         public sqlHelperSelect selects(String[] tableColumns)
