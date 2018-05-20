@@ -13,6 +13,6 @@ namespace SQL_POWERUP
 
         internal string Table { get => _table; set => _table = value.ToUpper(); }
 
-        public abstract String generateCommand();
+        protected abstract String generateCommand();
     }
 }

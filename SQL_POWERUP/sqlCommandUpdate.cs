@@ -38,7 +38,7 @@ namespace SQL_POWERUP
             }
         }
 
-        public override String generateCommand()
+        protected override String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
             commandBuilder.Append("UPDATE ").Append(base.Table);
