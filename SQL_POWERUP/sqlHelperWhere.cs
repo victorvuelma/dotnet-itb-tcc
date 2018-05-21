@@ -17,7 +17,7 @@ namespace SQL_POWERUP
         {
             foreach (sqlObjWhere objParam in Params)
             {
-                if (objParam.Where.Equals(objWhere.Where, StringComparison.CurrentCultureIgnoreCase))
+                if (objParam.TableColumn.Equals(objWhere.TableColumn, StringComparison.CurrentCultureIgnoreCase))
                 {
                     Params.Remove(objParam);
                     break;
@@ -32,7 +32,7 @@ namespace SQL_POWERUP
             column = column.ToUpper();
             return where(new sqlObjWhere
             {
-                Where = column,
+                TableColumn = column,
                 Val = val,
                 Operation = operation
             });
@@ -52,7 +52,7 @@ namespace SQL_POWERUP
                 for (int i = 0; i < Params.Count; i++)
                 {
                     sqlObjWhere objWhere = Params[i];
-                    paramsBuilder.Append(objWhere.Where).Append(' ');
+                    paramsBuilder.Append(objWhere.TableColumn).Append(' ');
                     switch (objWhere.Operation)
                     {
                         case sqlObjWhere.whereOperation.EQUALS:

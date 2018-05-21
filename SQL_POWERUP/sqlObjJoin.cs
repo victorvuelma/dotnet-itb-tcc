@@ -17,13 +17,13 @@ namespace SQL_POWERUP
             RIGHT
         }
 
-        private String table;
+        private String _table;
         private String _equalsLeft;
         private String _equalsRight;
 
         private joinType _joinType = joinType.INNER;
 
-        public string Table { get => table; set => table = value; }
+        public string Table { get => _table; set => _table = value; }
         public string Left { get => _equalsLeft; set => _equalsLeft = value; }
         public string Right { get => _equalsRight; set => _equalsRight = value; }
         internal joinType JoinType { get => _joinType; set => _joinType = value; }

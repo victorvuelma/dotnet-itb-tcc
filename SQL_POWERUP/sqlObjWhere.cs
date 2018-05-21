@@ -20,7 +20,7 @@ namespace SQL_POWERUP
             OR
         }
 
-        private String _where;
+        private String _tableColumn;
         private Object _val;
 
         private whereOperation _operation = whereOperation.EQUALS;
@@ -28,7 +28,7 @@ namespace SQL_POWERUP
 
         public object Val { get => _val; set => _val = value; }
         internal whereOperation Operation { get => _operation; set => _operation = value; }
-        public string Where { get => _where; set => _where = value; }
+        public string TableColumn { get => _tableColumn; set => _tableColumn = value; }
         internal whereAssociation Association { get => _association; set => _association = value; }
 
     }
