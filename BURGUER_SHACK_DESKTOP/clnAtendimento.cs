@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnAtendimento
+    public class clnAtendimento
     {
 
         private int _cod;
@@ -22,5 +22,23 @@ namespace BURGUER_SHACK_DESKTOP
         public DateTime Inicio { get => _inicio; set => _inicio = value; }
         public DateTime Fim { get => _fim; set => _fim = value; }
         public bool Finalizado { get => _finalizado; set => _finalizado = value; }
+
+        public void addMesa(int codMesa)
+        {
+            if (!CodMesas.Contains(codMesa))
+            {
+                CodMesas.Add(codMesa);
+            }
+        }
+
+        public clnAtendimento obterPorCodigo()
+        {
+            return new clnAtendimento();
+        }
+
+        public void gravar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

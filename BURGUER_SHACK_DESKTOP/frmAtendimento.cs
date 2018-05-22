@@ -13,9 +13,9 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmAtendimento : Form
     {
 
-        private int _codAtendimento;
+        private clnAtendimento _objAtendimento;
 
-        public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
+        public clnAtendimento ObjAtendimento { get => _objAtendimento; set => _objAtendimento = value; }
 
         public frmAtendimento()
         {
@@ -24,19 +24,19 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Atendimento " + CodAtendimento + " :: " + titulo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Atendimento " + ObjAtendimento.Cod + " :: " + titulo);
         }
 
         public void abrirPedidos()
         {
             List<clnPedido> objPedidos = new clnPedido
             {
-                CodAtendimento = CodAtendimento
+                CodAtendimento = ObjAtendimento.Cod
             }.obterPorAtendimento();
 
             uctAtendimentoPedidos uctPedidos = new uctAtendimentoPedidos
             {
-                CodAtendimento = CodAtendimento,
+                CodAtendimento = ObjAtendimento.Cod,
                 ObjPedidos = objPedidos
             };
             alterarConteudo(uctPedidos, "Pedidos");
@@ -46,7 +46,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctMesaConta uctConta = new uctMesaConta
             {
-                Atendimento = CodAtendimento
+                Atendimento = ObjAtendimento.Cod
             };
             alterarConteudo(uctConta, "Conta");
         }

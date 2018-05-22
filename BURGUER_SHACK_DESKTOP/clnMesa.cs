@@ -40,7 +40,12 @@ namespace BURGUER_SHACK_DESKTOP
             return objMesa;
         }
 
-        internal clnAtendimento obterAtendimento()
+        internal int obterCodAtendimento()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void alterar()
         {
             throw new NotImplementedException();
         }

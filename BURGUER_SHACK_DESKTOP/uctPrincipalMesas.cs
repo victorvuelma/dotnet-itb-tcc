@@ -52,22 +52,44 @@ namespace BURGUER_SHACK_DESKTOP
             pnlMesas.BackColor = BackColor;
         }
 
-        public void abrirMesa(clnMesa mesa)
+        public void abrirMesa(clnMesa objMesa)
         {
-            clnAtendimento objAtendimento = new clnMesa
+            clnAtendimento objAtendimento = null;
+            if (objMesa.Ocupada)
             {
-                Cod = mesa.Cod
-            }.obterAtendimento();
+                int codAtendimento = objMesa.obterCodAtendimento();
 
-            if (objAtendimento != null)
-            {
-                frmAtendimento frmAtendimento = new frmAtendimento
+                objAtendimento = new clnAtendimento
                 {
-                    CodAtendimento = objAtendimento.Cod
-                };
-                frmAtendimento.ShowDialog();
+                    Cod = codAtendimento
+                }.obterPorCodigo();
             }
+            else
+            {
+                if (clnUtilMensagem.mostrarSimNao("Atendimento", "Você deseja iniciar um novo atendimento para a Mesa " + objMesa.Cod + "?", clnUtilMensagem.MensagemIcone.INFO))
+                {
+                    objAtendimento = new clnAtendimento
+                    {
+                        Inicio = DateTime.Now,
+                        Finalizado = false
+                    };
+                    objAtendimento.gravar();
 
+                    objAtendimento.addMesa(objMesa.Cod);
+
+                    objMesa.Ocupada = true;
+                    objMesa.alterar();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            frmAtendimento frmAtendimento = new frmAtendimento
+            {
+                ObjAtendimento = objAtendimento
+            };
+            frmAtendimento.ShowDialog();
 
             mostrarMesas();
         }
