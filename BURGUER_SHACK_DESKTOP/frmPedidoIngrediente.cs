@@ -57,7 +57,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Selecionado = IngredienteNovo
             };
 
-            frmSelecionar frmSelecionar = new frmSelecionar
+            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
             {
                 ObjSelecionar = objSelecionar,
                 Quantidade = ((IngredienteNovo == null) ? IngredienteAntigo.Quantidade : IngredienteNovo.Quantidade)

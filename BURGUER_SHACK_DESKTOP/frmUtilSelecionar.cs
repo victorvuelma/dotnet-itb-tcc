@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class frmSelecionar : Form
+    public partial class frmUtilSelecionar : Form
     {
 
         private String _selecionando;
@@ -36,7 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
         internal clnUtilSelecionar ObjSelecionar { get => _objSelecionar; set => _objSelecionar = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
-        public frmSelecionar()
+        public frmUtilSelecionar()
         {
             InitializeComponent();
 

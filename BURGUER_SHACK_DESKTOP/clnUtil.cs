@@ -43,30 +43,30 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (txt.AllowedChars == UIX.uixAllowedChars.INT)
             {
-                abrirNumBoard(txt.txt, frmNumBoard.NumBoardMode.INT);
+                abrirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
             }
             else
             {
-                abrirNumBoard(txt.txt, frmNumBoard.NumBoardMode.DOUBLE);
+                abrirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
             }
         }
 
-        public static void abrirNumBoard(UIX.mtbUIX masked, frmNumBoard.NumBoardMode mode)
+        public static void abrirNumBoard(UIX.mtbUIX masked, frmUtilNumBoard.NumBoardMode mode)
         {
             abrirNumBoard(masked.mtb, mode);
         }
 
-        public static void abrirNumBoard(TextBoxBase box, frmNumBoard.NumBoardMode mode)
+        public static void abrirNumBoard(TextBoxBase box, frmUtilNumBoard.NumBoardMode mode)
         {
             box.Click += (object sender, EventArgs args) =>
             {
-                frmNumBoard numBoard = new frmNumBoard
+                frmUtilNumBoard numBoard = new frmUtilNumBoard
                 {
                     NumeroPadrao = box.Text,
                     Input = box
                 };
 
-                if (mode == frmNumBoard.NumBoardMode.DOUBLE)
+                if (mode == frmUtilNumBoard.NumBoardMode.DOUBLE)
                 {
                     numBoard.btnPoint.Hide();
                 }

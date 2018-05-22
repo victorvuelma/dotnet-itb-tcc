@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class frmSelecionar
+    partial class frmUtilSelecionar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelecionar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUtilSelecionar));
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.lblDesc = new System.Windows.Forms.Label();

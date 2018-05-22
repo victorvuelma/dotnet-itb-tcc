@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class frmVisualizar
+    partial class frmUtilVisualizar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVisualizar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUtilVisualizar));
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new UIX.txtUIX();

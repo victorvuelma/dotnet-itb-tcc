@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Opcoes = Ingredientes
             };
 
-            frmVisualizar frmVisualizar = new frmVisualizar
+            frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
             {
                 ObjVisualizar = objVisualizar
             };
@@ -63,7 +63,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Opcoes = objIngredientes.obterIngredientes()
             };
 
-            frmSelecionar frmSelecionar = new frmSelecionar
+            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
             {
                 ObjSelecionar = objSelecionar,
                 Selecionando = "Adicionar um Ingrediente"

@@ -138,11 +138,11 @@
     <Compile Include="frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVisualizar.cs">
+    <Compile Include="frmUtilVisualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVisualizar.Designer.cs">
-      <DependentUpon>frmVisualizar.cs</DependentUpon>
+    <Compile Include="frmUtilVisualizar.Designer.cs">
+      <DependentUpon>frmUtilVisualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPedidoIngrediente.cs">
       <SubType>Form</SubType>
@@ -186,17 +186,17 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSelecionar.cs">
+    <Compile Include="frmUtilSelecionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSelecionar.Designer.cs">
-      <DependentUpon>frmSelecionar.cs</DependentUpon>
+    <Compile Include="frmUtilSelecionar.Designer.cs">
+      <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNumBoard.cs">
+    <Compile Include="frmUtilNumBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNumBoard.Designer.cs">
-      <DependentUpon>frmNumBoard.cs</DependentUpon>
+    <Compile Include="frmUtilNumBoard.Designer.cs">
+      <DependentUpon>frmUtilNumBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="msgGerenciador.cs">
       <SubType>Form</SubType>
@@ -311,14 +311,14 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVisualizar.resx">
-      <DependentUpon>frmVisualizar.cs</DependentUpon>
+    <EmbeddedResource Include="frmUtilVisualizar.resx">
+      <DependentUpon>frmUtilVisualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSelecionar.resx">
-      <DependentUpon>frmSelecionar.cs</DependentUpon>
+    <EmbeddedResource Include="frmUtilSelecionar.resx">
+      <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNumBoard.resx">
-      <DependentUpon>frmNumBoard.cs</DependentUpon>
+    <EmbeddedResource Include="frmUtilNumBoard.resx">
+      <DependentUpon>frmUtilNumBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="msgGerenciador.resx">
       <DependentUpon>msgGerenciador.cs</DependentUpon>

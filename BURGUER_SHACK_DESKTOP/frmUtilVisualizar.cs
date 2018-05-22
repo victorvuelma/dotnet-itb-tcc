@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class frmVisualizar : Form
+    public partial class frmUtilVisualizar : Form
     {
 
         private String _selecionando;
@@ -33,7 +33,7 @@ namespace BURGUER_SHACK_DESKTOP
         public Image Icone { set => hdrUIX.Image = value; }
         internal clnUtilVisualizar ObjVisualizar { get => _objVisualizar; set => _objVisualizar = value; }
 
-        public frmVisualizar()
+        public frmUtilVisualizar()
         {
             InitializeComponent();
 

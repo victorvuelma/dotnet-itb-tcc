@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class frmNumBoard : Form
+    public partial class frmUtilNumBoard : Form
     {
 
         private TextBoxBase _base;
@@ -18,7 +18,7 @@ namespace BURGUER_SHACK_DESKTOP
         public String NumeroPadrao { get => lblNum.Text.Replace(',', '.'); set => lblNum.Text = value.Replace('.', ','); }
         public TextBoxBase Input { get => _base; set => _base = value; }
 
-        public frmNumBoard()
+        public frmUtilNumBoard()
         {
             InitializeComponent();
         }
