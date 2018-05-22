@@ -22,5 +22,10 @@ namespace BURGUER_SHACK_DESKTOP
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public int Valor { get => _valor; set => _valor = value; }
         public string Estado { get => _estado; set => _estado = value; }
+
+        public List<clnPedido> obterPorAtendimento()
+        {
+            return new List<clnPedido>();
+        }
     }
 }

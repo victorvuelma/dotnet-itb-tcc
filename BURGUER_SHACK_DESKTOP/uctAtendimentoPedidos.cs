@@ -71,15 +71,18 @@ namespace BURGUER_SHACK_DESKTOP
             Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> objPedidoProdutoIngredientes = new Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>>();
             foreach(clnPedidoProduto objPedidoProduto in objProdutos)
             {
-                List<clnPedidoProdutoIngrediente> objPedidoIngredientes = new clnPedidoProdutoIngrediente
+                List<clnPedidoProdutoIngrediente> objIngredientes = new clnPedidoProdutoIngrediente
                 {
                     CodPedidoProduto = objPedido.Cod
                 }.obterPorPedidoProduto();
+
+                objPedidoProdutoIngredientes.Add(objPedidoProduto, objIngredientes);
             }
             frmPedido frmPedido = new frmPedido
             {
                 CodAtendimento = CodAtendimento,
-                Pedido = objPedido
+                Pedido = objPedido,
+                PedidosProdutos = objPedidoProdutoIngredientes
             };
         }
 

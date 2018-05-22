@@ -40,5 +40,9 @@ namespace BURGUER_SHACK_DESKTOP
             return objMesa;
         }
 
+        internal clnAtendimento obterAtendimento()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

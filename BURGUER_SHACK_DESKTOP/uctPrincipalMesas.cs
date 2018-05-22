@@ -54,11 +54,20 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirMesa(clnMesa mesa)
         {
-            frmAtendimento frmMesa = new frmAtendimento
+            clnAtendimento objAtendimento = new clnMesa
             {
-                Mesa = mesa.Cod
-            };
-            frmMesa.ShowDialog();
+                Cod = mesa.Cod
+            }.obterAtendimento();
+
+            if (objAtendimento != null)
+            {
+                frmAtendimento frmAtendimento = new frmAtendimento
+                {
+                    CodAtendimento = objAtendimento.Cod
+                };
+                frmAtendimento.ShowDialog();
+            }
+
 
             mostrarMesas();
         }
