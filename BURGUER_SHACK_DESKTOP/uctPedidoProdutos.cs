@@ -16,18 +16,18 @@ namespace BURGUER_SHACK_DESKTOP
         private frmPedido _form;
 
         private int _atendimento;
-        private Dictionary<clnPedidoProduto, List<clnPedidoReceita>> _pedidoProdutos;
+        private Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> _pedidoProdutos;
 
         public frmPedido Form { get => _form; set => _form = value; }
         public int Atendimento { get => _atendimento; set => _atendimento = value; }
-        internal Dictionary<clnPedidoProduto, List<clnPedidoReceita>> PedidoProdutos { get => _pedidoProdutos; set => _pedidoProdutos = value; }
+        internal Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> PedidoProdutos { get => _pedidoProdutos; set => _pedidoProdutos = value; }
 
         public uctPedidoProdutos()
         {
             InitializeComponent();
         }
 
-        private void editarPedidoProduto(clnPedidoProduto obtPedidoProduto, List<clnPedidoReceita> objIngredientes)
+        private void editarPedidoProduto(clnPedidoProduto obtPedidoProduto, List<clnPedidoProdutoIngrediente> objIngredientes)
         {
             frmPedidoProduto frmEditarProduto = new frmPedidoProduto
             {
@@ -56,10 +56,10 @@ namespace BURGUER_SHACK_DESKTOP
             pnlProdutos.Controls.Clear();
 
             List<Control> opcoesControles = new List<Control>();
-            foreach (KeyValuePair<clnPedidoProduto, List<clnPedidoReceita>> objPedidoIngredientes in PedidoProdutos)
+            foreach (KeyValuePair<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> objPedidoIngredientes in PedidoProdutos)
             {
                 clnPedidoProduto objPedidoProduto = objPedidoIngredientes.Key;
-                List<clnPedidoReceita> objIngredientes = objPedidoIngredientes.Value;
+                List<clnPedidoProdutoIngrediente> objIngredientes = objPedidoIngredientes.Value;
 
                 clnProduto objProduto = new clnProduto
                 {

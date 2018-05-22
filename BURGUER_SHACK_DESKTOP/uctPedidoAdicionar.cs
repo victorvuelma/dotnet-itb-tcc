@@ -18,11 +18,11 @@ namespace BURGUER_SHACK_DESKTOP
         private clnUtilValidar _validar;
 
         private clnPedidoProduto _pedidoProduto;
-        private List<clnPedidoReceita> _ingredientes;
+        private List<clnPedidoProdutoIngrediente> _ingredientes;
 
         public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
         public frmPedido Form { get => _form; set => _form = value; }
-        public List<clnPedidoReceita> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public List<clnPedidoProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
 
         public uctPedidoAdicionar()
         {
@@ -43,19 +43,19 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void selecionaProduto(clnProduto objProduto, int quantidade)
         {
-            List<clnPedidoReceita> objIngredientes = new List<clnPedidoReceita>();
+            List<clnPedidoProdutoIngrediente> objIngredientes = new List<clnPedidoProdutoIngrediente>();
             foreach (int codProdutoIngrediente in objProduto.CodReceitas)
             {
-                clnProdutoReceita objProdutoIngrediente = new clnProdutoReceita
+                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
                     Cod = codProdutoIngrediente
                 }.obterPorProdutoIngrediente();
 
-                clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
+                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
                 {
                     CodIngrediente = objProdutoIngrediente.CodIngrediente,
                     Quantidade = objProdutoIngrediente.Quantidade,
-                    CodReceita = objProdutoIngrediente.Cod
+                    CodProdutoIngrediente = objProdutoIngrediente.Cod
                 };
                 objIngredientes.Add(objPedidoIngrediente);
             }
@@ -167,7 +167,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnPedidoReceita.clnVisualizarPedidoIngrediente objVisualizar = new clnPedidoReceita.clnVisualizarPedidoIngrediente
+            clnPedidoProdutoIngrediente.clnVisualizarPedidoProdutoIngrediente objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizarPedidoProdutoIngrediente
             {
                 Opcoes = Ingredientes
             };
@@ -200,7 +200,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (objSelecionar.getSelecionado() != null)
             {
-                clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
+                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
                 {
                     Quantidade = frmSelecionar.Quantidade,
                     CodIngrediente = objSelecionar.Selecionado.Cod

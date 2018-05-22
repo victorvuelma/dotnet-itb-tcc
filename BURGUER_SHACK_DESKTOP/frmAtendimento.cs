@@ -49,7 +49,7 @@ namespace BURGUER_SHACK_DESKTOP
             frmPedido frmNovoPedido = new frmPedido
             {
                 Pedido = new clnPedido(),
-                PedidosProdutos = new Dictionary<clnPedidoProduto, List<clnPedidoReceita>>()
+                PedidosProdutos = new Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>>()
             };
             frmNovoPedido.ShowDialog();
         }

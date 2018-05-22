@@ -55,7 +55,7 @@ namespace BURGUER_SHACK_DESKTOP
             objProduto.CodTipo = Cod % 3;
             objProduto.Imagem = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
 
-            clnProdutoReceita objProdutoIngredientes = new clnProdutoReceita();
+            clnProdutoIngrediente objProdutoIngredientes = new clnProdutoIngrediente();
             objProdutoIngredientes.CodProduto = objProduto.Cod;
             objProduto.CodReceitas = objProdutoIngredientes.obterPorProduto();
 

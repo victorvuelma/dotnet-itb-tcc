@@ -13,6 +13,8 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctAtendimentoPedidos : UserControl
     {
 
+        private int _codAtendimento;
+
         private List<clnPedido> _objPedidos;
 
         public uctAtendimentoPedidos()
@@ -21,6 +23,7 @@ namespace BURGUER_SHACK_DESKTOP
         }
 
         public List<clnPedido> ObjPedidos { get => _objPedidos; set => _objPedidos = value; }
+        public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
 
         private void exibirPedidos()
         {
@@ -60,7 +63,24 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirPedido(clnPedido objPedido)
         {
-            throw new NotImplementedException();
+            List<clnPedidoProduto> objProdutos = new clnPedidoProduto
+            {
+                CodPedido = objPedido.Cod
+            }.obterPorPedido();
+
+            Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> objPedidoProdutoIngredientes = new Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>>();
+            foreach(clnPedidoProduto objPedidoProduto in objProdutos)
+            {
+                List<clnPedidoProdutoIngrediente> objPedidoIngredientes = new clnPedidoProdutoIngrediente
+                {
+                    CodPedidoProduto = objPedido.Cod
+                }.obterPorPedidoProduto();
+            }
+            frmPedido frmPedido = new frmPedido
+            {
+                CodAtendimento = CodAtendimento,
+                Pedido = objPedido
+            };
         }
 
         private void uctAtendimentoPedidos_Load(object sender, EventArgs e)

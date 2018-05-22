@@ -14,11 +14,11 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedidoIngrediente : Form
     {
 
-        private clnPedidoReceita _ingredienteAntigo;
-        private clnPedidoReceita _ingredienteNovo;
+        private clnPedidoProdutoIngrediente _ingredienteAntigo;
+        private clnPedidoProdutoIngrediente _ingredienteNovo;
 
-        public clnPedidoReceita IngredienteAntigo { get => _ingredienteAntigo; set => _ingredienteAntigo = value; }
-        public clnPedidoReceita IngredienteNovo { get => _ingredienteNovo; set => _ingredienteNovo = value; }
+        public clnPedidoProdutoIngrediente IngredienteAntigo { get => _ingredienteAntigo; set => _ingredienteAntigo = value; }
+        public clnPedidoProdutoIngrediente IngredienteNovo { get => _ingredienteNovo; set => _ingredienteNovo = value; }
 
         public frmPedidoIngrediente()
         {
@@ -39,19 +39,19 @@ namespace BURGUER_SHACK_DESKTOP
                 CodTipo = objIngredienteAntigo.CodTipo
             };
 
-            List<clnPedidoReceita> objPedidoIngredientes = new List<clnPedidoReceita>();
+            List<clnPedidoProdutoIngrediente> objPedidoIngredientes = new List<clnPedidoProdutoIngrediente>();
             foreach (clnIngrediente objIngrediente in objIngredientes.obterPorTipo())
             {
-                clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita
+                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
                 {
                     Quantidade = IngredienteAntigo.Quantidade,
-                    CodReceita = IngredienteAntigo.CodReceita,
+                    CodProdutoIngrediente = IngredienteAntigo.CodProdutoIngrediente,
                     CodIngrediente = objIngrediente.Cod
                 };
                 objPedidoIngredientes.Add(objPedidoIngrediente);
             }
 
-            clnPedidoReceita.clnSelecionarPedidoIngrediente objSelecionar = new clnPedidoReceita.clnSelecionarPedidoIngrediente
+            clnPedidoProdutoIngrediente.clnSelecionarPedidoProdutoIngrediente objSelecionar = new clnPedidoProdutoIngrediente.clnSelecionarPedidoProdutoIngrediente
             {
                 Opcoes = objPedidoIngredientes,
                 Selecionado = IngredienteNovo
@@ -73,7 +73,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void exibirIngrediente(clnPedidoReceita objPedidoIngrediente)
+        private void exibirIngrediente(clnPedidoProdutoIngrediente objPedidoIngrediente)
         {
             clnIngrediente objIngrediente = new clnIngrediente
             {

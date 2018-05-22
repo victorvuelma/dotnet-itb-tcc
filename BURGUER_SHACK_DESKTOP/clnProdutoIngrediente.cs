@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public class clnProdutoReceita
+    public class clnProdutoIngrediente
     {
 
         private int _cod;
@@ -26,9 +26,9 @@ namespace BURGUER_SHACK_DESKTOP
         public bool Alterar { get => _alterar; set => _alterar = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
-        public clnProdutoReceita obterPorProdutoIngrediente()
+        public clnProdutoIngrediente obterPorProdutoIngrediente()
         {
-            clnProdutoReceita objProdutoIngrediente = new clnProdutoReceita();
+            clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente();
             objProdutoIngrediente.CodProduto = CodProduto;
             objProdutoIngrediente.CodIngrediente = CodIngrediente;
             objProdutoIngrediente.Quantidade = 1;
@@ -47,9 +47,9 @@ namespace BURGUER_SHACK_DESKTOP
             return objProdutoIngredientes;
         }
 
-        internal clnProdutoReceita obterPorCodigo()
+        internal clnProdutoIngrediente obterPorCodigo()
         {
-            clnProdutoReceita objProdutoIngrediente = new clnProdutoReceita();
+            clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente();
             objProdutoIngrediente.Cod = Cod;
             objProdutoIngrediente.CodIngrediente = Cod  % 3;
             objProdutoIngrediente.Alterar = Cod % 2 == 0;

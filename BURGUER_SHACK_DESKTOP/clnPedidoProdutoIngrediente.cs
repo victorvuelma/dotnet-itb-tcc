@@ -7,41 +7,46 @@ using System.Threading.Tasks;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public class clnPedidoReceita
+    public class clnPedidoProdutoIngrediente
     {
 
         private int _cod;
 
         private int _codIngrediente;
-        private int _codReceita;
-        private int _codPedido;
+        private int _codProdutoIngrediente;
+        private int _codPedidoProduto;
 
         private int _quantidade;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodIngrediente { get => _codIngrediente; set => _codIngrediente = value; }
-        public int CodReceita { get => _codReceita; set => _codReceita = value; }
-        public int CodPedido { get => _codPedido; set => _codPedido = value; }
+        public int CodProdutoIngrediente { get => _codProdutoIngrediente; set => _codProdutoIngrediente = value; }
+        public int CodPedidoProduto { get => _codPedidoProduto; set => _codPedidoProduto = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
-        public clnPedidoReceita localizaPorPedidoProduto()
+        public clnPedidoProdutoIngrediente localizaPorPedidoProduto()
         {
-            clnPedidoReceita objPedidoIngrediente = new clnPedidoReceita();
-            objPedidoIngrediente.CodPedido = CodPedido;
+            clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente();
+            objPedidoIngrediente.CodPedidoProduto = CodPedidoProduto;
             objPedidoIngrediente.CodIngrediente = 1;
             objPedidoIngrediente.Quantidade = 1;
 
             return objPedidoIngrediente;
         }
 
-        public class clnSelecionarPedidoIngrediente : clnUtilSelecionar<clnPedidoReceita>
+        public List<clnPedidoProdutoIngrediente> obterPorPedidoProduto()
         {
-            internal override int Cod(clnPedidoReceita obj)
+            return new List<clnPedidoProdutoIngrediente>();
+        }
+
+        public class clnSelecionarPedidoProdutoIngrediente : clnUtilSelecionar<clnPedidoProdutoIngrediente>
+        {
+            internal override int Cod(clnPedidoProdutoIngrediente obj)
             {
                 return obj.Cod;
             }
 
-            internal override string Detalhes(clnPedidoReceita obj)
+            internal override string Detalhes(clnPedidoProdutoIngrediente obj)
             {
                 string detalhes = "";
                 detalhes += "Quantidade: " + obj.Quantidade;
@@ -49,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
                 return detalhes;
             }
 
-            internal override Image Imagem(clnPedidoReceita obj)
+            internal override Image Imagem(clnPedidoProdutoIngrediente obj)
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
@@ -59,7 +64,7 @@ namespace BURGUER_SHACK_DESKTOP
                 return objIngrediente.Imagem;
             }
 
-            internal override string Nome(clnPedidoReceita obj)
+            internal override string Nome(clnPedidoProdutoIngrediente obj)
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
@@ -70,10 +75,10 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public class clnVisualizarPedidoIngrediente : clnUtilVisualizar<clnPedidoReceita>
+        public class clnVisualizarPedidoProdutoIngrediente : clnUtilVisualizar<clnPedidoProdutoIngrediente>
         {
 
-            internal override string Detalhes(clnPedidoReceita obj)
+            internal override string Detalhes(clnPedidoProdutoIngrediente obj)
             {
                 String detalhes = "";
                 detalhes += "Quantidade: " + obj.Quantidade;
@@ -83,7 +88,7 @@ namespace BURGUER_SHACK_DESKTOP
                 return detalhes;
             }
 
-            internal override Image Imagem(clnPedidoReceita obj)
+            internal override Image Imagem(clnPedidoProdutoIngrediente obj)
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
@@ -93,7 +98,7 @@ namespace BURGUER_SHACK_DESKTOP
                 return objIngrediente.Imagem;
             }
 
-            internal override string Nome(clnPedidoReceita obj)
+            internal override string Nome(clnPedidoProdutoIngrediente obj)
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
@@ -103,16 +108,16 @@ namespace BURGUER_SHACK_DESKTOP
                 return objIngrediente.Nome;
             }
 
-            internal override int Cod(clnPedidoReceita obj)
+            internal override int Cod(clnPedidoProdutoIngrediente obj)
             {
                 return obj.Cod;
             }
 
-            internal override void Abrir(clnPedidoReceita obj)
+            internal override void Abrir(clnPedidoProdutoIngrediente obj)
             {
-                clnProdutoReceita objProdutoReceita = new clnProdutoReceita
+                clnProdutoIngrediente objProdutoReceita = new clnProdutoIngrediente
                 {
-                    Cod = obj.CodReceita
+                    Cod = obj.CodProdutoIngrediente
                 }.obterPorCodigo();
 
                 if (objProdutoReceita.Alterar || objProdutoReceita.Remover)

@@ -124,9 +124,9 @@
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
     <Compile Include="clnPedidoProduto.cs" />
-    <Compile Include="clnPedidoReceita.cs" />
+    <Compile Include="clnPedidoProdutoIngrediente.cs" />
     <Compile Include="clnProduto.cs" />
-    <Compile Include="clnProdutoReceita.cs" />
+    <Compile Include="clnProdutoIngrediente.cs" />
     <Compile Include="clnReserva.cs" />
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />
