@@ -97,7 +97,6 @@
             this.txtAdicional.Location = new System.Drawing.Point(130, 50);
             this.txtAdicional.Multiline = true;
             this.txtAdicional.Name = "txtAdicional";
-            this.txtAdicional.ReadOnly = true;
             this.txtAdicional.Size = new System.Drawing.Size(295, 90);
             this.txtAdicional.TabIndex = 1;
             // 

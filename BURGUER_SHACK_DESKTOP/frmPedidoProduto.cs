@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
             txtAdicional.Text = objPedidoProduto.Adicional;
         }
 
-        private void adicionarIngrediente()
+        private void abrirAdicionarIngrediente()
         {
             clnIngrediente objIngredientes = new clnIngrediente();
 
@@ -98,6 +98,8 @@ namespace BURGUER_SHACK_DESKTOP
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
+            clnUtil.abrirNumBoard(txtQuantidade);
+
             UIX.uixButton.btnApply(btnRemover, App.AppVisualStyle.ButtonWarningColor);
 
             clnProduto objProduto = new clnProduto
@@ -126,6 +128,11 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnIngredienteAdd_Click(object sender, EventArgs e)
+        {
+            abrirAdicionarIngrediente();
         }
     }
 }
