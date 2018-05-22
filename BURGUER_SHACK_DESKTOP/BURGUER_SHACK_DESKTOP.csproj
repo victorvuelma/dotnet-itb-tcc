@@ -272,11 +272,11 @@
     <Compile Include="uctPedidoProdutos.Designer.cs">
       <DependentUpon>uctPedidoProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctMesaPedidos.cs">
+    <Compile Include="uctAtendimentoPedidos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctMesaPedidos.Designer.cs">
-      <DependentUpon>uctMesaPedidos.cs</DependentUpon>
+    <Compile Include="uctAtendimentoPedidos.Designer.cs">
+      <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="uctGerenTerceirizada.cs">
       <SubType>UserControl</SubType>
@@ -352,8 +352,8 @@
     <EmbeddedResource Include="uctPedidoProdutos.resx">
       <DependentUpon>uctPedidoProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctMesaPedidos.resx">
-      <DependentUpon>uctMesaPedidos.cs</DependentUpon>
+    <EmbeddedResource Include="uctAtendimentoPedidos.resx">
+      <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctGerenTerceirizada.resx">
       <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>

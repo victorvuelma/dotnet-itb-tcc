@@ -29,7 +29,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirPedidos()
         {
-            uctMesaPedidos uctPedidos = new uctMesaPedidos
+            uctAtendimentoPedidos uctPedidos = new uctAtendimentoPedidos
             {
             };
             alterarConteudo(uctPedidos, "Pedidos");
