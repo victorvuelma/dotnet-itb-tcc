@@ -51,7 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objPedidoIngredientes.Add(objPedidoIngrediente);
             }
 
-            clnPedidoProdutoIngrediente.clnSelecionarPedidoProdutoIngrediente objSelecionar = new clnPedidoProdutoIngrediente.clnSelecionarPedidoProdutoIngrediente
+            clnPedidoProdutoIngrediente.clnSelecionar objSelecionar = new clnPedidoProdutoIngrediente.clnSelecionar
             {
                 Opcoes = objPedidoIngredientes,
                 Selecionado = IngredienteNovo

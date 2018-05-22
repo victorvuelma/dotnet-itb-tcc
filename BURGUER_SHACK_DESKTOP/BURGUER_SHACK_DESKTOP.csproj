@@ -209,6 +209,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="uctAtendimentoMesas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctAtendimentoMesas.Designer.cs">
+      <DependentUpon>uctAtendimentoMesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctCozinha.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -327,6 +333,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctAtendimentoMesas.resx">
+      <DependentUpon>uctAtendimentoMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctGerenDGV.resx">
       <DependentUpon>uctGerenDGV.cs</DependentUpon>

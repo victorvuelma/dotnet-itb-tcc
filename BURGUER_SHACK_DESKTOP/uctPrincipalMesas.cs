@@ -75,7 +75,7 @@ namespace BURGUER_SHACK_DESKTOP
                     };
                     objAtendimento.gravar();
 
-                    objAtendimento.addMesa(objMesa.Cod);
+                    objAtendimento.adicionarMesa(objMesa.Cod);
 
                     objMesa.Ocupada = true;
                     objMesa.alterar();

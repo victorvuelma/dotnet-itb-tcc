@@ -62,5 +62,35 @@ namespace BURGUER_SHACK_DESKTOP
             return objProduto;
         }
 
+        public class clnSelecionar : clnUtilSelecionar<clnProduto>
+        {
+
+            internal override string Detalhes(clnProduto obj)
+            {
+                String detalhes = "";
+                detalhes += "Categoria: " + obj.CodTipo;
+                detalhes += "\n";
+                detalhes += "Código: " + obj.Cod;
+
+                return detalhes;
+            }
+
+            internal override Image Imagem(clnProduto obj)
+            {
+                return obj.Imagem;
+            }
+
+            internal override string Nome(clnProduto obj)
+            {
+                return obj.Nome;
+            }
+
+            internal override int Cod(clnProduto obj)
+            {
+                return obj.Cod;
+            }
+
+        }
+
     }
 }

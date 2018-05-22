@@ -79,7 +79,7 @@ namespace BURGUER_SHACK_DESKTOP
                 CodTipo = categoria
             };
 
-            clnSelecionarProduto objSelecionar = new clnSelecionarProduto
+            clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
             {
                 Opcoes = objProdutos.obterPorCategoria()
             };
@@ -110,7 +110,7 @@ namespace BURGUER_SHACK_DESKTOP
                 CodTipo = objProdutoAtual.CodTipo
             };
 
-            clnSelecionarProduto objSelecionar = new clnSelecionarProduto
+            clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
             {
                 Opcoes = objProdutos.obterPorCategoria(),
                 Selecionado = objProdutoAtual
@@ -167,7 +167,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnPedidoProdutoIngrediente.clnVisualizarPedidoProdutoIngrediente objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizarPedidoProdutoIngrediente
+            clnPedidoProdutoIngrediente.clnVisualizar objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizar
             {
                 Opcoes = Ingredientes
             };
@@ -186,7 +186,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngredientes = new clnIngrediente();
 
-            clnIngrediente.clnSelecionarIngrediente objSelecionar = new clnIngrediente.clnSelecionarIngrediente
+            clnIngrediente.clnSelecionar objSelecionar = new clnIngrediente.clnSelecionar
             {
                 Opcoes = objIngredientes.obterIngredientes()
             };
@@ -257,36 +257,6 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
             abrirIngredientes();
-        }
-
-        class clnSelecionarProduto : clnUtilSelecionar<clnProduto>
-        {
-
-            internal override string Detalhes(clnProduto obj)
-            {
-                String detalhes = "";
-                detalhes += "Categoria: " + obj.CodTipo;
-                detalhes += "\n";
-                detalhes += "Código: " + obj.Cod;
-
-                return detalhes;
-            }
-
-            internal override Image Imagem(clnProduto obj)
-            {
-                return obj.Imagem;
-            }
-
-            internal override string Nome(clnProduto obj)
-            {
-                return obj.Nome;
-            }
-
-            internal override int Cod(clnProduto obj)
-            {
-                return obj.Cod;
-            }
-
         }
 
     }

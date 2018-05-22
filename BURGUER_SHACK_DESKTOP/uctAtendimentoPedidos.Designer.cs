@@ -49,6 +49,7 @@
             // 
             this.pnlPedidos.Location = new System.Drawing.Point(5, 20);
             this.pnlPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlPedidos.MaximumSize = new System.Drawing.Size(480, 10000);
             this.pnlPedidos.Name = "pnlPedidos";
             this.pnlPedidos.Size = new System.Drawing.Size(480, 615);
             this.pnlPedidos.TabIndex = 4;

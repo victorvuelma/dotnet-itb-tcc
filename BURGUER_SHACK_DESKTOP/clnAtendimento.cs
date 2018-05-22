@@ -23,7 +23,7 @@ namespace BURGUER_SHACK_DESKTOP
         public DateTime Fim { get => _fim; set => _fim = value; }
         public bool Finalizado { get => _finalizado; set => _finalizado = value; }
 
-        public void addMesa(int codMesa)
+        public void adicionarMesa(int codMesa)
         {
             if (!CodMesas.Contains(codMesa))
             {
@@ -39,6 +39,14 @@ namespace BURGUER_SHACK_DESKTOP
         public void gravar()
         {
             throw new NotImplementedException();
+        }
+
+        public void removerMesa(int codMesa)
+        {
+            if (CodMesas.Contains(codMesa))
+            {
+                CodMesas.Remove(codMesa);
+            }
         }
     }
 }

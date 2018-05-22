@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
             return new List<clnPedidoProdutoIngrediente>();
         }
 
-        public class clnSelecionarPedidoProdutoIngrediente : clnUtilSelecionar<clnPedidoProdutoIngrediente>
+        public class clnSelecionar : clnUtilSelecionar<clnPedidoProdutoIngrediente>
         {
             internal override int Cod(clnPedidoProdutoIngrediente obj)
             {
@@ -75,7 +75,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public class clnVisualizarPedidoProdutoIngrediente : clnUtilVisualizar<clnPedidoProdutoIngrediente>
+        public class clnVisualizar : clnUtilVisualizar<clnPedidoProdutoIngrediente>
         {
 
             internal override string Detalhes(clnPedidoProdutoIngrediente obj)

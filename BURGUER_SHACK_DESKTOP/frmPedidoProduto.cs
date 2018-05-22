@@ -34,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnPedidoProdutoIngrediente.clnVisualizarPedidoProdutoIngrediente objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizarPedidoProdutoIngrediente
+            clnPedidoProdutoIngrediente.clnVisualizar objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizar
             {
                 Opcoes = Ingredientes
             };
@@ -58,7 +58,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngredientes = new clnIngrediente();
 
-            clnIngrediente.clnSelecionarIngrediente objSelecionar = new clnIngrediente.clnSelecionarIngrediente
+            clnIngrediente.clnSelecionar objSelecionar = new clnIngrediente.clnSelecionar
             {
                 Opcoes = objIngredientes.obterIngredientes()
             };
