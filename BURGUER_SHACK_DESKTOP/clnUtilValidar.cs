@@ -18,7 +18,8 @@ namespace BURGUER_SHACK_DESKTOP
             CPF,
             CNPJ,
             CEP,
-            INT
+            INT,
+            INT_MAIOR_0
         }
 
         private List<ValidarData> _validarControles = new List<ValidarData>();
@@ -144,6 +145,10 @@ namespace BURGUER_SHACK_DESKTOP
                         case ValidarTipo.INT:
                             val = clnUtil.validarInt(conteudo);
                             res = "deve conter um número inteiro.";
+                            break;
+                        case ValidarTipo.INT_MAIOR_0:
+                            val = Convert.ToInt32(conteudo) > 0;
+                            res = "deve conter um número maior que ZERO.";
                             break;
                     }
                     if (!val)

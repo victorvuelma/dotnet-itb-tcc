@@ -14,6 +14,8 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedidoIngrediente : Form
     {
 
+        private clnUtilValidar _validar;
+
         private clnPedidoProdutoIngrediente _ingredienteAntigo;
         private clnPedidoProdutoIngrediente _ingredienteNovo;
 
@@ -25,6 +27,9 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             hdrUIX.Title = App.AppName + " :: Ingredientes";
+
+            _validar = new clnUtilValidar();
+            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.VAZIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
         }
 
         private void escolherAlterar()
@@ -144,12 +149,15 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if(IngredienteNovo == null)
+            if (_validar.valido())
             {
-                IngredienteNovo = IngredienteAntigo;
-            }
+                if (IngredienteNovo == null)
+                {
+                    IngredienteNovo = IngredienteAntigo;
+                }
 
-            Close();
+                Close();
+            }
         }
 
     }

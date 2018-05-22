@@ -29,7 +29,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             _validar = new clnUtilValidar();
-            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.VAZIO, clnUtilValidar.ValidarTipo.INT });
+            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.VAZIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
         }
 
         private void selecionaCategoria(int categoria)

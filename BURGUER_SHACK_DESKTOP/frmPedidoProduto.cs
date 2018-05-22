@@ -12,6 +12,7 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmPedidoProduto : Form
     {
+        private clnUtilValidar _validar;
 
         private clnPedidoProduto _pedidoProduto;
         private List<clnPedidoProdutoIngrediente> _ingredientes;
@@ -22,6 +23,9 @@ namespace BURGUER_SHACK_DESKTOP
         public frmPedidoProduto()
         {
             InitializeComponent();
+
+            _validar = new clnUtilValidar();
+            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.VAZIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
         }
 
         private void fechar()
@@ -127,7 +131,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Close();
+            if (_validar.valido())
+            {
+                Close();
+            }
         }
 
         private void btnIngredienteAdd_Click(object sender, EventArgs e)
