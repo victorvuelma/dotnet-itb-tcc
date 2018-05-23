@@ -58,12 +58,12 @@
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.txtQuantidade.Location = new System.Drawing.Point(135, 110);
+            this.txtQuantidade.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtQuantidade.Location = new System.Drawing.Point(135, 95);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(175, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(175, 40);
             this.txtQuantidade.TabIndex = 4;
             // 
             // btnAlterar

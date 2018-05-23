@@ -77,16 +77,16 @@
             this.grbProduto.Controls.Add(this.picProduto);
             this.grbProduto.Location = new System.Drawing.Point(5, 140);
             this.grbProduto.Name = "grbProduto";
-            this.grbProduto.Size = new System.Drawing.Size(430, 185);
+            this.grbProduto.Size = new System.Drawing.Size(430, 190);
             this.grbProduto.TabIndex = 4;
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "PRODUTO";
             // 
             // btnIngredienteAdd
             // 
-            this.btnIngredienteAdd.Location = new System.Drawing.Point(270, 145);
+            this.btnIngredienteAdd.Location = new System.Drawing.Point(260, 145);
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
-            this.btnIngredienteAdd.Size = new System.Drawing.Size(30, 30);
+            this.btnIngredienteAdd.Size = new System.Drawing.Size(40, 40);
             this.btnIngredienteAdd.TabIndex = 13;
             this.btnIngredienteAdd.Text = "+";
             this.btnIngredienteAdd.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(135, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(124, 37);
             this.txtQuantidade.TabIndex = 3;
             // 
             // btnIngredientes
@@ -117,7 +117,7 @@
             this.btnIngredientes.Location = new System.Drawing.Point(305, 145);
             this.btnIngredientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIngredientes.Name = "btnIngredientes";
-            this.btnIngredientes.Size = new System.Drawing.Size(120, 30);
+            this.btnIngredientes.Size = new System.Drawing.Size(120, 40);
             this.btnIngredientes.TabIndex = 11;
             this.btnIngredientes.Text = "Ingredientes";
             this.btnIngredientes.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(5, 145);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(120, 30);
+            this.btnAlterar.Size = new System.Drawing.Size(120, 40);
             this.btnAlterar.TabIndex = 10;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -155,9 +155,9 @@
             // grbDetalhes
             // 
             this.grbDetalhes.Controls.Add(this.lblDetalhes);
-            this.grbDetalhes.Location = new System.Drawing.Point(4, 331);
+            this.grbDetalhes.Location = new System.Drawing.Point(4, 335);
             this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(430, 200);
+            this.grbDetalhes.Size = new System.Drawing.Size(430, 195);
             this.grbDetalhes.TabIndex = 5;
             this.grbDetalhes.TabStop = false;
             this.grbDetalhes.Text = "DETALHES";
@@ -166,7 +166,7 @@
             // 
             this.lblDetalhes.Location = new System.Drawing.Point(5, 20);
             this.lblDetalhes.Name = "lblDetalhes";
-            this.lblDetalhes.Size = new System.Drawing.Size(419, 174);
+            this.lblDetalhes.Size = new System.Drawing.Size(420, 170);
             this.lblDetalhes.TabIndex = 0;
             // 
             // grbTipo
