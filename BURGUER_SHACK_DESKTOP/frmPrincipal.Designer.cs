@@ -35,20 +35,21 @@
             this.btnSair = new UIX.btnUIX();
             this.btnCardapio = new UIX.btnUIX();
             this.btnMesas = new UIX.btnUIX();
+            this.btnReservas = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(1000, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.garcom;
             this.hdrUIX.Title = "Principal";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
@@ -61,6 +62,7 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnReservas);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnCardapio);
             this.pnlMenu.Controls.Add(this.btnMesas);
@@ -86,7 +88,7 @@
             this.btnCardapio.Description = "Cardápio";
             this.btnCardapio.HoverColor = System.Drawing.Color.Transparent;
             this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.btnCardapio.Location = new System.Drawing.Point(5, 105);
+            this.btnCardapio.Location = new System.Drawing.Point(7, 216);
             this.btnCardapio.Name = "btnCardapio";
             this.btnCardapio.Size = new System.Drawing.Size(90, 90);
             this.btnCardapio.TabIndex = 2;
@@ -105,6 +107,18 @@
             this.btnMesas.TabIndex = 0;
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
+            // 
+            // btnReservas
+            // 
+            this.btnReservas.Description = "Reservas";
+            this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnReservas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReservas.Location = new System.Drawing.Point(5, 105);
+            this.btnReservas.Name = "btnReservas";
+            this.btnReservas.Size = new System.Drawing.Size(90, 90);
+            this.btnReservas.TabIndex = 7;
+            this.btnReservas.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
@@ -135,5 +149,6 @@
         private UIX.btnUIX btnSair;
         private UIX.btnUIX btnCardapio;
         private UIX.btnUIX btnMesas;
+        private UIX.btnUIX btnReservas;
     }
 }

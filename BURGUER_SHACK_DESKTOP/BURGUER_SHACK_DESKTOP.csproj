@@ -266,6 +266,12 @@
     <Compile Include="uctMesaConta.Designer.cs">
       <DependentUpon>uctMesaConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctPrincipalReservas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctPrincipalReservas.Designer.cs">
+      <DependentUpon>uctPrincipalReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctPrincipalMesas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -354,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uctMesaConta.resx">
       <DependentUpon>uctMesaConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctPrincipalReservas.resx">
+      <DependentUpon>uctPrincipalReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPrincipalMesas.resx">
       <DependentUpon>uctPrincipalMesas.cs</DependentUpon>
