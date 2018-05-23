@@ -414,13 +414,7 @@
     <None Include="Resources\garcom.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\garcom-ico.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\gerenciador.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\gerenciador-ico.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lista.png" />
@@ -453,9 +447,6 @@
     <None Include="Resources\confirmar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\usuarios-ico.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\padrao.png" />
   </ItemGroup>
   <ItemGroup>
@@ -465,13 +456,7 @@
     <None Include="Resources\eye.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\produto.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\mesa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pedido.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sobremesa.png" />
@@ -484,6 +469,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\produto.png" />
+    <None Include="Resources\ingrediente.png" />
+    <None Include="Resources\pedido.png" />
+    <None Include="Resources\gerenciador-ico.ico" />
+    <None Include="Resources\garcom-ico.ico" />
+    <None Include="Resources\usuarios-ico.ico" />
+    <None Include="Resources\atendimento.png" />
     <None Include="Resources\estoque.png" />
     <None Include="Resources\funcionario.png" />
     <None Include="Resources\terceirizada.png" />

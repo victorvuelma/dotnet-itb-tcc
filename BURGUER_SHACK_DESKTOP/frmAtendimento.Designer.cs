@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAtendimento));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnMesas = new UIX.btnUIX();
             this.btnNovoPedido = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnFinalizar = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
-            this.btnMesas = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,18 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 650);
             this.pnlMenu.TabIndex = 3;
+            // 
+            // btnMesas
+            // 
+            this.btnMesas.Description = "Mesas";
+            this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnMesas.Location = new System.Drawing.Point(5, 205);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Size = new System.Drawing.Size(90, 90);
+            this.btnMesas.TabIndex = 9;
+            this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // btnNovoPedido
             // 
@@ -114,25 +126,13 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.atendimento;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(600, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Atendimento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
-            // 
-            // btnMesas
-            // 
-            this.btnMesas.Description = "Mesas";
-            this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.btnMesas.Location = new System.Drawing.Point(5, 205);
-            this.btnMesas.Name = "btnMesas";
-            this.btnMesas.Size = new System.Drawing.Size(90, 90);
-            this.btnMesas.TabIndex = 9;
-            this.btnMesas.UseVisualStyleBackColor = true;
-            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // frmAtendimento
             // 

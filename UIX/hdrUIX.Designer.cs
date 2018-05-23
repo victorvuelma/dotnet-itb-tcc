@@ -37,7 +37,7 @@
             // 
             // lbl
             // 
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lbl.Location = new System.Drawing.Point(50, 0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(100, 50);

@@ -77,18 +77,18 @@
             this.grbProduto.Controls.Add(this.btnRemover);
             this.grbProduto.Controls.Add(this.lblProdutoNome);
             this.grbProduto.Controls.Add(this.picProduto);
-            this.grbProduto.Location = new System.Drawing.Point(10, 60);
+            this.grbProduto.Location = new System.Drawing.Point(10, 55);
             this.grbProduto.Name = "grbProduto";
-            this.grbProduto.Size = new System.Drawing.Size(430, 185);
+            this.grbProduto.Size = new System.Drawing.Size(430, 190);
             this.grbProduto.TabIndex = 11;
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "PRODUTO";
             // 
             // btnIngredienteAdd
             // 
-            this.btnIngredienteAdd.Location = new System.Drawing.Point(270, 145);
+            this.btnIngredienteAdd.Location = new System.Drawing.Point(260, 140);
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
-            this.btnIngredienteAdd.Size = new System.Drawing.Size(30, 30);
+            this.btnIngredienteAdd.Size = new System.Drawing.Size(40, 40);
             this.btnIngredienteAdd.TabIndex = 13;
             this.btnIngredienteAdd.Text = "+";
             this.btnIngredienteAdd.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             // 
             // txtAdicional
             // 
-            this.txtAdicional.Location = new System.Drawing.Point(130, 50);
+            this.txtAdicional.Location = new System.Drawing.Point(130, 45);
             this.txtAdicional.Multiline = true;
             this.txtAdicional.Name = "txtAdicional";
             this.txtAdicional.Size = new System.Drawing.Size(295, 90);
@@ -107,19 +107,19 @@
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(130, 145);
+            this.txtQuantidade.Location = new System.Drawing.Point(130, 140);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(135, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(125, 25);
             this.txtQuantidade.TabIndex = 3;
             // 
             // btnIngredientes
             // 
-            this.btnIngredientes.Location = new System.Drawing.Point(305, 145);
+            this.btnIngredientes.Location = new System.Drawing.Point(305, 140);
             this.btnIngredientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIngredientes.Name = "btnIngredientes";
-            this.btnIngredientes.Size = new System.Drawing.Size(120, 30);
+            this.btnIngredientes.Size = new System.Drawing.Size(120, 40);
             this.btnIngredientes.TabIndex = 11;
             this.btnIngredientes.Text = "&Ingredientes";
             this.btnIngredientes.UseVisualStyleBackColor = true;
@@ -127,10 +127,10 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(5, 145);
+            this.btnRemover.Location = new System.Drawing.Point(5, 140);
             this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(120, 30);
+            this.btnRemover.Size = new System.Drawing.Size(120, 40);
             this.btnRemover.TabIndex = 10;
             this.btnRemover.Text = "&Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@
             // lblProdutoNome
             // 
             this.lblProdutoNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdutoNome.Location = new System.Drawing.Point(130, 20);
+            this.lblProdutoNome.Location = new System.Drawing.Point(130, 15);
             this.lblProdutoNome.Name = "lblProdutoNome";
             this.lblProdutoNome.Size = new System.Drawing.Size(295, 25);
             this.lblProdutoNome.TabIndex = 1;
@@ -147,7 +147,7 @@
             // 
             // picProduto
             // 
-            this.picProduto.Location = new System.Drawing.Point(5, 20);
+            this.picProduto.Location = new System.Drawing.Point(5, 15);
             this.picProduto.Name = "picProduto";
             this.picProduto.Size = new System.Drawing.Size(120, 120);
             this.picProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

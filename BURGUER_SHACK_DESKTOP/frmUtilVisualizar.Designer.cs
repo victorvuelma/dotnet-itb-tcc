@@ -85,7 +85,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = null;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -94,7 +94,7 @@
             this.hdrUIX.Title = "Visualizar";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
-            // frmVisualizar
+            // frmUtilVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +105,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmVisualizar";
+            this.Name = "frmUtilVisualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Selecione";
             this.Load += new System.EventHandler(this.frmSelecionar_Load);

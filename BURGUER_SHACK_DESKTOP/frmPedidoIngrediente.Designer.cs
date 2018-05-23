@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidoIngrediente));
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
             this.txtQuantidade = new UIX.txtUIX();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.picIngrediente = new System.Windows.Forms.PictureBox();
-            this.btnRemover = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.hdrUIX = new UIX.hdrUIX();
             this.grbIngrediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).BeginInit();
@@ -48,8 +49,8 @@
             this.grbIngrediente.Controls.Add(this.picIngrediente);
             this.grbIngrediente.Location = new System.Drawing.Point(5, 55);
             this.grbIngrediente.Name = "grbIngrediente";
-            this.grbIngrediente.Size = new System.Drawing.Size(440, 155);
-            this.grbIngrediente.TabIndex = 4;
+            this.grbIngrediente.Size = new System.Drawing.Size(440, 145);
+            this.grbIngrediente.TabIndex = 7;
             this.grbIngrediente.TabStop = false;
             // 
             // txtQuantidade
@@ -57,83 +58,85 @@
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(145, 125);
+            this.txtQuantidade.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtQuantidade.Location = new System.Drawing.Point(135, 110);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(169, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(175, 25);
             this.txtQuantidade.TabIndex = 4;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(320, 115);
+            this.btnAlterar.Location = new System.Drawing.Point(315, 95);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(115, 35);
+            this.btnAlterar.Size = new System.Drawing.Size(120, 40);
             this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // lblNome
             // 
-            this.lblNome.Location = new System.Drawing.Point(145, 20);
+            this.lblNome.Location = new System.Drawing.Point(130, 20);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(290, 30);
+            this.lblNome.Size = new System.Drawing.Size(305, 30);
             this.lblNome.TabIndex = 1;
             this.lblNome.Text = "N";
             this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picIngrediente
             // 
-            this.picIngrediente.Location = new System.Drawing.Point(10, 20);
+            this.picIngrediente.Location = new System.Drawing.Point(5, 15);
             this.picIngrediente.Name = "picIngrediente";
-            this.picIngrediente.Size = new System.Drawing.Size(130, 130);
+            this.picIngrediente.Size = new System.Drawing.Size(120, 120);
             this.picIngrediente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIngrediente.TabIndex = 0;
             this.picIngrediente.TabStop = false;
             // 
-            // btnRemover
-            // 
-            this.btnRemover.Location = new System.Drawing.Point(5, 215);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(100, 40);
-            this.btnRemover.TabIndex = 4;
-            this.btnRemover.Text = "&Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(325, 215);
+            this.btnConfirmar.Location = new System.Drawing.Point(325, 205);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(120, 40);
-            this.btnConfirmar.TabIndex = 5;
+            this.btnConfirmar.TabIndex = 9;
             this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Location = new System.Drawing.Point(5, 205);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(100, 40);
+            this.btnRemover.TabIndex = 8;
+            this.btnRemover.Text = "&Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
             // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.hdrUIX.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
+            this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(450, 50);
-            this.hdrUIX.TabIndex = 0;
+            this.hdrUIX.TabIndex = 6;
             this.hdrUIX.Title = "Pedido Ingrediente";
-            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmPedidoIngrediente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 260);
+            this.ClientSize = new System.Drawing.Size(450, 250);
+            this.Controls.Add(this.grbIngrediente);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.grbIngrediente);
             this.Controls.Add(this.hdrUIX);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPedidoIngrediente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido Ingrediente";
@@ -146,13 +149,13 @@
 
         #endregion
 
-        private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.GroupBox grbIngrediente;
+        private UIX.txtUIX txtQuantidade;
+        public System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox picIngrediente;
-        private UIX.txtUIX txtQuantidade;
         private System.Windows.Forms.Button btnConfirmar;
-        public System.Windows.Forms.Button btnAlterar;
         public System.Windows.Forms.Button btnRemover;
+        private UIX.hdrUIX hdrUIX;
     }
 }
