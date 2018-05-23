@@ -68,7 +68,36 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void adicionarMesa()
         {
+            clnMesa objMesas = new clnMesa
+            {
+                Ocupada = false
+            };
 
+            clnMesa.clnSelecionar objSelecionar = new clnMesa.clnSelecionar
+            {
+                Opcoes = objMesas.obterPorOcupado()
+            };
+
+            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+            {
+                ObjSelecionar = objSelecionar,
+                Quantidade = -1
+            };
+            frmSelecionar.txtQuantidade.Hide();
+
+            frmSelecionar.ShowDialog();
+
+            if (objSelecionar.Selecionado != null)
+            {
+                clnMesa objMesa = objSelecionar.Selecionado;
+
+                ObjAtendimento.adicionarMesa(objMesa.Cod);
+
+                objMesa.Ocupada = true;
+                objMesa.alterar();
+
+                exibirMesas();
+            }
         }
 
         private void uctAtendimentoPedidos_Load(object sender, EventArgs e)

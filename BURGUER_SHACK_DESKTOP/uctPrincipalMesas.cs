@@ -71,7 +71,8 @@ namespace BURGUER_SHACK_DESKTOP
                     objAtendimento = new clnAtendimento
                     {
                         Inicio = DateTime.Now,
-                        Finalizado = false
+                        Finalizado = false,
+                        CodMesas = new List<int>()
                     };
                     objAtendimento.gravar();
 

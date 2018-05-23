@@ -36,11 +36,13 @@
             this.btnPedidos = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
+            this.btnMesas = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnMesas);
             this.pnlMenu.Controls.Add(this.btnNovoPedido);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnFinalizar);
@@ -80,10 +82,11 @@
             this.btnFinalizar.Description = "Finalizar";
             this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
             this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizar.Location = new System.Drawing.Point(5, 205);
+            this.btnFinalizar.Location = new System.Drawing.Point(5, 305);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
             this.btnFinalizar.TabIndex = 7;
+            this.btnFinalizar.Text = "c";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnConta_Click);
             // 
@@ -119,6 +122,18 @@
             this.hdrUIX.Title = "Atendimento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
+            // btnMesas
+            // 
+            this.btnMesas.Description = "Mesas";
+            this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnMesas.Location = new System.Drawing.Point(5, 205);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Size = new System.Drawing.Size(90, 90);
+            this.btnMesas.TabIndex = 9;
+            this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
+            // 
             // frmAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +162,6 @@
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.btnUIX btnSair;
         private UIX.btnUIX btnNovoPedido;
+        private UIX.btnUIX btnMesas;
     }
 }

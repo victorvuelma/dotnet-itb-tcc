@@ -38,7 +38,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void gravar()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void removerMesa(int codMesa)

@@ -61,6 +61,16 @@ namespace BURGUER_SHACK_DESKTOP
             frmNovoPedido.ShowDialog();
         }
 
+        private void abrirMesas()
+        {
+            uctAtendimentoMesas uctMesas = new uctAtendimentoMesas
+            {
+                ObjAtendimento = ObjAtendimento
+            };
+
+            alterarConteudo(uctMesas, "Mesas");
+        }
+
         private void frmMesa_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
@@ -94,6 +104,11 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
             abrirNovoPedido();
+        }
+
+        private void btnMesas_Click(object sender, EventArgs e)
+        {
+            abrirMesas();
         }
 
     }
