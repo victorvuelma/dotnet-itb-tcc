@@ -103,9 +103,49 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap batatas1 {
+            get {
+                object obj = ResourceManager.GetObject("batatas1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap batatas2 {
+            get {
+                object obj = ResourceManager.GetObject("batatas2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bebida {
             get {
                 object obj = ResourceManager.GetObject("bebida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bebida1 {
+            get {
+                object obj = ResourceManager.GetObject("bebida1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bebida2 {
+            get {
+                object obj = ResourceManager.GetObject("bebida2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +283,26 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ingrediente1 {
+            get {
+                object obj = ResourceManager.GetObject("ingrediente1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lanche {
+            get {
+                object obj = ResourceManager.GetObject("lanche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lista {
             get {
                 object obj = ResourceManager.GetObject("lista", resourceCulture);
@@ -343,6 +403,26 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap produto_lanche {
+            get {
+                object obj = ResourceManager.GetObject("produto-lanche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produto1 {
+            get {
+                object obj = ResourceManager.GetObject("produto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap remover_menos {
             get {
                 object obj = ResourceManager.GetObject("remover_menos", resourceCulture);
@@ -376,6 +456,16 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         internal static System.Drawing.Bitmap sobremesa {
             get {
                 object obj = ResourceManager.GetObject("sobremesa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sorvete {
+            get {
+                object obj = ResourceManager.GetObject("sorvete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

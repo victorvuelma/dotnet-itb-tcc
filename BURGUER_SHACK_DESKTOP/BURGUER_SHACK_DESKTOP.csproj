@@ -469,6 +469,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\sorvete.png" />
+    <None Include="Resources\batatas2.png" />
+    <None Include="Resources\bebida2.png" />
+    <None Include="Resources\produto-lanche.png" />
+    <None Include="Resources\lanche.png" />
+    <None Include="Resources\produto1.png" />
+    <None Include="Resources\batatas1.png" />
+    <None Include="Resources\bebida1.png" />
+    <None Include="Resources\ingrediente1.png" />
     <None Include="Resources\produto.png" />
     <None Include="Resources\ingrediente.png" />
     <None Include="Resources\pedido.png" />
