@@ -61,7 +61,7 @@ namespace SQL_POWERUP
                             paramsBuilder.Append('=');
                             break;
                     }
-                    paramsBuilder.Append(' ').Append("@where_").Append(objWhere.TableColumn);
+                    paramsBuilder.Append(' ').Append("@where_").Append(sqlUtil.prepareName(objWhere.TableColumn));
                     if (i < Params.Count - 1)
                     {
                         paramsBuilder.Append(' ').Append(objWhere.Association).Append(' ');
@@ -76,7 +76,7 @@ namespace SQL_POWERUP
         {
             foreach (sqlObjWhere objWhere in Params)
             {
-                cmd.Parameters.AddWithValue("@where_" + objWhere.TableColumn, objWhere.Val);
+                cmd.Parameters.AddWithValue("@where_" + sqlUtil.prepareName(objWhere.TableColumn), objWhere.Val);
             }
         }
     }

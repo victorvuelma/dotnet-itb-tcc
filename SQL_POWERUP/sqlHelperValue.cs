@@ -66,7 +66,7 @@ namespace SQL_POWERUP
                     {
                         setBuilder.Append(", ");
                     }
-                    setBuilder.Append(columnValue.Key).Append(" = ").Append("@val_").Append(columnValue.Key);
+                    setBuilder.Append(columnValue.Key).Append(" = ").Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
                 }
 
                 builder.Append(" SET ").Append(setBuilder);
@@ -77,7 +77,7 @@ namespace SQL_POWERUP
         {
             foreach (KeyValuePair<String, object> columnValue in Values)
             {
-                cmd.Parameters.AddWithValue("@val_" + columnValue.Key, columnValue.Value);
+                cmd.Parameters.AddWithValue("@val_" + sqlUtil.prepareName(columnValue.Key), columnValue.Value);
             }
         }
 

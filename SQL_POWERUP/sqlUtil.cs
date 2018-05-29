@@ -30,7 +30,12 @@ namespace SQL_POWERUP
             return str;
         }
 
-        internal static void separeWithComma(StringBuilder builder, List<String> elements)
+        internal static string prepareName(String name)
+        {
+            return name.Replace("_", "").Replace(".", "");
+        }
+
+        internal static void separeWithComma(StringBuilder builder, List<String> elements) 
         {
             StringBuilder commaBuilder = new StringBuilder();
             foreach (String column in elements)
