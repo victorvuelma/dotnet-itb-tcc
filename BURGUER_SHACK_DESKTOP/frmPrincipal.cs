@@ -24,7 +24,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void abrirMesas()
         {
-            alterarConteudo(new uctPrincipalMesas(), "Mesas");
+            uctPrincipalMesas uctMesas = new uctPrincipalMesas
+            {
+                CodFuncionario = CodFuncionario
+            };
+
+            alterarConteudo(uctMesas, "Mesas");
         }
 
         public void alterarConteudo(UserControl uctConteudo, String titulo)

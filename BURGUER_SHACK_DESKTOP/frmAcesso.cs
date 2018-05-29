@@ -65,21 +65,22 @@ namespace BURGUER_SHACK_DESKTOP
                     Senha = txtSenha.Text
                 };
 
-                int codFuncionario = objAcesso.acessar();
+                int? codFuncionario = objAcesso.acessar();
 
-                if(codFuncionario != -1)
+                if (codFuncionario != null)
                 {
                     Hide();
 
                     frmPrincipal frmPrincipal = new frmPrincipal
                     {
-                        CodFuncionario = codFuncionario
+                        CodFuncionario = (int)codFuncionario
                     };
                     frmPrincipal.ShowDialog();
-                    
+
                     Application.Restart();
                     return;
-                } else
+                }
+                else
                 {
                     clnUtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.", clnUtilMensagem.MensagemIcone.ERRO);
                     txtUsuario.Text = "";
@@ -97,7 +98,7 @@ namespace BURGUER_SHACK_DESKTOP
                     btnEntrar.PerformClick();
                     break;
             }
-         }
+        }
     }
 
 }

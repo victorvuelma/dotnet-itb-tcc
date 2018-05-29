@@ -12,6 +12,11 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class uctPrincipalMesas : UserControl
     {
+
+        private  int _codFuncionario;
+
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+
         public uctPrincipalMesas()
         {
             InitializeComponent();
@@ -57,12 +62,15 @@ namespace BURGUER_SHACK_DESKTOP
             clnAtendimento objAtendimento = null;
             if (objMesa.Situacao == clnMesa.mesaSituacao.OCUPADA)
             {
-                int codAtendimento = objMesa.obterCodAtendimento();
+                int? codAtendimento = objMesa.obterCodAtendimento();
 
-                objAtendimento = new clnAtendimento
+                if (codAtendimento != null)
                 {
-                    Cod = codAtendimento
-                }.obterPorCodigo();
+                    objAtendimento = new clnAtendimento
+                    {
+                        Cod = (int)codAtendimento
+                    }.obterPorCodigo();
+                }
             }
             else
             {
@@ -70,6 +78,7 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     objAtendimento = new clnAtendimento
                     {
+                        CodFuncionario = CodFuncionario,
                         Inicio = DateTime.Now,
                         Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO ,
                         CodMesas = new List<int>()

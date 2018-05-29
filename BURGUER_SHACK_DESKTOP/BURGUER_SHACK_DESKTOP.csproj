@@ -122,6 +122,7 @@
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
     <Compile Include="clnIngredienteTipo.cs" />
+    <Compile Include="clnUtilConvert.cs" />
     <Compile Include="clnUtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />

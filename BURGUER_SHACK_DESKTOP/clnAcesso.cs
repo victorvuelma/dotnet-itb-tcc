@@ -21,16 +21,16 @@ namespace BURGUER_SHACK_DESKTOP
         public string Usuario { get => _usuario; set => _usuario = value; }
         public string Senha { get => _senha; set => _senha = value; }
 
-        public int acessar()
+        public int? acessar()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("acesso").Select.select("id_funcionario");
             objSelect.Where.where("usuario", Usuario).where("senha", Senha);
 
-            int codFuncionario = -1;
+            int? codFuncionario = null;
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             if (reader.Read())
-                codFuncionario =  Convert.ToInt32(reader["id_funcionario"]);
+                codFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]);
             reader.Close();
             return codFuncionario;
         }

@@ -27,6 +27,12 @@ namespace BURGUER_SHACK_DESKTOP
         public int Cod { get => _cod; set => _cod = value; }
         public mesaSituacao Situacao { get => _situacao; set => _situacao = value; }
 
+        private clnMesa obter(SqlDataReader reader) => new clnMesa
+        {
+            Cod = Convert.ToInt32(reader["id"]),
+            Situacao = situacao(reader["situacao"].ToString())
+        };
+
         public List<clnMesa> obterMesas()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
@@ -47,21 +53,15 @@ namespace BURGUER_SHACK_DESKTOP
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("MESA").Where.where("id", Cod);
 
+            clnMesa objMesa = null;
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             if (reader.Read())
-                return obter(reader);
-            return null;
-        }
-
-        private clnMesa obter(SqlDataReader reader)
-        {
-            clnMesa objMesa = new clnMesa();
-            objMesa.Cod = Convert.ToInt32(reader["id"]);
-            objMesa.Situacao = situacao(reader["situacao"].ToString());
+                objMesa = obter(reader);
+            reader.Close();
             return objMesa;
         }
 
-        internal int obterCodAtendimento()
+        internal int? obterCodAtendimento()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("ATENDIMENTO");
@@ -70,9 +70,9 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Join.innerJoin("ATENDIMENTO_MESA", "ID_ATENDIMENTO", "ATENDIMENTO.ID");
 
             SqlDataReader reader = objSelect.select(App.AppDatabase);
-            int codAtendimento = -1;
+            int? codAtendimento = null;
             if (reader.Read())
-                codAtendimento = Convert.ToInt32(reader["atendimento"]);
+                codAtendimento = clnUtilConvert.ToInt(reader["id"]);
 
             reader.Close();
 
