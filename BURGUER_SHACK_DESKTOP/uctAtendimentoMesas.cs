@@ -58,7 +58,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnMesa objMesa = new clnMesa
                 {
                     Cod = codMesa,
-                    Ocupada = false
+                    Situacao = clnMesa.mesaSituacao.DISPONIVEL
                 };
                 objMesa.alterar();
 
@@ -70,12 +70,12 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnMesa objMesas = new clnMesa
             {
-                Ocupada = false
+                Situacao = clnMesa.mesaSituacao.DISPONIVEL
             };
 
             clnMesa.clnSelecionar objSelecionar = new clnMesa.clnSelecionar
             {
-                Opcoes = objMesas.obterPorOcupado()
+                Opcoes = objMesas.obterPorSituacao()
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -93,7 +93,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 ObjAtendimento.adicionarMesa(objMesa.Cod);
 
-                objMesa.Ocupada = true;
+                objMesa.Situacao = clnMesa.mesaSituacao.OCUPADA;
                 objMesa.alterar();
 
                 exibirMesas();

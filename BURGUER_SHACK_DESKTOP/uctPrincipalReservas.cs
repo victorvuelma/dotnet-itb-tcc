@@ -30,14 +30,14 @@ namespace BURGUER_SHACK_DESKTOP
                     Name = "btnMesa" + objMesa.Cod,
                     Size = new Size(100, 100)
                 };
-                if (objMesa.Ocupada)
+                if (objMesa.Situacao == clnMesa.mesaSituacao.DISPONIVEL)
                 {
-                    btn.ForeColor = pnlOcupada.BackColor;
-                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;
+                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
                 }
                 else
                 {
-                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+                    btn.ForeColor = pnlOcupada.BackColor;
+                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;
                 }
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -55,7 +55,7 @@ namespace BURGUER_SHACK_DESKTOP
         public void abrirMesa(clnMesa objMesa)
         {
             clnAtendimento objAtendimento = null;
-            if (objMesa.Ocupada)
+            if (objMesa.Situacao == clnMesa.mesaSituacao.OCUPADA)
             {
                 int codAtendimento = objMesa.obterCodAtendimento();
 
@@ -71,14 +71,14 @@ namespace BURGUER_SHACK_DESKTOP
                     objAtendimento = new clnAtendimento
                     {
                         Inicio = DateTime.Now,
-                        Finalizado = false,
+                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO,
                         CodMesas = new List<int>()
                     };
                     objAtendimento.gravar();
 
                     objAtendimento.adicionarMesa(objMesa.Cod);
 
-                    objMesa.Ocupada = true;
+                    objMesa.Situacao = clnMesa.mesaSituacao.OCUPADA;
                     objMesa.alterar();
                 }
                 else
