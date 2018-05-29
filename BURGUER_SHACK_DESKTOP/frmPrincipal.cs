@@ -12,6 +12,11 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmPrincipal : Form
     {
+
+        private int _codFuncionario;
+
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+
         public frmPrincipal()
         {
             InitializeComponent();

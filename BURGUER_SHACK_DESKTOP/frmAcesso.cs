@@ -59,25 +59,34 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
-                //clnFuncionario objFuncionario = new clnFuncionario()
-                //{
-                //    Login = txtUsuario.Text
-                //}.obterPorLogin();
-
-                Hide();
-
-                if (txtUsuario.Text.ToLower().Equals("gerente"))
+                clnAcesso objAcesso = new clnAcesso
                 {
-                    new frmGerenciador().ShowDialog();
-                }
-                else
-                {
-                    new frmPrincipal().ShowDialog();
-                }
+                    Usuario = txtUsuario.Text,
+                    Senha = txtSenha.Text
+                };
 
+                int codFuncionario = objAcesso.acessar();
+
+                if(codFuncionario != -1)
+                {
+                    Hide();
+
+                    frmPrincipal frmPrincipal = new frmPrincipal
+                    {
+                        CodFuncionario = codFuncionario
+                    };
+                    frmPrincipal.ShowDialog();
+                    
+                    Application.Restart();
+                    return;
+                } else
+                {
+                    clnUtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.", clnUtilMensagem.MensagemIcone.ERRO);
+                    txtUsuario.Text = "";
+                    txtSenha.Text = "";
+                }
             }
-
-            System.Windows.Forms.Application.Restart();
+            txtUsuario.Focus();
         }
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e)

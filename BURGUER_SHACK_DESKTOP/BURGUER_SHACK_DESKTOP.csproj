@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDb.cs" />
+    <Compile Include="clnAcesso.cs" />
     <Compile Include="clnAtendimento.cs" />
     <Compile Include="clnCargo.cs" />
     <Compile Include="clnCliente.cs" />
