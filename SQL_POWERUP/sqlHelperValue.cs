@@ -43,7 +43,14 @@ namespace SQL_POWERUP
                     {
                         valuesBuilder.Append(", ");
                     }
-                    valuesBuilder.Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
+                    if (columnValue.Value != null)
+                    {
+                        valuesBuilder.Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
+                    }
+                    else
+                    {
+                        valuesBuilder.Append("null");
+                    }
                 }
 
                 builder.Append(" (");
@@ -66,7 +73,15 @@ namespace SQL_POWERUP
                     {
                         setBuilder.Append(", ");
                     }
-                    setBuilder.Append(columnValue.Key).Append(" = ").Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
+                    setBuilder.Append(columnValue.Key).Append(" = ");
+                    if (columnValue.Value != null)
+                    {
+                        setBuilder.Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
+                    }
+                    else
+                    {
+                        setBuilder.Append("null");
+                    }
                 }
 
                 builder.Append(" SET ").Append(setBuilder);
@@ -77,7 +92,10 @@ namespace SQL_POWERUP
         {
             foreach (KeyValuePair<String, object> columnValue in Values)
             {
-                cmd.Parameters.AddWithValue("@val_" + sqlUtil.prepareName(columnValue.Key), columnValue.Value);
+                if (columnValue.Value != null)
+                {
+                    cmd.Parameters.AddWithValue("@val_" + sqlUtil.prepareName(columnValue.Key), columnValue.Value);
+                }
             }
         }
 
