@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data.SqlClient;
+using System.Data;
+
 namespace SQL_POWERUP
 {
     public class sqlCommandSelect : sqlCommand
@@ -87,6 +90,27 @@ namespace SQL_POWERUP
 
             return commandBuilder.ToString();
         }
+
+        private object execute(sqlDatabase db, bool table)
+        {
+            SqlCommand cmd = db.getCommand(generateCommand());
+            if(_where != null)
+                _where.prepare(cmd);
+
+            cmd.Prepare();
+
+            if (table)
+            {
+                return db.returnTable(cmd);
+            } else
+            {
+                return db.returnReader(cmd);
+            }
+        }
+
+        public DataTable selectTable(sqlDatabase db) => (DataTable) execute(db, true);
+
+        public SqlDataReader selectReader(sqlDatabase db) => (SqlDataReader) execute(db, false);
 
     }
 }

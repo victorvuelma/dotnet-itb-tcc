@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data.SqlClient;
+
 namespace SQL_POWERUP
 {
     public class sqlHelperValue
@@ -29,7 +31,7 @@ namespace SQL_POWERUP
             return with(columnValue.Key, columnValue.Value);
         }
 
-        internal void generateValues(StringBuilder builder)
+        internal void generateInsert(StringBuilder builder, bool outputId)
         {
             if (Values.Count > 0)
             {
@@ -41,12 +43,15 @@ namespace SQL_POWERUP
                     {
                         valuesBuilder.Append(", ");
                     }
-                    valuesBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
+                    valuesBuilder.Append("@val_").Append(columnValue.Key);
                 }
 
                 builder.Append(" (");
                 sqlUtil.separeWithComma(builder, Values.Keys.ToList());
-                builder.Append(") VALUES (").Append(valuesBuilder).Append(')');
+                builder.Append(')');
+                if (outputId)
+                    builder.Append(" OUTPUT INSERTED.ID");
+                builder.Append(" VALUES (").Append(valuesBuilder).Append(')');
             }
         }
 
@@ -61,12 +66,18 @@ namespace SQL_POWERUP
                     {
                         setBuilder.Append(", ");
                     }
-                    setBuilder.Append(columnValue.Key);
-                    setBuilder.Append(" = ");
-                    setBuilder.Append(sqlUtil.prepareVal(columnValue.Value));
+                    setBuilder.Append(columnValue.Key).Append(" = ").Append("@val_").Append(columnValue.Key);
                 }
 
                 builder.Append(" SET ").Append(setBuilder);
+            }
+        }
+
+        internal void prepare(SqlCommand cmd)
+        {
+            foreach (KeyValuePair<String, object> columnValue in Values)
+            {
+                cmd.Parameters.AddWithValue("@val_" + columnValue.Key, columnValue.Value);
             }
         }
 

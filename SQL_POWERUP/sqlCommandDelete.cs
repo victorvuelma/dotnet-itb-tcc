@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data.SqlClient;
+
 namespace SQL_POWERUP
 {
     public class sqlCommandDelete : sqlCommand
@@ -35,6 +37,17 @@ namespace SQL_POWERUP
                 _where.generate(commandBuilder);
 
             return commandBuilder.ToString();
+        }
+
+        public int delete(sqlDatabase db)
+        {
+            SqlCommand cmd = db.getCommand(generateCommand());
+            if(_where != null)
+                _where.prepare(cmd);
+
+            cmd.Prepare();
+
+            return db.execute(cmd);
         }
 
     }

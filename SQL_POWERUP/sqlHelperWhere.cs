@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data.SqlClient;
+
 namespace SQL_POWERUP
 {
     public class sqlHelperWhere
@@ -59,7 +61,7 @@ namespace SQL_POWERUP
                             paramsBuilder.Append('=');
                             break;
                     }
-                    paramsBuilder.Append(' ').Append(sqlUtil.prepareVal(objWhere.Val));
+                    paramsBuilder.Append(' ').Append("@where_").Append(objWhere.TableColumn);
                     if (i < Params.Count - 1)
                     {
                         paramsBuilder.Append(' ').Append(objWhere.Association).Append(' ');
@@ -67,6 +69,14 @@ namespace SQL_POWERUP
                 }
 
                 builder.Append(" WHERE ").Append(paramsBuilder);
+            }
+        }
+
+        internal void prepare(SqlCommand cmd)
+        {
+            foreach (sqlObjWhere objWhere in Params)
+            {
+                cmd.Parameters.AddWithValue("@where_" + objWhere.TableColumn, objWhere.Val);
             }
         }
     }

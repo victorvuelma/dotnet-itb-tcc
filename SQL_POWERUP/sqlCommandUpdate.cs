@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data.SqlClient;
+
 namespace SQL_POWERUP
 {
     public class sqlCommandUpdate : sqlCommand
@@ -48,6 +50,19 @@ namespace SQL_POWERUP
                 _set.generateSet(commandBuilder);
 
             return commandBuilder.ToString();
+        }
+
+        public int update(sqlDatabase db)
+        {
+            SqlCommand cmd = db.getCommand(generateCommand());
+            if (_where != null)
+                _where.prepare(cmd);
+            if (_set != null)
+                _set.prepare(cmd);
+
+            cmd.Prepare();
+
+            return db.execute(cmd);
         }
 
 
