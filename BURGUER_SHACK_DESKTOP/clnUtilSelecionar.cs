@@ -36,66 +36,60 @@ namespace BURGUER_SHACK_DESKTOP
         public List<T> Opcoes { get => _opcoes; set => _opcoes = value; }
         public T Selecionado { get => _selecionado; set => _selecionado = value; }
 
-        public override IList getOpcoes()
-        {
-            return Opcoes;
-        }
+        public override IList getOpcoes() => Opcoes;
 
-        public override object getSelecionado()
-        {
-            return Selecionado;
-        }
+        public override object getSelecionado() => Selecionado;
 
         public override bool setSelecionado(object obj)
         {
-            if (obj is T && !obj.Equals(Selecionado))
+            if (obj != null && obj is T val && !val.Equals(Selecionado))
             {
-                Selecionado = (T)obj;
+                Selecionado = val;
                 return true;
             }
             return false;
         }
 
-        internal abstract Image Imagem(T obj);
+        internal abstract Image Imagem(T val);
 
         public override Image getImagem(object obj)
         {
-            if (obj is T)
+            if (obj != null && obj is T val)
             {
-                return Imagem((T)obj);
+                return Imagem(val);
             }
             return null;
         }
 
-        internal abstract String Nome(T obj);
+        internal abstract String Nome(T val);
 
         public override string getNome(object obj)
         {
-            if (obj is T)
+            if (obj != null && obj is T val)
             {
-                return Nome((T)obj);
+                return Nome(val);
             }
             return null;
         }
 
-        internal abstract String Detalhes(T obj);
+        internal abstract String Detalhes(T val);
 
         public override string getDetalhes(object obj)
         {
-            if (obj is T)
+            if (obj != null && obj is T val)
             {
-                return Detalhes((T)obj);
+                return Detalhes(val);
             }
             return null;
         }
 
-        internal abstract int Cod(T obj);
+        internal abstract int Cod(T val);
 
         public override int getCod(object obj)
         {
-            if (obj is T)
+            if (obj != null && obj is T val)
             {
-                return Cod((T)obj);
+                return Cod(val);
             }
             return -1;
         }

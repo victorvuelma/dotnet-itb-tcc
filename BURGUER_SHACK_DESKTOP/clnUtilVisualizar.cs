@@ -33,62 +33,59 @@ namespace BURGUER_SHACK_DESKTOP
 
         public List<T> Opcoes { get => _opcoes; set => _opcoes = value; }
 
-        public override IList getOpcoes()
-        {
-            return Opcoes;
-        }
+        public override IList getOpcoes() => Opcoes;
 
-        internal abstract Image Imagem(T obj);
+        internal abstract Image Imagem(T val);
 
-        public override Image getImagem(object o)
+        public override Image getImagem(object obj)
         {
-            if (o is T obj)
+            if (obj !=null && obj is T val)
             {
-                return Imagem(obj);
+                return Imagem(val);
             }
             return null;
         }
 
-        internal abstract String Nome(T obj);
+        internal abstract String Nome(T val);
 
-        public override string getNome(object o)
+        public override string getNome(object obj)
         {
-            if (o is T obj)
+            if (obj != null && obj is T val)
             {
-                return Nome(obj);
+                return Nome(val);
             }
             return null;
         }
 
-        internal abstract String Detalhes(T obj);
+        internal abstract String Detalhes(T val);
 
-        public override string getDetalhes(object o)
+        public override string getDetalhes(object obj)
         {
-            if (o is T obj)
+            if (obj !=null && obj is T val)
             {
-                return Detalhes(obj);
+                return Detalhes(val);
             }
             return null;
         }
 
-        internal abstract int Cod(T obj);
+        internal abstract int Cod(T val);
 
-        public override int getCod(object o)
+        public override int getCod(object obj)
         {
-            if (o is T obj)
+            if (obj != null && obj is T val)
             {
-                return Cod(obj);
+                return Cod(val);
             }
             return -1;
         }
 
-        internal abstract void Abrir(T obj);
+        internal abstract void Abrir(T val);
 
-        public override void abrir(object o)
+        public override void abrir(object obj)
         {
-            if (o is T obj)
+            if (obj != null && obj is T val)
             {
-                Abrir(obj);
+                Abrir(val);
             }
         }
 
