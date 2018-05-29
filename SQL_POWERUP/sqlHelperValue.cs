@@ -43,7 +43,7 @@ namespace SQL_POWERUP
                     {
                         valuesBuilder.Append(", ");
                     }
-                    valuesBuilder.Append("@val_").Append(columnValue.Key);
+                    valuesBuilder.Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
                 }
 
                 builder.Append(" (");
