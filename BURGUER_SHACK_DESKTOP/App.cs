@@ -6,24 +6,29 @@ using System.Threading.Tasks;
 
 using System.Drawing;
 using UIX;
+using SQL_POWERUP;
 
 namespace BURGUER_SHACK_DESKTOP
 {
     class App
     {
 
-        private static String appName = "Burguer Shack";
+        private static sqlDatabase _appDatabase = new sqlDatabase {
+            Database = AppDb.DATABASE,
+            User = AppDb.USER,
+            Pass = AppDb.PASS,
+            Source = AppDb.SOURCE
+        };
 
-        private static UIX.uixStyle appVisualStyle = UIX.uixStyle.BLUE;
-        private static UIX.uixTemplate appVisualTemplate = new UIX.uixTemplate(AppVisualStyle);
+        private static String _appName = "Burguer Shack";
 
-        private static int restMesas = 30;
+        private static UIX.uixStyle _appVisualStyle = UIX.uixStyle.BLUE;
+        private static UIX.uixTemplate _appVisualTemplate = new UIX.uixTemplate(AppVisualStyle);
 
-        public static String AppName { get => appName; }
+        public static sqlDatabase AppDatabase { get => _appDatabase;}
+        public static String AppName { get => _appName; }
 
-        public static UIX.uixTemplate AppVisualTemplate { get => appVisualTemplate; }
-
-        public static int RestMesas { get => restMesas; set => restMesas = value; }
-        public static uixStyle AppVisualStyle { get => appVisualStyle; set => appVisualStyle = value; }
+        public static UIX.uixTemplate AppVisualTemplate { get => _appVisualTemplate; }
+        public static uixStyle AppVisualStyle { get => _appVisualStyle; }
     }
 }
