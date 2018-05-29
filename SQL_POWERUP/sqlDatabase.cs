@@ -57,7 +57,7 @@ namespace SQL_POWERUP
             }
         }
 
-        public SqlDataReader returnReader(SqlCommand command) => command.ExecuteReader();
+        public SqlDataReader returnReader(SqlCommand command) => command.ExecuteReader(CommandBehavior.CloseConnection);
 
         public int execute(SqlCommand command)
         {
