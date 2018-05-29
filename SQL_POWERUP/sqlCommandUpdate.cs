@@ -44,10 +44,10 @@ namespace SQL_POWERUP
         {
             StringBuilder commandBuilder = new StringBuilder();
             commandBuilder.Append("UPDATE ").Append(base.Table);
-            if (_where != null)
-                _where.generate(commandBuilder);
             if (_set != null)
                 _set.generateSet(commandBuilder);
+            if (_where != null)
+                _where.generate(commandBuilder);
 
             return commandBuilder.ToString();
         }
@@ -55,12 +55,10 @@ namespace SQL_POWERUP
         public int update(sqlDatabase db)
         {
             SqlCommand cmd = db.getCommand(generateCommand());
-            if (_where != null)
-                _where.prepare(cmd);
             if (_set != null)
                 _set.prepare(cmd);
-
-            cmd.Prepare();
+            if (_where != null)
+                _where.prepare(cmd);
 
             return db.execute(cmd);
         }

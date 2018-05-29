@@ -97,8 +97,6 @@ namespace SQL_POWERUP
             if(_where != null)
                 _where.prepare(cmd);
 
-            cmd.Prepare();
-
             if (table)
             {
                 return db.returnTable(cmd);
@@ -110,7 +108,7 @@ namespace SQL_POWERUP
 
         public DataTable selectTable(sqlDatabase db) => (DataTable) execute(db, true);
 
-        public SqlDataReader selectReader(sqlDatabase db) => (SqlDataReader) execute(db, false);
+        public SqlDataReader select(sqlDatabase db) => (SqlDataReader) execute(db, false);
 
     }
 }

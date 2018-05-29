@@ -45,8 +45,6 @@ namespace SQL_POWERUP
             if(_where != null)
                 _where.prepare(cmd);
 
-            cmd.Prepare();
-
             return db.execute(cmd);
         }
 

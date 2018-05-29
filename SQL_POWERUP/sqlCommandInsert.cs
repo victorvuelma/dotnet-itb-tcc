@@ -48,8 +48,6 @@ namespace SQL_POWERUP
             if (_insert != null)
                 _insert.prepare(cmd);
 
-            cmd.Prepare();
-
             if (output)
             {
                 return Convert.ToInt32(db.executeScalar(cmd));
