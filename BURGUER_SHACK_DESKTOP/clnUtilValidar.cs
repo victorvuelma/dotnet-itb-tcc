@@ -121,7 +121,6 @@ namespace BURGUER_SHACK_DESKTOP
                 String conteudo = _control.Text;
                 if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO))
                 {
-                    MessageBox.Show("Validacao porq nao tem vazio");
                     MaskedTextBox masked = null;
                     if (Control is MaskedTextBox mask)
                     {
@@ -138,7 +137,6 @@ namespace BURGUER_SHACK_DESKTOP
                         conteudo = masked.Text;
                         masked.TextMaskFormat = oldFormat;
                     }
-                    MessageBox.Show(Control.Name + " tem " + conteudo);
                     if (clnUtil.vazio(conteudo))
                     {
                         return valido;

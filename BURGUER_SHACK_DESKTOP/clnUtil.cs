@@ -13,6 +13,7 @@ using Caelum.Stella.CSharp.Format;
 using Caelum.Stella.CSharp.Http;
 using Caelum.Stella.CSharp.Http.Exceptions;
 using static System.Windows.Forms.Control;
+using System.Text.RegularExpressions;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -29,6 +30,8 @@ namespace BURGUER_SHACK_DESKTOP
         public static String MASK_IE = "000,000,000,000";
         public static String MASK_CPF = "000,000,000-00";
         public static String MASK_RG = "00,000,000-0";
+
+        private static String REGEX_CEL = @"^\([1-9]{2}\) [9]{0,1}[6-9]{1}[0-9]{3}\-[0-9]{4}$";
 
         private static CPFValidator _cpfValidator = new CPFValidator();
         private static CNPJValidator _cnpjValidator = new CNPJValidator();
@@ -74,6 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
                 numBoard.ShowDialog();
             };
         }
+
         // --- NUMBOARD
 
         public static void resetarCampos(ControlCollection controls)
@@ -231,6 +235,16 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        internal static string retirarFormatacao(string texto)
+        {
+            return new String(texto.Where(Char.IsDigit).ToArray()); ;
+        }
+
+        public static bool validarCelular(String cel)
+        {
+            return Regex.IsMatch(cel, REGEX_CEL);
+        }
+
         public static bool validarData(String data)
         {
             return DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
@@ -238,7 +252,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static bool validarDataNasc(String data)
         {
-            return DateTime.ParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).CompareTo(DateTime.Now) < 0;
+            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now) < 0;
         }
 
         public static bool vazio(String str)
