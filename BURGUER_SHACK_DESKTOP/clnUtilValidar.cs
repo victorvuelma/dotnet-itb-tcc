@@ -19,7 +19,9 @@ namespace BURGUER_SHACK_DESKTOP
             CNPJ,
             CEP,
             INT,
-            INT_MAIOR_0
+            INT_MAIOR_0,
+            DATA,
+            DATA_NASC
         }
 
         private List<ValidarData> _validarControles = new List<ValidarData>();
@@ -61,7 +63,7 @@ namespace BURGUER_SHACK_DESKTOP
                 String motivoControl = controlValidar.Motivo;
                 if (motivoControl.Length > 0)
                 {
-                    motivoBuilder.Append(controlValidar.Control.AccessibleName).Append(' ').Append(motivoControl).Append('\n');
+                    motivoBuilder.Append(controlValidar.Control.AccessibleName.Replace("*", "")).Append(' ').Append(motivoControl).Append('\n');
                 }
                 if (formValido && !controlValido)
                 {
@@ -150,6 +152,14 @@ namespace BURGUER_SHACK_DESKTOP
                             val = Convert.ToInt32(conteudo) > 0;
                             res = "deve conter um número maior que ZERO.";
                             break;
+                        case ValidarTipo.DATA:
+                            val = clnUtil.validarData(conteudo);
+                            res = "deve conter uma data válida";
+                            break;
+                        case ValidarTipo.DATA_NASC:
+                            val = clnUtil.validarDataNasc(conteudo);
+                            res = "deve conter uma data da nascimento válida";
+                            break;
                     }
                     if (!val)
                     {
@@ -165,6 +175,12 @@ namespace BURGUER_SHACK_DESKTOP
                     if (_control is UIX.txtUIX txt)
                     {
                         UIX.uixTextBox.txtApply(txt.txt, App.AppVisualStyle.TextBoxWarningColor);
+                    } else if(_control is UIX.cboUIX cbo)
+                    {
+                        UIX.uixComboBox.cboApply(cbo.cbo, App.AppVisualStyle.TextBoxWarningColor);
+                    } else if(_control is UIX.mtbUIX mtb)
+                    {
+                        UIX.uixMaskedTextBox.mtbApply(mtb.mtb, App.AppVisualStyle.TextBoxWarningColor);
                     }
                 }
                 else
@@ -172,6 +188,14 @@ namespace BURGUER_SHACK_DESKTOP
                     if (_control is UIX.txtUIX txt)
                     {
                         UIX.uixTextBox.txtApply(txt.txt, App.AppVisualStyle.TextBoxColor);
+                    }
+                    else if (_control is UIX.cboUIX cbo)
+                    {
+                        UIX.uixComboBox.cboApply(cbo.cbo, App.AppVisualStyle.TextBoxColor);
+                    }
+                    else if (_control is UIX.mtbUIX mtb)
+                    {
+                        UIX.uixMaskedTextBox.mtbApply(mtb.mtb, App.AppVisualStyle.TextBoxColor);
                     }
                 }
 

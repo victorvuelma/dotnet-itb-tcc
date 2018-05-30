@@ -231,6 +231,16 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        public static bool validarData(String data)
+        {
+            return DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
+        }
+
+        public static bool validarDataNasc(String data)
+        {
+            return DateTime.ParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).CompareTo(DateTime.Now) < 0;
+        }
+
         public static bool vazio(String str)
         {
             return String.IsNullOrWhiteSpace(str);

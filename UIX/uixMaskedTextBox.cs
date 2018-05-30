@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace UIX
 {
-    class uixMaskedTextBox
+    public class uixMaskedTextBox
     {
 
         public static void mtbApply(MaskedTextBox mtb, uixSet colorSet, Font font)
