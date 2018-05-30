@@ -9,32 +9,6 @@ namespace SQL_POWERUP
     class sqlUtil
     {
 
-        internal static String prepareVal(object val)
-        {
-            String str = val.ToString();
-            if (val is string)
-            {
-                return "'" + str + "'";
-            }
-            if (str.Contains(' '))
-            {
-                return "'" + str + "'";
-            }
-            foreach (char ch in str)
-            {
-                if (!Char.IsLetterOrDigit(ch))
-                {
-                    return "'" + str + "'";
-                }
-            }
-            return str;
-        }
-
-        internal static string prepareName(String name)
-        {
-            return name.Replace("_", "").Replace(".", "");
-        }
-
         internal static void separeWithComma(StringBuilder builder, List<String> elements) 
         {
             StringBuilder commaBuilder = new StringBuilder();

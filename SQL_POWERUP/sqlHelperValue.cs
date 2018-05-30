@@ -37,6 +37,7 @@ namespace SQL_POWERUP
             {
                 StringBuilder valuesBuilder = new StringBuilder();
 
+                int paramIndex = 1;
                 foreach (KeyValuePair<String, object> columnValue in Values)
                 {
                     if (valuesBuilder.Length > 0)
@@ -45,14 +46,14 @@ namespace SQL_POWERUP
                     }
                     if (columnValue.Value != null)
                     {
-                        valuesBuilder.Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
+                        valuesBuilder.Append("@val_").Append(paramIndex);
+                        paramIndex++;
                     }
                     else
                     {
                         valuesBuilder.Append("null");
                     }
                 }
-
                 builder.Append(" (");
                 sqlUtil.separeWithComma(builder, Values.Keys.ToList());
                 builder.Append(')');
@@ -67,6 +68,7 @@ namespace SQL_POWERUP
             if (Values.Count > 0)
             {
                 StringBuilder setBuilder = new StringBuilder();
+                int paramIndex = 1;
                 foreach (KeyValuePair<string, object> columnValue in Values)
                 {
                     if (setBuilder.Length > 0)
@@ -76,7 +78,8 @@ namespace SQL_POWERUP
                     setBuilder.Append(columnValue.Key).Append(" = ");
                     if (columnValue.Value != null)
                     {
-                        setBuilder.Append("@val_").Append(sqlUtil.prepareName(columnValue.Key));
+                        setBuilder.Append("@val_").Append(paramIndex);
+                        paramIndex++;
                     }
                     else
                     {
@@ -90,11 +93,13 @@ namespace SQL_POWERUP
 
         internal void prepare(SqlCommand cmd)
         {
+            int paramIndex = 1;
             foreach (KeyValuePair<String, object> columnValue in Values)
             {
                 if (columnValue.Value != null)
                 {
-                    cmd.Parameters.AddWithValue("@val_" + sqlUtil.prepareName(columnValue.Key), columnValue.Value);
+                    cmd.Parameters.AddWithValue("@val_" + paramIndex, columnValue.Value);
+                    paramIndex++; 
                 }
             }
         }

@@ -17,14 +17,6 @@ namespace SQL_POWERUP
 
         public sqlHelperWhere where(sqlObjWhere objWhere)
         {
-            foreach (sqlObjWhere objParam in Params)
-            {
-                if (objParam.TableColumn.Equals(objWhere.TableColumn, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    Params.Remove(objParam);
-                    break;
-                }
-            }
             Params.Add(objWhere);
             return this;
         }
@@ -51,6 +43,7 @@ namespace SQL_POWERUP
             {
                 StringBuilder paramsBuilder = new StringBuilder();
 
+                int paramIndex = 1;
                 for (int i = 0; i < Params.Count; i++)
                 {
                     sqlObjWhere objWhere = Params[i];
@@ -60,23 +53,37 @@ namespace SQL_POWERUP
                         case sqlObjWhere.whereOperation.EQUALS:
                             paramsBuilder.Append('=');
                             break;
+                        case sqlObjWhere.whereOperation.LESS:
+                            paramsBuilder.Append('<');
+                            break;
+                        case sqlObjWhere.whereOperation.LESS_EQUALS:
+                            paramsBuilder.Append("<=");
+                            break;
+                        case sqlObjWhere.whereOperation.MAJOR:
+                            paramsBuilder.Append('>');
+                            break;
+                        case sqlObjWhere.whereOperation.MAJOR_EQUALS:
+                            paramsBuilder.Append(">=");
+                            break;
                     }
-                    paramsBuilder.Append(' ').Append("@where_").Append(sqlUtil.prepareName(objWhere.TableColumn));
+                    paramsBuilder.Append(' ').Append("@where_").Append(paramIndex);
+                    paramIndex++;
                     if (i < Params.Count - 1)
                     {
                         paramsBuilder.Append(' ').Append(objWhere.Association).Append(' ');
                     }
                 }
-
                 builder.Append(" WHERE ").Append(paramsBuilder);
             }
         }
 
         internal void prepare(SqlCommand cmd)
         {
+            int paramIndex = 1;
             foreach (sqlObjWhere objWhere in Params)
             {
-                cmd.Parameters.AddWithValue("@where_" + sqlUtil.prepareName(objWhere.TableColumn), objWhere.Val);
+                cmd.Parameters.AddWithValue("@where_" + paramIndex, objWhere.Val);
+                paramIndex++;
             }
         }
     }
