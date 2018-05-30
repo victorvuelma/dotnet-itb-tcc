@@ -57,7 +57,7 @@ namespace BURGUER_SHACK_DESKTOP
             pnlMesas.BackColor = BackColor;
         }
 
-        public void abrirMesa(clnMesa objMesa)
+        private void abrirMesa(clnMesa objMesa)
         {
             clnAtendimento objAtendimento = null;
             if (objMesa.Situacao == clnMesa.mesaSituacao.OCUPADA)

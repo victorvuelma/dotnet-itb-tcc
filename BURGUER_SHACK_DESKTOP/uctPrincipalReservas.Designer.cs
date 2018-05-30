@@ -28,100 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbMesas = new System.Windows.Forms.GroupBox();
-            this.pnlMesas = new System.Windows.Forms.Panel();
-            this.lblOcupada = new System.Windows.Forms.Label();
-            this.pnlOcupada = new System.Windows.Forms.Panel();
-            this.lblLivre = new System.Windows.Forms.Label();
-            this.pnlLivre = new System.Windows.Forms.Panel();
-            this.grbMesas.SuspendLayout();
+            this.grbListar = new System.Windows.Forms.GroupBox();
+            this.pnlReservas = new System.Windows.Forms.Panel();
+            this.dtpListar = new System.Windows.Forms.DateTimePicker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbListar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grbMesas
+            // grbListar
             // 
-            this.grbMesas.Controls.Add(this.pnlMesas);
-            this.grbMesas.Controls.Add(this.lblOcupada);
-            this.grbMesas.Controls.Add(this.pnlOcupada);
-            this.grbMesas.Controls.Add(this.lblLivre);
-            this.grbMesas.Controls.Add(this.pnlLivre);
-            this.grbMesas.Location = new System.Drawing.Point(5, 5);
-            this.grbMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbMesas.Name = "grbMesas";
-            this.grbMesas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbMesas.Size = new System.Drawing.Size(890, 640);
-            this.grbMesas.TabIndex = 0;
-            this.grbMesas.TabStop = false;
-            this.grbMesas.Text = "SELECIONAR MESA";
+            this.grbListar.Controls.Add(this.pnlReservas);
+            this.grbListar.Controls.Add(this.dtpListar);
+            this.grbListar.Location = new System.Drawing.Point(10, 10);
+            this.grbListar.Name = "grbListar";
+            this.grbListar.Size = new System.Drawing.Size(500, 630);
+            this.grbListar.TabIndex = 0;
+            this.grbListar.TabStop = false;
+            this.grbListar.Text = "RESERVAS";
             // 
-            // pnlMesas
+            // pnlReservas
             // 
-            this.pnlMesas.AutoScroll = true;
-            this.pnlMesas.Location = new System.Drawing.Point(5, 15);
-            this.pnlMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlMesas.MaximumSize = new System.Drawing.Size(880, 123077);
-            this.pnlMesas.Name = "pnlMesas";
-            this.pnlMesas.Size = new System.Drawing.Size(880, 620);
-            this.pnlMesas.TabIndex = 5;
+            this.pnlReservas.Location = new System.Drawing.Point(5, 30);
+            this.pnlReservas.MaximumSize = new System.Drawing.Size(485, 10000);
+            this.pnlReservas.Name = "pnlReservas";
+            this.pnlReservas.Size = new System.Drawing.Size(485, 590);
+            this.pnlReservas.TabIndex = 1;
             // 
-            // lblOcupada
+            // dtpListar
             // 
-            this.lblOcupada.AutoSize = true;
-            this.lblOcupada.Location = new System.Drawing.Point(800, 0);
-            this.lblOcupada.Name = "lblOcupada";
-            this.lblOcupada.Size = new System.Drawing.Size(64, 16);
-            this.lblOcupada.TabIndex = 4;
-            this.lblOcupada.Text = "OCUPADA";
+            this.dtpListar.Location = new System.Drawing.Point(240, 0);
+            this.dtpListar.Name = "dtpListar";
+            this.dtpListar.Size = new System.Drawing.Size(250, 21);
+            this.dtpListar.TabIndex = 0;
+            this.dtpListar.ValueChanged += new System.EventHandler(this.dtpListar_ValueChanged);
             // 
-            // pnlOcupada
+            // groupBox2
             // 
-            this.pnlOcupada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.pnlOcupada.Location = new System.Drawing.Point(785, 0);
-            this.pnlOcupada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlOcupada.Name = "pnlOcupada";
-            this.pnlOcupada.Size = new System.Drawing.Size(15, 15);
-            this.pnlOcupada.TabIndex = 3;
+            this.groupBox2.Location = new System.Drawing.Point(520, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(370, 630);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
             // 
-            // lblLivre
-            // 
-            this.lblLivre.AutoSize = true;
-            this.lblLivre.Location = new System.Drawing.Point(735, 0);
-            this.lblLivre.Name = "lblLivre";
-            this.lblLivre.Size = new System.Drawing.Size(36, 16);
-            this.lblLivre.TabIndex = 2;
-            this.lblLivre.Text = "LIVRE";
-            // 
-            // pnlLivre
-            // 
-            this.pnlLivre.BackColor = System.Drawing.Color.White;
-            this.pnlLivre.Location = new System.Drawing.Point(720, 0);
-            this.pnlLivre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlLivre.Name = "pnlLivre";
-            this.pnlLivre.Size = new System.Drawing.Size(15, 15);
-            this.pnlLivre.TabIndex = 1;
-            // 
-            // uctPrincipalMesas
+            // uctPrincipalReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grbMesas);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grbListar);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "uctPrincipalMesas";
+            this.Name = "uctPrincipalReservas";
             this.Size = new System.Drawing.Size(900, 650);
-            this.Load += new System.EventHandler(this.uctPedidoMesa_Load);
-            this.grbMesas.ResumeLayout(false);
-            this.grbMesas.PerformLayout();
+            this.Load += new System.EventHandler(this.uctPrincipalReservas_Load);
+            this.grbListar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbMesas;
-        private System.Windows.Forms.Label lblOcupada;
-        private System.Windows.Forms.Panel pnlOcupada;
-        private System.Windows.Forms.Label lblLivre;
-        private System.Windows.Forms.Panel pnlLivre;
-        private System.Windows.Forms.Panel pnlMesas;
+        private System.Windows.Forms.GroupBox grbListar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker dtpListar;
+        private System.Windows.Forms.Panel pnlReservas;
     }
 }

@@ -22,6 +22,11 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
         }
 
+        public void alterarConteudo(UserControl uctConteudo, String titulo)
+        {
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
+        }
+
         public void abrirMesas()
         {
             uctPrincipalMesas uctMesas = new uctPrincipalMesas
@@ -32,14 +37,19 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(uctMesas, "Mesas");
         }
 
-        public void alterarConteudo(UserControl uctConteudo, String titulo)
+        public void abrirReservas()
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
+            uctPrincipalReservas uctMesas = new uctPrincipalReservas
+            {
+                CodFuncionario = CodFuncionario
+            };
+
+            alterarConteudo(uctMesas, "Reservas");
         }
 
         private void fechar()
         {
-            if(clnUtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.INFO))
+            if (clnUtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 Close();
             }
@@ -70,5 +80,9 @@ namespace BURGUER_SHACK_DESKTOP
             fechar();
         }
 
+        private void btnReservas_Click(object sender, EventArgs e)
+        {
+            abrirReservas();
+        }
     }
 }

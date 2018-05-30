@@ -32,10 +32,10 @@
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnReservas = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnCardapio = new UIX.btnUIX();
             this.btnMesas = new UIX.btnUIX();
-            this.btnReservas = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,19 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 650);
             this.pnlMenu.TabIndex = 5;
+            // 
+            // btnReservas
+            // 
+            this.btnReservas.Description = "Reservas";
+            this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnReservas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.reserva;
+            this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReservas.Location = new System.Drawing.Point(5, 105);
+            this.btnReservas.Name = "btnReservas";
+            this.btnReservas.Size = new System.Drawing.Size(90, 90);
+            this.btnReservas.TabIndex = 7;
+            this.btnReservas.UseVisualStyleBackColor = true;
+            this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
             // btnSair
             // 
@@ -107,18 +120,6 @@
             this.btnMesas.TabIndex = 0;
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
-            // 
-            // btnReservas
-            // 
-            this.btnReservas.Description = "Reservas";
-            this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnReservas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReservas.Location = new System.Drawing.Point(5, 105);
-            this.btnReservas.Name = "btnReservas";
-            this.btnReservas.Size = new System.Drawing.Size(90, 90);
-            this.btnReservas.TabIndex = 7;
-            this.btnReservas.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 

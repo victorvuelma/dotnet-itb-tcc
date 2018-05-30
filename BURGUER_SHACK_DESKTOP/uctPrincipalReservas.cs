@@ -12,99 +12,63 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class uctPrincipalReservas : UserControl
     {
+
+        private int _codFuncionario;
+        
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+
         public uctPrincipalReservas()
         {
             InitializeComponent();
         }
 
-        private void mostrarMesas()
+        private void exibirReservas()
         {
-            pnlMesas.Controls.Clear();
+            pnlReservas.Controls.Clear();
 
-            List<Control> mesaControles = new List<Control>();
-            foreach (clnMesa objMesa in new clnMesa().obterMesas())
+            clnReserva objReservas = new clnReserva
             {
-                UIX.btnUIX btn = new UIX.btnUIX
+                Agendado = dtpListar.Value.Date
+            };
+
+            List<Control> reservasControles = new List<Control>();
+            foreach (clnReserva objReserva in objReservas.obterPorDataAgedada())
+            {
+                UIX.btnLabelUIX btn = new UIX.btnLabelUIX
                 {
-                    Description = "MESA " + objMesa.Cod,
-                    Name = "btnMesa" + objMesa.Cod,
-                    Size = new Size(100, 100)
+                    Description = ("RESERVA #" + objReserva.Cod+ " - " + objReserva.Agendado.ToString("HH:mm") + 
+                                    "\n" + objReserva.Situacao + 
+                                    "\n" + objReserva.Pessoas + " pessoas"),
+                    Name = "btnReserva" + objReserva.Cod,
+                    Size = new Size(120, 160),
+                    Image = Properties.Resources.reserva
                 };
-                if (objMesa.Situacao == clnMesa.mesaSituacao.DISPONIVEL)
-                {
-                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-                }
-                else
-                {
-                    btn.ForeColor = pnlOcupada.BackColor;
-                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;
-                }
                 btn.Click += (object sender, EventArgs e) =>
                 {
-                    abrirMesa(objMesa);
+                    abrirReserva(objReserva);
                 };
 
-                mesaControles.Add(btn);
+                reservasControles.Add(btn);
             }
-            clnUtil.adicionarControles(pnlMesas, mesaControles, 20);
-            mesaControles.Clear();
+            clnUtil.adicionarControles(pnlReservas, reservasControles, 20);
+            reservasControles.Clear();
 
-            pnlMesas.BackColor = BackColor;
+            pnlReservas.BackColor = BackColor;
         }
 
-        public void abrirMesa(clnMesa objMesa)
+        private void abrirReserva(clnReserva objMesa)
         {
-            clnAtendimento objAtendimento = null;
-            if (objMesa.Situacao == clnMesa.mesaSituacao.OCUPADA)
-            {
-                int? codAtendimento = objMesa.obterCodAtendimento();
-
-                if (codAtendimento != null)
-                {
-                    objAtendimento = new clnAtendimento
-                    {
-                        Cod = (int) codAtendimento
-                    }.obterPorCodigo();
-                }
-            }
-            else
-            {
-                if (clnUtilMensagem.mostrarSimNao("Atendimento", "Você deseja iniciar um novo atendimento para a Mesa " + objMesa.Cod + "?", clnUtilMensagem.MensagemIcone.INFO))
-                {
-                    objAtendimento = new clnAtendimento
-                    {
-                        Inicio = DateTime.Now,
-                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO,
-                        CodMesas = new List<int>()
-                    };
-                    objAtendimento.gravar();
-
-                    objAtendimento.adicionarMesa(objMesa.Cod);
-
-                    objMesa.Situacao = clnMesa.mesaSituacao.OCUPADA;
-                    objMesa.alterar();
-                }
-                else
-                {
-                    return;
-                }
-            }
-            frmAtendimento frmAtendimento = new frmAtendimento
-            {
-                ObjAtendimento = objAtendimento
-            };
-            frmAtendimento.ShowDialog();
-
-            mostrarMesas();
+            throw new NotImplementedException();
         }
 
-        private void uctPedidoMesa_Load(object sender, EventArgs e)
+        private void uctPrincipalReservas_Load(object sender, EventArgs e)
         {
-            pnlLivre.BackColor = UIX.uixColor.WHITE;
-            pnlOcupada.BackColor = UIX.uixColor.INDIGO_DARK;
-
-            mostrarMesas();
+            exibirReservas();
         }
 
+        private void dtpListar_ValueChanged(object sender, EventArgs e)
+        {
+            exibirReservas();
+        }
     }
 }
