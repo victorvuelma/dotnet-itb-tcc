@@ -53,20 +53,19 @@ namespace BURGUER_SHACK_DESKTOP
             Agendamento = clnUtilConvert.ToDateTime(reader["agendamento"])
         };
 
-        private List<int> obterMesas()
+        private void obterMesas()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("reserva_mesa").Select.select("id_mesa");
             objSelect.Where.where("id_reserva", Cod);
 
-            List<int> objMesas = new List<int>();
+            CodMesas = new List<int>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             while (reader.Read())
             {
-                objMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
+                CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
             }
             reader.Close();
-            return objMesas;
         }
 
         public List<clnReserva> obterPorDataAgedada()
@@ -81,7 +80,7 @@ namespace BURGUER_SHACK_DESKTOP
             while (reader.Read())
             {
                 clnReserva objReserva = obter(reader);
-                objReserva.CodMesas = objReserva.obterMesas();
+                objReserva.obterMesas();
                 objReservas.Add(objReserva);
             }
             reader.Close();

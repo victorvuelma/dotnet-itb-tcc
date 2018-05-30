@@ -48,20 +48,19 @@ namespace BURGUER_SHACK_DESKTOP
             Situacao = situacao(clnUtilConvert.ToString(reader["situacao"]))
         };
 
-        private List<int> obterMesas()
+        private void obterMesas()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("atendimento_mesa").Select.select("id_mesa");
             objSelect.Where.where("id_atendimento", Cod);
 
-            List<int> codMesas = new List<int>();
+            CodMesas = new List<int>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             while (reader.Read())
             {
-                codMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
+                CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
             }
             reader.Close();
-            return codMesas;
         }
 
         public clnAtendimento obterPorCodigo()
@@ -75,7 +74,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (reader.Read())
             {
                 objAtendimento = obter(reader);
-                objAtendimento.CodMesas = obterMesas();
+                objAtendimento.obterMesas();
             }
             reader.Close();
             return objAtendimento;
