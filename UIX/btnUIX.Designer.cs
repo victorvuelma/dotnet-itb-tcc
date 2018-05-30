@@ -74,7 +74,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pic;
-        private System.Windows.Forms.Label lbl;
+        protected System.Windows.Forms.PictureBox pic;
+        protected System.Windows.Forms.Label lbl;
     }
 }

@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="btnLabelUIX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="btnLabelUIX.Designer.cs">
+      <DependentUpon>btnLabelUIX.cs</DependentUpon>
+    </Compile>
     <Compile Include="btnUIX.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="uixTextBox.cs" />
     <Compile Include="uixUserControl.cs" />
     <Compile Include="uixUtil.cs" />
+    <EmbeddedResource Include="btnLabelUIX.resx">
+      <DependentUpon>btnLabelUIX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="btnUIX.resx">
       <DependentUpon>btnUIX.cs</DependentUpon>
     </EmbeddedResource>
