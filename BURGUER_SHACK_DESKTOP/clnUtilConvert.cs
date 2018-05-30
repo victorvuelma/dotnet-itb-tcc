@@ -38,5 +38,13 @@ namespace BURGUER_SHACK_DESKTOP
             return null;
         }
 
+        internal static char? ToNullableChar(object val)
+        {
+            if (val != null && !(val is DBNull))
+                return ToNullableChar(val);
+            return null;
+        }
+
+        internal static char ToChar(object val) => Convert.ToChar(val);
     }
 }

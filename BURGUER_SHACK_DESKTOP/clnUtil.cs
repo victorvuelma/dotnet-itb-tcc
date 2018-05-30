@@ -237,6 +237,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal static string retirarFormatacao(string texto)
         {
+            if (texto == null)
+                return null;
             return new String(texto.Where(Char.IsDigit).ToArray()); ;
         }
 
