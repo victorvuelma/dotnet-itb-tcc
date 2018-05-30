@@ -25,8 +25,8 @@ namespace BURGUER_SHACK_DESKTOP
             hdrUIX.Title = App.AppName + " :: Acesso ao Sistema";
 
             _validar = new clnUtilValidar();
-            _validar.addValidacao(txtUsuario, clnUtilValidar.ValidarTipo.VAZIO);
-            _validar.addValidacao(txtSenha, clnUtilValidar.ValidarTipo.VAZIO);
+            _validar.addValidacao(txtUsuario, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtSenha, clnUtilValidar.ValidarTipo.OBRIGATORIO);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

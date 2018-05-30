@@ -13,7 +13,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public enum ValidarTipo
         {
-            VAZIO,
+            OBRIGATORIO,
             EMAIL,
             CPF,
             CNPJ,
@@ -21,7 +21,8 @@ namespace BURGUER_SHACK_DESKTOP
             INT,
             INT_MAIOR_0,
             DATA,
-            DATA_NASC
+            DATA_NASC,
+            CELULAR
         }
 
         private List<ValidarData> _validarControles = new List<ValidarData>();
@@ -118,13 +119,39 @@ namespace BURGUER_SHACK_DESKTOP
                 _motivo = "";
 
                 String conteudo = _control.Text;
+                if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO))
+                {
+                    MessageBox.Show("Validacao porq nao tem vazio");
+                    MaskedTextBox masked = null;
+                    if (Control is MaskedTextBox mask)
+                    {
+                        masked = mask;
+                    }
+                    else if (Control is UIX.mtbUIX uix)
+                    {
+                        masked = uix.mtb;
+                    }
+                    if (masked != null)
+                    {
+                        MaskFormat oldFormat = masked.TextMaskFormat;
+                        masked.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                        conteudo = masked.Text;
+                        masked.TextMaskFormat = oldFormat;
+                    }
+                    MessageBox.Show(Control.Name + " tem " + conteudo);
+                    if (clnUtil.vazio(conteudo))
+                    {
+                        return valido;
+                    }
+                }
+                conteudo = Control.Text;
                 foreach (ValidarTipo tipo in _validacoes)
                 {
                     bool val = true;
                     String res = "";
                     switch (tipo)
                     {
-                        case ValidarTipo.VAZIO:
+                        case ValidarTipo.OBRIGATORIO:
                             val = !clnUtil.vazio(conteudo);
                             res = "precisa ser preenchido.";
                             break;
@@ -160,6 +187,10 @@ namespace BURGUER_SHACK_DESKTOP
                             val = clnUtil.validarDataNasc(conteudo);
                             res = "deve conter uma data da nascimento válida";
                             break;
+                        case ValidarTipo.CELULAR:
+                            val = clnUtil.validarCelular(conteudo);
+                            res = "deve conter um número de celular válido.";
+                            break;
                     }
                     if (!val)
                     {
@@ -172,28 +203,30 @@ namespace BURGUER_SHACK_DESKTOP
 
                 if (!valido)
                 {
-                    if (_control is UIX.txtUIX txt)
+                    if (Control is UIX.txtUIX txt)
                     {
                         UIX.uixTextBox.txtApply(txt.txt, App.AppVisualStyle.TextBoxWarningColor);
-                    } else if(_control is UIX.cboUIX cbo)
+                    }
+                    else if (Control is UIX.cboUIX cbo)
                     {
                         UIX.uixComboBox.cboApply(cbo.cbo, App.AppVisualStyle.TextBoxWarningColor);
-                    } else if(_control is UIX.mtbUIX mtb)
+                    }
+                    else if (Control is UIX.mtbUIX mtb)
                     {
                         UIX.uixMaskedTextBox.mtbApply(mtb.mtb, App.AppVisualStyle.TextBoxWarningColor);
                     }
                 }
                 else
                 {
-                    if (_control is UIX.txtUIX txt)
+                    if (Control is UIX.txtUIX txt)
                     {
                         UIX.uixTextBox.txtApply(txt.txt, App.AppVisualStyle.TextBoxColor);
                     }
-                    else if (_control is UIX.cboUIX cbo)
+                    else if (Control is UIX.cboUIX cbo)
                     {
                         UIX.uixComboBox.cboApply(cbo.cbo, App.AppVisualStyle.TextBoxColor);
                     }
-                    else if (_control is UIX.mtbUIX mtb)
+                    else if (Control is UIX.mtbUIX mtb)
                     {
                         UIX.uixMaskedTextBox.mtbApply(mtb.mtb, App.AppVisualStyle.TextBoxColor);
                     }
