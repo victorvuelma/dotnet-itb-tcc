@@ -35,10 +35,10 @@
             this.txtEmail = new UIX.txtUIX();
             this.mtbTelCel = new UIX.mtbUIX();
             this.cboGenero = new UIX.cboUIX();
-            this.btnSalvar = new UIX.btnUIX();
             this.mtbCPF = new UIX.mtbUIX();
             this.mtbDataNasc = new UIX.mtbUIX();
             this.txtNome = new UIX.txtUIX();
+            this.btnSalvar = new UIX.btnUIX();
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.grbDetalhes.SuspendLayout();
@@ -74,7 +74,7 @@
             this.grbDetalhes.Controls.Add(this.txtNome);
             this.grbDetalhes.Location = new System.Drawing.Point(105, 55);
             this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(490, 149);
+            this.grbDetalhes.Size = new System.Drawing.Size(490, 125);
             this.grbDetalhes.TabIndex = 6;
             this.grbDetalhes.TabStop = false;
             this.grbDetalhes.Text = "INFORMACÕES DO CLIENTE";
@@ -84,18 +84,18 @@
             this.txtEmail.AccessibleName = "E-mail";
             this.txtEmail.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEmail.Campo = "E-mail";
-            this.txtEmail.Location = new System.Drawing.Point(197, 87);
+            this.txtEmail.Location = new System.Drawing.Point(5, 90);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(286, 25);
+            this.txtEmail.Size = new System.Drawing.Size(480, 25);
             this.txtEmail.TabIndex = 12;
             // 
             // mtbTelCel
             // 
             this.mtbTelCel.AccessibleName = "Celular*";
             this.mtbTelCel.Campo = "Celular*";
-            this.mtbTelCel.Location = new System.Drawing.Point(130, 50);
+            this.mtbTelCel.Location = new System.Drawing.Point(125, 60);
             this.mtbTelCel.Mask = "";
             this.mtbTelCel.MaxLength = 32767;
             this.mtbTelCel.Name = "mtbTelCel";
@@ -108,30 +108,17 @@
             this.cboGenero.AccessibleName = "Genero";
             this.cboGenero.Campo = "Genero";
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(400, 50);
+            this.cboGenero.Location = new System.Drawing.Point(410, 60);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(85, 20);
+            this.cboGenero.Size = new System.Drawing.Size(75, 20);
             this.cboGenero.TabIndex = 10;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Description = "Salvar";
-            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.Location = new System.Drawing.Point(486, 198);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // mtbCPF
             // 
             this.mtbCPF.AccessibleName = "CPF*";
             this.mtbCPF.Campo = "CPF*";
-            this.mtbCPF.Location = new System.Drawing.Point(5, 50);
+            this.mtbCPF.Location = new System.Drawing.Point(5, 60);
             this.mtbCPF.Mask = "";
             this.mtbCPF.MaxLength = 32767;
             this.mtbCPF.Name = "mtbCPF";
@@ -141,13 +128,13 @@
             // 
             // mtbDataNasc
             // 
-            this.mtbDataNasc.AccessibleName = "Data de Nascimento";
-            this.mtbDataNasc.Campo = "Data de Nascimento";
-            this.mtbDataNasc.Location = new System.Drawing.Point(6, 87);
+            this.mtbDataNasc.AccessibleName = "Data de Nasc";
+            this.mtbDataNasc.Campo = "Data de Nasc";
+            this.mtbDataNasc.Location = new System.Drawing.Point(265, 60);
             this.mtbDataNasc.Mask = "";
             this.mtbDataNasc.MaxLength = 32767;
             this.mtbDataNasc.Name = "mtbDataNasc";
-            this.mtbDataNasc.Size = new System.Drawing.Size(185, 20);
+            this.mtbDataNasc.Size = new System.Drawing.Size(140, 20);
             this.mtbDataNasc.TabIndex = 8;
             this.mtbDataNasc.ValidatingType = null;
             // 
@@ -156,12 +143,25 @@
             this.txtNome.AccessibleName = "Nome*";
             this.txtNome.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtNome.Campo = "Nome*";
-            this.txtNome.Location = new System.Drawing.Point(5, 20);
+            this.txtNome.Location = new System.Drawing.Point(5, 25);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(480, 20);
             this.txtNome.TabIndex = 7;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Description = "Salvar";
+            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(495, 190);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(100, 100);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // hdrUIX
             // 
@@ -193,7 +193,7 @@
             this.Name = "frmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cliente";
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.Load += new System.EventHandler(this.frmCliente_Load);
             this.pnlMenu.ResumeLayout(false);
             this.grbDetalhes.ResumeLayout(false);
             this.ResumeLayout(false);

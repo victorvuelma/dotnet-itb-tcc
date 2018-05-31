@@ -70,5 +70,13 @@ namespace BURGUER_SHACK_DESKTOP
         {
             exibirReservas();
         }
+
+        private void btnNova_Click(object sender, EventArgs e)
+        {
+            new frmReserva
+            {
+                CodFuncionario = CodFuncionario
+            }.ShowDialog();
+        }
     }
 }
