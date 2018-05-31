@@ -89,10 +89,23 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-
+            if (ObjCliente == null)
+            {
+                if (clnUtilMensagem.mostrarSimNao("Cadastro de Cliente", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                if (clnUtilMensagem.mostrarSimNao("Alteração de Cliente", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                {
+                    Close();
+                }
+            }
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
+        private void frmCliente_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
