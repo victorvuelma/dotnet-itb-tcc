@@ -88,7 +88,7 @@ namespace BURGUER_SHACK_DESKTOP
             objInsert.table("atendimento");
 
             Cod = objInsert.insertWithOutput(App.AppDatabase);
-            CodMesas = obterMesas();
+            this.obterMesas();
         }
 
         public void adicionarMesa(int codMesa)
