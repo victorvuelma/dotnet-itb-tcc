@@ -31,6 +31,8 @@ namespace BURGUER_SHACK_DESKTOP
         public static String MASK_CPF = "000,000,000-00";
         public static String MASK_RG = "00,000,000-0";
 
+        private static String FORMAT_CEL = @"(00) 00000-0000";
+
         private static String REGEX_CEL = @"^\([1-9]{2}\) [9]{0,1}[6-9]{1}[0-9]{3}\-[0-9]{4}$";
 
         private static CPFValidator _cpfValidator = new CPFValidator();
@@ -77,8 +79,153 @@ namespace BURGUER_SHACK_DESKTOP
                 numBoard.ShowDialog();
             };
         }
+        // ---- NUMBOARD
 
-        // --- NUMBOARD
+        // ---- ENDERECO
+        public static void addUFs(ComboBox cbo)
+        {
+            cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
+        }
+
+        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox ctlUF, Control ctlNr)
+        {
+            addUFs(ctlUF);
+            mtbCEP.Validated += (object sender, EventArgs e) =>
+            {
+                if (clnUtil.validarCEP(mtbCEP.Text))
+                {
+                    clnUtil.definirEndereco(mtbCEP.Text, ctlRua, ctlBairro, ctlCidade, ctlUF, ctlNr);
+                }
+            };
+        }
+
+        public static void definirEndereco(String cep, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
+        {
+            if (validarCEP(cep))
+            {
+                Endereco end = obterEndereco(cep);
+                if (end != null)
+                {
+                    ctlRua.Text = end.Logradouro;
+                    ctlBairro.Text = end.Bairro;
+                    ctlCidade.Text = end.Localidade;
+                    cboUF.Text = end.UF;
+                    ctlNr.Focus();
+                }
+                else
+                {
+                    clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnUtilMensagem.MensagemIcone.INFO);
+                    ctlRua.Focus();
+                }
+            }
+        }
+
+        public static Endereco obterEndereco(String cep)
+        {
+            // PEGAR DO BANCO, SE NÃO..
+            return obterEnderecoViaCep(cep);
+        }
+
+        public static Endereco obterEnderecoViaCep(String cep)
+        {
+            try
+            {
+                return _viaCep.GetEndereco(new CEP(cep));
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public static bool validarCEP(String cep)
+        {
+            try
+            {
+                new CEP(cep);
+                return true;
+            }
+            catch (InvalidZipCodeFormat)
+            {
+                return false;
+            }
+        }
+        // ---- ENDERECO
+
+        internal static string retirarFormatacao(string texto)
+        {
+            if (texto == null)
+                return null;
+            return new String(texto.Where(Char.IsDigit).ToArray()); ;
+        }
+
+        public static String formatarCelular(String celular)
+        {
+            if (celular == null || vazio(celular))
+                return null;
+            return long.Parse(celular).ToString(FORMAT_CEL);
+        }
+
+        public static String formatarCPF(String cpf)
+        {
+            return _cpfFormatter.Format(cpf);
+        }
+
+
+        public static String formatarCNPJ(String cnpj)
+        {
+            return _cnpjFormatter.Format(cnpj);
+        }
+
+        // ---- VALIDACOES
+        public static bool validarCelular(String cel)
+        {
+            return Regex.IsMatch(cel, REGEX_CEL);
+        }
+
+        public static bool validarData(String data)
+        {
+            return DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
+        }
+
+        public static bool validarDataNasc(String data)
+        {
+            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now) < 0;
+        }
+
+        public static bool vazio(String str)
+        {
+            return String.IsNullOrWhiteSpace(str);
+        }
+
+        public static bool validarInt(String inteiro)
+        {
+            return Int32.TryParse(inteiro, out int r);
+        }
+
+        public static bool validarCPF(String cpf)
+        {
+            return _cpfValidator.IsValid(cpf);
+        }
+
+        public static bool validarCNPJ(String cnpj)
+        {
+            return _cnpjValidator.IsValid(cnpj);
+        }
+
+        public static bool validarEmail(String mail)
+        {
+            try
+            {
+                System.Net.Mail.MailAddress mailAddress = new System.Net.Mail.MailAddress(mail);
+                return mailAddress.Address.ToLower().Equals(mail.ToLower());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        // ---- VALIDACOES
 
         public static void resetarCampos(ControlCollection controls)
         {
@@ -179,140 +326,6 @@ namespace BURGUER_SHACK_DESKTOP
             positionControl.Clear();
         }
 
-        public static void addUFs(ComboBox cbo)
-        {
-            cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
-        }
-
-        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox ctlUF, Control ctlNr)
-        {
-            addUFs(ctlUF);
-            mtbCEP.Validated += (object sender, EventArgs e) =>
-            {
-                if (clnUtil.validarCEP(mtbCEP.Text))
-                {
-                    clnUtil.definirEndereco(mtbCEP.Text, ctlRua, ctlBairro, ctlCidade, ctlUF, ctlNr);
-                }
-            };
-        }
-
-        public static void definirEndereco(String cep, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
-        {
-            if (validarCEP(cep))
-            {
-                Endereco end = obterEndereco(cep);
-                if (end != null)
-                {
-                    ctlRua.Text = end.Logradouro;
-                    ctlBairro.Text = end.Bairro;
-                    ctlCidade.Text = end.Localidade;
-                    cboUF.Text = end.UF;
-                    ctlNr.Focus();
-                }
-                else
-                {
-                    clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnUtilMensagem.MensagemIcone.INFO);
-                    ctlRua.Focus();
-                }
-            }
-        }
-
-        public static Endereco obterEndereco(String cep)
-        {
-            // PEGAR DO BANCO, SE NÃO..
-            return obterEnderecoViaCep(cep);
-        }
-
-        public static Endereco obterEnderecoViaCep(String cep)
-        {
-            try
-            {
-                return _viaCep.GetEndereco(new CEP(cep));
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        internal static string retirarFormatacao(string texto)
-        {
-            if (texto == null)
-                return null;
-            return new String(texto.Where(Char.IsDigit).ToArray()); ;
-        }
-
-        public static bool validarCelular(String cel)
-        {
-            return Regex.IsMatch(cel, REGEX_CEL);
-        }
-
-        public static bool validarData(String data)
-        {
-            return DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
-        }
-
-        public static bool validarDataNasc(String data)
-        {
-            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now) < 0;
-        }
-
-        public static bool vazio(String str)
-        {
-            return String.IsNullOrWhiteSpace(str);
-        }
-
-        public static bool validarCEP(String cep)
-        {
-            try
-            {
-                new CEP(cep);
-                return true;
-            }
-            catch (InvalidZipCodeFormat)
-            {
-                return false;
-            }
-        }
-
-        public static bool validarInt(String inteiro)
-        {
-            return Int32.TryParse(inteiro, out int r);
-        }
-
-        public static String formatarCPF(String cpf)
-        {
-            return _cpfFormatter.Format(cpf);
-        }
-
-        public static bool validarCPF(String cpf)
-        {
-            return _cpfValidator.IsValid(cpf);
-        }
-
-        public static String formatarCNPJ(String cnpj)
-        {
-            return _cnpjFormatter.Format(cnpj);
-        }
-
-        public static bool validarCNPJ(String cnpj)
-        {
-            return _cnpjValidator.IsValid(cnpj);
-        }
-
-        public static bool validarEmail(String mail)
-        {
-            try
-            {
-                System.Net.Mail.MailAddress mailAddress = new System.Net.Mail.MailAddress(mail);
-                return mailAddress.Address.ToLower().Equals(mail.ToLower());
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo)
         {
             if (pnlConteudo.Controls.Count == 1)
@@ -348,5 +361,6 @@ namespace BURGUER_SHACK_DESKTOP
 
             hdrUIX.Title = App.AppName + " - " + titulo;
         }
+
     }
 }
