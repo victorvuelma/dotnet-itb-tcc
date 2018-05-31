@@ -49,11 +49,25 @@ namespace BURGUER_SHACK_DESKTOP
             Cadastro = clnUtilConvert.ToDateTime(reader["cadastro"])
         };
 
-        public clnCliente obterPorCPF()
+        public clnCliente obterPorCod()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("cliente");
             objSelect.Where.where("id", Cod);
+
+            clnCliente objCliente = null;
+            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            if (reader.Read())
+                objCliente = obter(reader);
+            reader.Close();
+            return objCliente;
+        }
+
+        public clnCliente obterPorCPF()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("cliente");
+            objSelect.Where.where("cpf", Cpf);
 
             clnCliente objCliente = null;
             SqlDataReader reader = objSelect.select(App.AppDatabase);
