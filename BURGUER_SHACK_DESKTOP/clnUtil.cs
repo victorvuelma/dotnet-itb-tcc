@@ -14,6 +14,7 @@ using Caelum.Stella.CSharp.Http;
 using Caelum.Stella.CSharp.Http.Exceptions;
 using static System.Windows.Forms.Control;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -24,6 +25,8 @@ namespace BURGUER_SHACK_DESKTOP
         public static String MASK_CEL = "(00) 00000-0000";
 
         public static String MASK_DATA = "00/00/0000";
+        public static String MASK_HORA = "00:00";
+
         public static String MASK_CEP = "00000-000";
 
         public static String MASK_CNPJ = "00,000,000/0000-00";
@@ -170,8 +173,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             return _cpfFormatter.Format(cpf);
         }
-
-
+        
         public static String formatarCNPJ(String cnpj)
         {
             return _cnpjFormatter.Format(cnpj);
@@ -244,7 +246,7 @@ namespace BURGUER_SHACK_DESKTOP
         }
 
         //https://stackoverflow.com/questions/17188966/how-to-replace-list-item-in-best-way
-        public static void listTrocar<T>(List<T> lista, T valorAntigo, T valorNovo)
+        public static void listTrocar<T>(IList lista, T valorAntigo, T valorNovo)
         {
             int index = lista.IndexOf(valorAntigo);
             if (index != -1)
