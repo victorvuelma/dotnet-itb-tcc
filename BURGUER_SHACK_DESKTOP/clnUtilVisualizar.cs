@@ -29,9 +29,12 @@ namespace BURGUER_SHACK_DESKTOP
 
     public abstract class clnUtilVisualizar<T> : clnUtilVisualizar
     {
+
         private List<T> _opcoes;
+        private clnUtilCallback<clnUtilVisualizar, T> _callbackClick;
 
         public List<T> Opcoes { get => _opcoes; set => _opcoes = value; }
+        internal clnUtilCallback<clnUtilVisualizar, T> CallbackClick { get => _callbackClick; set => _callbackClick = value; }
 
         public override IList getOpcoes() => Opcoes;
 
@@ -79,13 +82,11 @@ namespace BURGUER_SHACK_DESKTOP
             return -1;
         }
 
-        internal abstract void Abrir(T val);
-
         public override void abrir(object obj)
         {
             if (obj != null && obj is T val)
             {
-                Abrir(val);
+                CallbackClick.call(this, val);
             }
         }
 

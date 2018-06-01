@@ -40,7 +40,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnPedidoProdutoIngrediente.clnVisualizar objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizar
             {
-                Opcoes = Ingredientes
+                Opcoes = Ingredientes,
+                CallbackClick = new callbackVisualizar()
             };
 
             frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
@@ -140,6 +141,41 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnIngredienteAdd_Click(object sender, EventArgs e)
         {
             abrirAdicionarIngrediente();
+        }
+
+        private class callbackVisualizar : clnUtilCallback<clnUtilVisualizar, clnPedidoProdutoIngrediente>
+        {
+            public void call(clnUtilVisualizar objVisualizar, clnPedidoProdutoIngrediente obj)
+            {
+                clnProdutoIngrediente objProdutoReceita = new clnProdutoIngrediente
+                {
+                    Cod = obj.CodProdutoIngrediente
+                }.obterPorCodigo();
+
+                if (objProdutoReceita.Alterar || objProdutoReceita.Remover)
+                {
+                    frmPedidoIngrediente frmIngrediente = new frmPedidoIngrediente
+                    {
+                        IngredienteAntigo = obj
+                    };
+                    frmIngrediente.btnAlterar.Visible = objProdutoReceita.Alterar;
+                    frmIngrediente.btnRemover.Visible = objProdutoReceita.Remover;
+                    frmIngrediente.ShowDialog();
+
+                    if (frmIngrediente.IngredienteNovo == null)
+                    {
+                        objVisualizar.getOpcoes().Remove(frmIngrediente.IngredienteAntigo);
+                    }
+                    else if (frmIngrediente.IngredienteAntigo != frmIngrediente.IngredienteNovo)
+                    {
+                        clnUtil.listTrocar(objVisualizar.getOpcoes(), frmIngrediente.IngredienteAntigo, frmIngrediente.IngredienteNovo);
+                    }
+                }
+                else
+                {
+                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
+                }
+            }
         }
     }
 }

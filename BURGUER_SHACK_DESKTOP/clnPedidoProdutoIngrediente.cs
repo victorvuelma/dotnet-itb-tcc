@@ -113,38 +113,6 @@ namespace BURGUER_SHACK_DESKTOP
                 return obj.Cod;
             }
 
-            internal override void Abrir(clnPedidoProdutoIngrediente obj)
-            {
-                clnProdutoIngrediente objProdutoReceita = new clnProdutoIngrediente
-                {
-                    Cod = obj.CodProdutoIngrediente
-                }.obterPorCodigo();
-
-                if (objProdutoReceita.Alterar || objProdutoReceita.Remover)
-                {
-                    frmPedidoIngrediente frmIngrediente = new frmPedidoIngrediente
-                    {
-                        IngredienteAntigo = obj
-                    };
-                    frmIngrediente.btnAlterar.Visible = objProdutoReceita.Alterar;
-                    frmIngrediente.btnRemover.Visible = objProdutoReceita.Remover;
-                    frmIngrediente.ShowDialog();
-
-                    if (frmIngrediente.IngredienteNovo == null)
-                    {
-                        Opcoes.Remove(frmIngrediente.IngredienteAntigo);
-                    }
-                    else if (frmIngrediente.IngredienteAntigo != frmIngrediente.IngredienteNovo)
-                    {
-                        clnUtil.listTrocar(Opcoes, frmIngrediente.IngredienteAntigo, frmIngrediente.IngredienteNovo);
-                    }
-                }
-                else
-                {
-                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
-                }
-
-            }
         }
 
     }
