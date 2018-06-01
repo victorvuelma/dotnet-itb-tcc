@@ -124,7 +124,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (_validar.valido())
+            if (!txtQuantidade.Visible || _validar.valido())
             {
                 Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
@@ -152,6 +152,11 @@ namespace BURGUER_SHACK_DESKTOP
             btnConfirmar.Hide();
 
             realizaPesquisa();
+
+            if(Quantidade == 0)
+            {
+                txtQuantidade.Hide();
+            }
 
             if (ObjSelecionar.getSelecionado() != null)
             {
