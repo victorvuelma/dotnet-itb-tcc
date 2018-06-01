@@ -127,8 +127,8 @@
     <Compile Include="clnUtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
-    <Compile Include="clnPedidoProduto.cs" />
-    <Compile Include="clnPedidoProdutoIngrediente.cs" />
+    <Compile Include="clnItem.cs" />
+    <Compile Include="clnItemIngrediente.cs" />
     <Compile Include="clnProduto.cs" />
     <Compile Include="clnProdutoIngrediente.cs" />
     <Compile Include="clnReserva.cs" />
@@ -160,11 +160,11 @@
     <Compile Include="frmUtilVisualizar.Designer.cs">
       <DependentUpon>frmUtilVisualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPedidoIngrediente.cs">
+    <Compile Include="frmItemIngrediente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPedidoIngrediente.Designer.cs">
-      <DependentUpon>frmPedidoIngrediente.cs</DependentUpon>
+    <Compile Include="frmItemIngrediente.Designer.cs">
+      <DependentUpon>frmItemIngrediente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCozinha.cs">
       <SubType>Form</SubType>
@@ -184,11 +184,11 @@
     <Compile Include="frmAtendimento.Designer.cs">
       <DependentUpon>frmAtendimento.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPedidoProduto.cs">
+    <Compile Include="frmItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPedidoProduto.Designer.cs">
-      <DependentUpon>frmPedidoProduto.cs</DependentUpon>
+    <Compile Include="frmItem.Designer.cs">
+      <DependentUpon>frmItem.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPedido.cs">
       <SubType>Form</SubType>
@@ -318,8 +318,8 @@
     <EmbeddedResource Include="frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPedidoIngrediente.resx">
-      <DependentUpon>frmPedidoIngrediente.cs</DependentUpon>
+    <EmbeddedResource Include="frmItemIngrediente.resx">
+      <DependentUpon>frmItemIngrediente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCozinha.resx">
       <DependentUpon>frmCozinha.cs</DependentUpon>
@@ -333,8 +333,8 @@
     <EmbeddedResource Include="frmAtendimento.resx">
       <DependentUpon>frmAtendimento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPedidoProduto.resx">
-      <DependentUpon>frmPedidoProduto.cs</DependentUpon>
+    <EmbeddedResource Include="frmItem.resx">
+      <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPedido.resx">
       <DependentUpon>frmPedido.cs</DependentUpon>

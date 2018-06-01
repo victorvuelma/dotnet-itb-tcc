@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public class clnPedidoProduto
+    public class clnItem
     {
 
         private int _cod;
 
         private int _codProduto;
         private int _codPedido;
-        private List<int> _codIngredientes;
 
         private int _quantidade;
         private String _adicional;
@@ -23,11 +22,10 @@ namespace BURGUER_SHACK_DESKTOP
         public int CodPedido { get => _codPedido; set => _codPedido = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
         public string Adicional { get => _adicional; set => _adicional = value; }
-        public List<int> CodIngredientes { get => _codIngredientes; set => _codIngredientes = value; }
 
-        public List<clnPedidoProduto> obterPorPedido()
+        public List<clnItem> obterPorPedido()
         {
-            List<clnPedidoProduto> pedidoProdutos = new List<clnPedidoProduto>();
+            List<clnItem> pedidoProdutos = new List<clnItem>();
 
             return pedidoProdutos;
         }

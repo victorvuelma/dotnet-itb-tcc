@@ -15,11 +15,11 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codAtendimento;
 
         private clnPedido _pedido;
-        private Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> _pedidosProdutos;
+        private Dictionary<clnItem, List<clnItemIngrediente>> _pedidosProdutos;
 
         internal int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
         internal clnPedido Pedido { get => _pedido; set => _pedido = value; }
-        internal Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> PedidosProdutos { get => _pedidosProdutos; set => _pedidosProdutos = value; }
+        internal Dictionary<clnItem, List<clnItemIngrediente>> PedidosProdutos { get => _pedidosProdutos; set => _pedidosProdutos = value; }
 
         public frmPedido()
         {
@@ -43,7 +43,7 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(uctProdutos, "Pedido :: Produtos");
         }
 
-        public void addProduto(clnPedidoProduto pedidoProduto, List<clnPedidoProdutoIngrediente> pedidoIngredientes)
+        public void addProduto(clnItem pedidoProduto, List<clnItemIngrediente> pedidoIngredientes)
         {
             PedidosProdutos.Add(pedidoProduto, pedidoIngredientes);
 

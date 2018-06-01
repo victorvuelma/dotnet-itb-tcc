@@ -16,20 +16,20 @@ namespace BURGUER_SHACK_DESKTOP
         private frmPedido _form;
 
         private int _atendimento;
-        private Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> _pedidoProdutos;
+        private Dictionary<clnItem, List<clnItemIngrediente>> _pedidoProdutos;
 
         public frmPedido Form { get => _form; set => _form = value; }
         public int Atendimento { get => _atendimento; set => _atendimento = value; }
-        internal Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> PedidoProdutos { get => _pedidoProdutos; set => _pedidoProdutos = value; }
+        internal Dictionary<clnItem, List<clnItemIngrediente>> PedidoProdutos { get => _pedidoProdutos; set => _pedidoProdutos = value; }
 
         public uctPedidoProdutos()
         {
             InitializeComponent();
         }
 
-        private void editarPedidoProduto(clnPedidoProduto obtPedidoProduto, List<clnPedidoProdutoIngrediente> objIngredientes)
+        private void editarPedidoProduto(clnItem obtPedidoProduto, List<clnItemIngrediente> objIngredientes)
         {
-            frmPedidoProduto frmEditarProduto = new frmPedidoProduto
+            frmItem frmEditarProduto = new frmItem
             {
                 PedidoProduto = obtPedidoProduto,
                 Ingredientes = objIngredientes
@@ -56,10 +56,10 @@ namespace BURGUER_SHACK_DESKTOP
             pnlProdutos.Controls.Clear();
 
             List<Control> opcoesControles = new List<Control>();
-            foreach (KeyValuePair<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> objPedidoIngredientes in PedidoProdutos)
+            foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPedidoIngredientes in PedidoProdutos)
             {
-                clnPedidoProduto objPedidoProduto = objPedidoIngredientes.Key;
-                List<clnPedidoProdutoIngrediente> objIngredientes = objPedidoIngredientes.Value;
+                clnItem objPedidoProduto = objPedidoIngredientes.Key;
+                List<clnItemIngrediente> objIngredientes = objPedidoIngredientes.Value;
 
                 clnProduto objProduto = new clnProduto
                 {

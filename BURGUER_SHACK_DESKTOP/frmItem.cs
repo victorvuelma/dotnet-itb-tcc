@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class frmPedidoProduto : Form
+    public partial class frmItem : Form
     {
         private clnUtilValidar _validar;
 
-        private clnPedidoProduto _pedidoProduto;
-        private List<clnPedidoProdutoIngrediente> _ingredientes;
+        private clnItem _pedidoProduto;
+        private List<clnItemIngrediente> _ingredientes;
 
-        public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
-        public List<clnPedidoProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public clnItem PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
+        public List<clnItemIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
 
-        public frmPedidoProduto()
+        public frmItem()
         {
             InitializeComponent();
 
@@ -38,7 +38,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnPedidoProdutoIngrediente.clnVisualizar objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizar
+            clnItemIngrediente.clnVisualizar objVisualizar = new clnItemIngrediente.clnVisualizar
             {
                 Opcoes = Ingredientes,
                 CallbackClick = new callbackVisualizar()
@@ -51,7 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
             frmVisualizar.Show();
         }
 
-        private void exibirProduto(clnProduto objProduto, clnPedidoProduto objPedidoProduto)
+        private void exibirProduto(clnProduto objProduto, clnItem objPedidoProduto)
         {
             picProduto.Image = objProduto.Imagem;
             lblProdutoNome.Text = objProduto.Nome;
@@ -77,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (objSelecionar.getSelecionado() != null)
             {
-                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
+                clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
                 {
                     Quantidade = frmSelecionar.Quantidade,
                     CodIngrediente = objSelecionar.Selecionado.Cod
@@ -113,6 +113,12 @@ namespace BURGUER_SHACK_DESKTOP
             }.obterPorCodigo();
 
             exibirProduto(objProduto, PedidoProduto);
+
+            if(Ingredientes.Count == 0)
+            {
+                btnIngredienteAdd.Hide();
+                btnIngredientes.Hide();
+            }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -143,23 +149,23 @@ namespace BURGUER_SHACK_DESKTOP
             abrirAdicionarIngrediente();
         }
 
-        private class callbackVisualizar : clnUtilCallback<clnUtilVisualizar, clnPedidoProdutoIngrediente>
+        private class callbackVisualizar : clnUtilCallback<clnUtilVisualizar, clnItemIngrediente>
         {
-            public void call(clnUtilVisualizar objVisualizar, clnPedidoProdutoIngrediente obj)
+            public void call(clnUtilVisualizar objVisualizar, clnItemIngrediente obj)
             {
-                clnProdutoIngrediente objProdutoReceita = new clnProdutoIngrediente
+                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
                     Cod = obj.CodProdutoIngrediente
                 }.obterPorCodigo();
 
-                if (objProdutoReceita.Alterar || objProdutoReceita.Remover)
+                if (objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
                 {
-                    frmPedidoIngrediente frmIngrediente = new frmPedidoIngrediente
+                    frmItemIngrediente frmIngrediente = new frmItemIngrediente
                     {
                         IngredienteAntigo = obj
                     };
-                    frmIngrediente.btnAlterar.Visible = objProdutoReceita.Alterar;
-                    frmIngrediente.btnRemover.Visible = objProdutoReceita.Remover;
+                    frmIngrediente.btnAlterar.Visible = objProdutoIngrediente.Alterar;
+                    frmIngrediente.btnRemover.Visible = objProdutoIngrediente.Remover;
                     frmIngrediente.ShowDialog();
 
                     if (frmIngrediente.IngredienteNovo == null)

@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class frmPedidoProduto
+    partial class frmItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidoProduto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItem));
             this.hdrUIX = new UIX.hdrUIX();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.grbProduto = new System.Windows.Forms.GroupBox();

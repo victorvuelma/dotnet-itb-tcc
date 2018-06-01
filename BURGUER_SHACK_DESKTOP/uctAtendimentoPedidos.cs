@@ -63,18 +63,18 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirPedido(clnPedido objPedido)
         {
-            List<clnPedidoProduto> objProdutos = new clnPedidoProduto
+            List<clnItem> objProdutos = new clnItem
             {
                 CodPedido = objPedido.Cod
             }.obterPorPedido();
 
-            Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>> objPedidoProdutoIngredientes = new Dictionary<clnPedidoProduto, List<clnPedidoProdutoIngrediente>>();
-            foreach(clnPedidoProduto objPedidoProduto in objProdutos)
+            Dictionary<clnItem, List<clnItemIngrediente>> objPedidoProdutoIngredientes = new Dictionary<clnItem, List<clnItemIngrediente>>();
+            foreach(clnItem objPedidoProduto in objProdutos)
             {
-                List<clnPedidoProdutoIngrediente> objIngredientes = new clnPedidoProdutoIngrediente
+                List<clnItemIngrediente> objIngredientes = new clnItemIngrediente
                 {
-                    CodPedidoProduto = objPedido.Cod
-                }.obterPorPedidoProduto();
+                    CodItem = objPedido.Cod
+                }.obterPorItem();
 
                 objPedidoProdutoIngredientes.Add(objPedidoProduto, objIngredientes);
             }

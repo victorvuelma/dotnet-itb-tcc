@@ -17,12 +17,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private clnUtilValidar _validar;
 
-        private clnPedidoProduto _pedidoProduto;
-        private List<clnPedidoProdutoIngrediente> _ingredientes;
+        private clnItem _pedidoProduto;
+        private List<clnItemIngrediente> _ingredientes;
 
-        public clnPedidoProduto PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
+        public clnItem PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
         public frmPedido Form { get => _form; set => _form = value; }
-        public List<clnPedidoProdutoIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public List<clnItemIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
 
         public uctPedidoAdicionar()
         {
@@ -43,7 +43,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void selecionaProduto(clnProduto objProduto, int quantidade)
         {
-            List<clnPedidoProdutoIngrediente> objIngredientes = new List<clnPedidoProdutoIngrediente>();
+            List<clnItemIngrediente> objIngredientes = new List<clnItemIngrediente>();
             foreach (int codProdutoIngrediente in objProduto.CodReceitas)
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
@@ -51,7 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = codProdutoIngrediente
                 }.obterPorProdutoIngrediente();
 
-                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
+                clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
                 {
                     CodIngrediente = objProdutoIngrediente.CodIngrediente,
                     Quantidade = objProdutoIngrediente.Quantidade,
@@ -60,7 +60,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objIngredientes.Add(objPedidoIngrediente);
             }
 
-            clnPedidoProduto objPedido = new clnPedidoProduto
+            clnItem objPedido = new clnItem
             {
                 CodProduto = objProduto.Cod,
                 Quantidade = quantidade,
@@ -128,7 +128,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void exibirProduto(clnProduto objProduto, clnPedidoProduto objPedidoProduto)
+        private void exibirProduto(clnProduto objProduto, clnItem objPedidoProduto)
         {
             grbProduto.Hide();
 
@@ -167,7 +167,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnPedidoProdutoIngrediente.clnVisualizar objVisualizar = new clnPedidoProdutoIngrediente.clnVisualizar
+            clnItemIngrediente.clnVisualizar objVisualizar = new clnItemIngrediente.clnVisualizar
             {
                 Opcoes = Ingredientes
             };
@@ -200,7 +200,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (objSelecionar.getSelecionado() != null)
             {
-                clnPedidoProdutoIngrediente objPedidoIngrediente = new clnPedidoProdutoIngrediente
+                clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
                 {
                     Quantidade = frmSelecionar.Quantidade,
                     CodIngrediente = objSelecionar.Selecionado.Cod
