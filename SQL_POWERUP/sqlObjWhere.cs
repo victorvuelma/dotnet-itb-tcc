@@ -12,6 +12,7 @@ namespace SQL_POWERUP
         public enum whereOperation
         {
             EQUALS,
+            UNEQUAL,
             MAJOR,
             MAJOR_EQUALS,
             LESS,

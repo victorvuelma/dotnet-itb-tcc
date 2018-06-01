@@ -53,6 +53,9 @@ namespace SQL_POWERUP
                         case sqlObjWhere.whereOperation.EQUALS:
                             paramsBuilder.Append('=');
                             break;
+                        case sqlObjWhere.whereOperation.UNEQUAL:
+                            paramsBuilder.Append("!=");
+                            break;
                         case sqlObjWhere.whereOperation.LESS:
                             paramsBuilder.Append('<');
                             break;
