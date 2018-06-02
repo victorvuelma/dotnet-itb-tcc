@@ -37,7 +37,7 @@ namespace SQL_POWERUP
         {
             table = table.ToUpper();
             column = column.ToUpper();
-            other = column.ToUpper();
+            other = other.ToUpper();
             return join(new sqlObjJoin
             {
                 Table = table,
