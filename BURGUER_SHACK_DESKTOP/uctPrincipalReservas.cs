@@ -14,7 +14,7 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private int _codFuncionario;
-        
+
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public uctPrincipalReservas()
@@ -36,8 +36,8 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 UIX.btnLabelUIX btn = new UIX.btnLabelUIX
                 {
-                    Description = ("RESERVA #" + objReserva.Cod+ " - " + objReserva.Agendado.ToString("HH:mm") + 
-                                    "\n" + objReserva.Situacao + 
+                    Description = ("RESERVA #" + objReserva.Cod + " - " + objReserva.Agendado.ToString("HH:mm") +
+                                    "\n" + objReserva.Situacao +
                                     "\n" + objReserva.Pessoas + " pessoas"),
                     Name = "btnReserva" + objReserva.Cod,
                     Size = new Size(120, 160),
@@ -56,9 +56,23 @@ namespace BURGUER_SHACK_DESKTOP
             pnlReservas.BackColor = BackColor;
         }
 
-        private void abrirReserva(clnReserva objMesa)
+        private void abrirReserva(clnReserva objReserva)
         {
-            throw new NotImplementedException();
+            if (objReserva.Situacao != clnReserva.reservaSituacao.CANCELADA)
+            {
+                frmReserva frmReserva = new frmReserva
+                {
+                    ObjReserva = objReserva,
+                    CodFuncionario = CodFuncionario
+                };
+                frmReserva.ShowDialog();
+
+                exibirReservas();
+            }
+            else
+            {
+                clnUtilMensagem.mostrarOk("Reservas", "Não é possível alterar uma reserva já cancelada.", clnUtilMensagem.MensagemIcone.ERRO);
+            }
         }
 
         private void uctPrincipalReservas_Load(object sender, EventArgs e)
