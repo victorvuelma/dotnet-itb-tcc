@@ -118,7 +118,7 @@ namespace BURGUER_SHACK_DESKTOP
             public bool validar()
             {
 
-                if (!Control.Visible)
+                if (!Control.Visible || !Control.Enabled)
                 {
                     return true;
                 }

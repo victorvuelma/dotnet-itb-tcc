@@ -179,6 +179,21 @@ namespace BURGUER_SHACK_DESKTOP
             return _cnpjFormatter.Format(cnpj);
         }
 
+        public static String formatarData(DateTime data)
+        {
+            return data.ToString("dd/MM/yyyy");
+        }
+
+        public static String formatarHora(DateTime hora)
+        {
+            return hora.ToString("HH:mm");
+        }
+
+        public static String formatarDataHora(DateTime dataHora)
+        {
+            return dataHora.ToString("dd/MM/yyyy HH:mm");
+        }
+
         // ---- VALIDACOES
         public static bool validarCelular(String cel)
         {
