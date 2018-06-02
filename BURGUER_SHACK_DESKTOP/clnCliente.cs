@@ -81,14 +81,14 @@ namespace BURGUER_SHACK_DESKTOP
         {
             sqlCommandInsert objInsert = new sqlCommandInsert();
             objInsert.table("cliente");
-            objInsert.Insert.with("id_funcionario", CodFuncionario)
-                            .with("nome", Nome)
-                            .with("cpf", Cpf)
-                            .with("data_nascimento", DataNascimento)
-                            .with("genero", Genero)
-                            .with("tel_cel", TelCelular)
-                            .with("email", Email)
-                            .with("cadastro", Cadastro);
+            objInsert.Insert.val("id_funcionario", CodFuncionario)
+                            .val("nome", Nome)
+                            .val("cpf", Cpf)
+                            .val("data_nascimento", DataNascimento)
+                            .val("genero", Genero)
+                            .val("tel_cel", TelCelular)
+                            .val("email", Email)
+                            .val("cadastro", Cadastro);
             Cod = objInsert.insertWithOutput(App.AppDatabase);
         }
 
@@ -97,11 +97,11 @@ namespace BURGUER_SHACK_DESKTOP
             sqlCommandUpdate objUpdate = new sqlCommandUpdate();
             objUpdate.table("cliente");
             objUpdate.Where.where("id", Cod);
-            objUpdate.Set.with("nome", Nome)
-                            .with("data_nascimento", DataNascimento)
-                            .with("genero", Genero)
-                            .with("tel_cel", TelCelular)
-                            .with("email", Email);
+            objUpdate.Set.val("nome", Nome)
+                            .val("data_nascimento", DataNascimento)
+                            .val("genero", Genero)
+                            .val("tel_cel", TelCelular)
+                            .val("email", Email);
             objUpdate.update(App.AppDatabase);
         }
     }

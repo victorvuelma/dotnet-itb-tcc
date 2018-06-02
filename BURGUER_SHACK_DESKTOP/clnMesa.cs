@@ -84,7 +84,7 @@ namespace BURGUER_SHACK_DESKTOP
             sqlCommandUpdate objUpdate = new sqlCommandUpdate();
             objUpdate.table("MESA");
             objUpdate.Where.where("id", Cod);
-            objUpdate.Set.with("situacao", prefixo(Situacao));
+            objUpdate.Set.val("situacao", prefixo(Situacao));
             objUpdate.update(App.AppDatabase);
         }
 

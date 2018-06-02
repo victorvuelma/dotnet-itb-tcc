@@ -15,7 +15,7 @@ namespace SQL_POWERUP
 
         public Dictionary<string, object> Values { get => _values; set => _values = value; }
 
-        public sqlHelperValue with(String column, object val)
+        public sqlHelperValue val(String column, object val)
         {
             column = column.ToUpper();
             if (Values.ContainsKey(column))
@@ -26,9 +26,9 @@ namespace SQL_POWERUP
             return this;
         }
 
-        public sqlHelperValue with(KeyValuePair<String, object> columnValue)
+        public sqlHelperValue val(KeyValuePair<String, object> columnValue)
         {
-            return with(columnValue.Key, columnValue.Value);
+            return val(columnValue.Key, columnValue.Value);
         }
 
         internal void generateInsert(StringBuilder builder, bool outputId)
