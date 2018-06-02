@@ -41,7 +41,7 @@
             this.cboSituacao = new UIX.cboUIX();
             this.txtPessoas = new UIX.txtUIX();
             this.mtbHora = new UIX.mtbUIX();
-            this.mtbDia = new UIX.mtbUIX();
+            this.mtbData = new UIX.mtbUIX();
             this.btnMesaAdd = new UIX.btnUIX();
             this.btnMesaVer = new UIX.btnUIX();
             this.grbMesas = new System.Windows.Forms.GroupBox();
@@ -62,6 +62,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // hdrUIX
             // 
@@ -145,7 +146,7 @@
             this.grbReserva.Controls.Add(this.cboSituacao);
             this.grbReserva.Controls.Add(this.txtPessoas);
             this.grbReserva.Controls.Add(this.mtbHora);
-            this.grbReserva.Controls.Add(this.mtbDia);
+            this.grbReserva.Controls.Add(this.mtbData);
             this.grbReserva.Location = new System.Drawing.Point(105, 180);
             this.grbReserva.Name = "grbReserva";
             this.grbReserva.Size = new System.Drawing.Size(290, 114);
@@ -188,17 +189,18 @@
             this.mtbHora.TabIndex = 9;
             this.mtbHora.ValidatingType = null;
             // 
-            // mtbDia
+            // mtbData
             // 
-            this.mtbDia.AccessibleName = "Dia";
-            this.mtbDia.Campo = "Dia";
-            this.mtbDia.Location = new System.Drawing.Point(5, 20);
-            this.mtbDia.Mask = "";
-            this.mtbDia.MaxLength = 32767;
-            this.mtbDia.Name = "mtbDia";
-            this.mtbDia.Size = new System.Drawing.Size(160, 20);
-            this.mtbDia.TabIndex = 8;
-            this.mtbDia.ValidatingType = null;
+            this.mtbData.AccessibleName = "Dia";
+            this.mtbData.Campo = "Dia";
+            this.mtbData.Location = new System.Drawing.Point(5, 20);
+            this.mtbData.Mask = "";
+            this.mtbData.MaxLength = 32767;
+            this.mtbData.Name = "mtbData";
+            this.mtbData.Size = new System.Drawing.Size(160, 20);
+            this.mtbData.TabIndex = 8;
+            this.mtbData.ValidatingType = null;
+            this.mtbData.Validated += new System.EventHandler(this.mtbData_Validated);
             // 
             // btnMesaAdd
             // 
@@ -275,7 +277,7 @@
         private UIX.btnUIX btnCliEncontrar;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.GroupBox grbReserva;
-        private UIX.mtbUIX mtbDia;
+        private UIX.mtbUIX mtbData;
         private UIX.mtbUIX mtbHora;
         private UIX.txtUIX txtPessoas;
         private UIX.cboUIX cboSituacao;

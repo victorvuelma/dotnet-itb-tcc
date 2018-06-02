@@ -16,26 +16,30 @@ namespace BURGUER_SHACK_DESKTOP
         private clnUtilValidar _validar;
 
         private int _codFuncionario;
-        private int? _codCliente;
 
         private clnReserva _objReserva;
 
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-        public int? CodCliente { get => _codCliente; set => _codCliente = value; }
         internal clnReserva ObjReserva { get => _objReserva; set => _objReserva = value; }
 
         public frmReserva()
         {
             InitializeComponent();
 
+            _validar = new clnUtilValidar();
+            _validar.addValidacao(mtbData, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DATA, clnUtilValidar.ValidarTipo.DATA_FUTURA });
+            _validar.addValidacao(mtbHora, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.HORA });
+            _validar.addValidacao(txtPessoas, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
+            _validar.addValidacao(cboSituacao, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+
             mtbCliCPF.Mask = clnUtil.MASK_CPF;
-            mtbDia.Mask = clnUtil.MASK_DATA;
+            mtbData.Mask = clnUtil.MASK_DATA;
             mtbHora.Mask = clnUtil.MASK_HORA;
         }
 
         private void encontrarCliente()
         {
-            if (ObjReserva == null && clnUtil.validarCPF(mtbCliCPF.Text))
+            if (ObjReserva.Cod == -1 && clnUtil.validarCPF(mtbCliCPF.Text))
             {
                 clnCliente objCliente = new clnCliente
                 {
@@ -70,10 +74,15 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void definirCliente(clnCliente objCliente)
         {
-            CodCliente = objCliente.Cod;
+            ObjReserva.CodCliente = objCliente.Cod;
+            exibirCliente(objCliente);
+        }
+
+        private void exibirCliente(clnCliente objCliente)
+        {
             lblCliente.Text = "Cliente #" + objCliente.Cod + "\n"
-                              + "Nome: " + objCliente.Nome + "\n"
-                              + "Celular: " + clnUtil.formatarCelular(objCliente.TelCelular);
+                                          + "Nome: " + objCliente.Nome + "\n"
+                                          + "Celular: " + clnUtil.formatarCelular(objCliente.TelCelular);
         }
 
         private void fechar()
@@ -114,7 +123,7 @@ namespace BURGUER_SHACK_DESKTOP
                     }
                 }
 
-                
+
             }
             else if (clnUtilMensagem.mostrarSimNao("Mesas", "Esta reserva não possui nenhuma mesa, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
             {
@@ -124,12 +133,85 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void adicionarMesa()
         {
+            if (obterDataAgendada() != null)
+            {
+                List<clnMesa>  objMesas = new clnMesa().obterMesas();
 
+                List<int> codMesasReservadas = new clnReserva
+                {
+                    Agendado = (DateTime)obterDataAgendada()
+                }.obterMesasReservadas();
+
+                objMesas.RemoveAll(objMesa => (codMesasReservadas.Contains(objMesa.Cod) || ObjReserva.CodMesas.Contains(objMesa.Cod)));
+
+                clnMesa.clnSelecionar objSelecionar = new clnMesa.clnSelecionar
+                {
+                    Opcoes = objMesas
+                };
+
+                frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+                {
+                    Selecionando = "Mesas",
+                    ObjSelecionar = objSelecionar,
+                    Quantidade = 0
+                };
+                frmSelecionar.ShowDialog();
+
+                if (objSelecionar.Selecionado != null)
+                {
+                    ObjReserva.addMesa(objSelecionar.Selecionado.Cod);
+                    if (clnUtilMensagem.mostrarSimNao("Mesas", "Mesa " + objSelecionar.Selecionado.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", clnUtilMensagem.MensagemIcone.INFO))
+                    {
+                        adicionarMesa();
+                    }
+                }
+            }
+            else
+            {
+                clnUtilMensagem.mostrarOk("Mesas", "É necessário informar a data da reserva antes de adicionar mesas", clnUtilMensagem.MensagemIcone.ERRO);
+            }
         }
 
-        private void btnCliEncontrar_Click(object sender, EventArgs e)
+        private DateTime? obterDataAgendada()
         {
-            encontrarCliente();
+            if (clnUtil.validarData(mtbData.Text))
+            {
+                return clnUtilConvert.ObterNullableData(mtbData.Text);
+            }
+            return null;
+        }
+
+        private void salvar()
+        {
+            if (_validar.valido())
+            {
+                if (ObjReserva.CodMesas.Count > 0)
+                {
+
+                }
+                else
+                {
+                    clnUtilMensagem.mostrarOk("Mesas", "É necessário selecionar pelo menos 1 mesa.", clnUtilMensagem.MensagemIcone.ERRO);
+                }
+            }
+        }
+
+        private void tentarDefinirData()
+        {
+            if (clnUtil.validarData(mtbData.Text) && clnUtil.validarDataFutura(mtbData.Text))
+            {
+                DateTime dataAgendada = clnUtilConvert.ObterData(mtbData.Text).Date;
+                if (!ObjReserva.Agendado.Equals(dataAgendada))
+                {
+                    ObjReserva.Agendado = dataAgendada;
+
+                    if (ObjReserva.CodMesas.Count > 0)
+                    {
+                        ObjReserva.CodMesas.Clear();
+                        clnUtilMensagem.mostrarOk("Mesas", "Como você alterou a data da reserva, sera necessário redefinir as mesas", clnUtilMensagem.MensagemIcone.INFO);
+                    }
+                }
+            }
         }
 
         private void frmReserva_Load(object sender, EventArgs e)
@@ -154,8 +236,18 @@ namespace BURGUER_SHACK_DESKTOP
                 hdrUIX.Title = App.AppName + " :: Alterando Reserva #" + ObjReserva.Cod;
                 mtbCliCPF.Enabled = false;
                 mtbHora.Enabled = false;
-                mtbDia.Enabled = false;
+                mtbData.Enabled = false;
+
+                exibirCliente(new clnCliente
+                {
+                    Cod = ObjReserva.CodCliente
+                }.obterPorCod());
             }
+        }
+
+        private void btnCliEncontrar_Click(object sender, EventArgs e)
+        {
+            encontrarCliente();
         }
 
         private void btnMesaVer_Click(object sender, EventArgs e)
@@ -176,6 +268,16 @@ namespace BURGUER_SHACK_DESKTOP
         private void hdrUIX_Close(object sender, EventArgs e)
         {
             fechar();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            salvar();
+        }
+
+        private void mtbData_Validated(object sender, EventArgs e)
+        {
+            tentarDefinirData();
         }
     }
 }

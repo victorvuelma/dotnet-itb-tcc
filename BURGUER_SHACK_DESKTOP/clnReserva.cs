@@ -88,6 +88,71 @@ namespace BURGUER_SHACK_DESKTOP
             return objReservas;
         }
 
+        public List<int> obterMesasReservadas()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("mesa");
+            objSelect.Select.select("mesa.id");
+            objSelect.Join.innerJoin("reserva_mesa", "id_mesa", "mesa.id")
+                          .innerJoin("reserva", "id", "reserva_mesa.id_reserva");
+            objSelect.Where.where("reserva.agendado", sqlObjWhere.whereOperation.MAJOR_EQUALS, Agendado)
+                           .where("reserva.agendado", sqlObjWhere.whereOperation.LESS, Agendado.AddDays(1))
+                           .where("reserva.situacao", sqlObjWhere.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
+
+            List<int> objMesas = new List<int>();
+            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            while (reader.Read())
+            {
+                objMesas.Add(clnUtilConvert.ToInt(reader["id"]));
+            }
+            reader.Close();
+            return objMesas;
+        }
+
+        public void gravar()
+        {
+            
+        }
+
+        public void alterar()
+        {
+
+        }
+
+        internal void addMesa(int mesa)
+        {
+            if (!CodMesas.Contains(mesa))
+            {
+                CodMesas.Add(mesa);
+                if (Cod != -1)
+                {
+                    sqlCommandInsert objInsert = new sqlCommandInsert();
+                    objInsert.table("reserva_mesa");
+                    objInsert.Insert.val("id_reserva", Cod)
+                                    .val("id_mesa", mesa);
+
+                    objInsert.insert(App.AppDatabase);
+                }
+            }
+        }
+
+        internal void removerMesa(int mesa)
+        {
+            if (CodMesas.Contains(mesa))
+            {
+                CodMesas.Add(mesa);
+                if (Cod != -1)
+                {
+                    sqlCommandDelete objDelete = new sqlCommandDelete();
+                    objDelete.table("reserva_mesa");
+                    objDelete.Where.where("id_reserva", Cod)
+                                   .where("id_mesa", mesa);
+
+                    objDelete.delete(App.AppDatabase);
+                }
+            }
+        }
+
         private reservaSituacao situacao(String prefixo)
         {
             switch (prefixo.ToUpper())

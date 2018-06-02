@@ -22,6 +22,8 @@ namespace BURGUER_SHACK_DESKTOP
             INT_MAIOR_0,
             DATA,
             DATA_NASC,
+            DATA_FUTURA,
+            HORA,
             CELULAR
         }
 
@@ -183,11 +185,19 @@ namespace BURGUER_SHACK_DESKTOP
                             break;
                         case ValidarTipo.DATA_NASC:
                             val = clnUtil.validarDataNasc(conteudo);
-                            res = "deve conter uma data da nascimento válida";
+                            res = "deve conter uma data da nascimento.";
                             break;
                         case ValidarTipo.CELULAR:
                             val = clnUtil.validarCelular(conteudo);
                             res = "deve conter um número de celular válido.";
+                            break;
+                        case ValidarTipo.DATA_FUTURA:
+                            val = clnUtil.validarDataFutura(conteudo);
+                            res = "deve conter uma data futura.";
+                            break;
+                        case ValidarTipo.HORA:
+                            val = clnUtil.validarHora(conteudo);
+                            res = "deve conter uma hora válida.";
                             break;
                     }
                     if (!val)

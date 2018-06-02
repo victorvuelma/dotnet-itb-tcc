@@ -173,7 +173,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             return _cpfFormatter.Format(cpf);
         }
-        
+
         public static String formatarCNPJ(String cnpj)
         {
             return _cnpjFormatter.Format(cnpj);
@@ -193,6 +193,16 @@ namespace BURGUER_SHACK_DESKTOP
         public static bool validarDataNasc(String data)
         {
             return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now) < 0;
+        }
+
+        public static bool validarDataFutura(String data)
+        {
+            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now) >= 0;
+        }
+
+        public static bool validarHora(String hora)
+        {
+            return DateTime.TryParseExact(hora, "HH:mm", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
         }
 
         public static bool vazio(String str)
