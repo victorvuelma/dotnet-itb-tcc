@@ -117,8 +117,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             public bool validar()
             {
-                bool valido = true;
-                _motivo = "";
+
+                if (!Control.Visible)
+                {
+                    return true;
+                }
 
                 String conteudo = _control.Text;
                 if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO))
@@ -141,9 +144,12 @@ namespace BURGUER_SHACK_DESKTOP
                     }
                     if (clnUtil.vazio(conteudo))
                     {
-                        return valido;
+                        return true;
                     }
                 }
+
+                bool valido = true;
+                _motivo = "";
                 conteudo = Control.Text;
                 foreach (ValidarTipo tipo in _validacoes)
                 {
