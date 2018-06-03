@@ -17,8 +17,6 @@ namespace UIX
         public cboUIX()
         {
             InitializeComponent();
-
-            cbo.Margin = new Padding();
         }
 
         public String Campo
