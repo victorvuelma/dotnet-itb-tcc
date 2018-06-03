@@ -17,6 +17,8 @@ namespace UIX
         public cboUIX()
         {
             InitializeComponent();
+
+            cbo.Margin = new Padding();
         }
 
         public String Campo
@@ -53,8 +55,8 @@ namespace UIX
         private void update()
         {
             lbl.AutoSize = true;
-            cbo.Size = new Size(Size.Width - lbl.Size.Width, cbo.Size.Height);
             cbo.Location = new Point(lbl.Location.X + lbl.Size.Width, cbo.Location.Y);
+            cbo.Size = new Size(Size.Width - cbo.Location.X, cbo.Size.Height);
         }
 
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -66,5 +68,9 @@ namespace UIX
 
         public override String Text { get => cbo.Text; set => cbo.Text = value; }
 
+        private void cboUIX_Load(object sender, EventArgs e)
+        {
+            update();
+        }
     }
 }

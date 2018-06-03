@@ -70,8 +70,13 @@ namespace UIX
         private void update()
         {
             lbl.AutoSize = true;
-            txt.Size = new Size(Size.Width - lbl.Size.Width, txt.Size.Height);
             txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
+            txt.Size = new Size(Size.Width - txt.Location.X, txt.Size.Height);
+        }
+
+        private void txtUIX_Load(object sender, EventArgs e)
+        {
+            update();
         }
 
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
@@ -102,5 +107,6 @@ namespace UIX
                 confirmar = 1;
             }
         }
+
     }
 }

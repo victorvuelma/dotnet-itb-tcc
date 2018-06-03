@@ -35,7 +35,7 @@
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(-3, 0);
+            this.lbl.Location = new System.Drawing.Point(-2, 0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(43, 13);
             this.lbl.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             this.cbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbo.FormattingEnabled = true;
-            this.cbo.Location = new System.Drawing.Point(27, 0);
+            this.cbo.Location = new System.Drawing.Point(40, 0);
             this.cbo.Name = "cbo";
             this.cbo.Size = new System.Drawing.Size(100, 21);
             this.cbo.TabIndex = 2;
@@ -59,6 +59,7 @@
             this.Controls.Add(this.lbl);
             this.Name = "cboUIX";
             this.Size = new System.Drawing.Size(150, 20);
+            this.Load += new System.EventHandler(this.cboUIX_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

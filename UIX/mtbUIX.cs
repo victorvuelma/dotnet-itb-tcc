@@ -16,7 +16,6 @@ namespace UIX
         public mtbUIX()
         {
             InitializeComponent();
-
         }
 
         public String Campo
@@ -53,8 +52,8 @@ namespace UIX
         private void update()
         {
             lbl.AutoSize = true;
-            mtb.Size = new Size(Size.Width - lbl.Size.Width, mtb.Size.Height);
             mtb.Location = new Point(lbl.Location.X + lbl.Size.Width, mtb.Location.Y);
+            mtb.Size = new Size(Size.Width - mtb.Location.X, mtb.Size.Height);
         }
 
         [Editor("System.Windows.Forms.Design.MaskPropertyEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -70,7 +69,7 @@ namespace UIX
 
         private void mtbUIX_Load(object sender, EventArgs e)
         {
-            Campo = Campo;
+            update();
         }
 
         private void mtb_Click(object sender, EventArgs e)

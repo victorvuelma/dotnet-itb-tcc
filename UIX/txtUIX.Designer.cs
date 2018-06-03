@@ -35,7 +35,7 @@
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(-3, 0);
+            this.lbl.Location = new System.Drawing.Point(-2, 0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(43, 13);
             this.lbl.TabIndex = 0;
@@ -48,7 +48,6 @@
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(100, 20);
             this.txt.TabIndex = 1;
-            this.txt.KeyDown += new System.Windows.Forms.KeyEventHandler(txtUIX.txt_KeyDown);
             this.txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txtUIX
@@ -59,6 +58,7 @@
             this.Controls.Add(this.lbl);
             this.Name = "txtUIX";
             this.Size = new System.Drawing.Size(150, 20);
+            this.Load += new System.EventHandler(this.txtUIX_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUIX_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
