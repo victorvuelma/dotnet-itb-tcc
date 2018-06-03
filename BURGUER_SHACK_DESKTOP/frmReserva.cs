@@ -29,7 +29,6 @@ namespace BURGUER_SHACK_DESKTOP
             _validar.addValidacao(mtbData, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DATA, clnUtilValidar.ValidarTipo.DATA_FUTURA });
             _validar.addValidacao(mtbHora, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.HORA });
             _validar.addValidacao(txtPessoas, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
-            _validar.addValidacao(cboSituacao, clnUtilValidar.ValidarTipo.OBRIGATORIO);
 
             mtbCliCPF.Mask = clnUtil.MASK_CPF;
             mtbData.Mask = clnUtil.MASK_DATA;
@@ -219,14 +218,17 @@ namespace BURGUER_SHACK_DESKTOP
                             mtbCliCPF.Focus();
                         }
                     }
-                    else
+                    else if (txtPessoas.Enabled)
                     {
                         ObjReserva.Pessoas = clnUtilConvert.ToInt(txtPessoas.Text);
-                        ObjReserva.Situacao = (clnReserva.reservaSituacao)Enum.Parse(typeof(clnReserva.reservaSituacao), cboSituacao.Text);
                         ObjReserva.alterar();
 
                         clnUtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                         Close();
+                    }
+                    else
+                    {
+                        clnUtilMensagem.mostrarOk("Alteração de Reserva", "Não é possivel alterar esta reserva.", clnUtilMensagem.MensagemIcone.ERRO);
                     }
                 }
                 else
@@ -254,6 +256,78 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void iniciarAtendimento()
+        {
+            if (clnUtilMensagem.mostrarSimNao("Reserva", "Deseja iniciar um atendimento para esta reserva?", clnUtilMensagem.MensagemIcone.OK))
+            {
+                List<int> objMesasIndisponiveis = new List<int>();
+
+                foreach (int codMesa in ObjReserva.CodMesas)
+                {
+                    clnMesa objMesa = new clnMesa
+                    {
+                        Cod = codMesa
+                    }.obterPorCodigo();
+
+                    if (objMesa.Situacao == clnMesa.mesaSituacao.OCUPADA)
+                    {
+                        objMesasIndisponiveis.Add(codMesa);
+                    }
+                }
+
+                if (objMesasIndisponiveis.Count == 0)
+                {
+                    clnAtendimento objAtendimento = new clnAtendimento
+                    {
+                        CodCliente = ObjReserva.CodCliente,
+                        CodReserva = ObjReserva.Cod,
+                        Inicio = DateTime.Now,
+                        CodFuncionario = CodFuncionario,
+                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO,
+                        CodMesas = new List<int>()
+                    };
+                    objAtendimento.gravar();
+
+                    ObjReserva.Situacao = clnReserva.reservaSituacao.UTILIZADA;
+                    ObjReserva.alterar();
+
+                    foreach (int codMesa in ObjReserva.CodMesas)
+                    {
+                        objAtendimento.adicionarMesa(codMesa);
+                    }
+
+                    clnUtilMensagem.mostrarOk("Atendimento", "O atendimento foi iniciado para a(s) mesa(s) " + String.Join(",", ObjReserva.CodMesas.ToArray()), clnUtilMensagem.MensagemIcone.OK);
+                    Close();
+                }
+                else
+                {
+                    clnUtilMensagem.mostrarOk("Atendimento", "Não foi possível iniciar o atendimento, a(s) mesa(s) " + String.Join(",", objMesasIndisponiveis.ToArray()) + " estão ocupadas.", clnUtilMensagem.MensagemIcone.ERRO);
+                }
+            }
+        }
+
+        private void confirmarReserva()
+        {
+            if (clnUtilMensagem.mostrarSimNao("Reserva", "Voce deseja CONFIRMAR esta reserva?", clnUtilMensagem.MensagemIcone.INFO))
+            {
+                ObjReserva.Situacao = clnReserva.reservaSituacao.CONFIRMADA;
+                ObjReserva.alterar();
+                clnUtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                grbSituacao.Hide();
+            }
+        }
+
+        private void cancelarReserva()
+        {
+            if (clnUtilMensagem.mostrarSimNao("Reserva", "Voce deseja CANCELAR esta reserva?", clnUtilMensagem.MensagemIcone.INFO))
+            {
+                ObjReserva.Situacao = clnReserva.reservaSituacao.CANCELADA;
+                ObjReserva.alterar();
+                clnUtilMensagem.mostrarOk("Reserva", "Reserva CANCELADA com sucesso!", clnUtilMensagem.MensagemIcone.ERRO);
+                Close();
+            }
+        }
+
         private void frmReserva_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
@@ -261,16 +335,12 @@ namespace BURGUER_SHACK_DESKTOP
 
             UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
 
-            foreach (clnReserva.reservaSituacao situacao in Enum.GetValues(typeof(clnReserva.reservaSituacao)))
-            {
-                cboSituacao.Items.Add(situacao.ToString());
-            }
+            btnAtendimento.Hide();
+            grbSituacao.Hide();
 
             if (ObjReserva == null)
             {
                 hdrUIX.Title = App.AppName + " :: Nova Reserva";
-
-                cboSituacao.Hide();
 
                 ObjReserva = new clnReserva
                 {
@@ -284,6 +354,7 @@ namespace BURGUER_SHACK_DESKTOP
                 mtbCliCPF.Enabled = false;
                 mtbHora.Enabled = false;
                 mtbData.Enabled = false;
+                btnCliEncontrar.Hide();
 
                 clnCliente objCliente = new clnCliente
                 {
@@ -295,7 +366,22 @@ namespace BURGUER_SHACK_DESKTOP
                 mtbData.Text = clnUtil.formatarData(ObjReserva.Agendado);
                 mtbHora.Text = clnUtil.formatarHora(ObjReserva.Agendado);
                 txtPessoas.Text = clnUtilConvert.ToString(ObjReserva.Pessoas);
-                cboSituacao.Text = clnUtilConvert.ToString(ObjReserva.Situacao);
+
+                if (ObjReserva.Situacao == clnReserva.reservaSituacao.CANCELADA || ObjReserva.Situacao == clnReserva.reservaSituacao.UTILIZADA)
+                {
+                    txtPessoas.Enabled = false;
+                }
+                else
+                {
+                    if (ObjReserva.Situacao == clnReserva.reservaSituacao.MARCADA)
+                    {
+                        grbSituacao.Show();
+                    }
+                    if (ObjReserva.Agendado.Day.Equals(DateTime.Now.Day))
+                    {
+                        btnAtendimento.Show();
+                    }
+                }
             }
         }
 
@@ -334,5 +420,19 @@ namespace BURGUER_SHACK_DESKTOP
             tentarDefinirData();
         }
 
+        private void btnAtendimento_Click(object sender, EventArgs e)
+        {
+            iniciarAtendimento();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            confirmarReserva();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            cancelarReserva();
+        }
     }
 }

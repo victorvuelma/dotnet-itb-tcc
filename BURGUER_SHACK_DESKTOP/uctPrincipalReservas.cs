@@ -58,21 +58,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirReserva(clnReserva objReserva)
         {
-            if (objReserva.Situacao != clnReserva.reservaSituacao.CANCELADA)
+            frmReserva frmReserva = new frmReserva
             {
-                frmReserva frmReserva = new frmReserva
-                {
-                    ObjReserva = objReserva,
-                    CodFuncionario = CodFuncionario
-                };
-                frmReserva.ShowDialog();
+                ObjReserva = objReserva,
+                CodFuncionario = CodFuncionario
+            };
+            frmReserva.ShowDialog();
 
-                exibirReservas();
-            }
-            else
-            {
-                clnUtilMensagem.mostrarOk("Reservas", "Não é possível alterar uma reserva já cancelada.", clnUtilMensagem.MensagemIcone.ERRO);
-            }
+            exibirReservas();
         }
 
         private void uctPrincipalReservas_Load(object sender, EventArgs e)
