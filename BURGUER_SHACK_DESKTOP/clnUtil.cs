@@ -207,12 +207,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static bool validarDataNasc(String data)
         {
-            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now) < 0;
+            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now.Date) < 0;
         }
 
         public static bool validarDataFutura(String data)
         {
-            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now) >= 0;
+            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now.Date) >= 0;
         }
 
         public static bool validarHora(String hora)
