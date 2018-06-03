@@ -41,42 +41,39 @@ namespace SQL_POWERUP
         {
             if (Params.Count > 0)
             {
-                StringBuilder paramsBuilder = new StringBuilder();
-
+                builder.Append(" WHERE ");
                 int paramIndex = 1;
-                for (int i = 0; i < Params.Count; i++)
+                foreach (sqlObjWhere objWhere in Params)
                 {
-                    sqlObjWhere objWhere = Params[i];
-                    paramsBuilder.Append(objWhere.TableColumn).Append(' ');
+                    builder.Append(objWhere.TableColumn).Append(' ');
                     switch (objWhere.Operation)
                     {
                         case sqlObjWhere.whereOperation.EQUALS:
-                            paramsBuilder.Append('=');
+                            builder.Append('=');
                             break;
                         case sqlObjWhere.whereOperation.UNEQUAL:
-                            paramsBuilder.Append("!=");
+                            builder.Append("!=");
                             break;
                         case sqlObjWhere.whereOperation.LESS:
-                            paramsBuilder.Append('<');
+                            builder.Append('<');
                             break;
                         case sqlObjWhere.whereOperation.LESS_EQUALS:
-                            paramsBuilder.Append("<=");
+                            builder.Append("<=");
                             break;
                         case sqlObjWhere.whereOperation.MAJOR:
-                            paramsBuilder.Append('>');
+                            builder.Append('>');
                             break;
                         case sqlObjWhere.whereOperation.MAJOR_EQUALS:
-                            paramsBuilder.Append(">=");
+                            builder.Append(">=");
                             break;
                     }
-                    paramsBuilder.Append(' ').Append("@where_").Append(paramIndex);
+                    builder.Append(' ').Append("@where_").Append(paramIndex);
                     paramIndex++;
-                    if (i < Params.Count - 1)
+                    if (paramIndex <= Params.Count)
                     {
-                        paramsBuilder.Append(' ').Append(objWhere.Association).Append(' ');
+                        builder.Append(' ').Append(objWhere.Association).Append(' ');
                     }
                 }
-                builder.Append(" WHERE ").Append(paramsBuilder);
             }
         }
 

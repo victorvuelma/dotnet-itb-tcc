@@ -35,31 +35,31 @@ namespace SQL_POWERUP
         {
             if (Values.Count > 0)
             {
-                StringBuilder valuesBuilder = new StringBuilder();
-
-                int paramIndex = 1;
-                foreach (KeyValuePair<String, object> columnValue in Values)
-                {
-                    if (valuesBuilder.Length > 0)
-                    {
-                        valuesBuilder.Append(", ");
-                    }
-                    if (columnValue.Value != null)
-                    {
-                        valuesBuilder.Append("@val_").Append(paramIndex);
-                        paramIndex++;
-                    }
-                    else
-                    {
-                        valuesBuilder.Append("null");
-                    }
-                }
                 builder.Append(" (");
                 sqlUtil.separeWithComma(builder, Values.Keys.ToList());
                 builder.Append(')');
                 if (outputId)
                     builder.Append(" OUTPUT INSERTED.ID");
-                builder.Append(" VALUES (").Append(valuesBuilder).Append(')');
+                builder.Append(" VALUES (");
+
+                int paramIndex = 1;
+                foreach (KeyValuePair<String, object> columnValue in Values)
+                {
+                    if (paramIndex > 1)
+                    {
+                        builder.Append(", ");
+                    }
+                    if (columnValue.Value != null)
+                    {
+                        builder.Append("@val_").Append(paramIndex);
+                    }
+                    else
+                    {
+                        builder.Append("null");
+                    }
+                    paramIndex++;
+                }
+                builder.Append(')');
             }
         }
 
@@ -67,27 +67,25 @@ namespace SQL_POWERUP
         {
             if (Values.Count > 0)
             {
-                StringBuilder setBuilder = new StringBuilder();
+                builder.Append(" SET ");
                 int paramIndex = 1;
                 foreach (KeyValuePair<string, object> columnValue in Values)
                 {
-                    if (setBuilder.Length > 0)
+                    if (paramIndex > 1)
                     {
-                        setBuilder.Append(", ");
+                        builder.Append(", ");
                     }
-                    setBuilder.Append(columnValue.Key).Append(" = ");
+                    builder.Append(columnValue.Key).Append(" = ");
                     if (columnValue.Value != null)
                     {
-                        setBuilder.Append("@val_").Append(paramIndex);
-                        paramIndex++;
+                        builder.Append("@val_").Append(paramIndex);
                     }
                     else
                     {
-                        setBuilder.Append("null");
+                        builder.Append("null");
                     }
+                    paramIndex++;
                 }
-
-                builder.Append(" SET ").Append(setBuilder);
             }
         }
 
@@ -99,8 +97,8 @@ namespace SQL_POWERUP
                 if (columnValue.Value != null)
                 {
                     cmd.Parameters.AddWithValue("@val_" + paramIndex, columnValue.Value);
-                    paramIndex++; 
                 }
+                paramIndex++;
             }
         }
 
