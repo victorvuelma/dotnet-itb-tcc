@@ -28,8 +28,7 @@ namespace UIX
             {
                 AccessibleName = value;
                 lbl.Text = value + ":";
-                int x = lbl.Size.Width - 5;
-                txt.Location = new Point(x, txt.Location.Y);
+                update();
             }
         }
 
@@ -39,24 +38,19 @@ namespace UIX
             set
             {
                 base.Font = value;
-                Campo = Campo;
+                update();
             }
         }
-
-        public override String Text { get => txt.Text; set => txt.Text = value; }
 
         public new Size Size
         {
             get => base.Size;
             set
             {
-                Size current = base.Size;
-                txt.Size = new Size(value.Width - lbl.Size.Width, txt.Size.Height);
                 base.Size = value;
+                update();
             }
         }
-
-        public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
 
         public uixAllowedChars AllowedChars
         {
@@ -67,14 +61,27 @@ namespace UIX
             }
         }
 
+        public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
+
+        public new bool Enabled { get => txt.Enabled; set => txt.Enabled = value; }
+
+        public override String Text { get => txt.Text; set => txt.Text = value; }
+
+        private void update()
+        {
+            lbl.AutoSize = true;
+            txt.Size = new Size(Size.Width - lbl.Size.Width, txt.Size.Height);
+            txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
+        }
+
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(allowedChars.Count() >= 1)
+            if (allowedChars.Count() >= 1)
             {
                 if (!char.IsControl(e.KeyChar) && !allowedChars.Contains(e.KeyChar))
                 {
                     e.Handled = true;
-                }   
+                }
             }
         }
 

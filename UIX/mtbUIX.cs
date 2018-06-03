@@ -26,8 +26,7 @@ namespace UIX
             {
                 AccessibleName = value;
                 lbl.Text = value + ":";
-                int x = lbl.Size.Width - 5;
-                mtb.Location = new Point(x, mtb.Location.Y);
+                update();
             }
         }
 
@@ -37,21 +36,25 @@ namespace UIX
             set
             {
                 base.Font = value;
-                Campo = Campo;
+                update();
             }
         }
-
-        public override String Text { get => mtb.Text; set => mtb.Text = value; }
 
         public new Size Size
         {
             get => base.Size;
             set
             {
-                Size current = base.Size;
-                mtb.Size = new Size(value.Width - lbl.Size.Width, mtb.Size.Height);
                 base.Size = value;
+                update();
             }
+        }
+
+        private void update()
+        {
+            lbl.AutoSize = true;
+            mtb.Size = new Size(Size.Width - lbl.Size.Width, mtb.Size.Height);
+            mtb.Location = new Point(lbl.Location.X + lbl.Size.Width, mtb.Location.Y);
         }
 
         [Editor("System.Windows.Forms.Design.MaskPropertyEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -60,6 +63,10 @@ namespace UIX
         public Type ValidatingType { get => mtb.ValidatingType; set => mtb.ValidatingType = value; }
 
         public int MaxLength { get => mtb.MaxLength; set => mtb.MaxLength = value; }
+
+        public new bool Enabled { get => mtb.Enabled; set => mtb.Enabled = value; }
+
+        public override String Text { get => mtb.Text; set => mtb.Text = value; }
 
         private void mtbUIX_Load(object sender, EventArgs e)
         {

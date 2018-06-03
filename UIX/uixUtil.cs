@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UIX
 {
@@ -20,6 +22,17 @@ namespace UIX
                 default:
                     return new char[] { };
             }
+        }
+
+        public static void defineSizeForWidht(Control ctl, int widht)
+        {
+            ctl.AutoSize = true;
+            while (ctl.Width > widht)
+            {
+                ctl.Font = uixFont.fontSize(ctl.Font, ctl.Font.Size - 0.1f);
+            }
+            ctl.AutoSize = false;
+            ctl.Size = new Size(widht, ctl.Height);
         }
 
 

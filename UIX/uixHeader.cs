@@ -55,15 +55,7 @@ namespace UIX
                 uixButton.btnStyleMinimize(hdr.btnMin, style.HeaderButtonSize, style.HeaderButtonColor);
             }
 
-            hdr.lbl.AutoSize = true;
-            int lblWidht = nextButtonX - 10;
-            while (hdr.lbl.Width > lblWidht)
-            {
-                hdr.lbl.Font = uixFont.fontSize(hdr.lbl.Font, hdr.lbl.Font.Size - 0.125f);
-            }
-            
-            hdr.lbl.AutoSize = false;
-            hdr.lbl.Size = new Size(lblWidht, hdr.Height);
+            uixUtil.defineSizeForWidht(hdr.lbl, nextButtonX - 10);
         }
 
         public static void hdrMove(Form frm, Control[] controls)

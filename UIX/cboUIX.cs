@@ -26,8 +26,7 @@ namespace UIX
             {
                 AccessibleName = value;
                 lbl.Text = value + ":";
-                int x = lbl.Size.Width - 5;
-                cbo.Location = new Point(x, cbo.Location.Y);
+                update();
             }
         }
 
@@ -37,27 +36,35 @@ namespace UIX
             set
             {
                 base.Font = value;
-                Campo = Campo;
+                update();
             }
         }
-
-        public override String Text { get => cbo.Text; set => cbo.Text = value; }
 
         public new Size Size
         {
             get => base.Size;
             set
             {
-                Size current = base.Size;
-                cbo.Size = new Size(value.Width - lbl.Size.Width, cbo.Size.Height);
                 base.Size = value;
+                update();
             }
         }
 
+        private void update()
+        {
+            lbl.AutoSize = true;
+            cbo.Size = new Size(Size.Width - lbl.Size.Width, cbo.Size.Height);
+            cbo.Location = new Point(lbl.Location.X + lbl.Size.Width, cbo.Location.Y);
+        }
+
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        public ObjectCollection Items { get => cbo.Items; }
+        public ObjectCollection Items => cbo.Items;
 
         public bool FormattingEnabled { get => cbo.FormattingEnabled; set => cbo.FormattingEnabled = value; }
+
+        public new bool Enabled { get => cbo.Enabled; set => cbo.Enabled = value; }
+
+        public override String Text { get => cbo.Text; set => cbo.Text = value; }
 
     }
 }
