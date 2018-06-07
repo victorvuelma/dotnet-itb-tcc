@@ -55,6 +55,7 @@ namespace BURGUER_SHACK_DESKTOP
                         {
                             CodFuncionario = CodFuncionario
                         };
+                        frmNovoCliente.mtbCPF.Text = mtbCliCPF.Text;
                         frmNovoCliente.ShowDialog();
 
                         if (frmNovoCliente.ObjCliente != null)

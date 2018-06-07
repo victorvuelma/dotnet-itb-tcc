@@ -93,13 +93,13 @@
             // 
             // mtbTelCel
             // 
-            this.mtbTelCel.AccessibleName = "Celular*";
-            this.mtbTelCel.Campo = "Celular*";
-            this.mtbTelCel.Location = new System.Drawing.Point(125, 60);
+            this.mtbTelCel.AccessibleName = "Tel. Cel.*";
+            this.mtbTelCel.Campo = "Tel. Cel.*";
+            this.mtbTelCel.Location = new System.Drawing.Point(100, 60);
             this.mtbTelCel.Mask = "";
             this.mtbTelCel.MaxLength = 32767;
             this.mtbTelCel.Name = "mtbTelCel";
-            this.mtbTelCel.Size = new System.Drawing.Size(135, 20);
+            this.mtbTelCel.Size = new System.Drawing.Size(140, 20);
             this.mtbTelCel.TabIndex = 11;
             this.mtbTelCel.ValidatingType = null;
             // 
@@ -108,10 +108,10 @@
             this.cboGenero.AccessibleName = "Genero";
             this.cboGenero.Campo = "Genero";
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(410, 60);
+            this.cboGenero.Location = new System.Drawing.Point(400, 60);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(75, 20);
+            this.cboGenero.Size = new System.Drawing.Size(85, 20);
             this.cboGenero.TabIndex = 10;
             // 
             // mtbCPF
@@ -130,11 +130,11 @@
             // 
             this.mtbDataNasc.AccessibleName = "Data de Nasc";
             this.mtbDataNasc.Campo = "Data de Nasc";
-            this.mtbDataNasc.Location = new System.Drawing.Point(265, 60);
+            this.mtbDataNasc.Location = new System.Drawing.Point(245, 60);
             this.mtbDataNasc.Mask = "";
             this.mtbDataNasc.MaxLength = 32767;
             this.mtbDataNasc.Name = "mtbDataNasc";
-            this.mtbDataNasc.Size = new System.Drawing.Size(140, 20);
+            this.mtbDataNasc.Size = new System.Drawing.Size(150, 20);
             this.mtbDataNasc.TabIndex = 8;
             this.mtbDataNasc.ValidatingType = null;
             // 
@@ -209,9 +209,9 @@
         private System.Windows.Forms.GroupBox grbDetalhes;
         private UIX.txtUIX txtNome;
         private UIX.mtbUIX mtbDataNasc;
-        private UIX.mtbUIX mtbCPF;
         private UIX.cboUIX cboGenero;
         private UIX.txtUIX txtEmail;
         private UIX.mtbUIX mtbTelCel;
+        public UIX.mtbUIX mtbCPF;
     }
 }
