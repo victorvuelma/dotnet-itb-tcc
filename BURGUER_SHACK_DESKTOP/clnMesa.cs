@@ -29,8 +29,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private clnMesa obter(SqlDataReader reader) => new clnMesa
         {
-            Cod = Convert.ToInt32(reader["id"]),
-            Situacao = situacao(reader["situacao"].ToString())
+            Cod = clnUtilConvert.ToInt(reader["id"]),
+            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"]))
         };
 
         public List<clnMesa> obterMesas()
@@ -101,13 +101,13 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private mesaSituacao situacao(String prefixo)
+        private mesaSituacao situacao(char prefixo)
         {
-            switch (prefixo.ToUpper())
+            switch (prefixo)
             {
-                case "O":
+                case 'O':
                     return mesaSituacao.OCUPADA;
-                case "R":
+                case 'R':
                     return mesaSituacao.RESERVADA;
                 default:
                     return mesaSituacao.DISPONIVEL;

@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
             CodReserva = clnUtilConvert.ToNullableInt(reader["id_reserva"]),
             Inicio = clnUtilConvert.ToDateTime(reader["inicio"]),
             Fim = clnUtilConvert.ToNullableDateTime(reader["fim"]),
-            Situacao = situacao(clnUtilConvert.ToString(reader["situacao"]))
+            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"]))
         };
 
         private void obterMesas()
@@ -113,11 +113,11 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public atendimentoSituacao situacao(String prefixo)
+        public atendimentoSituacao situacao(char prefixo)
         {
-            switch (prefixo.ToUpper())
+            switch (prefixo)
             {
-                case "A":
+                case 'A':
                     return atendimentoSituacao.ANDAMENTO;
                 default:
                     return atendimentoSituacao.FINALIZADO;

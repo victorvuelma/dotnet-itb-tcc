@@ -37,9 +37,9 @@ namespace BURGUER_SHACK_DESKTOP
                 return ObterData(val);
             return null;
         }
-        
+
         internal static DateTime ObterHora(object val) => DateTime.ParseExact(Convert.ToString(val), "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-        
+
         internal static char? ToNullableChar(object val)
         {
             if (val != null && !(val is DBNull))
@@ -49,5 +49,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal static char ToChar(object val) => Convert.ToChar(val);
 
+        internal static double ToDouble(object val) => Convert.ToDouble(val);
     }
 }

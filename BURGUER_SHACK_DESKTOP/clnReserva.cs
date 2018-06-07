@@ -181,15 +181,15 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private reservaSituacao situacao(String prefixo)
+        private reservaSituacao situacao(char prefixo)
         {
-            switch (prefixo.ToUpper())
+            switch (prefixo)
             {
-                case "A":
+                case 'A':
                     return reservaSituacao.CANCELADA;
-                case "O":
+                case 'O':
                     return reservaSituacao.CONFIRMADA;
-                case "M":
+                case 'M':
                     return reservaSituacao.MARCADA;
                 default:
                     return reservaSituacao.UTILIZADA;
