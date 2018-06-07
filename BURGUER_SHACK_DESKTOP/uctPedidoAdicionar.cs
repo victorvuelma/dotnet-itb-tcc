@@ -44,7 +44,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void selecionaProduto(clnProduto objProduto, int quantidade)
         {
             List<clnItemIngrediente> objIngredientes = new List<clnItemIngrediente>();
-            foreach (int codProdutoIngrediente in objProduto.CodReceitas)
+            foreach (int codProdutoIngrediente in objProduto.CodIngredientes)
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
@@ -81,7 +81,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
             {
-                Opcoes = objProdutos.obterPorCategoria()
+                Opcoes = objProdutos.obterPorTipo()
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -112,7 +112,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
             {
-                Opcoes = objProdutos.obterPorCategoria(),
+                Opcoes = objProdutos.obterPorTipo(),
                 Selecionado = objProdutoAtual
             };
 
