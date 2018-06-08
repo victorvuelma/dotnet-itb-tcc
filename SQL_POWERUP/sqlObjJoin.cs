@@ -23,9 +23,9 @@ namespace SQL_POWERUP
 
         private joinType _joinType = joinType.INNER;
 
-        public string Table { get => _table; set => _table = value; }
-        public string Left { get => _equalsLeft; set => _equalsLeft = value; }
-        public string Right { get => _equalsRight; set => _equalsRight = value; }
+        internal string Table { get => _table; set => _table = value; }
+        internal string Left { get => _equalsLeft; set => _equalsLeft = value; }
+        internal string Right { get => _equalsRight; set => _equalsRight = value; }
         internal joinType JoinType { get => _joinType; set => _joinType = value; }
     }
 }

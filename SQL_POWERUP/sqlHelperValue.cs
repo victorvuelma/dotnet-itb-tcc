@@ -13,7 +13,7 @@ namespace SQL_POWERUP
 
         private Dictionary<String, object> _values = new Dictionary<string, object>();
 
-        public Dictionary<string, object> Values { get => _values; set => _values = value; }
+        internal Dictionary<string, object> Values { get => _values;}
 
         public sqlHelperValue val(String column, object val)
         {

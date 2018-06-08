@@ -13,7 +13,7 @@ namespace SQL_POWERUP
 
         private List<sqlObjWhere> _params = new List<sqlObjWhere>();
 
-        public List<sqlObjWhere> Params { get => _params; set => _params = value; }
+        internal List<sqlObjWhere> Params { get => _params; }
 
         public sqlHelperWhere where(sqlObjWhere objWhere)
         {

@@ -11,9 +11,8 @@ namespace SQL_POWERUP
 
         private List<sqlObjSelect> _params = new List<sqlObjSelect>();
 
-        public List<sqlObjSelect> Params { get => _params; }
-
-
+        internal List<sqlObjSelect> Params { get => _params; }
+        
         internal bool included(String tableColumn)
         {
             tableColumn = tableColumn.ToUpper();

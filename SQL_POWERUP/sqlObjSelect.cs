@@ -22,8 +22,8 @@ namespace SQL_POWERUP
 
         private selectOperation _operation = selectOperation.NONE;
 
-        public string TableColumn { get => _tableColumn; set => _tableColumn = value; }
-        public string As { get => _as; set => _as = value; }
-        public selectOperation Operation { get => _operation; set => _operation = value; }
+        internal string TableColumn { get => _tableColumn; set => _tableColumn = value; }
+        internal string As { get => _as; set => _as = value; }
+        internal selectOperation Operation { get => _operation; set => _operation = value; }
     }
 }

@@ -11,7 +11,7 @@ namespace SQL_POWERUP
 
         private List<sqlObjJoin> _params = new List<sqlObjJoin>();
 
-        public List<sqlObjJoin> Params { get => _params; }
+        internal List<sqlObjJoin> Params { get => _params; }
 
         public sqlHelperJoin innerJoin(String table, String column, String other)
         {

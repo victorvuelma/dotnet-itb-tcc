@@ -31,9 +31,9 @@ namespace SQL_POWERUP
         private whereOperation _operation = whereOperation.EQUALS;
         private whereAssociation _association = whereAssociation.AND;
 
-        public object Val { get => _val; set => _val = value; }
+        internal object Val { get => _val; set => _val = value; }
         internal whereOperation Operation { get => _operation; set => _operation = value; }
-        public string TableColumn { get => _tableColumn; set => _tableColumn = value; }
+        internal string TableColumn { get => _tableColumn; set => _tableColumn = value; }
         internal whereAssociation Association { get => _association; set => _association = value; }
 
     }
