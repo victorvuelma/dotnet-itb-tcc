@@ -12,13 +12,13 @@ namespace UIX
     public class uixTextBox
     {
 
-        public static void txtApply(TextBox txt, uixSet colorSet, Font font)
+        public static void txtApply(TextBoxBase txt, uixSet colorSet, Font font)
         {
             txt.Font = uixFont.fontSize(font, txt.Font.Size);
             uixTextBox.txtApply(txt, colorSet);
         }
 
-        public static void txtApply(TextBox txt, uixSet colorSet)
+        public static void txtApply(TextBoxBase txt, uixSet colorSet)
         {
             txt.BackColor = colorSet.LightColor;
             txt.ForeColor = colorSet.ContentColor;

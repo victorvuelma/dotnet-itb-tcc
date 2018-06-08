@@ -20,10 +20,10 @@ namespace UIX
 
         public String Campo
         {
-            get => AccessibleName;
+            get => mtb.AccessibleName;
             set
             {
-                AccessibleName = value;
+                mtb.AccessibleName = value;
                 lbl.Text = value + ":";
                 update();
             }

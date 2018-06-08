@@ -23,10 +23,10 @@ namespace UIX
 
         public String Campo
         {
-            get => AccessibleName;
+            get => txt.AccessibleName;
             set
             {
-                AccessibleName = value;
+                txt.AccessibleName = value;
                 lbl.Text = value + ":";
                 update();
             }
