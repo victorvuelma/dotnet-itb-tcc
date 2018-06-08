@@ -37,16 +37,22 @@ namespace BURGUER_SHACK_DESKTOP
         public DateTime? Fim { get => _fim; set => _fim = value; }
         public atendimentoSituacao Situacao { get => _situacao; set => _situacao = value; }
 
-        private clnAtendimento obter(SqlDataReader reader) => new clnAtendimento
+        private clnAtendimento obter(SqlDataReader reader)
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodCliente = clnUtilConvert.ToNullableInt(reader["id_cliente"]),
-            CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-            CodReserva = clnUtilConvert.ToNullableInt(reader["id_reserva"]),
-            Inicio = clnUtilConvert.ToDateTime(reader["inicio"]),
-            Fim = clnUtilConvert.ToNullableDateTime(reader["fim"]),
-            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"]))
-        };
+            clnAtendimento objAtendimento = new clnAtendimento
+            {
+                Cod = clnUtilConvert.ToInt(reader["id"]),
+                CodCliente = clnUtilConvert.ToNullableInt(reader["id_cliente"]),
+                CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
+                CodReserva = clnUtilConvert.ToNullableInt(reader["id_reserva"]),
+                Inicio = clnUtilConvert.ToDateTime(reader["inicio"]),
+                Fim = clnUtilConvert.ToNullableDateTime(reader["fim"]),
+                Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"]))
+            };
+            objAtendimento.obterMesas();
+
+            return objAtendimento;
+        }
 
         private void obterMesas()
         {
@@ -57,9 +63,7 @@ namespace BURGUER_SHACK_DESKTOP
             CodMesas = new List<int>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             while (reader.Read())
-            {
                 CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
-            }
             reader.Close();
         }
 
@@ -72,11 +76,9 @@ namespace BURGUER_SHACK_DESKTOP
             clnAtendimento objAtendimento = null;
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             if (reader.Read())
-            {
                 objAtendimento = obter(reader);
-                objAtendimento.obterMesas();
-            }
             reader.Close();
+
             return objAtendimento;
         }
 

@@ -41,10 +41,9 @@ namespace BURGUER_SHACK_DESKTOP
             List<clnMesa> objMesas = new List<clnMesa>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             while (reader.Read())
-            {
                 objMesas.Add(obter(reader));
-            }
             reader.Close();
+
             return objMesas;
         }
 
@@ -58,6 +57,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (reader.Read())
                 objMesa = obter(reader);
             reader.Close();
+
             return objMesa;
         }
 
@@ -73,7 +73,6 @@ namespace BURGUER_SHACK_DESKTOP
             int? codAtendimento = null;
             if (reader.Read())
                 codAtendimento = clnUtilConvert.ToInt(reader["id"]);
-
             reader.Close();
 
             return codAtendimento;

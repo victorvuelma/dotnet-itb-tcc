@@ -41,17 +41,23 @@ namespace BURGUER_SHACK_DESKTOP
         public DateTime Agendado { get => _agendado; set => _agendado = value; }
         public DateTime Agendamento { get => _agendamento; set => _agendamento = value; }
 
-        private clnReserva obter(SqlDataReader reader) => new clnReserva
+        private clnReserva obter(SqlDataReader reader)
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodCliente = clnUtilConvert.ToInt(reader["id_cliente"]),
-            CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-            CodMesas = new List<int>(),
-            Situacao = situacao(clnUtilConvert.ToString(reader["situacao"])),
-            Pessoas = clnUtilConvert.ToInt(reader["pessoas"]),
-            Agendado = clnUtilConvert.ToDateTime(reader["agendado"]),
-            Agendamento = clnUtilConvert.ToDateTime(reader["agendamento"])
-        };
+            clnReserva objReserva = new clnReserva
+            {
+                Cod = clnUtilConvert.ToInt(reader["id"]),
+                CodCliente = clnUtilConvert.ToInt(reader["id_cliente"]),
+                CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
+                CodMesas = new List<int>(),
+                Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
+                Pessoas = clnUtilConvert.ToInt(reader["pessoas"]),
+                Agendado = clnUtilConvert.ToDateTime(reader["agendado"]),
+                Agendamento = clnUtilConvert.ToDateTime(reader["agendamento"])
+            };
+            objReserva.obterMesas();
+
+            return objReserva;
+        }
 
         private void obterMesas()
         {
@@ -62,9 +68,7 @@ namespace BURGUER_SHACK_DESKTOP
             CodMesas = new List<int>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             while (reader.Read())
-            {
                 CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
-            }
             reader.Close();
         }
 
@@ -78,11 +82,7 @@ namespace BURGUER_SHACK_DESKTOP
             List<clnReserva> objReservas = new List<clnReserva>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             while (reader.Read())
-            {
-                clnReserva objReserva = obter(reader);
-                objReserva.obterMesas();
-                objReservas.Add(objReserva);
-            }
+                objReservas.Add(obter(reader));
             reader.Close();
 
             return objReservas;
@@ -102,10 +102,9 @@ namespace BURGUER_SHACK_DESKTOP
             List<int> objMesas = new List<int>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             while (reader.Read())
-            {
                 objMesas.Add(clnUtilConvert.ToInt(reader["id"]));
-            }
             reader.Close();
+
             return objMesas;
         }
 

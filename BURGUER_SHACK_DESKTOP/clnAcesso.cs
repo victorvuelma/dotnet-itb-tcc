@@ -32,6 +32,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (reader.Read())
                 codFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]);
             reader.Close();
+
             return codFuncionario;
         }
 

@@ -82,10 +82,9 @@ namespace BURGUER_SHACK_DESKTOP
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             List<int> objIngredientes = new List<int>();
             while (reader.Read())
-            {
                 objIngredientes.Add(clnUtilConvert.ToInt(reader["id"]));
-            }
             reader.Close();
+
             CodIngredientes = objIngredientes;
         }
         
@@ -98,9 +97,7 @@ namespace BURGUER_SHACK_DESKTOP
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             clnProduto objProduto = null;
             if (reader.Read())
-            {
                 objProduto = obter(reader);
-            }
             reader.Close();
 
             return objProduto;
@@ -115,9 +112,7 @@ namespace BURGUER_SHACK_DESKTOP
             SqlDataReader reader = objSelect.select(App.AppDatabase);
             List<clnProduto> objProdutos = new List<clnProduto>();
             while (reader.Read())
-            {
                 objProdutos.Add(obter(reader));
-            }
             reader.Close();
 
             return objProdutos;
