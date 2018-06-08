@@ -36,6 +36,19 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void addValidacao(Control control, ValidarTipo[] tipos)
         {
+            if (control is UIX.cboUIX cbo)
+            {
+                control = cbo.cbo;
+            }
+            else if (control is UIX.mtbUIX mtb)
+            {
+                control = mtb.mtb;
+            }
+            else if (control is UIX.txtUIX txt)
+            {
+                control = txt.txt;
+            }
+
             ValidarData data = null;
             foreach (ValidarData dt in _validarControles)
             {
@@ -62,6 +75,7 @@ namespace BURGUER_SHACK_DESKTOP
             foreach (ValidarData controlValidar in _validarControles)
             {
                 bool controlValido = controlValidar.validar();
+                controlValidar.formatar(controlValido);
 
                 String motivoControl = controlValidar.Motivo;
                 if (motivoControl.Length > 0)
@@ -126,21 +140,12 @@ namespace BURGUER_SHACK_DESKTOP
                 String conteudo = _control.Text;
                 if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO))
                 {
-                    MaskedTextBox masked = null;
-                    if (Control is MaskedTextBox mask)
+                    if (Control is MaskedTextBox mtb)
                     {
-                        masked = mask;
-                    }
-                    else if (Control is UIX.mtbUIX uix)
-                    {
-                        masked = uix.mtb;
-                    }
-                    if (masked != null)
-                    {
-                        MaskFormat oldFormat = masked.TextMaskFormat;
-                        masked.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                        conteudo = masked.Text;
-                        masked.TextMaskFormat = oldFormat;
+                        MaskFormat oldFormat = mtb.TextMaskFormat;
+                        mtb.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                        conteudo = mtb.Text;
+                        mtb.TextMaskFormat = oldFormat;
                     }
                     if (clnUtil.vazio(conteudo))
                     {
@@ -214,39 +219,25 @@ namespace BURGUER_SHACK_DESKTOP
                     }
                 }
 
+                return valido;
+            }
 
+            public void formatar(bool valido)
+            {
                 if (!valido)
                 {
-                    if (Control is UIX.txtUIX txt)
+                    if (Control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt.txt, App.AppVisualStyle.TextBoxWarningColor);
-                    }
-                    else if (Control is UIX.cboUIX cbo)
-                    {
-                        UIX.uixComboBox.cboApply(cbo.cbo, App.AppVisualStyle.TextBoxWarningColor);
-                    }
-                    else if (Control is UIX.mtbUIX mtb)
-                    {
-                        UIX.uixMaskedTextBox.mtbApply(mtb.mtb, App.AppVisualStyle.TextBoxWarningColor);
+                        UIX.uixTextBox.txtApply(txt, App.AppVisualStyle.TextBoxWarningColor);
                     }
                 }
                 else
                 {
-                    if (Control is UIX.txtUIX txt)
+                    if (Control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt.txt, App.AppVisualStyle.TextBoxColor);
-                    }
-                    else if (Control is UIX.cboUIX cbo)
-                    {
-                        UIX.uixComboBox.cboApply(cbo.cbo, App.AppVisualStyle.TextBoxColor);
-                    }
-                    else if (Control is UIX.mtbUIX mtb)
-                    {
-                        UIX.uixMaskedTextBox.mtbApply(mtb.mtb, App.AppVisualStyle.TextBoxColor);
+                        UIX.uixTextBox.txtApply(txt, App.AppVisualStyle.TextBoxColor);
                     }
                 }
-
-                return valido;
             }
 
         }
