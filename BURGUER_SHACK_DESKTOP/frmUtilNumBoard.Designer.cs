@@ -37,7 +37,6 @@
             this.btnNum3 = new System.Windows.Forms.Button();
             this.btnNum2 = new System.Windows.Forms.Button();
             this.btnNum8 = new System.Windows.Forms.Button();
-            this.lblNum = new System.Windows.Forms.Label();
             this.btnNum1 = new System.Windows.Forms.Button();
             this.btnNum6 = new System.Windows.Forms.Button();
             this.btnNum5 = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.btnNum7 = new System.Windows.Forms.Button();
             this.grbBotoes = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mtbNum = new System.Windows.Forms.MaskedTextBox();
             this.grbBotoes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             // btnCorrigir
             // 
-            this.btnCorrigir.Location = new System.Drawing.Point(140, 75);
+            this.btnCorrigir.Location = new System.Drawing.Point(140, 70);
             this.btnCorrigir.Name = "btnCorrigir";
             this.btnCorrigir.Size = new System.Drawing.Size(65, 35);
             this.btnCorrigir.TabIndex = 28;
@@ -75,7 +75,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(5, 75);
+            this.btnConfirmar.Location = new System.Drawing.Point(5, 70);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(130, 35);
             this.btnConfirmar.TabIndex = 24;
@@ -132,15 +132,6 @@
             this.btnNum8.Text = "8";
             this.btnNum8.UseVisualStyleBackColor = true;
             this.btnNum8.Click += new System.EventHandler(this.btnNum8_Click);
-            // 
-            // lblNum
-            // 
-            this.lblNum.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.Location = new System.Drawing.Point(5, 15);
-            this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(200, 50);
-            this.lblNum.TabIndex = 13;
-            this.lblNum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnNum1
             // 
@@ -215,7 +206,7 @@
             this.grbBotoes.Controls.Add(this.btnNum9);
             this.grbBotoes.Controls.Add(this.btnNum7);
             this.grbBotoes.Controls.Add(this.btnNum8);
-            this.grbBotoes.Location = new System.Drawing.Point(5, 115);
+            this.grbBotoes.Location = new System.Drawing.Point(5, 110);
             this.grbBotoes.Name = "grbBotoes";
             this.grbBotoes.Size = new System.Drawing.Size(200, 275);
             this.grbBotoes.TabIndex = 27;
@@ -223,32 +214,45 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblNum);
+            this.groupBox1.Controls.Add(this.mtbNum);
             this.groupBox1.Controls.Add(this.grbBotoes);
             this.groupBox1.Controls.Add(this.btnCorrigir);
             this.groupBox1.Controls.Add(this.btnConfirmar);
             this.groupBox1.Location = new System.Drawing.Point(5, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(210, 395);
+            this.groupBox1.Size = new System.Drawing.Size(210, 390);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
-            // frmNumBoard
+            // mtbNum
+            // 
+            this.mtbNum.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbNum.Location = new System.Drawing.Point(5, 20);
+            this.mtbNum.Name = "mtbNum";
+            this.mtbNum.ReadOnly = true;
+            this.mtbNum.Size = new System.Drawing.Size(200, 37);
+            this.mtbNum.TabIndex = 29;
+            this.mtbNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mtbNum.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            // 
+            // frmUtilNumBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(220, 455);
+            this.ClientSize = new System.Drawing.Size(220, 450);
             this.Controls.Add(this.hdrUIX);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmNumBoard";
+            this.Name = "frmUtilNumBoard";
             this.Text = "Teclado Numérico";
+            this.Deactivate += new System.EventHandler(this.frmUtilNumBoard_Deactivate);
             this.Load += new System.EventHandler(this.frmNumKey_Load);
             this.grbBotoes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,7 +266,6 @@
         private System.Windows.Forms.Button btnNum3;
         private System.Windows.Forms.Button btnNum2;
         private System.Windows.Forms.Button btnNum8;
-        private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Button btnNum1;
         private System.Windows.Forms.Button btnNum6;
         private System.Windows.Forms.Button btnNum5;
@@ -272,5 +275,6 @@
         private System.Windows.Forms.GroupBox grbBotoes;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btnPoint;
+        public System.Windows.Forms.MaskedTextBox mtbNum;
     }
 }

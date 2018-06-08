@@ -37,7 +37,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void encontrarCliente()
         {
-            if (ObjReserva.Cod == -1 && clnUtil.validarCPF(mtbCliCPF.Text))
+            if (clnUtil.validarCPF(mtbCliCPF.Text))
             {
                 clnCliente objCliente = new clnCliente
                 {
@@ -67,7 +67,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-                mtbCliCPF.Focus();
+                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
             }
         }
 
@@ -180,7 +180,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private DateTime? obterDataAgendada()
         {
-            if (clnUtil.validarData(mtbData.Text))
+            if (clnUtil.validarData(mtbData.Text) && clnUtil.validarDataFutura(mtbData.Text))
             {
                 return clnUtilConvert.ObterNullableData(mtbData.Text);
             }
@@ -333,6 +333,11 @@ namespace BURGUER_SHACK_DESKTOP
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
+
+            clnUtil.abrirNumBoard(mtbCliCPF, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.abrirNumBoard(mtbData, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.abrirNumBoard(mtbHora, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.abrirNumBoard(txtPessoas);
 
             UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
 

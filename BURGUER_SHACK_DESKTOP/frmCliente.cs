@@ -32,10 +32,10 @@ namespace BURGUER_SHACK_DESKTOP
             _validar.addValidacao(mtbTelCel, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CELULAR });
             _validar.addValidacao(txtEmail, clnUtilValidar.ValidarTipo.EMAIL);
 
-            this.mtbCPF.Mask = clnUtil.MASK_CPF;
-            this.mtbDataNasc.Mask = clnUtil.MASK_DATA;
-            this.cboGenero.Items.AddRange(new String[] { "M", "F" });
-            this.mtbTelCel.Mask = clnUtil.MASK_CEL;
+            mtbCPF.Mask = clnUtil.MASK_CPF;
+            mtbDataNasc.Mask = clnUtil.MASK_DATA;
+            cboGenero.Items.AddRange(new String[] { "M", "F" });
+            mtbTelCel.Mask = clnUtil.MASK_CEL;
         }
 
         private void salvar()
@@ -111,6 +111,10 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarTabIndex(Controls);
 
             UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
+
+            clnUtil.abrirNumBoard(mtbCPF, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.abrirNumBoard(mtbTelCel, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.abrirNumBoard(mtbDataNasc, frmUtilNumBoard.NumBoardMode.INT);
 
             if (ObjCliente == null)
             {

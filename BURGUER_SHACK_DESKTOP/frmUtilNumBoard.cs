@@ -13,10 +13,11 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmUtilNumBoard : Form
     {
 
-        private TextBoxBase _base;
+        private TextBoxBase _input;
+        private String _num;
 
-        public String NumeroPadrao { get => lblNum.Text.Replace(',', '.'); set => lblNum.Text = value.Replace('.', ','); }
-        public TextBoxBase Input { get => _base; set => _base = value; }
+        public String Numero { get => _num; set => _num = value; }
+        public TextBoxBase Input { get => _input; set => _input = value; }
 
         public frmUtilNumBoard()
         {
@@ -25,16 +26,21 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void adicionar(char numero)
         {
-            atualizar(lblNum.Text + numero);
+            definir(Numero + numero);
         }
 
-        private void atualizar(string text)
+        private void definir(string num)
         {
-            NumeroPadrao = text;
             if (Input != null)
             {
-                Input.Text = NumeroPadrao;
+                Input.Text = num;
+                mtbNum.Text = Input.Text;
             }
+            else
+            {
+                mtbNum.Text = num;
+            }
+            Numero = clnUtil.retirarFormatacao(mtbNum.Text);
         }
 
         private void btnNum0_Click(object sender, EventArgs e)
@@ -89,7 +95,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnPoint_Click(object sender, EventArgs e)
         {
-            if (!lblNum.Text.Contains(','))
+            if (!Numero.Contains(','))
             {
                 adicionar(',');
             }
@@ -102,25 +108,45 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnCorrigir_Click(object sender, EventArgs e)
         {
-            if (lblNum.Text.Length > 1)
+            if (Numero.Length > 1)
             {
-                atualizar(lblNum.Text.Substring(0, lblNum.Text.Length - 1));
+                definir(Numero.Substring(0, Numero.Length - 1));
             }
             else
             {
-                atualizar("");
+                definir("");
             }
         }
 
         private void frmNumKey_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
+            UIX.uixMaskedTextBox.mtbApply(mtbNum, App.AppVisualStyle.FormColor);
             clnUtil.atualizarTabIndex(Controls);
 
-            lblNum.Text = lblNum.Text.Replace('.', ',');
+            if (Input is MaskedTextBox mtb)
+            {
+                mtbNum.Mask = mtb.Mask;
+            }
+            else
+            {
+                mtbNum.Mask = "";
+            }
+
+            definir(clnUtil.retirarFormatacao(Input.Text));
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmUtilNumBoard_Leave(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmUtilNumBoard_Deactivate(object sender, EventArgs e)
         {
             Close();
         }
@@ -130,7 +156,6 @@ namespace BURGUER_SHACK_DESKTOP
             INT,
             DOUBLE
         }
-
 
     }
 }

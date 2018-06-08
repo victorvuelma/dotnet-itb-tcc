@@ -70,16 +70,14 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 frmUtilNumBoard numBoard = new frmUtilNumBoard
                 {
-                    NumeroPadrao = box.Text,
                     Input = box
                 };
-
-                if (mode == frmUtilNumBoard.NumBoardMode.DOUBLE)
+                if (mode == frmUtilNumBoard.NumBoardMode.INT)
                 {
                     numBoard.btnPoint.Hide();
                 }
 
-                numBoard.ShowDialog();
+                numBoard.Show();
             };
         }
         // ---- NUMBOARD
@@ -155,11 +153,12 @@ namespace BURGUER_SHACK_DESKTOP
         }
         // ---- ENDERECO
 
+        // ---- FORMATACOES
         internal static string retirarFormatacao(string texto)
         {
             if (texto == null)
                 return null;
-            return new String(texto.Where(Char.IsDigit).ToArray()); ;
+            return new String(texto.Where(Char.IsDigit).ToArray());
         }
 
         public static String formatarCelular(String celular)
@@ -193,6 +192,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             return dataHora.ToString("dd/MM/yyyy HH:mm");
         }
+        // ---- FORMATACOES
 
         // ---- VALIDACOES
         public static bool validarCelular(String cel)
@@ -258,11 +258,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             foreach (Control control in controls)
             {
-                if (control is TextBox || control is MaskedTextBox || control is UIX.txtUIX || control is UIX.mtbUIX)
-                {
-                    control.ResetText();
-                }
-                else
+                control.ResetText();
                 if (control is DataGridView)
                 {
                     ((DataGridView)control).Rows.Clear();
