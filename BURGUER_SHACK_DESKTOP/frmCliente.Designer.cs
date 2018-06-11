@@ -47,9 +47,10 @@
             // pnlMenu
             // 
             this.pnlMenu.Controls.Add(this.btnVoltar);
+            this.pnlMenu.Controls.Add(this.btnSalvar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 250);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 200);
             this.pnlMenu.TabIndex = 5;
             // 
             // btnVoltar
@@ -74,7 +75,7 @@
             this.grbDetalhes.Controls.Add(this.txtNome);
             this.grbDetalhes.Location = new System.Drawing.Point(105, 55);
             this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(490, 125);
+            this.grbDetalhes.Size = new System.Drawing.Size(390, 150);
             this.grbDetalhes.TabIndex = 6;
             this.grbDetalhes.TabStop = false;
             this.grbDetalhes.Text = "INFORMACÕES DO CLIENTE";
@@ -84,22 +85,22 @@
             this.txtEmail.AccessibleName = "E-mail";
             this.txtEmail.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtEmail.Campo = "E-mail";
-            this.txtEmail.Location = new System.Drawing.Point(5, 90);
+            this.txtEmail.Location = new System.Drawing.Point(5, 120);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(480, 25);
+            this.txtEmail.Size = new System.Drawing.Size(380, 25);
             this.txtEmail.TabIndex = 12;
             // 
             // mtbTelCel
             // 
             this.mtbTelCel.AccessibleName = "Tel. Cel.*";
-            this.mtbTelCel.Campo = "Tel. Cel.*";
-            this.mtbTelCel.Location = new System.Drawing.Point(100, 60);
+            this.mtbTelCel.Campo = "Telefone Celular";
+            this.mtbTelCel.Location = new System.Drawing.Point(185, 60);
             this.mtbTelCel.Mask = "";
             this.mtbTelCel.MaxLength = 32767;
             this.mtbTelCel.Name = "mtbTelCel";
-            this.mtbTelCel.Size = new System.Drawing.Size(140, 20);
+            this.mtbTelCel.Size = new System.Drawing.Size(200, 20);
             this.mtbTelCel.TabIndex = 11;
             this.mtbTelCel.ValidatingType = null;
             // 
@@ -108,10 +109,10 @@
             this.cboGenero.AccessibleName = "Genero";
             this.cboGenero.Campo = "Genero";
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(400, 60);
+            this.cboGenero.Location = new System.Drawing.Point(283, 90);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(85, 20);
+            this.cboGenero.Size = new System.Drawing.Size(102, 20);
             this.cboGenero.TabIndex = 10;
             // 
             // mtbCPF
@@ -122,19 +123,19 @@
             this.mtbCPF.Mask = "";
             this.mtbCPF.MaxLength = 32767;
             this.mtbCPF.Name = "mtbCPF";
-            this.mtbCPF.Size = new System.Drawing.Size(115, 20);
+            this.mtbCPF.Size = new System.Drawing.Size(170, 20);
             this.mtbCPF.TabIndex = 9;
             this.mtbCPF.ValidatingType = null;
             // 
             // mtbDataNasc
             // 
-            this.mtbDataNasc.AccessibleName = "Data de Nasc";
-            this.mtbDataNasc.Campo = "Data de Nasc";
-            this.mtbDataNasc.Location = new System.Drawing.Point(245, 60);
+            this.mtbDataNasc.AccessibleName = "Data de Nascimento";
+            this.mtbDataNasc.Campo = "Data de Nascimento";
+            this.mtbDataNasc.Location = new System.Drawing.Point(5, 90);
             this.mtbDataNasc.Mask = "";
             this.mtbDataNasc.MaxLength = 32767;
             this.mtbDataNasc.Name = "mtbDataNasc";
-            this.mtbDataNasc.Size = new System.Drawing.Size(150, 20);
+            this.mtbDataNasc.Size = new System.Drawing.Size(270, 20);
             this.mtbDataNasc.TabIndex = 8;
             this.mtbDataNasc.ValidatingType = null;
             // 
@@ -147,7 +148,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(480, 20);
+            this.txtNome.Size = new System.Drawing.Size(380, 20);
             this.txtNome.TabIndex = 7;
             // 
             // btnSalvar
@@ -156,9 +157,9 @@
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.Location = new System.Drawing.Point(495, 190);
+            this.btnSalvar.Location = new System.Drawing.Point(5, 100);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 100);
+            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -172,7 +173,7 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(600, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(500, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Cliente";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
@@ -181,11 +182,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 300);
+            this.ClientSize = new System.Drawing.Size(500, 250);
             this.Controls.Add(this.grbDetalhes);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
-            this.Controls.Add(this.btnSalvar);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

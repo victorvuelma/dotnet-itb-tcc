@@ -29,13 +29,14 @@ namespace BURGUER_SHACK_DESKTOP
             _validar.addValidacao(mtbData, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DATA, clnUtilValidar.ValidarTipo.DATA_FUTURA });
             _validar.addValidacao(mtbHora, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.HORA });
             _validar.addValidacao(txtPessoas, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
+            _validar.addValidacao(mtbCliCPF, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CPF });
 
             mtbCliCPF.Mask = clnUtil.MASK_CPF;
             mtbData.Mask = clnUtil.MASK_DATA;
             mtbHora.Mask = clnUtil.MASK_HORA;
         }
 
-        private void encontrarCliente()
+        private bool encontrarCliente()
         {
             if (clnUtil.validarCPF(mtbCliCPF.Text))
             {
@@ -46,6 +47,7 @@ namespace BURGUER_SHACK_DESKTOP
                 if (objCliente != null)
                 {
                     definirCliente(objCliente);
+                    return true;
                 }
                 else
                 {
@@ -61,6 +63,7 @@ namespace BURGUER_SHACK_DESKTOP
                         if (frmNovoCliente.ObjCliente != null)
                         {
                             definirCliente(frmNovoCliente.ObjCliente);
+                            return true;
                         }
                     }
                 }
@@ -69,6 +72,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
             }
+            return false;
         }
 
         private void definirCliente(clnCliente objCliente)
@@ -195,7 +199,7 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     if (ObjReserva.Cod == -1)
                     {
-                        if (ObjReserva.CodCliente != 0)
+                        if (ObjReserva.CodCliente != -1 || encontrarCliente())
                         {
                             DateTime dataAgendada = (DateTime)obterDataAgendada();
                             DateTime horaAgendada = clnUtilConvert.ObterHora(mtbHora.Text);
@@ -212,11 +216,6 @@ namespace BURGUER_SHACK_DESKTOP
 
                             clnUtilMensagem.mostrarOk("Nova Reserva", "Reserva realizada com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                             Close();
-                        }
-                        else
-                        {
-                            clnUtilMensagem.mostrarOk("Nova Reserva", "É necessário informar o cliente para realizar a reserva.", clnUtilMensagem.MensagemIcone.ERRO);
-                            mtbCliCPF.Focus();
                         }
                     }
                     else if (txtPessoas.Enabled)
@@ -351,6 +350,7 @@ namespace BURGUER_SHACK_DESKTOP
                 ObjReserva = new clnReserva
                 {
                     Cod = -1,
+                    CodCliente = -1,
                     CodMesas = new List<int>()
                 };
             }
