@@ -122,7 +122,7 @@
     <Compile Include="clnCliente.cs" />
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
-    <Compile Include="clnIngredienteTipo.cs" />
+    <Compile Include="clnTipo.cs" />
     <Compile Include="clnUtilCallback.cs" />
     <Compile Include="clnUtilConvert.cs" />
     <Compile Include="clnUtilMensagem.cs" />
@@ -137,6 +137,18 @@
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnUtilValidar.cs" />
+    <Compile Include="frmTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipo.Designer.cs">
+      <DependentUpon>frmTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngrediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngrediente.Designer.cs">
+      <DependentUpon>frmIngrediente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +325,12 @@
     <Compile Include="uctGerenTerceirizada.Designer.cs">
       <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmTipo.resx">
+      <DependentUpon>frmTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngrediente.resx">
+      <DependentUpon>frmIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReserva.resx">
       <DependentUpon>frmReserva.cs</DependentUpon>
     </EmbeddedResource>

@@ -33,7 +33,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal static DateTime? ObterNullableData(object val)
         {
-            if (val != null && !(val is DBNull))
+            if (val != null && !(val is DBNull) && clnUtil.validarData(val.ToString()))
                 return ObterData(val);
             return null;
         }

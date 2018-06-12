@@ -32,6 +32,7 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnAtendimento = new UIX.btnUIX();
             this.btnVoltar = new UIX.btnUIX();
+            this.btnSalvar = new UIX.btnUIX();
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.btnCliEncontrar = new UIX.btnUIX();
@@ -44,7 +45,6 @@
             this.btnMesaVer = new UIX.btnUIX();
             this.btnMesaAdd = new UIX.btnUIX();
             this.hdrUIX = new UIX.hdrUIX();
-            this.btnSalvar = new UIX.btnUIX();
             this.grbSituacao = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new UIX.btnUIX();
             this.btnConfirmar = new UIX.btnUIX();
@@ -88,6 +88,19 @@
             this.btnVoltar.TabIndex = 6;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Description = "Salvar";
+            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(5, 200);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbCliente
             // 
@@ -227,23 +240,10 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(386, 41);
+            this.hdrUIX.Size = new System.Drawing.Size(450, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Reserva";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Description = "Salvar";
-            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 200);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbSituacao
             // 

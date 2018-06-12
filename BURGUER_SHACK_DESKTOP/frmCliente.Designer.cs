@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnVoltar = new UIX.btnUIX();
+            this.btnSalvar = new UIX.btnUIX();
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.txtEmail = new UIX.txtUIX();
             this.mtbTelCel = new UIX.mtbUIX();
@@ -38,7 +39,6 @@
             this.mtbCPF = new UIX.mtbUIX();
             this.mtbDataNasc = new UIX.mtbUIX();
             this.txtNome = new UIX.txtUIX();
-            this.btnSalvar = new UIX.btnUIX();
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.grbDetalhes.SuspendLayout();
@@ -64,6 +64,19 @@
             this.btnVoltar.TabIndex = 6;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Description = "Salvar";
+            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(5, 100);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbDetalhes
             // 
@@ -95,7 +108,7 @@
             // mtbTelCel
             // 
             this.mtbTelCel.AccessibleName = "Tel. Cel.*";
-            this.mtbTelCel.Campo = "Telefone Celular";
+            this.mtbTelCel.Campo = "Tel. Celular*";
             this.mtbTelCel.Location = new System.Drawing.Point(185, 60);
             this.mtbTelCel.Mask = "";
             this.mtbTelCel.MaxLength = 32767;
@@ -106,8 +119,8 @@
             // 
             // cboGenero
             // 
-            this.cboGenero.AccessibleName = "Genero";
-            this.cboGenero.Campo = "Genero";
+            this.cboGenero.AccessibleName = "Genero*";
+            this.cboGenero.Campo = "Genero*";
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Location = new System.Drawing.Point(283, 90);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -150,19 +163,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(380, 20);
             this.txtNome.TabIndex = 7;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Description = "Salvar";
-            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 100);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // hdrUIX
             // 

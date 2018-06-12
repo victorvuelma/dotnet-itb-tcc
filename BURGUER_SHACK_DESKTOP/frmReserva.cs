@@ -373,9 +373,14 @@ namespace BURGUER_SHACK_DESKTOP
                 mtbHora.Text = clnUtil.formatarHora(ObjReserva.Agendado);
                 txtPessoas.Text = clnUtilConvert.ToString(ObjReserva.Pessoas);
 
+                if(ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
+                {
+                    grbMesas.Hide();
+                }
                 if (ObjReserva.Situacao == clnReserva.reservaSituacao.CANCELADA || ObjReserva.Situacao == clnReserva.reservaSituacao.UTILIZADA)
                 {
                     txtPessoas.Enabled = false;
+                    btnSalvar.Hide();
                 }
                 else
                 {

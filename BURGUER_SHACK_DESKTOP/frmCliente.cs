@@ -31,6 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
             _validar.addValidacao(mtbDataNasc, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.DATA, clnUtilValidar.ValidarTipo.DATA_NASC });
             _validar.addValidacao(mtbTelCel, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CELULAR });
             _validar.addValidacao(txtEmail, clnUtilValidar.ValidarTipo.EMAIL);
+            _validar.addValidacao(cboGenero, clnUtilValidar.ValidarTipo.OBRIGATORIO);
 
             mtbCPF.Mask = clnUtil.MASK_CPF;
             mtbDataNasc.Mask = clnUtil.MASK_DATA;

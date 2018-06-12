@@ -87,7 +87,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnCardapio_Click(object sender, EventArgs e)
         {
-            new frmCliente { CodFuncionario = CodFuncionario }.Show();
+            new frmTipo { Tipo = clnTipo.tipo.INGREDIENTE }.Show();
         }
     }
 }
