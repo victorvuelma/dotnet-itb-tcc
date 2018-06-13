@@ -230,6 +230,11 @@ namespace BURGUER_SHACK_DESKTOP
             return Int32.TryParse(inteiro, out int r);
         }
 
+        public static bool validarDouble(String val)
+        {
+            return Double.TryParse(val, out double r);
+        }
+
         public static bool validarCPF(String cpf)
         {
             return _cpfValidator.IsValid(cpf);
@@ -253,6 +258,19 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
         // ---- VALIDACOES
+
+        public static String obterConteudo(Control control)
+        {
+            String conteudo = control.Text;
+            if (control is MaskedTextBox mtb)
+            {
+                MaskFormat oldFormat = mtb.TextMaskFormat;
+                mtb.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                conteudo = mtb.Text;
+                mtb.TextMaskFormat = oldFormat;
+            }
+            return conteudo;
+        }
 
         public static void resetarCampos(ControlCollection controls)
         {

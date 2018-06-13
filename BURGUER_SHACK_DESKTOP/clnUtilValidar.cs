@@ -20,6 +20,7 @@ namespace BURGUER_SHACK_DESKTOP
             CEP,
             INT,
             INT_MAIOR_0,
+            DOUBLE,
             DATA,
             DATA_NASC,
             DATA_FUTURA,
@@ -131,26 +132,14 @@ namespace BURGUER_SHACK_DESKTOP
 
             public bool validar()
             {
-
                 if (!Control.Visible || !Control.Enabled)
                 {
                     return true;
                 }
-
-                String conteudo = _control.Text;
-                if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO))
+                String conteudo = clnUtil.obterConteudo(Control);
+                if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO) && clnUtil.vazio(conteudo))
                 {
-                    if (Control is MaskedTextBox mtb)
-                    {
-                        MaskFormat oldFormat = mtb.TextMaskFormat;
-                        mtb.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                        conteudo = mtb.Text;
-                        mtb.TextMaskFormat = oldFormat;
-                    }
-                    if (clnUtil.vazio(conteudo))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
 
                 bool valido = true;
@@ -187,7 +176,7 @@ namespace BURGUER_SHACK_DESKTOP
                             res = "deve conter um número inteiro.";
                             break;
                         case ValidarTipo.INT_MAIOR_0:
-                            val = Convert.ToInt32(conteudo) > 0;
+                            val = clnUtilConvert.ToInt(conteudo) > 0;
                             res = "deve conter um número maior que ZERO.";
                             break;
                         case ValidarTipo.DATA:
@@ -209,6 +198,10 @@ namespace BURGUER_SHACK_DESKTOP
                         case ValidarTipo.HORA:
                             val = clnUtil.validarHora(conteudo);
                             res = "deve conter uma hora válida.";
+                            break;
+                        case ValidarTipo.DOUBLE:
+                            val = clnUtil.validarDouble(conteudo);
+                            res = "deve conter um número decimal válido.";
                             break;
                     }
                     if (!val)
