@@ -138,7 +138,7 @@
             // txtValor
             // 
             this.txtValor.AccessibleName = "Preço de Venda: (R$)*";
-            this.txtValor.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtValor.AllowedChars = UIX.uixAllowedChars.DOUBLE;
             this.txtValor.Campo = "Valor (R$)*";
             this.txtValor.Location = new System.Drawing.Point(238, 20);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);

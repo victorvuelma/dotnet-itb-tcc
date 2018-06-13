@@ -24,6 +24,10 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             _validar = new clnUtilValidar();
+            _validar.addValidacao(txtNome, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DOUBLE });
+            _validar.addValidacao(cboTipo, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+
         }
 
         private static void abrirTipos()
@@ -51,39 +55,42 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void salvar()
         {
-            if (ObjIngrediente == null)
+            if (_validar.valido())
             {
-                clnArquivo objArquivo = new clnArquivo
+                if (ObjIngrediente == null)
                 {
-                    Arquivo = picImagem.ImageLocation
-                };
-                objArquivo.gravar();
-
-                ObjIngrediente = new clnIngrediente
-                {
-                    Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE,
-                    Nome = txtNome.Text,
-                    CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]),
-                    CodImagem = objArquivo.Cod,
-                    Valor = clnUtilConvert.ToDouble(txtValor.Text)
-                };
-                ObjIngrediente.gravar();
-            }
-            else
-            {
-                clnArquivo objArquivo = new clnArquivo
-                {
-                    Cod = ObjIngrediente.CodImagem
-                }.obterPorCodigo();
-
-                if (!objArquivo.Arquivo.Equals(picImagem.ImageLocation))
-                {
-                    objArquivo = new clnArquivo
+                    clnArquivo objArquivo = new clnArquivo
                     {
                         Arquivo = picImagem.ImageLocation
                     };
                     objArquivo.gravar();
-                    ObjIngrediente.CodImagem = objArquivo.Cod;
+
+                    ObjIngrediente = new clnIngrediente
+                    {
+                        Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE,
+                        Nome = txtNome.Text,
+                        CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]),
+                        CodImagem = objArquivo.Cod,
+                        Valor = clnUtilConvert.ToDouble(txtValor.Text)
+                    };
+                    ObjIngrediente.gravar();
+                }
+                else
+                {
+                    clnArquivo objArquivo = new clnArquivo
+                    {
+                        Cod = ObjIngrediente.CodImagem
+                    }.obterPorCodigo();
+
+                    if (!objArquivo.Arquivo.Equals(picImagem.ImageLocation))
+                    {
+                        objArquivo = new clnArquivo
+                        {
+                            Arquivo = picImagem.ImageLocation
+                        };
+                        objArquivo.gravar();
+                        ObjIngrediente.CodImagem = objArquivo.Cod;
+                    }
                 }
             }
         }

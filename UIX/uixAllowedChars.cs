@@ -9,7 +9,8 @@ namespace UIX
     public enum uixAllowedChars
     {
         ALL,
-        INT
+        INT,
+        DOUBLE
     }
 
 }
