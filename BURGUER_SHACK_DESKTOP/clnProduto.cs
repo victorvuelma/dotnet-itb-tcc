@@ -23,6 +23,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _cod;
 
+        private int _codImagem;
         private int _codTipo;
         private List<int> _codIngredientes;
 
@@ -31,34 +32,27 @@ namespace BURGUER_SHACK_DESKTOP
         private double _valor;
         private produtoSituacao _situacao;
 
-        private String _imagem;
-
         public int Cod { get => _cod; set => _cod = value; }
+        public int CodImagem { get => _codImagem; set => _codImagem = value; }
         public int CodTipo { get => _codTipo; set => _codTipo = value; }
         public List<int> CodIngredientes { get => _codIngredientes; set => _codIngredientes = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
         public double Valor { get => _valor; set => _valor = value; }
         internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
-        public String Imagem { get => _imagem; set => _imagem = value; }
 
         private clnProduto obter(SqlDataReader reader)
         {
             clnProduto objProduto = new clnProduto
             {
                 Cod = clnUtilConvert.ToInt(reader["id"]),
+                CodImagem = clnUtilConvert.ToInt(reader["id_imagem"]),
                 CodTipo = clnUtilConvert.ToInt(reader["id_tipo"]),
                 Descricao = clnUtilConvert.ToString(reader["descricao"]),
                 Nome = clnUtilConvert.ToString(reader["nome"]),
                 Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
                 Valor = clnUtilConvert.ToDouble(reader["valor"])
             };
-
-            clnArquivo objArquivo = new clnArquivo
-            {
-                Cod = clnUtilConvert.ToInt(reader["id_arquivo"])
-            }.obterPorCodigo();
-            objProduto.Imagem = objArquivo.Arquivo;
 
             objProduto.obterIngredientes();
 
@@ -152,7 +146,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             internal override Image Imagem(clnProduto obj)
             {
-                return Image.FromFile(obj.Imagem);
+                clnArquivo objArquivo = new clnArquivo
+                {
+                    Cod = obj.CodImagem
+                }.obterPorCodigo();
+                return Image.FromFile(objArquivo.Arquivo);
             }
 
             internal override string Nome(clnProduto obj)

@@ -66,12 +66,17 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = objPedidoProduto.CodProduto
                 }.obterPorCodigo();
 
+                clnArquivo objArquivo = new clnArquivo
+                {
+                    Cod = objProduto.CodImagem
+                }.obterPorCodigo();
+
                 UIX.btnUIX btn = new UIX.btnUIX
                 {
                     Description = objProduto.Nome,
                     Name = "btnProduto" + objProduto.Cod,
                     Size = new Size(110, 110),
-                    Image = Image.FromFile(objProduto.Imagem)
+                    Image = Image.FromFile(objArquivo.Arquivo)
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {

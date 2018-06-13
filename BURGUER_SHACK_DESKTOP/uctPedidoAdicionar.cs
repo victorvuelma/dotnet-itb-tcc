@@ -132,7 +132,12 @@ namespace BURGUER_SHACK_DESKTOP
         {
             grbProduto.Hide();
 
-            picProduto.ImageLocation = objProduto.Imagem;
+            clnArquivo objArquivo = new clnArquivo
+            {
+                Cod = objProduto.CodImagem
+            }.obterPorCodigo();
+
+            picProduto.ImageLocation = objArquivo.Arquivo;
             lblProdutoNome.Text = objProduto.Nome;
             txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
             txtAdicional.Text = "";

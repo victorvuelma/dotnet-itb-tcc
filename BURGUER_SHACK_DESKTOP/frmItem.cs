@@ -53,7 +53,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void exibirProduto(clnProduto objProduto, clnItem objPedidoProduto)
         {
-            picProduto.ImageLocation = objProduto.Imagem;
+            clnArquivo objArquivo = new clnArquivo
+            {
+                Cod = objProduto.CodImagem
+            }.obterPorCodigo();
+
+            picProduto.ImageLocation = objArquivo.Arquivo;
             lblProdutoNome.Text = objProduto.Nome;
             txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
             txtAdicional.Text = objPedidoProduto.Adicional;
@@ -114,7 +119,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             exibirProduto(objProduto, PedidoProduto);
 
-            if(Ingredientes.Count == 0)
+            if (Ingredientes.Count == 0)
             {
                 btnIngredienteAdd.Hide();
                 btnIngredientes.Hide();
