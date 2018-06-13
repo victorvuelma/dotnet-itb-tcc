@@ -123,6 +123,7 @@
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
     <Compile Include="clnTipo.cs" />
+    <Compile Include="clnUtilCache.cs" />
     <Compile Include="clnUtilCallback.cs" />
     <Compile Include="clnUtilConvert.cs" />
     <Compile Include="clnUtilMensagem.cs" />

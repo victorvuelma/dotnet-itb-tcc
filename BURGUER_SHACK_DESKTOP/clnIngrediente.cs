@@ -22,43 +22,32 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _cod;
 
+        private int _codImagem;
         private int _codTipo;
 
         private String _nome;
         private double _valor;
 
-        private Image _imagem;
+        private ingredienteSituacao _situacao;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodTipo { get => _codTipo; set => _codTipo = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public double Valor { get => _valor; set => _valor = value; }
-        public Image Imagem { get => _imagem; set => _imagem = value; }
+        public ingredienteSituacao Situacao { get => _situacao; set => _situacao = value; }
+        public int CodImagem { get => _codImagem; set => _codImagem = value; }
 
         private clnIngrediente obter(SqlDataReader reader)
         {
             clnIngrediente objIngrediente = new clnIngrediente
             {
                 Cod = clnUtilConvert.ToInt(reader["id"]),
+                CodImagem = clnUtilConvert.ToInt(reader["id_imagem"]),
                 CodTipo = clnUtilConvert.ToInt(reader["id_tipo"]),
                 Nome = clnUtilConvert.ToString(reader["nome"]),
-                Valor = clnUtilConvert.ToDouble(reader["valor"])
+                Valor = clnUtilConvert.ToDouble(reader["valor"]),
+                Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
             };
-
-            FileStream objArquivo = new clnArquivo
-            {
-                Cod = clnUtilConvert.ToInt(reader["id_arquivo"])
-            }.obterPorCodigo();
-
-            if (objArquivo != null)
-            {
-                objIngrediente.Imagem = Image.FromStream(objArquivo);
-                objArquivo.Close();
-            }
-            else
-            {
-                objIngrediente.Imagem = null;
-            }
 
             return objIngrediente;
         }
@@ -107,6 +96,18 @@ namespace BURGUER_SHACK_DESKTOP
             return objIngredientes;
         }
 
+        public void gravar()
+        {
+            sqlCommandInsert objInsert = new sqlCommandInsert();
+            objInsert.table("ingrediente");
+            objInsert.Insert.val("id_tipo", CodTipo)
+                            .val("id_imagem", CodImagem)
+                            .val("nome", Nome)
+                            .val("valor", Valor)
+                            .val("situacao", prefixo(Situacao));
+
+            Cod = objInsert.insertWithOutput(App.AppDatabase);
+        }
 
         private ingredienteSituacao situacao(char prefixo)
         {
@@ -151,7 +152,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             internal override Image Imagem(clnIngrediente obj)
             {
-                return obj.Imagem;
+                clnArquivo objArquivo = new clnArquivo
+                {
+                    Cod = obj.CodImagem
+                }.obterPorCodigo();
+                return Image.FromFile(objArquivo.Arquivo);
             }
 
             internal override string Nome(clnIngrediente obj)

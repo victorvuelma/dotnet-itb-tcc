@@ -34,6 +34,8 @@
             this.btnVoltar = new UIX.btnUIX();
             this.btnSalvar = new UIX.btnUIX();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.btnTipo = new UIX.btnUIX();
+            this.cboSituacao = new UIX.cboUIX();
             this.txtValor = new UIX.txtUIX();
             this.cboTipo = new UIX.cboUIX();
             this.txtNome = new UIX.txtUIX();
@@ -41,8 +43,6 @@
             this.btnImgAdicionar = new UIX.btnUIX();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbImagem = new System.Windows.Forms.GroupBox();
-            this.cboSituacao = new UIX.cboUIX();
-            this.btnTipo = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -93,6 +93,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbDadosPessoais
             // 
@@ -110,6 +111,29 @@
             this.grbDadosPessoais.TabIndex = 7;
             this.grbDadosPessoais.TabStop = false;
             this.grbDadosPessoais.Text = "DADOS";
+            // 
+            // btnTipo
+            // 
+            this.btnTipo.Description = "";
+            this.btnTipo.HoverColor = System.Drawing.Color.Transparent;
+            this.btnTipo.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnTipo.Location = new System.Drawing.Point(178, 50);
+            this.btnTipo.Name = "btnTipo";
+            this.btnTipo.Size = new System.Drawing.Size(25, 25);
+            this.btnTipo.TabIndex = 29;
+            this.btnTipo.UseVisualStyleBackColor = true;
+            this.btnTipo.Click += new System.EventHandler(this.btnTipo_Click);
+            // 
+            // cboSituacao
+            // 
+            this.cboSituacao.AccessibleName = "Tipo:*";
+            this.cboSituacao.Campo = "Situacao*";
+            this.cboSituacao.FormattingEnabled = true;
+            this.cboSituacao.Location = new System.Drawing.Point(210, 50);
+            this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cboSituacao.Name = "cboSituacao";
+            this.cboSituacao.Size = new System.Drawing.Size(173, 31);
+            this.cboSituacao.TabIndex = 20;
             // 
             // txtValor
             // 
@@ -156,6 +180,7 @@
             this.btnImgRemover.Size = new System.Drawing.Size(80, 80);
             this.btnImgRemover.TabIndex = 28;
             this.btnImgRemover.UseVisualStyleBackColor = true;
+            this.btnImgRemover.Click += new System.EventHandler(this.btnImgRemover_Click);
             // 
             // btnImgAdicionar
             // 
@@ -167,6 +192,7 @@
             this.btnImgAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnImgAdicionar.TabIndex = 26;
             this.btnImgAdicionar.UseVisualStyleBackColor = true;
+            this.btnImgAdicionar.Click += new System.EventHandler(this.btnImgAdicionar_Click);
             // 
             // picImagem
             // 
@@ -191,28 +217,6 @@
             this.grbImagem.TabIndex = 20;
             this.grbImagem.TabStop = false;
             this.grbImagem.Text = "IMAGEM";
-            // 
-            // cboSituacao
-            // 
-            this.cboSituacao.AccessibleName = "Tipo:*";
-            this.cboSituacao.Campo = "Situacao*";
-            this.cboSituacao.FormattingEnabled = true;
-            this.cboSituacao.Location = new System.Drawing.Point(210, 50);
-            this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cboSituacao.Name = "cboSituacao";
-            this.cboSituacao.Size = new System.Drawing.Size(173, 31);
-            this.cboSituacao.TabIndex = 20;
-            // 
-            // btnTipo
-            // 
-            this.btnTipo.Description = "";
-            this.btnTipo.HoverColor = System.Drawing.Color.Transparent;
-            this.btnTipo.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnTipo.Location = new System.Drawing.Point(178, 50);
-            this.btnTipo.Name = "btnTipo";
-            this.btnTipo.Size = new System.Drawing.Size(25, 25);
-            this.btnTipo.TabIndex = 29;
-            this.btnTipo.UseVisualStyleBackColor = true;
             // 
             // frmIngrediente
             // 

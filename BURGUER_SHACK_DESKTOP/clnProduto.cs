@@ -31,7 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
         private double _valor;
         private produtoSituacao _situacao;
 
-        private Image _imagem;
+        private String _imagem;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodTipo { get => _codTipo; set => _codTipo = value; }
@@ -40,7 +40,7 @@ namespace BURGUER_SHACK_DESKTOP
         public string Descricao { get => _descricao; set => _descricao = value; }
         public double Valor { get => _valor; set => _valor = value; }
         internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
-        public Image Imagem { get => _imagem; set => _imagem = value; }
+        public String Imagem { get => _imagem; set => _imagem = value; }
 
         private clnProduto obter(SqlDataReader reader)
         {
@@ -54,18 +54,11 @@ namespace BURGUER_SHACK_DESKTOP
                 Valor = clnUtilConvert.ToDouble(reader["valor"])
             };
 
-            FileStream objArquivo = new clnArquivo
+            clnArquivo objArquivo = new clnArquivo
             {
                 Cod = clnUtilConvert.ToInt(reader["id_arquivo"])
             }.obterPorCodigo();
-            if (objArquivo != null)
-            {
-                objProduto.Imagem = Image.FromStream(objArquivo);
-                objArquivo.Close();
-            } else
-            {
-                objProduto.Imagem = null;
-            }
+            objProduto.Imagem = objArquivo.Arquivo;
 
             objProduto.obterIngredientes();
 
@@ -87,7 +80,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             CodIngredientes = objIngredientes;
         }
-        
+
         public clnProduto obterPorCodigo()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
@@ -159,7 +152,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             internal override Image Imagem(clnProduto obj)
             {
-                return obj.Imagem;
+                return Image.FromFile(obj.Imagem);
             }
 
             internal override string Nome(clnProduto obj)

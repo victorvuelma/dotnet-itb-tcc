@@ -53,7 +53,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void exibirProduto(clnProduto objProduto, clnItem objPedidoProduto)
         {
-            picProduto.Image = objProduto.Imagem;
+            picProduto.ImageLocation = objProduto.Imagem;
             lblProdutoNome.Text = objProduto.Nome;
             txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
             txtAdicional.Text = objPedidoProduto.Adicional;

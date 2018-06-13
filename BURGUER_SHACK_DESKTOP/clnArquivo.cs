@@ -14,51 +14,50 @@ namespace BURGUER_SHACK_DESKTOP
     class clnArquivo
     {
 
-        private int _cod;
+        private static clnUtilCache CACHE = new clnUtilCache("arquivo");
 
+        private int _cod;
         private String _arquivo;
 
         public int Cod { get => _cod; set => _cod = value; }
         public String Arquivo { get => _arquivo; set => _arquivo = value; }
 
-        public FileStream obterPorCodigo()
+        public clnArquivo obterPorCodigo()
         {
-            String path = Application.StartupPath + "/arquivos/arquivo-" + Cod + ".temp";
-
-            if (File.Exists(path))
+            string arquivo = CACHE.obter(Convert.ToString(Cod));
+            if (arquivo != null)
             {
-                return File.Open(path, FileMode.Open);
+                return new clnArquivo { Cod = Cod, Arquivo = arquivo };
             }
             else
             {
                 sqlCommandSelect objSelect = new sqlCommandSelect();
-                objSelect.table("arquivos");
+                objSelect.table("arquivo");
                 objSelect.Where.where("id", Cod);
 
                 SqlDataReader reader = objSelect.select(App.AppDatabase);
 
                 if (reader.Read())
                 {
-                    clnArquivo objArquivo = new clnArquivo();
-                    objArquivo.Cod = clnUtilConvert.ToInt(reader["id"]);
-
-                    File.WriteAllBytes(path, (byte[])reader["conteudo"]);
-                    reader.Close();
-
-                    return File.Open(path, FileMode.Open);
+                    arquivo = CACHE.guardar(Convert.ToString(Cod), (byte[])reader["conteudo"]);
+                    return new clnArquivo { Cod = Cod, Arquivo = arquivo };
                 }
-            }
 
-            return null;
+                return new clnArquivo { Cod = Cod, Arquivo = "" };
+            }
         }
 
         public void gravar()
         {
+            byte[] conteudo = File.ReadAllBytes(Arquivo);
+
             sqlCommandInsert objInsert = new sqlCommandInsert();
             objInsert.table("arquivo");
-            objInsert.Insert.val("conteudo", File.ReadAllBytes(Arquivo));
+            objInsert.Insert.val("conteudo", conteudo);
 
-            objInsert.insert(App.AppDatabase);
+            Cod = objInsert.insertWithOutput(App.AppDatabase);
+
+            CACHE.guardar(Convert.ToString(Cod), conteudo);
         }
     }
 }

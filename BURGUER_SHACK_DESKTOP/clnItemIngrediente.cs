@@ -61,7 +61,12 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = obj.CodIngrediente
                 }.obterPorCodigo();
 
-                return objIngrediente.Imagem;
+                clnArquivo objArquivo = new clnArquivo
+                {
+                    Cod = objIngrediente.CodImagem
+                }.obterPorCodigo();
+
+                return Image.FromFile(objArquivo.Arquivo);
             }
 
             internal override string Nome(clnItemIngrediente obj)
@@ -95,7 +100,12 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = obj.CodIngrediente
                 }.obterPorCodigo();
 
-                return objIngrediente.Imagem;
+                clnArquivo objArquivo = new clnArquivo
+                {
+                    Cod = objIngrediente.CodImagem
+                }.obterPorCodigo();
+
+                return Image.FromFile(objArquivo.Arquivo);
             }
 
             internal override string Nome(clnItemIngrediente obj)
