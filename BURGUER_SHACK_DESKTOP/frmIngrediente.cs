@@ -86,7 +86,9 @@ namespace BURGUER_SHACK_DESKTOP
                         CodImagem = objArquivo.Cod,
                         Valor = clnUtilConvert.ToDouble(txtValor.Text)
                     };
+
                     ObjIngrediente.gravar();
+                    clnUtilMensagem.mostrarOk("Cadastro de Ingrediente", "Ingrediente cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                 }
                 else
                 {
@@ -110,7 +112,9 @@ namespace BURGUER_SHACK_DESKTOP
                     ObjIngrediente.Situacao = (clnIngrediente.ingredienteSituacao)Enum.Parse(typeof(clnIngrediente.ingredienteSituacao), cboSituacao.Text);
 
                     ObjIngrediente.alterar();
+                    clnUtilMensagem.mostrarOk("Altereção de Ingrediente", "Ingrediente alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                 }
+                Close();
             }
         }
 
