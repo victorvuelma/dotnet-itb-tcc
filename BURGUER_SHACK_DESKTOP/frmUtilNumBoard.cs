@@ -17,11 +17,34 @@ namespace BURGUER_SHACK_DESKTOP
         private String _num;
 
         public String Numero { get => _num; set => _num = value; }
-        public TextBoxBase Input { get => _input; set => _input = value; }
+        public TextBoxBase Input
+        {
+            get => _input;
+            set
+            {
+                _input = value;
+                atualizarInput();
+            }
+        }
 
         public frmUtilNumBoard()
         {
             InitializeComponent();
+        }
+
+        private void atualizarInput()
+        {
+
+            if (Input is MaskedTextBox mtb)
+            {
+                mtbNum.Mask = mtb.Mask;
+            }
+            else
+            {
+                mtbNum.Mask = "";
+            }
+
+            definir(clnUtil.retirarFormatacao(Input.Text));
         }
 
         private void adicionar(char numero)
@@ -41,6 +64,11 @@ namespace BURGUER_SHACK_DESKTOP
                 mtbNum.Text = num;
             }
             Numero = clnUtil.retirarFormatacao(mtbNum.Text);
+        }
+
+        private void fechar()
+        {
+            Hide();
         }
 
         private void btnNum0_Click(object sender, EventArgs e)
@@ -118,27 +146,13 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void fechar()
-        {
-            this.Visible = false;
-        }
-
         private void frmNumKey_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             UIX.uixMaskedTextBox.mtbApply(mtbNum, App.AppVisualStyle.FormColor);
             clnUtil.atualizarTabIndex(Controls);
 
-            if (Input is MaskedTextBox mtb)
-            {
-                mtbNum.Mask = mtb.Mask;
-            }
-            else
-            {
-                mtbNum.Mask = "";
-            }
-
-            definir(clnUtil.retirarFormatacao(Input.Text));
+            atualizarInput();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

@@ -74,9 +74,9 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     frmNumBoard = new frmUtilNumBoard();
                 }
-                if (frmNumBoard.Input != null && frmNumBoard.Input.Equals(input) && !frmNumBoard.Visible)
+                else if (frmNumBoard.Input != null && frmNumBoard.Input.Equals(input) && !frmNumBoard.Visible)
                 {
-                    frmNumBoard.Visible = false;
+                    frmNumBoard.Hide();
                 }
                 else
                 {
@@ -85,8 +85,6 @@ namespace BURGUER_SHACK_DESKTOP
                     {
                         frmNumBoard.btnPoint.Hide();
                     }
-
-                    frmNumBoard.Visible = true;
                     frmNumBoard.Show();
                 }
             };
