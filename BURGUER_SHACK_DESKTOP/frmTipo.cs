@@ -76,13 +76,13 @@ namespace BURGUER_SHACK_DESKTOP
 
             definirNovo();
             exibirTipos();
-            
+
             hdrUIX.Title = App.AppName + " - Tipos " + Tipo.ToString();
         }
 
         private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 object cod = dgvTipos.CurrentRow.Cells[0].Value;
 
@@ -92,7 +92,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = Convert.ToInt32(cod)
                 }.obterPorCodigo();
 
-                if(objTipo != null)
+                if (objTipo != null)
                 {
                     definirEditar(objTipo);
                 }
@@ -101,49 +101,71 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnAcao_Click(object sender, EventArgs e)
         {
-            if(ObjTipo != null)
+            if (ObjTipo != null)
             {
                 if (!clnUtil.vazio(txtNome.Text))
                 {
                     ObjTipo.Nome = txtNome.Text;
                     ObjTipo.alterar();
+
                     clnUtilMensagem.mostrarOk("Tipo", "Tipo alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                     exibirTipos();
                     definirNovo();
-                } else
+                }
+                else
                 {
                     clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.", clnUtilMensagem.MensagemIcone.ERRO);
                 }
-            } else
+            }
+            else if (txtNome.Visible)
             {
-                if (txtNome.Visible)
+                if (!clnUtil.vazio(txtNome.Text))
                 {
-                    if (!clnUtil.vazio(txtNome.Text))
+                    clnTipo objTipo = new clnTipo
                     {
-                        clnTipo objTipo = new clnTipo
-                        {
-                            Nome = txtNome.Text,
-                            Tipo = Tipo
-                        };
-                        objTipo.gravar();
-                        clnUtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                        exibirTipos();
-                        definirNovo();
-                    }
-                    else
-                    {
-                        clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.", clnUtilMensagem.MensagemIcone.ERRO);
-                    }
-                } else
-                {
-                    definirCriar();
+                        Nome = txtNome.Text,
+                        Tipo = Tipo
+                    };
+                    objTipo.gravar();
+                    clnUtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    exibirTipos();
+                    definirNovo();
                 }
+                else
+                {
+                    clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.", clnUtilMensagem.MensagemIcone.ERRO);
+                }
+            }
+            else
+            {
+                definirCriar();
             }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
+            ObjTipo = null;
             Close();
+        }
+
+        private void dgvTipos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                object cod = dgvTipos.CurrentRow.Cells[0].Value;
+
+                clnTipo objTipo = new clnTipo
+                {
+                    Tipo = Tipo,
+                    Cod = Convert.ToInt32(cod)
+                }.obterPorCodigo();
+
+                if (objTipo != null)
+                {
+                    ObjTipo = objTipo;
+                    Close();
+                }
+            }
         }
     }
 }

@@ -34,19 +34,23 @@
             this.btnVoltar = new UIX.btnUIX();
             this.btnSalvar = new UIX.btnUIX();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.btnTipo = new UIX.btnUIX();
-            this.cboSituacao = new UIX.cboUIX();
+            this.btnTipo = new System.Windows.Forms.Button();
             this.txtValor = new UIX.txtUIX();
             this.cboTipo = new UIX.cboUIX();
             this.txtNome = new UIX.txtUIX();
+            this.cboSituacao = new UIX.cboUIX();
             this.btnImgRemover = new UIX.btnUIX();
             this.btnImgAdicionar = new UIX.btnUIX();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbImagem = new System.Windows.Forms.GroupBox();
+            this.grbSituacao = new System.Windows.Forms.GroupBox();
+            this.lblEstoque = new System.Windows.Forms.Label();
+            this.btnExcluir = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.grbImagem.SuspendLayout();
+            this.grbSituacao.SuspendLayout();
             this.SuspendLayout();
             // 
             // hdrUIX
@@ -64,6 +68,7 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnExcluir);
             this.pnlMenu.Controls.Add(this.btnVoltar);
             this.pnlMenu.Controls.Add(this.btnSalvar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
@@ -88,7 +93,7 @@
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 200);
+            this.btnSalvar.Location = new System.Drawing.Point(5, 205);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
@@ -98,7 +103,6 @@
             // grbDadosPessoais
             // 
             this.grbDadosPessoais.Controls.Add(this.btnTipo);
-            this.grbDadosPessoais.Controls.Add(this.cboSituacao);
             this.grbDadosPessoais.Controls.Add(this.txtValor);
             this.grbDadosPessoais.Controls.Add(this.cboTipo);
             this.grbDadosPessoais.Controls.Add(this.txtNome);
@@ -114,37 +118,26 @@
             // 
             // btnTipo
             // 
-            this.btnTipo.Description = "";
-            this.btnTipo.HoverColor = System.Drawing.Color.Transparent;
+            this.btnTipo.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnTipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTipo.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnTipo.Location = new System.Drawing.Point(178, 50);
+            this.btnTipo.Location = new System.Drawing.Point(360, 50);
             this.btnTipo.Name = "btnTipo";
             this.btnTipo.Size = new System.Drawing.Size(25, 25);
             this.btnTipo.TabIndex = 29;
             this.btnTipo.UseVisualStyleBackColor = true;
             this.btnTipo.Click += new System.EventHandler(this.btnTipo_Click);
             // 
-            // cboSituacao
-            // 
-            this.cboSituacao.AccessibleName = "Tipo:*";
-            this.cboSituacao.Campo = "Situacao*";
-            this.cboSituacao.FormattingEnabled = true;
-            this.cboSituacao.Location = new System.Drawing.Point(210, 50);
-            this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cboSituacao.Name = "cboSituacao";
-            this.cboSituacao.Size = new System.Drawing.Size(173, 31);
-            this.cboSituacao.TabIndex = 20;
-            // 
             // txtValor
             // 
             this.txtValor.AccessibleName = "Preço de Venda: (R$)*";
             this.txtValor.AllowedChars = UIX.uixAllowedChars.DOUBLE;
             this.txtValor.Campo = "Valor (R$)*";
-            this.txtValor.Location = new System.Drawing.Point(238, 20);
+            this.txtValor.Location = new System.Drawing.Point(5, 50);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtValor.MaxLength = 32767;
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(145, 26);
+            this.txtValor.Size = new System.Drawing.Size(160, 26);
             this.txtValor.TabIndex = 19;
             // 
             // cboTipo
@@ -152,10 +145,10 @@
             this.cboTipo.AccessibleName = "Tipo:*";
             this.cboTipo.Campo = "Tipo*";
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(5, 50);
+            this.cboTipo.Location = new System.Drawing.Point(170, 50);
             this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(165, 25);
+            this.cboTipo.Size = new System.Drawing.Size(185, 25);
             this.cboTipo.TabIndex = 9;
             // 
             // txtNome
@@ -167,8 +160,19 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(227, 21);
+            this.txtNome.Size = new System.Drawing.Size(380, 21);
             this.txtNome.TabIndex = 2;
+            // 
+            // cboSituacao
+            // 
+            this.cboSituacao.AccessibleName = "Tipo:*";
+            this.cboSituacao.Campo = "Situacao*";
+            this.cboSituacao.FormattingEnabled = true;
+            this.cboSituacao.Location = new System.Drawing.Point(5, 20);
+            this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cboSituacao.Name = "cboSituacao";
+            this.cboSituacao.Size = new System.Drawing.Size(180, 30);
+            this.cboSituacao.TabIndex = 20;
             // 
             // btnImgRemover
             // 
@@ -218,11 +222,46 @@
             this.grbImagem.TabStop = false;
             this.grbImagem.Text = "IMAGEM";
             // 
+            // grbSituacao
+            // 
+            this.grbSituacao.Controls.Add(this.lblEstoque);
+            this.grbSituacao.Controls.Add(this.cboSituacao);
+            this.grbSituacao.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSituacao.Location = new System.Drawing.Point(105, 150);
+            this.grbSituacao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbSituacao.Name = "grbSituacao";
+            this.grbSituacao.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbSituacao.Size = new System.Drawing.Size(190, 85);
+            this.grbSituacao.TabIndex = 30;
+            this.grbSituacao.TabStop = false;
+            this.grbSituacao.Text = "SITUAÇÃO";
+            // 
+            // lblEstoque
+            // 
+            this.lblEstoque.Location = new System.Drawing.Point(5, 50);
+            this.lblEstoque.Name = "lblEstoque";
+            this.lblEstoque.Size = new System.Drawing.Size(180, 25);
+            this.lblEstoque.TabIndex = 21;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Description = "Excluir";
+            this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(5, 105);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(90, 90);
+            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // frmIngrediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 350);
+            this.Controls.Add(this.grbSituacao);
             this.Controls.Add(this.grbImagem);
             this.Controls.Add(this.picImagem);
             this.Controls.Add(this.grbDadosPessoais);
@@ -240,6 +279,7 @@
             this.grbDadosPessoais.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.grbImagem.ResumeLayout(false);
+            this.grbSituacao.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,7 +298,10 @@
         private System.Windows.Forms.PictureBox picImagem;
         public System.Windows.Forms.GroupBox grbImagem;
         private UIX.cboUIX cboSituacao;
-        private UIX.btnUIX btnTipo;
+        private System.Windows.Forms.Button btnTipo;
+        public System.Windows.Forms.GroupBox grbSituacao;
+        private System.Windows.Forms.Label lblEstoque;
+        private UIX.btnUIX btnExcluir;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

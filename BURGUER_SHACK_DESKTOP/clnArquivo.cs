@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using SQL_POWERUP;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace BURGUER_SHACK_DESKTOP
 {
@@ -21,6 +22,19 @@ namespace BURGUER_SHACK_DESKTOP
 
         public int Cod { get => _cod; set => _cod = value; }
         public String Arquivo { get => _arquivo; set => _arquivo = value; }
+
+        public static String tempImage(Image img)
+        {
+            byte[] conteudo = null;
+            using(var ms = new MemoryStream())
+            {
+                img.Save(ms, img.RawFormat);
+                conteudo = ms.ToArray();
+                ms.Close();
+            }
+            return CACHE.guardar("tempimage", conteudo);
+            
+        }
 
         public clnArquivo obterPorCodigo()
         {

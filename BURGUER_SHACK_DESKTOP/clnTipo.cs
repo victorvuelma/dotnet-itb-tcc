@@ -30,7 +30,8 @@ namespace BURGUER_SHACK_DESKTOP
         private clnTipo obter(SqlDataReader reader) => new clnTipo
         {
             Cod = clnUtilConvert.ToInt(reader["id"]),
-            Nome = clnUtilConvert.ToString(reader["nome"])
+            Nome = clnUtilConvert.ToString(reader["nome"]),
+            Tipo = Tipo
         };
 
         public clnTipo obterPorCodigo()
@@ -76,7 +77,9 @@ namespace BURGUER_SHACK_DESKTOP
             sqlCommandUpdate objUpdate = new sqlCommandUpdate();
             objUpdate.table(Tipo.ToString() + "_tipo");
             objUpdate.Set.val("nome", Nome);
-            objUpdate.Where.where("id", Cod);            
+            objUpdate.Where.where("id", Cod);
+
+            objUpdate.update(App.AppDatabase);
         }
     }
 }

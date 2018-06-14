@@ -83,6 +83,7 @@
             this.dgvTipos.Size = new System.Drawing.Size(380, 250);
             this.dgvTipos.TabIndex = 0;
             this.dgvTipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellClick);
+            this.dgvTipos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellDoubleClick);
             // 
             // columnCod
             // 

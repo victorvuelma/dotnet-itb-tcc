@@ -109,6 +109,20 @@ namespace BURGUER_SHACK_DESKTOP
             Cod = objInsert.insertWithOutput(App.AppDatabase);
         }
 
+        internal void alterar()
+        {
+            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            objUpdate.table("ingrediente");
+            objUpdate.Set.val("id_tipo", CodTipo)
+                        .val("id_imagem", CodImagem)
+                        .val("nome", Nome)
+                        .val("valor", Valor)
+                        .val("situacao", prefixo(Situacao));
+            objUpdate.Where.where("id", Cod);
+
+            objUpdate.update(App.AppDatabase);
+        }
+
         private ingredienteSituacao situacao(char prefixo)
         {
             switch (prefixo)

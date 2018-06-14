@@ -30,17 +30,30 @@ namespace BURGUER_SHACK_DESKTOP
 
         }
 
-        private static void abrirTipos()
+        private void abrirTipos()
         {
-            new frmTipo { Tipo = clnTipo.tipo.INGREDIENTE }.ShowDialog();
+            frmTipo frmTipo = new frmTipo
+            {
+                Tipo = clnTipo.tipo.INGREDIENTE
+            };
+            frmTipo.ShowDialog();
+
+            carregarTipos();
+            if (frmTipo.ObjTipo != null)
+                definirTipo(frmTipo.ObjTipo);
         }
 
         private void removerImagem()
         {
             if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Deseja realmente remover a imagem?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                picImagem.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.ingrediente;
+                definirImagemPadrao();
             }
+        }
+
+        private void definirImagemPadrao()
+        {
+            picImagem.ImageLocation = clnArquivo.tempImage(global::BURGUER_SHACK_DESKTOP.Properties.Resources.ingrediente);
         }
 
         private void adicionarImagem()
@@ -91,6 +104,32 @@ namespace BURGUER_SHACK_DESKTOP
                         objArquivo.gravar();
                         ObjIngrediente.CodImagem = objArquivo.Cod;
                     }
+                    ObjIngrediente.CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]);
+                    ObjIngrediente.Nome = txtNome.Text;
+                    ObjIngrediente.Valor = clnUtilConvert.ToDouble(txtValor.Text);
+                    ObjIngrediente.Situacao = (clnIngrediente.ingredienteSituacao)Enum.Parse(typeof(clnIngrediente.ingredienteSituacao), cboSituacao.Text);
+
+                    ObjIngrediente.alterar();
+                }
+            }
+        }
+
+        private void definirTipo(clnTipo objTipo)
+        {
+            cboTipo.Text = objTipo.Cod + " - " + objTipo.Nome;
+        }
+
+        private void carregarTipos()
+        {
+            cboTipo.Items.Clear();
+
+            foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.INGREDIENTE }.obter())
+            {
+                String nome = objTipo.Cod + " - " + objTipo.Nome;
+                cboTipo.Items.Add(nome);
+                if (ObjIngrediente != null && ObjIngrediente.CodTipo.Equals(objTipo.Cod))
+                {
+                    definirTipo(objTipo);
                 }
             }
         }
@@ -99,6 +138,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnExcluir, App.AppVisualStyle.ButtonWarningColor);
             clnUtil.atualizarTabIndex(Controls);
 
             if (ObjIngrediente != null)
@@ -111,18 +151,29 @@ namespace BURGUER_SHACK_DESKTOP
                 txtNome.Text = ObjIngrediente.Nome;
                 txtValor.Text = ObjIngrediente.Valor.ToString();
                 picImagem.ImageLocation = objArquivo.Arquivo;
+
+                int ingredienteEstoque = 0;
+                if (ObjIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
+                {
+                    cboSituacao.Enabled = false;
+                    cboSituacao.Items.Add(clnUtilConvert.ToString(clnIngrediente.ingredienteSituacao.FORADEESTOQUE));
+                }
+                else
+                {
+                    cboSituacao.Items.AddRange(new String[] { clnUtilConvert.ToString(clnIngrediente.ingredienteSituacao.DISPONIVEL), clnUtilConvert.ToString(clnIngrediente.ingredienteSituacao.INDISPONIVEL) });
+                }
                 cboSituacao.Text = ObjIngrediente.Situacao.ToString();
+                lblEstoque.Text = "Estoque: " + ingredienteEstoque;
+            }
+            else
+            {
+                definirImagemPadrao();
+
+                grbSituacao.Hide();
+                btnExcluir.Hide();
             }
 
-            foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.INGREDIENTE }.obter())
-            {
-                String nome = objTipo.Cod + " - " + objTipo.Nome;
-                cboTipo.Items.Add(nome);
-                if (ObjIngrediente != null && ObjIngrediente.CodTipo.Equals(objTipo.Cod))
-                {
-                    cboTipo.Text = nome;
-                }
-            }
+            carregarTipos();
         }
 
         private void btnTipo_Click(object sender, EventArgs e)
@@ -145,5 +196,9 @@ namespace BURGUER_SHACK_DESKTOP
             salvar();
         }
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
