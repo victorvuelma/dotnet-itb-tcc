@@ -113,9 +113,9 @@ namespace BURGUER_SHACK_DESKTOP
 
             UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
 
-            clnUtil.abrirNumBoard(mtbCPF, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.abrirNumBoard(mtbTelCel, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.abrirNumBoard(mtbDataNasc, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.definirNumBoard(mtbCPF, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.definirNumBoard(mtbTelCel, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.definirNumBoard(mtbDataNasc, frmUtilNumBoard.NumBoardMode.INT);
 
             if (ObjCliente == null)
             {

@@ -333,10 +333,10 @@ namespace BURGUER_SHACK_DESKTOP
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            clnUtil.abrirNumBoard(mtbCliCPF, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.abrirNumBoard(mtbData, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.abrirNumBoard(mtbHora, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.abrirNumBoard(txtPessoas);
+            clnUtil.definirNumBoard(mtbCliCPF, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.definirNumBoard(mtbData, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.definirNumBoard(mtbHora, frmUtilNumBoard.NumBoardMode.INT);
+            clnUtil.definirNumBoard(txtPessoas);
 
             UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
 

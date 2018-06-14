@@ -146,7 +146,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
-            clnUtil.abrirNumBoard(txtQuantidade);
+            clnUtil.definirNumBoard(txtQuantidade);
 
             grbDetalhes.Hide();
             btnConfirmar.Hide();

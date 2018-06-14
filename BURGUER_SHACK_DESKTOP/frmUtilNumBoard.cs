@@ -118,6 +118,11 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void fechar()
+        {
+            this.Visible = false;
+        }
+
         private void frmNumKey_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
@@ -138,17 +143,17 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            Close();
+            fechar();
         }
 
         private void frmUtilNumBoard_Leave(object sender, EventArgs e)
         {
-            Close();
+            fechar();
         }
 
         private void frmUtilNumBoard_Deactivate(object sender, EventArgs e)
         {
-            Close();
+            fechar();
         }
 
         public enum NumBoardMode

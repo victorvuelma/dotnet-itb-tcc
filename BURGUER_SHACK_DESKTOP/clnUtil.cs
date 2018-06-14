@@ -34,6 +34,8 @@ namespace BURGUER_SHACK_DESKTOP
         public static String MASK_CPF = "000,000,000-00";
         public static String MASK_RG = "00,000,000-0";
 
+        private static frmUtilNumBoard frmNumBoard;
+
         private static String FORMAT_CEL = @"(00) 00000-0000";
 
         private static String REGEX_CEL = @"^\([1-9]{2}\) [9]{0,1}[6-9]{1}[0-9]{3}\-[0-9]{4}$";
@@ -47,37 +49,46 @@ namespace BURGUER_SHACK_DESKTOP
         private static ViaCEP _viaCep = new ViaCEP();
 
         // ---- NUMBOARD
-        public static void abrirNumBoard(UIX.txtUIX txt)
+        public static void definirNumBoard(UIX.txtUIX txt)
         {
             if (txt.AllowedChars == UIX.uixAllowedChars.INT)
             {
-                abrirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
+                definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
             }
             else
             {
-                abrirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
+                definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
             }
         }
 
-        public static void abrirNumBoard(UIX.mtbUIX masked, frmUtilNumBoard.NumBoardMode mode)
+        public static void definirNumBoard(UIX.mtbUIX masked, frmUtilNumBoard.NumBoardMode mode)
         {
-            abrirNumBoard(masked.mtb, mode);
+            definirNumBoard(masked.mtb, mode);
         }
 
-        public static void abrirNumBoard(TextBoxBase box, frmUtilNumBoard.NumBoardMode mode)
+        public static void definirNumBoard(TextBoxBase input, frmUtilNumBoard.NumBoardMode mode)
         {
-            box.Click += (object sender, EventArgs args) =>
+            input.Click += (object sender, EventArgs args) =>
             {
-                frmUtilNumBoard numBoard = new frmUtilNumBoard
+                if (frmNumBoard == null)
                 {
-                    Input = box
-                };
-                if (mode == frmUtilNumBoard.NumBoardMode.INT)
-                {
-                    numBoard.btnPoint.Hide();
+                    frmNumBoard = new frmUtilNumBoard();
                 }
+                if (frmNumBoard.Input != null && frmNumBoard.Input.Equals(input) && !frmNumBoard.Visible)
+                {
+                    frmNumBoard.Visible = false;
+                }
+                else
+                {
+                    frmNumBoard.Input = input;
+                    if (mode == frmUtilNumBoard.NumBoardMode.INT)
+                    {
+                        frmNumBoard.btnPoint.Hide();
+                    }
 
-                numBoard.Show();
+                    frmNumBoard.Visible = true;
+                    frmNumBoard.Show();
+                }
             };
         }
         // ---- NUMBOARD
