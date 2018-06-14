@@ -26,6 +26,8 @@ namespace UIX
             cbo.ForeColor = colorSet.ContentColor;
             cbo.Margin = new Padding(0);
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbo.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbo.AutoCompleteMode = AutoCompleteMode.Suggest;
         }
     }
 
