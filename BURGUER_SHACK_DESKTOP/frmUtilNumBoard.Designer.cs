@@ -229,14 +229,17 @@
             this.mtbNum.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbNum.Location = new System.Drawing.Point(5, 20);
             this.mtbNum.Name = "mtbNum";
-            this.mtbNum.ReadOnly = true;
             this.mtbNum.Size = new System.Drawing.Size(200, 37);
             this.mtbNum.TabIndex = 29;
             this.mtbNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.mtbNum.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.mtbNum.TextChanged += new System.EventHandler(this.mtbNum_TextChanged);
+            this.mtbNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbNum_KeyDown);
+            this.mtbNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbNum_KeyPress);
             // 
             // frmUtilNumBoard
             // 
+            this.AcceptButton = this.btnConfirmar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(220, 450);
@@ -249,7 +252,8 @@
             this.Name = "frmUtilNumBoard";
             this.Text = "Teclado Numérico";
             this.Deactivate += new System.EventHandler(this.frmUtilNumBoard_Deactivate);
-            this.Load += new System.EventHandler(this.frmNumKey_Load);
+            this.Load += new System.EventHandler(this.frmUtilNumBoard_Load);
+            this.VisibleChanged += new System.EventHandler(this.frmUtilNumBoard_VisibleChanged);
             this.grbBotoes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

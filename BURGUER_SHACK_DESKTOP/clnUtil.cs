@@ -68,25 +68,39 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static void definirNumBoard(TextBoxBase input, frmUtilNumBoard.NumBoardMode mode)
         {
-            input.Click += (object sender, EventArgs args) =>
+            input.MouseClick += (object sender, MouseEventArgs args) =>
             {
                 if (frmNumBoard == null)
                 {
-                    frmNumBoard = new frmUtilNumBoard();
+                    frmNumBoard = new frmUtilNumBoard
+                    {
+                        Input = input
+                    };
                 }
-                else if (frmNumBoard.Input != null && frmNumBoard.Input.Equals(input) && !frmNumBoard.Visible)
+                else if (frmNumBoard.Input != input)
+                {
+                    frmNumBoard.Input = input;
+                }
+
+                if (mode == frmUtilNumBoard.NumBoardMode.INT)
+                {
+                    frmNumBoard.btnPoint.Hide();
+                }
+                else
+                {
+                    frmNumBoard.btnPoint.Show();
+                }
+
+                if (frmNumBoard.Input.Equals(input) && frmNumBoard.Visible)
                 {
                     frmNumBoard.Hide();
                 }
                 else
                 {
-                    frmNumBoard.Input = input;
-                    if (mode == frmUtilNumBoard.NumBoardMode.INT)
-                    {
-                        frmNumBoard.btnPoint.Hide();
-                    }
                     frmNumBoard.Show();
                 }
+
+
             };
         }
         // ---- NUMBOARD

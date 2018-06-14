@@ -17,53 +17,46 @@ namespace BURGUER_SHACK_DESKTOP
         private String _num;
 
         public String Numero { get => _num; set => _num = value; }
-        public TextBoxBase Input
-        {
-            get => _input;
-            set
-            {
-                _input = value;
-                atualizarInput();
-            }
-        }
+        public TextBoxBase Input { get => _input; set => _input = value; }
 
         public frmUtilNumBoard()
         {
             InitializeComponent();
         }
 
-        private void atualizarInput()
+        private void focar()
         {
-
-            if (Input is MaskedTextBox mtb)
-            {
-                mtbNum.Mask = mtb.Mask;
-            }
-            else
-            {
-                mtbNum.Mask = "";
-            }
-
-            definir(clnUtil.retirarFormatacao(Input.Text));
+            mtbNum.Focus();
         }
 
         private void adicionar(char numero)
         {
             definir(Numero + numero);
+
+            focar();
         }
 
         private void definir(string num)
         {
+            mtbNum.Text = num;
             if (Input != null)
             {
                 Input.Text = num;
-                mtbNum.Text = Input.Text;
-            }
-            else
-            {
-                mtbNum.Text = num;
             }
             Numero = clnUtil.retirarFormatacao(mtbNum.Text);
+        }
+
+        private void atualizarInput()
+        {
+            definir(Input.Text);
+
+            if(Input is MaskedTextBox mtb)
+            {
+                mtbNum.Mask = mtb.Mask;
+            } else
+            {
+                mtbNum.Mask = "";
+            }
         }
 
         private void fechar()
@@ -131,7 +124,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Close();
+            fechar();
         }
 
         private void btnCorrigir_Click(object sender, EventArgs e)
@@ -144,15 +137,15 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 definir("");
             }
+
+            focar();
         }
 
-        private void frmNumKey_Load(object sender, EventArgs e)
+        private void frmUtilNumBoard_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             UIX.uixMaskedTextBox.mtbApply(mtbNum, App.AppVisualStyle.FormColor);
             clnUtil.atualizarTabIndex(Controls);
-
-            atualizarInput();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -170,11 +163,38 @@ namespace BURGUER_SHACK_DESKTOP
             fechar();
         }
 
+        private void mtbNum_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                fechar();
+            }
+        }
+
+        private void mtbNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void mtbNum_TextChanged(object sender, EventArgs e)
+        {
+            definir(mtbNum.Text);
+        }
+
         public enum NumBoardMode
         {
             INT,
             DOUBLE
         }
 
+        private void frmUtilNumBoard_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Visible)
+                atualizarInput();
+        }
     }
 }
