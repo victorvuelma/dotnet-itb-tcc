@@ -52,8 +52,11 @@
     <Compile Include="sqlCommandSelect.cs" />
     <Compile Include="sqlHelperValue.cs" />
     <Compile Include="sqlCommandUpdate.cs" />
-    <Compile Include="sqlUtil.cs" />
+    <Compile Include="sqlObjWhereBetween.cs" />
     <Compile Include="sqlObjWhere.cs" />
+    <Compile Include="sqlObjWhereIn.cs" />
+    <Compile Include="sqlUtil.cs" />
+    <Compile Include="sqlObjWhereCommon.cs" />
     <Compile Include="sqlHelperWhere.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

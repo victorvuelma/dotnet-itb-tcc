@@ -21,10 +21,10 @@ namespace SQL_POWERUP
             return this;
         }
 
-        public sqlHelperWhere where(String column, sqlObjWhere.whereOperation operation, Object val)
+        public sqlHelperWhere where(String column, sqlObjWhereCommon.whereOperation operation, Object val)
         {
             column = column.ToUpper();
-            return where(new sqlObjWhere
+            return where(new sqlObjWhereCommon
             {
                 TableColumn = column,
                 Val = val,
@@ -34,7 +34,7 @@ namespace SQL_POWERUP
 
         public sqlHelperWhere where(String column, Object val)
         {
-            return where(column, sqlObjWhere.whereOperation.EQUALS, val);
+            return where(column, sqlObjWhereCommon.whereOperation.EQUALS, val);
         }
 
         internal void generate(StringBuilder builder)
@@ -46,29 +46,50 @@ namespace SQL_POWERUP
                 foreach (sqlObjWhere objWhere in Params)
                 {
                     builder.Append(objWhere.TableColumn).Append(' ');
-                    switch (objWhere.Operation)
+                    if (objWhere is sqlObjWhereCommon common)
                     {
-                        case sqlObjWhere.whereOperation.EQUALS:
-                            builder.Append('=');
-                            break;
-                        case sqlObjWhere.whereOperation.UNEQUAL:
-                            builder.Append("!=");
-                            break;
-                        case sqlObjWhere.whereOperation.LESS:
-                            builder.Append('<');
-                            break;
-                        case sqlObjWhere.whereOperation.LESS_EQUALS:
-                            builder.Append("<=");
-                            break;
-                        case sqlObjWhere.whereOperation.MAJOR:
-                            builder.Append('>');
-                            break;
-                        case sqlObjWhere.whereOperation.MAJOR_EQUALS:
-                            builder.Append(">=");
-                            break;
+                        switch (common.Operation)
+                        {
+                            case sqlObjWhereCommon.whereOperation.EQUALS:
+                                builder.Append('=');
+                                break;
+                            case sqlObjWhereCommon.whereOperation.UNEQUAL:
+                                builder.Append("!=");
+                                break;
+                            case sqlObjWhereCommon.whereOperation.LESS:
+                                builder.Append('<');
+                                break;
+                            case sqlObjWhereCommon.whereOperation.LESS_EQUALS:
+                                builder.Append("<=");
+                                break;
+                            case sqlObjWhereCommon.whereOperation.MAJOR:
+                                builder.Append('>');
+                                break;
+                            case sqlObjWhereCommon.whereOperation.MAJOR_EQUALS:
+                                builder.Append(">=");
+                                break;
+                            case sqlObjWhereCommon.whereOperation.LIKE:
+                                builder.Append("LIKE");
+                                break;
+                        }
+                        builder.Append(' ').Append("@where_").Append(paramIndex++);
                     }
-                    builder.Append(' ').Append("@where_").Append(paramIndex);
-                    paramIndex++;
+                    else if (objWhere is sqlObjWhereBetween between)
+                    {
+                        builder.Append("BETWEEN ").Append("@where_").Append(paramIndex++).Append(" AND ").Append("@where_").Append(paramIndex++); ;
+                    }
+                    else if (objWhere is sqlObjWhereIn include)
+                    {
+                        builder.Append("IN (");
+                        int count = 0;
+                        foreach (object val in include.Values)
+                        {
+                            if (count++ > 0)
+                                builder.Append(", ");
+                            builder.Append("@where_").Append(paramIndex++);
+                        }
+                        builder.Append(")");
+                    }
                     if (paramIndex <= Params.Count)
                     {
                         builder.Append(' ').Append(objWhere.Association).Append(' ');
@@ -82,8 +103,22 @@ namespace SQL_POWERUP
             int paramIndex = 1;
             foreach (sqlObjWhere objWhere in Params)
             {
-                cmd.Parameters.AddWithValue("@where_" + paramIndex, objWhere.Val);
-                paramIndex++;
+                if (objWhere is sqlObjWhereCommon common)
+                {
+                    cmd.Parameters.AddWithValue("@where_" + paramIndex++, common.Val);
+                }
+                else if (objWhere is sqlObjWhereBetween between)
+                {
+                    cmd.Parameters.AddWithValue("@where_" + paramIndex++, between.Val1);
+                    cmd.Parameters.AddWithValue("@where_" + paramIndex++, between.Val2);
+                }
+                else if (objWhere is sqlObjWhereIn include)
+                {
+                    foreach (object val in include.Values)
+                    {
+                        cmd.Parameters.AddWithValue("@where_" + paramIndex++, val);
+                    }
+                }
             }
         }
     }
