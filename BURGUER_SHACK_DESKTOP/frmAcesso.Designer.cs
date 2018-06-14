@@ -122,7 +122,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(270, 30);
             this.txtUsuario.TabIndex = 7;
             // 
-            // frmLogin
+            // frmAcesso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -137,7 +137,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmLogin";
+            this.Name = "frmAcesso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acesso ao Sistema";
             this.Load += new System.EventHandler(this.frmLogin_Load);

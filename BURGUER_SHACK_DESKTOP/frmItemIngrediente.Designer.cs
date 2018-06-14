@@ -124,7 +124,7 @@
             this.hdrUIX.TabIndex = 6;
             this.hdrUIX.Title = "Pedido Ingrediente";
             // 
-            // frmPedidoIngrediente
+            // frmItemIngrediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,7 +137,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmPedidoIngrediente";
+            this.Name = "frmItemIngrediente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido Ingrediente";
             this.Load += new System.EventHandler(this.frmAlteraIngrediente_Load);

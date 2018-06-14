@@ -154,7 +154,7 @@
             this.picProduto.TabIndex = 0;
             this.picProduto.TabStop = false;
             // 
-            // frmPedidoProduto
+            // frmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,7 +166,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmPedidoProduto";
+            this.Name = "frmItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.frmPedidoProduto_Load);
