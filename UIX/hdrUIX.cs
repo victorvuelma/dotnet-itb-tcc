@@ -21,7 +21,19 @@ namespace UIX
 
         public Image Image { get => pic.Image; set => pic.Image = value; }
 
-        public String Title { get => lbl.Text; set => lbl.Text = value; }
+        public String Title
+        {
+            get => lbl.Text;
+            set
+            {
+                int width = lbl.Width;
+                lbl.Text = value;
+                uixUtil.defineSizeForWidht(lbl, width);
+                if (this.ParentForm != null) {
+                    this.ParentForm.Text = value;
+                }
+            }
+        }
 
         public new Size Size
         {
