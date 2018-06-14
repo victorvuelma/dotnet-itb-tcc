@@ -99,8 +99,17 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 CodMesas.Add(codMesa);
                 sqlCommandInsert objInsert = new sqlCommandInsert();
-                objInsert.table("atendimento_mesa").Insert.val("id_atendimento", Cod).val("id_mesa", codMesa);
+                objInsert.table("atendimento_mesa");
+                objInsert.Insert.val("id_atendimento", Cod)
+                                .val("id_mesa", codMesa);
                 objInsert.insert(App.AppDatabase);
+
+                clnMesa objMesa = new clnMesa
+                {
+                    Cod = codMesa
+                }.obterPorCodigo();
+                objMesa.Situacao = clnMesa.mesaSituacao.OCUPADA;
+                objMesa.alterar();
             }
         }
 
@@ -110,8 +119,17 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 CodMesas.Remove(codMesa);
                 sqlCommandDelete objDelete = new sqlCommandDelete();
-                objDelete.table("atendimento_mesa").Where.where("id_atendimento", Cod).where("id_mesa", codMesa);
+                objDelete.table("atendimento_mesa");
+                objDelete.Where.where("id_atendimento", Cod)
+                                .where("id_mesa", codMesa);
                 objDelete.delete(App.AppDatabase);
+
+                clnMesa objMesa = new clnMesa
+                {
+                    Cod = codMesa
+                }.obterPorCodigo();
+                objMesa.Situacao = clnMesa.mesaSituacao.DISPONIVEL;
+                objMesa.alterar();
             }
         }
 
