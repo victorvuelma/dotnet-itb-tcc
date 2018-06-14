@@ -59,7 +59,7 @@ namespace SQL_POWERUP
         public sqlCommandSelect groupBy(String tableColumn)
         {
             tableColumn = tableColumn.ToUpper();
-            if (!Select.included(tableColumn))
+            if (!Select.isIncluded(tableColumn))
             {
                 Select.select(tableColumn);
             }

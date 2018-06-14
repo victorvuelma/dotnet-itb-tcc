@@ -17,8 +17,7 @@ namespace SQL_POWERUP
 
         public sqlHelperValue val(String column, object val)
         {
-            column = column.ToUpper();
-            if (Values.ContainsKey(column))
+            if (Values.ContainsKey(column = column.ToUpper()))
             {
                 Values.Remove(column);
             }

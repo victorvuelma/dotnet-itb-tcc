@@ -13,12 +13,11 @@ namespace SQL_POWERUP
 
         internal List<sqlObjSelect> Params { get => _params; }
         
-        internal bool included(String tableColumn)
+        internal bool isIncluded(String tableColumn)
         {
-            tableColumn = tableColumn.ToUpper();
             foreach (sqlObjSelect objParam in Params)
             {
-                if (objParam.TableColumn.Equals(tableColumn, StringComparison.CurrentCultureIgnoreCase))
+                if (objParam.TableColumn.Equals(tableColumn.ToUpper(), StringComparison.CurrentCultureIgnoreCase))
                 {
                     return true;
                 }
@@ -42,12 +41,10 @@ namespace SQL_POWERUP
 
         public sqlHelperSelect select(String tableColumn, sqlObjSelect.selectOperation operation, String asName)
         {
-            tableColumn = tableColumn.ToUpper();
-            asName = asName.ToUpper();
             return select(new sqlObjSelect
             {
-                TableColumn = tableColumn,
-                As = asName,
+                TableColumn = tableColumn.ToUpper(),
+                As = asName.ToUpper(),
                 Operation = operation
             });
         }

@@ -35,14 +35,11 @@ namespace SQL_POWERUP
 
         public sqlHelperJoin join(String table, String column, String other, sqlObjJoin.joinType type)
         {
-            table = table.ToUpper();
-            column = column.ToUpper();
-            other = other.ToUpper();
             return join(new sqlObjJoin
             {
-                Table = table,
-                Left = table + '.' + column,
-                Right = other,
+                Table = table = table.ToUpper(),
+                Left = table + '.' + column.ToUpper(),
+                Right = other.ToUpper(),
                 JoinType = type
             });
         }

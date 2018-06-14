@@ -21,12 +21,30 @@ namespace SQL_POWERUP
             return this;
         }
 
+        public sqlHelperWhere include(String column, object[] values)
+        {
+            return where(new sqlObjWhereIn
+            {
+                TableColumn = column.ToUpper(),
+                Values = new List<object>(values)
+            });
+        }
+
+        public sqlHelperWhere between(String column, object val1, object val2)
+        {
+            return where(new sqlObjWhereBetween
+            {
+                TableColumn = column.ToUpper(),
+                Val1 = val1,
+                Val2 = val2
+            });
+        }
+
         public sqlHelperWhere where(String column, sqlObjWhereCommon.whereOperation operation, Object val)
         {
-            column = column.ToUpper();
             return where(new sqlObjWhereCommon
             {
-                TableColumn = column,
+                TableColumn = column.ToUpper(),
                 Val = val,
                 Operation = operation
             });
