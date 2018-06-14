@@ -119,11 +119,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjCliente == null)
             {
-                hdrUIX.Title = App.AppName + " :: Novo Cliente";
+                hdrUIX.Title = App.AppName + " - Novo Cliente";
             }
             else
             {
-                hdrUIX.Title = App.AppName + " :: Alterando Cliente #" + ObjCliente.Cod;
+                hdrUIX.Title = App.AppName + " - Alterando Cliente " + ObjCliente.Cod;
                 mtbCPF.Enabled = false;
                 txtNome.Text = ObjCliente.Nome;
                 mtbCPF.Text = ObjCliente.Cpf;

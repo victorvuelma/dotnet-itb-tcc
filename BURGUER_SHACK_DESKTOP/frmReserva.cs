@@ -345,7 +345,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjReserva == null)
             {
-                hdrUIX.Title = App.AppName + " :: Nova Reserva";
+                hdrUIX.Title = App.AppName + " - Nova Reserva";
 
                 ObjReserva = new clnReserva
                 {
@@ -356,7 +356,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-                hdrUIX.Title = App.AppName + " :: Alterando Reserva #" + ObjReserva.Cod;
+                hdrUIX.Title = App.AppName + " - Alterando Reserva " + ObjReserva.Cod;
                 mtbCliCPF.Enabled = false;
                 mtbHora.Enabled = false;
                 mtbData.Enabled = false;

@@ -27,7 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
             set
             {
                 _selecionando = value;
-                value = App.AppName + " :: " + value;
+                value = App.AppName + " - " + value;
                 Text = value;
                 hdrUIX.Title = value;
             }

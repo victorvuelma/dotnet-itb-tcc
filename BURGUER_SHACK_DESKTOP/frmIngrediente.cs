@@ -134,6 +134,24 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void fechar()
+        {
+            if (ObjIngrediente == null)
+            {
+                if (clnUtilMensagem.mostrarSimNao("Cadastro de Ingrediente", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                if (clnUtilMensagem.mostrarSimNao("Alteração de Ingrediente", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                {
+                    Close();
+                }
+            }
+        }
+
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
@@ -143,6 +161,8 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjIngrediente != null)
             {
+                hdrUIX.Title = App.AppName + " - Alterando Ingrediente " + ObjIngrediente.Cod;
+
                 clnArquivo objArquivo = new clnArquivo
                 {
                     Cod = ObjIngrediente.CodImagem
@@ -167,6 +187,8 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
+                hdrUIX.Title = App.AppName + " - Novo Ingrediente";
+
                 definirImagemPadrao();
 
                 grbSituacao.Hide();
@@ -199,6 +221,16 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnExcluir_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            fechar();
+        }
+
+        private void hdrUIX_Close(object sender, EventArgs e)
+        {
+            fechar();
         }
     }
 }

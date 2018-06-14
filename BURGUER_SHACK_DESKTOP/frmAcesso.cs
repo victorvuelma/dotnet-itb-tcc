@@ -22,7 +22,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             txtSenha.txt.PasswordChar = '*';
-            hdrUIX.Title = App.AppName + " :: Acesso ao Sistema";
+            hdrUIX.Title = App.AppName + " - Acesso ao Sistema";
 
             _validar = new clnUtilValidar();
             _validar.addValidacao(txtUsuario, clnUtilValidar.ValidarTipo.OBRIGATORIO);

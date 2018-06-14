@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngrediente));
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnExcluir = new UIX.btnUIX();
             this.btnVoltar = new UIX.btnUIX();
             this.btnSalvar = new UIX.btnUIX();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
@@ -45,7 +46,6 @@
             this.grbImagem = new System.Windows.Forms.GroupBox();
             this.grbSituacao = new System.Windows.Forms.GroupBox();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.btnExcluir = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -65,6 +65,7 @@
             this.hdrUIX.Size = new System.Drawing.Size(500, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Ingrediente";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // pnlMenu
             // 
@@ -76,6 +77,19 @@
             this.pnlMenu.Size = new System.Drawing.Size(100, 300);
             this.pnlMenu.TabIndex = 6;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Description = "Excluir";
+            this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(5, 105);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(90, 90);
+            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // btnVoltar
             // 
             this.btnVoltar.Description = "Cancelar";
@@ -86,6 +100,7 @@
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnSalvar
             // 
@@ -242,19 +257,6 @@
             this.lblEstoque.Name = "lblEstoque";
             this.lblEstoque.Size = new System.Drawing.Size(180, 25);
             this.lblEstoque.TabIndex = 21;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Description = "Excluir";
-            this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExcluir.Location = new System.Drawing.Point(5, 105);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(90, 90);
-            this.btnExcluir.TabIndex = 7;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // frmIngrediente
             // 

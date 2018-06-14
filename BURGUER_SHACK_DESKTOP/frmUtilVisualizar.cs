@@ -14,18 +14,18 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmUtilVisualizar : Form
     {
 
-        private String _selecionando;
+        private String _visualizando;
         private clnUtilVisualizar _objVisualizar;
 
         private List<object> _opcoes;
 
-        public String Selecionando
+        public String Visualizando
         {
-            get => _selecionando;
+            get => _visualizando;
             set
             {
-                _selecionando = value;
-                value = App.AppName + " :: " + value;
+                _visualizando = value;
+                value = App.AppName + " - " + value;
                 Text = value;
                 hdrUIX.Title = value;
             }
