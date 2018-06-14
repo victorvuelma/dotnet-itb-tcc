@@ -76,8 +76,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("reserva");
-            objSelect.Where.where("agendado", sqlObjWhere.whereOperation.MAJOR_EQUALS, Agendado)
-                            .where("agendado", sqlObjWhere.whereOperation.LESS, Agendado.AddDays(1));
+            objSelect.Where.where(new sqlObjWhereBetween { TableColumn = "agendado", Val1 = Agendado, Val2 = Agendado.AddDays(1) });
 
             List<clnReserva> objReservas = new List<clnReserva>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
@@ -95,9 +94,9 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Select.select("mesa.id");
             objSelect.Join.innerJoin("reserva_mesa", "id_mesa", "mesa.id")
                           .innerJoin("reserva", "id", "reserva_mesa.id_reserva");
-            objSelect.Where.where("reserva.agendado", sqlObjWhere.whereOperation.MAJOR_EQUALS, Agendado)
-                           .where("reserva.agendado", sqlObjWhere.whereOperation.LESS, Agendado.AddDays(1))
-                           .where("reserva.situacao", sqlObjWhere.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
+            objSelect.Where.where("reserva.agendado", sqlObjWhereCommon.whereOperation.MAJOR_EQUALS, Agendado)
+                           .where("reserva.agendado", sqlObjWhereCommon.whereOperation.LESS, Agendado.AddDays(1))
+                           .where("reserva.situacao", sqlObjWhereCommon.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
 
             List<int> objMesas = new List<int>();
             SqlDataReader reader = objSelect.select(App.AppDatabase);
