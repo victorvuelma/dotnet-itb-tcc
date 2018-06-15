@@ -222,6 +222,9 @@ namespace BURGUER_SHACK_DESKTOP
                     if (Control is TextBoxBase txt)
                     {
                         UIX.uixTextBox.txtApply(txt, App.AppVisualStyle.TextBoxWarningColor);
+                    } else if (Control is ComboBox cbo)
+                    {
+                        UIX.uixComboBox.cboApply(cbo, App.AppVisualStyle.TextBoxWarningColor);
                     }
                 }
                 else
@@ -229,6 +232,10 @@ namespace BURGUER_SHACK_DESKTOP
                     if (Control is TextBoxBase txt)
                     {
                         UIX.uixTextBox.txtApply(txt, App.AppVisualStyle.TextBoxColor);
+                    }
+                    else if (Control is ComboBox cbo)
+                    {
+                        UIX.uixComboBox.cboApply(cbo, App.AppVisualStyle.TextBoxColor);
                     }
                 }
             }

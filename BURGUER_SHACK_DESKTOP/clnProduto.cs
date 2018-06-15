@@ -11,7 +11,7 @@ using System.IO;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnProduto
+    public class clnProduto
     {
 
         public enum produtoSituacao
@@ -103,6 +103,35 @@ namespace BURGUER_SHACK_DESKTOP
             reader.Close();
 
             return objProdutos;
+        }
+
+        public void gravar()
+        {
+            sqlCommandInsert objInsert = new sqlCommandInsert();
+            objInsert.table("produto");
+            objInsert.Insert.val("id_imagem", CodImagem)
+                            .val("id_tipo", CodTipo)
+                            .val("nome", Nome)
+                            .val("descricao", Descricao)
+                            .val("valor", Valor)
+                            .val("situacao", prefixo(Situacao));
+
+            Cod = objInsert.insertWithOutput(App.AppDatabase);
+        }
+
+        public void alterar()
+        {
+            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            objUpdate.table("produto");
+            objUpdate.Set.val("id_imagem", CodImagem)
+                         .val("id_tipo", CodTipo)
+                         .val("nome", Nome)
+                         .val("descricao", Descricao)
+                         .val("valor", Valor)
+                         .val("situacao", prefixo(Situacao));
+            objUpdate.Where.where("id", Cod);
+
+            objUpdate.update(App.AppDatabase);
         }
 
         private produtoSituacao situacao(char prefixo)
