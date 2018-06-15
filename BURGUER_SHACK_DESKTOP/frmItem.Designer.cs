@@ -110,6 +110,7 @@
             this.txtQuantidade.Location = new System.Drawing.Point(130, 140);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(125, 25);
             this.txtQuantidade.TabIndex = 3;
@@ -156,6 +157,7 @@
             // 
             // frmItem
             // 
+            this.AcceptButton = this.btnConfirmar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 300);

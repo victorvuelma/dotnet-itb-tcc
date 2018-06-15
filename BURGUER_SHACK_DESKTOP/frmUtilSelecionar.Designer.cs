@@ -83,6 +83,7 @@
             this.txtQuantidade.Location = new System.Drawing.Point(10, 400);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(165, 20);
             this.txtQuantidade.TabIndex = 2;
@@ -133,6 +134,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(5, 15);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.MaxLength = 32767;
+            this.txtPesquisa.Multiline = false;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(440, 25);
             this.txtPesquisa.TabIndex = 1;
@@ -163,6 +165,7 @@
             // 
             // frmUtilSelecionar
             // 
+            this.AcceptButton = this.btnConfirmar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 550);

@@ -101,6 +101,7 @@
             this.txtEmail.Location = new System.Drawing.Point(5, 120);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.MaxLength = 32767;
+            this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(380, 25);
             this.txtEmail.TabIndex = 12;
@@ -160,6 +161,7 @@
             this.txtNome.Location = new System.Drawing.Point(5, 25);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
+            this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(380, 20);
             this.txtNome.TabIndex = 7;
@@ -180,6 +182,7 @@
             // 
             // frmCliente
             // 
+            this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 250);

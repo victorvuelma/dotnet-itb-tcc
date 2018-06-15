@@ -66,6 +66,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(5, 15);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.MaxLength = 32767;
+            this.txtPesquisa.Multiline = false;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(440, 25);
             this.txtPesquisa.TabIndex = 1;

@@ -77,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
             definirNovo();
             exibirTipos();
 
-            hdrUIX.Title = App.AppName + " - Tipos " + Tipo.ToString();
+            hdrUIX.Title = App.AppName + " - Tipos de  " + Tipo.ToString().ToLower();
         }
 
         private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)

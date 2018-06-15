@@ -177,6 +177,7 @@
             this.txtPessoas.Location = new System.Drawing.Point(230, 20);
             this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPessoas.MaxLength = 32767;
+            this.txtPessoas.Multiline = false;
             this.txtPessoas.Name = "txtPessoas";
             this.txtPessoas.Size = new System.Drawing.Size(104, 20);
             this.txtPessoas.TabIndex = 10;
@@ -284,6 +285,7 @@
             // 
             // frmReserva
             // 
+            this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 350);

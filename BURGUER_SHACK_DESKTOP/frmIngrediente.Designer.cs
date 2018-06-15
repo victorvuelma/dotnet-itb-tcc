@@ -151,6 +151,7 @@
             this.txtValor.Location = new System.Drawing.Point(5, 50);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtValor.MaxLength = 32767;
+            this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(160, 26);
             this.txtValor.TabIndex = 19;
@@ -174,6 +175,7 @@
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
+            this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(380, 21);
             this.txtNome.TabIndex = 2;
@@ -181,7 +183,7 @@
             // cboSituacao
             // 
             this.cboSituacao.AccessibleName = "Tipo:*";
-            this.cboSituacao.Campo = "Situacao*";
+            this.cboSituacao.Campo = "Situação*";
             this.cboSituacao.FormattingEnabled = true;
             this.cboSituacao.Location = new System.Drawing.Point(5, 20);
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -260,6 +262,7 @@
             // 
             // frmIngrediente
             // 
+            this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 350);
