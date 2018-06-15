@@ -67,11 +67,21 @@ namespace UIX
 
         public override String Text { get => txt.Text; set => txt.Text = value; }
 
+        public bool Multiline
+        {
+            get => txt.Multiline;
+            set
+            {
+                txt.Multiline = value;
+                update();
+            }
+        }
+
         private void update()
         {
             lbl.AutoSize = true;
             txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
-            txt.Size = new Size(Size.Width - txt.Location.X, txt.Size.Height);
+            txt.Size = new Size(Size.Width - txt.Location.X, Size.Height);
         }
 
         private void txtUIX_Load(object sender, EventArgs e)
