@@ -109,7 +109,7 @@
             this.Name = "frmUtilVisualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Selecione";
-            this.Load += new System.EventHandler(this.frmSelecionar_Load);
+            this.Load += new System.EventHandler(this.frmUtilVisualizar_Load);
             this.grbOpcoes.ResumeLayout(false);
             this.ResumeLayout(false);
 

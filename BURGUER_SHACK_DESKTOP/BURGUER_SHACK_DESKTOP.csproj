@@ -138,6 +138,12 @@
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnUtilValidar.cs" />
+    <Compile Include="frmProdutoIngrediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProdutoIngrediente.Designer.cs">
+      <DependentUpon>frmProdutoIngrediente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,9 @@
     <Compile Include="uctGerenTerceirizada.Designer.cs">
       <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmProdutoIngrediente.resx">
+      <DependentUpon>frmProdutoIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProduto.resx">
       <DependentUpon>frmProduto.cs</DependentUpon>
     </EmbeddedResource>

@@ -25,7 +25,6 @@ namespace BURGUER_SHACK_DESKTOP
 
         private int _codImagem;
         private int _codTipo;
-        private List<int> _codIngredientes;
 
         private String _nome;
         private String _descricao;
@@ -35,45 +34,21 @@ namespace BURGUER_SHACK_DESKTOP
         public int Cod { get => _cod; set => _cod = value; }
         public int CodImagem { get => _codImagem; set => _codImagem = value; }
         public int CodTipo { get => _codTipo; set => _codTipo = value; }
-        public List<int> CodIngredientes { get => _codIngredientes; set => _codIngredientes = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
         public double Valor { get => _valor; set => _valor = value; }
         internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
 
-        private clnProduto obter(SqlDataReader reader)
+        private clnProduto obter(SqlDataReader reader) => new clnProduto
         {
-            clnProduto objProduto = new clnProduto
-            {
-                Cod = clnUtilConvert.ToInt(reader["id"]),
-                CodImagem = clnUtilConvert.ToInt(reader["id_imagem"]),
-                CodTipo = clnUtilConvert.ToInt(reader["id_tipo"]),
-                Descricao = clnUtilConvert.ToString(reader["descricao"]),
-                Nome = clnUtilConvert.ToString(reader["nome"]),
-                Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
-                Valor = clnUtilConvert.ToDouble(reader["valor"])
-            };
-
-            objProduto.obterIngredientes();
-
-            return objProduto;
-        }
-
-        private void obterIngredientes()
-        {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
-            objSelect.table("produto_ingrediente");
-            objSelect.Select.select("id");
-            objSelect.Where.where("id_produto", Cod);
-
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
-            List<int> objIngredientes = new List<int>();
-            while (reader.Read())
-                objIngredientes.Add(clnUtilConvert.ToInt(reader["id"]));
-            reader.Close();
-
-            CodIngredientes = objIngredientes;
-        }
+            Cod = clnUtilConvert.ToInt(reader["id"]),
+            CodImagem = clnUtilConvert.ToInt(reader["id_imagem"]),
+            CodTipo = clnUtilConvert.ToInt(reader["id_tipo"]),
+            Descricao = clnUtilConvert.ToString(reader["descricao"]),
+            Nome = clnUtilConvert.ToString(reader["nome"]),
+            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
+            Valor = clnUtilConvert.ToDouble(reader["valor"])
+        };
 
         public clnProduto obterPorCodigo()
         {
@@ -173,13 +148,13 @@ namespace BURGUER_SHACK_DESKTOP
                 return detalhes;
             }
 
-            internal override Image Imagem(clnProduto obj)
+            internal override string Imagem(clnProduto obj)
             {
                 clnArquivo objArquivo = new clnArquivo
                 {
                     Cod = obj.CodImagem
                 }.obterPorCodigo();
-                return Image.FromFile(objArquivo.Arquivo);
+                return objArquivo.Arquivo;
             }
 
             internal override string Nome(clnProduto obj)

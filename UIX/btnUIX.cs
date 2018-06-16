@@ -60,6 +60,12 @@ namespace UIX
             set => pic.Image = value;
         }
 
+        public String ImageLocation
+        {
+            get => pic.ImageLocation;
+            set => pic.ImageLocation = value;
+        }
+
         public new Size Size
         {
             get => base.Size;

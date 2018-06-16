@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
                 return detalhes;
             }
 
-            internal override Image Imagem(clnItemIngrediente obj)
+            internal override string Imagem(clnItemIngrediente obj)
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
@@ -66,7 +66,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = objIngrediente.CodImagem
                 }.obterPorCodigo();
 
-                return Image.FromFile(objArquivo.Arquivo);
+                return objArquivo.Arquivo;
             }
 
             internal override string Nome(clnItemIngrediente obj)
@@ -93,7 +93,7 @@ namespace BURGUER_SHACK_DESKTOP
                 return detalhes;
             }
 
-            internal override Image Imagem(clnItemIngrediente obj)
+            internal override String Imagem(clnItemIngrediente obj)
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
@@ -105,7 +105,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = objIngrediente.CodImagem
                 }.obterPorCodigo();
 
-                return Image.FromFile(objArquivo.Arquivo);
+                return objArquivo.Arquivo;
             }
 
             internal override string Nome(clnItemIngrediente obj)

@@ -151,14 +151,15 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     clnMesa.clnSelecionar objSelecionar = new clnMesa.clnSelecionar
                     {
-                        Opcoes = objMesas
+                        Opcoes = objMesas,
+                        Quantidade = 0,
+                        Titulo = "Selecione uma mesa",
+                        Icone = Properties.Resources.mesa
                     };
 
                     frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
                     {
-                        Selecionando = "Mesas",
-                        ObjSelecionar = objSelecionar,
-                        Quantidade = 0
+                        ObjSelecionar = objSelecionar
                     };
                     frmSelecionar.ShowDialog();
 

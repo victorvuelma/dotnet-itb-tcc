@@ -12,13 +12,21 @@ namespace BURGUER_SHACK_DESKTOP
     public abstract class clnUtilSelecionar
     {
 
+        private int _quantidade = 1;
+        private Image _icone = Properties.Resources.lista;
+        private String _titulo = "";
+
+        public int Quantidade { get => _quantidade; set => _quantidade = value; }
+        public Image Icone { get => _icone; set => _icone = value; }
+        public string Titulo { get => _titulo; set => _titulo = value; }
+
         public abstract object getSelecionado();
 
         public abstract bool setSelecionado(object obj);
 
         public abstract IList getOpcoes();
 
-        public abstract Image getImagem(object obj);
+        public abstract String getImagem(object obj);
 
         public abstract String getNome(object obj);
 
@@ -50,9 +58,9 @@ namespace BURGUER_SHACK_DESKTOP
             return false;
         }
 
-        internal abstract Image Imagem(T val);
+        internal abstract String Imagem(T val);
 
-        public override Image getImagem(object obj)
+        public override String getImagem(object obj)
         {
             if (obj != null && obj is T val)
             {

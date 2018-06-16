@@ -14,33 +14,16 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmUtilSelecionar : Form
     {
 
-        private String _selecionando;
-        private clnUtilSelecionar _objSelecionar;
         private clnUtilValidar _validar;
-
         private List<object> _opcoes;
-        private int _quantidade;
 
-        public String Selecionando
-        {
-            get => _selecionando;
-            set
-            {
-                _selecionando = value;
-                value = App.AppName + " - " + value;
-                Text = value;
-                hdrUIX.Title = value;
-            }
-        }
-        public Image Icone { set => hdrUIX.Image = value; }
+        private clnUtilSelecionar _objSelecionar;
+
         internal clnUtilSelecionar ObjSelecionar { get => _objSelecionar; set => _objSelecionar = value; }
-        public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
         public frmUtilSelecionar()
         {
             InitializeComponent();
-
-            Quantidade = 1;
 
             _validar = new clnUtilValidar();
             _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT });
@@ -60,7 +43,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Description = ObjSelecionar.getNome(obj),
                     Name = "btnSelecionar" + ObjSelecionar.getCod(obj),
                     Size = new Size(110, 110),
-                    Image = ObjSelecionar.getImagem(obj)
+                    ImageLocation = ObjSelecionar.getImagem(obj)
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -98,7 +81,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             grbDetalhes.Hide();
 
-            picImagem.Image = ObjSelecionar.getImagem(obj);
+            picImagem.ImageLocation = ObjSelecionar.getImagem(obj);
             lblNome.Text = ObjSelecionar.getNome(obj);
             lblDesc.Text = ObjSelecionar.getDetalhes(obj);
             txtQuantidade.Text = "1";
@@ -126,7 +109,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (!txtQuantidade.Visible || _validar.valido())
             {
-                Quantidade = Convert.ToInt32(txtQuantidade.Text);
+                ObjSelecionar.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
                 Close();
             }
@@ -134,7 +117,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnUtilMensagem.mostrarSimNao(Selecionando, "Deseja realmente cancelar?", clnUtilMensagem.MensagemIcone.INFO))
+            if (clnUtilMensagem.mostrarSimNao(ObjSelecionar.Titulo, "Deseja realmente cancelar?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 ObjSelecionar.setSelecionado(null);
 
@@ -153,7 +136,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             realizaPesquisa();
 
-            if(Quantidade == 0)
+            if (ObjSelecionar.Quantidade == 0)
             {
                 txtQuantidade.Hide();
             }
@@ -161,8 +144,11 @@ namespace BURGUER_SHACK_DESKTOP
             if (ObjSelecionar.getSelecionado() != null)
             {
                 exibirOpcao(ObjSelecionar.getSelecionado());
-                txtQuantidade.Text = Convert.ToString(Quantidade);
+                txtQuantidade.Text = Convert.ToString(ObjSelecionar.Quantidade);
             }
+
+            hdrUIX.Title = App.AppName + " - " + ObjSelecionar.Titulo;
+            hdrUIX.Image = ObjSelecionar.Icone;
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

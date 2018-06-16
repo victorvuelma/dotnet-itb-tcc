@@ -151,6 +151,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public class clnSelecionar : clnUtilSelecionar<clnIngrediente>
         {
+
             internal override int Cod(clnIngrediente obj)
             {
                 return obj.Cod;
@@ -164,13 +165,13 @@ namespace BURGUER_SHACK_DESKTOP
                 return detalhes;
             }
 
-            internal override Image Imagem(clnIngrediente obj)
+            internal override string Imagem(clnIngrediente obj)
             {
                 clnArquivo objArquivo = new clnArquivo
                 {
                     Cod = obj.CodImagem
                 }.obterPorCodigo();
-                return Image.FromFile(objArquivo.Arquivo);
+                return objArquivo.Arquivo;
             }
 
             internal override string Nome(clnIngrediente obj)

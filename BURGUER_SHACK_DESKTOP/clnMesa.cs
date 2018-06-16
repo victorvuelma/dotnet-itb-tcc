@@ -141,15 +141,15 @@ namespace BURGUER_SHACK_DESKTOP
                 return "";
             }
 
-            internal override Image Imagem(clnMesa obj)
+            internal override string Imagem(clnMesa obj)
             {
                 if (obj.Situacao == mesaSituacao.DISPONIVEL)
                 {
-                    return Properties.Resources.mesa;
+                    return clnArquivo.tempImage(Properties.Resources.mesa);
                 }
                 else
                 {
-                    return Properties.Resources.mesauso;
+                    return clnArquivo.tempImage(Properties.Resources.mesauso);
                 }
             }
 

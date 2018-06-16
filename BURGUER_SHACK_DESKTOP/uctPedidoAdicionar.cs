@@ -44,13 +44,14 @@ namespace BURGUER_SHACK_DESKTOP
         private void selecionaProduto(clnProduto objProduto, int quantidade)
         {
             List<clnItemIngrediente> objIngredientes = new List<clnItemIngrediente>();
-            foreach (int codProdutoIngrediente in objProduto.CodIngredientes)
-            {
-                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
-                {
-                    Cod = codProdutoIngrediente
-                }.obterPorProdutoIngrediente();
 
+            clnProdutoIngrediente objProdutoIngredientes = new clnProdutoIngrediente
+            {
+                CodProduto = objProduto.Cod
+            };
+
+            foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes.obterPorProduto())
+            {
                 clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
                 {
                     CodIngrediente = objProdutoIngrediente.CodIngrediente,
@@ -81,20 +82,20 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
             {
-                Opcoes = objProdutos.obterPorTipo()
+                Opcoes = objProdutos.obterPorTipo(),
+                Icone = BURGUER_SHACK_DESKTOP.Properties.Resources.produto,
+                Titulo = "Selecione o produto",
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
             {
-                Icone = BURGUER_SHACK_DESKTOP.Properties.Resources.produto,
-                Selecionando = "Produtos",
                 ObjSelecionar = objSelecionar
             };
             frmSelecionar.ShowDialog();
 
             if (objSelecionar.Selecionado != null)
             {
-                selecionaProduto(objSelecionar.Selecionado, frmSelecionar.Quantidade);
+                selecionaProduto(objSelecionar.Selecionado, objSelecionar.Quantidade);
             }
         }
 
@@ -113,7 +114,9 @@ namespace BURGUER_SHACK_DESKTOP
             clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
             {
                 Opcoes = objProdutos.obterPorTipo(),
-                Selecionado = objProdutoAtual
+                Selecionado = objProdutoAtual,
+                Titulo = "Selecione o produto",
+                Icone = Properties.Resources.produto
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -122,9 +125,9 @@ namespace BURGUER_SHACK_DESKTOP
             };
             frmSelecionar.ShowDialog();
 
-            if (objSelecionar.getSelecionado() != null)
+            if (objSelecionar.Selecionado != null)
             {
-                selecionaProduto(objSelecionar.Selecionado, frmSelecionar.Quantidade);
+                selecionaProduto(objSelecionar.Selecionado, objSelecionar.Quantidade);
             }
         }
 
@@ -193,21 +196,22 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnIngrediente.clnSelecionar objSelecionar = new clnIngrediente.clnSelecionar
             {
-                Opcoes = objIngredientes.obterIngredientes()
+                Opcoes = objIngredientes.obterIngredientes(),
+                Titulo = "Adicionar um Ingrediente",
+                Icone = Properties.Resources.ingrediente
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
             {
-                ObjSelecionar = objSelecionar,
-                Selecionando = "Adicionar um Ingrediente"
+                ObjSelecionar = objSelecionar
             };
             frmSelecionar.ShowDialog();
 
-            if (objSelecionar.getSelecionado() != null)
+            if (objSelecionar.Selecionado != null)
             {
                 clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
                 {
-                    Quantidade = frmSelecionar.Quantidade,
+                    Quantidade = objSelecionar.Quantidade,
                     CodIngrediente = objSelecionar.Selecionado.Cod
                 };
 

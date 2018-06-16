@@ -50,5 +50,9 @@ namespace BURGUER_SHACK_DESKTOP
         internal static char ToChar(object val) => Convert.ToChar(val);
 
         internal static double ToDouble(object val) => Convert.ToDouble(val);
+
+        internal static bool ToBool(object val) => Convert.ToBoolean(val);
+
+        internal static object ToBit(object val) => (val.Equals(true) ? 1 : 0);
     }
 }

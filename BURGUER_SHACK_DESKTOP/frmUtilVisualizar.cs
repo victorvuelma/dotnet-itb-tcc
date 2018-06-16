@@ -14,23 +14,10 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmUtilVisualizar : Form
     {
 
-        private String _visualizando;
         private clnUtilVisualizar _objVisualizar;
 
         private List<object> _opcoes;
 
-        public String Visualizando
-        {
-            get => _visualizando;
-            set
-            {
-                _visualizando = value;
-                value = App.AppName + " - " + value;
-                Text = value;
-                hdrUIX.Title = value;
-            }
-        }
-        public Image Icone { set => hdrUIX.Image = value; }
         internal clnUtilVisualizar ObjVisualizar { get => _objVisualizar; set => _objVisualizar = value; }
 
         public frmUtilVisualizar()
@@ -52,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Description = ObjVisualizar.getNome(obj),
                     Name = "btnVisualizar" + ObjVisualizar.getCod(obj),
                     Size = new Size(110, 110),
-                    Image = ObjVisualizar.getImagem(obj)
+                    ImageLocation = ObjVisualizar.getImagem(obj)
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -97,12 +84,14 @@ namespace BURGUER_SHACK_DESKTOP
             Close();
         }
 
-        private void frmSelecionar_Load(object sender, EventArgs e)
+        private void frmUtilVisualizar_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
             realizaPesquisa();
+            hdrUIX.Title = App.AppName + " - " + ObjVisualizar.Titulo;
+            hdrUIX.Image = ObjVisualizar.Icone;
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

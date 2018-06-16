@@ -59,19 +59,21 @@ namespace BURGUER_SHACK_DESKTOP
             clnItemIngrediente.clnSelecionar objSelecionar = new clnItemIngrediente.clnSelecionar
             {
                 Opcoes = objPedidoIngredientes,
-                Selecionado = IngredienteNovo
+                Selecionado = IngredienteNovo,
+                Quantidade = ((IngredienteNovo == null) ? IngredienteAntigo.Quantidade : IngredienteNovo.Quantidade),
+                Icone = Properties.Resources.ingrediente,
+                Titulo = "Selecione o ingrediente"
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
             {
-                ObjSelecionar = objSelecionar,
-                Quantidade = ((IngredienteNovo == null) ? IngredienteAntigo.Quantidade : IngredienteNovo.Quantidade)
+                ObjSelecionar = objSelecionar
             };
             frmSelecionar.ShowDialog();
 
             if (objSelecionar.Selecionado != null)
             {
-                objSelecionar.Selecionado.Quantidade = frmSelecionar.Quantidade;
+                objSelecionar.Selecionado.Quantidade = objSelecionar.Quantidade;
                 IngredienteNovo = objSelecionar.Selecionado;
 
                 exibirIngrediente(objSelecionar.Selecionado);

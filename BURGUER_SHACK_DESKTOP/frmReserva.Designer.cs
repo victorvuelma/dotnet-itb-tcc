@@ -70,6 +70,7 @@
             this.btnAtendimento.Description = "Atendimento";
             this.btnAtendimento.HoverColor = System.Drawing.Color.Transparent;
             this.btnAtendimento.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.atendimento;
+            this.btnAtendimento.ImageLocation = null;
             this.btnAtendimento.Location = new System.Drawing.Point(5, 100);
             this.btnAtendimento.Name = "btnAtendimento";
             this.btnAtendimento.Size = new System.Drawing.Size(90, 90);
@@ -82,6 +83,7 @@
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
@@ -95,6 +97,7 @@
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 200);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
@@ -126,6 +129,7 @@
             this.btnCliEncontrar.Description = "Encontrar";
             this.btnCliEncontrar.HoverColor = System.Drawing.Color.Transparent;
             this.btnCliEncontrar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.cliente;
+            this.btnCliEncontrar.ImageLocation = null;
             this.btnCliEncontrar.Location = new System.Drawing.Point(255, 15);
             this.btnCliEncontrar.Name = "btnCliEncontrar";
             this.btnCliEncontrar.Size = new System.Drawing.Size(80, 80);
@@ -210,8 +214,9 @@
             // 
             this.btnMesaVer.Description = "Visualizar";
             this.btnMesaVer.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesaVer.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
+            this.btnMesaVer.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
             this.btnMesaVer.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMesaVer.ImageLocation = null;
             this.btnMesaVer.Location = new System.Drawing.Point(85, 15);
             this.btnMesaVer.Name = "btnMesaVer";
             this.btnMesaVer.Size = new System.Drawing.Size(70, 70);
@@ -225,6 +230,7 @@
             this.btnMesaAdd.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesaAdd.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnMesaAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMesaAdd.ImageLocation = null;
             this.btnMesaAdd.Location = new System.Drawing.Point(10, 15);
             this.btnMesaAdd.Name = "btnMesaAdd";
             this.btnMesaAdd.Size = new System.Drawing.Size(70, 70);
@@ -263,6 +269,7 @@
             this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
             this.btnCancelar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.ImageLocation = null;
             this.btnCancelar.Location = new System.Drawing.Point(85, 15);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(70, 70);
@@ -276,6 +283,7 @@
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
             this.btnConfirmar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnConfirmar.ImageLocation = null;
             this.btnConfirmar.Location = new System.Drawing.Point(10, 15);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(70, 70);

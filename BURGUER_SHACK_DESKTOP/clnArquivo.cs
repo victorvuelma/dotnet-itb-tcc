@@ -23,6 +23,8 @@ namespace BURGUER_SHACK_DESKTOP
         public int Cod { get => _cod; set => _cod = value; }
         public String Arquivo { get => _arquivo; set => _arquivo = value; }
 
+        private static int tempId = 0;
+
         public static String tempImage(Image img)
         {
             byte[] conteudo = null;
@@ -32,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
                 conteudo = ms.ToArray();
                 ms.Close();
             }
-            return CACHE.guardar("tempimage", conteudo);
+            return CACHE.guardar("tempimage" + tempId++, conteudo);
             
         }
 

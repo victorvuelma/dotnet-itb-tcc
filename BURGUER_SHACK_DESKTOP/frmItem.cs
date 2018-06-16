@@ -70,21 +70,22 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnIngrediente.clnSelecionar objSelecionar = new clnIngrediente.clnSelecionar
             {
-                Opcoes = objIngredientes.obterIngredientes()
+                Opcoes = objIngredientes.obterIngredientes(),
+                Titulo = "Adicionar um Ingrediente",
+                Icone = Properties.Resources.ingrediente
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
             {
-                ObjSelecionar = objSelecionar,
-                Selecionando = "Adicionar um Ingrediente"
+                ObjSelecionar = objSelecionar
             };
             frmSelecionar.ShowDialog();
 
-            if (objSelecionar.getSelecionado() != null)
+            if (objSelecionar.Selecionado != null)
             {
                 clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
                 {
-                    Quantidade = frmSelecionar.Quantidade,
+                    Quantidade = objSelecionar.Quantidade,
                     CodIngrediente = objSelecionar.Selecionado.Cod
                 };
 
@@ -161,7 +162,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
                     Cod = obj.CodProdutoIngrediente
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 if (objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
                 {

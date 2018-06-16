@@ -13,9 +13,15 @@ namespace BURGUER_SHACK_DESKTOP
     public abstract class clnUtilVisualizar
     {
 
+        private Image _icone =  Properties.Resources.lista;
+        private String _titulo = "";
+
+        public Image Icone { get => _icone; set => _icone = value; }
+        public string Titulo { get => _titulo; set => _titulo = value; }
+
         public abstract IList getOpcoes();
 
-        public abstract Image getImagem(object obj);
+        public abstract String getImagem(object obj);
 
         public abstract String getNome(object obj);
 
@@ -38,9 +44,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         public override IList getOpcoes() => Opcoes;
 
-        internal abstract Image Imagem(T val);
+        internal abstract String Imagem(T val);
 
-        public override Image getImagem(object obj)
+        public override String getImagem(object obj)
         {
             if (obj !=null && obj is T val)
             {

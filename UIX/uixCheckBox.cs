@@ -23,6 +23,8 @@ namespace UIX
             chk.FlatStyle = FlatStyle.Flat;
             chk.ForeColor = colorSet.ContentColor;
             chk.BackColor = colorSet.DarkColor;
+            chk.FlatAppearance.BorderColor = colorSet.LightColor;
+            chk.FlatAppearance.CheckedBackColor = colorSet.DarkColor;
         }
     }
 

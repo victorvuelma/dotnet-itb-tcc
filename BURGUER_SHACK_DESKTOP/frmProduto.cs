@@ -16,8 +16,10 @@ namespace BURGUER_SHACK_DESKTOP
         private clnUtilValidar _validar;
 
         private clnProduto _objProduto;
+        private List<clnProdutoIngrediente> _objProdutoIngredientes;
 
         public clnProduto ObjProduto { get => _objProduto; set => _objProduto = value; }
+        public List<clnProdutoIngrediente> ObjProdutoIngredientes { get => _objProdutoIngredientes; set => _objProdutoIngredientes = value; }
 
         public frmProduto()
         {
@@ -27,7 +29,6 @@ namespace BURGUER_SHACK_DESKTOP
             _validar.addValidacao(txtNome, clnUtilValidar.ValidarTipo.OBRIGATORIO);
             _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DOUBLE });
             _validar.addValidacao(cboTipo, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-
         }
 
         private void abrirTipos()
@@ -88,6 +89,12 @@ namespace BURGUER_SHACK_DESKTOP
                     };
 
                     ObjProduto.gravar();
+
+                    foreach (clnProdutoIngrediente objProdutoIngrediente in ObjProdutoIngredientes)
+                    {
+                        objProdutoIngrediente.CodProduto = ObjProduto.Cod;
+                        objProdutoIngrediente.gravar();
+                    }
                     clnUtilMensagem.mostrarOk("Cadastro de Produto", "Produto cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                 }
                 else
@@ -140,7 +147,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if (ObjProduto == null)
+            if (ObjProduto.Cod == -1)
             {
                 if (clnUtilMensagem.mostrarSimNao("Cadastro de Produto", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
                 {
@@ -154,6 +161,103 @@ namespace BURGUER_SHACK_DESKTOP
                     Close();
                 }
             }
+        }
+
+        private void adicionarIngrediente()
+        {
+            List<clnIngrediente> objIngredientes = new clnIngrediente().obterIngredientes();
+
+            if (ObjProduto.Cod != -1)
+            {
+                List<clnProdutoIngrediente> objProdutoIngredientes = new clnProdutoIngrediente
+                {
+                    CodProduto = ObjProduto.Cod
+                }.obterPorProduto();
+
+                foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes)
+                {
+                    objIngredientes.RemoveAll(objIngrediente => objProdutoIngrediente.CodIngrediente.Equals(objIngrediente.Cod));
+                }
+            }
+            else
+            {
+                foreach (clnProdutoIngrediente objProdutoIngrediente in ObjProdutoIngredientes)
+                {
+                    objIngredientes.RemoveAll(objIngrediente => objProdutoIngrediente.CodIngrediente.Equals(objIngrediente.Cod));
+                }
+            }
+
+            clnIngrediente.clnSelecionar objSelecionar = new clnIngrediente.clnSelecionar
+            {
+                Opcoes = objIngredientes,
+                Titulo = "Selecione um ingrediente",
+                Icone = Properties.Resources.ingrediente
+            };
+
+            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+            {
+                ObjSelecionar = objSelecionar
+            };
+            frmSelecionar.ShowDialog();
+
+            if (objSelecionar.Selecionado != null)
+            {
+                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                {
+                    Cod = -1,
+                    Alterar = true,
+                    Remover = true,
+                    CodIngrediente = objSelecionar.Selecionado.Cod,
+                    CodProduto = ObjProduto.Cod,
+                    Quantidade = 1
+                };
+                frmProdutoIngrediente frmProdutoIngrediente = new frmProdutoIngrediente
+                {
+                    ObjProdutoIngrediente = objProdutoIngrediente
+                };
+                frmProdutoIngrediente.ShowDialog();
+                if (frmProdutoIngrediente.ObjProdutoIngrediente != null)
+                {
+                    if (ObjProduto.Cod == -1)
+                    {
+                        ObjProdutoIngredientes.Add(objProdutoIngrediente);
+                    }
+                    else
+                    {
+                        objProdutoIngrediente.gravar();
+                    }
+                    clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                }
+            }
+        }
+
+        private void verIngredientes()
+        {
+            List<clnProdutoIngrediente> objProdutoIngredientes = null;
+            if (ObjProduto.Cod == -1)
+            {
+                objProdutoIngredientes = ObjProdutoIngredientes;
+            }
+            else
+            {
+                objProdutoIngredientes = new clnProdutoIngrediente
+                {
+                    CodProduto = ObjProduto.Cod
+                }.obterPorProduto();
+            }
+
+            clnProdutoIngrediente.clnVisualizar objVisualizar = new clnProdutoIngrediente.clnVisualizar
+            {
+                Opcoes = objProdutoIngredientes,
+                Icone = Properties.Resources.ingrediente,
+                Titulo = "Selecione um ingrediente"
+            };
+
+            frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
+            {
+                ObjVisualizar = objVisualizar
+            };
+
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)
@@ -189,11 +293,17 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
+                ObjProduto = new clnProduto
+                {
+                    Cod = -1
+                };
+                ObjProdutoIngredientes = new List<clnProdutoIngrediente>();
+
                 hdrUIX.Title = App.AppName + " - Novo Produto";
 
                 definirImagemPadrao();
 
-                grbSituacao.Hide();
+                cboSituacao.Hide();
                 btnExcluir.Hide();
             }
 
@@ -234,5 +344,16 @@ namespace BURGUER_SHACK_DESKTOP
         {
             fechar();
         }
+
+        private void btnIngredienteAdd_Click(object sender, EventArgs e)
+        {
+            adicionarIngrediente();
+        }
+
+        private void btnIngredienteRemover_Click(object sender, EventArgs e)
+        {
+            verIngredientes();
+        }
+
     }
 }
