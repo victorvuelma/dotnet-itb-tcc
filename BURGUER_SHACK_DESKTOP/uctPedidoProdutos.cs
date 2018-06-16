@@ -76,7 +76,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Description = objProduto.Nome,
                     Name = "btnProduto" + objProduto.Cod,
                     Size = new Size(110, 110),
-                    Image = Image.FromFile(objArquivo.Arquivo)
+                    Image = Image.FromFile(objArquivo.Local)
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {

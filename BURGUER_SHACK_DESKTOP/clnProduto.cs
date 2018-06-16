@@ -154,7 +154,7 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     Cod = obj.CodImagem
                 }.obterPorCodigo();
-                return objArquivo.Arquivo;
+                return objArquivo.Local;
             }
 
             internal override string Nome(clnProduto obj)

@@ -18,10 +18,10 @@ namespace BURGUER_SHACK_DESKTOP
         private static clnUtilCache CACHE = new clnUtilCache("arquivo");
 
         private int _cod;
-        private String _arquivo;
+        private String _local;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public String Arquivo { get => _arquivo; set => _arquivo = value; }
+        public String Local { get => _local; set => _local = value; }
 
         private static int tempId = 0;
 
@@ -43,7 +43,7 @@ namespace BURGUER_SHACK_DESKTOP
             string arquivo = CACHE.obter(Convert.ToString(Cod));
             if (arquivo != null)
             {
-                return new clnArquivo { Cod = Cod, Arquivo = arquivo };
+                return new clnArquivo { Cod = Cod, Local = arquivo };
             }
             else
             {
@@ -56,16 +56,16 @@ namespace BURGUER_SHACK_DESKTOP
                 if (reader.Read())
                 {
                     arquivo = CACHE.guardar(Convert.ToString(Cod), (byte[])reader["conteudo"]);
-                    return new clnArquivo { Cod = Cod, Arquivo = arquivo };
+                    return new clnArquivo { Cod = Cod, Local = arquivo };
                 }
 
-                return new clnArquivo { Cod = Cod, Arquivo = "" };
+                return new clnArquivo { Cod = Cod, Local = "" };
             }
         }
 
         public void gravar()
         {
-            byte[] conteudo = File.ReadAllBytes(Arquivo);
+            byte[] conteudo = File.ReadAllBytes(Local);
 
             sqlCommandInsert objInsert = new sqlCommandInsert();
             objInsert.table("arquivo");

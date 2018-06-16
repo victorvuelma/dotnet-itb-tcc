@@ -58,7 +58,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Cod = objProduto.CodImagem
             }.obterPorCodigo();
 
-            picProduto.ImageLocation = objArquivo.Arquivo;
+            picProduto.ImageLocation = objArquivo.Local;
             lblProdutoNome.Text = objProduto.Nome;
             txtQuantidade.Text = Convert.ToString(objPedidoProduto.Quantidade);
             txtAdicional.Text = objPedidoProduto.Adicional;

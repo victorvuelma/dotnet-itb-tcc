@@ -75,7 +75,7 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     clnArquivo objArquivo = new clnArquivo
                     {
-                        Arquivo = picImagem.ImageLocation
+                        Local = picImagem.ImageLocation
                     };
                     objArquivo.gravar();
 
@@ -104,11 +104,11 @@ namespace BURGUER_SHACK_DESKTOP
                         Cod = ObjProduto.CodImagem
                     }.obterPorCodigo();
 
-                    if (!objArquivo.Arquivo.Equals(picImagem.ImageLocation))
+                    if (!objArquivo.Local.Equals(picImagem.ImageLocation))
                     {
                         objArquivo = new clnArquivo
                         {
-                            Arquivo = picImagem.ImageLocation
+                            Local = picImagem.ImageLocation
                         };
                         objArquivo.gravar();
                         ObjProduto.CodImagem = objArquivo.Cod;
@@ -278,7 +278,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 txtNome.Text = ObjProduto.Nome;
                 txtValor.Text = ObjProduto.Valor.ToString();
-                picImagem.ImageLocation = objArquivo.Arquivo;
+                picImagem.ImageLocation = objArquivo.Local;
 
                 if (ObjProduto.Situacao == clnProduto.produtoSituacao.FORADEESTOQUE)
                 {
