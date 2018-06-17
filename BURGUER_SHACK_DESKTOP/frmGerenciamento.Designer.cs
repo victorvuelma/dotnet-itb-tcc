@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciamento));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnProdutos = new UIX.btnUIX();
             this.btnIngredientes = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
@@ -39,12 +39,27 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnProdutos);
             this.pnlMenu.Controls.Add(this.btnIngredientes);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 500);
             this.pnlMenu.TabIndex = 7;
+            // 
+            // btnProdutos
+            // 
+            this.btnProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProdutos.Description = "Produtos";
+            this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
+            this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
+            this.btnProdutos.ImageLocation = null;
+            this.btnProdutos.Location = new System.Drawing.Point(5, 110);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(90, 90);
+            this.btnProdutos.TabIndex = 7;
+            this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // btnIngredientes
             // 
@@ -124,5 +139,6 @@
         private UIX.btnUIX btnSair;
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.hdrUIX hdrUIX;
+        private UIX.btnUIX btnProdutos;
     }
 }

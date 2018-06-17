@@ -18,9 +18,9 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
         }
 
-        private void alterarConteudo(UserControl uctConteudo, String titulo)
+        private void alterarConteudo(UserControl uctConteudo, String titulo, bool ignorarTipo)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, " - Gerenciamento :: " + titulo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, " - Gerenciamento :: " + titulo, ignorarTipo);
         }
 
         private void abrirLista(String tipo, clnUtilCallback callbackNovo, clnUtilCallback<DataGridView, String> callbackObter, String[] colunas)
@@ -31,12 +31,17 @@ namespace BURGUER_SHACK_DESKTOP
                 Colunas = colunas,
                 CallbackObter = callbackObter
             };
-            alterarConteudo(objListar, tipo);
+            alterarConteudo(objListar, tipo, true);
         }
 
         private void abrirIngredientes()
         {
             abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
+        }
+
+        private void abrirProdutos()
+        {
+            abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new String[] { "Código", "Nome", "Situacao", "Tipo",  "Valor" });
         }
 
         private void sair()
@@ -54,12 +59,6 @@ namespace BURGUER_SHACK_DESKTOP
 
             abrirIngredientes();
         }
-
-        private void btnIngredientes_Click(object sender, EventArgs e)
-        {
-            abrirIngredientes();
-        }
-
         private void hdrUIX_Close(object sender, EventArgs e)
         {
             sair();
@@ -68,6 +67,16 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnSair_Click(object sender, EventArgs e)
         {
             sair();
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            abrirIngredientes();
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            abrirProdutos();
         }
 
         private class CallbackIngredienteNovo : clnUtilCallback
@@ -100,6 +109,39 @@ namespace BURGUER_SHACK_DESKTOP
 
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
                     dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, objIngrediente.Valor });
+                }
+                return false;
+            }
+        }
+
+        private class CallbackProdutoNovo : clnUtilCallback
+        {
+            public bool call()
+            {
+                frmProduto frmNovoProduto = new frmProduto { };
+                frmNovoProduto.ShowDialog();
+                return frmNovoProduto.ObjProduto != null;
+            }
+        }
+
+        private class CallbackProdutoObter : clnUtilCallback<DataGridView, String>
+        {
+            public bool call(DataGridView dgv, string pesquisa)
+            {
+                clnProduto objProdutos = new clnProduto
+                {
+                    Nome = pesquisa
+                };
+                foreach (clnProduto objProduto in objProdutos.obterPorNome())
+                {
+                    clnTipo objTipo = new clnTipo
+                    {
+                        Cod = objProduto.CodTipo,
+                        Tipo = clnTipo.tipo.INGREDIENTE
+                    }.obterPorCodigo();
+
+                    //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
+                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome,  objProduto.Valor });
                 }
                 return false;
             }

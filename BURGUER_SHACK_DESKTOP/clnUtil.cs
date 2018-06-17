@@ -402,10 +402,15 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo)
         {
+            alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, " - Gerenciamento :: " + titulo, false);
+        }
+
+        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo, bool ignorarTipo)
+        {
             if (pnlConteudo.Controls.Count == 1)
             {
                 Control controlAnterior = pnlConteudo.Controls[0];
-                if (uctConteudo == null || !uctConteudo.GetType().Equals(controlAnterior.GetType()))
+                if (ignorarTipo || uctConteudo == null || !uctConteudo.GetType().Equals(controlAnterior.GetType()))
                 {
                     controlAnterior.Controls.Clear();
                     controlAnterior.Dispose();

@@ -376,6 +376,9 @@
     <EmbeddedResource Include="frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGerenciamento.resx">
+      <DependentUpon>frmGerenciamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="msgGerenciador.resx">
       <DependentUpon>msgGerenciador.cs</DependentUpon>
     </EmbeddedResource>
