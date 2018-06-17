@@ -126,6 +126,7 @@
     <Compile Include="clnUtilCache.cs" />
     <Compile Include="clnUtilCallback.cs" />
     <Compile Include="clnUtilConvert.cs" />
+    <Compile Include="clnUtilListar.cs" />
     <Compile Include="clnUtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />

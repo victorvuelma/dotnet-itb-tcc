@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
             return new List<clnItemIngrediente>();
         }
 
-        public class clnSelecionar : clnUtilSelecionar<clnItemIngrediente>
+        public class clnListar : clnUtilListar<clnItemIngrediente>
         {
             internal override int Cod(clnItemIngrediente obj)
             {
@@ -78,51 +78,6 @@ namespace BURGUER_SHACK_DESKTOP
 
                 return objIngrediente.Nome;
             }
-        }
-
-        public class clnVisualizar : clnUtilVisualizar<clnItemIngrediente>
-        {
-
-            internal override string Detalhes(clnItemIngrediente obj)
-            {
-                String detalhes = "";
-                detalhes += "Quantidade: " + obj.Quantidade;
-                detalhes += "\n";
-                detalhes += "Código: " + obj.Cod;
-
-                return detalhes;
-            }
-
-            internal override String Imagem(clnItemIngrediente obj)
-            {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = obj.CodIngrediente
-                }.obterPorCodigo();
-
-                clnArquivo objArquivo = new clnArquivo
-                {
-                    Cod = objIngrediente.CodImagem
-                }.obterPorCodigo();
-
-                return objArquivo.Local;
-            }
-
-            internal override string Nome(clnItemIngrediente obj)
-            {
-                clnIngrediente objIngrediente = new clnIngrediente
-                {
-                    Cod = obj.CodIngrediente
-                }.obterPorCodigo();
-
-                return objIngrediente.Nome;
-            }
-
-            internal override int Cod(clnItemIngrediente obj)
-            {
-                return obj.Cod;
-            }
-
         }
 
     }

@@ -40,10 +40,10 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 UIX.btnUIX btn = new UIX.btnUIX
                 {
-                    Description = ObjSelecionar.getNome(obj),
-                    Name = "btnSelecionar" + ObjSelecionar.getCod(obj),
+                    Description = ObjSelecionar.ObjListar.getNome(obj),
+                    Name = "btnSelecionar" + ObjSelecionar.ObjListar.getCod(obj),
                     Size = new Size(110, 110),
-                    ImageLocation = ObjSelecionar.getImagem(obj)
+                    ImageLocation = ObjSelecionar.ObjListar.getImagem(obj)
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -81,9 +81,9 @@ namespace BURGUER_SHACK_DESKTOP
         {
             grbDetalhes.Hide();
 
-            picImagem.ImageLocation = ObjSelecionar.getImagem(obj);
-            lblNome.Text = ObjSelecionar.getNome(obj);
-            lblDesc.Text = ObjSelecionar.getDetalhes(obj);
+            picImagem.ImageLocation = ObjSelecionar.ObjListar.getImagem(obj);
+            lblNome.Text = ObjSelecionar.ObjListar.getNome(obj);
+            lblDesc.Text = ObjSelecionar.ObjListar.getDetalhes(obj);
             txtQuantidade.Text = "1";
 
             grbDetalhes.Show();
@@ -95,9 +95,9 @@ namespace BURGUER_SHACK_DESKTOP
             _opcoes.Clear();
 
             String pesquisa = txtPesquisa.Text.ToLower();
-            foreach (object opcao in ObjSelecionar.getOpcoes())
+            foreach (object opcao in ObjSelecionar.ObjListar.getOpcoes())
             {
-                if (clnUtil.vazio(pesquisa) || ObjSelecionar.getNome(opcao).ToLower().Contains(pesquisa))
+                if (clnUtil.vazio(pesquisa) || ObjSelecionar.ObjListar.getNome(opcao).ToLower().Contains(pesquisa))
                 {
                     _opcoes.Add(opcao);
                 }
@@ -117,7 +117,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnUtilMensagem.mostrarSimNao(ObjSelecionar.Titulo, "Deseja realmente cancelar?", clnUtilMensagem.MensagemIcone.INFO))
+            if (clnUtilMensagem.mostrarSimNao(ObjSelecionar.ObjListar.Titulo, "Deseja realmente cancelar?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 ObjSelecionar.setSelecionado(null);
 
@@ -147,8 +147,8 @@ namespace BURGUER_SHACK_DESKTOP
                 txtQuantidade.Text = Convert.ToString(ObjSelecionar.Quantidade);
             }
 
-            hdrUIX.Title = App.AppName + " - " + ObjSelecionar.Titulo;
-            hdrUIX.Image = ObjSelecionar.Icone;
+            hdrUIX.Title = App.AppName + " - " + ObjSelecionar.ObjListar.Titulo;
+            hdrUIX.Image = ObjSelecionar.ObjListar.Icone;
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

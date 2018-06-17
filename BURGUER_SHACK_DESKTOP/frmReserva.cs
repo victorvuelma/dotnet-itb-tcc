@@ -149,12 +149,16 @@ namespace BURGUER_SHACK_DESKTOP
 
                 if (objMesas.Count > 0)
                 {
-                    clnMesa.clnSelecionar objSelecionar = new clnMesa.clnSelecionar
+                    clnMesa.clnListar objListar = new clnMesa.clnListar
                     {
                         Opcoes = objMesas,
-                        Quantidade = 0,
-                        Titulo = "Selecione uma mesa",
+                        Titulo = "Adicionar uma Mesa",
                         Icone = Properties.Resources.mesa
+                    };
+                    clnUtilSelecionar<clnMesa> objSelecionar = new clnUtilSelecionar<clnMesa>
+                    {
+                        ObjListar = objListar,
+                        Quantidade = 0
                     };
 
                     frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -374,7 +378,7 @@ namespace BURGUER_SHACK_DESKTOP
                 mtbHora.Text = clnUtil.formatarHora(ObjReserva.Agendado);
                 txtPessoas.Text = clnUtilConvert.ToString(ObjReserva.Pessoas);
 
-                if(ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
+                if (ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
                 {
                     grbMesas.Hide();
                 }

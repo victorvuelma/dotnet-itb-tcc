@@ -36,10 +36,10 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 UIX.btnUIX btn = new UIX.btnUIX
                 {
-                    Description = ObjVisualizar.getNome(obj),
-                    Name = "btnVisualizar" + ObjVisualizar.getCod(obj),
+                    Description = ObjVisualizar.ObjListar.getNome(obj),
+                    Name = "btnVisualizar" + ObjVisualizar.ObjListar.getCod(obj),
                     Size = new Size(110, 110),
-                    ImageLocation = ObjVisualizar.getImagem(obj)
+                    ImageLocation = ObjVisualizar.ObjListar.getImagem(obj)
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -69,9 +69,9 @@ namespace BURGUER_SHACK_DESKTOP
             _opcoes.Clear();
 
             String pesquisa = txtPesquisa.Text.ToLower();
-            foreach (object opcao in ObjVisualizar.getOpcoes())
+            foreach (object opcao in ObjVisualizar.ObjListar.getOpcoes())
             {
-                if (clnUtil.vazio(pesquisa) || ObjVisualizar.getNome(opcao).ToLower().Contains(pesquisa))
+                if (clnUtil.vazio(pesquisa) || ObjVisualizar.ObjListar.getNome(opcao).ToLower().Contains(pesquisa))
                 {
                     _opcoes.Add(opcao);
                 }
@@ -90,8 +90,8 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarTabIndex(Controls);
 
             realizaPesquisa();
-            hdrUIX.Title = App.AppName + " - " + ObjVisualizar.Titulo;
-            hdrUIX.Image = ObjVisualizar.Icone;
+            hdrUIX.Title = App.AppName + " - " + ObjVisualizar.ObjListar.Titulo;
+            hdrUIX.Image = ObjVisualizar.ObjListar.Icone;
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

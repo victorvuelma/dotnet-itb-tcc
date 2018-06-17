@@ -83,18 +83,29 @@ namespace BURGUER_SHACK_DESKTOP
             Cod = objInsert.insertWithOutput(App.AppDatabase);
         }
 
-        public class clnVisualizar : clnUtilVisualizar<clnProdutoIngrediente>
+        internal void alterar()
         {
+            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            objUpdate.table("produto_ingrediente");
+            objUpdate.Set.val("quantidade", Quantidade)
+                            .val("alterar", clnUtilConvert.ToBit(Alterar))
+                            .val("remover", clnUtilConvert.ToBit(Remover));
+            objUpdate.Where.where("id", Cod);
 
-            internal override string Detalhes(clnProdutoIngrediente obj)
-            {
-                String detalhes = "";
-                detalhes += "Quantidade: " + obj.Quantidade;
-                detalhes += "\n";
-                detalhes += "Código: " + obj.Cod;
+            objUpdate.update(App.AppDatabase);
+        }
 
-                return detalhes;
-            }
+        internal void remover()
+        {
+            sqlCommandDelete objDelete = new sqlCommandDelete();
+            objDelete.table("produto_ingrediente");
+            objDelete.Where.where("id", Cod);
+
+            objDelete.delete(App.AppDatabase);
+        }
+
+        public class clnListar : clnUtilListar<clnProdutoIngrediente>
+        {
 
             internal override String Imagem(clnProdutoIngrediente obj)
             {
@@ -124,6 +135,13 @@ namespace BURGUER_SHACK_DESKTOP
             internal override int Cod(clnProdutoIngrediente obj)
             {
                 return obj.Cod;
+            }
+
+            internal override String Detalhes(clnProdutoIngrediente obj)
+            {
+                string detalhes = "";
+                detalhes += "Quantidade: " + obj.Quantidade;
+                return detalhes;
             }
 
         }

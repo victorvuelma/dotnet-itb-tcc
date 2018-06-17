@@ -122,6 +122,10 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
+                ObjProdutoIngrediente.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
+                ObjProdutoIngrediente.Remover = chkRemover.Checked;
+                ObjProdutoIngrediente.Alterar = chkAlterar.Checked;
+
                 Close();
             }
         }

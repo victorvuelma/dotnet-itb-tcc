@@ -149,7 +149,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public class clnSelecionar : clnUtilSelecionar<clnIngrediente>
+        public class clnListar : clnUtilListar<clnIngrediente>
         {
 
             internal override int Cod(clnIngrediente obj)

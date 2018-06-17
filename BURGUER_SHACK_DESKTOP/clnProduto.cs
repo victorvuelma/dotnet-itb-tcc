@@ -135,7 +135,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public class clnSelecionar : clnUtilSelecionar<clnProduto>
+        public class clnListar : clnUtilListar<clnProduto>
         {
 
             internal override string Detalhes(clnProduto obj)

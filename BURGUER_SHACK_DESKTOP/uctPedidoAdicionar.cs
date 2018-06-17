@@ -80,11 +80,15 @@ namespace BURGUER_SHACK_DESKTOP
                 CodTipo = categoria
             };
 
-            clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
+            clnProduto.clnListar objListar = new clnProduto.clnListar
             {
                 Opcoes = objProdutos.obterPorTipo(),
-                Icone = BURGUER_SHACK_DESKTOP.Properties.Resources.produto,
-                Titulo = "Selecione o produto",
+                Icone = Properties.Resources.produto,
+                Titulo = "Selecione o Produto",
+            };
+            clnUtilSelecionar<clnProduto> objSelecionar = new clnUtilSelecionar<clnProduto>
+            {
+                ObjListar = objListar
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -111,12 +115,16 @@ namespace BURGUER_SHACK_DESKTOP
                 CodTipo = objProdutoAtual.CodTipo
             };
 
-            clnProduto.clnSelecionar objSelecionar = new clnProduto.clnSelecionar
+            clnProduto.clnListar objListar = new clnProduto.clnListar
             {
                 Opcoes = objProdutos.obterPorTipo(),
-                Selecionado = objProdutoAtual,
-                Titulo = "Selecione o produto",
+                Titulo = "Selecione o Produto",
                 Icone = Properties.Resources.produto
+            };
+            clnUtilSelecionar<clnProduto> objSelecionar = new clnUtilSelecionar<clnProduto>
+            {
+                ObjListar = objListar,
+                Selecionado = objProdutoAtual
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -175,16 +183,21 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnItemIngrediente.clnVisualizar objVisualizar = new clnItemIngrediente.clnVisualizar
+            clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
             {
-                Opcoes = Ingredientes
+                Opcoes = Ingredientes,
+                Icone = Properties.Resources.ingrediente,
+                Titulo = "Selecione o Ingrediente"
+            };
+            clnUtilVisualizar<clnItemIngrediente> objVisualizar = new clnUtilVisualizar<clnItemIngrediente>
+            {
+                ObjListar = objListar
             };
 
             frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
             {
                 ObjVisualizar = objVisualizar
             };
-
             frmVisualizar.Show();
 
             exibirDetalhes();
@@ -194,11 +207,15 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngredientes = new clnIngrediente();
 
-            clnIngrediente.clnSelecionar objSelecionar = new clnIngrediente.clnSelecionar
+            clnIngrediente.clnListar objListar = new clnIngrediente.clnListar
             {
                 Opcoes = objIngredientes.obterIngredientes(),
                 Titulo = "Adicionar um Ingrediente",
                 Icone = Properties.Resources.ingrediente
+            };
+            clnUtilSelecionar<clnIngrediente> objSelecionar = new clnUtilSelecionar<clnIngrediente>
+            {
+                ObjListar = objListar
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar

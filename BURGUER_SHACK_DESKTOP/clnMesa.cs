@@ -129,7 +129,7 @@ namespace BURGUER_SHACK_DESKTOP
             return objMesas;
         }
 
-        public class clnSelecionar : clnUtilSelecionar<clnMesa>
+        public class clnListar : clnUtilListar<clnMesa>
         {
             internal override int Cod(clnMesa obj)
             {
@@ -143,14 +143,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             internal override string Imagem(clnMesa obj)
             {
-                if (obj.Situacao == mesaSituacao.DISPONIVEL)
-                {
-                    return clnArquivo.tempImage(Properties.Resources.mesa);
-                }
-                else
-                {
-                    return clnArquivo.tempImage(Properties.Resources.mesauso);
-                }
+                return clnArquivo.tempImage(Properties.Resources.mesa);
             }
 
             internal override string Nome(clnMesa obj)

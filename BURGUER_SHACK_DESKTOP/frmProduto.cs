@@ -187,11 +187,15 @@ namespace BURGUER_SHACK_DESKTOP
                 }
             }
 
-            clnIngrediente.clnSelecionar objSelecionar = new clnIngrediente.clnSelecionar
+            clnIngrediente.clnListar objListar = new clnIngrediente.clnListar
             {
                 Opcoes = objIngredientes,
-                Titulo = "Selecione um ingrediente",
+                Titulo = "Adicionar um Ingrediente",
                 Icone = Properties.Resources.ingrediente
+            };
+            clnUtilSelecionar<clnIngrediente> objSelecionar = new clnUtilSelecionar<clnIngrediente>
+            {
+                ObjListar = objListar
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -231,7 +235,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void verIngredientes()
+        private void exibirIngredientes()
         {
             List<clnProdutoIngrediente> objProdutoIngredientes = null;
             if (ObjProduto.Cod == -1)
@@ -246,18 +250,24 @@ namespace BURGUER_SHACK_DESKTOP
                 }.obterPorProduto();
             }
 
-            clnProdutoIngrediente.clnVisualizar objVisualizar = new clnProdutoIngrediente.clnVisualizar
+            clnProdutoIngrediente.clnListar objListar = new clnProdutoIngrediente.clnListar
             {
                 Opcoes = objProdutoIngredientes,
                 Icone = Properties.Resources.ingrediente,
-                Titulo = "Selecione um ingrediente"
+                Titulo = "Selecione o Ingrediente",
+            };
+
+            clnUtilVisualizar objVisualizar = new clnUtilVisualizar<clnProdutoIngrediente>
+            {
+                ObjListar = objListar,
+                CallbackClick = new CallbackRemover()
             };
 
             frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
             {
                 ObjVisualizar = objVisualizar
             };
-
+            frmVisualizar.ShowDialog();
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)
@@ -278,6 +288,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 txtNome.Text = ObjProduto.Nome;
                 txtValor.Text = ObjProduto.Valor.ToString();
+                txtDesc.Text = ObjProduto.Descricao;
                 picImagem.ImageLocation = objArquivo.Local;
 
                 if (ObjProduto.Situacao == clnProduto.produtoSituacao.FORADEESTOQUE)
@@ -352,7 +363,28 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnIngredienteRemover_Click(object sender, EventArgs e)
         {
-            verIngredientes();
+            exibirIngredientes();
+        }
+
+        private class CallbackRemover : clnUtilCallback<clnUtilVisualizar, clnProdutoIngrediente>
+        {
+
+            public void call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
+            {
+                frmProdutoIngrediente frmProdutoIngrediente = new frmProdutoIngrediente
+                {
+                    ObjProdutoIngrediente = objProdutoIngrediente
+                };
+                frmProdutoIngrediente.ShowDialog();
+                if(frmProdutoIngrediente.ObjProdutoIngrediente != null)
+                {
+                    frmProdutoIngrediente.ObjProdutoIngrediente.alterar();
+                } else
+                {
+                    frmProdutoIngrediente.ObjProdutoIngrediente.remover();
+                    objVisualizar.ObjListar.getOpcoes().Remove(frmProdutoIngrediente.ObjProdutoIngrediente);
+                }
+            }
         }
 
     }

@@ -11,82 +11,22 @@ namespace BURGUER_SHACK_DESKTOP
 {
 
     public abstract class clnUtilVisualizar
-    {
+    { 
 
-        private Image _icone =  Properties.Resources.lista;
-        private String _titulo = "";
+        private clnUtilListar objListar;
 
-        public Image Icone { get => _icone; set => _icone = value; }
-        public string Titulo { get => _titulo; set => _titulo = value; }
-
-        public abstract IList getOpcoes();
-
-        public abstract String getImagem(object obj);
-
-        public abstract String getNome(object obj);
-
-        public abstract String getDetalhes(object obj);
+        public clnUtilListar ObjListar { get => objListar; set => objListar = value; }
 
         public abstract void abrir(object obj);
 
-        public abstract int getCod(object obj);
-
     }
 
-    public abstract class clnUtilVisualizar<T> : clnUtilVisualizar
+    public class clnUtilVisualizar<T> : clnUtilVisualizar
     {
 
-        private List<T> _opcoes;
         private clnUtilCallback<clnUtilVisualizar, T> _callbackClick;
 
-        public List<T> Opcoes { get => _opcoes; set => _opcoes = value; }
         internal clnUtilCallback<clnUtilVisualizar, T> CallbackClick { get => _callbackClick; set => _callbackClick = value; }
-
-        public override IList getOpcoes() => Opcoes;
-
-        internal abstract String Imagem(T val);
-
-        public override String getImagem(object obj)
-        {
-            if (obj !=null && obj is T val)
-            {
-                return Imagem(val);
-            }
-            return null;
-        }
-
-        internal abstract String Nome(T val);
-
-        public override string getNome(object obj)
-        {
-            if (obj != null && obj is T val)
-            {
-                return Nome(val);
-            }
-            return null;
-        }
-
-        internal abstract String Detalhes(T val);
-
-        public override string getDetalhes(object obj)
-        {
-            if (obj !=null && obj is T val)
-            {
-                return Detalhes(val);
-            }
-            return null;
-        }
-
-        internal abstract int Cod(T val);
-
-        public override int getCod(object obj)
-        {
-            if (obj != null && obj is T val)
-            {
-                return Cod(val);
-            }
-            return -1;
-        }
 
         public override void abrir(object obj)
         {
