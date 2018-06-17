@@ -30,13 +30,7 @@ namespace UIX
 
         public void ctlApply(Control ctl)
         {
-
-            if (ctl is btnUIX uixBtn)
-            {
-                uixButton.btnApply(uixBtn, Style.ButtonColor, Style.BoldFont);
-                uixBtn.HoverColor = Style.ButtonColor.DarkColor;
-            }
-            else if (ctl is Button btn)
+            if (ctl is Button btn)
             {
                 this.btnApply(btn);
             }
@@ -96,10 +90,6 @@ namespace UIX
             foreach (Control ctl in grb.Controls)
             {
                 ctlApply(ctl);
-                if(ctl is Panel)
-                {
-                    ctl.BackColor = grb.BackColor;
-                }
             }
         }
 

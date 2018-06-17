@@ -23,8 +23,9 @@ namespace UIX
             InitializeComponent();
 
             HoverColor = Color.Transparent;
-            
         }
+
+        public Color HoverColor { get => _hoverColor; set => _hoverColor = value; }
 
         public new Color BackColor
         {
@@ -85,8 +86,6 @@ namespace UIX
                 base.Size = value;
             }
         }
-
-        public Color HoverColor { get => _hoverColor; set => _hoverColor = value; }
 
         private void btnUIX_MouseEnter(object sender, EventArgs e)
         {
