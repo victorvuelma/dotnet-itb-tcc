@@ -143,7 +143,6 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAtendimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mesa";

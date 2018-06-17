@@ -151,6 +151,16 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon burguershack_ico {
+            get {
+                object obj = ResourceManager.GetObject("burguershack_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap calculadora {
@@ -241,32 +251,12 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon garcom_ico {
-            get {
-                object obj = ResourceManager.GetObject("garcom_ico", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap gerenciador {
             get {
                 object obj = ResourceManager.GetObject("gerenciador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon gerenciador_ico {
-            get {
-                object obj = ResourceManager.GetObject("gerenciador_ico", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -413,6 +403,16 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pesquisar {
+            get {
+                object obj = ResourceManager.GetObject("pesquisar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap produto {
             get {
                 object obj = ResourceManager.GetObject("produto", resourceCulture);
@@ -517,16 +517,6 @@ namespace BURGUER_SHACK_DESKTOP.Properties {
             get {
                 object obj = ResourceManager.GetObject("usuarios", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon usuarios_ico {
-            get {
-                object obj = ResourceManager.GetObject("usuarios_ico", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         

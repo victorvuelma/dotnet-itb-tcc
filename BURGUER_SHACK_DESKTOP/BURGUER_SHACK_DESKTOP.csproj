@@ -373,59 +373,8 @@
     <Compile Include="uctGerenTerceirizada.Designer.cs">
       <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmProdutoIngrediente.resx">
-      <DependentUpon>frmProdutoIngrediente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProduto.resx">
-      <DependentUpon>frmProduto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTipo.resx">
-      <DependentUpon>frmTipo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmIngrediente.resx">
-      <DependentUpon>frmIngrediente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReserva.resx">
-      <DependentUpon>frmReserva.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmItemIngrediente.resx">
-      <DependentUpon>frmItemIngrediente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCozinha.resx">
-      <DependentUpon>frmCozinha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGerenciamento.resx">
-      <DependentUpon>frmGerenciamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAcesso.resx">
-      <DependentUpon>frmAcesso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAtendimento.resx">
-      <DependentUpon>frmAtendimento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmItem.resx">
-      <DependentUpon>frmItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPedido.resx">
-      <DependentUpon>frmPedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCliente.resx">
-      <DependentUpon>frmCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUtilVisualizar.resx">
-      <DependentUpon>frmUtilVisualizar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUtilSelecionar.resx">
-      <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUtilNumBoard.resx">
-      <DependentUpon>frmUtilNumBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="msgGerenciador.resx">
       <DependentUpon>msgGerenciador.cs</DependentUpon>
@@ -567,6 +516,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\burguershack-ico.ico" />
+    <None Include="Resources\pesquisar.png" />
     <None Include="Resources\entrar.png" />
     <None Include="Resources\cliente.png" />
     <None Include="Resources\salvar.png" />
