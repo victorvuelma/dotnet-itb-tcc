@@ -72,7 +72,7 @@ namespace BURGUER_SHACK_DESKTOP
             reader.Close();
         }
 
-        public List<clnReserva> obterPorDataAgedada()
+        public List<clnReserva> obterPorDataAgendada()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("reserva");

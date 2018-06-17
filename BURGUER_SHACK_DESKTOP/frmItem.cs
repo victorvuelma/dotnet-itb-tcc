@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Titulo = "Selecione um Ingrediente"
             };
 
-            clnUtilVisualizar<clnItemIngrediente> objVisualizar = new clnUtilVisualizar<clnItemIngrediente>
+            clnUtilVisualizar<clnUtilVisualizar, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<clnUtilVisualizar, clnItemIngrediente>
             {
                 ObjListar = objListar,
                 CallbackClick = new callbackVisualizar()
@@ -168,7 +168,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private class callbackVisualizar : clnUtilCallback<clnUtilVisualizar, clnItemIngrediente>
         {
-            public void call(clnUtilVisualizar objVisualizar, clnItemIngrediente obj)
+            public bool call(clnUtilVisualizar objVisualizar, clnItemIngrediente obj)
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
@@ -198,6 +198,7 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
                 }
+                return false;
             }
         }
     }

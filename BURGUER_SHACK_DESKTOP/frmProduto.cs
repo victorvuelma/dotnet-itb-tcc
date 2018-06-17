@@ -257,7 +257,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Titulo = "Selecione o Ingrediente",
             };
 
-            clnUtilVisualizar objVisualizar = new clnUtilVisualizar<clnProdutoIngrediente>
+            clnUtilVisualizar objVisualizar = new clnUtilVisualizar<clnUtilVisualizar, clnProdutoIngrediente>
             {
                 ObjListar = objListar,
                 CallbackClick = new CallbackRemover()
@@ -369,7 +369,7 @@ namespace BURGUER_SHACK_DESKTOP
         private class CallbackRemover : clnUtilCallback<clnUtilVisualizar, clnProdutoIngrediente>
         {
 
-            public void call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
+            public bool call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
             {
                 frmProdutoIngrediente frmProdutoIngrediente = new frmProdutoIngrediente
                 {
@@ -384,6 +384,7 @@ namespace BURGUER_SHACK_DESKTOP
                     frmProdutoIngrediente.ObjProdutoIngrediente.remover();
                     objVisualizar.ObjListar.getOpcoes().Remove(frmProdutoIngrediente.ObjProdutoIngrediente);
                 }
+                return false;
             }
         }
 

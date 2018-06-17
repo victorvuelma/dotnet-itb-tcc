@@ -43,8 +43,14 @@ namespace BURGUER_SHACK_DESKTOP
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
-                    ObjVisualizar.abrir(obj);
-                    realizaPesquisa();
+                    if (ObjVisualizar.click(obj))
+                    {
+                        Close();
+                    }
+                    else
+                    {
+                        realizaPesquisa();
+                    }
                 };
 
                 opcoesControles.Add(btn);

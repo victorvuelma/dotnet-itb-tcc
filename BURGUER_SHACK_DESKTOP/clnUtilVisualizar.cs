@@ -11,29 +11,40 @@ namespace BURGUER_SHACK_DESKTOP
 {
 
     public abstract class clnUtilVisualizar
-    { 
+    {
 
         private clnUtilListar objListar;
 
         public clnUtilListar ObjListar { get => objListar; set => objListar = value; }
 
-        public abstract void abrir(object obj);
+        public abstract bool click(object obj);
 
     }
 
-    public class clnUtilVisualizar<T> : clnUtilVisualizar
+    public class clnUtilVisualizar<O, V> : clnUtilVisualizar
     {
 
-        private clnUtilCallback<clnUtilVisualizar, T> _callbackClick;
+        private clnUtilCallback<O, V> _callbackClick;
+        private O _obj;
 
-        internal clnUtilCallback<clnUtilVisualizar, T> CallbackClick { get => _callbackClick; set => _callbackClick = value; }
-
-        public override void abrir(object obj)
+        public clnUtilVisualizar()
         {
-            if (obj != null && obj is T val)
+            if(this is O obj)
             {
-                CallbackClick.call(this, val);
+                Obj = obj;
             }
+        }
+
+        public O Obj { get => _obj; set => _obj = value; }
+        internal clnUtilCallback<O, V> CallbackClick { get => _callbackClick; set => _callbackClick = value; }
+
+        public override bool click(object obj)
+        {
+            if (CallbackClick != null && obj != null && obj is V val)
+            {
+                return CallbackClick.call(Obj, val);
+            }
+            return false;
         }
 
     }

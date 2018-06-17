@@ -55,13 +55,6 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 ObjAtendimento.removerMesa(codMesa);
 
-                clnMesa objMesa = new clnMesa
-                {
-                    Cod = codMesa,
-                    Situacao = clnMesa.mesaSituacao.DISPONIVEL
-                };
-                objMesa.alterar();
-
                 exibirMesas();
             }
         }
@@ -79,31 +72,20 @@ namespace BURGUER_SHACK_DESKTOP
                 Titulo = "Adicionar uma Mesa",
                 Icone = Properties.Resources.mesa
             };
-            clnUtilSelecionar<clnMesa> objSelecionar = new clnUtilSelecionar<clnMesa>
+            clnUtilVisualizar<clnAtendimento, clnMesa> objVisualizar = new clnUtilVisualizar<clnAtendimento, clnMesa>
             {
-                Quantidade = 0,
-                ObjListar = objListar
+                ObjListar = objListar,
+                Obj = ObjAtendimento,
+                CallbackClick = new CallBackAdicionar()
             };
 
-            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+            frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
             {
-                ObjSelecionar = objSelecionar
+                ObjVisualizar = objVisualizar
             };
-            frmSelecionar.txtQuantidade.Hide();
+            frmVisualizar.ShowDialog();
 
-            frmSelecionar.ShowDialog();
-
-            if (objSelecionar.Selecionado != null)
-            {
-                clnMesa objMesa = objSelecionar.Selecionado;
-
-                ObjAtendimento.adicionarMesa(objMesa.Cod);
-
-                objMesa.Situacao = clnMesa.mesaSituacao.OCUPADA;
-                objMesa.alterar();
-
-                exibirMesas();
-            }
+            exibirMesas();
         }
 
         private void uctAtendimentoPedidos_Load(object sender, EventArgs e)
@@ -114,6 +96,17 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             adicionarMesa();
+        }
+
+        private class CallBackAdicionar : clnUtilCallback<clnAtendimento, clnMesa>
+        {
+
+            public bool call(clnAtendimento objAtendimento, clnMesa objMesa)
+            {
+                objAtendimento.adicionarMesa(objMesa.Cod);
+                clnUtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Cod + " adicionada ao atendimento.", clnUtilMensagem.MensagemIcone.OK);
+                return true;
+            }
         }
     }
 }

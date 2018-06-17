@@ -9,7 +9,7 @@ namespace BURGUER_SHACK_DESKTOP
     internal interface clnUtilCallback<X, Y>
     {
 
-        void call(X x, Y y);
+        bool call(X x, Y y);
 
     }
 }

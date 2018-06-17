@@ -189,7 +189,7 @@ namespace BURGUER_SHACK_DESKTOP
                 Icone = Properties.Resources.ingrediente,
                 Titulo = "Selecione o Ingrediente"
             };
-            clnUtilVisualizar<clnItemIngrediente> objVisualizar = new clnUtilVisualizar<clnItemIngrediente>
+            clnUtilVisualizar<clnPedido, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<clnPedido, clnItemIngrediente>
             {
                 ObjListar = objListar
             };

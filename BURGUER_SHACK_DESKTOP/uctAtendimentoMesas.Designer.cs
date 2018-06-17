@@ -30,7 +30,7 @@
         {
             this.grbMesas = new System.Windows.Forms.GroupBox();
             this.pnlMesas = new System.Windows.Forms.Panel();
-            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new UIX.btnUIX();
             this.grbMesas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             this.grbMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbMesas.Name = "grbMesas";
             this.grbMesas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbMesas.Size = new System.Drawing.Size(490, 585);
+            this.grbMesas.Size = new System.Drawing.Size(490, 540);
             this.grbMesas.TabIndex = 8;
             this.grbMesas.TabStop = false;
             this.grbMesas.Text = "MESAS";
@@ -52,15 +52,19 @@
             this.pnlMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlMesas.MaximumSize = new System.Drawing.Size(480, 10000);
             this.pnlMesas.Name = "pnlMesas";
-            this.pnlMesas.Size = new System.Drawing.Size(480, 560);
+            this.pnlMesas.Size = new System.Drawing.Size(480, 510);
             this.pnlMesas.TabIndex = 4;
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(295, 595);
+            this.btnAdicionar.Description = "Adicionar";
+            this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnAdicionar.ImageLocation = null;
+            this.btnAdicionar.Location = new System.Drawing.Point(400, 550);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(200, 50);
+            this.btnAdicionar.Size = new System.Drawing.Size(90, 90);
             this.btnAdicionar.TabIndex = 10;
             this.btnAdicionar.Text = "Adicionar Mesa";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -85,6 +89,6 @@
         #endregion
         private System.Windows.Forms.GroupBox grbMesas;
         private System.Windows.Forms.Panel pnlMesas;
-        private System.Windows.Forms.Button btnAdicionar;
+        private UIX.btnUIX btnAdicionar;
     }
 }

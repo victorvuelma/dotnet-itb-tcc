@@ -108,7 +108,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmUtilVisualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Selecione";
+            this.Text = "8";
             this.Load += new System.EventHandler(this.frmUtilVisualizar_Load);
             this.grbOpcoes.ResumeLayout(false);
             this.ResumeLayout(false);

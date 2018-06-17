@@ -126,6 +126,14 @@ namespace BURGUER_SHACK_DESKTOP
                     }
                 }
 
+                clnMesa.clnListar objListar = new clnMesa.clnListar
+                {
+                    Icone = Properties.Resources.mesa,
+                    Opcoes = objMesas,
+                    Titulo = "Selecione a Mesa"
+                };
+
+
 
             }
             else if (clnUtilMensagem.mostrarSimNao("Mesas", "Esta reserva não possui nenhuma mesa, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
@@ -450,5 +458,18 @@ namespace BURGUER_SHACK_DESKTOP
         {
             cancelarReserva();
         }
+
+        private class CallbackRemover : clnUtilCallback<clnReserva, clnMesa>
+        {
+            public bool call(clnReserva objReserva, clnMesa objMesa)
+            {
+                if(clnUtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", clnUtilMensagem.MensagemIcone.INFO)){
+                    objReserva.removerMesa(objMesa.Cod);
+                    return true;
+                }
+                return false;
+            }
+        }
+
     }
 }

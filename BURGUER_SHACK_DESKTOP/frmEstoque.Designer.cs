@@ -94,7 +94,7 @@
             this.btnProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProduto.Description = "Produto";
             this.btnProduto.HoverColor = System.Drawing.Color.Transparent;
-            this.btnProduto.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto_lanche;
+            this.btnProduto.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
             this.btnProduto.Location = new System.Drawing.Point(91, 5);
             this.btnProduto.Name = "btnProduto";
             this.btnProduto.Size = new System.Drawing.Size(80, 80);

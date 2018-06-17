@@ -32,7 +32,7 @@ namespace BURGUER_SHACK_DESKTOP
             };
 
             List<Control> reservasControles = new List<Control>();
-            foreach (clnReserva objReserva in objReservas.obterPorDataAgedada())
+            foreach (clnReserva objReserva in objReservas.obterPorDataAgendada())
             {
                 UIX.btnLabelUIX btn = new UIX.btnLabelUIX
                 {
