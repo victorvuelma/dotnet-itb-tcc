@@ -98,7 +98,6 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(270, 30);
             this.txtSenha.TabIndex = 8;
-            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
             // txtUsuario
             // 
