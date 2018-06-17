@@ -18,6 +18,11 @@ namespace UIX
             frm.AutoScaleMode = AutoScaleMode.None;
             frm.Text = hdr.Title;
             frm.BackColor = style.FormColor.LightColor;
+            frm.MinimizeBox = hdr.btnMin.Visible;
+            frm.FormClosed += (object sender, FormClosedEventArgs args) =>
+            {
+                hdr.formClosed();
+            };
 
             hdr.AutoScaleMode = AutoScaleMode.None;
 

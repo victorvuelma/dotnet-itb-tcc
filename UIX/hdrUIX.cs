@@ -63,5 +63,10 @@ namespace UIX
             }
         }
 
+        internal void formClosed()
+        {
+            btnClo.PerformClick();
+        }
+
     }
 }
