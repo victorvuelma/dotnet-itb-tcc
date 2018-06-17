@@ -132,9 +132,18 @@ namespace BURGUER_SHACK_DESKTOP
                     Opcoes = objMesas,
                     Titulo = "Selecione a Mesa"
                 };
+                clnUtilVisualizar<clnReserva, clnMesa> objVisualizar = new clnUtilVisualizar<clnReserva, clnMesa>
+                {
+                    Obj = ObjReserva,
+                    CallbackClick = new CallbackRemover(),
+                    ObjListar = objListar
+                };
 
-
-
+                frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
+                {
+                    ObjVisualizar = objVisualizar
+                };
+                frmVisualizar.ShowDialog();
             }
             else if (clnUtilMensagem.mostrarSimNao("Mesas", "Esta reserva não possui nenhuma mesa, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
             {
@@ -163,26 +172,18 @@ namespace BURGUER_SHACK_DESKTOP
                         Titulo = "Adicionar uma Mesa",
                         Icone = Properties.Resources.mesa
                     };
-                    clnUtilSelecionar<clnMesa> objSelecionar = new clnUtilSelecionar<clnMesa>
+                    clnUtilVisualizar<frmReserva, clnMesa> objVisualizar = new clnUtilVisualizar<frmReserva, clnMesa>
                     {
                         ObjListar = objListar,
-                        Quantidade = 0
+                        CallbackClick = new CallbackAdicionar(),
+                        Obj = this
                     };
 
-                    frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+                    frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
                     {
-                        ObjSelecionar = objSelecionar
+                        ObjVisualizar = objVisualizar
                     };
-                    frmSelecionar.ShowDialog();
-
-                    if (objSelecionar.Selecionado != null)
-                    {
-                        ObjReserva.addMesa(objSelecionar.Selecionado.Cod);
-                        if (clnUtilMensagem.mostrarSimNao("Mesas", "Mesa " + objSelecionar.Selecionado.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", clnUtilMensagem.MensagemIcone.INFO))
-                        {
-                            adicionarMesa();
-                        }
-                    }
+                    frmVisualizar.ShowDialog();
                 }
                 else
                 {
@@ -309,12 +310,12 @@ namespace BURGUER_SHACK_DESKTOP
                         objAtendimento.adicionarMesa(codMesa);
                     }
 
-                    clnUtilMensagem.mostrarOk("Atendimento", "O atendimento foi iniciado para a(s) mesa(s) " + String.Join(",", ObjReserva.CodMesas.ToArray()), clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Reserva", "O atendimento foi iniciado para a(s) mesa(s) " + String.Join(",", ObjReserva.CodMesas.ToArray()), clnUtilMensagem.MensagemIcone.OK);
                     Close();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Atendimento", "Não foi possível iniciar o atendimento, a(s) mesa(s) " + String.Join(",", objMesasIndisponiveis.ToArray()) + " estão ocupadas.", clnUtilMensagem.MensagemIcone.ERRO);
+                    clnUtilMensagem.mostrarOk("Reserva", "Não foi possível iniciar o atendimento, a(s) mesa(s) " + String.Join(",", objMesasIndisponiveis.ToArray()) + " estão ocupadas.", clnUtilMensagem.MensagemIcone.ERRO);
                 }
             }
         }
@@ -468,6 +469,19 @@ namespace BURGUER_SHACK_DESKTOP
                     return true;
                 }
                 return false;
+            }
+        }
+
+        private class CallbackAdicionar : clnUtilCallback<frmReserva, clnMesa>
+        {
+            public bool call(frmReserva frmReserva, clnMesa objMesa)
+            {
+                frmReserva.ObjReserva.addMesa(objMesa.Cod);
+                if (clnUtilMensagem.mostrarSimNao("Mesas", "Mesa " + objMesa.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", clnUtilMensagem.MensagemIcone.INFO))
+                {
+                    frmReserva.adicionarMesa();
+                }
+                return true;
             }
         }
 

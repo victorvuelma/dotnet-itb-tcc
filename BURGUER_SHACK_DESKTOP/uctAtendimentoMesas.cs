@@ -51,11 +51,17 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void removerMesa(int codMesa)
         {
-            if (clnUtilMensagem.mostrarSimNao("Atendimento", "Deseja remover a mesa " + codMesa + " do atendimento?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (ObjAtendimento.CodMesas.Count > 1)
             {
-                ObjAtendimento.removerMesa(codMesa);
+                if (clnUtilMensagem.mostrarSimNao("Atendimento", "Deseja remover a mesa " + codMesa + " do atendimento?", clnUtilMensagem.MensagemIcone.ERRO))
+                {
+                    ObjAtendimento.removerMesa(codMesa);
 
-                exibirMesas();
+                    exibirMesas();
+                }
+            } else
+            {
+                clnUtilMensagem.mostrarOk("Atendimento", "Não é possível remover a única mesa do Atendimento atual.", clnUtilMensagem.MensagemIcone.ERRO);
             }
         }
 
