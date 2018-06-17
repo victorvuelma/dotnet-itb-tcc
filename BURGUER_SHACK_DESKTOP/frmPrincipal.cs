@@ -87,7 +87,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnCardapio_Click(object sender, EventArgs e)
         {
-            new frmCliente { }.Show();
+            new frmGerenciamento { }.Show();
         }
     }
 }

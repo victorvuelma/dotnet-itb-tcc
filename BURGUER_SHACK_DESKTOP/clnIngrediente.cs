@@ -96,6 +96,22 @@ namespace BURGUER_SHACK_DESKTOP
             return objIngredientes;
         }
 
+
+        internal List<clnIngrediente> obterPorNome()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("ingrediente");
+            objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
+
+            List<clnIngrediente> objIngredientes = new List<clnIngrediente>();
+            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            while (reader.Read())
+                objIngredientes.Add(obter(reader));
+            reader.Close();
+
+            return objIngredientes;
+        }
+
         public void gravar()
         {
             sqlCommandInsert objInsert = new sqlCommandInsert();

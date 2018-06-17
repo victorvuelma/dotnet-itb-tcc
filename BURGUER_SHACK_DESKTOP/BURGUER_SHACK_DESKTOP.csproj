@@ -227,11 +227,11 @@
     <Compile Include="frmCozinha.Designer.cs">
       <DependentUpon>frmCozinha.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGerenciador.cs">
+    <Compile Include="frmGerenciamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGerenciador.Designer.cs">
-      <DependentUpon>frmGerenciador.cs</DependentUpon>
+    <Compile Include="frmGerenciamento.Designer.cs">
+      <DependentUpon>frmGerenciamento.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAtendimento.cs">
       <SubType>Form</SubType>
@@ -279,6 +279,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="uctGerenciamentoListar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctGerenciamentoListar.Designer.cs">
+      <DependentUpon>uctGerenciamentoListar.cs</DependentUpon>
     </Compile>
     <Compile Include="uctAtendimentoMesas.cs">
       <SubType>UserControl</SubType>
@@ -391,8 +397,8 @@
     <EmbeddedResource Include="frmCozinha.resx">
       <DependentUpon>frmCozinha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGerenciador.resx">
-      <DependentUpon>frmGerenciador.cs</DependentUpon>
+    <EmbeddedResource Include="frmGerenciamento.resx">
+      <DependentUpon>frmGerenciamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAcesso.resx">
       <DependentUpon>frmAcesso.cs</DependentUpon>
@@ -428,6 +434,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctGerenciamentoListar.resx">
+      <DependentUpon>uctGerenciamentoListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctAtendimentoMesas.resx">
       <DependentUpon>uctAtendimentoMesas.cs</DependentUpon>
