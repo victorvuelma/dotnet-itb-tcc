@@ -72,6 +72,7 @@
             this.btnSair.Size = new System.Drawing.Size(90, 90);
             this.btnSair.TabIndex = 5;
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // pnlConteudo
             // 
@@ -106,7 +107,6 @@
             this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmGerenciamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -64,6 +64,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             opcoesControles.Clear();
 
+            lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
             pnlOpcoes.BackColor = grbOpcoes.BackColor;
         }
 
@@ -94,7 +95,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             _opcoes.Clear();
 
-            String pesquisa = txtPesquisa.Text.ToLower();
+            String pesquisa = txtPesquisar.Text.ToLower();
             foreach (object opcao in ObjSelecionar.ObjListar.getOpcoes())
             {
                 if (clnUtil.vazio(pesquisa) || ObjSelecionar.ObjListar.getNome(opcao).ToLower().Contains(pesquisa))

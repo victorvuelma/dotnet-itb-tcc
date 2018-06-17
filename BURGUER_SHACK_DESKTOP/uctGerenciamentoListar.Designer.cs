@@ -30,14 +30,14 @@
         {
             this.grbItens = new System.Windows.Forms.GroupBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.btnNovo = new UIX.btnUIX();
-            this.grbBusca = new System.Windows.Forms.GroupBox();
+            this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
             this.txtPesquisar = new UIX.txtUIX();
-            this.btnBuscar = new UIX.btnUIX();
+            this.btnPesquisar = new UIX.btnUIX();
+            this.btnNovo = new UIX.btnUIX();
             this.grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
-            this.grbBusca.SuspendLayout();
+            this.grbPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbItens
@@ -60,31 +60,17 @@
             this.dgvItens.Size = new System.Drawing.Size(680, 360);
             this.dgvItens.TabIndex = 0;
             // 
-            // btnNovo
+            // grbPesquisa
             // 
-            this.btnNovo.Description = "Novo";
-            this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovo.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnNovo.ImageLocation = null;
-            this.btnNovo.Location = new System.Drawing.Point(595, 5);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(100, 100);
-            this.btnNovo.TabIndex = 1;
-            this.btnNovo.Text = "btnUIX1";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // grbBusca
-            // 
-            this.grbBusca.Controls.Add(this.lblPesquisaRes);
-            this.grbBusca.Controls.Add(this.txtPesquisar);
-            this.grbBusca.Controls.Add(this.btnBuscar);
-            this.grbBusca.Location = new System.Drawing.Point(5, 5);
-            this.grbBusca.Name = "grbBusca";
-            this.grbBusca.Size = new System.Drawing.Size(580, 105);
-            this.grbBusca.TabIndex = 1;
-            this.grbBusca.TabStop = false;
-            this.grbBusca.Text = "Busca";
+            this.grbPesquisa.Controls.Add(this.lblPesquisaRes);
+            this.grbPesquisa.Controls.Add(this.txtPesquisar);
+            this.grbPesquisa.Controls.Add(this.btnPesquisar);
+            this.grbPesquisa.Location = new System.Drawing.Point(5, 5);
+            this.grbPesquisa.Name = "grbPesquisa";
+            this.grbPesquisa.Size = new System.Drawing.Size(580, 105);
+            this.grbPesquisa.TabIndex = 1;
+            this.grbPesquisa.TabStop = false;
+            this.grbPesquisa.Text = "Pesquisa";
             // 
             // lblPesquisaRes
             // 
@@ -105,35 +91,49 @@
             this.txtPesquisar.Size = new System.Drawing.Size(480, 20);
             this.txtPesquisar.TabIndex = 3;
             // 
-            // btnBuscar
+            // btnPesquisar
             // 
-            this.btnBuscar.Description = "Pesquisar";
-            this.btnBuscar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnBuscar.ImageLocation = null;
-            this.btnBuscar.Location = new System.Drawing.Point(490, 15);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(80, 80);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "btnUIX1";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnPesquisar.Description = "Pesquisar";
+            this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pesquisar;
+            this.btnPesquisar.ImageLocation = null;
+            this.btnPesquisar.Location = new System.Drawing.Point(490, 15);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(80, 80);
+            this.btnPesquisar.TabIndex = 2;
+            this.btnPesquisar.Text = "btnUIX1";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // uctGerenciadorListar
+            // btnNovo
+            // 
+            this.btnNovo.Description = "Novo";
+            this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
+            this.btnNovo.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNovo.ImageLocation = null;
+            this.btnNovo.Location = new System.Drawing.Point(595, 5);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(100, 100);
+            this.btnNovo.TabIndex = 1;
+            this.btnNovo.Text = "btnUIX1";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // uctGerenciamentoListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grbBusca);
+            this.Controls.Add(this.grbPesquisa);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.grbItens);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "uctGerenciadorListar";
+            this.Name = "uctGerenciamentoListar";
             this.Size = new System.Drawing.Size(700, 500);
             this.Load += new System.EventHandler(this.uctGerenciamentoListar_Load);
             this.grbItens.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
-            this.grbBusca.ResumeLayout(false);
+            this.grbPesquisa.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -143,8 +143,8 @@
         private System.Windows.Forms.GroupBox grbItens;
         private UIX.btnUIX btnNovo;
         private System.Windows.Forms.DataGridView dgvItens;
-        private System.Windows.Forms.GroupBox grbBusca;
-        private UIX.btnUIX btnBuscar;
+        private System.Windows.Forms.GroupBox grbPesquisa;
+        private UIX.btnUIX btnPesquisar;
         private UIX.txtUIX txtPesquisar;
         private System.Windows.Forms.Label lblPesquisaRes;
     }

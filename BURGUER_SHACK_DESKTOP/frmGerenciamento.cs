@@ -39,11 +39,17 @@ namespace BURGUER_SHACK_DESKTOP
             abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
         }
 
+        private void sair()
+        {
+
+        }
+
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
+            UIX.uixButton.btnApply(btnSair, App.AppVisualStyle.ButtonWarningColor);
             hdrUIX.Title = App.AppName + " - Gerenciamento";
 
             abrirIngredientes();
@@ -56,7 +62,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
+            sair();
+        }
 
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            sair();
         }
 
         private class CallbackIngredienteNovo : clnUtilCallback
