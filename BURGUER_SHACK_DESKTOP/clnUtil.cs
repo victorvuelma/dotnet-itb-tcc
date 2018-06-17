@@ -99,8 +99,6 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     frmNumBoard.Show();
                 }
-
-
             };
         }
         // ---- NUMBOARD

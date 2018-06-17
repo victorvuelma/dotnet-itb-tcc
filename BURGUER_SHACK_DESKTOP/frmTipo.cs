@@ -39,6 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void atualizarDataGrid()
         {
             dgvTipos.Rows.Clear();
+            dgvTipos.ClearSelection();
 
             foreach (clnTipo objTipo in ObjTipos)
             {
@@ -49,24 +50,37 @@ namespace BURGUER_SHACK_DESKTOP
         private void definirNovo()
         {
             ObjTipo = null;
-            btnAcao.Text = "Novo Tipo";
-            txtNome.Hide();
+            btnAcao.Description = "Salvar";
+            btnAcao.Image = Properties.Resources.salvar;
             txtNome.Text = "";
+            grbEditar.Show();
+            btnAcao.Show();
         }
 
         private void definirEditar(clnTipo objTipo)
         {
             ObjTipo = objTipo;
             txtNome.Text = ObjTipo.Nome;
-            txtNome.Show();
-            btnAcao.Text = "Alterar";
+            grbEditar.Show();
+            btnAcao.Show();
+            btnAcao.Description = "Salvar";
+            btnAcao.Image = Properties.Resources.salvar;
         }
 
-        private void definirCriar()
+        private void definirAlterar()
         {
             ObjTipo = null;
-            txtNome.Show();
-            btnAcao.Text = "Criar";
+            grbEditar.Hide();
+            btnAcao.Show();
+            btnAcao.Description = "Alterar";
+            btnAcao.Image = Properties.Resources.alterar;
+        }
+
+        private void definirPadrao()
+        {
+            ObjTipo = null;
+            btnAcao.Hide();
+            grbEditar.Hide();
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)
@@ -74,7 +88,6 @@ namespace BURGUER_SHACK_DESKTOP
             App.AppVisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            definirNovo();
             exibirTipos();
 
             hdrUIX.Title = App.AppName + " - Tipos de  " + Tipo.ToString().ToLower();
@@ -84,18 +97,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (e.RowIndex >= 0)
             {
-                object cod = dgvTipos.CurrentRow.Cells[0].Value;
-
-                clnTipo objTipo = new clnTipo
-                {
-                    Tipo = Tipo,
-                    Cod = Convert.ToInt32(cod)
-                }.obterPorCodigo();
-
-                if (objTipo != null)
-                {
-                    definirEditar(objTipo);
-                }
+                definirAlterar();
             }
         }
 
@@ -110,14 +112,14 @@ namespace BURGUER_SHACK_DESKTOP
 
                     clnUtilMensagem.mostrarOk("Tipo", "Tipo alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                     exibirTipos();
-                    definirNovo();
+                    definirPadrao();
                 }
                 else
                 {
                     clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.", clnUtilMensagem.MensagemIcone.ERRO);
                 }
             }
-            else if (txtNome.Visible)
+            else if (grbEditar.Visible)
             {
                 if (!clnUtil.vazio(txtNome.Text))
                 {
@@ -129,16 +131,27 @@ namespace BURGUER_SHACK_DESKTOP
                     objTipo.gravar();
                     clnUtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                     exibirTipos();
-                    definirNovo();
+                    definirPadrao();
                 }
                 else
                 {
                     clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.", clnUtilMensagem.MensagemIcone.ERRO);
                 }
             }
-            else
+            else if(dgvTipos.SelectedRows.Count > 0)
             {
-                definirCriar();
+                object cod = dgvTipos.CurrentRow.Cells[0].Value;
+
+                clnTipo objTipo = new clnTipo
+                {
+                    Tipo = Tipo,
+                    Cod = Convert.ToInt32(cod)
+                }.obterPorCodigo();
+
+                if (objTipo != null)
+                {
+                    definirEditar(objTipo);
+                }
             }
         }
 
@@ -166,6 +179,11 @@ namespace BURGUER_SHACK_DESKTOP
                     Close();
                 }
             }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            definirNovo();
         }
     }
 }

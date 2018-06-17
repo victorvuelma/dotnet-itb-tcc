@@ -35,8 +35,9 @@
             this.columnCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbEditar = new System.Windows.Forms.GroupBox();
-            this.btnAcao = new System.Windows.Forms.Button();
             this.txtNome = new UIX.txtUIX();
+            this.btnNovo = new UIX.btnUIX();
+            this.btnAcao = new UIX.btnUIX();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.grbEditar.SuspendLayout();
@@ -64,7 +65,7 @@
             this.grbDadosPessoais.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbDadosPessoais.Name = "grbDadosPessoais";
             this.grbDadosPessoais.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDadosPessoais.Size = new System.Drawing.Size(390, 280);
+            this.grbDadosPessoais.Size = new System.Drawing.Size(390, 245);
             this.grbDadosPessoais.TabIndex = 7;
             this.grbDadosPessoais.TabStop = false;
             this.grbDadosPessoais.Text = "TIPOS";
@@ -80,7 +81,7 @@
             this.dgvTipos.Location = new System.Drawing.Point(5, 20);
             this.dgvTipos.Name = "dgvTipos";
             this.dgvTipos.ReadOnly = true;
-            this.dgvTipos.Size = new System.Drawing.Size(380, 250);
+            this.dgvTipos.Size = new System.Drawing.Size(380, 215);
             this.dgvTipos.TabIndex = 0;
             this.dgvTipos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellClick);
             this.dgvTipos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipos_CellDoubleClick);
@@ -99,26 +100,16 @@
             // 
             // grbEditar
             // 
-            this.grbEditar.Controls.Add(this.btnAcao);
             this.grbEditar.Controls.Add(this.txtNome);
             this.grbEditar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEditar.Location = new System.Drawing.Point(5, 340);
+            this.grbEditar.Location = new System.Drawing.Point(100, 305);
             this.grbEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbEditar.Name = "grbEditar";
             this.grbEditar.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbEditar.Size = new System.Drawing.Size(390, 50);
+            this.grbEditar.Size = new System.Drawing.Size(200, 50);
             this.grbEditar.TabIndex = 8;
             this.grbEditar.TabStop = false;
-            // 
-            // btnAcao
-            // 
-            this.btnAcao.Location = new System.Drawing.Point(275, 20);
-            this.btnAcao.Name = "btnAcao";
-            this.btnAcao.Size = new System.Drawing.Size(110, 25);
-            this.btnAcao.TabIndex = 1;
-            this.btnAcao.Text = "...";
-            this.btnAcao.UseVisualStyleBackColor = true;
-            this.btnAcao.Click += new System.EventHandler(this.btnAcao_Click);
+            this.grbEditar.Visible = false;
             // 
             // txtNome
             // 
@@ -127,15 +118,47 @@
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
+            this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(260, 20);
+            this.txtNome.Size = new System.Drawing.Size(190, 20);
             this.txtNome.TabIndex = 0;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Description = "Novo";
+            this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
+            this.btnNovo.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNovo.ImageLocation = null;
+            this.btnNovo.Location = new System.Drawing.Point(5, 305);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(90, 90);
+            this.btnNovo.TabIndex = 9;
+            this.btnNovo.Text = "btnUIX1";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnAcao
+            // 
+            this.btnAcao.Description = "Alterar";
+            this.btnAcao.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAcao.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnAcao.ImageLocation = null;
+            this.btnAcao.Location = new System.Drawing.Point(305, 305);
+            this.btnAcao.Name = "btnAcao";
+            this.btnAcao.Size = new System.Drawing.Size(90, 90);
+            this.btnAcao.TabIndex = 10;
+            this.btnAcao.Text = "btnUIX1";
+            this.btnAcao.UseVisualStyleBackColor = true;
+            this.btnAcao.Visible = false;
+            this.btnAcao.Click += new System.EventHandler(this.btnAcao_Click);
             // 
             // frmTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 400);
+            this.Controls.Add(this.btnAcao);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.grbEditar);
             this.Controls.Add(this.grbDadosPessoais);
             this.Controls.Add(this.hdrUIX);
@@ -160,9 +183,10 @@
         public System.Windows.Forms.GroupBox grbEditar;
         private System.Windows.Forms.DataGridView dgvTipos;
         private UIX.txtUIX txtNome;
-        private System.Windows.Forms.Button btnAcao;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCod;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDesc;
+        private UIX.btnUIX btnNovo;
+        private UIX.btnUIX btnAcao;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }
