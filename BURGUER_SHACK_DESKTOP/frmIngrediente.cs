@@ -163,6 +163,8 @@ namespace BURGUER_SHACK_DESKTOP
             UIX.uixButton.btnApply(btnExcluir, App.AppVisualStyle.ButtonWarningColor);
             clnUtil.atualizarTabIndex(Controls);
 
+            clnUtil.definirNumBoard(txtValor);
+
             if (ObjIngrediente != null)
             {
                 hdrUIX.Title = App.AppName + " - Alterando Ingrediente " + ObjIngrediente.Cod;

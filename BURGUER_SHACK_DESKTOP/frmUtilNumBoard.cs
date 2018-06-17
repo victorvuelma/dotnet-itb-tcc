@@ -26,7 +26,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void focar()
         {
+            string text = mtbNum.Text;
             mtbNum.Focus();
+            mtbNum.Text = text;
         }
 
         private void adicionar(char numero)
@@ -43,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 Input.Text = num;
             }
-            Numero = clnUtil.retirarFormatacao(mtbNum.Text);
+            Numero = clnUtil.obterConteudo(Input);
         }
 
         private void atualizarInput()
@@ -194,7 +196,10 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmUtilNumBoard_VisibleChanged(object sender, EventArgs e)
         {
             if (Visible)
+            {
                 atualizarInput();
+                focar();
+            }
         }
     }
 }

@@ -70,37 +70,47 @@ namespace BURGUER_SHACK_DESKTOP
         {
             input.MouseClick += (object sender, MouseEventArgs args) =>
             {
-                if (frmNumBoard == null)
-                {
-                    frmNumBoard = new frmUtilNumBoard
-                    {
-                        Input = input
-                    };
-                }
-                else if (frmNumBoard.Input != input)
-                {
-                    frmNumBoard.Input = input;
-                }
-
-                if (mode == frmUtilNumBoard.NumBoardMode.INT)
-                {
-                    frmNumBoard.btnPoint.Hide();
-                }
-                else
-                {
-                    frmNumBoard.btnPoint.Show();
-                }
-
-                if (frmNumBoard.Input.Equals(input) && frmNumBoard.Visible)
-                {
-                    frmNumBoard.Hide();
-                }
-                else
-                {
-                    frmNumBoard.Show();
-                }
+                abrirNumBoard(input, mode);
+            };
+            input.Enter += (object sender, EventArgs args) =>
+            {
+                abrirNumBoard(input, mode);
             };
         }
+
+        public static void abrirNumBoard(TextBoxBase input, frmUtilNumBoard.NumBoardMode mode)
+        {
+            if (frmNumBoard == null)
+            {
+                frmNumBoard = new frmUtilNumBoard
+                {
+                    Input = input
+                };
+            }
+            else if (frmNumBoard.Input != input)
+            {
+                frmNumBoard.Input = input;
+            }
+
+            if (mode == frmUtilNumBoard.NumBoardMode.INT)
+            {
+                frmNumBoard.btnPoint.Hide();
+            }
+            else
+            {
+                frmNumBoard.btnPoint.Show();
+            }
+
+            if (frmNumBoard.Input.Equals(input) && frmNumBoard.Visible)
+            {
+                frmNumBoard.Hide();
+            }
+            else
+            {
+                frmNumBoard.Show();
+            }
+        }
+
         // ---- NUMBOARD
 
         // ---- ENDERECO
@@ -286,9 +296,11 @@ namespace BURGUER_SHACK_DESKTOP
             if (control is MaskedTextBox mtb)
             {
                 MaskFormat oldFormat = mtb.TextMaskFormat;
+                String oldText = mtb.Text;
                 mtb.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 conteudo = mtb.Text;
                 mtb.TextMaskFormat = oldFormat;
+                mtb.Text = oldText;
             }
             return conteudo;
         }
