@@ -558,6 +558,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\entrar.png" />
     <None Include="Resources\cliente.png" />
     <None Include="Resources\salvar.png" />
     <None Include="Resources\reserva.png" />

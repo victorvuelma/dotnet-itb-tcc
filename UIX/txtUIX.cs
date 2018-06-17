@@ -100,23 +100,5 @@ namespace UIX
             }
         }
 
-        public static int confirmar = 0;
-
-        public static void txt_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                confirmar = 1;
-            }
-        }
-
-        private void txtUIX_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                confirmar = 1;
-            }
-        }
-
     }
 }

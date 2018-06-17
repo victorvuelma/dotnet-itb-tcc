@@ -90,15 +90,6 @@ namespace BURGUER_SHACK_DESKTOP
             txtUsuario.Focus();
         }
 
-        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (txtUIX.confirmar)
-            {
-                case 1:
-                    btnEntrar.PerformClick();
-                    break;
-            }
-        }
     }
 
 }

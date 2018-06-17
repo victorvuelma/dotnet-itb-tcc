@@ -59,7 +59,6 @@
             this.Name = "txtUIX";
             this.Size = new System.Drawing.Size(150, 20);
             this.Load += new System.EventHandler(this.txtUIX_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUIX_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
