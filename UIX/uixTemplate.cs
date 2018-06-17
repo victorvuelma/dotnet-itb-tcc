@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,14 +12,11 @@ namespace UIX
     public class uixTemplate
     {
 
+        private Icon _icon;
         private uixStyle _style;
 
-        public uixStyle Style { get => _style; }
-
-        public uixTemplate(uixStyle style)
-        {
-            this._style = style;
-        }
+        public Icon Icon { get => _icon; set => _icon = value; }
+        public uixStyle Style { get => _style; set => _style = value; }
 
         public void ctlApply(Control[] ctls)
         {
@@ -131,7 +129,7 @@ namespace UIX
         public void frmApply(Form frm, hdrUIX hdr)
         {
 
-            uixForm.frmApply(frm, hdr, Style);
+            uixForm.frmApply(frm, hdr, Icon, Style);
 
             foreach (Control control in frm.Controls)
             {

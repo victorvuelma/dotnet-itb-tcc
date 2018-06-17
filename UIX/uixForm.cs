@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,14 @@ namespace UIX
     public class uixForm
     {
 
-        public static void frmApply(Form frm, hdrUIX hdr, uixStyle style)
+        public static void frmApply(Form frm, hdrUIX hdr, Icon icon, uixStyle style)
         {
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.AutoScaleMode = AutoScaleMode.None;
             frm.Text = hdr.Title;
             frm.BackColor = style.FormColor.LightColor;
             frm.MinimizeBox = hdr.btnMin.Visible;
+            frm.Icon = icon;
 
             hdr.AutoScaleMode = AutoScaleMode.None;
 

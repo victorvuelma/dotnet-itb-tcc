@@ -23,7 +23,10 @@ namespace BURGUER_SHACK_DESKTOP
         private static String _appName = "Burguer Shack";
 
         private static UIX.uixStyle _appVisualStyle = UIX.uixStyle.BLUE;
-        private static UIX.uixTemplate _appVisualTemplate = new UIX.uixTemplate(AppVisualStyle);
+        private static UIX.uixTemplate _appVisualTemplate = new UIX.uixTemplate {
+            Style = AppVisualStyle,
+            Icon = Properties.Resources.burguershack_ico
+        };
 
         public static sqlDatabase AppDatabase { get => _appDatabase;}
         public static String AppName { get => _appName; }

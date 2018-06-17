@@ -26,6 +26,7 @@ namespace UIX
 
             msg.hdrUIX.Title = titulo;
             msg.Text = titulo;
+            msg.Icon = template.Icon;
 
             msg.lbl.Text = mensagem;
 
