@@ -170,8 +170,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static Endereco obterEndereco(String cep)
         {
+            Cursor.Current = Cursors.WaitCursor;
             // PEGAR DO BANCO, SE NÃO..
-            return obterEnderecoViaCep(cep);
+            Endereco end =  obterEnderecoViaCep(cep);
+            Cursor.Current = Cursors.Default;
+            return end;
         }
 
         public static Endereco obterEnderecoViaCep(String cep)
