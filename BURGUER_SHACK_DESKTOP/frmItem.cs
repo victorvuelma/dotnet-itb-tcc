@@ -48,7 +48,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtilVisualizar<clnUtilVisualizar, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<clnUtilVisualizar, clnItemIngrediente>
             {
                 ObjListar = objListar,
-                CallbackClick = new callbackVisualizar()
+                CallbackClick = new CallbackAlterar()
             };
 
             frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
@@ -166,32 +166,32 @@ namespace BURGUER_SHACK_DESKTOP
             abrirAdicionarIngrediente();
         }
 
-        private class callbackVisualizar : clnUtilCallback<clnUtilVisualizar, clnItemIngrediente>
+        private class CallbackAlterar : clnUtilCallback<clnUtilVisualizar, clnItemIngrediente>
         {
-            public bool call(clnUtilVisualizar objVisualizar, clnItemIngrediente obj)
+            public bool call(clnUtilVisualizar objVisualizar, clnItemIngrediente objIngrediente)
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
-                    Cod = obj.CodProdutoIngrediente
+                    Cod = objIngrediente.CodProdutoIngrediente
                 }.obterPorCod();
 
                 if (objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
                 {
                     frmItemIngrediente frmIngrediente = new frmItemIngrediente
                     {
-                        IngredienteAntigo = obj
+                        ObjItemIngrediente = objIngrediente
                     };
                     frmIngrediente.btnAlterar.Visible = objProdutoIngrediente.Alterar;
                     frmIngrediente.btnRemover.Visible = objProdutoIngrediente.Remover;
                     frmIngrediente.ShowDialog();
 
-                    if (frmIngrediente.IngredienteNovo == null)
+                    if (frmIngrediente.ObjItemIngrediente == null)
                     {
-                        objVisualizar.ObjListar.getOpcoes().Remove(frmIngrediente.IngredienteAntigo);
+                        objVisualizar.ObjListar.getOpcoes().Remove(objProdutoIngrediente);
                     }
-                    else if (frmIngrediente.IngredienteAntigo != frmIngrediente.IngredienteNovo)
+                    else if (objIngrediente != frmIngrediente.ObjItemIngrediente)
                     {
-                        clnUtil.listTrocar(objVisualizar.ObjListar.getOpcoes(), frmIngrediente.IngredienteAntigo, frmIngrediente.IngredienteNovo);
+                        clnUtil.listTrocar(objVisualizar.ObjListar.getOpcoes(), objIngrediente, frmIngrediente.ObjItemIngrediente);
                     }
                 }
                 else

@@ -70,7 +70,7 @@ namespace BURGUER_SHACK_DESKTOP
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("produto");
             objSelect.Where.where("id_tipo", CodTipo)
-                           .where("situacao", Situacao);
+                           .where("situacao", prefixo(Situacao));
 
             SqlDataReader reader = objSelect.execute(App.AppDatabase);
             List<clnProduto> objProdutos = new List<clnProduto>();

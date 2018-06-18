@@ -16,11 +16,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private clnUtilValidar _validar;
 
-        private clnItemIngrediente _ingredienteAntigo;
-        private clnItemIngrediente _ingredienteNovo;
+        private clnItemIngrediente _objItemIngrediente;
 
-        public clnItemIngrediente IngredienteAntigo { get => _ingredienteAntigo; set => _ingredienteAntigo = value; }
-        public clnItemIngrediente IngredienteNovo { get => _ingredienteNovo; set => _ingredienteNovo = value; }
+        public clnItemIngrediente ObjItemIngrediente { get => _objItemIngrediente; set => _objItemIngrediente = value; }
 
         public frmItemIngrediente()
         {
@@ -36,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnIngrediente objIngredienteAntigo = new clnIngrediente
             {
-                Cod = IngredienteAntigo.CodIngrediente
+                Cod = ObjItemIngrediente.CodIngrediente
             }.obterPorCodigo();
 
             List<clnIngrediente> objIngredientes = new clnIngrediente
@@ -48,28 +46,28 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (objIngredientes.Count > 0)
             {
-                List<clnItemIngrediente> objPedidoIngredientes = new List<clnItemIngrediente>();
+                List<clnItemIngrediente> objItemIngredientes = new List<clnItemIngrediente>();
                 foreach (clnIngrediente objIngrediente in objIngredientes)
                 {
-                    clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
+                    clnItemIngrediente objItemIngrediente = new clnItemIngrediente
                     {
-                        Quantidade = IngredienteAntigo.Quantidade,
-                        CodProdutoIngrediente = IngredienteAntigo.CodProdutoIngrediente,
+                        Quantidade = ObjItemIngrediente.Quantidade,
+                        CodProdutoIngrediente = ObjItemIngrediente.CodProdutoIngrediente,
                         CodIngrediente = objIngrediente.Cod
                     };
-                    objPedidoIngredientes.Add(objPedidoIngrediente);
+                    objItemIngredientes.Add(objItemIngrediente);
                 }
 
                 clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
                 {
-                    Opcoes = objPedidoIngredientes,
+                    Opcoes = objItemIngredientes,
                     Icone = Properties.Resources.ingrediente,
                     Titulo = "Selecione o Ingrediente"
                 };
                 clnUtilSelecionar<clnItemIngrediente> objSelecionar = new clnUtilSelecionar<clnItemIngrediente>
                 {
-                    Selecionado = IngredienteNovo,
-                    Quantidade = ((IngredienteNovo == null) ? IngredienteAntigo.Quantidade : IngredienteNovo.Quantidade),
+                    Selecionado = ObjItemIngrediente,
+                    Quantidade = ObjItemIngrediente.Quantidade,
                     ObjListar = objListar
                 };
 
@@ -82,11 +80,12 @@ namespace BURGUER_SHACK_DESKTOP
                 if (objSelecionar.Selecionado != null)
                 {
                     objSelecionar.Selecionado.Quantidade = objSelecionar.Quantidade;
-                    IngredienteNovo = objSelecionar.Selecionado;
+                    ObjItemIngrediente = objSelecionar.Selecionado;
 
                     exibirIngrediente(objSelecionar.Selecionado);
                 }
-            } else
+            }
+            else
             {
                 clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.", clnUtilMensagem.MensagemIcone.ERRO);
             }
@@ -125,7 +124,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente remover este ingrediente?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                IngredienteNovo = null;
+                ObjItemIngrediente = null;
 
                 Close();
             }
@@ -148,12 +147,7 @@ namespace BURGUER_SHACK_DESKTOP
             lblNome.Hide();
             txtQuantidade.Hide();
 
-            if (IngredienteAntigo != null)
-            {
-                IngredienteNovo = IngredienteAntigo;
-
-                exibirIngrediente(IngredienteAntigo);
-            }
+            exibirIngrediente(ObjItemIngrediente);
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -170,10 +164,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
-                if (IngredienteNovo == null)
-                {
-                    IngredienteNovo = IngredienteAntigo;
-                }
+                ObjItemIngrediente.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
 
                 Close();
             }

@@ -17,12 +17,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private clnUtilValidar _validar;
 
-        private clnItem _pedidoProduto;
-        private List<clnItemIngrediente> _ingredientes;
+        private clnItem _objItem;
+        private List<clnItemIngrediente> _objItemIngredientes;
 
-        public clnItem PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
+        public clnItem ObjItem { get => _objItem; set => _objItem = value; }
         public frmPedido Form { get => _form; set => _form = value; }
-        public List<clnItemIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public List<clnItemIngrediente> ObjItemIngredientes { get => _objItemIngredientes; set => _objItemIngredientes = value; }
 
         public uctPedidoAdicionar()
         {
@@ -34,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void selecionaCategoria(int categoria)
         {
-            PedidoProduto = null;
+            ObjItem = null;
 
             grbDetalhes.Hide();
 
@@ -67,8 +67,8 @@ namespace BURGUER_SHACK_DESKTOP
                 Quantidade = quantidade,
                 Adicional = ""
             };
-            PedidoProduto = objPedido;
-            Ingredientes = objIngredientes;
+            ObjItem = objPedido;
+            ObjItemIngredientes = objIngredientes;
 
             exibirProduto(objProduto, objPedido);
         }
@@ -77,7 +77,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnProduto objProdutos = new clnProduto
             {
-                CodTipo = categoria
+                CodTipo = categoria,
+                Situacao = clnProduto.produtoSituacao.DISPONIVEL
             };
 
             clnProduto.clnListar objListar = new clnProduto.clnListar
@@ -107,7 +108,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnProduto objProdutoAtual = new clnProduto
             {
-                Cod = PedidoProduto.CodProduto
+                Cod = ObjItem.CodProduto
             }.obterPorCodigo();
 
             List<clnProduto> objProdutos = new clnProduto
@@ -174,14 +175,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void adicionarProduto()
         {
-            if (PedidoProduto != null)
+            if (ObjItem != null)
             {
                 if (_validar.valido())
                 {
-                    PedidoProduto.Adicional = txtAdicional.Text;
-                    PedidoProduto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+                    ObjItem.Adicional = txtAdicional.Text;
+                    ObjItem.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                    Form.addProduto(PedidoProduto, Ingredientes);
+                    Form.addProduto(ObjItem, ObjItemIngredientes);
                 }
             }
             else
@@ -194,13 +195,15 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
             {
-                Opcoes = Ingredientes,
+                Opcoes = ObjItemIngredientes,
                 Icone = Properties.Resources.ingrediente,
                 Titulo = "Selecione o Ingrediente"
             };
-            clnUtilVisualizar<clnPedido, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<clnPedido, clnItemIngrediente>
+            clnUtilVisualizar<uctPedidoAdicionar, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<uctPedidoAdicionar, clnItemIngrediente>
             {
-                ObjListar = objListar
+                ObjListar = objListar,
+                CallbackClick = new CallbackAlterar(),
+                Obj = this
             };
 
             frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
@@ -242,7 +245,7 @@ namespace BURGUER_SHACK_DESKTOP
                 };
 
                 clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                Ingredientes.Add(objPedidoIngrediente);
+                ObjItemIngredientes.Add(objPedidoIngrediente);
             }
         }
 
@@ -292,6 +295,42 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
             abrirIngredientes();
+        }
+
+        private class CallbackAlterar : clnUtilCallback<uctPedidoAdicionar, clnItemIngrediente>
+        {
+            public bool call(uctPedidoAdicionar uctAdicionar, clnItemIngrediente objIngrediente)
+            {
+                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                {
+                    Cod = objIngrediente.CodProdutoIngrediente
+                }.obterPorCod();
+
+                if (objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
+                {
+                    frmItemIngrediente frmIngrediente = new frmItemIngrediente
+                    {
+                        ObjItemIngrediente = objIngrediente
+                    };
+                    frmIngrediente.btnAlterar.Visible = objProdutoIngrediente.Alterar;
+                    frmIngrediente.btnRemover.Visible = objProdutoIngrediente.Remover;
+                    frmIngrediente.ShowDialog();
+
+                    if (frmIngrediente.ObjItemIngrediente == null)
+                    {
+                        uctAdicionar.ObjItemIngredientes.Remove(objIngrediente);
+                    }
+                    else if (objIngrediente != frmIngrediente.ObjItemIngrediente)
+                    {
+                        clnUtil.listTrocar(uctAdicionar.ObjItemIngredientes, objIngrediente, frmIngrediente.ObjItemIngrediente);
+                    }
+                }
+                else
+                {
+                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
+                }
+                return false;
+            }
         }
 
     }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItemIngrediente));
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
             this.txtQuantidade = new UIX.txtUIX();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -103,6 +102,7 @@
             this.btnConfirmar.TabIndex = 9;
             this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnRemover
             // 
@@ -112,6 +112,7 @@
             this.btnRemover.TabIndex = 8;
             this.btnRemover.Text = "&Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // hdrUIX
             // 
@@ -125,6 +126,7 @@
             this.hdrUIX.Size = new System.Drawing.Size(450, 50);
             this.hdrUIX.TabIndex = 6;
             this.hdrUIX.Title = "Pedido Ingrediente";
+            this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // frmItemIngrediente
             // 

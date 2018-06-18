@@ -207,7 +207,7 @@ namespace BURGUER_SHACK_DESKTOP
                     clnTipo objTipo = new clnTipo
                     {
                         Cod = objProduto.CodTipo,
-                        Tipo = clnTipo.tipo.INGREDIENTE
+                        Tipo = clnTipo.tipo.PRODUTO
                     }.obterPorCodigo();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
                     dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, objProduto.Valor });
