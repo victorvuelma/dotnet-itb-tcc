@@ -38,7 +38,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static String FORMAT_CEL = @"(00) 00000-0000";
 
-        private static String REGEX_CEL = @"^\([1-9]{2}\) [9]{0,1}[6-9]{1}[0-9]{3}\-[0-9]{4}$";
+        private static String REGEX_CEL = @"^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$";
 
         private static CPFValidator _cpfValidator = new CPFValidator();
         private static CNPJValidator _cnpjValidator = new CNPJValidator();
