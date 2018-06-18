@@ -402,7 +402,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo)
         {
-            alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, " - Gerenciamento :: " + titulo, false);
+            alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo, false);
         }
 
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo, bool ignorarTipo)

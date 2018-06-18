@@ -27,6 +27,7 @@ namespace UIX
             uixLabel.lblApply(hdr.lbl, style.FormColor, style.HeaderFont);
             hdr.lbl.Font = uixFont.fontSize(hdr.lbl.Font, 12.5f);
             hdr.lbl.BackColor = style.FormColor.DarkColor;
+            hdr.lbl.Location = new Point((style.HeaderButtonSpace * 2) + style.HeaderButtonSize,0);
 
             hdr.pic.Location = new Point(style.HeaderButtonSpace, style.HeaderButtonSpace);
             hdr.pic.Size = new Size(style.HeaderButtonSize, style.HeaderButtonSize);
