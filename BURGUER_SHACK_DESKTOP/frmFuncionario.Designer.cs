@@ -54,9 +54,9 @@
             this.btnImgRemover = new UIX.btnUIX();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbContrato = new System.Windows.Forms.GroupBox();
+            this.cboCargo = new UIX.cboUIX();
             this.cboSituacao = new UIX.cboUIX();
             this.txtSalario = new UIX.txtUIX();
-            this.cboCargo = new UIX.cboUIX();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -133,7 +133,7 @@
             // txtRG
             // 
             this.txtRG.AccessibleName = "CPF*";
-            this.txtRG.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtRG.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtRG.Campo = "RG*";
             this.txtRG.Location = new System.Drawing.Point(180, 50);
             this.txtRG.MaxLength = 32767;
@@ -397,6 +397,16 @@
             this.grbContrato.TabStop = false;
             this.grbContrato.Text = "CONTRATO";
             // 
+            // cboCargo
+            // 
+            this.cboCargo.Campo = "Cargo*";
+            this.cboCargo.FormattingEnabled = true;
+            this.cboCargo.Location = new System.Drawing.Point(5, 45);
+            this.cboCargo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cboCargo.Name = "cboCargo";
+            this.cboCargo.Size = new System.Drawing.Size(380, 25);
+            this.cboCargo.TabIndex = 2;
+            // 
             // cboSituacao
             // 
             this.cboSituacao.Campo = "Situação";
@@ -409,7 +419,7 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtSalario.AllowedChars = UIX.uixAllowedChars.DOUBLE;
             this.txtSalario.Campo = "Salário*";
             this.txtSalario.Location = new System.Drawing.Point(5, 15);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -418,16 +428,6 @@
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(180, 20);
             this.txtSalario.TabIndex = 0;
-            // 
-            // cboCargo
-            // 
-            this.cboCargo.Campo = "Cargo*";
-            this.cboCargo.FormattingEnabled = true;
-            this.cboCargo.Location = new System.Drawing.Point(5, 45);
-            this.cboCargo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cboCargo.Name = "cboCargo";
-            this.cboCargo.Size = new System.Drawing.Size(380, 25);
-            this.cboCargo.TabIndex = 2;
             // 
             // frmFuncionario
             // 

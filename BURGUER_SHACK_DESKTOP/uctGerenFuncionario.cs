@@ -20,7 +20,6 @@ namespace BURGUER_SHACK_DESKTOP
             // Masks
             //
             this.mtbDadosCPF.Mask = clnUtil.MASK_CPF;
-            this.mtbDadosRG.Mask = clnUtil.MASK_RG;
             this.mtbEndCEP.Mask = clnUtil.MASK_CEP;
             this.mtbDadosDtNasc.Mask = clnUtil.MASK_DATA;
             this.mtbContatoTelCel.Mask = clnUtil.MASK_CEL;

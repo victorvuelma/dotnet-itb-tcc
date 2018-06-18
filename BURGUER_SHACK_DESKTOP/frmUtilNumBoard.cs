@@ -31,9 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void focar()
         {
-            string text = Input.Text;
             mtbNum.Focus();
-            Input.Text = text;
         }
 
         private void adicionar(char numero)
@@ -55,15 +53,16 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void atualizarInput()
         {
-            definir(Input.Text);
-
-            if(Input is MaskedTextBox mtb)
+            if (Input != null && Input is MaskedTextBox mtb)
             {
                 mtbNum.Mask = mtb.Mask;
-            } else
+            }
+            else
             {
                 mtbNum.Mask = "";
             }
+
+            definir(Input.Text);
         }
 
         private void fechar()
@@ -181,7 +180,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void mtbNum_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar) && (!btnPoint.Visible || e.KeyChar != ','))
             {
                 e.Handled = true;
             }

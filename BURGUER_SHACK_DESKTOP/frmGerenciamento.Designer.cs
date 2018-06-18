@@ -58,7 +58,7 @@
             this.btnFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFornecedores.Description = "Fornecedores";
             this.btnFornecedores.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFornecedores.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.funcionario;
+            this.btnFornecedores.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.fornecedor;
             this.btnFornecedores.ImageLocation = null;
             this.btnFornecedores.Location = new System.Drawing.Point(105, 105);
             this.btnFornecedores.Name = "btnFornecedores";

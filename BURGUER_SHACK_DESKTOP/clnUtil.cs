@@ -36,7 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
         private static frmUtilNumBoard frmNumBoard;
 
         private static String FORMAT_CEL = @"(00) 00000-0000";
-        
+
         private static String REGEX_CEL = @"^\([1-9]{2}\) (9[1-9])[0-9]{3}\-[0-9]{4}$";
         private static String REGEX_TEL = @"^\([1-9]{2}\) ([2-8])[0-9]{3}\-[0-9]{4}$";
 
@@ -70,7 +70,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             input.MouseClick += (object sender, MouseEventArgs args) =>
             {
-                    abrirNumBoard(input, mode);
+                abrirNumBoard(input, mode);
             };
             input.Enter += (object sender, EventArgs args) =>
             {
@@ -120,14 +120,19 @@ namespace BURGUER_SHACK_DESKTOP
             cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
         }
 
-        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox ctlUF, Control ctlNr)
+        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
         {
-            addUFs(ctlUF);
-            mtbCEP.Validated += (object sender, EventArgs e) =>
+            ctlLogradouro.Enabled = false;
+            ctlBairro.Enabled = false;
+            ctlCidade.Enabled = false;
+            cboUF.Enabled = false;
+
+            addUFs(cboUF);
+            mtbCEP.mtb.TextChanged += (object sender, EventArgs e) =>
             {
                 if (clnUtil.validarCEP(mtbCEP.Text))
                 {
-                    clnUtil.definirEndereco(mtbCEP.Text, ctlLogradouro, ctlBairro, ctlCidade, ctlUF, ctlNr);
+                    clnUtil.definirEndereco(mtbCEP.Text, ctlLogradouro, ctlBairro, ctlCidade, cboUF, ctlNr);
                 }
             };
         }
@@ -139,6 +144,11 @@ namespace BURGUER_SHACK_DESKTOP
                 Endereco end = obterEndereco(cep);
                 if (end != null)
                 {
+                    ctlLogradouro.Enabled = false;
+                    ctlBairro.Enabled = false;
+                    ctlCidade.Enabled = false;
+                    cboUF.Enabled = false;
+
                     ctlLogradouro.Text = end.Logradouro;
                     ctlBairro.Text = end.Bairro;
                     ctlCidade.Text = end.Localidade;
@@ -147,6 +157,11 @@ namespace BURGUER_SHACK_DESKTOP
                 }
                 else
                 {
+                    ctlLogradouro.Enabled = true;
+                    ctlBairro.Enabled = true;
+                    ctlCidade.Enabled = true;
+                    cboUF.Enabled = true;
+
                     clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnUtilMensagem.MensagemIcone.INFO);
                     ctlLogradouro.Focus();
                 }

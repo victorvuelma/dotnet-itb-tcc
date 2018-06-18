@@ -543,6 +543,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="garcom-ico.ico" />
+    <None Include="Resources\fornecedor.png" />
+    <None Include="Resources\terceirizada1.png" />
     <None Include="Resources\burguershack-ico.ico" />
     <None Include="Resources\pesquisar.png" />
     <None Include="Resources\entrar.png" />
