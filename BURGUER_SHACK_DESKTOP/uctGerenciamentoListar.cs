@@ -13,14 +13,17 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctGerenciamentoListar : UserControl
     {
 
+        private int _codFuncionario;
+
         private String[] colunas;
         private clnUtilCallback<DataGridView, String> _callbackObter;
-        private clnUtilCallback _callbackNovo;
+        private clnUtilCallback<int> _callbackNovo;
         private clnUtilCallback<DataGridViewRow> _callbackAlterar;
 
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public string[] Colunas { get => colunas; set => colunas = value; }
         internal clnUtilCallback<DataGridView, string> CallbackObter { get => _callbackObter; set => _callbackObter = value; }
-        internal clnUtilCallback CallbackNovo { get => _callbackNovo; set => _callbackNovo = value; }
+        internal clnUtilCallback<int> CallbackNovo { get => _callbackNovo; set => _callbackNovo = value; }
         internal clnUtilCallback<DataGridViewRow> CallbackAlterar { get => _callbackAlterar; set => _callbackAlterar = value; }
 
         public uctGerenciamentoListar()
@@ -39,7 +42,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            if (CallbackNovo.call())
+            if (CallbackNovo.call(CodFuncionario))
             {
                 pesquisar();
             }

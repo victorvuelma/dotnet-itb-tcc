@@ -34,11 +34,13 @@
             this.btnSair = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
+            this.btnClientes = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.Controls.Add(this.btnProdutos);
             this.pnlMenu.Controls.Add(this.btnIngredientes);
             this.pnlMenu.Controls.Add(this.btnSair);
@@ -112,6 +114,20 @@
             this.hdrUIX.Title = "Gerenciamento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
+            // btnClientes
+            // 
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClientes.Description = "Clientes";
+            this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
+            this.btnClientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.cliente;
+            this.btnClientes.ImageLocation = null;
+            this.btnClientes.Location = new System.Drawing.Point(5, 210);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(90, 90);
+            this.btnClientes.TabIndex = 8;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
             // frmGerenciamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -140,5 +156,6 @@
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.hdrUIX hdrUIX;
         private UIX.btnUIX btnProdutos;
+        private UIX.btnUIX btnClientes;
     }
 }

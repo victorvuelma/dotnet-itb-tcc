@@ -13,6 +13,11 @@ namespace BURGUER_SHACK_DESKTOP
 {
     public partial class frmGerenciamento : Form
     {
+
+        private int _codFuncionario;
+
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+
         public frmGerenciamento()
         {
             InitializeComponent();
@@ -23,14 +28,15 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Gerenciamento :: " + titulo, ignorarTipo);
         }
 
-        private void abrirLista(String tipo, clnUtilCallback callbackNovo, clnUtilCallback<DataGridView, String> callbackObter, clnUtilCallback<DataGridViewRow> callbackAlterar, String[] colunas)
+        private void abrirLista(String tipo, clnUtilCallback<int> callbackNovo, clnUtilCallback<DataGridView, String> callbackObter, clnUtilCallback<DataGridViewRow> callbackAlterar, String[] colunas)
         {
             uctGerenciamentoListar objListar = new uctGerenciamentoListar
             {
                 CallbackNovo = callbackNovo,
                 Colunas = colunas,
                 CallbackObter = callbackObter,
-                CallbackAlterar = callbackAlterar
+                CallbackAlterar = callbackAlterar,
+                CodFuncionario = CodFuncionario
             };
             alterarConteudo(objListar, tipo, true);
         }
@@ -43,6 +49,11 @@ namespace BURGUER_SHACK_DESKTOP
         private void abrirProdutos()
         {
             abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Valor" });
+        }
+
+        private void abrirClientes()
+        {
+            abrirLista("Clientes", new CallbackClienteNovo(), new CallbackClienteObter(), new CallbackClienteAlterar(), new String[] { "Código", "Nome", "CPF", "Celular", "Data Nasc.", "Genero", "Email" });
         }
 
         private void sair()
@@ -75,14 +86,19 @@ namespace BURGUER_SHACK_DESKTOP
             abrirIngredientes();
         }
 
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            abrirClientes();
+        }
+
         private void btnProdutos_Click(object sender, EventArgs e)
         {
             abrirProdutos();
         }
 
-        private class CallbackIngredienteNovo : clnUtilCallback
+        private class CallbackIngredienteNovo : clnUtilCallback<int>
         {
-            public bool call()
+            public bool call(int x)
             {
                 frmIngrediente frmNovoIngrediente = new frmIngrediente { };
                 frmNovoIngrediente.ShowDialog();
@@ -129,7 +145,6 @@ namespace BURGUER_SHACK_DESKTOP
                     }.obterPorCodigo();
 
                     int estoque = 0;
-
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
                     dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, objIngrediente.Valor });
                 }
@@ -137,9 +152,9 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private class CallbackProdutoNovo : clnUtilCallback
+        private class CallbackProdutoNovo : clnUtilCallback<int>
         {
-            public bool call()
+            public bool call(int x)
             {
                 frmProduto frmNovoProduto = new frmProduto { };
                 frmNovoProduto.ShowDialog();
@@ -184,9 +199,61 @@ namespace BURGUER_SHACK_DESKTOP
                         Cod = objProduto.CodTipo,
                         Tipo = clnTipo.tipo.INGREDIENTE
                     }.obterPorCodigo();
-
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
                     dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, objProduto.Valor });
+                }
+                return false;
+            }
+        }
+
+        private class CallbackClienteNovo : clnUtilCallback<int>
+        {
+            public bool call(int codFuncionario)
+            {
+                frmCliente frmNovoCliente = new frmCliente
+                {
+                    CodFuncionario = codFuncionario
+                };
+                frmNovoCliente.ShowDialog();
+                return frmNovoCliente.ObjCliente != null;
+            }
+        }
+
+        private class CallbackClienteAlterar : clnUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnCliente objCliente = new clnCliente
+                {
+                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objCliente != null)
+                {
+                    frmCliente frmAlterarCliente = new frmCliente
+                    {
+                        ObjCliente = objCliente
+                    };
+                    frmAlterarCliente.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackClienteObter : clnUtilCallback<DataGridView, String>
+        {
+            public bool call(DataGridView dgv, string pesquisa)
+            {
+                clnCliente objClientes = new clnCliente
+                {
+                    Nome = pesquisa,
+                    Cpf = pesquisa
+                };
+                foreach (clnCliente objCliente in objClientes.obterPorNomeOuCPF())
+                {
+                    //"Código", "Nome", "CPF", "Celular", "Data Nasc", "Genero", "Email"
+                    dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, clnUtil.formatarCPF(objCliente.Cpf), clnUtil.formatarCelular(objCliente.TelCelular), clnUtil.formatarData(objCliente.DataNascimento), objCliente.Genero, objCliente.Email });
                 }
                 return false;
             }

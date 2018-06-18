@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    internal interface clnUtilCallback<X, Y>
+    internal interface clnUtilCallback
     {
 
-        bool call(X x, Y y);
+        bool call();
 
     }
-
+    
     internal interface clnUtilCallback<X>
     {
 
@@ -20,10 +20,11 @@ namespace BURGUER_SHACK_DESKTOP
 
     }
 
-    internal interface clnUtilCallback
+    internal interface clnUtilCallback<X, Y>
     {
 
-        bool call();
+        bool call(X x, Y y);
 
     }
+
 }

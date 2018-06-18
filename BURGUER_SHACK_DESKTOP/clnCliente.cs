@@ -77,6 +77,22 @@ namespace BURGUER_SHACK_DESKTOP
             return objCliente;
         }
 
+        internal List<clnCliente> obterPorNomeOuCPF()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("cliente");
+            objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlObjWhere.whereAssociation.OR)
+                           .where("cpf", sqlObjWhereCommon.whereOperation.LIKE, Cpf + "%");
+                    
+
+            List<clnCliente> objClientes = new List<clnCliente>();
+            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            while (reader.Read())
+                objClientes.Add(obter(reader));
+            reader.Close();
+            return objClientes;
+        }
+
         public void gravar()
         {
             sqlCommandInsert objInsert = new sqlCommandInsert();
@@ -104,5 +120,6 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("email", Email);
             objUpdate.update(App.AppDatabase);
         }
+
     }
 }
