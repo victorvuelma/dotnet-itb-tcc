@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("MESA");
 
             List<clnMesa> objMesas = new List<clnMesa>();
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             while (reader.Read())
                 objMesas.Add(obter(reader));
             reader.Close();
@@ -53,7 +53,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("MESA").Where.where("id", Cod);
 
             clnMesa objMesa = null;
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             if (reader.Read())
                 objMesa = obter(reader);
             reader.Close();
@@ -65,11 +65,11 @@ namespace BURGUER_SHACK_DESKTOP
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("ATENDIMENTO");
-            objSelect.Select.select("ATENDIMENTO.ID");
+            objSelect.Columns.select("ATENDIMENTO.ID");
             objSelect.Where.where("ATENDIMENTO.SITUACAO", 'A').where("ATENDIMENTO_MESA.ID_MESA", Cod);
             objSelect.Join.innerJoin("ATENDIMENTO_MESA", "ID_ATENDIMENTO", "ATENDIMENTO.ID");
 
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             int? codAtendimento = null;
             if (reader.Read())
                 codAtendimento = clnUtilConvert.ToInt(reader["id"]);
@@ -84,7 +84,7 @@ namespace BURGUER_SHACK_DESKTOP
             objUpdate.table("MESA");
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("situacao", prefixo(Situacao));
-            objUpdate.update(App.AppDatabase);
+            objUpdate.execute(App.AppDatabase);
         }
 
         private char prefixo(mesaSituacao situacao)
@@ -119,7 +119,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("MESA").Where.where("situacao", prefixo(Situacao));
 
             List<clnMesa> objMesas = new List<clnMesa>();
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             while (reader.Read())
             {
                 objMesas.Add(obter(reader));

@@ -46,7 +46,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("produto_ingrediente");
             objSelect.Where.where("id", Cod);
 
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             clnProdutoIngrediente objProdutoIngrediente = null;
             if (reader.Read())
                 objProdutoIngrediente = obter(reader);
@@ -61,7 +61,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("produto_ingrediente");
             objSelect.Where.where("id_produto", CodProduto);
 
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             List<clnProdutoIngrediente> objProdutoIngredientes = new List<clnProdutoIngrediente>();
             while (reader.Read())
                 objProdutoIngredientes.Add(obter(reader));
@@ -80,7 +80,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("alterar", clnUtilConvert.ToBit(Alterar))
                             .val("remover", clnUtilConvert.ToBit(Remover));
 
-            Cod = objInsert.insertWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.AppDatabase);
         }
 
         internal void alterar()
@@ -92,7 +92,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("remover", clnUtilConvert.ToBit(Remover));
             objUpdate.Where.where("id", Cod);
 
-            objUpdate.update(App.AppDatabase);
+            objUpdate.execute(App.AppDatabase);
         }
 
         internal void remover()
@@ -101,7 +101,7 @@ namespace BURGUER_SHACK_DESKTOP
             objDelete.table("produto_ingrediente");
             objDelete.Where.where("id", Cod);
 
-            objDelete.delete(App.AppDatabase);
+            objDelete.execute(App.AppDatabase);
         }
 
         public class clnListar : clnUtilListar<clnProdutoIngrediente>

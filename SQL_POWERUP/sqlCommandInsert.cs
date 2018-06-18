@@ -58,9 +58,9 @@ namespace SQL_POWERUP
             }
         }
 
-        public int insertWithOutput(sqlDatabase db) => insert(db, true);
+        public int executeWithOutput(sqlDatabase db) => insert(db, true);
 
-        public int insert(sqlDatabase db) => insert(db, false);
+        public int execute(sqlDatabase db) => insert(db, false);
 
     }
 }

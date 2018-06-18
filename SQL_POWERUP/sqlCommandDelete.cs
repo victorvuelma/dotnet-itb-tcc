@@ -39,7 +39,7 @@ namespace SQL_POWERUP
             return commandBuilder.ToString();
         }
 
-        public int delete(sqlDatabase db)
+        public int execute(sqlDatabase db)
         {
             SqlCommand cmd = db.getCommand(generateCommand());
             if(_where != null)

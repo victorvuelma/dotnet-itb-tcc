@@ -51,7 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objSelect.table("arquivo");
                 objSelect.Where.where("id", Cod);
 
-                SqlDataReader reader = objSelect.select(App.AppDatabase);
+                SqlDataReader reader = objSelect.execute(App.AppDatabase);
 
                 if (reader.Read())
                 {
@@ -71,7 +71,7 @@ namespace BURGUER_SHACK_DESKTOP
             objInsert.table("arquivo");
             objInsert.Insert.val("conteudo", conteudo);
 
-            Cod = objInsert.insertWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.AppDatabase);
 
             CACHE.guardar(Convert.ToString(Cod), conteudo);
         }

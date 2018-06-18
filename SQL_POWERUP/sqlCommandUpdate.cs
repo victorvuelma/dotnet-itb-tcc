@@ -40,6 +40,17 @@ namespace SQL_POWERUP
             }
         }
 
+        public int execute(sqlDatabase db)
+        {
+            SqlCommand cmd = db.getCommand(generateCommand());
+            if (_set != null)
+                _set.prepare(cmd);
+            if (_where != null)
+                _where.prepare(cmd);
+
+            return db.execute(cmd);
+        }
+
         protected override String generateCommand()
         {
             StringBuilder commandBuilder = new StringBuilder();
@@ -51,18 +62,6 @@ namespace SQL_POWERUP
 
             return commandBuilder.ToString();
         }
-
-        public int update(sqlDatabase db)
-        {
-            SqlCommand cmd = db.getCommand(generateCommand());
-            if (_set != null)
-                _set.prepare(cmd);
-            if (_where != null)
-                _where.prepare(cmd);
-
-            return db.execute(cmd);
-        }
-
 
     }
 }

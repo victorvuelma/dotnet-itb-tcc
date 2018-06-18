@@ -24,11 +24,11 @@ namespace BURGUER_SHACK_DESKTOP
         public int? acessar()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
-            objSelect.table("acesso").Select.select("id_funcionario");
+            objSelect.table("acesso").Columns.select("id_funcionario");
             objSelect.Where.where("usuario", Usuario).where("senha", Senha);
 
             int? codFuncionario = null;
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             if (reader.Read())
                 codFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]);
             reader.Close();

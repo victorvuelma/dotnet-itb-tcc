@@ -31,7 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("id", Cod);
 
             clnCargo objCargo = null;
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             if (reader.Read())
                 objCargo = obter(reader);
             reader.Close();
@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("cargo");
 
             List<clnCargo> objCargos = new List<clnCargo>();
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             while (reader.Read())
                 objCargos.Add(obter(reader));
             reader.Close();

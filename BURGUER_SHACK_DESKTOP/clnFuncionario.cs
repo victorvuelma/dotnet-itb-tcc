@@ -104,7 +104,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("funcionario");
             objSelect.Where.where("id", Cod);
 
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             clnFuncionario objFuncionario = null;
             if (reader.Read())
                 objFuncionario = obter(reader);
@@ -119,7 +119,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("funcionario");
             objSelect.Where.where("cpf", Cpf);
 
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             clnFuncionario objFuncionario = null;
             if (reader.Read())
                 objFuncionario = obter(reader);
@@ -135,7 +135,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%")
                            .where("cpf", sqlObjWhereCommon.whereOperation.LIKE, "%" + Cpf + "%");
 
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             List<clnFuncionario> objFuncionario = new List<clnFuncionario>();
             while (reader.Read())
                 objFuncionario.Add(obter(reader));
@@ -170,7 +170,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("end_localidade", EndLocalidade)
                             .val("end_uf", EndUF);
 
-            Cod = objInsert.insertWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.AppDatabase);
         }
 
         public void alterar()
@@ -199,7 +199,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("end_localidade", EndLocalidade)
                             .val("end_uf", EndUF);
 
-            objUpdate.update(App.AppDatabase);
+            objUpdate.execute(App.AppDatabase);
         }
 
         private char prefixo(funcionarioSituacao situacao)

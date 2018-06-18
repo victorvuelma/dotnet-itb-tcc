@@ -57,11 +57,11 @@ namespace BURGUER_SHACK_DESKTOP
         private void obterMesas()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
-            objSelect.table("atendimento_mesa").Select.select("id_mesa");
+            objSelect.table("atendimento_mesa").Columns.select("id_mesa");
             objSelect.Where.where("id_atendimento", Cod);
 
             CodMesas = new List<int>();
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             while (reader.Read())
                 CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
             reader.Close();
@@ -74,7 +74,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("id", Cod);
 
             clnAtendimento objAtendimento = null;
-            SqlDataReader reader = objSelect.select(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
             if (reader.Read())
                 objAtendimento = obter(reader);
             reader.Close();
@@ -89,7 +89,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("inicio", Inicio).val("fim", Fim).val("situacao", prefixo(Situacao));
             objInsert.table("atendimento");
 
-            Cod = objInsert.insertWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.AppDatabase);
             this.obterMesas();
         }
 
@@ -102,7 +102,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objInsert.table("atendimento_mesa");
                 objInsert.Insert.val("id_atendimento", Cod)
                                 .val("id_mesa", codMesa);
-                objInsert.insert(App.AppDatabase);
+                objInsert.execute(App.AppDatabase);
 
                 clnMesa objMesa = new clnMesa
                 {
@@ -122,7 +122,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objDelete.table("atendimento_mesa");
                 objDelete.Where.where("id_atendimento", Cod)
                                 .where("id_mesa", codMesa);
-                objDelete.delete(App.AppDatabase);
+                objDelete.execute(App.AppDatabase);
 
                 clnMesa objMesa = new clnMesa
                 {

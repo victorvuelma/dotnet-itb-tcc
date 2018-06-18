@@ -14,7 +14,7 @@ namespace SQL_POWERUP
 
         private String _group;
 
-        private sqlHelperSelect _select = new sqlHelperSelect();
+        private sqlHelperSelect _columns = new sqlHelperSelect();
         private sqlHelperWhere _where = new sqlHelperWhere();
         private sqlHelperJoin _join = new sqlHelperJoin();
 
@@ -30,13 +30,13 @@ namespace SQL_POWERUP
             }
         }
 
-        public sqlHelperSelect Select
+        public sqlHelperSelect Columns
         {
             get
             {
-                if (_select == null)
-                    return _select = new sqlHelperSelect();
-                return _select;
+                if (_columns == null)
+                    return _columns = new sqlHelperSelect();
+                return _columns;
             }
         }
 
@@ -59,9 +59,9 @@ namespace SQL_POWERUP
         public sqlCommandSelect groupBy(String tableColumn)
         {
             tableColumn = tableColumn.ToUpper();
-            if (!Select.isIncluded(tableColumn))
+            if (!Columns.isIncluded(tableColumn))
             {
-                Select.select(tableColumn);
+                Columns.select(tableColumn);
             }
             Group = tableColumn;
             return this;
@@ -79,8 +79,8 @@ namespace SQL_POWERUP
         {
             StringBuilder commandBuilder = new StringBuilder();
             commandBuilder.Append("SELECT ");
-            if (_select != null)
-                _select.generate(commandBuilder);
+            if (_columns != null)
+                _columns.generate(commandBuilder);
             commandBuilder.Append(" FROM ").Append(Table);
             if (_join != null)
                 _join.generate(commandBuilder);
@@ -106,9 +106,9 @@ namespace SQL_POWERUP
             }
         }
 
-        public DataTable selectTable(sqlDatabase db) => (DataTable) execute(db, true);
+        public DataTable executeTable(sqlDatabase db) => (DataTable) execute(db, true);
 
-        public SqlDataReader select(sqlDatabase db) => (SqlDataReader) execute(db, false);
+        public SqlDataReader execute(sqlDatabase db) => (SqlDataReader) execute(db, false);
 
     }
 }
