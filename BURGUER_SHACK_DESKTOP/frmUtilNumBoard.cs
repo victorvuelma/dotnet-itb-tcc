@@ -17,7 +17,12 @@ namespace BURGUER_SHACK_DESKTOP
         private String _num;
 
         public String Numero { get => _num; set => _num = value; }
-        public TextBoxBase Input { get => _input; set => _input = value; }
+        public TextBoxBase Input { get => _input; 
+                set {
+                _input = value;
+                atualizarInput();
+            }
+        }
 
         public frmUtilNumBoard()
         {
@@ -26,14 +31,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void focar()
         {
-            string text = mtbNum.Text;
+            string text = Input.Text;
             mtbNum.Focus();
-            mtbNum.Text = text;
+            Input.Text = text;
         }
 
         private void adicionar(char numero)
         {
-            definir(Numero + numero);
+            definir(clnUtil.obterConteudo(mtbNum) + numero);
 
             focar();
         }
@@ -45,7 +50,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 Input.Text = num;
             }
-            Numero = clnUtil.obterConteudo(Input);
+            Numero = mtbNum.Text;
         }
 
         private void atualizarInput()
@@ -131,9 +136,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnCorrigir_Click(object sender, EventArgs e)
         {
-            if (Numero.Length > 1)
+            if (clnUtil.obterConteudo(mtbNum).Length > 1)
             {
-                definir(Numero.Substring(0, Numero.Length - 1));
+                definir(clnUtil.obterConteudo(mtbNum).Substring(0, clnUtil.obterConteudo(mtbNum).Length - 1));
             }
             else
             {
@@ -182,24 +187,23 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void mtbNum_TextChanged(object sender, EventArgs e)
-        {
-            definir(mtbNum.Text);
-        }
-
         public enum NumBoardMode
         {
             INT,
             DOUBLE
         }
 
-        private void frmUtilNumBoard_VisibleChanged(object sender, EventArgs e)
+        public new void Show()
         {
-            if (Visible)
-            {
-                atualizarInput();
-                focar();
-            }
+            base.Show();
+            atualizarInput();
+            Focus();
+            focar();
+        }
+
+        private void mtbNum_KeyUp(object sender, KeyEventArgs e)
+        {
+            definir(mtbNum.Text);
         }
     }
 }

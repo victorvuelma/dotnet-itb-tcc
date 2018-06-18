@@ -70,11 +70,12 @@ namespace BURGUER_SHACK_DESKTOP
         {
             input.MouseClick += (object sender, MouseEventArgs args) =>
             {
-                abrirNumBoard(input, mode);
+                    abrirNumBoard(input, mode);
             };
             input.Enter += (object sender, EventArgs args) =>
             {
-                abrirNumBoard(input, mode);
+                if (!input.Focused)
+                    abrirNumBoard(input, mode);
             };
         }
 
@@ -209,6 +210,11 @@ namespace BURGUER_SHACK_DESKTOP
             return _cnpjFormatter.Format(cnpj);
         }
 
+        public static String formatarData(DateTime? data)
+        {
+            return ((data != null) ? formatarData((DateTime)data) : "");
+        }
+
         public static String formatarData(DateTime data)
         {
             return data.ToString("dd/MM/yyyy");
@@ -299,8 +305,8 @@ namespace BURGUER_SHACK_DESKTOP
                 String oldText = mtb.Text;
                 mtb.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 conteudo = mtb.Text;
-                mtb.TextMaskFormat = oldFormat;
                 mtb.Text = oldText;
+                mtb.TextMaskFormat = oldFormat;
             }
             return conteudo;
         }
