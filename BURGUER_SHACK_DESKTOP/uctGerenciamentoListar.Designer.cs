@@ -59,6 +59,7 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.Size = new System.Drawing.Size(680, 360);
             this.dgvItens.TabIndex = 0;
+            this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
             // 
             // grbPesquisa
             // 

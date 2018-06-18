@@ -20,28 +20,29 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void alterarConteudo(UserControl uctConteudo, String titulo, bool ignorarTipo)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, " - Gerenciamento :: " + titulo, ignorarTipo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Gerenciamento :: " + titulo, ignorarTipo);
         }
 
-        private void abrirLista(String tipo, clnUtilCallback callbackNovo, clnUtilCallback<DataGridView, String> callbackObter, String[] colunas)
+        private void abrirLista(String tipo, clnUtilCallback callbackNovo, clnUtilCallback<DataGridView, String> callbackObter, clnUtilCallback<DataGridViewRow> callbackAlterar, String[] colunas)
         {
             uctGerenciamentoListar objListar = new uctGerenciamentoListar
             {
                 CallbackNovo = callbackNovo,
                 Colunas = colunas,
-                CallbackObter = callbackObter
+                CallbackObter = callbackObter,
+                CallbackAlterar = callbackAlterar
             };
             alterarConteudo(objListar, tipo, true);
         }
 
         private void abrirIngredientes()
         {
-            abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
+            abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new CallbackIngredienteAlterar(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
         }
 
         private void abrirProdutos()
         {
-            abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new String[] { "Código", "Nome", "Situacao", "Tipo",  "Valor" });
+            abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Valor" });
         }
 
         private void sair()
@@ -89,6 +90,28 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private class CallbackIngredienteAlterar : clnUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnIngrediente objIngrediente = new clnIngrediente
+                {
+                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCodigo();
+
+                if (objIngrediente != null)
+                {
+                    frmIngrediente frmAlterarIngrediente = new frmIngrediente
+                    {
+                        ObjIngrediente = objIngrediente
+                    };
+                    frmAlterarIngrediente.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
         private class CallbackIngredienteObter : clnUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
@@ -124,6 +147,28 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private class CallbackProdutoAlterar : clnUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnProduto objProduto = new clnProduto
+                {
+                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCodigo();
+
+                if (objProduto != null)
+                {
+                    frmProduto frmAlterarProduto = new frmProduto
+                    {
+                        ObjProduto = objProduto
+                    };
+                    frmAlterarProduto.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
         private class CallbackProdutoObter : clnUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
@@ -141,7 +186,7 @@ namespace BURGUER_SHACK_DESKTOP
                     }.obterPorCodigo();
 
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
-                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome,  objProduto.Valor });
+                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, objProduto.Valor });
                 }
                 return false;
             }
