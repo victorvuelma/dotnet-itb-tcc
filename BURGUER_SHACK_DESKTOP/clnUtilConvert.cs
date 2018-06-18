@@ -9,9 +9,14 @@ namespace BURGUER_SHACK_DESKTOP
     class clnUtilConvert
     {
 
+        public static bool isNull(object val)
+        {
+            return val == null || Convert.IsDBNull(val);
+        }
+
         public static int? ToNullableInt(object val)
         {
-            if (val != null && !(val is DBNull))
+            if (!isNull(val))
                 return ToInt(val);
             return null;
         }
@@ -20,7 +25,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static DateTime? ToNullableDateTime(object val)
         {
-            if (val != null && !(val is DBNull))
+            if (!isNull(val))
                 return ToDateTime(val);
             return null;
         }
@@ -33,7 +38,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal static DateTime? ObterNullableData(object val)
         {
-            if (val != null && !(val is DBNull) && clnUtil.validarData(val.ToString()))
+            if (!isNull(val) && clnUtil.validarData(val.ToString()))
                 return ObterData(val);
             return null;
         }
@@ -42,7 +47,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal static char? ToNullableChar(object val)
         {
-            if (val != null && !(val is DBNull))
+            if (!isNull(val))
                 return ToNullableChar(val);
             return null;
         }
