@@ -362,6 +362,7 @@
             this.btnImgAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnImgAdicionar.TabIndex = 26;
             this.btnImgAdicionar.UseVisualStyleBackColor = true;
+            this.btnImgAdicionar.Click += new System.EventHandler(this.btnImgAdicionar_Click);
             // 
             // btnImgRemover
             // 
@@ -374,6 +375,7 @@
             this.btnImgRemover.Size = new System.Drawing.Size(80, 80);
             this.btnImgRemover.TabIndex = 28;
             this.btnImgRemover.UseVisualStyleBackColor = true;
+            this.btnImgRemover.Click += new System.EventHandler(this.btnImgRemover_Click);
             // 
             // picImagem
             // 

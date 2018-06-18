@@ -58,48 +58,90 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
-                //    clnCliente objClienteCPF = new clnCliente
-                //    {
-                //        Cpf = clnUtil.retirarFormatacao(mtbCPF.Text)
-                //    }.obterPorCPF();
+                int codCargo = clnUtilConvert.ToInt(cboCargo.Text.Split('-')[0]);
+                clnArquivo objArquivo = null;
+                if (ObjFuncionario != null)
+                {
+                    clnArquivo objArquivoAtual = new clnArquivo
+                    {
+                        Cod = ObjFuncionario.CodFoto
+                    }.obterPorCodigo();
+                    if (!objArquivoAtual.Local.Equals(picImagem.ImageLocation))
+                    {
+                        objArquivo = new clnArquivo
+                        {
+                            Local = picImagem.ImageLocation
+                        };
+                        objArquivo.gravar();
+                    }
+                    else
+                    {
+                        objArquivo = objArquivoAtual;
+                    }
+                }
+                else
+                {
+                    objArquivo = new clnArquivo
+                    {
+                        Local = picImagem.ImageLocation
+                    };
+                    objArquivo.gravar();
+                }
 
-                //    if (ObjFuncionario == null)
-                //    {
-                //        if (objClienteCPF == null)
-                //        {
-                //            clnCliente objCliente = new clnCliente
-                //            {
-                //                CodFuncionario = CodFuncionario,
-                //                Nome = txtNome.Text,
-                //                Cpf = clnUtil.retirarFormatacao(mtbCPF.Text),
-                //                DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text),
-                //                Email = txtEmail.Text,
-                //                TelCelular = clnUtil.retirarFormatacao(mtbTelCel.Text),
-                //                Genero = cboGenero.Text,
-                //                Cadastro = DateTime.Now
-                //            };
-                //            objCliente.gravar();
-                //            ObjFuncionario = objCliente;
-                //            clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                //            Close();
-                //        }
-                //        else
-                //        {
-                //            clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Não foi possível cadastrar o cliente, o CPF já está cadastrado!", clnUtilMensagem.MensagemIcone.ERRO);
-                //            mtbCPF.Focus();
-                //        }
-                //    }
-                //    else
-                //    {
-                //        ObjFuncionario.Nome = txtNome.Text;
-                //        ObjFuncionario.DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text);
-                //        ObjFuncionario.Email = txtEmail.Text;
-                //        ObjFuncionario.TelCelular = clnUtil.retirarFormatacao(mtbTelCel.Text);
-                //        ObjFuncionario.Genero = cboGenero.Text;
-                //        ObjFuncionario.alterar();
-                //        clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                //        Close();
-                //    }
+                if (ObjFuncionario == null)
+                {
+                    clnFuncionario objFuncionarioCpf = new clnFuncionario
+                    {
+                        Cpf = clnUtil.retirarFormatacao(mtbCPF.Text)
+                    }.obterPorCPF();
+
+                    if (objFuncionarioCpf == null)
+                    {
+                        clnFuncionario objFuncionario = new clnFuncionario
+                        {
+                            CodCargo = codCargo,
+                            CodFoto = objArquivo.Cod,
+                            Nome = txtNome.Text,
+                            Cpf = clnUtil.retirarFormatacao(mtbCPF.Text),
+                            Rg = txtRG.Text,
+                            Genero = cboGenero.Text,
+                            DataNascimento = clnUtilConvert.ObterData(mtbDataNasc.Text),
+                            TelRes = clnUtil.retirarFormatacao(mtbTelRes.Text),
+                            TelCel = clnUtil.retirarFormatacao(mtbTelCel.Text),
+                            Email = txtEmail.Text,
+                            Salario = clnUtilConvert.ToDouble(txtSalario.Text),
+                            DataContratacao = DateTime.Now,
+                            Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text),
+                            EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text),
+                            EndLogradouro = txtEndLogradouro.Text,
+                            EndNumero = txtEndNr.Text,
+                            EndComplemento = txtEndComplemento.Text,
+                            EndBairro = txtEndBairro.Text,
+                            EndLocalidade = txtEndCidade.Text,
+                            EndUF = cboEndUF.Text
+                        };
+                        objFuncionario.gravar();
+                        ObjFuncionario = objFuncionario;
+                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Funcionário cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                        Close();
+                    }
+                    else
+                    {
+                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Não foi possível cadastrar o funcionário, o CPF já está cadastrado!", clnUtilMensagem.MensagemIcone.ERRO);
+                        mtbCPF.Focus();
+                    }
+                }
+                else
+                {
+                    //ObjFuncionario.Nome = txtNome.Text;
+                    //ObjFuncionario.DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text);
+                    //ObjFuncionario.Email = txtEmail.Text;
+                    //ObjFuncionario.TelCelular = clnUtil.retirarFormatacao(mtbTelCel.Text);
+                    //ObjFuncionario.Genero = cboGenero.Text;
+                    //ObjFuncionario.alterar();
+                    //clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    //Close();
+                }
             }
         }
 
@@ -118,6 +160,21 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     Close();
                 }
+            }
+        }
+
+        private void definirImagemPadrao()
+        {
+            picImagem.ImageLocation = clnArquivo.tempImage(global::BURGUER_SHACK_DESKTOP.Properties.Resources.ingrediente);
+        }
+
+        private void adicionarImagem()
+        {
+            OpenFileDialog objDialog = new OpenFileDialog();
+            objDialog.Filter = "png|*.png";
+            if (objDialog.ShowDialog() == DialogResult.OK)
+            {
+                picImagem.ImageLocation = objDialog.FileName;
             }
         }
 
@@ -141,9 +198,18 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr);
 
+            foreach (clnCargo objCargo in new clnCargo().obterCargos())
+            {
+                cboCargo.Items.Add(objCargo.Cod + " - " + objCargo.Nome);
+            }
+
             if (ObjFuncionario == null)
             {
                 hdrUIX.Title = App.AppName + " - Novo Funcionário";
+
+                cboSituacao.Items.AddRange(new object[] { clnFuncionario.funcionarioSituacao.TREINAMENTO, clnFuncionario.funcionarioSituacao.PLENO});
+
+                definirImagemPadrao();
             }
             else
             {
@@ -173,6 +239,13 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     Cod = ObjFuncionario.Cod
                 }.obterPorCod();
+                cboCargo.Text = objCargo.Cod + " - " + objCargo.Nome;
+
+                clnArquivo objFoto = new clnArquivo
+                {
+                    Cod = ObjFuncionario.CodFoto
+                }.obterPorCodigo();
+                picImagem.ImageLocation = objFoto.Local;
             }
         }
 
@@ -189,6 +262,19 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             fechar();
+        }
+
+        private void btnImgAdicionar_Click(object sender, EventArgs e)
+        {
+            adicionarImagem();
+        }
+
+        private void btnImgRemover_Click(object sender, EventArgs e)
+        {
+            if (clnUtilMensagem.mostrarSimNao("Imagem", "Deseja realmente remover a imagem?", clnUtilMensagem.MensagemIcone.INFO))
+            {
+                definirImagemPadrao();
+            }
         }
     }
 }
