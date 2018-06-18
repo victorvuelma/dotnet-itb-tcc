@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUtilSelecionar));
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.lblDesc = new System.Windows.Forms.Label();
             this.txtQuantidade = new UIX.txtUIX();
@@ -177,9 +176,9 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Description = "Pesquisar";
+            this.btnConfirmar.Description = "Confirmar";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pesquisar;
+            this.btnConfirmar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
             this.btnConfirmar.ImageLocation = null;
             this.btnConfirmar.Location = new System.Drawing.Point(560, 410);
             this.btnConfirmar.Name = "btnConfirmar";

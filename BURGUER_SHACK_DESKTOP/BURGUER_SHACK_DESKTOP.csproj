@@ -406,6 +406,9 @@
     <EmbeddedResource Include="frmTipo.resx">
       <DependentUpon>frmTipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUtilSelecionar.resx">
+      <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="msgGerenciador.resx">
       <DependentUpon>msgGerenciador.cs</DependentUpon>
     </EmbeddedResource>
