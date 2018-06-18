@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipo));
             this.hdrUIX = new UIX.hdrUIX();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.dgvTipos = new System.Windows.Forms.DataGridView();
@@ -102,7 +101,7 @@
             // 
             this.grbEditar.Controls.Add(this.txtNome);
             this.grbEditar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEditar.Location = new System.Drawing.Point(100, 305);
+            this.grbEditar.Location = new System.Drawing.Point(100, 300);
             this.grbEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbEditar.Name = "grbEditar";
             this.grbEditar.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);

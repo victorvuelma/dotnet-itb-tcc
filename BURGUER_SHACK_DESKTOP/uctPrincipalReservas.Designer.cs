@@ -43,7 +43,7 @@
             this.grbListar.Controls.Add(this.dtpListar);
             this.grbListar.Location = new System.Drawing.Point(10, 10);
             this.grbListar.Name = "grbListar";
-            this.grbListar.Size = new System.Drawing.Size(770, 630);
+            this.grbListar.Size = new System.Drawing.Size(780, 630);
             this.grbListar.TabIndex = 0;
             this.grbListar.TabStop = false;
             this.grbListar.Text = "RESERVAS";
@@ -51,9 +51,9 @@
             // pnlReservas
             // 
             this.pnlReservas.Location = new System.Drawing.Point(5, 30);
-            this.pnlReservas.MaximumSize = new System.Drawing.Size(760, 10000);
+            this.pnlReservas.MaximumSize = new System.Drawing.Size(770, 10000);
             this.pnlReservas.Name = "pnlReservas";
-            this.pnlReservas.Size = new System.Drawing.Size(760, 590);
+            this.pnlReservas.Size = new System.Drawing.Size(770, 590);
             this.pnlReservas.TabIndex = 1;
             // 
             // dtpListar
@@ -67,10 +67,9 @@
             // pnlMenu
             // 
             this.pnlMenu.Controls.Add(this.btnNova);
-            this.pnlMenu.Location = new System.Drawing.Point(795, 0);
-            this.pnlMenu.MaximumSize = new System.Drawing.Size(485, 10000);
+            this.pnlMenu.Location = new System.Drawing.Point(800, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(105, 650);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 650);
             this.pnlMenu.TabIndex = 2;
             // 
             // btnNova
@@ -78,7 +77,8 @@
             this.btnNova.Description = "Nova Reserva";
             this.btnNova.HoverColor = System.Drawing.Color.Transparent;
             this.btnNova.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnNova.Location = new System.Drawing.Point(5, 10);
+            this.btnNova.ImageLocation = null;
+            this.btnNova.Location = new System.Drawing.Point(5, 5);
             this.btnNova.Name = "btnNova";
             this.btnNova.Size = new System.Drawing.Size(90, 90);
             this.btnNova.TabIndex = 0;

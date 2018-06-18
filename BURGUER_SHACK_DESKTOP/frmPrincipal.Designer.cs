@@ -28,16 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.hdrUIX = new UIX.hdrUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnReservas = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
-            this.btnCardapio = new UIX.btnUIX();
+            this.btnGerenciamento = new UIX.btnUIX();
             this.btnMesas = new UIX.btnUIX();
+            this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Location = new System.Drawing.Point(100, 50);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(900, 650);
+            this.pnlConteudo.TabIndex = 6;
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Controls.Add(this.btnReservas);
+            this.pnlMenu.Controls.Add(this.btnSair);
+            this.pnlMenu.Controls.Add(this.btnGerenciamento);
+            this.pnlMenu.Controls.Add(this.btnMesas);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 50);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(100, 650);
+            this.pnlMenu.TabIndex = 5;
+            // 
+            // btnReservas
+            // 
+            this.btnReservas.Description = "Reservas";
+            this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnReservas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.reserva;
+            this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReservas.ImageLocation = null;
+            this.btnReservas.Location = new System.Drawing.Point(5, 105);
+            this.btnReservas.Name = "btnReservas";
+            this.btnReservas.Size = new System.Drawing.Size(90, 90);
+            this.btnReservas.TabIndex = 7;
+            this.btnReservas.UseVisualStyleBackColor = true;
+            this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Description = "Sair";
+            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.ImageLocation = null;
+            this.btnSair.Location = new System.Drawing.Point(5, 555);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(90, 90);
+            this.btnSair.TabIndex = 6;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnGerenciamento
+            // 
+            this.btnGerenciamento.Description = "Gerenciar";
+            this.btnGerenciamento.HoverColor = System.Drawing.Color.Transparent;
+            this.btnGerenciamento.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.gerenciador;
+            this.btnGerenciamento.ImageLocation = null;
+            this.btnGerenciamento.Location = new System.Drawing.Point(5, 455);
+            this.btnGerenciamento.Name = "btnGerenciamento";
+            this.btnGerenciamento.Size = new System.Drawing.Size(90, 90);
+            this.btnGerenciamento.TabIndex = 2;
+            this.btnGerenciamento.UseVisualStyleBackColor = true;
+            this.btnGerenciamento.Click += new System.EventHandler(this.btnGerenciamento_Click);
+            // 
+            // btnMesas
+            // 
+            this.btnMesas.Description = "Mesas";
+            this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMesas.ImageLocation = null;
+            this.btnMesas.Location = new System.Drawing.Point(5, 5);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Size = new System.Drawing.Size(90, 90);
+            this.btnMesas.TabIndex = 0;
+            this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // hdrUIX
             // 
@@ -52,74 +123,6 @@
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Principal";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
-            // 
-            // pnlConteudo
-            // 
-            this.pnlConteudo.Location = new System.Drawing.Point(100, 50);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(900, 650);
-            this.pnlConteudo.TabIndex = 6;
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.Controls.Add(this.btnReservas);
-            this.pnlMenu.Controls.Add(this.btnSair);
-            this.pnlMenu.Controls.Add(this.btnCardapio);
-            this.pnlMenu.Controls.Add(this.btnMesas);
-            this.pnlMenu.Location = new System.Drawing.Point(0, 50);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 650);
-            this.pnlMenu.TabIndex = 5;
-            // 
-            // btnReservas
-            // 
-            this.btnReservas.Description = "Reservas";
-            this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnReservas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.reserva;
-            this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReservas.Location = new System.Drawing.Point(5, 105);
-            this.btnReservas.Name = "btnReservas";
-            this.btnReservas.Size = new System.Drawing.Size(90, 90);
-            this.btnReservas.TabIndex = 7;
-            this.btnReservas.UseVisualStyleBackColor = true;
-            this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Description = "Sair";
-            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.Location = new System.Drawing.Point(5, 555);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(90, 90);
-            this.btnSair.TabIndex = 6;
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnCardapio
-            // 
-            this.btnCardapio.Description = "Cardápio";
-            this.btnCardapio.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCardapio.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.btnCardapio.Location = new System.Drawing.Point(7, 216);
-            this.btnCardapio.Name = "btnCardapio";
-            this.btnCardapio.Size = new System.Drawing.Size(90, 90);
-            this.btnCardapio.TabIndex = 2;
-            this.btnCardapio.UseVisualStyleBackColor = true;
-            this.btnCardapio.Click += new System.EventHandler(this.btnCardapio_Click);
-            // 
-            // btnMesas
-            // 
-            this.btnMesas.Description = "Mesas";
-            this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMesas.Location = new System.Drawing.Point(5, 5);
-            this.btnMesas.Name = "btnMesas";
-            this.btnMesas.Size = new System.Drawing.Size(90, 90);
-            this.btnMesas.TabIndex = 0;
-            this.btnMesas.UseVisualStyleBackColor = true;
-            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // frmPrincipal
             // 
@@ -147,7 +150,7 @@
         public System.Windows.Forms.Panel pnlConteudo;
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnSair;
-        private UIX.btnUIX btnCardapio;
+        private UIX.btnUIX btnGerenciamento;
         private UIX.btnUIX btnMesas;
         private UIX.btnUIX btnReservas;
     }

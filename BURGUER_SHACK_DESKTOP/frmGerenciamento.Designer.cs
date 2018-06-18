@@ -29,25 +29,70 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnFornecedores = new UIX.btnUIX();
+            this.btnFuncionarios = new UIX.btnUIX();
+            this.btnClientes = new UIX.btnUIX();
             this.btnProdutos = new UIX.btnUIX();
             this.btnIngredientes = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
-            this.btnClientes = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnFornecedores);
+            this.pnlMenu.Controls.Add(this.btnFuncionarios);
             this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.Controls.Add(this.btnProdutos);
             this.pnlMenu.Controls.Add(this.btnIngredientes);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 500);
+            this.pnlMenu.Size = new System.Drawing.Size(200, 500);
             this.pnlMenu.TabIndex = 7;
+            // 
+            // btnFornecedores
+            // 
+            this.btnFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFornecedores.Description = "Fornecedores";
+            this.btnFornecedores.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFornecedores.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.funcionario;
+            this.btnFornecedores.ImageLocation = null;
+            this.btnFornecedores.Location = new System.Drawing.Point(105, 105);
+            this.btnFornecedores.Name = "btnFornecedores";
+            this.btnFornecedores.Size = new System.Drawing.Size(90, 90);
+            this.btnFornecedores.TabIndex = 10;
+            this.btnFornecedores.UseVisualStyleBackColor = true;
+            // 
+            // btnFuncionarios
+            // 
+            this.btnFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFuncionarios.Description = "Funcionários";
+            this.btnFuncionarios.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFuncionarios.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.funcionario;
+            this.btnFuncionarios.ImageLocation = null;
+            this.btnFuncionarios.Location = new System.Drawing.Point(105, 5);
+            this.btnFuncionarios.Name = "btnFuncionarios";
+            this.btnFuncionarios.Size = new System.Drawing.Size(90, 90);
+            this.btnFuncionarios.TabIndex = 9;
+            this.btnFuncionarios.UseVisualStyleBackColor = true;
+            this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClientes.Description = "Clientes";
+            this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
+            this.btnClientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.cliente;
+            this.btnClientes.ImageLocation = null;
+            this.btnClientes.Location = new System.Drawing.Point(5, 205);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(90, 90);
+            this.btnClientes.TabIndex = 8;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnProdutos
             // 
@@ -56,7 +101,7 @@
             this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
             this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
             this.btnProdutos.ImageLocation = null;
-            this.btnProdutos.Location = new System.Drawing.Point(5, 110);
+            this.btnProdutos.Location = new System.Drawing.Point(5, 105);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(90, 90);
             this.btnProdutos.TabIndex = 7;
@@ -70,7 +115,7 @@
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.ingrediente;
             this.btnIngredientes.ImageLocation = null;
-            this.btnIngredientes.Location = new System.Drawing.Point(5, 10);
+            this.btnIngredientes.Location = new System.Drawing.Point(5, 5);
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Size = new System.Drawing.Size(90, 90);
             this.btnIngredientes.TabIndex = 6;
@@ -84,7 +129,7 @@
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
             this.btnSair.ImageLocation = null;
-            this.btnSair.Location = new System.Drawing.Point(5, 400);
+            this.btnSair.Location = new System.Drawing.Point(5, 405);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(90, 90);
             this.btnSair.TabIndex = 5;
@@ -94,7 +139,7 @@
             // pnlConteudo
             // 
             this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlConteudo.Location = new System.Drawing.Point(100, 50);
+            this.pnlConteudo.Location = new System.Drawing.Point(200, 50);
             this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(700, 500);
@@ -109,30 +154,16 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(800, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(900, 50);
             this.hdrUIX.TabIndex = 6;
             this.hdrUIX.Title = "Gerenciamento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClientes.Description = "Clientes";
-            this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
-            this.btnClientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.cliente;
-            this.btnClientes.ImageLocation = null;
-            this.btnClientes.Location = new System.Drawing.Point(5, 210);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(90, 90);
-            this.btnClientes.TabIndex = 8;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // frmGerenciamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 550);
+            this.ClientSize = new System.Drawing.Size(900, 550);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.hdrUIX);
@@ -157,5 +188,7 @@
         private UIX.hdrUIX hdrUIX;
         private UIX.btnUIX btnProdutos;
         private UIX.btnUIX btnClientes;
+        private UIX.btnUIX btnFuncionarios;
+        private UIX.btnUIX btnFornecedores;
     }
 }

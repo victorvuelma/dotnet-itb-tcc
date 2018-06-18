@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new UIX.btnUIX();
@@ -64,7 +63,7 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(500, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(700, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Produto";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
@@ -76,7 +75,7 @@
             this.pnlMenu.Controls.Add(this.btnSalvar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 400);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 300);
             this.pnlMenu.TabIndex = 6;
             // 
             // btnExcluir
@@ -86,7 +85,7 @@
             this.btnExcluir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.ImageLocation = null;
-            this.btnExcluir.Location = new System.Drawing.Point(5, 205);
+            this.btnExcluir.Location = new System.Drawing.Point(5, 105);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(90, 90);
             this.btnExcluir.TabIndex = 7;
@@ -113,7 +112,7 @@
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 305);
+            this.btnSalvar.Location = new System.Drawing.Point(5, 205);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
@@ -240,7 +239,7 @@
             // picImagem
             // 
             this.picImagem.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.padrao;
-            this.picImagem.Location = new System.Drawing.Point(305, 255);
+            this.picImagem.Location = new System.Drawing.Point(505, 55);
             this.picImagem.Name = "picImagem";
             this.picImagem.Size = new System.Drawing.Size(190, 190);
             this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -252,7 +251,7 @@
             this.grbImagem.Controls.Add(this.btnImgAdicionar);
             this.grbImagem.Controls.Add(this.btnImgRemover);
             this.grbImagem.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbImagem.Location = new System.Drawing.Point(105, 345);
+            this.grbImagem.Location = new System.Drawing.Point(505, 245);
             this.grbImagem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbImagem.Name = "grbImagem";
             this.grbImagem.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -306,7 +305,7 @@
             this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 450);
+            this.ClientSize = new System.Drawing.Size(700, 350);
             this.Controls.Add(this.grbIngredientes);
             this.Controls.Add(this.grbImagem);
             this.Controls.Add(this.picImagem);

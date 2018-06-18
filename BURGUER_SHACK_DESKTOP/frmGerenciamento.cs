@@ -259,5 +259,9 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void btnFuncionarios_Click(object sender, EventArgs e)
+        {
+            new frmFuncionario { }.ShowDialog();
+        }
     }
 }

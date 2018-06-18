@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnVoltar = new UIX.btnUIX();
             this.btnSalvar = new UIX.btnUIX();
-            this.grbDetalhes = new System.Windows.Forms.GroupBox();
+            this.grbInformacoes = new System.Windows.Forms.GroupBox();
             this.txtEmail = new UIX.txtUIX();
             this.mtbTelCel = new UIX.mtbUIX();
             this.cboGenero = new UIX.cboUIX();
@@ -41,7 +40,7 @@
             this.txtNome = new UIX.txtUIX();
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
-            this.grbDetalhes.SuspendLayout();
+            this.grbInformacoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -58,6 +57,7 @@
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
@@ -71,27 +71,28 @@
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 100);
+            this.btnSalvar.ImageLocation = null;
+            this.btnSalvar.Location = new System.Drawing.Point(5, 105);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // grbDetalhes
+            // grbInformacoes
             // 
-            this.grbDetalhes.Controls.Add(this.txtEmail);
-            this.grbDetalhes.Controls.Add(this.mtbTelCel);
-            this.grbDetalhes.Controls.Add(this.cboGenero);
-            this.grbDetalhes.Controls.Add(this.mtbCPF);
-            this.grbDetalhes.Controls.Add(this.mtbDataNasc);
-            this.grbDetalhes.Controls.Add(this.txtNome);
-            this.grbDetalhes.Location = new System.Drawing.Point(105, 55);
-            this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(390, 150);
-            this.grbDetalhes.TabIndex = 6;
-            this.grbDetalhes.TabStop = false;
-            this.grbDetalhes.Text = "INFORMACÕES DO CLIENTE";
+            this.grbInformacoes.Controls.Add(this.txtEmail);
+            this.grbInformacoes.Controls.Add(this.mtbTelCel);
+            this.grbInformacoes.Controls.Add(this.cboGenero);
+            this.grbInformacoes.Controls.Add(this.mtbCPF);
+            this.grbInformacoes.Controls.Add(this.mtbDataNasc);
+            this.grbInformacoes.Controls.Add(this.txtNome);
+            this.grbInformacoes.Location = new System.Drawing.Point(105, 55);
+            this.grbInformacoes.Name = "grbInformacoes";
+            this.grbInformacoes.Size = new System.Drawing.Size(390, 150);
+            this.grbInformacoes.TabIndex = 6;
+            this.grbInformacoes.TabStop = false;
+            this.grbInformacoes.Text = "INFORMAÇÕES DO CLIENTE";
             // 
             // txtEmail
             // 
@@ -186,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 250);
-            this.Controls.Add(this.grbDetalhes);
+            this.Controls.Add(this.grbInformacoes);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,7 +198,7 @@
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.pnlMenu.ResumeLayout(false);
-            this.grbDetalhes.ResumeLayout(false);
+            this.grbInformacoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -208,7 +209,7 @@
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnVoltar;
         private UIX.btnUIX btnSalvar;
-        private System.Windows.Forms.GroupBox grbDetalhes;
+        private System.Windows.Forms.GroupBox grbInformacoes;
         private UIX.txtUIX txtNome;
         private UIX.mtbUIX mtbDataNasc;
         private UIX.cboUIX cboGenero;

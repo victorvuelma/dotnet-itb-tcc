@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReserva));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnAtendimento = new UIX.btnUIX();
             this.btnVoltar = new UIX.btnUIX();
@@ -71,7 +70,7 @@
             this.btnAtendimento.HoverColor = System.Drawing.Color.Transparent;
             this.btnAtendimento.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.atendimento;
             this.btnAtendimento.ImageLocation = null;
-            this.btnAtendimento.Location = new System.Drawing.Point(5, 100);
+            this.btnAtendimento.Location = new System.Drawing.Point(5, 105);
             this.btnAtendimento.Name = "btnAtendimento";
             this.btnAtendimento.Size = new System.Drawing.Size(90, 90);
             this.btnAtendimento.TabIndex = 7;
@@ -98,7 +97,7 @@
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 200);
+            this.btnSalvar.Location = new System.Drawing.Point(5, 205);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;

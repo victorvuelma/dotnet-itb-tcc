@@ -27,7 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
         }
 
-        public void abrirMesas()
+        private void abrirMesas()
         {
             uctPrincipalMesas uctMesas = new uctPrincipalMesas
             {
@@ -37,7 +37,7 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(uctMesas, "Mesas");
         }
 
-        public void abrirReservas()
+        private void abrirReservas()
         {
             uctPrincipalReservas uctMesas = new uctPrincipalReservas
             {
@@ -45,6 +45,15 @@ namespace BURGUER_SHACK_DESKTOP
             };
 
             alterarConteudo(uctMesas, "Reservas");
+        }
+
+        private void abrirGerenciamento()
+        {
+            frmGerenciamento frmGerenciamento = new frmGerenciamento
+            {
+                CodFuncionario = CodFuncionario
+            };
+            frmGerenciamento.ShowDialog();
         }
 
         private void fechar()
@@ -85,9 +94,9 @@ namespace BURGUER_SHACK_DESKTOP
             abrirReservas();
         }
 
-        private void btnCardapio_Click(object sender, EventArgs e)
+        private void btnGerenciamento_Click(object sender, EventArgs e)
         {
-            new frmGerenciamento { }.Show();
+            abrirGerenciamento();
         }
     }
 }
