@@ -132,16 +132,16 @@ namespace BURGUER_SHACK_DESKTOP
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("funcionario");
-            objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%")
+            objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlObjWhere.whereAssociation.OR)
                            .where("cpf", sqlObjWhereCommon.whereOperation.LIKE, "%" + Cpf + "%");
 
             SqlDataReader reader = objSelect.execute(App.AppDatabase);
-            List<clnFuncionario> objFuncionario = new List<clnFuncionario>();
+            List<clnFuncionario> objFuncionarios = new List<clnFuncionario>();
             while (reader.Read())
-                objFuncionario.Add(obter(reader));
+                objFuncionarios.Add(obter(reader));
             reader.Close();
 
-            return objFuncionario;
+            return objFuncionarios;
         }
 
         public void gravar()

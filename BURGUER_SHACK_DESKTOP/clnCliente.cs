@@ -77,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
             return objCliente;
         }
 
-        internal List<clnCliente> obterPorNomeOuCPF()
+        internal List<clnCliente> obterPorNomeCPF()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("cliente");

@@ -48,12 +48,17 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirProdutos()
         {
-            abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Valor" });
+            abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), new String[] { "Código", "Nome", "Situação", "Tipo", "Valor" });
         }
 
         private void abrirClientes()
         {
-            abrirLista("Clientes", new CallbackClienteNovo(), new CallbackClienteObter(), new CallbackClienteAlterar(), new String[] { "Código", "Nome", "CPF", "Celular", "Data Nasc.", "Genero", "Email" });
+            abrirLista("Clientes", new CallbackClienteNovo(), new CallbackClienteObter(), new CallbackClienteAlterar(), new String[] { "Código", "Nome", "CPF", "Celular", "Data Nasc.", "Gênero", "Email" });
+        }
+
+        private void abrirFuncionarios()
+        {
+            abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero", "Email", "Celular", "Cargo", "Salário", "Situação" });
         }
 
         private void sair()
@@ -94,6 +99,11 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnProdutos_Click(object sender, EventArgs e)
         {
             abrirProdutos();
+        }
+
+        private void btnFuncionarios_Click(object sender, EventArgs e)
+        {
+            abrirFuncionarios();
         }
 
         private class CallbackIngredienteNovo : clnUtilCallback<int>
@@ -250,7 +260,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Nome = pesquisa,
                     Cpf = pesquisa
                 };
-                foreach (clnCliente objCliente in objClientes.obterPorNomeOuCPF())
+                foreach (clnCliente objCliente in objClientes.obterPorNomeCPF())
                 {
                     //"Código", "Nome", "CPF", "Celular", "Data Nasc", "Genero", "Email"
                     dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, clnUtil.formatarCPF(objCliente.Cpf), clnUtil.formatarCelular(objCliente.TelCelular), clnUtil.formatarData(objCliente.DataNascimento), objCliente.Genero, objCliente.Email });
@@ -259,9 +269,61 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void btnFuncionarios_Click(object sender, EventArgs e)
+        private class CallbackFuncionarioNovo : clnUtilCallback<int>
         {
-            new frmFuncionario { }.ShowDialog();
+            public bool call(int codFuncionario)
+            {
+                frmFuncionario frmNovoFuncionario = new frmFuncionario();
+                frmNovoFuncionario.ShowDialog();
+                return frmNovoFuncionario.ObjFuncionario != null;
+            }
         }
+
+        private class CallbackFuncionarioAlterar : clnUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnFuncionario objFuncionario = new clnFuncionario
+                {
+                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objFuncionario != null)
+                {
+                    frmFuncionario frmAlterarFuncionario = new frmFuncionario
+                    {
+                        ObjFuncionario = objFuncionario
+                    };
+                    frmAlterarFuncionario.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackFuncionarioObter : clnUtilCallback<DataGridView, String>
+        {
+            public bool call(DataGridView dgv, string pesquisa)
+            {
+                clnFuncionario objFuncionarios = new clnFuncionario
+                {
+                    Nome = pesquisa,
+                    Cpf = pesquisa
+                };
+                foreach (clnFuncionario objFuncionario in objFuncionarios.obterPorNomeCPF())
+                {
+                    clnCargo objCargo = new clnCargo
+                    {
+                        Cod = objFuncionario.CodCargo
+                    }.obterPorCod();
+
+                    //"Código", "Nome", "CPF", "RG", "Data Nasc", "Genero", "Email","Celular", "Cargo", "Salario", "Situacao"
+                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objFuncionario.Email, clnUtil.formatarCelular(objFuncionario.TelCel), objCargo.Nome, objFuncionario.Salario, objFuncionario.Situacao });
+                }
+                return false;
+            }
+        }
+
+
     }
 }

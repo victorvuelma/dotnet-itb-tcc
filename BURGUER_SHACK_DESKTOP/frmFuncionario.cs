@@ -133,14 +133,26 @@ namespace BURGUER_SHACK_DESKTOP
                 }
                 else
                 {
-                    //ObjFuncionario.Nome = txtNome.Text;
-                    //ObjFuncionario.DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text);
-                    //ObjFuncionario.Email = txtEmail.Text;
-                    //ObjFuncionario.TelCelular = clnUtil.retirarFormatacao(mtbTelCel.Text);
-                    //ObjFuncionario.Genero = cboGenero.Text;
-                    //ObjFuncionario.alterar();
-                    //clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                    //Close();
+                    ObjFuncionario.Nome = txtNome.Text;
+                    ObjFuncionario.CodCargo = codCargo;
+                    ObjFuncionario.CodFoto = objArquivo.Cod;
+                    ObjFuncionario.DataNascimento = clnUtilConvert.ObterData(mtbDataNasc.Text);
+                    ObjFuncionario.Email = txtEmail.Text;
+                    ObjFuncionario.Genero = cboGenero.Text;
+                    ObjFuncionario.TelRes = clnUtil.retirarFormatacao(mtbTelRes.Text);
+                    ObjFuncionario.TelCel = clnUtil.retirarFormatacao(mtbTelCel.Text);
+                    ObjFuncionario.Salario = clnUtilConvert.ToDouble(txtSalario.Text);
+                    ObjFuncionario.Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text);
+                    ObjFuncionario.EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text);
+                    ObjFuncionario.EndLogradouro = txtEndLogradouro.Text;
+                    ObjFuncionario.EndNumero = txtEndNr.Text;
+                    ObjFuncionario.EndComplemento = txtEndComplemento.Text;
+                    ObjFuncionario.EndBairro = txtEndBairro.Text;
+                    ObjFuncionario.EndLocalidade = txtEndCidade.Text;
+                    ObjFuncionario.EndUF = cboEndUF.Text;
+                    ObjFuncionario.alterar();
+                    clnUtilMensagem.mostrarOk("Alteração de Funcionário", "Funcionário alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    Close();
                 }
             }
         }
@@ -202,12 +214,11 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 cboCargo.Items.Add(objCargo.Cod + " - " + objCargo.Nome);
             }
+            cboSituacao.Items.AddRange(new object[] { clnFuncionario.funcionarioSituacao.TREINAMENTO, clnFuncionario.funcionarioSituacao.PLENO });
 
             if (ObjFuncionario == null)
             {
                 hdrUIX.Title = App.AppName + " - Novo Funcionário";
-
-                cboSituacao.Items.AddRange(new object[] { clnFuncionario.funcionarioSituacao.TREINAMENTO, clnFuncionario.funcionarioSituacao.PLENO});
 
                 definirImagemPadrao();
             }
@@ -215,6 +226,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 hdrUIX.Title = App.AppName + " - Alterando Funcionário " + ObjFuncionario.Cod;
                 mtbCPF.Enabled = false;
+
                 txtNome.Text = ObjFuncionario.Nome;
                 mtbCPF.Text = ObjFuncionario.Cpf;
                 txtRG.Text = ObjFuncionario.Rg;
@@ -237,7 +249,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 clnCargo objCargo = new clnCargo
                 {
-                    Cod = ObjFuncionario.Cod
+                    Cod = ObjFuncionario.CodCargo
                 }.obterPorCod();
                 cboCargo.Text = objCargo.Cod + " - " + objCargo.Nome;
 

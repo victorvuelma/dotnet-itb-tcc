@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngrediente));
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new UIX.btnUIX();
@@ -83,6 +82,7 @@
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
             this.btnExcluir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.ImageLocation = null;
             this.btnExcluir.Location = new System.Drawing.Point(5, 105);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(90, 90);
@@ -95,6 +95,7 @@
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
@@ -108,6 +109,7 @@
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 205);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
@@ -196,6 +198,7 @@
             this.btnImgRemover.Description = "Remover";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
+            this.btnImgRemover.ImageLocation = null;
             this.btnImgRemover.Location = new System.Drawing.Point(10, 20);
             this.btnImgRemover.Name = "btnImgRemover";
             this.btnImgRemover.Size = new System.Drawing.Size(80, 80);
@@ -208,6 +211,7 @@
             this.btnImgAdicionar.Description = "Adicionar";
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnImgAdicionar.ImageLocation = null;
             this.btnImgAdicionar.Location = new System.Drawing.Point(100, 20);
             this.btnImgAdicionar.Name = "btnImgAdicionar";
             this.btnImgAdicionar.Size = new System.Drawing.Size(80, 80);

@@ -170,7 +170,7 @@
             // cboGenero
             // 
             this.cboGenero.AccessibleName = "Genero*";
-            this.cboGenero.Campo = "Genero*";
+            this.cboGenero.Campo = "Gênero*";
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Location = new System.Drawing.Point(280, 80);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

@@ -121,7 +121,7 @@
             // 
             // cboGenero
             // 
-            this.cboGenero.AccessibleName = "Genero*";
+            this.cboGenero.AccessibleName = "Gênero*";
             this.cboGenero.Campo = "Genero*";
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Location = new System.Drawing.Point(283, 90);
