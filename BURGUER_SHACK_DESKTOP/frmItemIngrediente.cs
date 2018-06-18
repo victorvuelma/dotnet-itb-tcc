@@ -39,48 +39,56 @@ namespace BURGUER_SHACK_DESKTOP
                 Cod = IngredienteAntigo.CodIngrediente
             }.obterPorCodigo();
 
-            clnIngrediente objIngredientes = new clnIngrediente
+            List<clnIngrediente> objIngredientes = new clnIngrediente
             {
-                CodTipo = objIngredienteAntigo.CodTipo
-            };
+                CodTipo = objIngredienteAntigo.CodTipo,
+                Situacao = clnIngrediente.ingredienteSituacao.DISPONIVEL
+            }.obterPorTipoSituacao();
+            objIngredientes.RemoveAll(obj => obj.Cod.Equals(objIngredienteAntigo.Cod));
 
-            List<clnItemIngrediente> objPedidoIngredientes = new List<clnItemIngrediente>();
-            foreach (clnIngrediente objIngrediente in objIngredientes.obterPorTipo())
+            if (objIngredientes.Count > 0)
             {
-                clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
+                List<clnItemIngrediente> objPedidoIngredientes = new List<clnItemIngrediente>();
+                foreach (clnIngrediente objIngrediente in objIngredientes)
                 {
-                    Quantidade = IngredienteAntigo.Quantidade,
-                    CodProdutoIngrediente = IngredienteAntigo.CodProdutoIngrediente,
-                    CodIngrediente = objIngrediente.Cod
+                    clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
+                    {
+                        Quantidade = IngredienteAntigo.Quantidade,
+                        CodProdutoIngrediente = IngredienteAntigo.CodProdutoIngrediente,
+                        CodIngrediente = objIngrediente.Cod
+                    };
+                    objPedidoIngredientes.Add(objPedidoIngrediente);
+                }
+
+                clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
+                {
+                    Opcoes = objPedidoIngredientes,
+                    Icone = Properties.Resources.ingrediente,
+                    Titulo = "Selecione o Ingrediente"
                 };
-                objPedidoIngredientes.Add(objPedidoIngrediente);
-            }
+                clnUtilSelecionar<clnItemIngrediente> objSelecionar = new clnUtilSelecionar<clnItemIngrediente>
+                {
+                    Selecionado = IngredienteNovo,
+                    Quantidade = ((IngredienteNovo == null) ? IngredienteAntigo.Quantidade : IngredienteNovo.Quantidade),
+                    ObjListar = objListar
+                };
 
-            clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
-            {
-                Opcoes = objPedidoIngredientes,
-                Icone = Properties.Resources.ingrediente,
-                Titulo = "Selecione o Ingrediente"
-            };
-            clnUtilSelecionar<clnItemIngrediente> objSelecionar = new clnUtilSelecionar<clnItemIngrediente>
-            {
-                Selecionado = IngredienteNovo,
-                Quantidade = ((IngredienteNovo == null) ? IngredienteAntigo.Quantidade : IngredienteNovo.Quantidade),
-                ObjListar = objListar
-            };
+                frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+                {
+                    ObjSelecionar = objSelecionar
+                };
+                frmSelecionar.ShowDialog();
 
-            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
-            {
-                ObjSelecionar = objSelecionar
-            };
-            frmSelecionar.ShowDialog();
+                if (objSelecionar.Selecionado != null)
+                {
+                    objSelecionar.Selecionado.Quantidade = objSelecionar.Quantidade;
+                    IngredienteNovo = objSelecionar.Selecionado;
 
-            if (objSelecionar.Selecionado != null)
+                    exibirIngrediente(objSelecionar.Selecionado);
+                }
+            } else
             {
-                objSelecionar.Selecionado.Quantidade = objSelecionar.Quantidade;
-                IngredienteNovo = objSelecionar.Selecionado;
-
-                exibirIngrediente(objSelecionar.Selecionado);
+                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.", clnUtilMensagem.MensagemIcone.ERRO);
             }
         }
 

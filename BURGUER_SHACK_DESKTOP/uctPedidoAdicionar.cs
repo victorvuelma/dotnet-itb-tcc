@@ -82,7 +82,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnProduto.clnListar objListar = new clnProduto.clnListar
             {
-                Opcoes = objProdutos.obterPorTipo(),
+                Opcoes = objProdutos.obterPorTipoSituacao(),
                 Icone = Properties.Resources.produto,
                 Titulo = "Selecione o Produto",
             };
@@ -110,32 +110,41 @@ namespace BURGUER_SHACK_DESKTOP
                 Cod = PedidoProduto.CodProduto
             }.obterPorCodigo();
 
-            clnProduto objProdutos = new clnProduto
+            List<clnProduto> objProdutos = new clnProduto
             {
-                CodTipo = objProdutoAtual.CodTipo
-            };
+                CodTipo = objProdutoAtual.CodTipo,
+                Situacao = clnProduto.produtoSituacao.DISPONIVEL
+            }.obterPorTipoSituacao();
+            objProdutos.RemoveAll(obj => obj.Cod.Equals(objProdutoAtual.Cod));
 
-            clnProduto.clnListar objListar = new clnProduto.clnListar
+            if (objProdutos.Count > 0)
             {
-                Opcoes = objProdutos.obterPorTipo(),
-                Titulo = "Selecione o Produto",
-                Icone = Properties.Resources.produto
-            };
-            clnUtilSelecionar<clnProduto> objSelecionar = new clnUtilSelecionar<clnProduto>
-            {
-                ObjListar = objListar,
-                Selecionado = objProdutoAtual
-            };
+                clnProduto.clnListar objListar = new clnProduto.clnListar
+                {
+                    Opcoes = objProdutos,
+                    Titulo = "Selecione o Produto",
+                    Icone = Properties.Resources.produto
+                };
+                clnUtilSelecionar<clnProduto> objSelecionar = new clnUtilSelecionar<clnProduto>
+                {
+                    ObjListar = objListar,
+                    Selecionado = objProdutoAtual
+                };
 
-            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
-            {
-                ObjSelecionar = objSelecionar
-            };
-            frmSelecionar.ShowDialog();
+                frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+                {
+                    ObjSelecionar = objSelecionar
+                };
+                frmSelecionar.ShowDialog();
 
-            if (objSelecionar.Selecionado != null)
+                if (objSelecionar.Selecionado != null)
+                {
+                    selecionaProduto(objSelecionar.Selecionado, objSelecionar.Quantidade);
+                }
+            }
+            else
             {
-                selecionaProduto(objSelecionar.Selecionado, objSelecionar.Quantidade);
+                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.", clnUtilMensagem.MensagemIcone.ERRO);
             }
         }
 

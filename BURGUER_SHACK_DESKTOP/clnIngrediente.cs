@@ -67,11 +67,12 @@ namespace BURGUER_SHACK_DESKTOP
             return objIngrediente;
         }
 
-        public List<clnIngrediente> obterPorTipo()
+        public List<clnIngrediente> obterPorTipoSituacao()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("ingrediente");
-            objSelect.Where.where("id_tipo", CodTipo);
+            objSelect.Where.where("id_tipo", CodTipo)
+                           .where("situacao", Situacao);
 
             List<clnIngrediente> objIngredientes = new List<clnIngrediente>();
             SqlDataReader reader = objSelect.execute(App.AppDatabase);
