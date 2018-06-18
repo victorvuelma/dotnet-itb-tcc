@@ -25,7 +25,8 @@ namespace BURGUER_SHACK_DESKTOP
             DATA_NASC,
             DATA_FUTURA,
             HORA,
-            CELULAR
+            CELULAR,
+            TELEFONE
         }
 
         private List<ValidarData> _validarControles = new List<ValidarData>();
@@ -161,15 +162,15 @@ namespace BURGUER_SHACK_DESKTOP
                             break;
                         case ValidarTipo.CPF:
                             val = clnUtil.validarCPF(conteudo);
-                            res = "deve conter CPF válido.";
+                            res = "deve conter um CPF válido.";
                             break;
                         case ValidarTipo.CNPJ:
                             val = clnUtil.validarCNPJ(conteudo);
-                            res = "deve conter CNPJ válido.";
+                            res = "deve conter um CNPJ válido.";
                             break;
                         case ValidarTipo.CEP:
                             val = clnUtil.validarCEP(conteudo);
-                            res = "deve conter CEP válido.";
+                            res = "deve conter um CEP válido.";
                             break;
                         case ValidarTipo.INT:
                             val = clnUtil.validarInt(conteudo);
@@ -190,6 +191,10 @@ namespace BURGUER_SHACK_DESKTOP
                         case ValidarTipo.CELULAR:
                             val = clnUtil.validarCelular(conteudo);
                             res = "deve conter um número de celular válido.";
+                            break;
+                        case ValidarTipo.TELEFONE:
+                            val = clnUtil.validarTelefone(conteudo);
+                            res = "deve conter um número de telefone válido.";
                             break;
                         case ValidarTipo.DATA_FUTURA:
                             val = clnUtil.validarDataFutura(conteudo);

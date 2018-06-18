@@ -32,13 +32,13 @@ namespace BURGUER_SHACK_DESKTOP
         public static String MASK_CNPJ = "00,000,000/0000-00";
         public static String MASK_IE = "000,000,000,000";
         public static String MASK_CPF = "000,000,000-00";
-        public static String MASK_RG = "00,000,000-0";
 
         private static frmUtilNumBoard frmNumBoard;
 
         private static String FORMAT_CEL = @"(00) 00000-0000";
-
-        private static String REGEX_CEL = @"^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$";
+        
+        private static String REGEX_CEL = @"^\([1-9]{2}\) (9[1-9])[0-9]{3}\-[0-9]{4}$";
+        private static String REGEX_TEL = @"^\([1-9]{2}\) ([2-8])[0-9]{3}\-[0-9]{4}$";
 
         private static CPFValidator _cpfValidator = new CPFValidator();
         private static CNPJValidator _cnpjValidator = new CNPJValidator();
@@ -120,26 +120,26 @@ namespace BURGUER_SHACK_DESKTOP
             cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
         }
 
-        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox ctlUF, Control ctlNr)
+        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox ctlUF, Control ctlNr)
         {
             addUFs(ctlUF);
             mtbCEP.Validated += (object sender, EventArgs e) =>
             {
                 if (clnUtil.validarCEP(mtbCEP.Text))
                 {
-                    clnUtil.definirEndereco(mtbCEP.Text, ctlRua, ctlBairro, ctlCidade, ctlUF, ctlNr);
+                    clnUtil.definirEndereco(mtbCEP.Text, ctlLogradouro, ctlBairro, ctlCidade, ctlUF, ctlNr);
                 }
             };
         }
 
-        public static void definirEndereco(String cep, Control ctlRua, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
+        public static void definirEndereco(String cep, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
         {
             if (validarCEP(cep))
             {
                 Endereco end = obterEndereco(cep);
                 if (end != null)
                 {
-                    ctlRua.Text = end.Logradouro;
+                    ctlLogradouro.Text = end.Logradouro;
                     ctlBairro.Text = end.Bairro;
                     ctlCidade.Text = end.Localidade;
                     cboUF.Text = end.UF;
@@ -148,7 +148,7 @@ namespace BURGUER_SHACK_DESKTOP
                 else
                 {
                     clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnUtilMensagem.MensagemIcone.INFO);
-                    ctlRua.Focus();
+                    ctlLogradouro.Focus();
                 }
             }
         }
@@ -235,6 +235,11 @@ namespace BURGUER_SHACK_DESKTOP
         public static bool validarCelular(String cel)
         {
             return Regex.IsMatch(cel, REGEX_CEL);
+        }
+
+        public static bool validarTelefone(String cel)
+        {
+            return Regex.IsMatch(cel, REGEX_TEL);
         }
 
         public static bool validarData(String data)
