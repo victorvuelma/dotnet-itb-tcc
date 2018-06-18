@@ -42,11 +42,17 @@ namespace SQL_POWERUP
 
         public sqlHelperWhere where(String column, sqlObjWhereCommon.whereOperation operation, Object val)
         {
+            return where(column, operation, val, sqlObjWhere.whereAssociation.AND);
+        }
+
+        public sqlHelperWhere where(String column, sqlObjWhereCommon.whereOperation operation, Object val, sqlObjWhereCommon.whereAssociation association)
+        {
             return where(new sqlObjWhereCommon
             {
                 TableColumn = column.ToUpper(),
                 Val = val,
-                Operation = operation
+                Operation = operation,
+                Association = association
             });
         }
 
