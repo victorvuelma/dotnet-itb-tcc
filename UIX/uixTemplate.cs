@@ -128,6 +128,8 @@ namespace UIX
 
         public void frmApply(Form frm, hdrUIX hdr)
         {
+            frm.Visible = false;
+            Cursor.Current = Cursors.WaitCursor;
 
             uixForm.frmApply(frm, hdr, Icon, Style);
 
@@ -140,6 +142,12 @@ namespace UIX
             }
 
             uixForm.applyMargin(frm, Style);
+
+            frm.Load += (object sender, EventArgs args) =>
+            {
+                frm.Visible = true;
+                Cursor.Current = Cursors.Default;
+            };
         }
 
     }

@@ -13,6 +13,8 @@ namespace UIX
     public partial class btnUIX : Button
     {
 
+        public new event EventHandler Click;
+
         private Color _hoverColor;
         private Color _backColor;
 
@@ -81,7 +83,7 @@ namespace UIX
 
                 lbl.Size = new Size(value.Width, lbl.Size.Height);
                 int lblY = value.Height - lbl.Height;
-                lbl.Location = new Point( lbl.Location.X, lblY);
+                lbl.Location = new Point(lbl.Location.X, lblY);
 
                 base.Size = value;
             }
@@ -99,14 +101,14 @@ namespace UIX
             BackColor = _backColor;
         }
 
-        private void pic_Click(object sender, EventArgs e)
+        private void onClick(object sender, EventArgs e)
         {
-            this.OnClick(e);
-        }
-
-        private void lbl_Click(object sender, EventArgs e)
-        {
-            this.OnClick(e);
+            Cursor.Current = Cursors.WaitCursor;
+            if (Click != null)
+            {
+                Click(sender, e);
+            }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btnUIX_BackColorChanged(object sender, EventArgs e)
