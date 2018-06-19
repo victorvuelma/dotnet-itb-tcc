@@ -19,10 +19,10 @@ namespace BURGUER_SHACK_DESKTOP
             PRONTO
         }
 
-        private int _cod;
+        private int _cod = -1;
 
-        private int _codAtendimento;
-        private int _codFuncionario;
+        private int _codAtendimento = -1;
+        private int _codFuncionario = -1;
 
         private double _valor;
         private pedidoSituacao _situacao;

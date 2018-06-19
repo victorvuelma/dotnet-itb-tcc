@@ -20,10 +20,10 @@ namespace BURGUER_SHACK_DESKTOP
             DEMITIDO
         }
 
-        private int _cod;
+        private int _cod = -1;
 
-        private int _codCargo;
-        private int _codFoto;
+        private int _codCargo = -1;
+        private int _codFoto = -1;
 
         private String _nome;
         private String _cpf;

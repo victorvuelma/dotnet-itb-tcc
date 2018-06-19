@@ -12,10 +12,10 @@ namespace BURGUER_SHACK_DESKTOP
     public class clnItem
     {
 
-        private int _cod;
+        private int _cod = -1;
 
-        private int _codProduto;
-        private int _codPedido;
+        private int _codProduto = -1;
+        private int _codPedido = -1;
 
         private int _quantidade;
         private String _adicional;

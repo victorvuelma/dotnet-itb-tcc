@@ -297,8 +297,7 @@ namespace BURGUER_SHACK_DESKTOP
                         CodReserva = ObjReserva.Cod,
                         Inicio = DateTime.Now,
                         CodFuncionario = CodFuncionario,
-                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO,
-                        CodMesas = new List<int>()
+                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO
                     };
                     objAtendimento.gravar();
 
@@ -361,12 +360,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 hdrUIX.Title = App.AppName + " - Nova Reserva";
 
-                ObjReserva = new clnReserva
-                {
-                    Cod = -1,
-                    CodCliente = -1,
-                    CodMesas = new List<int>()
-                };
+                ObjReserva = new clnReserva();
             }
             else
             {
@@ -464,7 +458,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             public bool call(clnReserva objReserva, clnMesa objMesa)
             {
-                if(clnUtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", clnUtilMensagem.MensagemIcone.INFO)){
+                if (clnUtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", clnUtilMensagem.MensagemIcone.INFO))
+                {
                     objReserva.removerMesa(objMesa.Cod);
                     return true;
                 }

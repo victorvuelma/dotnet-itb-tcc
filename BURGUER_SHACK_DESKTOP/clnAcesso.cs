@@ -12,7 +12,7 @@ namespace BURGUER_SHACK_DESKTOP
     class clnAcesso
     {
 
-        private int _codFuncionario;
+        private int _codFuncionario = -1;
 
         private String _usuario;
         private String _senha;

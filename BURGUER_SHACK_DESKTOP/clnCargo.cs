@@ -12,7 +12,8 @@ namespace BURGUER_SHACK_DESKTOP
     class clnCargo
     {
 
-        private int _cod;
+        private int _cod = -1;
+
         private String _nome;
 
         public int Cod { get => _cod; set => _cod = value; }

@@ -20,10 +20,10 @@ namespace BURGUER_SHACK_DESKTOP
             FORADEESTOQUE
         }
 
-        private int _cod;
+        private int _cod = -1;
 
-        private int _codImagem;
-        private int _codTipo;
+        private int _codImagem = -1;
+        private int _codTipo = -1;
 
         private String _nome;
         private double _valor;

@@ -80,8 +80,7 @@ namespace BURGUER_SHACK_DESKTOP
                     {
                         CodFuncionario = CodFuncionario,
                         Inicio = DateTime.Now,
-                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO,
-                        CodMesas = new List<int>()
+                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO
                     };
                     objAtendimento.gravar();
 

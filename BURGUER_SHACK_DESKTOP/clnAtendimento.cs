@@ -17,15 +17,14 @@ namespace BURGUER_SHACK_DESKTOP
             FINALIZADO
         }
 
-        private int _cod;
+        private int _cod = -1;
         private int? _codCliente;
-        private int _codFuncionario;
+        private int _codFuncionario = -1;
         private int? _codReserva;
-        private List<int> _codMesas;
+        private List<int> _codMesas = new List<int>();
 
         private DateTime _inicio;
         private DateTime? _fim;
-
         private atendimentoSituacao _situacao;
 
         public int Cod { get => _cod; set => _cod = value; }
@@ -60,7 +59,6 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("atendimento_mesa").Columns.select("id_mesa");
             objSelect.Where.where("id_atendimento", Cod);
 
-            CodMesas = new List<int>();
             SqlDataReader reader = objSelect.execute(App.AppDatabase);
             while (reader.Read())
                 CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));

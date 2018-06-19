@@ -279,10 +279,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-                ObjProduto = new clnProduto
-                {
-                    Cod = -1
-                };
+                ObjProduto = new clnProduto();
                 ObjProdutoIngredientes = new List<clnProdutoIngrediente>();
 
                 hdrUIX.Title = App.AppName + " - Novo Produto";
@@ -375,7 +372,6 @@ namespace BURGUER_SHACK_DESKTOP
                     Remover = true,
                     Quantidade = 1,
                     CodIngrediente = objIngrediente.Cod,
-                    Cod = -1,
                     CodProduto = frmProduto.ObjProduto.Cod
                 };
                 frmProdutoIngrediente frmProdutoIngrediente = new frmProdutoIngrediente

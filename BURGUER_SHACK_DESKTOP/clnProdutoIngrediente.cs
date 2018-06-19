@@ -13,10 +13,10 @@ namespace BURGUER_SHACK_DESKTOP
     public class clnProdutoIngrediente
     {
 
-        private int _cod;
+        private int _cod = -1;
 
-        private int _codProduto;
-        private int _codIngrediente;
+        private int _codProduto = -1;
+        private int _codIngrediente = -1;
 
         private bool _remover;
         private bool _alterar;

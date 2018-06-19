@@ -18,9 +18,9 @@ namespace BURGUER_SHACK_DESKTOP
             INGREDIENTE
         }
 
-        private int _cod;
-        private String _nome;
+        private int _cod = -1;
 
+        private String _nome;
         private tipo _tipo;
 
         public int Cod { get => _cod; set => _cod = value; }

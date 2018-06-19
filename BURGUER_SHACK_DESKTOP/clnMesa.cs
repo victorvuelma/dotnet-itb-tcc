@@ -21,7 +21,8 @@ namespace BURGUER_SHACK_DESKTOP
             RESERVADA
         }
 
-        private int _cod;
+        private int _cod = -1;
+
         private mesaSituacao _situacao;
 
         public int Cod { get => _cod; set => _cod = value; }

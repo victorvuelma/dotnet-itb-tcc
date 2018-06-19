@@ -12,8 +12,8 @@ namespace BURGUER_SHACK_DESKTOP
     class clnCliente
     {
 
-        private int _cod;
-        private int _codFuncionario;
+        private int _cod = -1;
+        private int _codFuncionario = -1;
 
         private String _nome;
         private String _cpf;

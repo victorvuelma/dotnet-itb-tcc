@@ -17,7 +17,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static clnUtilCache CACHE = new clnUtilCache("arquivo");
 
-        private int _cod;
+        private int _cod = -1;
+
         private String _local;
 
         public int Cod { get => _cod; set => _cod = value; }
