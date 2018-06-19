@@ -31,16 +31,24 @@ namespace UIX
 
         public static void applyMargin(Form frm, uixStyle style)
         {
-            int MARGIN_SIZE = 4;
+            int MARGIN_SIZE = 5;
+
+            frm.Height = frm.Height + MARGIN_SIZE;
+            frm.Width = frm.Width + (MARGIN_SIZE * 2);
+
+            foreach(Control control in frm.Controls)
+            {
+                control.Location = new Point( control.Location.X + MARGIN_SIZE, control.Location.Y);
+            }
 
             Panel pnlLeft = new Panel();
-            pnlLeft.Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height - 40);
-            pnlLeft.Location = new System.Drawing.Point(0, 40);
+            pnlLeft.Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height);
+            pnlLeft.Location = new System.Drawing.Point(0, 0);
             pnlLeft.BackColor = style.FormColor.DarkColor;
 
             Panel pnlRight = new Panel();
-            pnlRight.Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height - 40);
-            pnlRight.Location = new System.Drawing.Point(frm.Width - MARGIN_SIZE, 40);
+            pnlRight.Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height);
+            pnlRight.Location = new System.Drawing.Point(frm.Width - MARGIN_SIZE, 0);
             pnlRight.BackColor = style.FormColor.DarkColor;
 
             Panel pnlBottom = new Panel();

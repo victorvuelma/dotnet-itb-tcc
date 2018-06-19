@@ -131,6 +131,7 @@ namespace UIX
             frm.Visible = false;
             Cursor.Current = Cursors.WaitCursor;
 
+            uixForm.applyMargin(frm, Style);
             uixForm.frmApply(frm, hdr, Icon, Style);
 
             foreach (Control control in frm.Controls)
@@ -140,8 +141,6 @@ namespace UIX
                     this.ctlApply(control);
                 }
             }
-
-            uixForm.applyMargin(frm, Style);
 
             frm.Load += (object sender, EventArgs args) =>
             {
