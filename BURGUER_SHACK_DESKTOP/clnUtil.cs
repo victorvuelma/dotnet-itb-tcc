@@ -441,6 +441,9 @@ namespace BURGUER_SHACK_DESKTOP
                 Control controlAnterior = pnlConteudo.Controls[0];
                 if (ignorarTipo || uctConteudo == null || !uctConteudo.GetType().Equals(controlAnterior.GetType()))
                 {
+                    pnlConteudo.Hide();
+                    Cursor.Current = Cursors.WaitCursor;
+
                     controlAnterior.Controls.Clear();
                     controlAnterior.Dispose();
                     pnlConteudo.Controls.Remove(controlAnterior);
@@ -450,9 +453,12 @@ namespace BURGUER_SHACK_DESKTOP
                     return;
                 }
             }
+
+            hdrUIX.Title = App.AppName + " - " + titulo;
             if (uctConteudo == null)
             {
-                hdrUIX.Title = App.AppName + " - " + titulo;
+                pnlConteudo.Show();
+                Cursor.Current = Cursors.Default;
                 return;
             }
 
@@ -462,12 +468,9 @@ namespace BURGUER_SHACK_DESKTOP
             pnlConteudo.Controls.Add(uctConteudo);
             uctConteudo.Location = new Point(0, 0);
             uctConteudo.Size = pnlConteudo.Size;
-            if (!pnlConteudo.Visible)
-            {
-                pnlConteudo.Visible = true;
-            }
 
-            hdrUIX.Title = App.AppName + " - " + titulo;
+            pnlConteudo.Show();
+            Cursor.Current = Cursors.Default;
         }
 
     }
