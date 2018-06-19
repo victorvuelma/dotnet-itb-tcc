@@ -35,10 +35,9 @@ namespace UIX
 
             frm.Height = frm.Height + MARGIN_SIZE;
             frm.Width = frm.Width + (MARGIN_SIZE * 2);
-
-            foreach(Control control in frm.Controls)
+            foreach (Control control in frm.Controls)
             {
-                control.Location = new Point( control.Location.X + MARGIN_SIZE, control.Location.Y);
+                control.Location = new Point(control.Location.X + MARGIN_SIZE, control.Location.Y);
             }
 
             Panel pnlLeft = new Panel();

@@ -152,7 +152,7 @@
             // 
             this.txtPesquisar.AllowedChars = UIX.uixAllowedChars.ALL;
             this.txtPesquisar.Campo = "Pesquisar";
-            this.txtPesquisar.Location = new System.Drawing.Point(6, 30);
+            this.txtPesquisar.Location = new System.Drawing.Point(5, 30);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPesquisar.MaxLength = 32767;
             this.txtPesquisar.Multiline = false;
