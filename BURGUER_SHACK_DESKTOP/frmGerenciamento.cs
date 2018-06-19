@@ -179,7 +179,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnProduto objProduto = new clnProduto
                 {
                     Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 if (objProduto != null)
                 {

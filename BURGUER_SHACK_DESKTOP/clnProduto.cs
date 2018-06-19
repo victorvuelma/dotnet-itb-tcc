@@ -50,7 +50,7 @@ namespace BURGUER_SHACK_DESKTOP
             Valor = clnUtilConvert.ToDouble(reader["valor"])
         };
 
-        public clnProduto obterPorCodigo()
+        public clnProduto obterPorCod()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("produto");

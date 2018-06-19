@@ -67,7 +67,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnProduto objProduto = new clnProduto
                 {
                     Cod = objPedidoProduto.CodProduto
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 clnArquivo objArquivo = new clnArquivo
                 {
@@ -152,7 +152,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnProduto objProduto = new clnProduto
                 {
                     Cod = objItem.CodProduto
-                }.obterPorCodigo();
+                }.obterPorCod();
                 itemValor += objProduto.Valor;
                 foreach (clnItemIngrediente objItemIngrediente in objPair.Value)
                 {

@@ -71,6 +71,20 @@ namespace BURGUER_SHACK_DESKTOP
             ObjItemIngredientes = objIngredientes;
 
             exibirProduto(objProduto, objPedido);
+
+            atualizarValor();
+        }
+
+        private void atualizarValor()
+        {
+            clnProduto objProduto = new clnProduto
+            {
+                Cod = ObjItem.CodProduto
+            }.obterPorCod();
+
+            double valor = objProduto.Valor;
+
+            lblValor.Text = "Valor (R$): " + valor;
         }
 
         private void selecionarProduto(int categoria)
@@ -109,7 +123,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnProduto objProdutoAtual = new clnProduto
             {
                 Cod = ObjItem.CodProduto
-            }.obterPorCodigo();
+            }.obterPorCod();
 
             List<clnProduto> objProdutos = new clnProduto
             {
@@ -173,7 +187,7 @@ namespace BURGUER_SHACK_DESKTOP
             grbDetalhes.Show();
         }
 
-        private void adicionarProduto()
+        private void confirmarProduto()
         {
             if (ObjItem != null)
             {
@@ -269,9 +283,9 @@ namespace BURGUER_SHACK_DESKTOP
             selecionaCategoria(4);
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            adicionarProduto();
+            confirmarProduto();
         }
 
         private void uctPedidoAdicionar_Load(object sender, EventArgs e)

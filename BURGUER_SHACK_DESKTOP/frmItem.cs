@@ -127,7 +127,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnProduto objProduto = new clnProduto
             {
                 Cod = PedidoProduto.CodProduto
-            }.obterPorCodigo();
+            }.obterPorCod();
 
             exibirProduto(objProduto, PedidoProduto);
 
