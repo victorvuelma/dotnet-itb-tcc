@@ -175,14 +175,14 @@ namespace BURGUER_SHACK_DESKTOP
                     Cod = objIngrediente.CodProdutoIngrediente
                 }.obterPorCod();
 
-                if (objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
+                if (objProdutoIngrediente == null ||objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
                 {
                     frmItemIngrediente frmIngrediente = new frmItemIngrediente
                     {
                         ObjItemIngrediente = objIngrediente
                     };
-                    frmIngrediente.btnAlterar.Visible = objProdutoIngrediente.Alterar;
-                    frmIngrediente.btnRemover.Visible = objProdutoIngrediente.Remover;
+                    frmIngrediente.btnAlterar.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Alterar;
+                    frmIngrediente.btnRemover.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Remover;
                     frmIngrediente.ShowDialog();
 
                     if (frmIngrediente.ObjItemIngrediente == null)
