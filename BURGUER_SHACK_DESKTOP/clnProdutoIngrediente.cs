@@ -112,7 +112,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
                     Cod = obj.CodIngrediente
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 clnArquivo objArquivo = new clnArquivo
                 {
@@ -127,7 +127,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
                     Cod = obj.CodIngrediente
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 return objIngrediente.Nome;
             }

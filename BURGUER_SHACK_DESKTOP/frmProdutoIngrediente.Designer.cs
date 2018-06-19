@@ -28,26 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdutoIngrediente));
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
-            this.lblPode = new System.Windows.Forms.Label();
             this.chkRemover = new System.Windows.Forms.CheckBox();
             this.chkAlterar = new System.Windows.Forms.CheckBox();
             this.txtQuantidade = new UIX.txtUIX();
             this.lblNome = new System.Windows.Forms.Label();
             this.picIngrediente = new System.Windows.Forms.PictureBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
             this.hdrUIX = new UIX.hdrUIX();
+            this.btnConfirmar = new UIX.btnUIX();
+            this.btnRemover = new UIX.btnUIX();
+            this.grbPode = new System.Windows.Forms.GroupBox();
             this.grbIngrediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).BeginInit();
+            this.grbPode.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbIngrediente
             // 
-            this.grbIngrediente.Controls.Add(this.lblPode);
-            this.grbIngrediente.Controls.Add(this.chkRemover);
-            this.grbIngrediente.Controls.Add(this.chkAlterar);
             this.grbIngrediente.Controls.Add(this.txtQuantidade);
             this.grbIngrediente.Controls.Add(this.lblNome);
             this.grbIngrediente.Controls.Add(this.picIngrediente);
@@ -57,21 +54,13 @@
             this.grbIngrediente.TabIndex = 7;
             this.grbIngrediente.TabStop = false;
             // 
-            // lblPode
-            // 
-            this.lblPode.Location = new System.Drawing.Point(350, 80);
-            this.lblPode.Name = "lblPode";
-            this.lblPode.Size = new System.Drawing.Size(85, 20);
-            this.lblPode.TabIndex = 7;
-            this.lblPode.Text = "Pode ser:";
-            this.lblPode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // chkRemover
             // 
             this.chkRemover.AutoSize = true;
-            this.chkRemover.Location = new System.Drawing.Point(352, 121);
+            this.chkRemover.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRemover.Location = new System.Drawing.Point(135, 35);
             this.chkRemover.Name = "chkRemover";
-            this.chkRemover.Size = new System.Drawing.Size(83, 20);
+            this.chkRemover.Size = new System.Drawing.Size(94, 21);
             this.chkRemover.TabIndex = 6;
             this.chkRemover.Text = "Removido";
             this.chkRemover.UseVisualStyleBackColor = true;
@@ -79,9 +68,10 @@
             // chkAlterar
             // 
             this.chkAlterar.AutoSize = true;
-            this.chkAlterar.Location = new System.Drawing.Point(352, 101);
+            this.chkAlterar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAlterar.Location = new System.Drawing.Point(25, 35);
             this.chkAlterar.Name = "chkAlterar";
-            this.chkAlterar.Size = new System.Drawing.Size(73, 20);
+            this.chkAlterar.Size = new System.Drawing.Size(83, 21);
             this.chkAlterar.TabIndex = 5;
             this.chkAlterar.Text = "Alterado";
             this.chkAlterar.UseVisualStyleBackColor = true;
@@ -91,13 +81,12 @@
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtQuantidade.Location = new System.Drawing.Point(135, 110);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtQuantidade.Location = new System.Drawing.Point(130, 110);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(210, 30);
+            this.txtQuantidade.Size = new System.Drawing.Size(305, 23);
             this.txtQuantidade.TabIndex = 4;
             // 
             // lblNome
@@ -118,26 +107,6 @@
             this.picIngrediente.TabIndex = 0;
             this.picIngrediente.TabStop = false;
             // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(325, 205);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(120, 40);
-            this.btnConfirmar.TabIndex = 9;
-            this.btnConfirmar.Text = "&Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Location = new System.Drawing.Point(5, 205);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(100, 40);
-            this.btnRemover.TabIndex = 8;
-            this.btnRemover.Text = "&Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -152,14 +121,54 @@
             this.hdrUIX.Title = "Produto Ingrediente";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Description = "Confirmar";
+            this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.ImageLocation = null;
+            this.btnConfirmar.Location = new System.Drawing.Point(355, 205);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(90, 90);
+            this.btnConfirmar.TabIndex = 12;
+            this.btnConfirmar.Text = "&Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Description = "Remover";
+            this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
+            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
+            this.btnRemover.ImageLocation = null;
+            this.btnRemover.Location = new System.Drawing.Point(5, 205);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(90, 90);
+            this.btnRemover.TabIndex = 11;
+            this.btnRemover.Text = "&Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // grbPode
+            // 
+            this.grbPode.Controls.Add(this.chkRemover);
+            this.grbPode.Controls.Add(this.chkAlterar);
+            this.grbPode.Location = new System.Drawing.Point(100, 205);
+            this.grbPode.Name = "grbPode";
+            this.grbPode.Size = new System.Drawing.Size(250, 90);
+            this.grbPode.TabIndex = 13;
+            this.grbPode.TabStop = false;
+            this.grbPode.Text = "PODE SER";
+            // 
             // frmProdutoIngrediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 250);
-            this.Controls.Add(this.grbIngrediente);
+            this.ClientSize = new System.Drawing.Size(450, 300);
+            this.Controls.Add(this.grbPode);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnRemover);
+            this.Controls.Add(this.grbIngrediente);
             this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -169,8 +178,9 @@
             this.Text = "Produto Ingrediente";
             this.Load += new System.EventHandler(this.frmAlteraIngrediente_Load);
             this.grbIngrediente.ResumeLayout(false);
-            this.grbIngrediente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).EndInit();
+            this.grbPode.ResumeLayout(false);
+            this.grbPode.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -181,11 +191,11 @@
         private UIX.txtUIX txtQuantidade;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox picIngrediente;
-        private System.Windows.Forms.Button btnConfirmar;
-        public System.Windows.Forms.Button btnRemover;
         private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.CheckBox chkAlterar;
         private System.Windows.Forms.CheckBox chkRemover;
-        private System.Windows.Forms.Label lblPode;
+        private UIX.btnUIX btnConfirmar;
+        public UIX.btnUIX btnRemover;
+        private System.Windows.Forms.GroupBox grbPode;
     }
 }

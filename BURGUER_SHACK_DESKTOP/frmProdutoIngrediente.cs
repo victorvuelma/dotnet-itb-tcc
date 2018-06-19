@@ -35,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnIngrediente objIngrediente = new clnIngrediente
             {
                 Cod = ObjProdutoIngrediente.CodIngrediente
-            }.obterPorCodigo();
+            }.obterPorCod();
 
             clnArquivo objArquivo = new clnArquivo
             {

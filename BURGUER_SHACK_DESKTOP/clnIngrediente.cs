@@ -52,7 +52,7 @@ namespace BURGUER_SHACK_DESKTOP
             return objIngrediente;
         }
 
-        public clnIngrediente obterPorCodigo()
+        public clnIngrediente obterPorCod()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("ingrediente");

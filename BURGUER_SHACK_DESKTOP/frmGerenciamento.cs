@@ -123,7 +123,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
                     Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 if (objIngrediente != null)
                 {

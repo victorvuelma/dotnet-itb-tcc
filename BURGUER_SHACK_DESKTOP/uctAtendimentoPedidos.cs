@@ -81,8 +81,8 @@ namespace BURGUER_SHACK_DESKTOP
             frmPedido frmPedido = new frmPedido
             {
                 CodAtendimento = CodAtendimento,
-                Pedido = objPedido,
-                PedidosProdutos = objPedidoProdutoIngredientes
+                ObjPedido = objPedido,
+                ObjItens = objPedidoProdutoIngredientes
             };
         }
 

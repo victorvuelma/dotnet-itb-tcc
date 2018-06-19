@@ -14,8 +14,10 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private clnAtendimento _objAtendimento;
+        private int _codFuncionario;
 
         public clnAtendimento ObjAtendimento { get => _objAtendimento; set => _objAtendimento = value; }
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmAtendimento()
         {
@@ -55,8 +57,10 @@ namespace BURGUER_SHACK_DESKTOP
         {
             frmPedido frmNovoPedido = new frmPedido
             {
-                Pedido = new clnPedido(),
-                PedidosProdutos = new Dictionary<clnItem, List<clnItemIngrediente>>()
+                CodAtendimento = ObjAtendimento.Cod,
+                CodFuncionario = CodFuncionario,
+                ObjPedido = new clnPedido(),
+                ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>()
             };
             frmNovoPedido.ShowDialog();
         }

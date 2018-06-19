@@ -128,7 +128,7 @@ namespace BURGUER_SHACK_DESKTOP
             cboUF.Enabled = false;
 
             addUFs(cboUF);
-            mtbCEP.mtb.TextChanged += (object sender, EventArgs e) =>
+            mtbCEP.mtb.Validated += (object sender, EventArgs e) =>
             {
                 if (clnUtil.validarCEP(mtbCEP.Text))
                 {

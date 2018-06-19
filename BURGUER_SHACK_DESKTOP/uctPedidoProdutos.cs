@@ -15,12 +15,15 @@ namespace BURGUER_SHACK_DESKTOP
 
         private frmPedido _form;
 
-        private int _atendimento;
-        private Dictionary<clnItem, List<clnItemIngrediente>> _pedidoProdutos;
+        private int _codAtendimento;
+        private int _codFuncionario;
+
+        private Dictionary<clnItem, List<clnItemIngrediente>> _objItens;
 
         public frmPedido Form { get => _form; set => _form = value; }
-        public int Atendimento { get => _atendimento; set => _atendimento = value; }
-        internal Dictionary<clnItem, List<clnItemIngrediente>> PedidoProdutos { get => _pedidoProdutos; set => _pedidoProdutos = value; }
+        internal Dictionary<clnItem, List<clnItemIngrediente>> ObjItens { get => _objItens; set => _objItens = value; }
+        public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public uctPedidoProdutos()
         {
@@ -38,14 +41,14 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (frmEditarProduto.PedidoProduto == null)
             {
-                PedidoProdutos.Remove(obtPedidoProduto);
+                ObjItens.Remove(obtPedidoProduto);
                 clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnUtilMensagem.MensagemIcone.INFO);
 
                 exibirProdutos();
             }
             else if (frmEditarProduto.PedidoProduto != obtPedidoProduto || frmEditarProduto.Ingredientes != objIngredientes)
             {
-                clnUtil.dictTrocar(PedidoProdutos, obtPedidoProduto, frmEditarProduto.PedidoProduto, frmEditarProduto.Ingredientes);
+                clnUtil.dictTrocar(ObjItens, obtPedidoProduto, frmEditarProduto.PedidoProduto, frmEditarProduto.Ingredientes);
 
                 exibirProdutos();
             }
@@ -56,7 +59,7 @@ namespace BURGUER_SHACK_DESKTOP
             pnlProdutos.Controls.Clear();
 
             List<Control> opcoesControles = new List<Control>();
-            foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPedidoIngredientes in PedidoProdutos)
+            foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPedidoIngredientes in ObjItens)
             {
                 clnItem objPedidoProduto = objPedidoIngredientes.Key;
                 List<clnItemIngrediente> objIngredientes = objPedidoIngredientes.Value;
@@ -105,6 +108,29 @@ namespace BURGUER_SHACK_DESKTOP
             if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja confirmar este pedido?", clnUtilMensagem.MensagemIcone.OK))
             {
                 //Confirma o pedido.
+                double valor = calculaValor();
+
+                clnPedido objPedido = new clnPedido
+                {
+                    CodAtendimento = CodAtendimento,
+                    CodFuncionario = CodFuncionario,
+                    Valor = valor,
+                    Situacao = clnPedido.pedidoSituacao.REALIZADO
+                };
+                objPedido.gravar();
+
+                foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPair in ObjItens)
+                {
+                    clnItem objItem = objPair.Key;
+                    objItem.CodPedido = objPedido.Cod;
+                    objItem.gravar();
+
+                    foreach(clnItemIngrediente objIngrediente in objPair.Value)
+                    {
+                        objIngrediente.CodItem = objItem.Cod;
+                        objIngrediente.gravar();
+                    }                    
+                }
 
                 Form.Close();
             }
@@ -113,6 +139,56 @@ namespace BURGUER_SHACK_DESKTOP
         private void uctPedidoProdutos_Load(object sender, EventArgs e)
         {
             exibirProdutos();
+        }
+
+        private double calculaValor()
+        {
+            double valor = 0;
+
+            foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPair in ObjItens)
+            {
+                double itemValor = 0;
+                clnItem objItem = objPair.Key;
+                clnProduto objProduto = new clnProduto
+                {
+                    Cod = objItem.CodProduto
+                }.obterPorCodigo();
+                itemValor += objProduto.Valor;
+                foreach (clnItemIngrediente objItemIngrediente in objPair.Value)
+                {
+                    double ingredienteValor = 0;
+                    clnIngrediente objIngredienteAtual = new clnIngrediente
+                    {
+                        Cod = objItemIngrediente.CodIngrediente
+                    }.obterPorCod();
+                    if (objItemIngrediente.CodProdutoIngrediente != -1)
+                    {
+                        clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                        {
+                            Cod = objItemIngrediente.CodProdutoIngrediente
+                        }.obterPorCod();
+                        if (objProdutoIngrediente != null)
+                        {
+                            if (objItemIngrediente.Quantidade > objProdutoIngrediente.Quantidade)
+                            {
+                                ingredienteValor = objIngredienteAtual.Valor * (objItemIngrediente.Quantidade - objProdutoIngrediente.Quantidade);
+                            }
+                        }
+                        else
+                        {
+                            ingredienteValor = objIngredienteAtual.Valor * objItemIngrediente.Quantidade;
+                        }
+                    }
+                    else
+                    {
+                        ingredienteValor = objIngredienteAtual.Valor * objItemIngrediente.Quantidade;
+                    }
+                    itemValor += ingredienteValor;
+                }
+                valor += itemValor;
+            }
+
+            return valor;
         }
     }
 }

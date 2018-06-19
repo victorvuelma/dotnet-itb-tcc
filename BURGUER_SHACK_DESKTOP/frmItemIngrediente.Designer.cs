@@ -30,11 +30,11 @@
         {
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
             this.txtQuantidade = new UIX.txtUIX();
-            this.btnAlterar = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.picIngrediente = new System.Windows.Forms.PictureBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnAlterar = new UIX.btnUIX();
+            this.btnConfirmar = new UIX.btnUIX();
+            this.btnRemover = new UIX.btnUIX();
             this.hdrUIX = new UIX.hdrUIX();
             this.grbIngrediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).BeginInit();
@@ -43,7 +43,6 @@
             // grbIngrediente
             // 
             this.grbIngrediente.Controls.Add(this.txtQuantidade);
-            this.grbIngrediente.Controls.Add(this.btnAlterar);
             this.grbIngrediente.Controls.Add(this.lblNome);
             this.grbIngrediente.Controls.Add(this.picIngrediente);
             this.grbIngrediente.Location = new System.Drawing.Point(5, 55);
@@ -57,24 +56,13 @@
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtQuantidade.Location = new System.Drawing.Point(135, 95);
+            this.txtQuantidade.Location = new System.Drawing.Point(135, 110);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(175, 40);
+            this.txtQuantidade.Size = new System.Drawing.Size(300, 20);
             this.txtQuantidade.TabIndex = 4;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(315, 95);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(120, 40);
-            this.btnAlterar.TabIndex = 3;
-            this.btnAlterar.Text = "&Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // lblNome
             // 
@@ -94,11 +82,29 @@
             this.picIngrediente.TabIndex = 0;
             this.picIngrediente.TabStop = false;
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Description = "Alterar";
+            this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnAlterar.ImageLocation = null;
+            this.btnAlterar.Location = new System.Drawing.Point(260, 205);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(90, 90);
+            this.btnAlterar.TabIndex = 3;
+            this.btnAlterar.Text = "&Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(325, 205);
+            this.btnConfirmar.Description = "Confirmar";
+            this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.ImageLocation = null;
+            this.btnConfirmar.Location = new System.Drawing.Point(355, 205);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(120, 40);
+            this.btnConfirmar.Size = new System.Drawing.Size(90, 90);
             this.btnConfirmar.TabIndex = 9;
             this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
@@ -106,9 +112,13 @@
             // 
             // btnRemover
             // 
+            this.btnRemover.Description = "Remover";
+            this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
+            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
+            this.btnRemover.ImageLocation = null;
             this.btnRemover.Location = new System.Drawing.Point(5, 205);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(100, 40);
+            this.btnRemover.Size = new System.Drawing.Size(90, 90);
             this.btnRemover.TabIndex = 8;
             this.btnRemover.Text = "&Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
@@ -132,8 +142,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 250);
+            this.ClientSize = new System.Drawing.Size(450, 300);
             this.Controls.Add(this.grbIngrediente);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.hdrUIX);
@@ -154,11 +165,11 @@
 
         private System.Windows.Forms.GroupBox grbIngrediente;
         private UIX.txtUIX txtQuantidade;
-        public System.Windows.Forms.Button btnAlterar;
+        public UIX.btnUIX btnAlterar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox picIngrediente;
-        private System.Windows.Forms.Button btnConfirmar;
-        public System.Windows.Forms.Button btnRemover;
+        private UIX.btnUIX btnConfirmar;
+        public UIX.btnUIX btnRemover;
         private UIX.hdrUIX hdrUIX;
     }
 }

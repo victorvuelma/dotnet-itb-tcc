@@ -13,7 +13,7 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctPrincipalMesas : UserControl
     {
 
-        private  int _codFuncionario;
+        private int _codFuncionario;
 
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
@@ -80,7 +80,7 @@ namespace BURGUER_SHACK_DESKTOP
                     {
                         CodFuncionario = CodFuncionario,
                         Inicio = DateTime.Now,
-                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO ,
+                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO,
                         CodMesas = new List<int>()
                     };
                     objAtendimento.gravar();
@@ -97,7 +97,8 @@ namespace BURGUER_SHACK_DESKTOP
             }
             frmAtendimento frmAtendimento = new frmAtendimento
             {
-                ObjAtendimento = objAtendimento
+                ObjAtendimento = objAtendimento,
+                CodFuncionario = CodFuncionario
             };
             frmAtendimento.ShowDialog();
 

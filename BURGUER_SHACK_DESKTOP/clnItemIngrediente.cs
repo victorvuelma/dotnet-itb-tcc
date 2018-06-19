@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SQL_POWERUP;
+using System.Data.SqlClient;
+
 namespace BURGUER_SHACK_DESKTOP
 {
     public class clnItemIngrediente
@@ -39,6 +42,28 @@ namespace BURGUER_SHACK_DESKTOP
             return new List<clnItemIngrediente>();
         }
 
+        public void gravar()
+        {
+            sqlCommandInsert objInsert = new sqlCommandInsert();
+            objInsert.table("item_ingrediente");
+            objInsert.Insert.val("id_ingrediente", CodIngrediente)
+                            .val("id_item", CodItem)
+                            .val("id_produto_ingrediente", CodProdutoIngrediente)
+                            .val("quantidade", Quantidade);
+
+            objInsert.execute(App.AppDatabase);
+        }
+
+        public void alterar()
+        {
+            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            objUpdate.table("item_ingrediente");
+            objUpdate.Set.val("id_ingrediente", CodIngrediente)
+                         .val("quantidade", Quantidade);
+
+            objUpdate.execute(App.AppDatabase);
+        }
+
         public class clnListar : clnUtilListar<clnItemIngrediente>
         {
             internal override int Cod(clnItemIngrediente obj)
@@ -59,7 +84,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
                     Cod = obj.CodIngrediente
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 clnArquivo objArquivo = new clnArquivo
                 {
@@ -74,7 +99,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
                     Cod = obj.CodIngrediente
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 return objIngrediente.Nome;
             }

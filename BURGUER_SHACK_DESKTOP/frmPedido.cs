@@ -13,13 +13,15 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmPedido : Form
     {
         private int _codAtendimento;
+        private int _codFuncionario;
 
-        private clnPedido _pedido;
-        private Dictionary<clnItem, List<clnItemIngrediente>> _pedidosProdutos;
+        private clnPedido _objPedido;
+        private Dictionary<clnItem, List<clnItemIngrediente>> _objItens;
 
         internal int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
-        internal clnPedido Pedido { get => _pedido; set => _pedido = value; }
-        internal Dictionary<clnItem, List<clnItemIngrediente>> PedidosProdutos { get => _pedidosProdutos; set => _pedidosProdutos = value; }
+        internal clnPedido ObjPedido { get => _objPedido; set => _objPedido = value; }
+        internal Dictionary<clnItem, List<clnItemIngrediente>> ObjItens { get => _objItens; set => _objItens = value; }
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmPedido()
         {
@@ -36,8 +38,9 @@ namespace BURGUER_SHACK_DESKTOP
             uctPedidoProdutos uctProdutos = new uctPedidoProdutos
             {
                 Form = this,
-                Atendimento = CodAtendimento,
-                PedidoProdutos = PedidosProdutos
+                CodAtendimento = CodAtendimento,
+                CodFuncionario = CodFuncionario,
+                ObjItens = ObjItens
             };
 
             alterarConteudo(uctProdutos, "Pedido :: Produtos");
@@ -45,7 +48,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void addProduto(clnItem pedidoProduto, List<clnItemIngrediente> pedidoIngredientes)
         {
-            PedidosProdutos.Add(pedidoProduto, pedidoIngredientes);
+            ObjItens.Add(pedidoProduto, pedidoIngredientes);
 
             abrirProdutos();
         }
@@ -70,7 +73,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar
             {
-                Form = this
+                Form = this,
+                
             };
 
             alterarConteudo(uctAdicionar, "Pedido :: Adicionar Produto");
