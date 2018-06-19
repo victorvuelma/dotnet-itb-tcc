@@ -14,11 +14,11 @@ namespace BURGUER_SHACK_DESKTOP
     {
         private clnUtilValidar _validar;
 
-        private clnItem _pedidoProduto;
-        private List<clnItemIngrediente> _ingredientes;
+        private clnItem _objItem;
+        private List<clnItemIngrediente> _objIngredientes;
 
-        public clnItem PedidoProduto { get => _pedidoProduto; set => _pedidoProduto = value; }
-        public List<clnItemIngrediente> Ingredientes { get => _ingredientes; set => _ingredientes = value; }
+        public clnItem ObjItem { get => _objItem; set => _objItem = value; }
+        public List<clnItemIngrediente> ObjIngredientes { get => _objIngredientes; set => _objIngredientes = value; }
 
         public frmItem()
         {
@@ -40,7 +40,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
             {
-                Opcoes = Ingredientes,
+                Opcoes = ObjIngredientes,
                 Icone = Properties.Resources.ingrediente,
                 Titulo = "Selecione um Ingrediente"
             };
@@ -101,7 +101,7 @@ namespace BURGUER_SHACK_DESKTOP
                 };
 
                 clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                Ingredientes.Add(objPedidoIngrediente);
+                ObjIngredientes.Add(objPedidoIngrediente);
             }
         }
 
@@ -109,7 +109,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnUtilMensagem.MensagemIcone.ERRO))
             {
-                PedidoProduto = null;
+                ObjItem = null;
 
                 Close();
             }
@@ -126,12 +126,12 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnProduto objProduto = new clnProduto
             {
-                Cod = PedidoProduto.CodProduto
+                Cod = ObjItem.CodProduto
             }.obterPorCod();
 
-            exibirProduto(objProduto, PedidoProduto);
+            exibirProduto(objProduto, ObjItem);
 
-            if (Ingredientes.Count == 0)
+            if (ObjIngredientes.Count == 0)
             {
                 btnIngredienteAdd.Hide();
                 btnIngredientes.Hide();

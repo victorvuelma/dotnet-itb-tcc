@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItem));
             this.hdrUIX = new UIX.hdrUIX();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new UIX.btnUIX();
             this.grbProduto = new System.Windows.Forms.GroupBox();
-            this.btnIngredienteAdd = new System.Windows.Forms.Button();
             this.txtAdicional = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new UIX.txtUIX();
-            this.btnIngredientes = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
             this.lblProdutoNome = new System.Windows.Forms.Label();
             this.picProduto = new System.Windows.Forms.PictureBox();
+            this.btnRemover = new UIX.btnUIX();
+            this.grbIngredientes = new System.Windows.Forms.GroupBox();
+            this.btnIngredienteAdd = new UIX.btnUIX();
+            this.btnIngredientes = new UIX.btnUIX();
             this.grbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).BeginInit();
+            this.grbIngredientes.SuspendLayout();
             this.SuspendLayout();
             // 
             // hdrUIX
@@ -59,10 +60,14 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(245, 247);
+            this.btnConfirmar.Description = "Confirmar";
+            this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.ImageLocation = null;
+            this.btnConfirmar.Location = new System.Drawing.Point(345, 195);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(200, 50);
+            this.btnConfirmar.Size = new System.Drawing.Size(100, 100);
             this.btnConfirmar.TabIndex = 10;
             this.btnConfirmar.Text = "&Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -70,36 +75,23 @@
             // 
             // grbProduto
             // 
-            this.grbProduto.Controls.Add(this.btnIngredienteAdd);
             this.grbProduto.Controls.Add(this.txtAdicional);
             this.grbProduto.Controls.Add(this.txtQuantidade);
-            this.grbProduto.Controls.Add(this.btnIngredientes);
-            this.grbProduto.Controls.Add(this.btnRemover);
             this.grbProduto.Controls.Add(this.lblProdutoNome);
             this.grbProduto.Controls.Add(this.picProduto);
-            this.grbProduto.Location = new System.Drawing.Point(10, 55);
+            this.grbProduto.Location = new System.Drawing.Point(5, 55);
             this.grbProduto.Name = "grbProduto";
-            this.grbProduto.Size = new System.Drawing.Size(430, 190);
+            this.grbProduto.Size = new System.Drawing.Size(440, 135);
             this.grbProduto.TabIndex = 11;
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "PRODUTO";
             // 
-            // btnIngredienteAdd
-            // 
-            this.btnIngredienteAdd.Location = new System.Drawing.Point(260, 140);
-            this.btnIngredienteAdd.Name = "btnIngredienteAdd";
-            this.btnIngredienteAdd.Size = new System.Drawing.Size(40, 40);
-            this.btnIngredienteAdd.TabIndex = 13;
-            this.btnIngredienteAdd.Text = "+";
-            this.btnIngredienteAdd.UseVisualStyleBackColor = true;
-            this.btnIngredienteAdd.Click += new System.EventHandler(this.btnIngredienteAdd_Click);
-            // 
             // txtAdicional
             // 
-            this.txtAdicional.Location = new System.Drawing.Point(130, 45);
+            this.txtAdicional.Location = new System.Drawing.Point(120, 55);
             this.txtAdicional.Multiline = true;
             this.txtAdicional.Name = "txtAdicional";
-            this.txtAdicional.Size = new System.Drawing.Size(295, 90);
+            this.txtAdicional.Size = new System.Drawing.Size(315, 45);
             this.txtAdicional.TabIndex = 1;
             // 
             // txtQuantidade
@@ -107,53 +99,86 @@
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(130, 140);
+            this.txtQuantidade.Location = new System.Drawing.Point(120, 105);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(125, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(315, 25);
             this.txtQuantidade.TabIndex = 3;
-            // 
-            // btnIngredientes
-            // 
-            this.btnIngredientes.Location = new System.Drawing.Point(305, 140);
-            this.btnIngredientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnIngredientes.Name = "btnIngredientes";
-            this.btnIngredientes.Size = new System.Drawing.Size(120, 40);
-            this.btnIngredientes.TabIndex = 11;
-            this.btnIngredientes.Text = "&Ingredientes";
-            this.btnIngredientes.UseVisualStyleBackColor = true;
-            this.btnIngredientes.Click += new System.EventHandler(this.btnIngredientes_Click);
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Location = new System.Drawing.Point(5, 140);
-            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(120, 40);
-            this.btnRemover.TabIndex = 10;
-            this.btnRemover.Text = "&Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // lblProdutoNome
             // 
             this.lblProdutoNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdutoNome.Location = new System.Drawing.Point(130, 15);
+            this.lblProdutoNome.Location = new System.Drawing.Point(120, 20);
             this.lblProdutoNome.Name = "lblProdutoNome";
-            this.lblProdutoNome.Size = new System.Drawing.Size(295, 25);
+            this.lblProdutoNome.Size = new System.Drawing.Size(315, 30);
             this.lblProdutoNome.TabIndex = 1;
             this.lblProdutoNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picProduto
             // 
-            this.picProduto.Location = new System.Drawing.Point(5, 15);
+            this.picProduto.Location = new System.Drawing.Point(5, 20);
             this.picProduto.Name = "picProduto";
-            this.picProduto.Size = new System.Drawing.Size(120, 120);
+            this.picProduto.Size = new System.Drawing.Size(110, 110);
             this.picProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProduto.TabIndex = 0;
             this.picProduto.TabStop = false;
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Description = "Remover";
+            this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
+            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
+            this.btnRemover.ImageLocation = null;
+            this.btnRemover.Location = new System.Drawing.Point(5, 195);
+            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(100, 100);
+            this.btnRemover.TabIndex = 10;
+            this.btnRemover.Text = "&Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // grbIngredientes
+            // 
+            this.grbIngredientes.Controls.Add(this.btnIngredienteAdd);
+            this.grbIngredientes.Controls.Add(this.btnIngredientes);
+            this.grbIngredientes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbIngredientes.Location = new System.Drawing.Point(160, 195);
+            this.grbIngredientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbIngredientes.Name = "grbIngredientes";
+            this.grbIngredientes.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbIngredientes.Size = new System.Drawing.Size(175, 100);
+            this.grbIngredientes.TabIndex = 30;
+            this.grbIngredientes.TabStop = false;
+            this.grbIngredientes.Text = "INGREDIENTES";
+            // 
+            // btnIngredienteAdd
+            // 
+            this.btnIngredienteAdd.Description = "Adicionar";
+            this.btnIngredienteAdd.HoverColor = System.Drawing.Color.Transparent;
+            this.btnIngredienteAdd.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnIngredienteAdd.ImageLocation = null;
+            this.btnIngredienteAdd.Location = new System.Drawing.Point(90, 15);
+            this.btnIngredienteAdd.Name = "btnIngredienteAdd";
+            this.btnIngredienteAdd.Size = new System.Drawing.Size(80, 80);
+            this.btnIngredienteAdd.TabIndex = 26;
+            this.btnIngredienteAdd.UseVisualStyleBackColor = true;
+            this.btnIngredienteAdd.Click += new System.EventHandler(this.btnIngredienteAdd_Click);
+            // 
+            // btnIngredientes
+            // 
+            this.btnIngredientes.Description = "Visualizar";
+            this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
+            this.btnIngredientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.lista;
+            this.btnIngredientes.ImageLocation = null;
+            this.btnIngredientes.Location = new System.Drawing.Point(5, 15);
+            this.btnIngredientes.Name = "btnIngredientes";
+            this.btnIngredientes.Size = new System.Drawing.Size(80, 80);
+            this.btnIngredientes.TabIndex = 28;
+            this.btnIngredientes.UseVisualStyleBackColor = true;
+            this.btnIngredientes.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
             // frmItem
             // 
@@ -161,9 +186,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 300);
+            this.Controls.Add(this.grbIngredientes);
             this.Controls.Add(this.grbProduto);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.hdrUIX);
+            this.Controls.Add(this.btnRemover);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -174,21 +201,23 @@
             this.grbProduto.ResumeLayout(false);
             this.grbProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).EndInit();
+            this.grbIngredientes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         public UIX.hdrUIX hdrUIX;
-        private System.Windows.Forms.Button btnConfirmar;
+        private UIX.btnUIX btnConfirmar;
         private System.Windows.Forms.GroupBox grbProduto;
-        public System.Windows.Forms.Button btnIngredienteAdd;
         private System.Windows.Forms.TextBox txtAdicional;
         private UIX.txtUIX txtQuantidade;
-        private System.Windows.Forms.Button btnIngredientes;
-        private System.Windows.Forms.Button btnRemover;
+        private UIX.btnUIX btnRemover;
         private System.Windows.Forms.Label lblProdutoNome;
         private System.Windows.Forms.PictureBox picProduto;
+        public System.Windows.Forms.GroupBox grbIngredientes;
+        private UIX.btnUIX btnIngredienteAdd;
+        private UIX.btnUIX btnIngredientes;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

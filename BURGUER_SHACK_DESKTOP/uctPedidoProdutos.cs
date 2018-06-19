@@ -34,21 +34,21 @@ namespace BURGUER_SHACK_DESKTOP
         {
             frmItem frmEditarProduto = new frmItem
             {
-                PedidoProduto = obtPedidoProduto,
-                Ingredientes = objIngredientes
+                ObjItem = obtPedidoProduto,
+                ObjIngredientes = objIngredientes
             };
             frmEditarProduto.ShowDialog();
 
-            if (frmEditarProduto.PedidoProduto == null)
+            if (frmEditarProduto.ObjItem == null)
             {
                 ObjItens.Remove(obtPedidoProduto);
                 clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnUtilMensagem.MensagemIcone.INFO);
 
                 exibirProdutos();
             }
-            else if (frmEditarProduto.PedidoProduto != obtPedidoProduto || frmEditarProduto.Ingredientes != objIngredientes)
+            else if (frmEditarProduto.ObjItem != obtPedidoProduto || frmEditarProduto.ObjIngredientes != objIngredientes)
             {
-                clnUtil.dictTrocar(ObjItens, obtPedidoProduto, frmEditarProduto.PedidoProduto, frmEditarProduto.Ingredientes);
+                clnUtil.dictTrocar(ObjItens, obtPedidoProduto, frmEditarProduto.ObjItem, frmEditarProduto.ObjIngredientes);
 
                 exibirProdutos();
             }
