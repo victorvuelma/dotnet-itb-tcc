@@ -91,11 +91,11 @@
             this.txtAdicional.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtAdicional.Campo = "Informações Adicionais";
             this.txtAdicional.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
-            this.txtAdicional.Location = new System.Drawing.Point(120, 50);
+            this.txtAdicional.Location = new System.Drawing.Point(120, 70);
             this.txtAdicional.MaxLength = 32767;
             this.txtAdicional.Multiline = true;
             this.txtAdicional.Name = "txtAdicional";
-            this.txtAdicional.Size = new System.Drawing.Size(315, 50);
+            this.txtAdicional.Size = new System.Drawing.Size(315, 60);
             this.txtAdicional.TabIndex = 1;
             // 
             // txtQuantidade
@@ -104,12 +104,12 @@
             this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
-            this.txtQuantidade.Location = new System.Drawing.Point(120, 105);
+            this.txtQuantidade.Location = new System.Drawing.Point(120, 45);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(315, 25);
+            this.txtQuantidade.Size = new System.Drawing.Size(315, 21);
             this.txtQuantidade.TabIndex = 3;
             // 
             // lblProdutoNome
@@ -117,7 +117,7 @@
             this.lblProdutoNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProdutoNome.Location = new System.Drawing.Point(120, 20);
             this.lblProdutoNome.Name = "lblProdutoNome";
-            this.lblProdutoNome.Size = new System.Drawing.Size(315, 25);
+            this.lblProdutoNome.Size = new System.Drawing.Size(315, 20);
             this.lblProdutoNome.TabIndex = 1;
             this.lblProdutoNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 

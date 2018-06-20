@@ -196,7 +196,7 @@ namespace BURGUER_SHACK_DESKTOP
                     ObjItem.Adicional = txtAdicional.Text;
                     ObjItem.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                    Form.addProduto(ObjItem, ObjItemIngredientes);
+                    Form.adicionarItem(ObjItem, ObjItemIngredientes);
                 }
             }
             else

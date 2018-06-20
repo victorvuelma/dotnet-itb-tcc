@@ -149,15 +149,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPair in ObjItens)
                 {
-                    clnItem objItem = objPair.Key;
-                    objItem.CodPedido = objPedido.Cod;
-                    objItem.gravar();
-
-                    foreach (clnItemIngrediente objIngrediente in objPair.Value)
-                    {
-                        objIngrediente.CodItem = objItem.Cod;
-                        objIngrediente.gravar();
-                    }
+                    clnUtilPedido.inserirItem(objPedido.Cod, objPair.Key, objPair.Value);
                 }
 
                 Form.Close();

@@ -46,14 +46,14 @@ namespace BURGUER_SHACK_DESKTOP
             alterarConteudo(uctProdutos, "Pedido :: Produtos");
         }
 
-        public void addProduto(clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
+        public void adicionarItem(clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
         {
             if (ObjPedido.Cod == -1)
             {
                 ObjItens.Add(objItem, objItemIngredientes);
             } else
             {
-                inserirItem(ObjPedido.Cod, objItem, objItemIngredientes);
+                clnUtilPedido.inserirItem(ObjPedido.Cod, objItem, objItemIngredientes);
             }
 
             abrirProdutos();
@@ -80,7 +80,6 @@ namespace BURGUER_SHACK_DESKTOP
             uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar
             {
                 Form = this,
-
             };
 
             alterarConteudo(uctAdicionar, "Pedido :: Adicionar Produto");
@@ -122,18 +121,6 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             finalizar();
-        }
-
-        public void inserirItem(int codPedido, clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
-        {
-            objItem.CodPedido = codPedido;
-            objItem.gravar();
-
-            foreach (clnItemIngrediente objIngrediente in objItemIngredientes)
-            {
-                objIngrediente.CodItem = objItem.Cod;
-                objIngrediente.gravar();
-            }
         }
 
     }

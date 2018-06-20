@@ -163,6 +163,7 @@
     <Compile Include="clnProduto.cs" />
     <Compile Include="clnProdutoIngrediente.cs" />
     <Compile Include="clnReserva.cs" />
+    <Compile Include="clnUtilPedido.cs" />
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />

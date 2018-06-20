@@ -71,7 +71,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 ObjVisualizar = objVisualizar
             };
-            frmVisualizar.Show();
+            frmVisualizar.ShowDialog();
         }
 
         private void exibirProduto(clnProduto objProduto, clnItem objItem)
