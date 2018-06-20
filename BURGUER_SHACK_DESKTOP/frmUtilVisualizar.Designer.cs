@@ -93,7 +93,7 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtPesquisar.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtPesquisar.Campo = "Pesquisar";
             this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

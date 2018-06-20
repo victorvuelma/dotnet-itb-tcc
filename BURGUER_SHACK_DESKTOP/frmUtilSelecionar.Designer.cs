@@ -70,7 +70,7 @@
             // txtQuantidade
             // 
             this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.Location = new System.Drawing.Point(5, 320);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -150,7 +150,7 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtPesquisar.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtPesquisar.Campo = "Pesquisar";
             this.txtPesquisar.Location = new System.Drawing.Point(5, 30);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);

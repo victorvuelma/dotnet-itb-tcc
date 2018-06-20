@@ -133,7 +133,7 @@
             // txtRG
             // 
             this.txtRG.AccessibleName = "CPF*";
-            this.txtRG.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtRG.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtRG.Campo = "RG*";
             this.txtRG.Location = new System.Drawing.Point(180, 50);
             this.txtRG.MaxLength = 32767;
@@ -145,7 +145,7 @@
             // txtEmail
             // 
             this.txtEmail.AccessibleName = "E-mail";
-            this.txtEmail.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtEmail.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtEmail.Campo = "E-mail*";
             this.txtEmail.Location = new System.Drawing.Point(5, 110);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -205,7 +205,7 @@
             // txtNome
             // 
             this.txtNome.AccessibleName = "Nome*";
-            this.txtNome.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtNome.Campo = "Nome*";
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -251,7 +251,7 @@
             // txtEndComplemento
             // 
             this.txtEndComplemento.AccessibleName = "Complemento";
-            this.txtEndComplemento.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtEndComplemento.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtEndComplemento.Campo = "Complemento";
             this.txtEndComplemento.Location = new System.Drawing.Point(135, 80);
             this.txtEndComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -264,7 +264,7 @@
             // txtEndCidade
             // 
             this.txtEndCidade.AccessibleName = "Cidade*";
-            this.txtEndCidade.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtEndCidade.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtEndCidade.Campo = "Cidade*";
             this.txtEndCidade.Location = new System.Drawing.Point(150, 110);
             this.txtEndCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -277,7 +277,7 @@
             // txtEndBairro
             // 
             this.txtEndBairro.AccessibleName = "Bairro*";
-            this.txtEndBairro.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtEndBairro.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtEndBairro.Campo = "Bairro*";
             this.txtEndBairro.Location = new System.Drawing.Point(5, 110);
             this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -314,7 +314,7 @@
             // txtEndLogradouro
             // 
             this.txtEndLogradouro.AccessibleName = "Logradouro*";
-            this.txtEndLogradouro.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtEndLogradouro.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtEndLogradouro.Campo = "Logradouro*";
             this.txtEndLogradouro.Location = new System.Drawing.Point(5, 50);
             this.txtEndLogradouro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -327,7 +327,7 @@
             // txtEndNr
             // 
             this.txtEndNr.AccessibleName = "Número*";
-            this.txtEndNr.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtEndNr.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtEndNr.Campo = "Número*";
             this.txtEndNr.Location = new System.Drawing.Point(5, 80);
             this.txtEndNr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -421,7 +421,7 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.AllowedChars = UIX.uixAllowedChars.DOUBLE;
+            this.txtSalario.AllowedChars = UIX.uixEnum.uixAllowedChars.DOUBLE;
             this.txtSalario.Campo = "Salário*";
             this.txtSalario.Location = new System.Drawing.Point(5, 15);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

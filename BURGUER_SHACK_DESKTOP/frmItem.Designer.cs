@@ -31,7 +31,7 @@
             this.hdrUIX = new UIX.hdrUIX();
             this.btnConfirmar = new UIX.btnUIX();
             this.grbProduto = new System.Windows.Forms.GroupBox();
-            this.txtAdicional = new System.Windows.Forms.TextBox();
+            this.txtAdicional = new UIX.txtUIX();
             this.txtQuantidade = new UIX.txtUIX();
             this.lblProdutoNome = new System.Windows.Forms.Label();
             this.picProduto = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,7 @@
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(450, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.Title = "Produto";
+            this.hdrUIX.Title = "Item";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // btnConfirmar
@@ -88,17 +88,22 @@
             // 
             // txtAdicional
             // 
-            this.txtAdicional.Location = new System.Drawing.Point(120, 55);
+            this.txtAdicional.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtAdicional.Campo = "Informações Adicionais";
+            this.txtAdicional.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
+            this.txtAdicional.Location = new System.Drawing.Point(120, 50);
+            this.txtAdicional.MaxLength = 32767;
             this.txtAdicional.Multiline = true;
             this.txtAdicional.Name = "txtAdicional";
-            this.txtAdicional.Size = new System.Drawing.Size(315, 45);
+            this.txtAdicional.Size = new System.Drawing.Size(315, 50);
             this.txtAdicional.TabIndex = 1;
             // 
             // txtQuantidade
             // 
             this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(120, 105);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
@@ -112,7 +117,7 @@
             this.lblProdutoNome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProdutoNome.Location = new System.Drawing.Point(120, 20);
             this.lblProdutoNome.Name = "lblProdutoNome";
-            this.lblProdutoNome.Size = new System.Drawing.Size(315, 30);
+            this.lblProdutoNome.Size = new System.Drawing.Size(315, 25);
             this.lblProdutoNome.TabIndex = 1;
             this.lblProdutoNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -196,10 +201,9 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Produto";
+            this.Text = "Item";
             this.Load += new System.EventHandler(this.frmPedidoProduto_Load);
             this.grbProduto.ResumeLayout(false);
-            this.grbProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).EndInit();
             this.grbIngredientes.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -210,7 +214,7 @@
         public UIX.hdrUIX hdrUIX;
         private UIX.btnUIX btnConfirmar;
         private System.Windows.Forms.GroupBox grbProduto;
-        private System.Windows.Forms.TextBox txtAdicional;
+        private UIX.txtUIX txtAdicional;
         private UIX.txtUIX txtQuantidade;
         private UIX.btnUIX btnRemover;
         private System.Windows.Forms.Label lblProdutoNome;

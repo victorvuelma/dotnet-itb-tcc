@@ -14,6 +14,9 @@ namespace UIX
 {
     public partial class cboUIX : UserControl
     {
+
+        private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
+
         public cboUIX()
         {
             InitializeComponent();
@@ -50,11 +53,30 @@ namespace UIX
             }
         }
 
+        public uixEnum.uixLabelPosition LabelPosition
+        {
+            get => _labelPosition;
+            set
+            {
+                _labelPosition = value;
+                update();
+            }
+        }
+
         private void update()
         {
             lbl.AutoSize = true;
-            cbo.Location = new Point(lbl.Location.X + lbl.Size.Width, cbo.Location.Y);
-            cbo.Size = new Size(Size.Width - cbo.Location.X, cbo.Size.Height);
+            switch (LabelPosition)
+            {
+                case uixEnum.uixLabelPosition.SIDE:
+                    cbo.Location = new Point(lbl.Location.X + lbl.Size.Width, cbo.Location.Y);
+                    cbo.Size = new Size(Size.Width - cbo.Location.X, Size.Height);
+                    break;
+                case uixEnum.uixLabelPosition.UP:
+                    cbo.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
+                    cbo.Size = new Size(Size.Width, Size.Height - cbo.Location.Y);
+                    break;
+            }
         }
 
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]

@@ -13,6 +13,9 @@ namespace UIX
 {
     public partial class mtbUIX : UserControl
     {
+
+        private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
+
         public mtbUIX()
         {
             InitializeComponent();
@@ -49,11 +52,29 @@ namespace UIX
             }
         }
 
+        public uixEnum.uixLabelPosition LabelPosition {
+            get => _labelPosition;
+            set
+            {
+                _labelPosition = value;
+                update();
+            }
+        }
+
         private void update()
         {
             lbl.AutoSize = true;
-            mtb.Location = new Point(lbl.Location.X + lbl.Size.Width, mtb.Location.Y);
-            mtb.Size = new Size(Size.Width - mtb.Location.X, mtb.Size.Height);
+            switch (LabelPosition)
+            {
+                case uixEnum.uixLabelPosition.SIDE:
+                    mtb.Location = new Point(lbl.Location.X + lbl.Size.Width, mtb.Location.Y);
+                    mtb.Size = new Size(Size.Width - mtb.Location.X, Size.Height);
+                    break;
+                case uixEnum.uixLabelPosition.UP:
+                    mtb.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
+                    mtb.Size = new Size(Size.Width, Size.Height - mtb.Location.Y);
+                    break;
+            }
         }
 
         [Editor("System.Windows.Forms.Design.MaskPropertyEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]

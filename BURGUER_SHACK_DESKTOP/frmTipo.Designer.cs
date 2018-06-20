@@ -112,7 +112,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.AllowedChars = UIX.uixAllowedChars.ALL;
+            this.txtNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtNome.Campo = "Descrição";
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

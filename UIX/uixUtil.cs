@@ -14,13 +14,13 @@ namespace UIX
         private static char[] INT_CHARS = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
         private static char[] DOUBLE_CHARS = new char[] { ',', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
 
-        public static char[] getChars(uixAllowedChars allowedChars)
+        public static char[] getChars(uixEnum.uixAllowedChars allowedChars)
         {
             switch (allowedChars)
             {
-                case uixAllowedChars.INT:
+                case uixEnum.uixAllowedChars.INT:
                     return INT_CHARS;
-                case uixAllowedChars.DOUBLE:
+                case uixEnum.uixAllowedChars.DOUBLE:
                     return DOUBLE_CHARS;
                 default:
                     return new char[] { };

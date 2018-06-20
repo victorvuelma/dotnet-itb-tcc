@@ -51,7 +51,7 @@ namespace BURGUER_SHACK_DESKTOP
         // ---- NUMBOARD
         public static void definirNumBoard(UIX.txtUIX txt)
         {
-            if (txt.AllowedChars == UIX.uixAllowedChars.INT)
+            if (txt.AllowedChars == UIX.uixEnum.uixAllowedChars.INT)
             {
                 definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
             }

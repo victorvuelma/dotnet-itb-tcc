@@ -30,10 +30,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private List<clnItemIngrediente> obterIngredientes()
         {
-            if(ObjItem == null || ObjItem.CodPedido == -1)
+            if (ObjItem == null || ObjItem.CodPedido == -1)
             {
                 return ObjIngredientes;
-            } else
+            }
+            else
             {
                 return new clnItemIngrediente
                 {
@@ -44,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja cancelar as alterações realizadas no produto?", clnUtilMensagem.MensagemIcone.INFO))
+            if (clnUtilMensagem.mostrarSimNao("Item", "Deseja cancelar as alterações realizadas no item?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 Close();
             }
@@ -130,9 +131,9 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void removerProduto()
+        private void removerItem()
         {
-            if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja realmente remover esse produto do produto?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja realmente remover esse item do pedido?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 if (ObjItem != null && ObjItem.Cod != -1)
                 {
@@ -152,6 +153,8 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.definirNumBoard(txtQuantidade);
 
             UIX.uixButton.btnApply(btnRemover, App.AppVisualStyle.ButtonWarningColor);
+
+            hdrUIX.Title = App.AppName + "- Pedido :: Alterando Item " + ObjItem.Cod;
 
             clnProduto objProduto = new clnProduto
             {
@@ -178,7 +181,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            removerProduto();
+            removerItem();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -186,6 +189,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (_validar.valido())
             {
                 ObjItem.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
+                ObjItem.Adicional = txtAdicional.Text;
 
                 if (ObjItem != null && ObjItem.Cod != -1)
                 {
@@ -236,7 +240,8 @@ namespace BURGUER_SHACK_DESKTOP
                             {
                                 objItemIngrediente.remover();
                                 frmIngrediente.ObjItemIngrediente.gravar();
-                            } else
+                            }
+                            else
                             {
                                 frmIngrediente.ObjItemIngrediente.alterar();
                             }
@@ -248,7 +253,7 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
                 }
-                return false;
+                return true;
             }
         }
     }

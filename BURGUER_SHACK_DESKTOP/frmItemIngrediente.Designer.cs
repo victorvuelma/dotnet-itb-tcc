@@ -54,7 +54,7 @@
             // txtQuantidade
             // 
             this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.Location = new System.Drawing.Point(135, 110);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

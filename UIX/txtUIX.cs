@@ -13,7 +13,8 @@ namespace UIX
     public partial class txtUIX : UserControl
     {
 
-        private uixAllowedChars _allowedChars = uixAllowedChars.ALL;
+        private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
+        private uixEnum.uixAllowedChars _allowedChars = uixEnum.uixAllowedChars.ALL;
         private char[] allowedChars = new char[] { };
 
         public txtUIX()
@@ -52,12 +53,21 @@ namespace UIX
             }
         }
 
-        public uixAllowedChars AllowedChars
+        public uixEnum.uixAllowedChars AllowedChars
         {
             get => _allowedChars; set
             {
                 allowedChars = uixUtil.getChars(value);
                 _allowedChars = value;
+            }
+        }
+
+        public uixEnum.uixLabelPosition LabelPosition
+        {
+            get => _labelPosition;
+            set {
+                _labelPosition = value;
+                update();
             }
         }
 
@@ -80,8 +90,17 @@ namespace UIX
         private void update()
         {
             lbl.AutoSize = true;
-            txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
-            txt.Size = new Size(Size.Width - txt.Location.X, Size.Height);
+            switch (LabelPosition)
+            {
+                case uixEnum.uixLabelPosition.SIDE:
+                    txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
+                    txt.Size = new Size(Size.Width - txt.Location.X, Size.Height);
+                    break;
+                case uixEnum.uixLabelPosition.UP:
+                    txt.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
+                    txt.Size = new Size(Size.Width, Size.Height - txt.Location.Y);
+                    break;
+            }
         }
 
         private void txtUIX_Load(object sender, EventArgs e)

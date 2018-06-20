@@ -175,7 +175,7 @@
             // txtPessoas
             // 
             this.txtPessoas.AccessibleName = "Pessoas";
-            this.txtPessoas.AllowedChars = UIX.uixAllowedChars.INT;
+            this.txtPessoas.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtPessoas.Campo = "Pessoas";
             this.txtPessoas.Location = new System.Drawing.Point(230, 20);
             this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
