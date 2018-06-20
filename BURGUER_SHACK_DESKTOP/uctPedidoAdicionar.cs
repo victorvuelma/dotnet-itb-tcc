@@ -187,7 +187,7 @@ namespace BURGUER_SHACK_DESKTOP
             grbDetalhes.Show();
         }
 
-        private void confirmarProduto()
+        private void confirmarItem()
         {
             if (ObjItem != null)
             {
@@ -285,7 +285,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            confirmarProduto();
+            confirmarItem();
         }
 
         private void uctPedidoAdicionar_Load(object sender, EventArgs e)

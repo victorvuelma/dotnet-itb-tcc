@@ -73,6 +73,12 @@ namespace BURGUER_SHACK_DESKTOP
                 ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>()
             };
             frmNovoPedido.ShowDialog();
+            if(frmNovoPedido.ObjPedido.Cod != -1)
+            {
+                ObjPedidos.Add(frmNovoPedido.ObjPedido);
+            }
+
+            exibirPedidos();
         }
 
         private void abrirPedido(clnPedido objPedido)

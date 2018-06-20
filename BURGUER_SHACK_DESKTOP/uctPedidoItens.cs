@@ -47,8 +47,8 @@ namespace BURGUER_SHACK_DESKTOP
                 return objItens;
             }
         }
-        
-        private void editarItem(clnItem objItem)
+
+        private List<clnItemIngrediente> obterIngredientes(clnItem objItem)
         {
             List<clnItemIngrediente> objIngredientes = null;
             if (objItem.Cod == -1)
@@ -62,11 +62,16 @@ namespace BURGUER_SHACK_DESKTOP
                     CodItem = objItem.Cod
                 }.obterPorItem();
             }
+            return objIngredientes;
+        }
 
+        private void editarItem(clnItem objItem)
+        {
+            List<clnItemIngrediente> objItemIngredientes = obterIngredientes(objItem);
             frmItem frmEditarItem = new frmItem
             {
                 ObjItem = objItem,
-                ObjIngredientes = objIngredientes
+                ObjIngredientes = objItemIngredientes
             };
             frmEditarItem.ShowDialog();
 
@@ -77,7 +82,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 exibirProdutos();
             }
-            else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjIngredientes != objIngredientes)
+            else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjIngredientes != objItemIngredientes)
             {
                 clnUtil.dictTrocar(ObjItens, objItem, frmEditarItem.ObjItem, frmEditarItem.ObjIngredientes);
 
@@ -163,52 +168,13 @@ namespace BURGUER_SHACK_DESKTOP
 
         private double calculaValor()
         {
-            double valor = 0;
-
-            foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPair in ObjItens)
+            double pedidoValor = 0;
+            foreach (clnItem objItem in obterItens())
             {
-                double itemValor = 0;
-                clnItem objItem = objPair.Key;
-                clnProduto objProduto = new clnProduto
-                {
-                    Cod = objItem.CodProduto
-                }.obterPorCod();
-                itemValor += objProduto.Valor;
-                foreach (clnItemIngrediente objItemIngrediente in objPair.Value)
-                {
-                    double ingredienteValor = 0;
-                    clnIngrediente objIngredienteAtual = new clnIngrediente
-                    {
-                        Cod = objItemIngrediente.CodIngrediente
-                    }.obterPorCod();
-                    if (objItemIngrediente.CodProdutoIngrediente != -1)
-                    {
-                        clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
-                        {
-                            Cod = objItemIngrediente.CodProdutoIngrediente
-                        }.obterPorCod();
-                        if (objProdutoIngrediente != null)
-                        {
-                            if (objItemIngrediente.Quantidade > objProdutoIngrediente.Quantidade)
-                            {
-                                ingredienteValor = objIngredienteAtual.Valor * (objItemIngrediente.Quantidade - objProdutoIngrediente.Quantidade);
-                            }
-                        }
-                        else
-                        {
-                            ingredienteValor = objIngredienteAtual.Valor * objItemIngrediente.Quantidade;
-                        }
-                    }
-                    else
-                    {
-                        ingredienteValor = objIngredienteAtual.Valor * objItemIngrediente.Quantidade;
-                    }
-                    itemValor += ingredienteValor;
-                }
-                valor += itemValor;
+                pedidoValor += clnUtilPedido.calcularValor(objItem, obterIngredientes(objItem));
             }
 
-            return valor;
+            return pedidoValor;
         }
     }
 }

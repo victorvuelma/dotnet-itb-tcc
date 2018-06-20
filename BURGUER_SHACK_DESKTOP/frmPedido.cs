@@ -33,7 +33,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo);
         }
 
-        private void abrirProdutos()
+        private void abrirItens()
         {
             uctPedidoItens uctProdutos = new uctPedidoItens
             {
@@ -56,7 +56,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnUtilPedido.inserirItem(ObjPedido.Cod, objItem, objItemIngredientes);
             }
 
-            abrirProdutos();
+            abrirItens();
         }
 
         private void fechar()
@@ -95,7 +95,7 @@ namespace BURGUER_SHACK_DESKTOP
             if (ObjPedido == null)
                 ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>();
 
-            abrirProdutos();
+            abrirItens();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            abrirProdutos();
+            abrirItens();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
