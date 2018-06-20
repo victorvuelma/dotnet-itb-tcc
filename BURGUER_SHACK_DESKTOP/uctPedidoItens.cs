@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class uctPedidoProdutos : UserControl
+    public partial class uctPedidoItens : UserControl
     {
 
         private frmPedido _form;
@@ -18,37 +18,68 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codAtendimento;
         private int _codFuncionario;
 
+        private clnPedido _objPedido;
         private Dictionary<clnItem, List<clnItemIngrediente>> _objItens;
 
         public frmPedido Form { get => _form; set => _form = value; }
-        internal Dictionary<clnItem, List<clnItemIngrediente>> ObjItens { get => _objItens; set => _objItens = value; }
         public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+        public clnPedido ObjPedido { get => _objPedido; set => _objPedido = value; }
+        public Dictionary<clnItem, List<clnItemIngrediente>> ObjItens { get => _objItens; set => _objItens = value; }
 
-        public uctPedidoProdutos()
+        public uctPedidoItens()
         {
             InitializeComponent();
         }
 
-        private void editarPedidoProduto(clnItem obtPedidoProduto, List<clnItemIngrediente> objIngredientes)
+        private List<clnItem> obterItens()
         {
-            frmItem frmEditarProduto = new frmItem
+            if (ObjPedido == null || ObjPedido.Cod == -1)
             {
-                ObjItem = obtPedidoProduto,
+                return new List<clnItem>(ObjItens.Keys);
+            }
+            else
+            {
+                List<clnItem> objItens = new clnItem
+                {
+                    CodPedido = ObjPedido.Cod
+                }.obterPorPedido();
+                return objItens;
+            }
+        }
+        
+        private void editarItem(clnItem objItem)
+        {
+            List<clnItemIngrediente> objIngredientes = null;
+            if (objItem.Cod == -1)
+            {
+                ObjItens.TryGetValue(objItem, out objIngredientes);
+            }
+            else
+            {
+                objIngredientes = new clnItemIngrediente
+                {
+                    CodItem = objItem.Cod
+                }.obterPorItem();
+            }
+
+            frmItem frmEditarItem = new frmItem
+            {
+                ObjItem = objItem,
                 ObjIngredientes = objIngredientes
             };
-            frmEditarProduto.ShowDialog();
+            frmEditarItem.ShowDialog();
 
-            if (frmEditarProduto.ObjItem == null)
+            if (frmEditarItem.ObjItem == null)
             {
-                ObjItens.Remove(obtPedidoProduto);
+                ObjItens.Remove(objItem);
                 clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnUtilMensagem.MensagemIcone.INFO);
 
                 exibirProdutos();
             }
-            else if (frmEditarProduto.ObjItem != obtPedidoProduto || frmEditarProduto.ObjIngredientes != objIngredientes)
+            else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjIngredientes != objIngredientes)
             {
-                clnUtil.dictTrocar(ObjItens, obtPedidoProduto, frmEditarProduto.ObjItem, frmEditarProduto.ObjIngredientes);
+                clnUtil.dictTrocar(ObjItens, objItem, frmEditarItem.ObjItem, frmEditarItem.ObjIngredientes);
 
                 exibirProdutos();
             }
@@ -59,14 +90,11 @@ namespace BURGUER_SHACK_DESKTOP
             pnlProdutos.Controls.Clear();
 
             List<Control> opcoesControles = new List<Control>();
-            foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPedidoIngredientes in ObjItens)
+            foreach (clnItem objItem in obterItens())
             {
-                clnItem objPedidoProduto = objPedidoIngredientes.Key;
-                List<clnItemIngrediente> objIngredientes = objPedidoIngredientes.Value;
-
                 clnProduto objProduto = new clnProduto
                 {
-                    Cod = objPedidoProduto.CodProduto
+                    Cod = objItem.CodProduto
                 }.obterPorCod();
 
                 clnArquivo objArquivo = new clnArquivo
@@ -77,13 +105,13 @@ namespace BURGUER_SHACK_DESKTOP
                 UIX.btnUIX btn = new UIX.btnUIX
                 {
                     Description = objProduto.Nome,
-                    Name = "btnProduto" + objProduto.Cod,
+                    Name = "btnItem" + objProduto.Cod,
                     Size = new Size(110, 110),
-                    Image = Image.FromFile(objArquivo.Local)
+                    ImageLocation = objArquivo.Local
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
-                    editarPedidoProduto(objPedidoProduto, objIngredientes);
+                    editarItem(objItem);
                 };
 
                 opcoesControles.Add(btn);
@@ -125,11 +153,11 @@ namespace BURGUER_SHACK_DESKTOP
                     objItem.CodPedido = objPedido.Cod;
                     objItem.gravar();
 
-                    foreach(clnItemIngrediente objIngrediente in objPair.Value)
+                    foreach (clnItemIngrediente objIngrediente in objPair.Value)
                     {
                         objIngrediente.CodItem = objItem.Cod;
                         objIngrediente.gravar();
-                    }                    
+                    }
                 }
 
                 Form.Close();

@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class uctPedidoProdutos
+    partial class uctPedidoItens
     {
         /// <summary> 
         /// Required designer variable.

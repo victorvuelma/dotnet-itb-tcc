@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAtendimento));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnMesas = new UIX.btnUIX();
-            this.btnNovoPedido = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnFinalizar = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
@@ -43,7 +41,6 @@
             // pnlMenu
             // 
             this.pnlMenu.Controls.Add(this.btnMesas);
-            this.pnlMenu.Controls.Add(this.btnNovoPedido);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnFinalizar);
             this.pnlMenu.Controls.Add(this.btnPedidos);
@@ -57,30 +54,20 @@
             this.btnMesas.Description = "Mesas";
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
-            this.btnMesas.Location = new System.Drawing.Point(5, 205);
+            this.btnMesas.ImageLocation = null;
+            this.btnMesas.Location = new System.Drawing.Point(5, 105);
             this.btnMesas.Name = "btnMesas";
             this.btnMesas.Size = new System.Drawing.Size(90, 90);
             this.btnMesas.TabIndex = 9;
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
-            // btnNovoPedido
-            // 
-            this.btnNovoPedido.Description = "Novo Pedido";
-            this.btnNovoPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovoPedido.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnNovoPedido.Location = new System.Drawing.Point(5, 5);
-            this.btnNovoPedido.Name = "btnNovoPedido";
-            this.btnNovoPedido.Size = new System.Drawing.Size(90, 90);
-            this.btnNovoPedido.TabIndex = 8;
-            this.btnNovoPedido.UseVisualStyleBackColor = true;
-            this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
-            // 
             // btnSair
             // 
             this.btnSair.Description = "Sair";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.ImageLocation = null;
             this.btnSair.Location = new System.Drawing.Point(5, 555);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(90, 90);
@@ -94,7 +81,8 @@
             this.btnFinalizar.Description = "Finalizar";
             this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
             this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizar.Location = new System.Drawing.Point(5, 305);
+            this.btnFinalizar.ImageLocation = null;
+            this.btnFinalizar.Location = new System.Drawing.Point(5, 455);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
             this.btnFinalizar.TabIndex = 7;
@@ -107,7 +95,8 @@
             this.btnPedidos.Description = "Pedidos";
             this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
             this.btnPedidos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
-            this.btnPedidos.Location = new System.Drawing.Point(5, 105);
+            this.btnPedidos.ImageLocation = null;
+            this.btnPedidos.Location = new System.Drawing.Point(5, 5);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(90, 90);
             this.btnPedidos.TabIndex = 4;
@@ -160,7 +149,6 @@
         private UIX.btnUIX btnPedidos;
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.btnUIX btnSair;
-        private UIX.btnUIX btnNovoPedido;
         private UIX.btnUIX btnMesas;
     }
 }

@@ -13,33 +13,38 @@ namespace BURGUER_SHACK_DESKTOP
     public class clnItemIngrediente
     {
 
-        private int _cod = -1;
-
         private int _codIngrediente = -1;
         private int _codProdutoIngrediente = -1;
         private int _codItem = -1;
 
         private int _quantidade;
 
-        public int Cod { get => _cod; set => _cod = value; }
         public int CodIngrediente { get => _codIngrediente; set => _codIngrediente = value; }
         public int CodProdutoIngrediente { get => _codProdutoIngrediente; set => _codProdutoIngrediente = value; }
         public int CodItem { get => _codItem; set => _codItem = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
-        public clnItemIngrediente localizarPorItem()
+        private clnItemIngrediente obter(SqlDataReader reader) => new clnItemIngrediente
         {
-            clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente();
-            objPedidoIngrediente.CodItem = CodItem;
-            objPedidoIngrediente.CodIngrediente = 1;
-            objPedidoIngrediente.Quantidade = 1;
-
-            return objPedidoIngrediente;
-        }
+            CodIngrediente = clnUtilConvert.ToInt(reader["id_ingrediente"]),
+            CodItem = clnUtilConvert.ToInt(reader["id_item"]),
+            Quantidade = clnUtilConvert.ToInt(reader["quantidade"]),
+            CodProdutoIngrediente = clnUtilConvert.ToInt(reader["id_produto_ingrediente"])
+        };
 
         public List<clnItemIngrediente> obterPorItem()
         {
-            return new List<clnItemIngrediente>();
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("item_ingrediente");
+            objSelect.Where.where("id_item", CodItem);
+
+            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            List<clnItemIngrediente> objIngredientes = new List<clnItemIngrediente>();
+            while (reader.Read())
+                objIngredientes.Add(obter(reader));
+            reader.Close();
+
+            return objIngredientes;
         }
 
         public void gravar()
@@ -60,15 +65,28 @@ namespace BURGUER_SHACK_DESKTOP
             objUpdate.table("item_ingrediente");
             objUpdate.Set.val("id_ingrediente", CodIngrediente)
                          .val("quantidade", Quantidade);
+            objUpdate.Where.where("id_item", CodItem)
+                           .where("id_produto_ingrediente", CodProdutoIngrediente);
 
             objUpdate.execute(App.AppDatabase);
+        }
+
+        internal void remover()
+        {
+            sqlCommandDelete objDelete = new sqlCommandDelete();
+            objDelete.table("item_ingrediente");
+            objDelete.Where.where("id_ingrediente", CodIngrediente)
+                           .where("id_item", CodItem)
+                           .where("id_produto_ingrediente", CodProdutoIngrediente);
+
+            objDelete.execute(App.AppDatabase);
         }
 
         public class clnListar : clnUtilListar<clnItemIngrediente>
         {
             internal override int Cod(clnItemIngrediente obj)
             {
-                return obj.Cod;
+                return obj.CodItem * obj.CodIngrediente;
             }
 
             internal override string Detalhes(clnItemIngrediente obj)

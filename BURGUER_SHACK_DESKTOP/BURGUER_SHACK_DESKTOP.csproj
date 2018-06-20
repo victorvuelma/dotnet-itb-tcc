@@ -361,11 +361,11 @@
     <Compile Include="uctPrincipalMesas.Designer.cs">
       <DependentUpon>uctPrincipalMesas.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctPedidoProdutos.cs">
+    <Compile Include="uctPedidoItens.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctPedidoProdutos.Designer.cs">
-      <DependentUpon>uctPedidoProdutos.cs</DependentUpon>
+    <Compile Include="uctPedidoItens.Designer.cs">
+      <DependentUpon>uctPedidoItens.cs</DependentUpon>
     </Compile>
     <Compile Include="uctAtendimentoPedidos.cs">
       <SubType>UserControl</SubType>
@@ -379,6 +379,9 @@
     <Compile Include="uctGerenTerceirizada.Designer.cs">
       <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAtendimento.resx">
+      <DependentUpon>frmAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmItemIngrediente.resx">
       <DependentUpon>frmItemIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -459,8 +465,8 @@
     <EmbeddedResource Include="uctPrincipalMesas.resx">
       <DependentUpon>uctPrincipalMesas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctPedidoProdutos.resx">
-      <DependentUpon>uctPedidoProdutos.cs</DependentUpon>
+    <EmbeddedResource Include="uctPedidoItens.resx">
+      <DependentUpon>uctPedidoItens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctAtendimentoPedidos.resx">
       <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>

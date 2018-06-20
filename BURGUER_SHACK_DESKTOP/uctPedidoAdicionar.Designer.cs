@@ -63,7 +63,7 @@
             this.grbAdicionarProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbAdicionarProduto.Name = "grbAdicionarProduto";
             this.grbAdicionarProduto.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbAdicionarProduto.Size = new System.Drawing.Size(440, 444);
+            this.grbAdicionarProduto.Size = new System.Drawing.Size(440, 390);
             this.grbAdicionarProduto.TabIndex = 5;
             this.grbAdicionarProduto.TabStop = false;
             this.grbAdicionarProduto.Text = "ADICIONAR PRODUTO";
@@ -77,9 +77,9 @@
             this.grbProduto.Controls.Add(this.txtQuantidade);
             this.grbProduto.Controls.Add(this.lblProdutoNome);
             this.grbProduto.Controls.Add(this.picProduto);
-            this.grbProduto.Location = new System.Drawing.Point(5, 140);
+            this.grbProduto.Location = new System.Drawing.Point(5, 150);
             this.grbProduto.Name = "grbProduto";
-            this.grbProduto.Size = new System.Drawing.Size(430, 230);
+            this.grbProduto.Size = new System.Drawing.Size(430, 235);
             this.grbProduto.TabIndex = 4;
             this.grbProduto.TabStop = false;
             this.grbProduto.Text = "PRODUTO";
@@ -192,7 +192,7 @@
             this.grbTipo.Controls.Add(this.btnBebida);
             this.grbTipo.Controls.Add(this.btnAcompanhamento);
             this.grbTipo.Controls.Add(this.btnLanche);
-            this.grbTipo.Location = new System.Drawing.Point(5, 15);
+            this.grbTipo.Location = new System.Drawing.Point(5, 20);
             this.grbTipo.Name = "grbTipo";
             this.grbTipo.Size = new System.Drawing.Size(430, 120);
             this.grbTipo.TabIndex = 0;
@@ -262,9 +262,9 @@
             // grbDetalhes
             // 
             this.grbDetalhes.Controls.Add(this.lblDetalhes);
-            this.grbDetalhes.Location = new System.Drawing.Point(17, 456);
+            this.grbDetalhes.Location = new System.Drawing.Point(5, 405);
             this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(430, 111);
+            this.grbDetalhes.Size = new System.Drawing.Size(335, 190);
             this.grbDetalhes.TabIndex = 5;
             this.grbDetalhes.TabStop = false;
             this.grbDetalhes.Text = "DETALHES";
@@ -273,7 +273,7 @@
             // 
             this.lblDetalhes.Location = new System.Drawing.Point(5, 20);
             this.lblDetalhes.Name = "lblDetalhes";
-            this.lblDetalhes.Size = new System.Drawing.Size(420, 76);
+            this.lblDetalhes.Size = new System.Drawing.Size(325, 165);
             this.lblDetalhes.TabIndex = 0;
             // 
             // btnConfirmar

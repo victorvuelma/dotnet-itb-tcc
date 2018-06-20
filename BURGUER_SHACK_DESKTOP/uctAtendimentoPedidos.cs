@@ -13,17 +13,19 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class uctAtendimentoPedidos : UserControl
     {
 
+        private int _codFuncionario;
         private int _codAtendimento;
 
         private List<clnPedido> _objPedidos;
+
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+        public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
+        public List<clnPedido> ObjPedidos { get => _objPedidos; set => _objPedidos = value; }
 
         public uctAtendimentoPedidos()
         {
             InitializeComponent();
         }
-
-        public List<clnPedido> ObjPedidos { get => _objPedidos; set => _objPedidos = value; }
-        public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
 
         private void exibirPedidos()
         {
@@ -61,34 +63,41 @@ namespace BURGUER_SHACK_DESKTOP
             pnlPedidos.BackColor = grbPedidos.BackColor;
         }
 
-        private void abrirPedido(clnPedido objPedido)
+        private void abrirNovoPedido()
         {
-            List<clnItem> objProdutos = new clnItem
-            {
-                CodPedido = objPedido.Cod
-            }.obterPorPedido();
-
-            Dictionary<clnItem, List<clnItemIngrediente>> objPedidoProdutoIngredientes = new Dictionary<clnItem, List<clnItemIngrediente>>();
-            foreach(clnItem objPedidoProduto in objProdutos)
-            {
-                List<clnItemIngrediente> objIngredientes = new clnItemIngrediente
-                {
-                    CodItem = objPedido.Cod
-                }.obterPorItem();
-
-                objPedidoProdutoIngredientes.Add(objPedidoProduto, objIngredientes);
-            }
-            frmPedido frmPedido = new frmPedido
+            frmPedido frmNovoPedido = new frmPedido
             {
                 CodAtendimento = CodAtendimento,
-                ObjPedido = objPedido,
-                ObjItens = objPedidoProdutoIngredientes
+                CodFuncionario = CodFuncionario,
+                ObjPedido = new clnPedido(),
+                ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>()
             };
+            frmNovoPedido.ShowDialog();
+        }
+
+        private void abrirPedido(clnPedido objPedido)
+        {
+            frmPedido frmAbrirPedido = new frmPedido
+            {
+                CodAtendimento = CodAtendimento,
+                ObjPedido = objPedido
+            };
+            frmAbrirPedido.ShowDialog();
+
+            if (frmAbrirPedido.ObjPedido != objPedido && objPedido.Cod != -1)
+            {
+                objPedido.alterar();
+            }
         }
 
         private void uctAtendimentoPedidos_Load(object sender, EventArgs e)
         {
             exibirPedidos();
+        }
+
+        private void btnNovoPedido_Click(object sender, EventArgs e)
+        {
+            abrirNovoPedido();
         }
     }
 }

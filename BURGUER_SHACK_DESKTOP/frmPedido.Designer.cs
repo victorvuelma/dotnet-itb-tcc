@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnAdicionar = new UIX.btnUIX();
-            this.btnFinalizar = new UIX.btnUIX();
+            this.btnCancelar = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
             this.btnProdutos = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
@@ -42,7 +41,7 @@
             // pnlMenu
             // 
             this.pnlMenu.Controls.Add(this.btnAdicionar);
-            this.pnlMenu.Controls.Add(this.btnFinalizar);
+            this.pnlMenu.Controls.Add(this.btnCancelar);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnProdutos);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
@@ -56,6 +55,7 @@
             this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAdicionar.ImageLocation = null;
             this.btnAdicionar.Location = new System.Drawing.Point(5, 5);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(90, 90);
@@ -63,25 +63,26 @@
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // btnFinalizar
+            // btnCancelar
             // 
-            this.btnFinalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFinalizar.Description = "Finalizar";
-            this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizar.Location = new System.Drawing.Point(5, 505);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
-            this.btnFinalizar.TabIndex = 7;
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Visible = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.Description = "Finalizar";
+            this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnCancelar.ImageLocation = null;
+            this.btnCancelar.Location = new System.Drawing.Point(5, 505);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 90);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnSair
             // 
             this.btnSair.Description = "Cancelar";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.ImageLocation = null;
             this.btnSair.Location = new System.Drawing.Point(10, 710);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(80, 80);
@@ -94,6 +95,7 @@
             this.btnProdutos.Description = "Produtos";
             this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
             this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
+            this.btnProdutos.ImageLocation = null;
             this.btnProdutos.Location = new System.Drawing.Point(5, 105);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(90, 90);
@@ -124,7 +126,7 @@
             // 
             // frmPedido
             // 
-            this.AcceptButton = this.btnFinalizar;
+            this.AcceptButton = this.btnCancelar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 650);
@@ -149,7 +151,7 @@
         private UIX.btnUIX btnProdutos;
         public UIX.hdrUIX hdrUIX;
         public System.Windows.Forms.Panel pnlConteudo;
-        private UIX.btnUIX btnFinalizar;
+        private UIX.btnUIX btnCancelar;
         private UIX.btnUIX btnSair;
         //private uctProdutoRemover uctPedidoRemover1;
     }

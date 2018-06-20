@@ -35,20 +35,26 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirProdutos()
         {
-            uctPedidoProdutos uctProdutos = new uctPedidoProdutos
+            uctPedidoItens uctProdutos = new uctPedidoItens
             {
                 Form = this,
                 CodAtendimento = CodAtendimento,
                 CodFuncionario = CodFuncionario,
-                ObjItens = ObjItens
+                ObjItens = ObjItens,
+                ObjPedido = ObjPedido
             };
-
             alterarConteudo(uctProdutos, "Pedido :: Produtos");
         }
 
-        public void addProduto(clnItem pedidoProduto, List<clnItemIngrediente> pedidoIngredientes)
+        public void addProduto(clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
         {
-            ObjItens.Add(pedidoProduto, pedidoIngredientes);
+            if (ObjPedido.Cod == -1)
+            {
+                ObjItens.Add(objItem, objItemIngredientes);
+            } else
+            {
+                inserirItem(ObjPedido.Cod, objItem, objItemIngredientes);
+            }
 
             abrirProdutos();
         }
@@ -74,7 +80,7 @@ namespace BURGUER_SHACK_DESKTOP
             uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar
             {
                 Form = this,
-                
+
             };
 
             alterarConteudo(uctAdicionar, "Pedido :: Adicionar Produto");
@@ -86,6 +92,9 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarTabIndex(Controls);
 
             UIX.uixButton.btnApply(btnSair, App.AppVisualStyle.ButtonWarningColor);
+
+            if (ObjPedido == null)
+                ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>();
 
             abrirProdutos();
         }
@@ -113,6 +122,18 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             finalizar();
+        }
+
+        public void inserirItem(int codPedido, clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
+        {
+            objItem.CodPedido = codPedido;
+            objItem.gravar();
+
+            foreach (clnItemIngrediente objIngrediente in objItemIngredientes)
+            {
+                objIngrediente.CodItem = objItem.Cod;
+                objIngrediente.gravar();
+            }
         }
 
     }

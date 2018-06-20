@@ -215,9 +215,9 @@
         private UIX.btnUIX btnRemover;
         private System.Windows.Forms.Label lblProdutoNome;
         private System.Windows.Forms.PictureBox picProduto;
-        public System.Windows.Forms.GroupBox grbIngredientes;
         private UIX.btnUIX btnIngredienteAdd;
         private UIX.btnUIX btnIngredientes;
+        private System.Windows.Forms.GroupBox grbIngredientes;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

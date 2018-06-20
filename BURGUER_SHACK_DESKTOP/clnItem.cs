@@ -73,5 +73,9 @@ namespace BURGUER_SHACK_DESKTOP
             objUpdate.execute(App.AppDatabase);
         }
 
+        internal void remover()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

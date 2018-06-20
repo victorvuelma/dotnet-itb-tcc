@@ -54,6 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
                         Quantidade = ObjItemIngrediente.Quantidade,
                         CodProdutoIngrediente = ObjItemIngrediente.CodProdutoIngrediente,
                         CodIngrediente = objIngrediente.Cod,
+                        CodItem = ObjItemIngrediente.CodItem
                     };
                     objItemIngredientes.Add(objItemIngrediente);
                 }

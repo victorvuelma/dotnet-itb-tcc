@@ -39,7 +39,8 @@ namespace BURGUER_SHACK_DESKTOP
             uctAtendimentoPedidos uctPedidos = new uctAtendimentoPedidos
             {
                 CodAtendimento = ObjAtendimento.Cod,
-                ObjPedidos = objPedidos
+                ObjPedidos = objPedidos,
+                CodFuncionario = CodFuncionario
             };
             alterarConteudo(uctPedidos, "Pedidos");
         }
@@ -51,18 +52,6 @@ namespace BURGUER_SHACK_DESKTOP
                 Atendimento = ObjAtendimento.Cod
             };
             alterarConteudo(uctConta, "Conta");
-        }
-
-        private void abrirNovoPedido()
-        {
-            frmPedido frmNovoPedido = new frmPedido
-            {
-                CodAtendimento = ObjAtendimento.Cod,
-                CodFuncionario = CodFuncionario,
-                ObjPedido = new clnPedido(),
-                ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>()
-            };
-            frmNovoPedido.ShowDialog();
         }
 
         private void abrirMesas()
@@ -103,11 +92,6 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btnNovoPedido_Click(object sender, EventArgs e)
-        {
-            abrirNovoPedido();
         }
 
         private void btnMesas_Click(object sender, EventArgs e)
