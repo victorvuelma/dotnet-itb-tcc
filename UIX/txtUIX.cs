@@ -65,7 +65,8 @@ namespace UIX
         public uixEnum.uixLabelPosition LabelPosition
         {
             get => _labelPosition;
-            set {
+            set
+            {
                 _labelPosition = value;
                 update();
             }
@@ -76,6 +77,8 @@ namespace UIX
         public new bool Enabled { get => txt.Enabled; set => txt.Enabled = value; }
 
         public override String Text { get => txt.Text; set => txt.Text = value; }
+
+        public ScrollBars ScrollBars { get => txt.ScrollBars; set => txt.ScrollBars = value; }
 
         public bool Multiline
         {

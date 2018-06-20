@@ -23,7 +23,10 @@ namespace UIX
             txt.BackColor = colorSet.LightColor;
             txt.ForeColor = colorSet.ContentColor;
             txt.BorderStyle = BorderStyle.None;
-            txt.Margin = new Padding(5);
+            if (txt.Multiline && txt is TextBox box)
+            {
+                box.ScrollBars = ScrollBars.Vertical;
+            }
         }
     }
 }
