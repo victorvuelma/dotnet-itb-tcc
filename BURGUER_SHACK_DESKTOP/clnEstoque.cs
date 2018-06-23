@@ -61,5 +61,30 @@ namespace BURGUER_SHACK_DESKTOP
             return quantidade;
         }
 
+        public void gravar()
+        {
+            sqlCommandInsert objInsert = new sqlCommandInsert();
+            objInsert.table("estoque");
+            objInsert.Insert.val("id_ingrediente", CodIngrediente)
+                            .val("id_fornecedor", CodFornecedor)
+                            .val("entrada", Entrada)
+                            .val("validade", Validade)
+                            .val("quantidade", Quantidade)
+                            .val("total", Total)
+                            .val("valor", Valor);
+
+            Cod = objInsert.executeWithOutput(App.AppDatabase);
+        }
+
+        public void alterar()
+        {
+            sqlCommandUpdate objInsert = new sqlCommandUpdate();
+            objInsert.table("estoque");
+            objInsert.Where.where("id", Cod);
+            objInsert.Set.val("quantidade", Quantidade);
+
+            objInsert.execute(App.AppDatabase);
+        }
+
     }
 }
