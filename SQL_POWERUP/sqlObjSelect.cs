@@ -21,9 +21,11 @@ namespace SQL_POWERUP
         private String _as;
 
         private selectOperation _operation = selectOperation.NONE;
+        private int _coalesce = -1;
 
         internal string TableColumn { get => _tableColumn; set => _tableColumn = value; }
         internal string As { get => _as; set => _as = value; }
         internal selectOperation Operation { get => _operation; set => _operation = value; }
+        public int Coalesce { get => _coalesce; set => _coalesce = value; }
     }
 }

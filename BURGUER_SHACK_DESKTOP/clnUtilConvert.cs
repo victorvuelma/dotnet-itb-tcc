@@ -59,5 +59,6 @@ namespace BURGUER_SHACK_DESKTOP
         internal static bool ToBool(object val) => Convert.ToBoolean(val);
 
         internal static object ToBit(object val) => (val.Equals(true) ? 1 : 0);
+
     }
 }

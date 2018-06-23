@@ -71,6 +71,7 @@
             // 
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(120, 60);
+            this.lbl.MaximumSize = new System.Drawing.Size(220, 1000);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(220, 100);
             this.lbl.TabIndex = 4;
@@ -79,13 +80,13 @@
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.hdrUIX.ButtonCloseEnabled = true;
+            this.hdrUIX.ButtonMinEnabled = false;
+            this.hdrUIX.Image = null;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(350, 50);
             this.hdrUIX.TabIndex = 0;
-            this.hdrUIX.ButtonCloseEnabled = true;
-            this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = null;
             this.hdrUIX.Title = "T";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 

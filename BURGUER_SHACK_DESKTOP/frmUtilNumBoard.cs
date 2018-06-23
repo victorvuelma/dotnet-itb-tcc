@@ -151,7 +151,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
             UIX.uixMaskedTextBox.mtbApply(mtbNum, App.VisualStyle.FormColor);
-            clnUtil.atualizarTabIndex(Controls);
+            clnUtil.atualizarForm(this);
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

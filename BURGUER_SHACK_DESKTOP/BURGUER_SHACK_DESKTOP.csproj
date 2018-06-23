@@ -183,6 +183,12 @@
     <Compile Include="frmFuncionario.Designer.cs">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstoque.Designer.cs">
+      <DependentUpon>frmEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProdutoIngrediente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,11 +219,11 @@
     <Compile Include="frmReserva.Designer.cs">
       <DependentUpon>frmReserva.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEstoque.cs">
+    <Compile Include="frmEstoqueold.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEstoque.Designer.cs">
-      <DependentUpon>frmEstoque.cs</DependentUpon>
+    <Compile Include="frmEstoqueold.Designer.cs">
+      <DependentUpon>frmEstoqueold.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
@@ -389,8 +395,8 @@
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEstoque.resx">
-      <DependentUpon>frmEstoque.cs</DependentUpon>
+    <EmbeddedResource Include="frmEstoqueold.resx">
+      <DependentUpon>frmEstoqueold.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFornecedor.resx">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstoque.resx">
+      <DependentUpon>frmEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProduto.resx">
       <DependentUpon>frmProduto.cs</DependentUpon>

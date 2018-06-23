@@ -14,6 +14,8 @@ namespace UIX
     public partial class mtbUIX : UserControl
     {
 
+        private IButtonControl _acceptButton;
+
         private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
 
         public mtbUIX()
@@ -88,6 +90,8 @@ namespace UIX
 
         public override String Text { get => mtb.Text; set => mtb.Text = value; }
 
+        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
+
         private void mtbUIX_Load(object sender, EventArgs e)
         {
             update();
@@ -97,5 +101,18 @@ namespace UIX
         {
             mtb.SelectionStart = 0;
         }
+
+        private void mtb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                if (AcceptButton != null)
+                {
+                    AcceptButton.PerformClick();
+                }
+            }
+        }
+
     }
 }

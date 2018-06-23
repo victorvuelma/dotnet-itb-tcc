@@ -12,7 +12,7 @@ namespace SQL_POWERUP
         private List<sqlObjSelect> _params = new List<sqlObjSelect>();
 
         internal List<sqlObjSelect> Params { get => _params; }
-        
+
         internal bool isIncluded(String tableColumn)
         {
             foreach (sqlObjSelect objParam in Params)
@@ -49,6 +49,18 @@ namespace SQL_POWERUP
             });
         }
 
+        public sqlHelperSelect select(String tableColumn, sqlObjSelect.selectOperation operation, String asName, int coalesce)
+        {
+            return select(new sqlObjSelect
+            {
+                TableColumn = tableColumn.ToUpper(),
+                As = asName.ToUpper(),
+                Operation = operation,
+                Coalesce = coalesce
+            });
+        }
+
+
         public sqlHelperSelect select(String tableColumn, String asName)
         {
             return select(tableColumn, sqlObjSelect.selectOperation.NONE, asName);
@@ -79,6 +91,12 @@ namespace SQL_POWERUP
                     {
                         selectBuilder.Append(", ");
                     }
+
+                    if (objSelect.Coalesce != -1)
+                    {
+                        selectBuilder.Append("COALESCE(");
+                    }
+
                     if (objSelect.Operation != sqlObjSelect.selectOperation.NONE)
                     {
                         selectBuilder.Append(objSelect.Operation.ToString()).Append('(').Append(objSelect.TableColumn).Append(')');
@@ -87,6 +105,12 @@ namespace SQL_POWERUP
                     {
                         selectBuilder.Append(objSelect.TableColumn);
                     }
+
+                    if (objSelect.Coalesce != -1)
+                    {
+                        selectBuilder.Append(", ").Append(objSelect.Coalesce).Append(")");
+                    }
+
                     if (!String.IsNullOrWhiteSpace(objSelect.As))
                     {
                         selectBuilder.Append(" AS ").Append(objSelect.As);

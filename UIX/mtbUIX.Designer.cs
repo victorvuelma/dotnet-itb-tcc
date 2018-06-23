@@ -49,6 +49,7 @@
             this.mtb.Size = new System.Drawing.Size(100, 20);
             this.mtb.TabIndex = 1;
             this.mtb.Click += new System.EventHandler(this.mtb_Click);
+            this.mtb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtb_KeyDown);
             // 
             // mtbUIX
             // 

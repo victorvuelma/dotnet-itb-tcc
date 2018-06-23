@@ -248,7 +248,7 @@ namespace BURGUER_SHACK_DESKTOP
             App.VisualTemplate.frmApply(this, hdrUIX);
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
             UIX.uixButton.btnApply(btnExcluir, App.VisualStyle.ButtonWarningColor);
-            clnUtil.atualizarTabIndex(Controls);
+            clnUtil.atualizarForm(this);
 
             clnUtil.definirNumBoard(txtValor);
 

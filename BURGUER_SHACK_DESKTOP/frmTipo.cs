@@ -86,7 +86,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarTabIndex(Controls);
+            clnUtil.atualizarForm(this);
 
             exibirTipos();
 

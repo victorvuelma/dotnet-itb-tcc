@@ -70,11 +70,40 @@ namespace BURGUER_SHACK_DESKTOP
             reader.Close();
         }
 
+        public clnReserva obterPorCod()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("reserva");
+            objSelect.Where.where("id", Cod);
+
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            clnReserva objReserva = null;
+            if (reader.Read())
+                objReserva = obter(reader);
+            reader.Close();
+
+            return objReserva;
+        }
+
         public List<clnReserva> obterPorDataAgendada()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("reserva");
-            objSelect.Where.where(new sqlObjWhereBetween { TableColumn = "agendado", Val1 = Agendado, Val2 = Agendado.AddDays(1) });
+            objSelect.Where.between("agendado", Agendado, Agendado.AddDays(1));
+
+            List<clnReserva> objReservas = new List<clnReserva>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objReservas.Add(obter(reader));
+            reader.Close();
+
+            return objReservas;
+        }
+
+        public List<clnReserva> obterReservas()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("reserva");
 
             List<clnReserva> objReservas = new List<clnReserva>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);

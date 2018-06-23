@@ -32,10 +32,10 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmLogin_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarTabIndex(Controls);
+            clnUtil.atualizarForm(this);
 
             Focus();
-            txtUsuario.txt.Focus();
+            txtUsuario.Focus();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

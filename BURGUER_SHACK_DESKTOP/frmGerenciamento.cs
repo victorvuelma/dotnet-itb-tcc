@@ -58,12 +58,22 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirFuncionarios()
         {
-            abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero","Cargo", "Salário", "Situação" });
+            abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero", "Cargo", "Salário", "Situação" });
         }
 
         private void abrirFornecedores()
         {
             abrirLista("Fornecedores", new CallbackFornecedorNovo(), new CallbackFornecedorObter(), new CallbackFornecedorAlterar(), new String[] { "Código", "Razão Social", "CNPJ", "Telefone", "Email" });
+        }
+
+        private void abrirReservas()
+        {
+            abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), new String[] { "Código", "Pessoas", "Data", "Situação" });
+        }
+
+        private void abrirEstoques()
+        {
+            abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade" });
         }
 
         private void sair()
@@ -74,7 +84,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarTabIndex(Controls);
+            clnUtil.atualizarForm(this);
 
             UIX.uixButton.btnApply(btnSair, App.VisualStyle.ButtonWarningColor);
             hdrUIX.Title = App.ConfigName + " - Gerenciamento";
@@ -114,6 +124,16 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnFornecedores_Click(object sender, EventArgs e)
         {
             abrirFornecedores();
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            abrirEstoques();
+        }
+
+        private void btnReservas_Click(object sender, EventArgs e)
+        {
+            abrirReservas();
         }
 
         private class CallbackIngredienteNovo : clnUtilCallback<int>
@@ -331,7 +351,7 @@ namespace BURGUER_SHACK_DESKTOP
                     }.obterPorCod();
 
                     //"Código", "Nome", "CPF", "RG", "Data Nasc", "Genero", "Email","Celular", "Cargo", "Salario", "Situacao"
-                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero,  objCargo.Nome, objFuncionario.Salario, objFuncionario.Situacao });
+                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objCargo.Nome, objFuncionario.Salario, objFuncionario.Situacao });
                 }
                 return false;
             }
@@ -381,15 +401,129 @@ namespace BURGUER_SHACK_DESKTOP
                 foreach (clnFornecedor objFornecedor in objFornecedores.obterPorRazaoCNPJ())
                 {
                     //"Código", "Razão Social", "CNPJ", "Telefone", "Email"
-                    dgv.Rows.Add(new object[] { objFornecedor.Cod, objFornecedor.RazaoSocial, clnUtil.formatarCNPJ(objFornecedor.Cnpj), clnUtil.formatarTelefone(objFornecedor.Telefone), objFornecedor.Email});
+                    dgv.Rows.Add(new object[] { objFornecedor.Cod, objFornecedor.RazaoSocial, clnUtil.formatarCNPJ(objFornecedor.Cnpj), clnUtil.formatarTelefone(objFornecedor.Telefone), objFornecedor.Email });
                 }
                 return false;
             }
         }
 
-        private void btnEstoque_Click(object sender, EventArgs e)
+        private class CallbackReservaNovo : clnUtilCallback<int>
         {
-
+            public bool call(int codFuncionario)
+            {
+                frmReserva frmNovoReserva = new frmReserva
+                {
+                    CodFuncionario = codFuncionario
+                };
+                frmNovoReserva.ShowDialog();
+                return frmNovoReserva.ObjReserva != null;
+            }
         }
+
+        private class CallbackReservaAlterar : clnUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnReserva objReserva = new clnReserva
+                {
+                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objReserva != null)
+                {
+                    frmReserva frmAlterarReserva = new frmReserva
+                    {
+                        ObjReserva = objReserva
+                    };
+                    frmAlterarReserva.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackReservaObter : clnUtilCallback<DataGridView, String>
+        {
+            public bool call(DataGridView dgv, string pesquisa)
+            {
+                DateTime? data = clnUtilConvert.ObterNullableData(pesquisa);
+                List<clnReserva> objReservas = null;
+                if (data != null)
+                {
+                    objReservas = new clnReserva
+                    {
+                        Agendado = (DateTime)data
+                    }.obterPorDataAgendada();
+                }
+                else
+                {
+                    objReservas = new clnReserva().obterReservas();
+                }
+                foreach (clnReserva objReserva in objReservas)
+                {
+                    //"Código", "Pessoas", "Data", "Situação"
+                    dgv.Rows.Add(new object[] { objReserva.Cod, objReserva.Pessoas, clnUtil.formatarData(objReserva.Agendado), objReserva.Situacao });
+                }
+                return false;
+            }
+        }
+
+        private class CallbackEstoqueNovo : clnUtilCallback<int>
+        {
+            public bool call(int codFuncionario)
+            {
+                frmEstoque frmNovoEstoque = new frmEstoque();
+                frmNovoEstoque.ShowDialog();
+                return frmNovoEstoque.ObjEstoque != null;
+            }
+        }
+
+        private class CallbackEstoqueAlterar : clnUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnEstoque objEstoque = new clnEstoque
+                {
+                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objEstoque != null)
+                {
+                    frmEstoque frmAlterarEstoque = new frmEstoque
+                    {
+                        ObjEstoque = objEstoque
+                    };
+                    frmAlterarEstoque.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackEstoqueObter : clnUtilCallback<DataGridView, String>
+        {
+            public bool call(DataGridView dgv, string pesquisa)
+            {
+                clnEstoque objEstoques = new clnEstoque();
+                foreach (clnEstoque objEstoque in objEstoques.obterEstoques())
+                {
+                    clnIngrediente objIngrediente = new clnIngrediente
+                    {
+                        Cod = objEstoque.CodIngrediente
+                    }.obterPorCod();
+
+                    clnFornecedor objFornecedor = new clnFornecedor
+                    {
+                        Cod = objEstoque.CodFornecedor
+                    }.obterPorCod();
+
+                    //"Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade"
+                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, clnUtil.formatarData(objEstoque.Validade) });
+                }
+                return false;
+            }
+        }
+
+
     }
 }

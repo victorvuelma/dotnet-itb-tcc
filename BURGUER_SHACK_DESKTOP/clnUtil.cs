@@ -112,7 +112,6 @@ namespace BURGUER_SHACK_DESKTOP
                 frmNumBoard.Show();
             }
         }
-
         // ---- NUMBOARD
 
         // ---- ENDERECO
@@ -173,7 +172,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             Cursor.Current = Cursors.WaitCursor;
             // PEGAR DO BANCO, SE NÃO..
-            Endereco end =  obterEnderecoViaCep(cep);
+            Endereco end = obterEnderecoViaCep(cep);
             Cursor.Current = Cursors.Default;
             return end;
         }
@@ -389,12 +388,22 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             App.VisualTemplate.pnlApply(panel);
-            clnUtil.atualizarTabIndex(panel.Controls);
+            clnUtil.atualizarIndexes(panel.Controls);
 
             panel.Show();
         }
 
-        public static void atualizarTabIndex(ControlCollection controls)
+        public static void atualizarForm(Form form)
+        {
+            atualizarIndexes(form.Controls);
+            if (form.AcceptButton != null)
+            {
+                definirBotaoConfirmacao(form.Controls, form.AcceptButton);
+                form.AcceptButton = null;
+            }
+        }
+
+        public static void atualizarIndexes(ControlCollection controls)
         {
             SortedDictionary<int, SortedDictionary<int, List<Control>>> positionControl = new SortedDictionary<int, SortedDictionary<int, List<Control>>>();
 
@@ -416,7 +425,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
                 xControls.Add(control);
 
-                atualizarTabIndex(control.Controls);
+                atualizarIndexes(control.Controls);
             }
 
             int index = 1;
@@ -435,6 +444,29 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             positionControl.Clear();
+        }
+
+        public static void definirBotaoConfirmacao(ControlCollection controls, IButtonControl acceptButton)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is UIX.txtUIX txt)
+                {
+                    if (txt.AcceptButton == null)
+                        txt.AcceptButton = acceptButton;
+                }
+                else if (control is UIX.mtbUIX mtb)
+                {
+                    if (mtb.AcceptButton == null)
+                        mtb.AcceptButton = acceptButton;
+                }
+                else if (control is UIX.cboUIX cbo)
+                {
+                    if (cbo.AcceptButton == null)
+                        cbo.AcceptButton = acceptButton;
+                }
+                definirBotaoConfirmacao(control.Controls, acceptButton);
+            }
         }
 
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo)
@@ -470,7 +502,7 @@ namespace BURGUER_SHACK_DESKTOP
                 return;
             }
 
-            clnUtil.atualizarTabIndex(uctConteudo.Controls);
+            clnUtil.atualizarIndexes(uctConteudo.Controls);
             App.VisualTemplate.uctApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);

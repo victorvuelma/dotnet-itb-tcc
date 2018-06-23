@@ -103,6 +103,7 @@
             this.btnReservas.Size = new System.Drawing.Size(90, 90);
             this.btnReservas.TabIndex = 14;
             this.btnReservas.UseVisualStyleBackColor = true;
+            this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
             // btnAtendimentos
             // 

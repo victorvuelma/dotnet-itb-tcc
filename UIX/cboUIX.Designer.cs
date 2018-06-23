@@ -50,6 +50,7 @@
             this.cbo.Name = "cbo";
             this.cbo.Size = new System.Drawing.Size(100, 21);
             this.cbo.TabIndex = 2;
+            this.cbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_KeyDown);
             // 
             // cboUIX
             // 

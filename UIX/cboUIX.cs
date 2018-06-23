@@ -15,6 +15,8 @@ namespace UIX
     public partial class cboUIX : UserControl
     {
 
+        private IButtonControl _acceptButton;
+
         private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
 
         public cboUIX()
@@ -87,10 +89,24 @@ namespace UIX
         public new bool Enabled { get => cbo.Enabled; set => cbo.Enabled = value; }
 
         public override String Text { get => cbo.Text; set => cbo.Text = value; }
+        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
 
         private void cboUIX_Load(object sender, EventArgs e)
         {
             update();
         }
+
+        private void cbo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                if (AcceptButton != null)
+                {
+                    AcceptButton.PerformClick();
+                }
+            }
+        }
+
     }
 }

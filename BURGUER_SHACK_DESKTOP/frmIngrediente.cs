@@ -112,6 +112,13 @@ namespace BURGUER_SHACK_DESKTOP
                     ObjIngrediente.Situacao = (clnIngrediente.ingredienteSituacao)Enum.Parse(typeof(clnIngrediente.ingredienteSituacao), cboSituacao.Text);
 
                     ObjIngrediente.alterar();
+
+                    clnEstoque objEstoque = new clnEstoque
+                    {
+                        CodIngrediente = ObjIngrediente.Cod
+                    };
+                    objEstoque.atualizarIngrediente();
+
                     clnUtilMensagem.mostrarOk("Altereção de Ingrediente", "Ingrediente alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                 }
                 Close();
@@ -161,7 +168,7 @@ namespace BURGUER_SHACK_DESKTOP
             App.VisualTemplate.frmApply(this, hdrUIX);
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
             UIX.uixButton.btnApply(btnExcluir, App.VisualStyle.ButtonWarningColor);
-            clnUtil.atualizarTabIndex(Controls);
+            clnUtil.atualizarForm(this);
 
             clnUtil.definirNumBoard(txtValor);
 

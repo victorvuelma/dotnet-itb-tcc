@@ -344,7 +344,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmReserva_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarTabIndex(Controls);
+            clnUtil.atualizarForm(this);
 
             clnUtil.definirNumBoard(mtbCliCPF, frmUtilNumBoard.NumBoardMode.INT);
             clnUtil.definirNumBoard(mtbData, frmUtilNumBoard.NumBoardMode.INT);

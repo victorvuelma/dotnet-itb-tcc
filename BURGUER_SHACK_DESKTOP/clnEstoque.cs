@@ -9,10 +9,10 @@ using SQL_POWERUP;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnEstoque
+    public class clnEstoque
     {
 
-        private int _cod;
+        private int _cod = -1;
 
         private int _codIngrediente;
         private int _codFornecedor;
@@ -46,17 +46,47 @@ namespace BURGUER_SHACK_DESKTOP
             Valor = clnUtilConvert.ToDouble(reader["valor"])
         };
 
+        public clnEstoque obterPorCod()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("estoque");
+            objSelect.Where.where("id", Cod);
+
+            clnEstoque objEstoque = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+                objEstoque = obter(reader);
+            reader.Close();
+
+            return objEstoque;
+        }
+
+        public List<clnEstoque> obterEstoques()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("estoque");
+
+            List<clnEstoque> objEstoques = new List<clnEstoque>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objEstoques.Add(obter(reader));
+            reader.Close();
+
+            return objEstoques;
+        }
+
         public int obterQuantidadePorIngrediente()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("estoque");
-            objSelect.Columns.select("quantidade");
+            objSelect.Columns.select("quantidade", sqlObjSelect.selectOperation.SUM, "quantidade", 0);
             objSelect.Where.where("id_ingrediente", CodIngrediente);
 
             int quantidade = 0;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
-            while (reader.Read())
-                quantidade += clnUtilConvert.ToInt(reader["quantidade"]);
+            if (reader.Read())
+                quantidade = clnUtilConvert.ToInt(reader["quantidade"]);
+            reader.Close();
 
             return quantidade;
         }
@@ -74,6 +104,8 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("valor", Valor);
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
+
+            atualizarIngrediente();
         }
 
         public void alterar()
@@ -84,6 +116,71 @@ namespace BURGUER_SHACK_DESKTOP
             objInsert.Set.val("quantidade", Quantidade);
 
             objInsert.execute(App.DatabaseSql);
+
+            atualizarIngrediente();
+        }
+
+        public void atualizarIngrediente()
+        {
+            int estoqueAtual = obterQuantidadePorIngrediente();
+
+            clnIngrediente objIngrediente = new clnIngrediente
+            {
+                Cod = CodIngrediente
+            }.obterPorCod();
+            if (objIngrediente.Situacao != clnIngrediente.ingredienteSituacao.INDISPONIVEL)
+            {
+                if (estoqueAtual > 0)
+                {
+                    objIngrediente.Situacao = clnIngrediente.ingredienteSituacao.DISPONIVEL;
+                }
+                else
+                {
+                    objIngrediente.Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE;
+                }
+            }
+            objIngrediente.alterar();
+
+            clnProdutoIngrediente objProdutos = new clnProdutoIngrediente
+            {
+                CodIngrediente = objIngrediente.Cod
+            };
+            foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutos.obterPorIngrediente())
+            {
+                clnProduto objProduto = new clnProduto
+                {
+                    Cod = objProdutoIngrediente.CodProduto
+                }.obterPorCod();
+
+                if (objProduto != null)
+                {
+                    if (objProduto.Situacao != clnProduto.produtoSituacao.INDISPONIVEL)
+                    {
+                        clnProdutoIngrediente objIngredientes = new clnProdutoIngrediente
+                        {
+                            CodProduto = objProduto.Cod
+                        };
+
+                        clnProduto.produtoSituacao situacao = clnProduto.produtoSituacao.DISPONIVEL;
+
+                        foreach(clnProdutoIngrediente objProdIngrediente in objIngredientes.obterPorProduto())
+                        {
+                            clnIngrediente objIngredienteProduto = new clnIngrediente
+                            {
+                                Cod = objProdIngrediente.CodIngrediente
+                            }.obterPorCod();
+
+                            if(objIngredienteProduto.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
+                            {
+                                situacao = clnProduto.produtoSituacao.FORADEESTOQUE;
+                                break;
+                            }
+                        }
+                        objProduto.Situacao = situacao;
+                        objProduto.alterar();
+                    }
+                }
+            }
         }
 
     }

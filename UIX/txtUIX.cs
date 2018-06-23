@@ -13,7 +13,10 @@ namespace UIX
     public partial class txtUIX : UserControl
     {
 
+        private IButtonControl _acceptButton;
+
         private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
+
         private uixEnum.uixAllowedChars _allowedChars = uixEnum.uixAllowedChars.ALL;
         private char[] allowedChars = new char[] { };
 
@@ -77,8 +80,10 @@ namespace UIX
         public new bool Enabled { get => txt.Enabled; set => txt.Enabled = value; }
 
         public override String Text { get => txt.Text; set => txt.Text = value; }
-
+ 
         public ScrollBars ScrollBars { get => txt.ScrollBars; set => txt.ScrollBars = value; }
+
+        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
 
         public bool Multiline
         {
@@ -122,5 +127,16 @@ namespace UIX
             }
         }
 
+        private void txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                if(AcceptButton != null)
+                {
+                    AcceptButton.PerformClick();
+                }
+            }
+        }
     }
 }
