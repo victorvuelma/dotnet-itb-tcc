@@ -53,14 +53,17 @@
             // 
             // txtQuantidade
             // 
+            this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(135, 110);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtQuantidade.Size = new System.Drawing.Size(300, 20);
             this.txtQuantidade.TabIndex = 4;
             // 
@@ -140,6 +143,7 @@
             // 
             // frmItemIngrediente
             // 
+            this.AcceptButton = this.btnConfirmar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 300);

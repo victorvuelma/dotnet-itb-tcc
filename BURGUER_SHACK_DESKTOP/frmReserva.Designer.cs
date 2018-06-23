@@ -138,8 +138,10 @@
             // 
             // mtbCliCPF
             // 
+            this.mtbCliCPF.AcceptButton = this.btnCliEncontrar;
             this.mtbCliCPF.AccessibleName = "CPF";
             this.mtbCliCPF.Campo = "CPF";
+            this.mtbCliCPF.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.mtbCliCPF.Location = new System.Drawing.Point(5, 20);
             this.mtbCliCPF.Mask = "";
             this.mtbCliCPF.MaxLength = 32767;
@@ -162,8 +164,10 @@
             // 
             // mtbHora
             // 
+            this.mtbHora.AcceptButton = null;
             this.mtbHora.AccessibleName = "Hora";
             this.mtbHora.Campo = "Hora";
+            this.mtbHora.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.mtbHora.Location = new System.Drawing.Point(127, 20);
             this.mtbHora.Mask = "";
             this.mtbHora.MaxLength = 32767;
@@ -174,21 +178,26 @@
             // 
             // txtPessoas
             // 
+            this.txtPessoas.AcceptButton = null;
             this.txtPessoas.AccessibleName = "Pessoas";
             this.txtPessoas.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtPessoas.Campo = "Pessoas";
+            this.txtPessoas.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtPessoas.Location = new System.Drawing.Point(230, 20);
             this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPessoas.MaxLength = 32767;
             this.txtPessoas.Multiline = false;
             this.txtPessoas.Name = "txtPessoas";
+            this.txtPessoas.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPessoas.Size = new System.Drawing.Size(104, 20);
             this.txtPessoas.TabIndex = 10;
             // 
             // mtbData
             // 
+            this.mtbData.AcceptButton = null;
             this.mtbData.AccessibleName = "Dia";
             this.mtbData.Campo = "Dia";
+            this.mtbData.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.mtbData.Location = new System.Drawing.Point(5, 20);
             this.mtbData.Mask = "";
             this.mtbData.MaxLength = 32767;

@@ -443,6 +443,9 @@
     <EmbeddedResource Include="frmUtilSelecionar.resx">
       <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUtilVisualizar.resx">
+      <DependentUpon>frmUtilVisualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

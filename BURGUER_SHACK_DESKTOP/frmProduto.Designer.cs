@@ -36,7 +36,6 @@
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.cboSituacao = new UIX.cboUIX();
             this.txtDesc = new UIX.txtUIX();
-            this.btnTipo = new System.Windows.Forms.Button();
             this.txtValor = new UIX.txtUIX();
             this.cboTipo = new UIX.cboUIX();
             this.txtNome = new UIX.txtUIX();
@@ -123,7 +122,6 @@
             // 
             this.grbDadosPessoais.Controls.Add(this.cboSituacao);
             this.grbDadosPessoais.Controls.Add(this.txtDesc);
-            this.grbDadosPessoais.Controls.Add(this.btnTipo);
             this.grbDadosPessoais.Controls.Add(this.txtValor);
             this.grbDadosPessoais.Controls.Add(this.cboTipo);
             this.grbDadosPessoais.Controls.Add(this.txtNome);
@@ -139,9 +137,11 @@
             // 
             // cboSituacao
             // 
+            this.cboSituacao.AcceptButton = null;
             this.cboSituacao.AccessibleName = "Tipo:*";
             this.cboSituacao.Campo = "Situação*";
             this.cboSituacao.FormattingEnabled = true;
+            this.cboSituacao.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.cboSituacao.Location = new System.Drawing.Point(170, 40);
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboSituacao.Name = "cboSituacao";
@@ -150,63 +150,62 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.AcceptButton = null;
             this.txtDesc.AccessibleName = "Preço de Venda: (R$)*";
             this.txtDesc.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtDesc.Campo = "Descrição";
+            this.txtDesc.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtDesc.Location = new System.Drawing.Point(5, 70);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 11, 3, 11);
             this.txtDesc.MaxLength = 32767;
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
+            this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDesc.Size = new System.Drawing.Size(380, 75);
             this.txtDesc.TabIndex = 30;
             // 
-            // btnTipo
-            // 
-            this.btnTipo.BackgroundImage = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnTipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTipo.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.alterar;
-            this.btnTipo.Location = new System.Drawing.Point(360, 151);
-            this.btnTipo.Name = "btnTipo";
-            this.btnTipo.Size = new System.Drawing.Size(25, 25);
-            this.btnTipo.TabIndex = 29;
-            this.btnTipo.UseVisualStyleBackColor = true;
-            this.btnTipo.Click += new System.EventHandler(this.btnTipo_Click);
-            // 
             // txtValor
             // 
+            this.txtValor.AcceptButton = null;
             this.txtValor.AccessibleName = "Preço de Venda: (R$)*";
             this.txtValor.AllowedChars = UIX.uixEnum.uixAllowedChars.DOUBLE;
             this.txtValor.Campo = "Valor (R$)*";
+            this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValor.Location = new System.Drawing.Point(5, 39);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtValor.MaxLength = 32767;
             this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
+            this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtValor.Size = new System.Drawing.Size(160, 26);
             this.txtValor.TabIndex = 19;
             // 
             // cboTipo
             // 
+            this.cboTipo.AcceptButton = null;
             this.cboTipo.AccessibleName = "Tipo:*";
             this.cboTipo.Campo = "Tipo*";
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(10, 150);
+            this.cboTipo.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.cboTipo.Location = new System.Drawing.Point(5, 150);
             this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(345, 25);
+            this.cboTipo.Size = new System.Drawing.Size(380, 25);
             this.cboTipo.TabIndex = 9;
             // 
             // txtNome
             // 
+            this.txtNome.AcceptButton = null;
             this.txtNome.AccessibleName = "Nome:*";
             this.txtNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtNome.Campo = "Nome:*";
+            this.txtNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtNome.Location = new System.Drawing.Point(5, 15);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
+            this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNome.Size = new System.Drawing.Size(380, 21);
             this.txtNome.TabIndex = 2;
             // 
@@ -342,7 +341,6 @@
         private System.Windows.Forms.PictureBox picImagem;
         public System.Windows.Forms.GroupBox grbImagem;
         private UIX.cboUIX cboSituacao;
-        private System.Windows.Forms.Button btnTipo;
         private UIX.btnUIX btnExcluir;
         private UIX.txtUIX txtDesc;
         public System.Windows.Forms.GroupBox grbIngredientes;

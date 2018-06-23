@@ -69,14 +69,17 @@
             // 
             // txtQuantidade
             // 
+            this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(5, 320);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantidade.MaxLength = 32767;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtQuantidade.Size = new System.Drawing.Size(130, 20);
             this.txtQuantidade.TabIndex = 2;
             // 
@@ -150,13 +153,16 @@
             // 
             // txtPesquisar
             // 
+            this.txtPesquisar.AcceptButton = this.btnPesquisar;
             this.txtPesquisar.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtPesquisar.Campo = "Pesquisar";
+            this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 30);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPesquisar.MaxLength = 32767;
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPesquisar.Size = new System.Drawing.Size(440, 25);
             this.txtPesquisar.TabIndex = 3;
             // 

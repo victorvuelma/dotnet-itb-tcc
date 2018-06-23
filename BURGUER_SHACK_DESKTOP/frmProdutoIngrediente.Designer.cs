@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
-            this.chkRemover = new System.Windows.Forms.CheckBox();
-            this.chkAlterar = new System.Windows.Forms.CheckBox();
             this.txtQuantidade = new UIX.txtUIX();
             this.lblNome = new System.Windows.Forms.Label();
             this.picIngrediente = new System.Windows.Forms.PictureBox();
+            this.chkRemover = new System.Windows.Forms.CheckBox();
+            this.chkAlterar = new System.Windows.Forms.CheckBox();
             this.hdrUIX = new UIX.hdrUIX();
             this.btnConfirmar = new UIX.btnUIX();
             this.btnRemover = new UIX.btnUIX();
@@ -53,6 +53,40 @@
             this.grbIngrediente.Size = new System.Drawing.Size(440, 145);
             this.grbIngrediente.TabIndex = 7;
             this.grbIngrediente.TabStop = false;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.AcceptButton = null;
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtQuantidade.Location = new System.Drawing.Point(130, 110);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Multiline = false;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtQuantidade.Size = new System.Drawing.Size(305, 23);
+            this.txtQuantidade.TabIndex = 4;
+            // 
+            // lblNome
+            // 
+            this.lblNome.Location = new System.Drawing.Point(130, 20);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(305, 30);
+            this.lblNome.TabIndex = 1;
+            this.lblNome.Text = "N";
+            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picIngrediente
+            // 
+            this.picIngrediente.Location = new System.Drawing.Point(5, 15);
+            this.picIngrediente.Name = "picIngrediente";
+            this.picIngrediente.Size = new System.Drawing.Size(120, 120);
+            this.picIngrediente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picIngrediente.TabIndex = 0;
+            this.picIngrediente.TabStop = false;
             // 
             // chkRemover
             // 
@@ -75,37 +109,6 @@
             this.chkAlterar.TabIndex = 5;
             this.chkAlterar.Text = "Alterado";
             this.chkAlterar.UseVisualStyleBackColor = true;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
-            this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.Location = new System.Drawing.Point(130, 110);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Multiline = false;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(305, 23);
-            this.txtQuantidade.TabIndex = 4;
-            // 
-            // lblNome
-            // 
-            this.lblNome.Location = new System.Drawing.Point(130, 20);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(305, 30);
-            this.lblNome.TabIndex = 1;
-            this.lblNome.Text = "N";
-            this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // picIngrediente
-            // 
-            this.picIngrediente.Location = new System.Drawing.Point(5, 15);
-            this.picIngrediente.Name = "picIngrediente";
-            this.picIngrediente.Size = new System.Drawing.Size(120, 120);
-            this.picIngrediente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picIngrediente.TabIndex = 0;
-            this.picIngrediente.TabStop = false;
             // 
             // hdrUIX
             // 
@@ -162,6 +165,7 @@
             // 
             // frmProdutoIngrediente
             // 
+            this.AcceptButton = this.btnConfirmar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 300);
