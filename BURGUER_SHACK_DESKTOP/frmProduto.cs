@@ -135,7 +135,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             cboTipo.Items.Clear();
 
-            foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.PRODUTO }.obter())
+            foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.PRODUTO }.obterTipos())
             {
                 String nome = objTipo.Cod + " - " + objTipo.Nome;
                 cboTipo.Items.Add(nome);

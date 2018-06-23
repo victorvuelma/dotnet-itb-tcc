@@ -31,7 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
             ObjTipos = new clnTipo
             {
                 Tipo = Tipo
-            }.obter();
+            }.obterTipos();
 
             atualizarDataGrid();
         }

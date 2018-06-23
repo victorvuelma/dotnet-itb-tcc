@@ -127,7 +127,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             cboTipo.Items.Clear();
 
-            foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.INGREDIENTE }.obter())
+            foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.INGREDIENTE }.obterTipos())
             {
                 String nome = objTipo.Cod + " - " + objTipo.Nome;
                 cboTipo.Items.Add(nome);
@@ -178,7 +178,11 @@ namespace BURGUER_SHACK_DESKTOP
                 txtValor.Text = ObjIngrediente.Valor.ToString();
                 picImagem.ImageLocation = objArquivo.Local;
 
-                int ingredienteEstoque = 0;
+                int ingredienteEstoque = new clnEstoque
+                {
+                    CodIngrediente = ObjIngrediente.Cod
+                }.obterQuantidadePorIngrediente();
+
                 if (ObjIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
                 {
                     cboSituacao.Enabled = false;

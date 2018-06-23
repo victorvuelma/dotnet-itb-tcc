@@ -80,6 +80,7 @@ namespace UIX
                 int widthDiff = value.Width - oldSize.Width;
 
                 pic.Size = new Size(pic.Size.Width + widthDiff, pic.Size.Height + heightDiff);
+                pic.Location = new Point((value.Width / 2) - (pic.Size.Width / 2), pic.Location.Y);
 
                 lbl.Size = new Size(value.Width, lbl.Size.Height);
                 int lblY = value.Height - lbl.Height;

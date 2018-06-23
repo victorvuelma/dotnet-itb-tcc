@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnPagamentos = new UIX.btnUIX();
+            this.btnPedidos = new UIX.btnUIX();
+            this.btnReservas = new UIX.btnUIX();
+            this.btnAtendimentos = new UIX.btnUIX();
+            this.btnMesas = new UIX.btnUIX();
+            this.btnEstoque = new UIX.btnUIX();
             this.btnFornecedores = new UIX.btnUIX();
             this.btnFuncionarios = new UIX.btnUIX();
             this.btnClientes = new UIX.btnUIX();
@@ -42,6 +48,12 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnPagamentos);
+            this.pnlMenu.Controls.Add(this.btnPedidos);
+            this.pnlMenu.Controls.Add(this.btnReservas);
+            this.pnlMenu.Controls.Add(this.btnAtendimentos);
+            this.pnlMenu.Controls.Add(this.btnMesas);
+            this.pnlMenu.Controls.Add(this.btnEstoque);
             this.pnlMenu.Controls.Add(this.btnFornecedores);
             this.pnlMenu.Controls.Add(this.btnFuncionarios);
             this.pnlMenu.Controls.Add(this.btnClientes);
@@ -50,8 +62,87 @@
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(200, 500);
+            this.pnlMenu.Size = new System.Drawing.Size(300, 500);
             this.pnlMenu.TabIndex = 7;
+            // 
+            // btnPagamentos
+            // 
+            this.btnPagamentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPagamentos.Description = "Pagamentos";
+            this.btnPagamentos.HoverColor = System.Drawing.Color.Transparent;
+            this.btnPagamentos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnPagamentos.ImageLocation = null;
+            this.btnPagamentos.Location = new System.Drawing.Point(205, 305);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Size = new System.Drawing.Size(90, 90);
+            this.btnPagamentos.TabIndex = 16;
+            this.btnPagamentos.UseVisualStyleBackColor = true;
+            // 
+            // btnPedidos
+            // 
+            this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPedidos.Description = "Pedidos";
+            this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
+            this.btnPedidos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido;
+            this.btnPedidos.ImageLocation = null;
+            this.btnPedidos.Location = new System.Drawing.Point(205, 205);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(90, 90);
+            this.btnPedidos.TabIndex = 15;
+            this.btnPedidos.UseVisualStyleBackColor = true;
+            // 
+            // btnReservas
+            // 
+            this.btnReservas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReservas.Description = "Reservas";
+            this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnReservas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.reserva;
+            this.btnReservas.ImageLocation = null;
+            this.btnReservas.Location = new System.Drawing.Point(205, 5);
+            this.btnReservas.Name = "btnReservas";
+            this.btnReservas.Size = new System.Drawing.Size(90, 90);
+            this.btnReservas.TabIndex = 14;
+            this.btnReservas.UseVisualStyleBackColor = true;
+            // 
+            // btnAtendimentos
+            // 
+            this.btnAtendimentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAtendimentos.Description = "Atendimentos";
+            this.btnAtendimentos.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAtendimentos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.atendimento;
+            this.btnAtendimentos.ImageLocation = null;
+            this.btnAtendimentos.Location = new System.Drawing.Point(205, 105);
+            this.btnAtendimentos.Name = "btnAtendimentos";
+            this.btnAtendimentos.Size = new System.Drawing.Size(90, 90);
+            this.btnAtendimentos.TabIndex = 13;
+            this.btnAtendimentos.UseVisualStyleBackColor = true;
+            // 
+            // btnMesas
+            // 
+            this.btnMesas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMesas.Description = "Mesas";
+            this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMesas.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnMesas.ImageLocation = null;
+            this.btnMesas.Location = new System.Drawing.Point(105, 305);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Size = new System.Drawing.Size(90, 90);
+            this.btnMesas.TabIndex = 12;
+            this.btnMesas.UseVisualStyleBackColor = true;
+            // 
+            // btnEstoque
+            // 
+            this.btnEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstoque.Description = "Estoque";
+            this.btnEstoque.HoverColor = System.Drawing.Color.Transparent;
+            this.btnEstoque.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.estoque;
+            this.btnEstoque.ImageLocation = null;
+            this.btnEstoque.Location = new System.Drawing.Point(105, 205);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(90, 90);
+            this.btnEstoque.TabIndex = 11;
+            this.btnEstoque.UseVisualStyleBackColor = true;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnFornecedores
             // 
@@ -60,11 +151,12 @@
             this.btnFornecedores.HoverColor = System.Drawing.Color.Transparent;
             this.btnFornecedores.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.fornecedor;
             this.btnFornecedores.ImageLocation = null;
-            this.btnFornecedores.Location = new System.Drawing.Point(105, 105);
+            this.btnFornecedores.Location = new System.Drawing.Point(5, 205);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(90, 90);
             this.btnFornecedores.TabIndex = 10;
             this.btnFornecedores.UseVisualStyleBackColor = true;
+            this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
             // 
             // btnFuncionarios
             // 
@@ -73,7 +165,7 @@
             this.btnFuncionarios.HoverColor = System.Drawing.Color.Transparent;
             this.btnFuncionarios.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.funcionario;
             this.btnFuncionarios.ImageLocation = null;
-            this.btnFuncionarios.Location = new System.Drawing.Point(105, 5);
+            this.btnFuncionarios.Location = new System.Drawing.Point(5, 105);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(90, 90);
             this.btnFuncionarios.TabIndex = 9;
@@ -87,7 +179,7 @@
             this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnClientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.cliente;
             this.btnClientes.ImageLocation = null;
-            this.btnClientes.Location = new System.Drawing.Point(5, 205);
+            this.btnClientes.Location = new System.Drawing.Point(5, 5);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(90, 90);
             this.btnClientes.TabIndex = 8;
@@ -101,7 +193,7 @@
             this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
             this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
             this.btnProdutos.ImageLocation = null;
-            this.btnProdutos.Location = new System.Drawing.Point(5, 105);
+            this.btnProdutos.Location = new System.Drawing.Point(105, 105);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(90, 90);
             this.btnProdutos.TabIndex = 7;
@@ -115,7 +207,7 @@
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.ingrediente;
             this.btnIngredientes.ImageLocation = null;
-            this.btnIngredientes.Location = new System.Drawing.Point(5, 5);
+            this.btnIngredientes.Location = new System.Drawing.Point(105, 5);
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Size = new System.Drawing.Size(90, 90);
             this.btnIngredientes.TabIndex = 6;
@@ -131,7 +223,7 @@
             this.btnSair.ImageLocation = null;
             this.btnSair.Location = new System.Drawing.Point(5, 405);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(90, 90);
+            this.btnSair.Size = new System.Drawing.Size(290, 90);
             this.btnSair.TabIndex = 5;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -139,7 +231,7 @@
             // pnlConteudo
             // 
             this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlConteudo.Location = new System.Drawing.Point(200, 50);
+            this.pnlConteudo.Location = new System.Drawing.Point(300, 50);
             this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(700, 500);
@@ -154,7 +246,7 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(900, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(1000, 50);
             this.hdrUIX.TabIndex = 6;
             this.hdrUIX.Title = "Gerenciamento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
@@ -163,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 550);
+            this.ClientSize = new System.Drawing.Size(1000, 550);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.hdrUIX);
@@ -190,5 +282,11 @@
         private UIX.btnUIX btnClientes;
         private UIX.btnUIX btnFuncionarios;
         private UIX.btnUIX btnFornecedores;
+        private UIX.btnUIX btnEstoque;
+        private UIX.btnUIX btnMesas;
+        private UIX.btnUIX btnAtendimentos;
+        private UIX.btnUIX btnReservas;
+        private UIX.btnUIX btnPedidos;
+        private UIX.btnUIX btnPagamentos;
     }
 }

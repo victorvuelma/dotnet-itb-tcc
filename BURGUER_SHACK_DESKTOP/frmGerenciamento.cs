@@ -58,12 +58,17 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirFuncionarios()
         {
-            abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero", "Email", "Celular", "Cargo", "Salário", "Situação" });
+            abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero","Cargo", "Salário", "Situação" });
+        }
+
+        private void abrirFornecedores()
+        {
+            abrirLista("Fornecedores", new CallbackFornecedorNovo(), new CallbackFornecedorObter(), new CallbackFornecedorAlterar(), new String[] { "Código", "Razão Social", "CNPJ", "Telefone", "Email" });
         }
 
         private void sair()
         {
-
+            Close();
         }
 
         private void frmGerenciador_Load(object sender, EventArgs e)
@@ -104,6 +109,11 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
             abrirFuncionarios();
+        }
+
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            abrirFornecedores();
         }
 
         private class CallbackIngredienteNovo : clnUtilCallback<int>
@@ -154,7 +164,10 @@ namespace BURGUER_SHACK_DESKTOP
                         Tipo = clnTipo.tipo.INGREDIENTE
                     }.obterPorCodigo();
 
-                    int estoque = 0;
+                    int estoque = new clnEstoque
+                    {
+                        CodIngrediente = objIngrediente.Cod
+                    }.obterQuantidadePorIngrediente();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
                     dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, objIngrediente.Valor });
                 }
@@ -318,12 +331,65 @@ namespace BURGUER_SHACK_DESKTOP
                     }.obterPorCod();
 
                     //"Código", "Nome", "CPF", "RG", "Data Nasc", "Genero", "Email","Celular", "Cargo", "Salario", "Situacao"
-                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objFuncionario.Email, clnUtil.formatarCelular(objFuncionario.TelCel), objCargo.Nome, objFuncionario.Salario, objFuncionario.Situacao });
+                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero,  objCargo.Nome, objFuncionario.Salario, objFuncionario.Situacao });
                 }
                 return false;
             }
         }
 
+        private class CallbackFornecedorNovo : clnUtilCallback<int>
+        {
+            public bool call(int codFuncionario)
+            {
+                frmFornecedor frmNovoFornecedor = new frmFornecedor();
+                frmNovoFornecedor.ShowDialog();
+                return frmNovoFornecedor.ObjFornecedor != null;
+            }
+        }
 
+        private class CallbackFornecedorAlterar : clnUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnFornecedor objFornecedor = new clnFornecedor
+                {
+                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objFornecedor != null)
+                {
+                    frmFornecedor frmAlterarFornecedor = new frmFornecedor
+                    {
+                        ObjFornecedor = objFornecedor
+                    };
+                    frmAlterarFornecedor.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackFornecedorObter : clnUtilCallback<DataGridView, String>
+        {
+            public bool call(DataGridView dgv, string pesquisa)
+            {
+                clnFornecedor objFornecedores = new clnFornecedor
+                {
+                    RazaoSocial = pesquisa,
+                    Cnpj = pesquisa
+                };
+                foreach (clnFornecedor objFornecedor in objFornecedores.obterPorRazaoCNPJ())
+                {
+                    //"Código", "Razão Social", "CNPJ", "Telefone", "Email"
+                    dgv.Rows.Add(new object[] { objFornecedor.Cod, objFornecedor.RazaoSocial, clnUtil.formatarCNPJ(objFornecedor.Cnpj), clnUtil.formatarTelefone(objFornecedor.Telefone), objFornecedor.Email});
+                }
+                return false;
+            }
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

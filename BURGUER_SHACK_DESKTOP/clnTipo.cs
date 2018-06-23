@@ -49,7 +49,7 @@ namespace BURGUER_SHACK_DESKTOP
             return objTipo;
         }
 
-        public List<clnTipo> obter()
+        public List<clnTipo> obterTipos()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table(Tipo.ToString() + "_tipo");

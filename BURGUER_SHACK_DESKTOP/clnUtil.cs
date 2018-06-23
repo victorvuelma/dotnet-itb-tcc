@@ -36,6 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
         private static frmUtilNumBoard frmNumBoard;
 
         private static String FORMAT_CEL = @"(00) 00000-0000";
+        private static String FORMAT_TEL = @"(00) 0000-0000";
 
         private static String REGEX_CEL = @"^\([1-9]{2}\) (9[1-9])[0-9]{3}\-[0-9]{4}$";
         private static String REGEX_TEL = @"^\([1-9]{2}\) ([2-8])[0-9]{3}\-[0-9]{4}$";
@@ -216,6 +217,13 @@ namespace BURGUER_SHACK_DESKTOP
             if (celular == null || vazio(celular))
                 return null;
             return long.Parse(celular).ToString(FORMAT_CEL);
+        }
+
+        public static String formatarTelefone(String telefone)
+        {
+            if (telefone == null || vazio(telefone))
+                return null;
+            return long.Parse(telefone).ToString(FORMAT_TEL);
         }
 
         public static String formatarCPF(String cpf)

@@ -148,6 +148,8 @@
     <Compile Include="clnAtendimento.cs" />
     <Compile Include="clnCargo.cs" />
     <Compile Include="clnCliente.cs" />
+    <Compile Include="clnEstoque.cs" />
+    <Compile Include="clnFornecedor.cs" />
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
     <Compile Include="clnTipo.cs" />
@@ -168,6 +170,12 @@
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnUtilValidar.cs" />
+    <Compile Include="frmFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFornecedor.Designer.cs">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFornecedor.resx">
+      <DependentUpon>frmFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFuncionario.resx">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
