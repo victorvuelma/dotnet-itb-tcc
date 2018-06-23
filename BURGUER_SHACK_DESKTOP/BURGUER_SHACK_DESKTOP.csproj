@@ -171,6 +171,18 @@
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
     <Compile Include="clnUtilValidar.cs" />
+    <Compile Include="frmConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConta.Designer.cs">
+      <DependentUpon>frmConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPagamento.Designer.cs">
+      <DependentUpon>frmPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +407,12 @@
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConta.resx">
+      <DependentUpon>frmConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagamento.resx">
+      <DependentUpon>frmPagamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEstoqueold.resx">
       <DependentUpon>frmEstoqueold.cs</DependentUpon>
     </EmbeddedResource>
@@ -614,6 +632,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\app-ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />

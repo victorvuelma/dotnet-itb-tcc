@@ -31,7 +31,7 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnMesas = new UIX.btnUIX();
             this.btnSair = new UIX.btnUIX();
-            this.btnFinalizar = new UIX.btnUIX();
+            this.btnConta = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
@@ -42,7 +42,7 @@
             // 
             this.pnlMenu.Controls.Add(this.btnMesas);
             this.pnlMenu.Controls.Add(this.btnSair);
-            this.pnlMenu.Controls.Add(this.btnFinalizar);
+            this.pnlMenu.Controls.Add(this.btnConta);
             this.pnlMenu.Controls.Add(this.btnPedidos);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
@@ -59,6 +59,7 @@
             this.btnMesas.Name = "btnMesas";
             this.btnMesas.Size = new System.Drawing.Size(90, 90);
             this.btnMesas.TabIndex = 9;
+            this.btnMesas.Text = "Mesas";
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
@@ -72,23 +73,24 @@
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(90, 90);
             this.btnSair.TabIndex = 6;
+            this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnFinalizar
+            // btnConta
             // 
-            this.btnFinalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFinalizar.Description = "Finalizar";
-            this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizar.ImageLocation = null;
-            this.btnFinalizar.Location = new System.Drawing.Point(5, 455);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
-            this.btnFinalizar.TabIndex = 7;
-            this.btnFinalizar.Text = "c";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnConta_Click);
+            this.btnConta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConta.Description = "Conta";
+            this.btnConta.HoverColor = System.Drawing.Color.Transparent;
+            this.btnConta.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.conta;
+            this.btnConta.ImageLocation = null;
+            this.btnConta.Location = new System.Drawing.Point(5, 455);
+            this.btnConta.Name = "btnConta";
+            this.btnConta.Size = new System.Drawing.Size(90, 90);
+            this.btnConta.TabIndex = 7;
+            this.btnConta.Text = "Conta";
+            this.btnConta.UseVisualStyleBackColor = true;
+            this.btnConta.Click += new System.EventHandler(this.btnConta_Click);
             // 
             // btnPedidos
             // 
@@ -100,6 +102,7 @@
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(90, 90);
             this.btnPedidos.TabIndex = 4;
+            this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = true;
             this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
@@ -145,7 +148,7 @@
 
         private UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnFinalizar;
+        private UIX.btnUIX btnConta;
         private UIX.btnUIX btnPedidos;
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.btnUIX btnSair;
