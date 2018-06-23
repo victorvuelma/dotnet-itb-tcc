@@ -41,7 +41,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("item");
             objSelect.Where.where("id_pedido", CodPedido);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnItem> objItens = new List<clnItem>();
             while (reader.Read())
                 objItens.Add(obter(reader));
@@ -59,7 +59,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("adicional", Adicional)
                             .val("quantidade", Quantidade);
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         public void alterar()
@@ -70,7 +70,7 @@ namespace BURGUER_SHACK_DESKTOP
                          .val("quantidade", Quantidade);
             objUpdate.Where.where("id", Cod);
 
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
 
         internal void remover()

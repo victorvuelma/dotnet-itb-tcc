@@ -14,7 +14,9 @@ namespace BURGUER_SHACK_DESKTOP
     class App
     {
 
-        private static sqlDatabase _appDatabase = new sqlDatabase
+        private static String _configName = "Burguer Shack";
+
+        private static sqlDatabase _databaseSql = new sqlDatabase
         {
             Database = AppDb.DATABASE,
             User = AppDb.USER,
@@ -26,19 +28,18 @@ namespace BURGUER_SHACK_DESKTOP
             }
         };
 
-        private static String _appName = "Burguer Shack";
-
-        private static UIX.uixStyle _appVisualStyle = UIX.uixStyle.BLUE;
-        private static UIX.uixTemplate _appVisualTemplate = new UIX.uixTemplate
+        private static UIX.uixStyle _visualStyle = UIX.uixStyle.BLUE;
+        private static UIX.uixTemplate _visualTemplate = new UIX.uixTemplate
         {
-            Style = AppVisualStyle,
+            Style = VisualStyle,
             Icon = Properties.Resources.burguershack_ico
         };
 
-        public static sqlDatabase AppDatabase { get => _appDatabase; }
-        public static String AppName { get => _appName; }
+        public static String ConfigName { get => _configName; }
+        
+        public static sqlDatabase DatabaseSql { get => _databaseSql; }
 
-        public static UIX.uixTemplate AppVisualTemplate { get => _appVisualTemplate; }
-        public static uixStyle AppVisualStyle { get => _appVisualStyle; }
+        public static UIX.uixTemplate VisualTemplate { get => _visualTemplate; }
+        public static uixStyle VisualStyle { get => _visualStyle; }
     }
 }

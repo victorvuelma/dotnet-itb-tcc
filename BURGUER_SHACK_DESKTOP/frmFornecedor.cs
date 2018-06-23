@@ -118,10 +118,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            UIX.uixButton.btnApply(btnCancelar, App.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnCancelar, App.VisualStyle.ButtonWarningColor);
 
             clnUtil.definirNumBoard(mtbCNPJ, frmUtilNumBoard.NumBoardMode.INT);
             clnUtil.definirNumBoard(mtbTel, frmUtilNumBoard.NumBoardMode.INT);
@@ -133,11 +133,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjFornecedor == null)
             {
-                hdrUIX.Title = App.AppName + " - Novo Fornecedor";
+                hdrUIX.Title = App.ConfigName + " - Novo Fornecedor";
             }
             else
             {
-                hdrUIX.Title = App.AppName + " - Alterando Fornecedor " + ObjFornecedor.Cod;
+                hdrUIX.Title = App.ConfigName + " - Alterando Fornecedor " + ObjFornecedor.Cod;
                 mtbCNPJ.Enabled = false;
 
                 txtRazaoSocial.Text = ObjFornecedor.RazaoSocial;

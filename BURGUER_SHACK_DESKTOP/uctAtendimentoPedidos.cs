@@ -54,8 +54,8 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 if (control is Button btn)
                 {
-                    UIX.uixButton.btnApply(btn, App.AppVisualStyle.ButtonImageColor);
-                    btn.ForeColor = App.AppVisualStyle.ButtonImageColor.ContentColor;
+                    UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
+                    btn.ForeColor = App.VisualStyle.ButtonImageColor.ContentColor;
                 }
             }
             pedidosControles.Clear();

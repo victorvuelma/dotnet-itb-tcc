@@ -343,7 +343,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmReserva_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
             clnUtil.definirNumBoard(mtbCliCPF, frmUtilNumBoard.NumBoardMode.INT);
@@ -351,20 +351,20 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.definirNumBoard(mtbHora, frmUtilNumBoard.NumBoardMode.INT);
             clnUtil.definirNumBoard(txtPessoas);
 
-            UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
 
             btnAtendimento.Hide();
             grbSituacao.Hide();
 
             if (ObjReserva == null)
             {
-                hdrUIX.Title = App.AppName + " - Nova Reserva";
+                hdrUIX.Title = App.ConfigName + " - Nova Reserva";
 
                 ObjReserva = new clnReserva();
             }
             else
             {
-                hdrUIX.Title = App.AppName + " - Alterando Reserva " + ObjReserva.Cod;
+                hdrUIX.Title = App.ConfigName + " - Alterando Reserva " + ObjReserva.Cod;
                 mtbCliCPF.Enabled = false;
                 mtbHora.Enabled = false;
                 mtbData.Enabled = false;

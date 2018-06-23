@@ -149,8 +149,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmUtilNumBoard_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
-            UIX.uixMaskedTextBox.mtbApply(mtbNum, App.AppVisualStyle.FormColor);
+            App.VisualTemplate.frmApply(this, hdrUIX);
+            UIX.uixMaskedTextBox.mtbApply(mtbNum, App.VisualStyle.FormColor);
             clnUtil.atualizarTabIndex(Controls);
         }
 

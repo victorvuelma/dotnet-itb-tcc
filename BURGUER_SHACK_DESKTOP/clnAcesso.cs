@@ -28,7 +28,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("usuario", Usuario).where("senha", Senha);
 
             int? codFuncionario = null;
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
                 codFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]);
             reader.Close();

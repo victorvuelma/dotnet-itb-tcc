@@ -108,10 +108,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
 
             clnUtil.definirNumBoard(mtbCPF, frmUtilNumBoard.NumBoardMode.INT);
             clnUtil.definirNumBoard(mtbTelCel, frmUtilNumBoard.NumBoardMode.INT);
@@ -119,11 +119,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjCliente == null)
             {
-                hdrUIX.Title = App.AppName + " - Novo Cliente";
+                hdrUIX.Title = App.ConfigName + " - Novo Cliente";
             }
             else
             {
-                hdrUIX.Title = App.AppName + " - Alterando Cliente " + ObjCliente.Cod;
+                hdrUIX.Title = App.ConfigName + " - Alterando Cliente " + ObjCliente.Cod;
                 mtbCPF.Enabled = false;
                 txtNome.Text = ObjCliente.Nome;
                 mtbCPF.Text = ObjCliente.Cpf;

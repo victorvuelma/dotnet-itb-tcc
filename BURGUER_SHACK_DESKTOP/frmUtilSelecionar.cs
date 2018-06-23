@@ -58,8 +58,8 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 if (control is Button btn)
                 {
-                    UIX.uixButton.btnApply(btn, App.AppVisualStyle.ButtonImageColor);
-                    btn.ForeColor = App.AppVisualStyle.ButtonImageColor.ContentColor;
+                    UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
+                    btn.ForeColor = App.VisualStyle.ButtonImageColor.ContentColor;
                 }
             }
             opcoesControles.Clear();
@@ -128,7 +128,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmSelecionar_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
             clnUtil.definirNumBoard(txtQuantidade);
 
@@ -148,7 +148,7 @@ namespace BURGUER_SHACK_DESKTOP
                 txtQuantidade.Text = Convert.ToString(ObjSelecionar.Quantidade);
             }
 
-            hdrUIX.Title = App.AppName + " - " + ObjSelecionar.ObjListar.Titulo;
+            hdrUIX.Title = App.ConfigName + " - " + ObjSelecionar.ObjListar.Titulo;
             hdrUIX.Image = ObjSelecionar.ObjListar.Icone;
         }
 

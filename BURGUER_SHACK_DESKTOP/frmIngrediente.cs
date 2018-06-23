@@ -158,16 +158,16 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
-            UIX.uixButton.btnApply(btnVoltar, App.AppVisualStyle.ButtonWarningColor);
-            UIX.uixButton.btnApply(btnExcluir, App.AppVisualStyle.ButtonWarningColor);
+            App.VisualTemplate.frmApply(this, hdrUIX);
+            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnExcluir, App.VisualStyle.ButtonWarningColor);
             clnUtil.atualizarTabIndex(Controls);
 
             clnUtil.definirNumBoard(txtValor);
 
             if (ObjIngrediente != null)
             {
-                hdrUIX.Title = App.AppName + " - Alterando Ingrediente " + ObjIngrediente.Cod;
+                hdrUIX.Title = App.ConfigName + " - Alterando Ingrediente " + ObjIngrediente.Cod;
 
                 clnArquivo objArquivo = new clnArquivo
                 {
@@ -197,7 +197,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-                hdrUIX.Title = App.AppName + " - Novo Ingrediente";
+                hdrUIX.Title = App.ConfigName + " - Novo Ingrediente";
 
                 definirImagemPadrao();
 

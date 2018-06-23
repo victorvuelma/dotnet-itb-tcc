@@ -40,7 +40,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table(Tipo.ToString() + "_tipo");
             objSelect.Where.where("id", Cod);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             clnTipo objTipo = null;
             if (reader.Read())
                 objTipo = obter(reader);
@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table(Tipo.ToString() + "_tipo");
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnTipo> objTipos = new List<clnTipo>();
             while (reader.Read())
                 objTipos.Add(obter(reader));
@@ -69,7 +69,7 @@ namespace BURGUER_SHACK_DESKTOP
             objInsert.table(Tipo.ToString() + "_tipo");
             objInsert.Insert.val("nome", Nome);
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         internal void alterar()
@@ -79,7 +79,7 @@ namespace BURGUER_SHACK_DESKTOP
             objUpdate.Set.val("nome", Nome);
             objUpdate.Where.where("id", Cod);
 
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
     }
 }

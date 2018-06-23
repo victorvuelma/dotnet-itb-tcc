@@ -56,7 +56,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("id", Cod);
 
             clnCliente objCliente = null;
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
                 objCliente = obter(reader);
             reader.Close();
@@ -70,7 +70,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("cpf", Cpf);
 
             clnCliente objCliente = null;
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
                 objCliente = obter(reader);
             reader.Close();
@@ -86,7 +86,7 @@ namespace BURGUER_SHACK_DESKTOP
                     
 
             List<clnCliente> objClientes = new List<clnCliente>();
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 objClientes.Add(obter(reader));
             reader.Close();
@@ -105,7 +105,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
                             .val("cadastro", Cadastro);
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         public void alterar()
@@ -118,7 +118,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("genero", Genero)
                             .val("tel_cel", TelCelular)
                             .val("email", Email);
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
 
     }

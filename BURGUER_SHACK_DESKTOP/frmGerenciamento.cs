@@ -73,11 +73,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            UIX.uixButton.btnApply(btnSair, App.AppVisualStyle.ButtonWarningColor);
-            hdrUIX.Title = App.AppName + " - Gerenciamento";
+            UIX.uixButton.btnApply(btnSair, App.VisualStyle.ButtonWarningColor);
+            hdrUIX.Title = App.ConfigName + " - Gerenciamento";
 
             abrirIngredientes();
         }

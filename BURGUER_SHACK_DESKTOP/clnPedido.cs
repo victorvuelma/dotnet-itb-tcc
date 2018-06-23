@@ -48,7 +48,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("pedido");
             objSelect.Where.where("id_atendimento", CodAtendimento);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnPedido> objPedidos = new List<clnPedido>();
             while (reader.Read())
                 objPedidos.Add(obter(reader));
@@ -65,7 +65,7 @@ namespace BURGUER_SHACK_DESKTOP
                          .val("situacao", prefixo(Situacao));
             objUpdate.Where.where("id", Cod);
 
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
 
         public void gravar()
@@ -77,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("valor", Valor)
                             .val("situacao", prefixo(Situacao));
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         private char prefixo(pedidoSituacao situacao)

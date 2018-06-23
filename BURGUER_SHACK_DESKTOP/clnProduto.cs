@@ -56,7 +56,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("produto");
             objSelect.Where.where("id", Cod);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             clnProduto objProduto = null;
             if (reader.Read())
                 objProduto = obter(reader);
@@ -72,7 +72,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("id_tipo", CodTipo)
                            .where("situacao", prefixo(Situacao));
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnProduto> objProdutos = new List<clnProduto>();
             while (reader.Read())
                 objProdutos.Add(obter(reader));
@@ -88,7 +88,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("produto");
             objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnProduto> objProdutos = new List<clnProduto>();
             while (reader.Read())
                 objProdutos.Add(obter(reader));
@@ -108,7 +108,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("valor", Valor)
                             .val("situacao", prefixo(Situacao));
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         public void alterar()
@@ -123,7 +123,7 @@ namespace BURGUER_SHACK_DESKTOP
                          .val("situacao", prefixo(Situacao));
             objUpdate.Where.where("id", Cod);
 
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
 
         private produtoSituacao situacao(char prefixo)

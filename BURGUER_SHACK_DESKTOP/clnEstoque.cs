@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("id_ingrediente", CodIngrediente);
 
             int quantidade = 0;
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 quantidade += clnUtilConvert.ToInt(reader["quantidade"]);
 
@@ -73,7 +73,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("total", Total)
                             .val("valor", Valor);
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         public void alterar()
@@ -83,7 +83,7 @@ namespace BURGUER_SHACK_DESKTOP
             objInsert.Where.where("id", Cod);
             objInsert.Set.val("quantidade", Quantidade);
 
-            objInsert.execute(App.AppDatabase);
+            objInsert.execute(App.DatabaseSql);
         }
 
     }

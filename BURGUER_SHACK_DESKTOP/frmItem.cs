@@ -147,14 +147,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPedidoProduto_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
             clnUtil.definirNumBoard(txtQuantidade);
 
-            UIX.uixButton.btnApply(btnRemover, App.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnRemover, App.VisualStyle.ButtonWarningColor);
 
-            hdrUIX.Title = App.AppName + "- Pedido :: Alterando Item " + ObjItem.Cod;
+            hdrUIX.Title = App.ConfigName + "- Pedido :: Alterando Item " + ObjItem.Cod;
 
             clnProduto objProduto = new clnProduto
             {

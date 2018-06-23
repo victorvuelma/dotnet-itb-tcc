@@ -24,7 +24,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
 
-            hdrUIX.Title = App.AppName + " - Ingrediente";
+            hdrUIX.Title = App.ConfigName + " - Ingrediente";
 
             _validar = new clnUtilValidar();
             _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
@@ -91,11 +91,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmAlteraIngrediente_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
             clnUtil.definirNumBoard(txtQuantidade);
 
-            UIX.uixButton.btnApply(btnRemover, App.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnRemover, App.VisualStyle.ButtonWarningColor);
 
             picIngrediente.Hide();
             lblNome.Hide();

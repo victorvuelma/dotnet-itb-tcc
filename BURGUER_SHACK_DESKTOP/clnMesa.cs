@@ -40,7 +40,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("MESA");
 
             List<clnMesa> objMesas = new List<clnMesa>();
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 objMesas.Add(obter(reader));
             reader.Close();
@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("MESA").Where.where("id", Cod);
 
             clnMesa objMesa = null;
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
                 objMesa = obter(reader);
             reader.Close();
@@ -70,7 +70,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("ATENDIMENTO.SITUACAO", 'A').where("ATENDIMENTO_MESA.ID_MESA", Cod);
             objSelect.Join.innerJoin("ATENDIMENTO_MESA", "ID_ATENDIMENTO", "ATENDIMENTO.ID");
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             int? codAtendimento = null;
             if (reader.Read())
                 codAtendimento = clnUtilConvert.ToInt(reader["id"]);
@@ -85,7 +85,7 @@ namespace BURGUER_SHACK_DESKTOP
             objUpdate.table("MESA");
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("situacao", prefixo(Situacao));
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
 
         private char prefixo(mesaSituacao situacao)
@@ -120,7 +120,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("MESA").Where.where("situacao", prefixo(Situacao));
 
             List<clnMesa> objMesas = new List<clnMesa>();
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
             {
                 objMesas.Add(obter(reader));

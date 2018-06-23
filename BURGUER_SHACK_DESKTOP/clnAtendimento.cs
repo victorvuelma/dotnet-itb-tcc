@@ -59,7 +59,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("atendimento_mesa").Columns.select("id_mesa");
             objSelect.Where.where("id_atendimento", Cod);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
             reader.Close();
@@ -72,7 +72,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("id", Cod);
 
             clnAtendimento objAtendimento = null;
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
                 objAtendimento = obter(reader);
             reader.Close();
@@ -87,7 +87,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("inicio", Inicio).val("fim", Fim).val("situacao", prefixo(Situacao));
             objInsert.table("atendimento");
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
             this.obterMesas();
         }
 
@@ -100,7 +100,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objInsert.table("atendimento_mesa");
                 objInsert.Insert.val("id_atendimento", Cod)
                                 .val("id_mesa", codMesa);
-                objInsert.execute(App.AppDatabase);
+                objInsert.execute(App.DatabaseSql);
 
                 clnMesa objMesa = new clnMesa
                 {
@@ -120,7 +120,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objDelete.table("atendimento_mesa");
                 objDelete.Where.where("id_atendimento", Cod)
                                 .where("id_mesa", codMesa);
-                objDelete.execute(App.AppDatabase);
+                objDelete.execute(App.DatabaseSql);
 
                 clnMesa objMesa = new clnMesa
                 {

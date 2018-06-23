@@ -39,7 +39,8 @@
     <StartupObject>BURGUER_SHACK_DESKTOP.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>garcom-ico.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -578,7 +579,6 @@
     <None Include="Resources\bebida.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="garcom-ico.ico" />
     <None Include="Resources\fornecedor.png" />
     <None Include="Resources\terceirizada1.png" />
     <None Include="Resources\burguershack-ico.ico" />

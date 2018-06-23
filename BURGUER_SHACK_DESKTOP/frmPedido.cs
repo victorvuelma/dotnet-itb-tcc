@@ -87,10 +87,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPedido_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
-            UIX.uixButton.btnApply(btnSair, App.AppVisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnSair, App.VisualStyle.ButtonWarningColor);
 
             if (ObjPedido == null)
                 ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>();

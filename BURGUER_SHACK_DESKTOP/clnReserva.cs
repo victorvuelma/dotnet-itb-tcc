@@ -64,7 +64,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("reserva_mesa").Columns.select("id_mesa");
             objSelect.Where.where("id_reserva", Cod);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
             reader.Close();
@@ -77,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where(new sqlObjWhereBetween { TableColumn = "agendado", Val1 = Agendado, Val2 = Agendado.AddDays(1) });
 
             List<clnReserva> objReservas = new List<clnReserva>();
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 objReservas.Add(obter(reader));
             reader.Close();
@@ -97,7 +97,7 @@ namespace BURGUER_SHACK_DESKTOP
                            .where("reserva.situacao", sqlObjWhereCommon.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
 
             List<int> objMesas = new List<int>();
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 objMesas.Add(clnUtilConvert.ToInt(reader["id"]));
             reader.Close();
@@ -116,7 +116,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("agendado", Agendado)
                             .val("agendamento", Agendamento);
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
 
             gravarMesas();
         }
@@ -129,7 +129,7 @@ namespace BURGUER_SHACK_DESKTOP
                 objInsert.table("reserva_mesa");
                 objInsert.Insert.val("id_reserva", Cod)
                                 .val("id_mesa", codMesa);
-                objInsert.execute(App.AppDatabase);
+                objInsert.execute(App.DatabaseSql);
             }
         }
 
@@ -140,7 +140,7 @@ namespace BURGUER_SHACK_DESKTOP
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("pessoas", Pessoas)
                          .val("situacao", prefixo(Situacao));
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
 
         internal void addMesa(int mesa)
@@ -155,7 +155,7 @@ namespace BURGUER_SHACK_DESKTOP
                     objInsert.Insert.val("id_reserva", Cod)
                                     .val("id_mesa", mesa);
 
-                    objInsert.execute(App.AppDatabase);
+                    objInsert.execute(App.DatabaseSql);
                 }
             }
         }
@@ -172,7 +172,7 @@ namespace BURGUER_SHACK_DESKTOP
                     objDelete.Where.where("id_reserva", Cod)
                                    .where("id_mesa", mesa);
 
-                    objDelete.execute(App.AppDatabase);
+                    objDelete.execute(App.DatabaseSql);
                 }
             }
         }

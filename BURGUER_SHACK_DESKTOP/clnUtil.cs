@@ -388,7 +388,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
             }
 
-            App.AppVisualTemplate.pnlApply(panel);
+            App.VisualTemplate.pnlApply(panel);
             clnUtil.atualizarTabIndex(panel.Controls);
 
             panel.Show();
@@ -462,7 +462,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
             }
 
-            hdrUIX.Title = App.AppName + " - " + titulo;
+            hdrUIX.Title = App.ConfigName + " - " + titulo;
             if (uctConteudo == null)
             {
                 pnlConteudo.Show();
@@ -471,7 +471,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
 
             clnUtil.atualizarTabIndex(uctConteudo.Controls);
-            App.AppVisualTemplate.uctApply(uctConteudo);
+            App.VisualTemplate.uctApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);
             uctConteudo.Location = new Point(0, 0);

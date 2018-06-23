@@ -22,7 +22,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
 
             txtSenha.txt.PasswordChar = '*';
-            hdrUIX.Title = App.AppName + " - Acesso ao Sistema";
+            hdrUIX.Title = App.ConfigName + " - Acesso ao Sistema";
 
             _validar = new clnUtilValidar();
             _validar.addValidacao(txtUsuario, clnUtilValidar.ValidarTipo.OBRIGATORIO);
@@ -31,7 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
             Focus();

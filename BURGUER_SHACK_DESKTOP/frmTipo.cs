@@ -85,12 +85,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
-            App.AppVisualTemplate.frmApply(this, hdrUIX);
+            App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarTabIndex(Controls);
 
             exibirTipos();
 
-            hdrUIX.Title = App.AppName + " - Tipos de  " + Tipo.ToString().ToLower();
+            hdrUIX.Title = App.ConfigName + " - Tipos de  " + Tipo.ToString().ToLower();
         }
 
         private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)

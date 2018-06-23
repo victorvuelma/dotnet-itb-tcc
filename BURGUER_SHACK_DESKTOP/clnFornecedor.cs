@@ -63,7 +63,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("fornecedor");
             objSelect.Where.where("id", Cod);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             clnFornecedor objFornecedor = null;
             if (reader.Read())
                 objFornecedor = obter(reader);
@@ -77,7 +77,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.table("fornecedor");
             objSelect.Where.where("cnpj", Cnpj);
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             clnFornecedor objFornecedor = null;
             if (reader.Read())
                 objFornecedor = obter(reader);
@@ -92,7 +92,7 @@ namespace BURGUER_SHACK_DESKTOP
             objSelect.Where.where("cnpj", sqlObjWhereCommon.whereOperation.LIKE, "%" + Cnpj + "%", sqlObjWhere.whereAssociation.OR)
                            .where("razao_social", sqlObjWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%");
 
-            SqlDataReader reader = objSelect.execute(App.AppDatabase);
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnFornecedor> objFornecedor = new List<clnFornecedor>();
             while (reader.Read())
                 objFornecedor.Add(obter(reader));
@@ -116,7 +116,7 @@ namespace BURGUER_SHACK_DESKTOP
                          .val("end_localidade", EndLocalidade)
                          .val("end_uf", EndUF);
 
-            objUpdate.execute(App.AppDatabase);
+            objUpdate.execute(App.DatabaseSql);
         }
 
         public void gravar()
@@ -135,7 +135,7 @@ namespace BURGUER_SHACK_DESKTOP
                             .val("end_localidade", EndLocalidade)
                             .val("end_uf", EndUF);
 
-            Cod = objInsert.executeWithOutput(App.AppDatabase);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
     }
