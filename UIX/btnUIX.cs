@@ -48,26 +48,24 @@ namespace UIX
                 pic.Font = value;
                 lbl.Font = value;
                 base.Font = value;
+                update();
             }
         }
 
         public String Description
         {
             get => lbl.Text;
-            set => lbl.Text = value;
+            set
+            {
+                lbl.Text = value;
+                Text = value;
+                update();
+            }
         }
 
-        public new Image Image
-        {
-            get => pic.Image;
-            set => pic.Image = value;
-        }
+        public new Image Image { get => pic.Image; set => pic.Image = value; }
 
-        public String ImageLocation
-        {
-            get => pic.ImageLocation;
-            set => pic.ImageLocation = value;
-        }
+        public String ImageLocation { get => pic.ImageLocation; set => pic.ImageLocation = value; }
 
         public new Size Size
         {
@@ -87,14 +85,20 @@ namespace UIX
                 lbl.Location = new Point(lbl.Location.X, lblY);
 
                 base.Size = value;
+
+                update();
             }
+        }
+
+        private void update()
+        {
+            UIX.uixUtil.defineSizeForWidht(lbl);
         }
 
         private void btnUIX_MouseEnter(object sender, EventArgs e)
         {
             _backColor = BackColor;
             BackColor = HoverColor;
-            Size = Size;
         }
 
         private void btnUIX_MouseLeave(object sender, EventArgs e)
