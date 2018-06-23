@@ -32,7 +32,7 @@ namespace BURGUER_SHACK_DESKTOP
         private static UIX.uixTemplate _visualTemplate = new UIX.uixTemplate
         {
             Style = VisualStyle,
-            Icon = Properties.Resources.burguershack_ico
+            Icon = Properties.Resources.app_ico
         };
 
         public static String ConfigName { get => _configName; }

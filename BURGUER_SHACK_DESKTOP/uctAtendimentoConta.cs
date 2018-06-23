@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    public partial class uctMesaConta : UserControl
+    public partial class uctAtendimentoConta : UserControl
     {
 
         private int _atendimento;
 
         public int Atendimento { get => _atendimento; set => _atendimento = value; }
 
-        public uctMesaConta()
+        public uctAtendimentoConta()
         {
             InitializeComponent();
             CarregarListaDeImpressoras();

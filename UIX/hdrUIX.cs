@@ -26,9 +26,8 @@ namespace UIX
             get => lbl.Text;
             set
             {
-                int width = lbl.Width;
                 lbl.Text = value;
-                uixUtil.defineSizeForWidht(lbl, width);
+                uixUtil.defineSizeForWidht(lbl);
                 if (this.ParentForm != null) {
                     this.ParentForm.Text = value;
                 }

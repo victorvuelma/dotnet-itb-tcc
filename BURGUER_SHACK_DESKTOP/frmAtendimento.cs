@@ -47,7 +47,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirConta()
         {
-            uctMesaConta uctConta = new uctMesaConta
+            uctAtendimentoConta uctConta = new uctAtendimentoConta
             {
                 Atendimento = ObjAtendimento.Cod
             };

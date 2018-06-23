@@ -1,6 +1,6 @@
 ﻿namespace BURGUER_SHACK_DESKTOP
 {
-    partial class uctMesaConta
+    partial class uctAtendimentoConta
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctMesaConta));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctAtendimentoConta));
             this.grbPedidoConta = new System.Windows.Forms.GroupBox();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.cboImpressora = new System.Windows.Forms.ComboBox();
@@ -65,7 +65,6 @@
             this.grbPedidoConta.Controls.Add(this.grpInformacoes);
             this.grbPedidoConta.Controls.Add(this.pnlTotal);
             this.grbPedidoConta.Controls.Add(this.pnlTroco);
-            this.grbPedidoConta.Controls.Add(this.btnFinalizar);
             this.grbPedidoConta.Location = new System.Drawing.Point(5, 5);
             this.grbPedidoConta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbPedidoConta.Name = "grbPedidoConta";
@@ -117,11 +116,15 @@
             // txtValor
             // 
             this.txtValor.AccessibleName = "Valor da Compra (R$)";
+            this.txtValor.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtValor.Campo = "Valor da Compra (R$)";
+            this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValor.Location = new System.Drawing.Point(7, 23);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValor.MaxLength = 32767;
+            this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
+            this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtValor.Size = new System.Drawing.Size(178, 25);
             this.txtValor.TabIndex = 2;
             // 
@@ -140,11 +143,15 @@
             // txtValorDinheiro
             // 
             this.txtValorDinheiro.AccessibleName = "Valor em Dinheiro (R$)";
+            this.txtValorDinheiro.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtValorDinheiro.Campo = "Valor em Dinheiro (R$)";
+            this.txtValorDinheiro.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValorDinheiro.Location = new System.Drawing.Point(262, 23);
             this.txtValorDinheiro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtValorDinheiro.MaxLength = 32767;
+            this.txtValorDinheiro.Multiline = false;
             this.txtValorDinheiro.Name = "txtValorDinheiro";
+            this.txtValorDinheiro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtValorDinheiro.Size = new System.Drawing.Size(187, 25);
             this.txtValorDinheiro.TabIndex = 7;
             this.txtValorDinheiro.Leave += new System.EventHandler(this.txtValorDinheiro_Leave);
@@ -152,11 +159,15 @@
             // txtDesconto
             // 
             this.txtDesconto.AccessibleName = "Desconto (R$)";
+            this.txtDesconto.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtDesconto.Campo = "Desconto (R$)";
+            this.txtDesconto.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtDesconto.Location = new System.Drawing.Point(7, 23);
             this.txtDesconto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDesconto.MaxLength = 32767;
+            this.txtDesconto.Multiline = false;
             this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDesconto.Size = new System.Drawing.Size(157, 25);
             this.txtDesconto.TabIndex = 6;
             this.txtDesconto.Leave += new System.EventHandler(this.txtDesconto_Leave);
@@ -191,6 +202,7 @@
             // 
             this.grpInformacoes.Controls.Add(this.txtClienteNome);
             this.grpInformacoes.Controls.Add(this.mtbClienteCPF);
+            this.grpInformacoes.Controls.Add(this.btnFinalizar);
             this.grpInformacoes.Location = new System.Drawing.Point(5, 580);
             this.grpInformacoes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpInformacoes.Name = "grpInformacoes";
@@ -203,11 +215,15 @@
             // txtClienteNome
             // 
             this.txtClienteNome.AccessibleName = "Nome";
+            this.txtClienteNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtClienteNome.Campo = "Nome";
+            this.txtClienteNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtClienteNome.Location = new System.Drawing.Point(7, 23);
             this.txtClienteNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtClienteNome.MaxLength = 32767;
+            this.txtClienteNome.Multiline = false;
             this.txtClienteNome.Name = "txtClienteNome";
+            this.txtClienteNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtClienteNome.Size = new System.Drawing.Size(294, 25);
             this.txtClienteNome.TabIndex = 8;
             // 
@@ -215,6 +231,7 @@
             // 
             this.mtbClienteCPF.AccessibleName = "CPF";
             this.mtbClienteCPF.Campo = "CPF";
+            this.mtbClienteCPF.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.mtbClienteCPF.Location = new System.Drawing.Point(308, 23);
             this.mtbClienteCPF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbClienteCPF.Mask = "";
@@ -286,7 +303,7 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(320, 635);
+            this.btnFinalizar.Location = new System.Drawing.Point(316, 12);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(163, 49);
@@ -295,15 +312,15 @@
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
-            // uctMesaConta
+            // uctAtendimentoConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbPedidoConta);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "uctMesaConta";
-            this.Size = new System.Drawing.Size(500, 700);
+            this.Name = "uctAtendimentoConta";
+            this.Size = new System.Drawing.Size(500, 650);
             this.Load += new System.EventHandler(this.uctPedidoConta_Load);
             this.grbPedidoConta.ResumeLayout(false);
             this.grbPedidoConta.PerformLayout();

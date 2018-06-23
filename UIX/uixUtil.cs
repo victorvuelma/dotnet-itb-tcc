@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace UIX
 {
-    class uixUtil
+    public class uixUtil
     {
 
         private static char[] INT_CHARS = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
@@ -27,6 +27,13 @@ namespace UIX
             }
         }
 
+        public static void defineSizeForWidht(Control ctl)
+        {
+            int width = ctl.Width;
+
+            defineSizeForWidht(ctl, width);
+        }
+
         public static void defineSizeForWidht(Control ctl, int widht)
         {
             ctl.AutoSize = true;
@@ -37,7 +44,6 @@ namespace UIX
             ctl.AutoSize = false;
             ctl.Size = new Size(widht, ctl.Height);
         }
-
-
+        
     }
 }

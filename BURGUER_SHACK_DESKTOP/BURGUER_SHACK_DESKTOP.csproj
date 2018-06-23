@@ -285,12 +285,6 @@
     <Compile Include="frmUtilNumBoard.Designer.cs">
       <DependentUpon>frmUtilNumBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="msgGerenciador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="msgGerenciador.Designer.cs">
-      <DependentUpon>msgGerenciador.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -353,11 +347,11 @@
     <Compile Include="uctPrincipalCardapio.Designer.cs">
       <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctMesaConta.cs">
+    <Compile Include="uctAtendimentoConta.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctMesaConta.Designer.cs">
-      <DependentUpon>uctMesaConta.cs</DependentUpon>
+    <Compile Include="uctAtendimentoConta.Designer.cs">
+      <DependentUpon>uctAtendimentoConta.cs</DependentUpon>
     </Compile>
     <Compile Include="uctPrincipalReservas.cs">
       <SubType>UserControl</SubType>
@@ -440,9 +434,6 @@
     <EmbeddedResource Include="frmUtilSelecionar.resx">
       <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="msgGerenciador.resx">
-      <DependentUpon>msgGerenciador.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -469,8 +460,8 @@
     <EmbeddedResource Include="uctPrincipalCardapio.resx">
       <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctMesaConta.resx">
-      <DependentUpon>uctMesaConta.cs</DependentUpon>
+    <EmbeddedResource Include="uctAtendimentoConta.resx">
+      <DependentUpon>uctAtendimentoConta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPrincipalReservas.resx">
       <DependentUpon>uctPrincipalReservas.cs</DependentUpon>
@@ -581,7 +572,6 @@
   <ItemGroup>
     <None Include="Resources\fornecedor.png" />
     <None Include="Resources\terceirizada1.png" />
-    <None Include="Resources\burguershack-ico.ico" />
     <None Include="Resources\pesquisar.png" />
     <None Include="Resources\entrar.png" />
     <None Include="Resources\cliente.png" />
@@ -599,17 +589,19 @@
     <None Include="Resources\produto.png" />
     <None Include="Resources\ingrediente.png" />
     <None Include="Resources\pedido.png" />
-    <None Include="Resources\gerenciador-ico.ico" />
-    <None Include="Resources\garcom-ico.ico" />
-    <None Include="Resources\usuarios-ico.ico" />
     <None Include="Resources\atendimento.png" />
-    <None Include="Resources\estoque.png" />
     <None Include="Resources\funcionario.png" />
     <None Include="Resources\terceirizada.png" />
     <None Include="Resources\calculadora.png" />
     <None Include="Resources\modelo.png" />
     <None Include="Resources\mesauso.png" />
     <None Include="Resources\voltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app-ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
