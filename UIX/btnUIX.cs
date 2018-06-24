@@ -45,9 +45,7 @@ namespace UIX
             get => base.Font;
             set
             {
-                pic.Font = value;
                 lbl.Font = value;
-                base.Font = value;
                 update();
             }
         }
@@ -58,7 +56,7 @@ namespace UIX
             set
             {
                 lbl.Text = value;
-                Text = value;
+                base.Text = value;
                 update();
             }
         }

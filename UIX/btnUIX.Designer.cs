@@ -36,9 +36,9 @@
             // pic
             // 
             this.pic.BackColor = System.Drawing.SystemColors.Control;
-            this.pic.Location = new System.Drawing.Point(10, 5);
+            this.pic.Location = new System.Drawing.Point(0, 5);
             this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(60, 60);
+            this.pic.Size = new System.Drawing.Size(80, 60);
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
