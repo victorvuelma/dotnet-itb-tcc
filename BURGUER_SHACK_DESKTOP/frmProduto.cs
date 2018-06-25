@@ -59,8 +59,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void adicionarImagem()
         {
-            OpenFileDialog objDialog = new OpenFileDialog();
-            objDialog.Filter = "png|*.png";
+            OpenFileDialog objDialog = new OpenFileDialog
+            {
+                Filter = "png|*.png"
+            };
             if (objDialog.ShowDialog() == DialogResult.OK)
             {
                 picImagem.ImageLocation = objDialog.FileName;
