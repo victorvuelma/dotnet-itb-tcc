@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new UIX.btnUIX();
@@ -81,13 +82,14 @@
             // 
             this.btnExcluir.Description = "Excluir";
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.excluir;
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.ImageLocation = null;
             this.btnExcluir.Location = new System.Drawing.Point(5, 105);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(90, 90);
             this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -101,6 +103,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
+            this.btnVoltar.Text = "Cancelar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -115,6 +118,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -152,12 +156,12 @@
             // 
             this.txtDesc.AcceptButton = null;
             this.txtDesc.AccessibleName = "Preço de Venda: (R$)*";
-            this.txtDesc.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtDesc.Campo = "Descrição";
             this.txtDesc.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtDesc.Location = new System.Drawing.Point(5, 70);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 11, 3, 11);
             this.txtDesc.MaxLength = 32767;
+            this.txtDesc.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -168,12 +172,12 @@
             // 
             this.txtValor.AcceptButton = null;
             this.txtValor.AccessibleName = "Preço de Venda: (R$)*";
-            this.txtValor.AllowedChars = UIX.uixEnum.uixAllowedChars.DOUBLE;
             this.txtValor.Campo = "Valor (R$)*";
             this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValor.Location = new System.Drawing.Point(5, 39);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtValor.MaxLength = 32767;
+            this.txtValor.Mode = UIX.uixEnum.uixTextBoxMode.MONEY;
             this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
             this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -197,12 +201,12 @@
             // 
             this.txtNome.AcceptButton = null;
             this.txtNome.AccessibleName = "Nome:*";
-            this.txtNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtNome.Campo = "Nome:*";
             this.txtNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtNome.Location = new System.Drawing.Point(5, 15);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
+            this.txtNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -213,12 +217,13 @@
             // 
             this.btnImgRemover.Description = "Remover";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
+            this.btnImgRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnImgRemover.Image")));
             this.btnImgRemover.ImageLocation = null;
             this.btnImgRemover.Location = new System.Drawing.Point(10, 15);
             this.btnImgRemover.Name = "btnImgRemover";
             this.btnImgRemover.Size = new System.Drawing.Size(80, 80);
             this.btnImgRemover.TabIndex = 28;
+            this.btnImgRemover.Text = "Remover";
             this.btnImgRemover.UseVisualStyleBackColor = true;
             this.btnImgRemover.Click += new System.EventHandler(this.btnImgRemover_Click);
             // 
@@ -232,6 +237,7 @@
             this.btnImgAdicionar.Name = "btnImgAdicionar";
             this.btnImgAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnImgAdicionar.TabIndex = 26;
+            this.btnImgAdicionar.Text = "Adicionar";
             this.btnImgAdicionar.UseVisualStyleBackColor = true;
             this.btnImgAdicionar.Click += new System.EventHandler(this.btnImgAdicionar_Click);
             // 
@@ -283,6 +289,7 @@
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
             this.btnIngredienteAdd.Size = new System.Drawing.Size(80, 80);
             this.btnIngredienteAdd.TabIndex = 26;
+            this.btnIngredienteAdd.Text = "Adicionar";
             this.btnIngredienteAdd.UseVisualStyleBackColor = true;
             this.btnIngredienteAdd.Click += new System.EventHandler(this.btnIngredienteAdd_Click);
             // 
@@ -296,6 +303,7 @@
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Size = new System.Drawing.Size(80, 80);
             this.btnIngredientes.TabIndex = 28;
+            this.btnIngredientes.Text = "Visualizar";
             this.btnIngredientes.UseVisualStyleBackColor = true;
             this.btnIngredientes.Click += new System.EventHandler(this.btnIngredienteRemover_Click);
             // 

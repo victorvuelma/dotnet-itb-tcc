@@ -173,7 +173,7 @@
             this.btnFuncionarios.HoverColor = System.Drawing.Color.Transparent;
             this.btnFuncionarios.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.funcionario;
             this.btnFuncionarios.ImageLocation = null;
-            this.btnFuncionarios.Location = new System.Drawing.Point(5, 105);
+            this.btnFuncionarios.Location = new System.Drawing.Point(5, 5);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(90, 90);
             this.btnFuncionarios.TabIndex = 9;
@@ -188,7 +188,7 @@
             this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnClientes.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.cliente;
             this.btnClientes.ImageLocation = null;
-            this.btnClientes.Location = new System.Drawing.Point(5, 5);
+            this.btnClientes.Location = new System.Drawing.Point(5, 105);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(90, 90);
             this.btnClientes.TabIndex = 8;

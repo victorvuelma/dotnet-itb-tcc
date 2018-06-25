@@ -9,11 +9,12 @@ namespace UIX
     public class uixEnum
     {
 
-        public enum uixAllowedChars
+        public enum uixTextBoxMode
         {
             ALL,
             INT,
-            DOUBLE
+            DOUBLE,
+            MONEY
         }
 
         public enum uixLabelPosition

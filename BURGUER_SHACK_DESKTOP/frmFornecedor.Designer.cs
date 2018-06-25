@@ -102,7 +102,7 @@
             // txtEmail
             // 
             this.txtEmail.AccessibleName = "E-mail";
-            this.txtEmail.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtEmail.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtEmail.Campo = "E-mail*";
             this.txtEmail.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtEmail.Location = new System.Drawing.Point(5, 78);
@@ -143,7 +143,7 @@
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.AccessibleName = "Nome*";
-            this.txtRazaoSocial.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtRazaoSocial.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtRazaoSocial.Campo = "Razão Social*";
             this.txtRazaoSocial.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtRazaoSocial.Location = new System.Drawing.Point(5, 20);
@@ -191,7 +191,7 @@
             // txtEndComplemento
             // 
             this.txtEndComplemento.AccessibleName = "Complemento";
-            this.txtEndComplemento.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtEndComplemento.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtEndComplemento.Campo = "Complemento";
             this.txtEndComplemento.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtEndComplemento.Location = new System.Drawing.Point(135, 80);
@@ -206,7 +206,7 @@
             // txtEndCidade
             // 
             this.txtEndCidade.AccessibleName = "Cidade*";
-            this.txtEndCidade.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtEndCidade.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtEndCidade.Campo = "Cidade*";
             this.txtEndCidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtEndCidade.Location = new System.Drawing.Point(150, 110);
@@ -221,7 +221,7 @@
             // txtEndBairro
             // 
             this.txtEndBairro.AccessibleName = "Bairro*";
-            this.txtEndBairro.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtEndBairro.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtEndBairro.Campo = "Bairro*";
             this.txtEndBairro.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtEndBairro.Location = new System.Drawing.Point(5, 110);
@@ -262,7 +262,7 @@
             // txtEndLogradouro
             // 
             this.txtEndLogradouro.AccessibleName = "Logradouro*";
-            this.txtEndLogradouro.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtEndLogradouro.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtEndLogradouro.Campo = "Logradouro*";
             this.txtEndLogradouro.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtEndLogradouro.Location = new System.Drawing.Point(5, 50);
@@ -277,7 +277,7 @@
             // txtEndNr
             // 
             this.txtEndNr.AccessibleName = "Número*";
-            this.txtEndNr.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
+            this.txtEndNr.Mode = UIX.uixEnum.uixTextBoxMode.INT;
             this.txtEndNr.Campo = "Número*";
             this.txtEndNr.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtEndNr.Location = new System.Drawing.Point(5, 80);

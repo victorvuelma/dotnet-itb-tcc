@@ -69,12 +69,15 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static void definirNumBoard(UIX.txtUIX txt)
         {
-            switch (txt.AllowedChars)
+            switch (txt.Mode)
             {
-                case UIX.uixEnum.uixAllowedChars.DOUBLE:
+                case UIX.uixEnum.uixTextBoxMode.DOUBLE:
                     definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
                     break;
-                case UIX.uixEnum.uixAllowedChars.INT:
+                case UIX.uixEnum.uixTextBoxMode.MONEY:
+                    definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.MONEY);
+                    break;
+                case UIX.uixEnum.uixTextBoxMode.INT:
                     definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
                     break;
             }
@@ -104,21 +107,14 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 frmNumBoard = new frmUtilNumBoard
                 {
-                    Input = input
+                    Input = input,
+                    Mode = mode
                 };
             }
             else if (frmNumBoard.Input != input)
             {
+                frmNumBoard.Mode = mode;
                 frmNumBoard.Input = input;
-            }
-
-            if (mode == frmUtilNumBoard.NumBoardMode.INT)
-            {
-                frmNumBoard.btnPoint.Hide();
-            }
-            else
-            {
-                frmNumBoard.btnPoint.Show();
             }
 
             if (frmNumBoard.Input.Equals(input) && frmNumBoard.Visible)
@@ -319,6 +315,11 @@ namespace BURGUER_SHACK_DESKTOP
         public static bool validarInt(String inteiro)
         {
             return Int32.TryParse(inteiro, out int r);
+        }
+
+        public static bool validarValor(String val)
+        {
+            return Double.TryParse(val, out double value) && value > 0.0;
         }
 
         public static bool validarDouble(String val)

@@ -13,16 +13,29 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmUtilNumBoard : Form
     {
 
+        public enum NumBoardMode
+        {
+            INT,
+            DOUBLE,
+            MONEY
+        }
+
+        private NumBoardMode _mode;
+
         private TextBoxBase _input;
         private String _num;
 
         public String Numero { get => _num; set => _num = value; }
-        public TextBoxBase Input { get => _input; 
-                set {
+        public TextBoxBase Input
+        {
+            get => _input;
+            set
+            {
                 _input = value;
                 atualizarInput();
             }
         }
+        public NumBoardMode Mode { get => _mode; set => _mode = value; }
 
         public frmUtilNumBoard()
         {
@@ -185,14 +198,17 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public enum NumBoardMode
-        {
-            INT,
-            DOUBLE
-        }
-
         public new void Show()
         {
+            if (Mode == frmUtilNumBoard.NumBoardMode.INT)
+            {
+                btnPoint.Hide();
+            }
+            else
+            {
+                btnPoint.Show();
+            }
+
             base.Show();
             atualizarInput();
             Focus();
@@ -202,6 +218,14 @@ namespace BURGUER_SHACK_DESKTOP
         private void mtbNum_KeyUp(object sender, KeyEventArgs e)
         {
             definir(mtbNum.Text);
+        }
+
+        private void mtbNum_TextChanged(object sender, EventArgs e)
+        {
+            if (Mode == NumBoardMode.MONEY)
+            {
+                UIX.uixUtil.defineForMoney(mtbNum);
+            }
         }
     }
 }

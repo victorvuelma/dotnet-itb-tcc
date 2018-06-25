@@ -89,7 +89,7 @@
             // txtSenha
             // 
             this.txtSenha.AccessibleName = "Senha";
-            this.txtSenha.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtSenha.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtSenha.Campo = "Senha";
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(190, 120);
@@ -102,7 +102,7 @@
             // txtUsuario
             // 
             this.txtUsuario.AccessibleName = "Usuário";
-            this.txtUsuario.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtUsuario.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtUsuario.Campo = "Usuário";
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(190, 80);

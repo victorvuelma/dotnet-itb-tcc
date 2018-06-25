@@ -116,7 +116,7 @@
             // txtValor
             // 
             this.txtValor.AccessibleName = "Valor da Compra (R$)";
-            this.txtValor.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtValor.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtValor.Campo = "Valor da Compra (R$)";
             this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValor.Location = new System.Drawing.Point(7, 23);
@@ -143,7 +143,7 @@
             // txtValorDinheiro
             // 
             this.txtValorDinheiro.AccessibleName = "Valor em Dinheiro (R$)";
-            this.txtValorDinheiro.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtValorDinheiro.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtValorDinheiro.Campo = "Valor em Dinheiro (R$)";
             this.txtValorDinheiro.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValorDinheiro.Location = new System.Drawing.Point(262, 23);
@@ -159,7 +159,7 @@
             // txtDesconto
             // 
             this.txtDesconto.AccessibleName = "Desconto (R$)";
-            this.txtDesconto.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtDesconto.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtDesconto.Campo = "Desconto (R$)";
             this.txtDesconto.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtDesconto.Location = new System.Drawing.Point(7, 23);
@@ -215,7 +215,7 @@
             // txtClienteNome
             // 
             this.txtClienteNome.AccessibleName = "Nome";
-            this.txtClienteNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtClienteNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtClienteNome.Campo = "Nome";
             this.txtClienteNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtClienteNome.Location = new System.Drawing.Point(7, 23);

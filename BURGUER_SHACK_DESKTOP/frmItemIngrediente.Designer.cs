@@ -55,7 +55,7 @@
             // 
             this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
+            this.txtQuantidade.Mode = UIX.uixEnum.uixTextBoxMode.INT;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(135, 110);

@@ -193,7 +193,7 @@
             // txtPesquisa
             // 
             this.txtPesquisa.AccessibleName = "Pesquisar";
-            this.txtPesquisa.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtPesquisa.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisa.Campo = "Pesquisar";
             this.txtPesquisa.Location = new System.Drawing.Point(3, 5);
             this.txtPesquisa.MaxLength = 32767;

@@ -73,7 +73,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirEstoques()
         {
-            abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade" });
+            abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor" });
         }
 
         private void sair()
@@ -86,9 +86,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarForm(this);
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
 
-            hdrUIX.Title = App.Name + " - Gerenciamento";
-
-            abrirIngredientes();
+            abrirFuncionarios();
         }
         private void hdrUIX_Close(object sender, EventArgs e)
         {
@@ -188,7 +186,7 @@ namespace BURGUER_SHACK_DESKTOP
                         CodIngrediente = objIngrediente.Cod
                     }.obterQuantidadePorIngrediente();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
-                    dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, objIngrediente.Valor });
+                    dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, clnUtil.formatarValor(objIngrediente.Valor) });
                 }
                 return false;
             }
@@ -242,7 +240,7 @@ namespace BURGUER_SHACK_DESKTOP
                         Tipo = clnTipo.tipo.PRODUTO
                     }.obterPorCodigo();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
-                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, objProduto.Valor });
+                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, clnUtil.formatarValor(objProduto.Valor) });
                 }
                 return false;
             }
@@ -350,7 +348,7 @@ namespace BURGUER_SHACK_DESKTOP
                     }.obterPorCod();
 
                     //"Código", "Nome", "CPF", "RG", "Data Nasc", "Genero", "Email","Celular", "Cargo", "Salario", "Situacao"
-                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objCargo.Nome, objFuncionario.Salario, objFuncionario.Situacao });
+                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objCargo.Nome, clnUtil.formatarValor(objFuncionario.Salario), objFuncionario.Situacao });
                 }
                 return false;
             }
@@ -516,8 +514,8 @@ namespace BURGUER_SHACK_DESKTOP
                         Cod = objEstoque.CodFornecedor
                     }.obterPorCod();
 
-                    //"Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade"
-                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, clnUtil.formatarData(objEstoque.Validade) });
+                    //"Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor"
+                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, clnUtil.formatarData(objEstoque.Validade), clnUtil.formatarValor(objEstoque.Valor) });
                 }
                 return false;
             }

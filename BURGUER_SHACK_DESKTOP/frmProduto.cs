@@ -27,7 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             _validar = new clnUtilValidar();
             _validar.addValidacao(txtNome, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DOUBLE });
+            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.VALOR });
             _validar.addValidacao(cboTipo, clnUtilValidar.ValidarTipo.OBRIGATORIO);
         }
 

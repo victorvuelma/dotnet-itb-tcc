@@ -21,6 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
             INT,
             INT_MAIOR_0,
             DOUBLE,
+            VALOR,
             DATA,
             DATA_NASC,
             DATA_FUTURA,
@@ -203,6 +204,10 @@ namespace BURGUER_SHACK_DESKTOP
                         case ValidarTipo.HORA:
                             val = clnUtil.validarHora(conteudo);
                             res = "deve conter uma hora válida.";
+                            break;
+                        case ValidarTipo.VALOR:
+                            val = clnUtil.validarValor(conteudo);
+                            res = "deve conter um valor válido.";
                             break;
                         case ValidarTipo.DOUBLE:
                             val = clnUtil.validarDouble(conteudo);

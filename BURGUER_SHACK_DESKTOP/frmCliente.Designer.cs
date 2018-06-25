@@ -97,7 +97,7 @@
             // txtEmail
             // 
             this.txtEmail.AccessibleName = "E-mail";
-            this.txtEmail.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtEmail.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtEmail.Campo = "E-mail";
             this.txtEmail.Location = new System.Drawing.Point(5, 120);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -157,7 +157,7 @@
             // txtNome
             // 
             this.txtNome.AccessibleName = "Nome*";
-            this.txtNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtNome.Campo = "Nome*";
             this.txtNome.Location = new System.Drawing.Point(5, 25);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

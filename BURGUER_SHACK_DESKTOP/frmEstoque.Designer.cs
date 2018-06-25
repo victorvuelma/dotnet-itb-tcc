@@ -83,6 +83,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
+            this.btnVoltar.Text = "Cancelar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -97,6 +98,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -133,12 +135,12 @@
             // 
             this.txtValor.AcceptButton = null;
             this.txtValor.AccessibleName = "Nome:*";
-            this.txtValor.AllowedChars = UIX.uixEnum.uixAllowedChars.DOUBLE;
             this.txtValor.Campo = "Valor*";
             this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValor.Location = new System.Drawing.Point(5, 50);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtValor.MaxLength = 32767;
+            this.txtValor.Mode = UIX.uixEnum.uixTextBoxMode.MONEY;
             this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
             this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -149,12 +151,12 @@
             // 
             this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Nome:*";
-            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade*";
             this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(5, 20);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Mode = UIX.uixEnum.uixTextBoxMode.INT;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -190,6 +192,7 @@
             this.btnFornEncontrar.Name = "btnFornEncontrar";
             this.btnFornEncontrar.Size = new System.Drawing.Size(80, 80);
             this.btnFornEncontrar.TabIndex = 7;
+            this.btnFornEncontrar.Text = "Encontrar";
             this.btnFornEncontrar.UseVisualStyleBackColor = true;
             this.btnFornEncontrar.Click += new System.EventHandler(this.btnFornEncontrar_Click);
             // 
@@ -243,6 +246,7 @@
             this.btnIngSelecionar.Name = "btnIngSelecionar";
             this.btnIngSelecionar.Size = new System.Drawing.Size(80, 80);
             this.btnIngSelecionar.TabIndex = 7;
+            this.btnIngSelecionar.Text = "Selecionar";
             this.btnIngSelecionar.UseVisualStyleBackColor = true;
             this.btnIngSelecionar.Click += new System.EventHandler(this.btnIngSelecionar_Click);
             // 

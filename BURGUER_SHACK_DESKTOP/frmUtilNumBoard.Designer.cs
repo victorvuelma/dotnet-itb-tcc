@@ -232,6 +232,7 @@
             this.mtbNum.TabIndex = 29;
             this.mtbNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.mtbNum.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.mtbNum.TextChanged += new System.EventHandler(this.mtbNum_TextChanged);
             this.mtbNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbNum_KeyDown);
             this.mtbNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbNum_KeyPress);
             this.mtbNum.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mtbNum_KeyUp);

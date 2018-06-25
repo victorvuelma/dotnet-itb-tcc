@@ -48,6 +48,7 @@
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(100, 20);
             this.txt.TabIndex = 1;
+            this.txt.TextChanged += new System.EventHandler(this.txt_TextChanged);
             this.txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             this.txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 

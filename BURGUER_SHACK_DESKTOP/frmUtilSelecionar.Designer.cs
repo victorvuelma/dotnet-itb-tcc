@@ -71,7 +71,7 @@
             // 
             this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtQuantidade.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(5, 320);
@@ -154,7 +154,7 @@
             // txtPesquisar
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
-            this.txtPesquisar.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
+            this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Campo = "Pesquisar por";
             this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 30);

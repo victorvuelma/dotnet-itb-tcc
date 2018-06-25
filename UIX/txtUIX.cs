@@ -18,7 +18,7 @@ namespace UIX
         private IButtonControl _acceptButton;
         private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
 
-        private uixEnum.uixAllowedChars _allowedChars = uixEnum.uixAllowedChars.ALL;
+        private uixEnum.uixTextBoxMode _mode = uixEnum.uixTextBoxMode.ALL;
         private char[] allowedChars = new char[] { };
 
         public txtUIX()
@@ -29,12 +29,12 @@ namespace UIX
         //---- PROPRIEDADES UIX
         public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
 
-        public uixEnum.uixAllowedChars AllowedChars
+        public uixEnum.uixTextBoxMode Mode
         {
-            get => _allowedChars; set
+            get => _mode; set
             {
                 allowedChars = uixUtil.getChars(value);
-                _allowedChars = value;
+                _mode = value;
             }
         }
 
@@ -122,6 +122,11 @@ namespace UIX
             _loaded = true;
 
             update();
+
+            if (Mode == uixEnum.uixTextBoxMode.MONEY && String.IsNullOrWhiteSpace(txt.Text))
+            {
+                txt.Text = "0,00";
+            }
         }
 
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
@@ -143,6 +148,21 @@ namespace UIX
                 if (AcceptButton != null)
                 {
                     AcceptButton.PerformClick();
+                }
+            }
+        }
+
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            if (Mode == uixEnum.uixTextBoxMode.MONEY)
+            {
+                if (!txt.Text.Contains(",") && !txt.Text.Contains("."))
+                {
+                    txt.Text = txt.Text + ",00";
+                }
+                else
+                {
+                    uixUtil.defineForMoney(txt);
                 }
             }
         }

@@ -153,12 +153,12 @@
             // 
             this.txtValor.AcceptButton = null;
             this.txtValor.AccessibleName = "Preço de Venda: (R$)*";
-            this.txtValor.AllowedChars = UIX.uixEnum.uixAllowedChars.DOUBLE;
             this.txtValor.Campo = "Valor (R$)*";
             this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtValor.Location = new System.Drawing.Point(5, 50);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtValor.MaxLength = 32767;
+            this.txtValor.Mode = UIX.uixEnum.uixTextBoxMode.MONEY;
             this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
             this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -182,12 +182,12 @@
             // 
             this.txtNome.AcceptButton = null;
             this.txtNome.AccessibleName = "Nome:*";
-            this.txtNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtNome.Campo = "Nome*";
             this.txtNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
+            this.txtNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
