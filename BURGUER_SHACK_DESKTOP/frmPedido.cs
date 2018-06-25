@@ -51,7 +51,8 @@ namespace BURGUER_SHACK_DESKTOP
             if (ObjPedido.Cod == -1)
             {
                 ObjItens.Add(objItem, objItemIngredientes);
-            } else
+            }
+            else
             {
                 clnUtilPedido.inserirItem(ObjPedido.Cod, objItem, objItemIngredientes);
             }
@@ -61,7 +62,13 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void fechar()
         {
-            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (ObjPedido.Cod == -1)
+            {
+                if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnUtilMensagem.MensagemIcone.ERRO))
+                {
+                    Close();
+                }
+            } else
             {
                 Close();
             }
@@ -69,13 +76,24 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void finalizar()
         {
-            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
+            abrirItens();
+
+            if (ObjPedido.Cod == -1)
             {
-                Close();
+                if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
+                {
+                    Close();
+                }
+            } else
+            {
+                if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnUtilMensagem.MensagemIcone.ERRO))
+                {
+                    Close();
+                }
             }
         }
 
-        private void abrirAdicionarProduto()
+        private void abrirAdicionar()
         {
             uctPedidoAdicionar uctAdicionar = new uctPedidoAdicionar
             {
@@ -90,10 +108,19 @@ namespace BURGUER_SHACK_DESKTOP
             App.VisualTemplate.frmApply(this, hdrUIX);
             clnUtil.atualizarForm(this);
 
-            UIX.uixButton.btnApply(btnSair, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
 
-            if (ObjPedido == null)
+            if (ObjPedido.Cod == -1)
+            {
                 ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>();
+            }
+            else
+            {
+                UIX.uixButton.btnApply(btnFinalizar, App.VisualStyle.ButtonWarningColor);
+
+                btnFinalizar.Description = "Excluir";
+                btnFinalizar.Image = Properties.Resources.excluir;
+            }
 
             abrirItens();
         }
@@ -108,14 +135,9 @@ namespace BURGUER_SHACK_DESKTOP
             fechar();
         }
 
-        private void btnProdutos_Click(object sender, EventArgs e)
-        {
-            abrirItens();
-        }
-
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            abrirAdicionarProduto();
+            abrirAdicionar();
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
@@ -123,5 +145,9 @@ namespace BURGUER_SHACK_DESKTOP
             finalizar();
         }
 
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            abrirItens();
+        }
     }
 }

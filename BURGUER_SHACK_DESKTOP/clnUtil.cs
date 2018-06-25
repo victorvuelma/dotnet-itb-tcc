@@ -211,6 +211,12 @@ namespace BURGUER_SHACK_DESKTOP
             return new String(texto.Where(Char.IsDigit).ToArray());
         }
 
+        public static String formatarValor(double valor)
+        {
+            return string.Format("{0:C}", valor);
+
+        }
+
         public static String formatarCelular(String celular)
         {
             if (celular == null || vazio(celular))

@@ -81,7 +81,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                     ObjProduto = new clnProduto
                     {
-                        Situacao = clnProduto.produtoSituacao.FORADEESTOQUE,
+                        Situacao = ((ObjProdutoIngredientes.Count == 0) ? clnProduto.produtoSituacao.DISPONIVEL : clnProduto.produtoSituacao.FORADEESTOQUE),
                         Nome = txtNome.Text,
                         CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]),
                         CodImagem = objArquivo.Cod,
@@ -95,6 +95,9 @@ namespace BURGUER_SHACK_DESKTOP
                         objProdutoIngrediente.CodProduto = ObjProduto.Cod;
                         objProdutoIngrediente.gravar();
                     }
+
+                    ObjProduto.atualizarEstoque();
+
                     clnUtilMensagem.mostrarOk("Cadastro de Produto", "Produto cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                 }
                 else
@@ -120,6 +123,9 @@ namespace BURGUER_SHACK_DESKTOP
                     ObjProduto.Situacao = (clnProduto.produtoSituacao)Enum.Parse(typeof(clnProduto.produtoSituacao), cboSituacao.Text);
 
                     ObjProduto.alterar();
+
+                    ObjProduto.atualizarEstoque();
+
                     clnUtilMensagem.mostrarOk("Altereção de Produto", "Produto alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                 }
                 Close();
@@ -223,24 +229,31 @@ namespace BURGUER_SHACK_DESKTOP
                 }.obterPorProduto();
             }
 
-            clnProdutoIngrediente.clnListar objListar = new clnProdutoIngrediente.clnListar
+            if (objProdutoIngredientes.Count > 0)
             {
-                Opcoes = objProdutoIngredientes,
-                Icone = Properties.Resources.ingrediente,
-                Titulo = "Selecione o Ingrediente",
-            };
+                clnProdutoIngrediente.clnListar objListar = new clnProdutoIngrediente.clnListar
+                {
+                    Opcoes = objProdutoIngredientes,
+                    Icone = Properties.Resources.ingrediente,
+                    Titulo = "Selecione o Ingrediente",
+                };
 
-            clnUtilVisualizar objVisualizar = new clnUtilVisualizar<clnUtilVisualizar, clnProdutoIngrediente>
-            {
-                ObjListar = objListar,
-                CallbackClick = new CallbackRemover()
-            };
+                clnUtilVisualizar objVisualizar = new clnUtilVisualizar<clnUtilVisualizar, clnProdutoIngrediente>
+                {
+                    ObjListar = objListar,
+                    CallbackClick = new CallbackRemover()
+                };
 
-            frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
+                frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
+                {
+                    ObjVisualizar = objVisualizar
+                };
+                frmVisualizar.ShowDialog();
+            }
+            else if (clnUtilMensagem.mostrarSimNao("Produto", "Este produto não conta com ingredientes, deseja adicionar?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                ObjVisualizar = objVisualizar
-            };
-            frmVisualizar.ShowDialog();
+                adicionarIngrediente();
+            }
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)

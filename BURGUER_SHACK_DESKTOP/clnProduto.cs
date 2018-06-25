@@ -126,6 +126,38 @@ namespace BURGUER_SHACK_DESKTOP
             objUpdate.execute(App.DatabaseSql);
         }
 
+        public void atualizarEstoque()
+        {
+            if (Situacao != clnProduto.produtoSituacao.INDISPONIVEL)
+            {
+                clnProdutoIngrediente objProdutoIngredientes = new clnProdutoIngrediente
+                {
+                    CodProduto = Cod
+                };
+
+                clnProduto.produtoSituacao situacao = clnProduto.produtoSituacao.DISPONIVEL;
+
+                foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes.obterPorProduto())
+                {
+                    clnIngrediente objIngrediente = new clnIngrediente
+                    {
+                        Cod = objProdutoIngrediente.CodIngrediente
+                    }.obterPorCod();
+
+                    if (objIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
+                    {
+                        situacao = clnProduto.produtoSituacao.FORADEESTOQUE;
+                        break;
+                    }
+                }
+                if (Situacao != situacao)
+                {
+                    Situacao = situacao;
+                    alterar();
+                }
+            }
+        }
+
         private produtoSituacao situacao(char prefixo)
         {
             switch (prefixo)

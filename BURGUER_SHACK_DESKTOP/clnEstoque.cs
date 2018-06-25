@@ -122,64 +122,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         public void atualizarIngrediente()
         {
-            int estoqueAtual = obterQuantidadePorIngrediente();
-
             clnIngrediente objIngrediente = new clnIngrediente
             {
                 Cod = CodIngrediente
             }.obterPorCod();
-            if (objIngrediente.Situacao != clnIngrediente.ingredienteSituacao.INDISPONIVEL)
+
+            if (objIngrediente != null)
             {
-                if (estoqueAtual > 0)
-                {
-                    objIngrediente.Situacao = clnIngrediente.ingredienteSituacao.DISPONIVEL;
-                }
-                else
-                {
-                    objIngrediente.Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE;
-                }
-            }
-            objIngrediente.alterar();
-
-            clnProdutoIngrediente objProdutos = new clnProdutoIngrediente
-            {
-                CodIngrediente = objIngrediente.Cod
-            };
-            foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutos.obterPorIngrediente())
-            {
-                clnProduto objProduto = new clnProduto
-                {
-                    Cod = objProdutoIngrediente.CodProduto
-                }.obterPorCod();
-
-                if (objProduto != null)
-                {
-                    if (objProduto.Situacao != clnProduto.produtoSituacao.INDISPONIVEL)
-                    {
-                        clnProdutoIngrediente objIngredientes = new clnProdutoIngrediente
-                        {
-                            CodProduto = objProduto.Cod
-                        };
-
-                        clnProduto.produtoSituacao situacao = clnProduto.produtoSituacao.DISPONIVEL;
-
-                        foreach(clnProdutoIngrediente objProdIngrediente in objIngredientes.obterPorProduto())
-                        {
-                            clnIngrediente objIngredienteProduto = new clnIngrediente
-                            {
-                                Cod = objProdIngrediente.CodIngrediente
-                            }.obterPorCod();
-
-                            if(objIngredienteProduto.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
-                            {
-                                situacao = clnProduto.produtoSituacao.FORADEESTOQUE;
-                                break;
-                            }
-                        }
-                        objProduto.Situacao = situacao;
-                        objProduto.alterar();
-                    }
-                }
+                objIngrediente.atualizarEstoque(true);
             }
         }
 

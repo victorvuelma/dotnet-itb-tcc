@@ -45,7 +45,6 @@ namespace BURGUER_SHACK_DESKTOP
                 case 1:
                     msg.btnYes.Text = "Sim";
                     msg.btnNo.Text = "Não";
-                    uixButton.btnApply(msg.btnYes, App.VisualStyle.ButtonWarningColor);
                     break;
             }
 
@@ -59,11 +58,11 @@ namespace BURGUER_SHACK_DESKTOP
             switch (tipo)
             {
                 case MensagemIcone.ERRO:
-                    return BURGUER_SHACK_DESKTOP.Properties.Resources.erro;
+                    return Properties.Resources.erro;
                 case MensagemIcone.INFO:
-                    return BURGUER_SHACK_DESKTOP.Properties.Resources.info;
+                    return Properties.Resources.info;
                 default:
-                    return BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
+                    return Properties.Resources.confirmar;
             }
         }
 

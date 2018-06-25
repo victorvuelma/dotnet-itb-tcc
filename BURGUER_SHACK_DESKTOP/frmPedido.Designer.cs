@@ -29,79 +29,68 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnVoltar = new UIX.btnUIX();
+            this.btnFinalizar = new UIX.btnUIX();
             this.btnAdicionar = new UIX.btnUIX();
-            this.btnCancelar = new UIX.btnUIX();
-            this.btnSair = new UIX.btnUIX();
-            this.btnProdutos = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
+            this.btnProdutos = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
-            this.pnlMenu.Controls.Add(this.btnAdicionar);
-            this.pnlMenu.Controls.Add(this.btnCancelar);
-            this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnProdutos);
+            this.pnlMenu.Controls.Add(this.btnVoltar);
+            this.pnlMenu.Controls.Add(this.btnFinalizar);
+            this.pnlMenu.Controls.Add(this.btnAdicionar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 600);
             this.pnlMenu.TabIndex = 2;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Description = "Voltar";
+            this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.ImageLocation = null;
+            this.btnVoltar.Location = new System.Drawing.Point(5, 505);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(90, 90);
+            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFinalizar.Description = "Finalizar";
+            this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnFinalizar.ImageLocation = null;
+            this.btnFinalizar.Location = new System.Drawing.Point(5, 405);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
+            this.btnFinalizar.TabIndex = 7;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnAdicionar
             // 
             this.btnAdicionar.Description = "Adicionar";
             this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
-            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdicionar.ImageLocation = null;
             this.btnAdicionar.Location = new System.Drawing.Point(5, 5);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(90, 90);
-            this.btnAdicionar.TabIndex = 0;
+            this.btnAdicionar.TabIndex = 5;
+            this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.Description = "Finalizar";
-            this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnCancelar.ImageLocation = null;
-            this.btnCancelar.Location = new System.Drawing.Point(5, 505);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 90);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Description = "Cancelar";
-            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.ImageLocation = null;
-            this.btnSair.Location = new System.Drawing.Point(10, 710);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(80, 80);
-            this.btnSair.TabIndex = 5;
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnProdutos
-            // 
-            this.btnProdutos.Description = "Produtos";
-            this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
-            this.btnProdutos.ImageLocation = null;
-            this.btnProdutos.Location = new System.Drawing.Point(5, 105);
-            this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(90, 90);
-            this.btnProdutos.TabIndex = 1;
-            this.btnProdutos.UseVisualStyleBackColor = true;
-            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // pnlConteudo
             // 
@@ -124,9 +113,24 @@
             this.hdrUIX.Title = "Pedido";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
+            // btnProdutos
+            // 
+            this.btnProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProdutos.Description = "Produtos";
+            this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
+            this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
+            this.btnProdutos.ImageLocation = null;
+            this.btnProdutos.Location = new System.Drawing.Point(5, 101);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(90, 90);
+            this.btnProdutos.TabIndex = 9;
+            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
+            // 
             // frmPedido
             // 
-            this.AcceptButton = this.btnCancelar;
+            this.AcceptButton = this.btnAdicionar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 650);
@@ -147,12 +151,12 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnAdicionar;
-        private UIX.btnUIX btnProdutos;
         public UIX.hdrUIX hdrUIX;
         public System.Windows.Forms.Panel pnlConteudo;
-        private UIX.btnUIX btnCancelar;
-        private UIX.btnUIX btnSair;
+        private UIX.btnUIX btnFinalizar;
+        private UIX.btnUIX btnAdicionar;
+        private UIX.btnUIX btnVoltar;
+        private UIX.btnUIX btnProdutos;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

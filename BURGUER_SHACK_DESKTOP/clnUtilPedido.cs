@@ -21,6 +21,40 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        public static double calcularValor(clnPedido objPedido)
+        {
+            double valorTotal = 0.0;
+
+            clnItem objItens = new clnItem
+            {
+                CodPedido = objPedido.Cod
+            };
+
+            foreach (clnItem objItem in objItens.obterPorPedido())
+            {
+                clnItemIngrediente objIngredientes = new clnItemIngrediente
+                {
+                    CodItem = objItem.Cod
+                };
+
+                valorTotal += calcularValor(objItem, objIngredientes.obterPorItem());
+            }
+
+            return valorTotal;
+        }
+
+        public static double calcularValor(Dictionary<clnItem, List<clnItemIngrediente>> objItens)
+        {
+            double valorTotal = 0.0;
+
+            foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objItem in objItens)
+            {
+                valorTotal += calcularValor(objItem.Key, objItem.Value);
+            }
+
+            return valorTotal;
+        }
+
         public static double calcularValor(clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
         {
             clnProduto objProduto = new clnProduto
@@ -31,7 +65,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes)
             {
-                itemValor +=clnUtilPedido.calcularValor(objItemIngrediente);
+                itemValor += clnUtilPedido.calcularValor(objItemIngrediente);
             }
 
             return itemValor;
@@ -56,7 +90,8 @@ namespace BURGUER_SHACK_DESKTOP
                     if (objItemIngrediente.Quantidade > objProdutoIngrediente.Quantidade)
                     {
                         return objIngrediente.Valor * (objItemIngrediente.Quantidade - objProdutoIngrediente.Quantidade);
-                    } else
+                    }
+                    else
                     {
                         return 0.0;
                     }
