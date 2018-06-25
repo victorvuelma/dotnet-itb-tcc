@@ -14,7 +14,7 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private int _codIngrediente = -1;
-        private int _codProdutoIngrediente = -1;
+        private int _codProdutoIngrediente = 0;
         private int _codItem = -1;
 
         private int _quantidade;

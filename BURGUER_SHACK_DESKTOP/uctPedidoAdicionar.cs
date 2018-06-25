@@ -71,6 +71,11 @@ namespace BURGUER_SHACK_DESKTOP
             ObjItem = objPedido;
             ObjItemIngredientes = objIngredientes;
 
+            if(ObjItemIngredientes.Count == 0)
+            {
+                grbIngredientes.Hide();
+            }
+
             exibirProduto(objProduto, objPedido);
 
             btnConfirmar.Show();
@@ -250,14 +255,15 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (objSelecionar.Selecionado != null)
             {
-                clnItemIngrediente objPedidoIngrediente = new clnItemIngrediente
+                clnItemIngrediente objItemIngrediente = new clnItemIngrediente
                 {
                     Quantidade = objSelecionar.Quantidade,
-                    CodIngrediente = objSelecionar.Selecionado.Cod
+                    CodIngrediente = objSelecionar.Selecionado.Cod,
+                    CodProdutoIngrediente = 0
                 };
 
                 clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                ObjItemIngredientes.Add(objPedidoIngrediente);
+                clnUtilPedido.adicionarIngrediente(ObjItemIngredientes, objItemIngrediente);
 
                 exibirDetalhes();
             }

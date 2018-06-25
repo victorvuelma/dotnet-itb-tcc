@@ -71,7 +71,7 @@ namespace BURGUER_SHACK_DESKTOP
             frmItem frmEditarItem = new frmItem
             {
                 ObjItem = objItem,
-                ObjIngredientes = objItemIngredientes
+                ObjItemIngredientes = objItemIngredientes
             };
             frmEditarItem.ShowDialog();
 
@@ -82,9 +82,9 @@ namespace BURGUER_SHACK_DESKTOP
 
                 exibirProdutos();
             }
-            else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjIngredientes != objItemIngredientes)
+            else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjItemIngredientes != objItemIngredientes)
             {
-                clnUtil.dictTrocar(ObjItens, objItem, frmEditarItem.ObjItem, frmEditarItem.ObjIngredientes);
+                clnUtil.dictTrocar(ObjItens, objItem, frmEditarItem.ObjItem, frmEditarItem.ObjItemIngredientes);
 
                 exibirProdutos();
             }

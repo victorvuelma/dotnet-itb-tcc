@@ -81,7 +81,17 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjPedido.Cod == -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
+                if (ObjItens.Count == 0)
+                {
+                    if(clnUtilMensagem.mostrarSimNao("Pedido", "Não foi encontrado nenhum item no pedido, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
+                    {
+                        abrirAdicionar();
+                    } else
+                    {
+                        Close();
+                    }                   
+                }
+                else if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
                 {
                     double valor = clnUtilPedido.calcularValor(ObjItens);
 

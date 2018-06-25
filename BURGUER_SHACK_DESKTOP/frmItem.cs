@@ -18,7 +18,7 @@ namespace BURGUER_SHACK_DESKTOP
         private List<clnItemIngrediente> _objIngredientes;
 
         public clnItem ObjItem { get => _objItem; set => _objItem = value; }
-        public List<clnItemIngrediente> ObjIngredientes { get => _objIngredientes; set => _objIngredientes = value; }
+        public List<clnItemIngrediente> ObjItemIngredientes { get => _objIngredientes; set => _objIngredientes = value; }
 
         public frmItem()
         {
@@ -32,7 +32,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (ObjItem == null || ObjItem.CodPedido == -1)
             {
-                return ObjIngredientes;
+                return ObjItemIngredientes;
             }
             else
             {
@@ -53,25 +53,34 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirIngredientes()
         {
-            clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
-            {
-                Opcoes = obterIngredientes(),
-                Icone = Properties.Resources.ingrediente,
-                Titulo = "Selecione um Ingrediente"
-            };
+            List<clnItemIngrediente> objItemIngredientes = obterIngredientes();
 
-            clnUtilVisualizar<frmItem, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<frmItem, clnItemIngrediente>
+            if (ObjItemIngredientes.Count > 0)
             {
-                ObjListar = objListar,
-                CallbackClick = new CallbackAlterar(),
-                Obj = this
-            };
+                clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
+                {
+                    Opcoes = objItemIngredientes,
+                    Icone = Properties.Resources.ingrediente,
+                    Titulo = "Selecione um Ingrediente"
+                };
 
-            frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
+                clnUtilVisualizar<frmItem, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<frmItem, clnItemIngrediente>
+                {
+                    ObjListar = objListar,
+                    CallbackClick = new CallbackAlterar(),
+                    Obj = this
+                };
+
+                frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
+                {
+                    ObjVisualizar = objVisualizar
+                };
+                frmVisualizar.ShowDialog();
+            }
+            else if (clnUtilMensagem.mostrarSimNao("Item", "Não foi encontrado nenhum ingrediente, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
             {
-                ObjVisualizar = objVisualizar
-            };
-            frmVisualizar.ShowDialog();
+                abrirAdicionarIngrediente();
+            }
         }
 
         private void exibirProduto(clnProduto objProduto, clnItem objItem)
@@ -120,11 +129,11 @@ namespace BURGUER_SHACK_DESKTOP
                 };
                 if (objItemIngrediente.CodItem != -1)
                 {
-                    objItemIngrediente.gravar();
+                    clnUtilPedido.adicionarIngrediente(ObjItem, objItemIngrediente);
                 }
                 else
                 {
-                    ObjIngredientes.Add(objItemIngrediente);
+                    clnUtilPedido.adicionarIngrediente(ObjItemIngredientes, objItemIngrediente);
                 }
 
                 clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
@@ -159,7 +168,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             exibirProduto(objProduto, ObjItem);
 
-            if (ObjIngredientes.Count == 0)
+            if (ObjItemIngredientes.Count == 0)
             {
                 grbIngredientes.Hide();
             }
@@ -226,7 +235,7 @@ namespace BURGUER_SHACK_DESKTOP
                         {
                             objItemIngrediente.remover();
                         }
-                        frmItem.ObjIngredientes.Remove(objItemIngrediente);
+                        frmItem.ObjItemIngredientes.Remove(objItemIngrediente);
                     }
                     else if (!objItemIngrediente.Equals(frmIngrediente.ObjItemIngrediente))
                     {
@@ -242,7 +251,7 @@ namespace BURGUER_SHACK_DESKTOP
                                 frmIngrediente.ObjItemIngrediente.alterar();
                             }
                         }
-                        clnUtil.listTrocar(frmItem.ObjIngredientes, objItemIngrediente, frmIngrediente.ObjItemIngrediente);
+                        clnUtil.listTrocar(frmItem.ObjItemIngredientes, objItemIngrediente, frmIngrediente.ObjItemIngrediente);
                     }
                 }
                 else

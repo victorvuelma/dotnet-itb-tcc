@@ -21,6 +21,40 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        public static void adicionarIngrediente(clnItem objItem, clnItemIngrediente objIngrediente)
+        {
+            clnItemIngrediente objIngredientes = new clnItemIngrediente
+            {
+                CodItem = objItem.Cod
+            };
+
+            foreach (clnItemIngrediente objItemIngrediente in objIngredientes.obterPorItem())
+            {
+                if (objItemIngrediente.CodIngrediente == objIngrediente.CodIngrediente)
+                {
+                    objItemIngrediente.Quantidade += objIngrediente.Quantidade;
+                    objItemIngrediente.alterar();
+                    return;
+                }
+            }
+
+            objIngrediente.gravar();
+        }
+
+        public static void adicionarIngrediente(List<clnItemIngrediente> objItemIngredientes, clnItemIngrediente objIngrediente)
+        {
+            foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes)
+            {
+                if (objItemIngrediente.CodIngrediente == objIngrediente.CodIngrediente)
+                {
+                    objItemIngrediente.Quantidade += objIngrediente.Quantidade;
+                    return;
+                }
+            }
+
+            objItemIngredientes.Add(objIngrediente);
+        }
+
         public static double calcularValor(clnPedido objPedido)
         {
             double valorTotal = 0.0;

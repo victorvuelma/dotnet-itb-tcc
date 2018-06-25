@@ -112,13 +112,16 @@
             // 
             // txtNome
             // 
-            this.txtNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtNome.AcceptButton = this.btnAcao;
             this.txtNome.Campo = "Descrição";
+            this.txtNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
+            this.txtNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
+            this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNome.Size = new System.Drawing.Size(190, 20);
             this.txtNome.TabIndex = 0;
             // 
