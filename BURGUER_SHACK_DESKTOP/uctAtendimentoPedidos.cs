@@ -36,31 +36,23 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 UIX.btnUIX btn = new UIX.btnUIX
                 {
-                    Description = "Pedido #" + objPedido.Cod,
+                    Description = "Pedido " + objPedido.Cod,
                     Name = "btnPedido" + objPedido.Cod,
                     Size = new Size(110, 110),
-                    Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pedido
+                    Image = Properties.Resources.pedido
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
                     abrirPedido(objPedido);
                 };
+                App.VisualTemplate.ctlApply(btn);
 
                 pedidosControles.Add(btn);
             }
             clnUtil.adicionarControles(pnlPedidos, pedidosControles, 20);
-
-            foreach (Control control in pedidosControles)
-            {
-                if (control is Button btn)
-                {
-                    UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
-                    btn.ForeColor = App.VisualStyle.ButtonImageColor.ContentColor;
-                }
-            }
             pedidosControles.Clear();
 
-            pnlPedidos.BackColor = grbPedidos.BackColor;
+            atualizarValor();
         }
 
         private void abrirNovoPedido()
@@ -73,7 +65,7 @@ namespace BURGUER_SHACK_DESKTOP
                 ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>()
             };
             frmNovoPedido.ShowDialog();
-            if(frmNovoPedido.ObjPedido.Cod != -1)
+            if (frmNovoPedido.ObjPedido.Cod != -1)
             {
                 ObjPedidos.Add(frmNovoPedido.ObjPedido);
             }
@@ -94,6 +86,18 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 objPedido.alterar();
             }
+        }
+
+        private void atualizarValor()
+        {
+            double valor = 0.0;
+
+            foreach (clnPedido objPedido in ObjPedidos)
+            {
+                valor += clnUtilPedido.calcularValor(objPedido);
+            }
+
+            lblValor.Text = "Valor: " + clnUtil.formatarValor(valor);
         }
 
         private void uctAtendimentoPedidos_Load(object sender, EventArgs e)

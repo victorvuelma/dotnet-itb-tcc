@@ -86,11 +86,12 @@
             // 
             // lblValor
             // 
-            this.lblValor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValor.Location = new System.Drawing.Point(110, 195);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(210, 25);
             this.lblValor.TabIndex = 31;
+            this.lblValor.Text = "Valor:";
             this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // grbIngredientes
@@ -213,7 +214,6 @@
             // btnSobremesa
             // 
             this.btnSobremesa.Description = "Sobremesa";
-            this.btnSobremesa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSobremesa.HoverColor = System.Drawing.Color.Transparent;
             this.btnSobremesa.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sobremesa;
             this.btnSobremesa.ImageLocation = null;
@@ -228,7 +228,6 @@
             // btnBebida
             // 
             this.btnBebida.Description = "Bebida";
-            this.btnBebida.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBebida.HoverColor = System.Drawing.Color.Transparent;
             this.btnBebida.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.bebida;
             this.btnBebida.ImageLocation = null;
@@ -243,7 +242,6 @@
             // btnAcompanhamento
             // 
             this.btnAcompanhamento.Description = "Guarnição";
-            this.btnAcompanhamento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcompanhamento.HoverColor = System.Drawing.Color.Transparent;
             this.btnAcompanhamento.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.batatas;
             this.btnAcompanhamento.ImageLocation = null;
@@ -258,7 +256,6 @@
             // btnLanche
             // 
             this.btnLanche.Description = "Lanche";
-            this.btnLanche.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanche.HoverColor = System.Drawing.Color.Transparent;
             this.btnLanche.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.hamburger;
             this.btnLanche.ImageLocation = null;

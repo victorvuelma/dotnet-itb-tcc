@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 dgvItens.Columns.Add(coluna.ToLower(), coluna);
             }
-            App.VisualTemplate.dgvApply(dgvItens);
+            App.VisualTemplate.ctlApply(dgvItens);
 
             btnNovo.Visible = CallbackNovo != null;
 

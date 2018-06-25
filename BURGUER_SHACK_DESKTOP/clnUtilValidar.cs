@@ -226,21 +226,21 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     if (Control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt, App.VisualStyle.TextBoxWarningColor);
+                        UIX.uixTextBox.txtApply(txt, App.VisualStyle.BoxWarningColor);
                     } else if (Control is ComboBox cbo)
                     {
-                        UIX.uixComboBox.cboApply(cbo, App.VisualStyle.TextBoxWarningColor);
+                        UIX.uixComboBox.cboApply(cbo, App.VisualStyle.BoxWarningColor);
                     }
                 }
                 else
                 {
                     if (Control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt, App.VisualStyle.TextBoxColor);
+                        UIX.uixTextBox.txtApply(txt, App.VisualStyle.BoxColor);
                     }
                     else if (Control is ComboBox cbo)
                     {
-                        UIX.uixComboBox.cboApply(cbo, App.VisualStyle.TextBoxColor);
+                        UIX.uixComboBox.cboApply(cbo, App.VisualStyle.BoxColor);
                     }
                 }
             }

@@ -31,6 +31,7 @@
             this.grbPedidos = new System.Windows.Forms.GroupBox();
             this.pnlPedidos = new System.Windows.Forms.Panel();
             this.btnNovoPedido = new UIX.btnUIX();
+            this.lblValor = new System.Windows.Forms.Label();
             this.grbPedidos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,13 +66,25 @@
             this.btnNovoPedido.Name = "btnNovoPedido";
             this.btnNovoPedido.Size = new System.Drawing.Size(100, 100);
             this.btnNovoPedido.TabIndex = 9;
+            this.btnNovoPedido.Text = "Novo Pedido";
             this.btnNovoPedido.UseVisualStyleBackColor = true;
             this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
+            // 
+            // lblValor
+            // 
+            this.lblValor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(5, 600);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(200, 40);
+            this.lblValor.TabIndex = 10;
+            this.lblValor.Text = "Valor:";
+            this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uctAtendimentoPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblValor);
             this.Controls.Add(this.btnNovoPedido);
             this.Controls.Add(this.grbPedidos);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,5 +101,6 @@
         private System.Windows.Forms.GroupBox grbPedidos;
         private System.Windows.Forms.Panel pnlPedidos;
         private UIX.btnUIX btnNovoPedido;
+        private System.Windows.Forms.Label lblValor;
     }
 }

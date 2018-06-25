@@ -128,7 +128,6 @@ namespace BURGUER_SHACK_DESKTOP
                 if (control is Button btn)
                 {
                     UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
-                    btn.ForeColor = App.VisualStyle.ButtonImageColor.ContentColor;
                 }
             }
             opcoesControles.Clear();
@@ -136,45 +135,10 @@ namespace BURGUER_SHACK_DESKTOP
             pnlProdutos.BackColor = grbProdutos.BackColor;
         }
 
-        private void btnPedido_Click(object sender, EventArgs e)
-        {
-            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja confirmar este pedido?", clnUtilMensagem.MensagemIcone.OK))
-            {
-                //Confirma o pedido.
-                double valor = calculaValor();
-
-                clnPedido objPedido = new clnPedido
-                {
-                    CodAtendimento = CodAtendimento,
-                    CodFuncionario = CodFuncionario,
-                    Valor = valor,
-                    Situacao = clnPedido.pedidoSituacao.REALIZADO
-                };
-                objPedido.gravar();
-
-                foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPair in ObjItens)
-                {
-                    clnUtilPedido.inserirItem(objPedido.Cod, objPair.Key, objPair.Value);
-                }
-
-                Form.Close();
-            }
-        }
-
         private void uctPedidoProdutos_Load(object sender, EventArgs e)
         {
             exibirProdutos();
         }
 
-        private double calculaValor()
-        {
-            double pedidoValor = 0;
-            foreach (clnItem objItem in obterItens())
-            {
-                pedidoValor += clnUtilPedido.calcularValor(objItem, obterIngredientes(objItem));
-            }
-
-            return pedidoValor;
-        }
     }
 }

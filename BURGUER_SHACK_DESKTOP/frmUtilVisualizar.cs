@@ -62,13 +62,11 @@ namespace BURGUER_SHACK_DESKTOP
                 if (control is Button btn)
                 {
                     UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
-                    btn.ForeColor = App.VisualStyle.ButtonImageColor.ContentColor;
                 }
             }
             opcoesControles.Clear();
 
             lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
-            pnlOpcoes.BackColor = grbOpcoes.BackColor;
         }
 
         private void realizaPesquisa()

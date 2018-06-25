@@ -68,7 +68,8 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     Close();
                 }
-            } else
+            }
+            else
             {
                 Close();
             }
@@ -82,9 +83,26 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
                 {
+                    double valor = clnUtilPedido.calcularValor(ObjItens);
+
+                    ObjPedido = new clnPedido
+                    {
+                        CodAtendimento = CodAtendimento,
+                        CodFuncionario = CodFuncionario,
+                        Valor = valor,
+                        Situacao = clnPedido.pedidoSituacao.REALIZADO
+                    };
+                    ObjPedido.gravar();
+
+                    foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objPair in ObjItens)
+                    {
+                        clnUtilPedido.inserirItem(ObjPedido.Cod, objPair.Key, objPair.Value);
+                    }
+
                     Close();
                 }
-            } else
+            }
+            else
             {
                 if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnUtilMensagem.MensagemIcone.ERRO))
                 {

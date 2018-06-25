@@ -373,13 +373,13 @@ namespace BURGUER_SHACK_DESKTOP
             dict.Add(chaveNova, conteudoNova);
         }
 
-        public static void adicionarControles(Panel panel, List<Control> controles, int espaco)
+        public static void adicionarControles(Panel panel, List<Control> controls, int espaco)
         {
             panel.Hide();
 
             int X = espaco / 2;
             int Y = espaco / 2;
-            foreach (Control controle in controles)
+            foreach (Control controle in controls)
             {
                 controle.Location = new Point(X, Y);
                 panel.Controls.Add(controle);
@@ -393,15 +393,15 @@ namespace BURGUER_SHACK_DESKTOP
                 }
             }
 
-            App.VisualTemplate.pnlApply(panel);
-            clnUtil.atualizarIndexes(panel.Controls);
+            App.VisualTemplate.ctlApply(panel);
+            clnUtil.atualizarIndex(panel.Controls);
 
             panel.Show();
         }
 
         public static void atualizarForm(Form form)
         {
-            atualizarIndexes(form.Controls);
+            atualizarIndex(form.Controls);
             if (form.AcceptButton != null)
             {
                 definirBotaoConfirmacao(form.Controls, form.AcceptButton);
@@ -409,7 +409,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public static void atualizarIndexes(ControlCollection controls)
+        public static void atualizarIndex(ControlCollection controls)
         {
             SortedDictionary<int, SortedDictionary<int, List<Control>>> positionControl = new SortedDictionary<int, SortedDictionary<int, List<Control>>>();
 
@@ -431,7 +431,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
                 xControls.Add(control);
 
-                atualizarIndexes(control.Controls);
+                atualizarIndex(control.Controls);
             }
 
             int index = 1;
@@ -508,8 +508,8 @@ namespace BURGUER_SHACK_DESKTOP
                 return;
             }
 
-            clnUtil.atualizarIndexes(uctConteudo.Controls);
-            App.VisualTemplate.uctApply(uctConteudo);
+            clnUtil.atualizarIndex(uctConteudo.Controls);
+            App.VisualTemplate.ctlApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);
             uctConteudo.Location = new Point(0, 0);

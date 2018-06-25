@@ -34,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
                     Description = "Mesa #" + codMesa,
                     Name = "btnMesa" + codMesa,
                     Size = new Size(110, 110),
-                    Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso
+                    Image = Properties.Resources.mesauso
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -45,8 +45,6 @@ namespace BURGUER_SHACK_DESKTOP
             }
             clnUtil.adicionarControles(pnlMesas, pedidosControles, 20);
             pedidosControles.Clear();
-
-            pnlMesas.BackColor = grbMesas.BackColor;
         }
 
         private void removerMesa(int codMesa)
