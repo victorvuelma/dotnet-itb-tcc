@@ -13,17 +13,13 @@ namespace UIX
     {
         public static void lblApply(Label lbl, uixSet colorSet, Font font)
         {
-            lbl.Font = uixFont.fontSize(font, lbl.Font.Size);
+            uixControl.ctlApply(lbl, colorSet, font);
             uixLabel.lblApply(lbl, colorSet);
         }
 
         public static void lblApply(Label lbl, uixSet colorSet)
         {
-            lbl.BackColor = colorSet.LightColor;
-            if (lbl.ForeColor == Control.DefaultForeColor)
-            {
-                lbl.ForeColor = colorSet.ContentColor;
-            }
+            uixControl.ctlApply(lbl, colorSet);
         }
     }
 }

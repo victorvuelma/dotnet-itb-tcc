@@ -29,26 +29,30 @@ namespace UIX
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.BorderStyle = BorderStyle.None;
 
-            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
-            cellStyle.BackColor = cellSet.LightColor;
-            cellStyle.ForeColor = cellSet.ContentColor;
-            cellStyle.SelectionBackColor = cellSet.DarkColor;
-            cellStyle.SelectionForeColor = cellSet.ContentColor;
+            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle
+            {
+                BackColor = cellSet.BackColor,
+                ForeColor = cellSet.ContentColor,
+                SelectionBackColor = cellSet.DarkColor,
+                SelectionForeColor = cellSet.ContentColor
+            };
 
             dgv.DefaultCellStyle = cellStyle;
-            dgv.BackgroundColor = headerSet.LightColor;
+            dgv.BackgroundColor = headerSet.BackColor;
             dgv.ForeColor = cellSet.ContentColor;
             dgv.GridColor = headerSet.DarkColor;
             dgv.RowHeadersDefaultCellStyle = cellStyle;
 
-            DataGridViewCellStyle headerStyle = new DataGridViewCellStyle();
-            headerStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            headerStyle.BackColor = headerSet.LightColor;
-            headerStyle.ForeColor = headerSet.ContentColor;
-            headerStyle.SelectionBackColor = headerSet.DarkColor;
-            headerStyle.SelectionForeColor = headerSet.ContentColor;
-            headerStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            headerStyle.Font = headerFont;
+            DataGridViewCellStyle headerStyle = new DataGridViewCellStyle
+            {
+                Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft,
+                BackColor = headerSet.BackColor,
+                ForeColor = headerSet.ContentColor,
+                SelectionBackColor = headerSet.DarkColor,
+                SelectionForeColor = headerSet.ContentColor,
+                WrapMode = System.Windows.Forms.DataGridViewTriState.True,
+                Font = headerFont
+            };
 
             foreach (DataGridViewColumn column in dgv.Columns)
             {

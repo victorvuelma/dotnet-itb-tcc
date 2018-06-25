@@ -14,14 +14,13 @@ namespace UIX
 
         public static void txtApply(TextBoxBase txt, uixSet colorSet, Font font)
         {
-            txt.Font = uixFont.fontSize(font, txt.Font.Size);
+            uixControl.ctlApply(txt, colorSet, font);
             uixTextBox.txtApply(txt, colorSet);
         }
 
         public static void txtApply(TextBoxBase txt, uixSet colorSet)
         {
-            txt.BackColor = colorSet.LightColor;
-            txt.ForeColor = colorSet.ContentColor;
+            uixControl.ctlApply(txt, colorSet);
             txt.BorderStyle = BorderStyle.None;
             if (txt.Multiline && txt is TextBox box)
             {

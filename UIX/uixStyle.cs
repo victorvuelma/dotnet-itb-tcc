@@ -14,8 +14,6 @@ namespace UIX
 
         private uixSet _formColor;
 
-        private uixSet _headerButtonColor;
-
         private int _headerButtonSize;
         private int _headerButtonSpace;
 
@@ -27,15 +25,12 @@ namespace UIX
         private uixSet _btnImageColor;
         private uixSet _btnWarningColor;
 
-        private uixSet _grbColor;
-        private uixSet _lblColor;
-        private uixSet _pnlColor;
+        private uixSet _ctlColor;
 
-        private uixSet _txtColor;
-        private uixSet _txtWarningColor;
+        private uixSet _boxColor;
+        private uixSet _boxWarningColor;
 
         public uixSet FormColor { get => _formColor; set => _formColor = value; }
-        public uixSet HeaderButtonColor { get => _headerButtonColor; set => _headerButtonColor = value; }
 
         public int HeaderButtonSize { get => _headerButtonSize; set => _headerButtonSize = value; }
         public int HeaderButtonSpace { get => _headerButtonSpace; set => _headerButtonSpace = value; }
@@ -48,16 +43,13 @@ namespace UIX
         public uixSet ButtonImageColor { get => _btnImageColor; set => _btnImageColor = value; }
         public uixSet ButtonWarningColor { get => _btnWarningColor; set => _btnWarningColor = value; }
 
-        public uixSet GroupBoxColor { get => _grbColor; set => _grbColor = value; }
-        public uixSet LabelColor { get => _lblColor; set => _lblColor = value; }
-        public uixSet PanelColor { get => _pnlColor; set => _pnlColor = value; }
-        public uixSet TextBoxColor { get => _txtColor; set => _txtColor = value; }
-        public uixSet TextBoxWarningColor { get => _txtWarningColor; set => _txtWarningColor = value; }
+        public uixSet ContentColor { get => _ctlColor; set => _ctlColor = value; }
+        public uixSet BoxColor { get => _boxColor; set => _boxColor = value; }
+        public uixSet BoxWarningColor { get => _boxWarningColor; set => _boxWarningColor = value; }
 
         public static uixStyle BLUE = new uixStyle
         {
             FormColor = uixSet.INDIGO,
-            HeaderButtonColor = uixSet.BLUE,
             HeaderButtonSize = 40,
             HeaderButtonSpace = 5,
             HeaderFont = uixFont.LATO_BLACK,
@@ -66,11 +58,9 @@ namespace UIX
             ButtonColor = uixSet.BLUE,
             ButtonImageColor = uixSet.WHITE,
             ButtonWarningColor = uixSet.RED,
-            GroupBoxColor = uixSet.INDIGO,
-            LabelColor = uixSet.INDIGO,
-            PanelColor = uixSet.INDIGO,
-            TextBoxColor = uixSet.BLUE,
-            TextBoxWarningColor = uixSet.RED
+            ContentColor = uixSet.INDIGO,
+            BoxColor = uixSet.BLUE,
+            BoxWarningColor = uixSet.RED
         };
 
         //public static uixStyle SILVER = new uixStyle(

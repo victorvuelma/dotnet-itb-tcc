@@ -15,16 +15,14 @@ namespace UIX
 
         public static void cboApply(ComboBox cbo, uixSet colorSet, Font font)
         {
-            cbo.Font = uixFont.fontSize(font, cbo.Font.Size);
+            uixControl.ctlApply(cbo, colorSet, font);
             uixComboBox.cboApply(cbo, colorSet);
         }
 
         public static void cboApply(ComboBox cbo, uixSet colorSet)
         {
+            uixControl.ctlApply(cbo, colorSet);
             cbo.FlatStyle = FlatStyle.Popup;
-            cbo.BackColor = colorSet.LightColor;
-            cbo.ForeColor = colorSet.ContentColor;
-            cbo.Margin = new Padding(0);
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbo.AutoCompleteMode = AutoCompleteMode.Suggest;

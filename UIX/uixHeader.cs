@@ -25,7 +25,7 @@ namespace UIX
             //Apply header title style
             hdr.lbl.BringToFront();
             uixLabel.lblApply(hdr.lbl, style.FormColor, style.HeaderFont);
-            hdr.lbl.Font = uixFont.fontSize(hdr.lbl.Font, 12.5f);
+            hdr.lbl.Font = uixFont.alterFont(hdr.lbl.Font, 12.5f);
             hdr.lbl.BackColor = style.FormColor.DarkColor;
             hdr.lbl.Location = new Point((style.HeaderButtonSpace * 2) + style.HeaderButtonSize,0);
 
@@ -53,7 +53,7 @@ namespace UIX
                 hdr.btnMin.Location = new Point(nextButtonX, style.HeaderButtonSpace);
                 hdr.btnMin.BringToFront();
 
-                uixButton.btnStyleMinimize(hdr.btnMin, style.HeaderButtonSize, style.HeaderButtonColor);
+                uixButton.btnStyleMinimize(hdr.btnMin, style.HeaderButtonSize, style.ButtonColor);
             }
 
             uixUtil.defineSizeForWidht(hdr.lbl, nextButtonX - 10);

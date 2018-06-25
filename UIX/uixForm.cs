@@ -18,7 +18,7 @@ namespace UIX
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.AutoScaleMode = AutoScaleMode.None;
             frm.Text = hdr.Title;
-            frm.BackColor = style.FormColor.LightColor;
+            frm.BackColor = style.FormColor.BackColor;
             frm.MinimizeBox = hdr.btnMin.Visible;
             frm.Icon = icon;
 
@@ -40,20 +40,26 @@ namespace UIX
                 control.Location = new Point(control.Location.X + MARGIN_SIZE, control.Location.Y);
             }
 
-            Panel pnlLeft = new Panel();
-            pnlLeft.Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height);
-            pnlLeft.Location = new System.Drawing.Point(0, 0);
-            pnlLeft.BackColor = style.FormColor.DarkColor;
+            Panel pnlLeft = new Panel
+            {
+                Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height),
+                Location = new System.Drawing.Point(0, 0),
+                BackColor = style.FormColor.DarkColor
+            };
 
-            Panel pnlRight = new Panel();
-            pnlRight.Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height);
-            pnlRight.Location = new System.Drawing.Point(frm.Width - MARGIN_SIZE, 0);
-            pnlRight.BackColor = style.FormColor.DarkColor;
+            Panel pnlRight = new Panel
+            {
+                Size = new System.Drawing.Size(MARGIN_SIZE, frm.Height),
+                Location = new System.Drawing.Point(frm.Width - MARGIN_SIZE, 0),
+                BackColor = style.FormColor.DarkColor
+            };
 
-            Panel pnlBottom = new Panel();
-            pnlBottom.Size = new System.Drawing.Size(frm.Width, MARGIN_SIZE);
-            pnlBottom.Location = new System.Drawing.Point(0, frm.Height - MARGIN_SIZE);
-            pnlBottom.BackColor = style.FormColor.DarkColor;
+            Panel pnlBottom = new Panel
+            {
+                Size = new System.Drawing.Size(frm.Width, MARGIN_SIZE),
+                Location = new System.Drawing.Point(0, frm.Height - MARGIN_SIZE),
+                BackColor = style.FormColor.DarkColor
+            };
 
             frm.Controls.Add(pnlLeft);
             frm.Controls.Add(pnlRight);

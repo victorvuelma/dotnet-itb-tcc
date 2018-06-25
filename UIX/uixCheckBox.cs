@@ -12,20 +12,21 @@ namespace UIX
 
     public class uixCheckBox
     {
+
         public static void chkApply(CheckBox chk, uixSet colorSet, Font font)
         {
-            chk.Font = uixFont.fontSize(font, chk.Font.Size);
-            uixCheckBox.chkApply(chk, colorSet);
+            uixControl.ctlApply(chk, colorSet, font);
+            chkApply(chk, colorSet);
         }
 
         public static void chkApply(CheckBox chk, uixSet colorSet)
         {
+            uixControl.ctlApply(chk, colorSet);
             chk.FlatStyle = FlatStyle.Flat;
-            chk.ForeColor = colorSet.ContentColor;
-            chk.BackColor = colorSet.DarkColor;
-            chk.FlatAppearance.BorderColor = colorSet.LightColor;
+            chk.FlatAppearance.BorderColor = colorSet.BackColor;
             chk.FlatAppearance.CheckedBackColor = colorSet.DarkColor;
         }
+
     }
 
 }

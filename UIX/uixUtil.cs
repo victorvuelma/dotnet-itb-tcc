@@ -39,7 +39,7 @@ namespace UIX
             ctl.AutoSize = true;
             while (ctl.Width > widht)
             {
-                ctl.Font = uixFont.fontSize(ctl.Font, ctl.Font.Size - 0.1f);
+                ctl.Font = uixFont.alterFont(ctl.Font, ctl.Font.Size - 0.1f);
             }
             ctl.AutoSize = false;
             ctl.Size = new Size(widht, ctl.Height);

@@ -12,16 +12,20 @@ namespace UIX
     public class uixPanel
     {
 
-        public static void pnlApply(Panel pnl, uixSet set, Font font)
+        public static void pnlApply(Panel pnl, uixSet colorSet, Font font)
         {
-            pnl.Font = uixFont.fontSize(font, pnl.Font.Size);
-            uixPanel.pnlApply(pnl, set);
+            uixControl.ctlApply(pnl, colorSet);
+            uixPanel.pnlApply(pnl, colorSet);
         }
 
-        public static void pnlApply(Panel pnl, uixSet set)
+        public static void pnlApply(Panel pnl, uixSet colorSet)
         {
-            pnl.BackColor = set.DarkColor;
-            pnl.ForeColor = set.ContentColor;
+            uixControl.ctlApply(pnl, colorSet);
+
+            if(pnl.Parent is Form)
+            {
+                pnl.BackColor = colorSet.DarkColor;
+            }
         }
 
     }

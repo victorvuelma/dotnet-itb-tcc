@@ -13,27 +13,20 @@ namespace UIX
 
         private Color _contentColor;
         private Color _darkColor;
-        private Color _lightColor;
+        private Color _backColor;
 
-        private uixSet(Color darkColor, Color lightColor, Color contentColor)
-        {
-            _contentColor = contentColor;
-            _darkColor = darkColor;
-            _lightColor = lightColor;
-        }
+        public Color ContentColor { get => _contentColor; set => _contentColor = value; }
+        public Color DarkColor { get => _darkColor; set => _darkColor = value; }
+        public Color BackColor { get => _backColor; set => _backColor = value; }
 
-        public Color ContentColor { get => _contentColor; }
-        public Color DarkColor { get => _darkColor; }
-        public Color LightColor { get => _lightColor; }
-
-        public static uixSet AQUA = new uixSet(uixColor.AQUA_DARK, uixColor.AQUA_LIGHT, uixColor.WHITE);
-        public static uixSet BLUE = new uixSet(uixColor.BLUE_DARK, uixColor.BLUE_LIGHT, uixColor.WHITE);
-        public static uixSet GRAY = new uixSet(uixColor.GRAY_DARK, uixColor.GRAY_LIGHT, uixColor.INDIGO_LIGHT);
-        public static uixSet GREEN = new uixSet(uixColor.GREEN_DARK, uixColor.GREEN_LIGHT, uixColor.WHITE);
-        public static uixSet INDIGO = new uixSet(uixColor.INDIGO_DARK, uixColor.INDIGO_LIGHT, uixColor.WHITE);
-        public static uixSet PURPLE = new uixSet(uixColor.PURPLE_DARK, uixColor.PURPLE_LIGHT, uixColor.WHITE);
-        public static uixSet RED = new uixSet(uixColor.RED_DARK, uixColor.RED_LIGHT, uixColor.WHITE);
-        public static uixSet WHITE = new uixSet(uixColor.SILVER, uixColor.WHITE, uixColor.INDIGO_LIGHT);
+        public static uixSet AQUA = new uixSet { DarkColor = uixColor.AQUA_DARK, BackColor = uixColor.AQUA_LIGHT, ContentColor = uixColor.WHITE };
+        public static uixSet BLUE = new uixSet { DarkColor = uixColor.BLUE_DARK, BackColor = uixColor.BLUE_LIGHT, ContentColor = uixColor.WHITE };
+        public static uixSet GRAY = new uixSet { DarkColor = uixColor.GRAY_DARK, BackColor = uixColor.GRAY_LIGHT, ContentColor = uixColor.INDIGO_LIGHT };
+        public static uixSet GREEN = new uixSet { DarkColor = uixColor.GREEN_DARK, BackColor = uixColor.GREEN_LIGHT, ContentColor = uixColor.WHITE };
+        public static uixSet INDIGO = new uixSet { DarkColor = uixColor.INDIGO_DARK, BackColor = uixColor.INDIGO_LIGHT, ContentColor = uixColor.WHITE };
+        public static uixSet PURPLE = new uixSet { DarkColor = uixColor.PURPLE_DARK, BackColor = uixColor.PURPLE_LIGHT, ContentColor = uixColor.WHITE };
+        public static uixSet RED = new uixSet { DarkColor = uixColor.RED_DARK, BackColor = uixColor.RED_LIGHT, ContentColor = uixColor.WHITE };
+        public static uixSet WHITE = new uixSet { DarkColor = uixColor.SILVER, BackColor = uixColor.WHITE, ContentColor = uixColor.INDIGO_LIGHT };
 
     }
 

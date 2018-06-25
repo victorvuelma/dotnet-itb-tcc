@@ -14,18 +14,15 @@ namespace UIX
 
         public static void mtbApply(MaskedTextBox mtb, uixSet colorSet, Font font)
         {
-            mtb.Font = uixFont.fontSize(font, mtb.Font.Size);
+            uixControl.ctlApply(mtb, colorSet, font);
             uixMaskedTextBox.mtbApply(mtb, colorSet);
         }
 
         public static void mtbApply(MaskedTextBox mtb, uixSet colorSet)
         {
-            mtb.BackColor = colorSet.LightColor;
-            mtb.ForeColor = colorSet.ContentColor;
+            uixControl.ctlApply(mtb, colorSet);
             mtb.BorderStyle = BorderStyle.None;
-            mtb.Margin = new Padding(5);
         }
-
 
     }
 }

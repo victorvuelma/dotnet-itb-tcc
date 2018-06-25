@@ -94,6 +94,7 @@
       <DependentUpon>hdrUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uixControl.cs" />
     <Compile Include="uixEnum.cs" />
     <Compile Include="uixButton.cs" />
     <Compile Include="uixCheckBox.cs" />

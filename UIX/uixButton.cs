@@ -14,8 +14,8 @@ namespace UIX
 
         public static void btnApply(Button btn, uixSet colorSet)
         {
+            uixControl.ctlApply(btn, colorSet);
             btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderColor = colorSet.DarkColor;
             btn.FlatAppearance.MouseDownBackColor = colorSet.DarkColor;
             btn.FlatAppearance.MouseOverBackColor = colorSet.DarkColor;
             btn.FlatAppearance.BorderSize = 0;
@@ -23,7 +23,6 @@ namespace UIX
             {
                 btn.ForeColor = colorSet.ContentColor;
             }
-            btn.BackColor = colorSet.LightColor;
             btn.Cursor = Cursors.Hand;
             btn.TextAlign = ContentAlignment.MiddleCenter;
             if (btn is btnUIX)
@@ -34,8 +33,8 @@ namespace UIX
 
         public static void btnApply(Button btn, uixSet colorSet, Font font)
         {
+            uixControl.ctlApply(btn, colorSet, font);
             uixButton.btnApply(btn, colorSet);
-            btn.Font = font;
         }
 
         public static void btnSquare(Button btn, int size)
@@ -51,7 +50,7 @@ namespace UIX
 
         public static void btnStyleClose(Button btn, int size, uixSet colorSet)
         {
-            uixButton.btnApply(btn, colorSet, uixFont.fontSize(uixFont.SANS_SERIF, 12F));
+            uixButton.btnApply(btn, colorSet, uixFont.alterFont(uixFont.SANS_SERIF, 12F));
             btn.Text = "X";
             btn.TabIndex = int.MaxValue;
             uixButton.btnSquare(btn, size);
@@ -59,7 +58,7 @@ namespace UIX
 
         public static void btnStyleMinimize(Button btn, int size, uixSet colorSet)
         {
-            uixButton.btnApply(btn, colorSet, uixFont.fontSize(uixFont.SANS_SERIF, 12F));
+            uixButton.btnApply(btn, colorSet, uixFont.alterFont(uixFont.SANS_SERIF, 12F));
             btn.Text = "_";
             btn.TabIndex = int.MaxValue;
             uixButton.btnSquare(btn, size);

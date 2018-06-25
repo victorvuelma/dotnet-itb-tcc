@@ -14,13 +14,13 @@ namespace UIX
 
         public static void uctApply(UserControl uct, uixSet set, Font font)
         {
-            uct.Font = uixFont.fontSize(font, uct.Font.Size);
+            uct.Font = uixFont.alterFont(font, uct.Font);
             uixUserControl.uctApply(uct, set);
         }
 
         public static void uctApply(UserControl uct, uixSet set)
         {
-            uct.BackColor = set.LightColor;
+            uct.BackColor = set.BackColor;
             uct.ForeColor = set.ContentColor;
         }
 
