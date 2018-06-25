@@ -146,7 +146,7 @@ namespace BURGUER_SHACK_DESKTOP
                 txtQuantidade.Text = Convert.ToString(ObjSelecionar.Quantidade);
             }
 
-            hdrUIX.Title = App.ConfigName + " - " + ObjSelecionar.ObjListar.Titulo;
+            hdrUIX.Title = App.Name + " - " + ObjSelecionar.ObjListar.Titulo;
             hdrUIX.Image = ObjSelecionar.ObjListar.Icone;
         }
 

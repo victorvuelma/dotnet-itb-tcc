@@ -268,7 +268,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjProduto != null)
             {
-                hdrUIX.Title = App.ConfigName + " - Alterando Produto " + ObjProduto.Cod;
+                hdrUIX.Title = App.Name + " - Alterando Produto " + ObjProduto.Cod;
 
                 clnArquivo objArquivo = new clnArquivo
                 {
@@ -296,7 +296,7 @@ namespace BURGUER_SHACK_DESKTOP
                 ObjProduto = new clnProduto();
                 ObjProdutoIngredientes = new List<clnProdutoIngrediente>();
 
-                hdrUIX.Title = App.ConfigName + " - Novo Produto";
+                hdrUIX.Title = App.Name + " - Novo Produto";
 
                 definirImagemPadrao();
 

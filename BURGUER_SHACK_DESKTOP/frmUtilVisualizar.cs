@@ -96,7 +96,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarForm(this);
 
             realizaPesquisa();
-            hdrUIX.Title = App.ConfigName + " - " + ObjVisualizar.ObjListar.Titulo;
+            hdrUIX.Title = App.Name + " - " + ObjVisualizar.ObjListar.Titulo;
             hdrUIX.Image = ObjVisualizar.ObjListar.Icone;
         }
 

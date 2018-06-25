@@ -127,11 +127,11 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjFornecedor == null)
             {
-                hdrUIX.Title = App.ConfigName + " - Novo Fornecedor";
+                hdrUIX.Title = App.Name + " - Novo Fornecedor";
             }
             else
             {
-                hdrUIX.Title = App.ConfigName + " - Alterando Fornecedor " + ObjFornecedor.Cod;
+                hdrUIX.Title = App.Name + " - Alterando Fornecedor " + ObjFornecedor.Cod;
                 mtbCNPJ.Enabled = false;
 
                 txtRazaoSocial.Text = ObjFornecedor.RazaoSocial;

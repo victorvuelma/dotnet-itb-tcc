@@ -178,7 +178,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjEstoque != null)
             {
-                hdrUIX.Title = App.ConfigName + " - Alterando Estoque " + ObjEstoque.Cod;
+                hdrUIX.Title = App.Name + " - Alterando Estoque " + ObjEstoque.Cod;
 
                 txtQuantidade.Text = clnUtilConvert.ToString(ObjEstoque.Quantidade);
                 txtValor.Text = ObjEstoque.Valor.ToString();
@@ -212,7 +212,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 ObjEstoque = new clnEstoque();
 
-                hdrUIX.Title = App.ConfigName + " - Novo Estoque";
+                hdrUIX.Title = App.Name + " - Novo Estoque";
             }
         }
 

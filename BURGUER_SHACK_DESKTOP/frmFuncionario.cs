@@ -209,13 +209,13 @@ namespace BURGUER_SHACK_DESKTOP
 
             if (ObjFuncionario == null)
             {
-                hdrUIX.Title = App.ConfigName + " - Novo Funcionário";
+                hdrUIX.Title = App.Name + " - Novo Funcionário";
 
                 definirImagemPadrao();
             }
             else
             {
-                hdrUIX.Title = App.ConfigName + " - Alterando Funcionário " + ObjFuncionario.Cod;
+                hdrUIX.Title = App.Name + " - Alterando Funcionário " + ObjFuncionario.Cod;
                 mtbCPF.Enabled = false;
 
                 txtNome.Text = ObjFuncionario.Nome;

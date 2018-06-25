@@ -152,7 +152,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnUtil.atualizarForm(this);
 
-            hdrUIX.Title = App.ConfigName + "- Pedido :: Alterando Item " + ObjItem.Cod;
+            hdrUIX.Title = App.Name + "- Pedido :: Alterando Item " + ObjItem.Cod;
 
             clnProduto objProduto = new clnProduto
             {

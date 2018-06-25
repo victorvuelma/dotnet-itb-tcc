@@ -35,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
             Icon = Properties.Resources.app_ico
         };
 
-        public static String ConfigName { get => _configName; }
+        public static String Name { get => _configName; }
         
         public static sqlDatabase DatabaseSql { get => _databaseSql; }
 

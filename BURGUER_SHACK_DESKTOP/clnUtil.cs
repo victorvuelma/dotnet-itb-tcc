@@ -520,7 +520,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
             }
 
-            hdrUIX.Title = App.ConfigName + " - " + titulo;
+            hdrUIX.Title = App.Name + " - " + titulo;
             if (uctConteudo == null)
             {
                 pnlConteudo.Show();

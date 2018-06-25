@@ -56,9 +56,9 @@ namespace BURGUER_SHACK_DESKTOP
             frmGerenciamento.ShowDialog();
         }
 
-        private void fechar()
+        private void sair()
         {
-            if (clnUtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.INFO))
+            if (clnUtilMensagem.mostrarSimNao(App.Name, "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.INFO))
             {
                 Close();
             }
@@ -81,12 +81,12 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            fechar();
+            sair();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            fechar();
+            sair();
         }
 
         private void btnReservas_Click(object sender, EventArgs e)

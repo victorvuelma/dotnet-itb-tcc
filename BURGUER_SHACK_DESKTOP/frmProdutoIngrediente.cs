@@ -24,7 +24,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             InitializeComponent();
 
-            hdrUIX.Title = App.ConfigName + " - Ingrediente";
+            hdrUIX.Title = App.Name + " - Ingrediente";
 
             _validar = new clnUtilValidar();
             _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });

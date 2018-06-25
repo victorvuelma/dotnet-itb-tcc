@@ -88,7 +88,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             clnUtil.atualizarForm(this);
             
-            hdrUIX.Title = App.ConfigName + " - Gerenciamento";
+            hdrUIX.Title = App.Name + " - Gerenciamento";
 
             abrirIngredientes();
         }
