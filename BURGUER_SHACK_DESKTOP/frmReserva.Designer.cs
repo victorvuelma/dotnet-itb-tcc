@@ -275,7 +275,7 @@
             // 
             this.btnCancelar.Description = "Cancelar";
             this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_x;
+            this.btnCancelar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.excluir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancelar.ImageLocation = null;
             this.btnCancelar.Location = new System.Drawing.Point(85, 15);

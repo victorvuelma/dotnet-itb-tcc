@@ -37,6 +37,7 @@ namespace BURGUER_SHACK_DESKTOP
             ObjItem = null;
 
             grbDetalhes.Hide();
+            btnConfirmar.Hide();
 
             selecionarProduto(categoria);
         }
@@ -72,19 +73,14 @@ namespace BURGUER_SHACK_DESKTOP
 
             exibirProduto(objProduto, objPedido);
 
-            atualizarValor();
+            btnConfirmar.Show();
         }
 
         private void atualizarValor()
         {
-            clnProduto objProduto = new clnProduto
-            {
-                Cod = ObjItem.CodProduto
-            }.obterPorCod();
+            double valor = clnUtilPedido.calcularValor(ObjItem, ObjItemIngredientes);
 
-            double valor = objProduto.Valor;
-
-            lblValor.Text = "Valor (R$): " + valor;
+            lblValor.Text = "Valor: " + clnUtil.formatarValor(valor);
         }
 
         private void selecionarProduto(int categoria)
@@ -185,6 +181,8 @@ namespace BURGUER_SHACK_DESKTOP
         private void exibirDetalhes()
         {
             grbDetalhes.Show();
+
+            atualizarValor();
         }
 
         private void confirmarItem()
@@ -260,6 +258,8 @@ namespace BURGUER_SHACK_DESKTOP
 
                 clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
                 ObjItemIngredientes.Add(objPedidoIngrediente);
+
+                exibirDetalhes();
             }
         }
 

@@ -145,9 +145,6 @@
   <data name="produto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\produto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remover_x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remover-x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="voltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\voltar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -256,9 +253,6 @@
   <data name="produto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\produto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remover_menos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remover-menos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="app_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\app-ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -267,5 +261,11 @@
   </data>
   <data name="conta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\conta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

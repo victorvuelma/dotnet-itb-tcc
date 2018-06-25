@@ -117,6 +117,7 @@
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
             this.btnIngredienteAdd.Size = new System.Drawing.Size(90, 90);
             this.btnIngredienteAdd.TabIndex = 26;
+            this.btnIngredienteAdd.Text = "Adicionar";
             this.btnIngredienteAdd.UseVisualStyleBackColor = true;
             this.btnIngredienteAdd.Click += new System.EventHandler(this.btnIngredienteAdd_Click);
             // 
@@ -130,6 +131,7 @@
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Size = new System.Drawing.Size(90, 90);
             this.btnIngredientes.TabIndex = 28;
+            this.btnIngredientes.Text = "Visualizar";
             this.btnIngredientes.UseVisualStyleBackColor = true;
             this.btnIngredientes.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
@@ -149,6 +151,7 @@
             // 
             // txtAdicional
             // 
+            this.txtAdicional.AcceptButton = null;
             this.txtAdicional.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
             this.txtAdicional.Campo = "Informações Adicionais";
             this.txtAdicional.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
@@ -162,6 +165,7 @@
             // 
             // txtQuantidade
             // 
+            this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Quantidade";
             this.txtQuantidade.AllowedChars = UIX.uixEnum.uixAllowedChars.INT;
             this.txtQuantidade.Campo = "Quantidade";
@@ -296,6 +300,7 @@
             this.btnConfirmar.TabIndex = 10;
             this.btnConfirmar.Text = "Confirmar Pedido";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Visible = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // uctPedidoAdicionar

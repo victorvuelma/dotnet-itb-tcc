@@ -281,7 +281,7 @@
             // 
             this.btnRemover.Description = "Remover";
             this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover_menos;
+            this.btnRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
             this.btnRemover.Location = new System.Drawing.Point(727, 158);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(80, 80);

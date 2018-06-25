@@ -71,7 +71,7 @@
             this.grbPesquisa.Size = new System.Drawing.Size(580, 105);
             this.grbPesquisa.TabIndex = 1;
             this.grbPesquisa.TabStop = false;
-            this.grbPesquisa.Text = "Pesquisa";
+            this.grbPesquisa.Text = "ENCONTRAR";
             // 
             // lblPesquisaRes
             // 
@@ -84,15 +84,15 @@
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
             this.txtPesquisar.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
-            this.txtPesquisar.Campo = "Pesquisar";
-            this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtPesquisar.Campo = "Pesquisar por";
+            this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisar.MaxLength = 32767;
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPesquisar.Size = new System.Drawing.Size(480, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(480, 40);
             this.txtPesquisar.TabIndex = 3;
             // 
             // btnPesquisar

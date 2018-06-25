@@ -51,7 +51,7 @@
             this.grbMesas.Size = new System.Drawing.Size(890, 640);
             this.grbMesas.TabIndex = 0;
             this.grbMesas.TabStop = false;
-            this.grbMesas.Text = "SELECIONAR MESA";
+            this.grbMesas.Text = "MESAS";
             // 
             // pnlMesas
             // 

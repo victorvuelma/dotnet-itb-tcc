@@ -558,12 +558,6 @@
     <None Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\remover-menos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remover-x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\sair.png" />
   </ItemGroup>
   <ItemGroup>
@@ -635,6 +629,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\conta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
