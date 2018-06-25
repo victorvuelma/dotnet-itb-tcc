@@ -30,7 +30,7 @@
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnMesas = new UIX.btnUIX();
-            this.btnSair = new UIX.btnUIX();
+            this.btnVoltar = new UIX.btnUIX();
             this.btnConta = new UIX.btnUIX();
             this.btnPedidos = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
@@ -41,7 +41,7 @@
             // pnlMenu
             // 
             this.pnlMenu.Controls.Add(this.btnMesas);
-            this.pnlMenu.Controls.Add(this.btnSair);
+            this.pnlMenu.Controls.Add(this.btnVoltar);
             this.pnlMenu.Controls.Add(this.btnConta);
             this.pnlMenu.Controls.Add(this.btnPedidos);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
@@ -63,19 +63,19 @@
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
-            // btnSair
+            // btnVoltar
             // 
-            this.btnSair.Description = "Sair";
-            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.ImageLocation = null;
-            this.btnSair.Location = new System.Drawing.Point(5, 555);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(90, 90);
-            this.btnSair.TabIndex = 6;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnVoltar.Description = "Voltar";
+            this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.ImageLocation = null;
+            this.btnVoltar.Location = new System.Drawing.Point(5, 555);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(90, 90);
+            this.btnVoltar.TabIndex = 6;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnConta
             // 
@@ -151,7 +151,7 @@
         private UIX.btnUIX btnConta;
         private UIX.btnUIX btnPedidos;
         public System.Windows.Forms.Panel pnlConteudo;
-        private UIX.btnUIX btnSair;
+        private UIX.btnUIX btnVoltar;
         private UIX.btnUIX btnMesas;
     }
 }

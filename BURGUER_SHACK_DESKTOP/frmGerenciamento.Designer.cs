@@ -40,7 +40,7 @@
             this.btnClientes = new UIX.btnUIX();
             this.btnProdutos = new UIX.btnUIX();
             this.btnIngredientes = new UIX.btnUIX();
-            this.btnSair = new UIX.btnUIX();
+            this.btnVoltar = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu.SuspendLayout();
@@ -59,7 +59,7 @@
             this.pnlMenu.Controls.Add(this.btnClientes);
             this.pnlMenu.Controls.Add(this.btnProdutos);
             this.pnlMenu.Controls.Add(this.btnIngredientes);
-            this.pnlMenu.Controls.Add(this.btnSair);
+            this.pnlMenu.Controls.Add(this.btnVoltar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(300, 500);
@@ -76,6 +76,7 @@
             this.btnPagamentos.Name = "btnPagamentos";
             this.btnPagamentos.Size = new System.Drawing.Size(90, 90);
             this.btnPagamentos.TabIndex = 16;
+            this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.UseVisualStyleBackColor = true;
             // 
             // btnPedidos
@@ -89,6 +90,7 @@
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(90, 90);
             this.btnPedidos.TabIndex = 15;
+            this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = true;
             // 
             // btnReservas
@@ -102,6 +104,7 @@
             this.btnReservas.Name = "btnReservas";
             this.btnReservas.Size = new System.Drawing.Size(90, 90);
             this.btnReservas.TabIndex = 14;
+            this.btnReservas.Text = "Reservas";
             this.btnReservas.UseVisualStyleBackColor = true;
             this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
@@ -116,6 +119,7 @@
             this.btnAtendimentos.Name = "btnAtendimentos";
             this.btnAtendimentos.Size = new System.Drawing.Size(90, 90);
             this.btnAtendimentos.TabIndex = 13;
+            this.btnAtendimentos.Text = "Atendimentos";
             this.btnAtendimentos.UseVisualStyleBackColor = true;
             // 
             // btnMesas
@@ -129,6 +133,7 @@
             this.btnMesas.Name = "btnMesas";
             this.btnMesas.Size = new System.Drawing.Size(90, 90);
             this.btnMesas.TabIndex = 12;
+            this.btnMesas.Text = "Mesas";
             this.btnMesas.UseVisualStyleBackColor = true;
             // 
             // btnEstoque
@@ -142,6 +147,7 @@
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(90, 90);
             this.btnEstoque.TabIndex = 11;
+            this.btnEstoque.Text = "Estoque";
             this.btnEstoque.UseVisualStyleBackColor = true;
             this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
@@ -156,6 +162,7 @@
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(90, 90);
             this.btnFornecedores.TabIndex = 10;
+            this.btnFornecedores.Text = "Fornecedores";
             this.btnFornecedores.UseVisualStyleBackColor = true;
             this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
             // 
@@ -170,6 +177,7 @@
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(90, 90);
             this.btnFuncionarios.TabIndex = 9;
+            this.btnFuncionarios.Text = "Funcionários";
             this.btnFuncionarios.UseVisualStyleBackColor = true;
             this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
             // 
@@ -184,6 +192,7 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(90, 90);
             this.btnClientes.TabIndex = 8;
+            this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
@@ -198,6 +207,7 @@
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(90, 90);
             this.btnProdutos.TabIndex = 7;
+            this.btnProdutos.Text = "Produtos";
             this.btnProdutos.UseVisualStyleBackColor = true;
             this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
@@ -212,22 +222,24 @@
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Size = new System.Drawing.Size(90, 90);
             this.btnIngredientes.TabIndex = 6;
+            this.btnIngredientes.Text = "Ingredientes";
             this.btnIngredientes.UseVisualStyleBackColor = true;
             this.btnIngredientes.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
-            // btnSair
+            // btnVoltar
             // 
-            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSair.Description = "Sair";
-            this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.sair;
-            this.btnSair.ImageLocation = null;
-            this.btnSair.Location = new System.Drawing.Point(5, 405);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(290, 90);
-            this.btnSair.TabIndex = 5;
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.Description = "Sair";
+            this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.ImageLocation = null;
+            this.btnVoltar.Location = new System.Drawing.Point(5, 405);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(290, 90);
+            this.btnVoltar.TabIndex = 5;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // pnlConteudo
             // 
@@ -276,7 +288,7 @@
 
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnIngredientes;
-        private UIX.btnUIX btnSair;
+        private UIX.btnUIX btnVoltar;
         public System.Windows.Forms.Panel pnlConteudo;
         private UIX.hdrUIX hdrUIX;
         private UIX.btnUIX btnProdutos;
