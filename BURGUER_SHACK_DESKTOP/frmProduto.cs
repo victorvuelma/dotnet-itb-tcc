@@ -54,7 +54,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void definirImagemPadrao()
         {
-            picImagem.ImageLocation = clnArquivo.tempImage(global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto);
+            picImagem.ImageLocation = clnArquivo.tempImage(Properties.Resources.produto);
         }
 
         private void adicionarImagem()

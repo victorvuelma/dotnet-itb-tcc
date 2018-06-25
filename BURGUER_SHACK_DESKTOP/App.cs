@@ -14,7 +14,7 @@ namespace BURGUER_SHACK_DESKTOP
     class App
     {
 
-        private static String _configName = "Burguer Shack";
+        private static String _name = "Burguer Shack";
 
         private static sqlDatabase _databaseSql = new sqlDatabase
         {
@@ -35,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
             Icon = Properties.Resources.app_ico
         };
 
-        public static String Name { get => _configName; }
+        public static String Name { get => _name; }
         
         public static sqlDatabase DatabaseSql { get => _databaseSql; }
 

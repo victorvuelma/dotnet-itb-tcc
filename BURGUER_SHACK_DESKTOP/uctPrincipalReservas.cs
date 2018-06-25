@@ -52,8 +52,6 @@ namespace BURGUER_SHACK_DESKTOP
             }
             clnUtil.adicionarControles(pnlReservas, reservasControles, 20);
             reservasControles.Clear();
-
-            pnlReservas.BackColor = BackColor;
         }
 
         private void abrirReserva(clnReserva objReserva)

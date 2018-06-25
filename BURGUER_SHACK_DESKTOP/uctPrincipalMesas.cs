@@ -37,12 +37,12 @@ namespace BURGUER_SHACK_DESKTOP
                 };
                 if (objMesa.Situacao == clnMesa.mesaSituacao.DISPONIVEL)
                 {
-                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesa;
+                    btn.Image = Properties.Resources.mesa;
                 }
                 else
                 {
                     btn.ForeColor = pnlOcupada.BackColor;
-                    btn.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.mesauso;
+                    btn.Image = Properties.Resources.mesauso;
                 }
                 btn.Click += (object sender, EventArgs e) =>
                 {
@@ -53,8 +53,6 @@ namespace BURGUER_SHACK_DESKTOP
             }
             clnUtil.adicionarControles(pnlMesas, mesaControles, 20);
             mesaControles.Clear();
-
-            pnlMesas.BackColor = BackColor;
         }
 
         private void abrirMesa(clnMesa objMesa)
