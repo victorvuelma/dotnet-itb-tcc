@@ -139,10 +139,9 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmAlteraIngrediente_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarForm(this);
-            clnUtil.definirNumBoard(txtQuantidade);
-
             UIX.uixButton.btnApply(btnRemover, App.VisualStyle.ButtonWarningColor);
+
+            clnUtil.atualizarForm(this);
 
             picIngrediente.Hide();
             lblNome.Hide();

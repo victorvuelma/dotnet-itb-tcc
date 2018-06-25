@@ -67,9 +67,9 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarForm(this);
-
             UIX.uixButton.btnApply(btnSair, App.VisualStyle.ButtonWarningColor);
+
+            clnUtil.atualizarForm(this);   
 
             abrirMesas();
         }

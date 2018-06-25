@@ -173,12 +173,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
-            clnUtil.atualizarForm(this);
 
-            clnUtil.definirNumBoard(mtbFornCNPJ, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.definirNumBoard(mtbValidade, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.definirNumBoard(txtQuantidade);
-            clnUtil.definirNumBoard(txtValor);
+            clnUtil.atualizarForm(this);
 
             if (ObjEstoque != null)
             {

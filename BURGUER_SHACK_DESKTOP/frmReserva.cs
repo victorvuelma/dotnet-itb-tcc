@@ -344,12 +344,8 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmReserva_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarForm(this);
 
-            clnUtil.definirNumBoard(mtbCliCPF, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.definirNumBoard(mtbData, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.definirNumBoard(mtbHora, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.definirNumBoard(txtPessoas);
+            clnUtil.atualizarForm(this);
 
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
 

@@ -124,9 +124,9 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmPedido_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarForm(this);
-
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
+
+            clnUtil.atualizarForm(this);
 
             if (ObjPedido.Cod == -1)
             {

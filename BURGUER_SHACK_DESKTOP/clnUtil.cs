@@ -50,21 +50,39 @@ namespace BURGUER_SHACK_DESKTOP
         private static ViaCEP _viaCep = new ViaCEP();
 
         // ---- NUMBOARD
-        public static void definirNumBoard(UIX.txtUIX txt)
+        public static void definirNumBoard(ControlCollection controls)
         {
-            if (txt.AllowedChars == UIX.uixEnum.uixAllowedChars.INT)
+            foreach (Control control in controls)
             {
-                definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
-            }
-            else
-            {
-                definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
+                if (control is UIX.mtbUIX mtb)
+                {
+                    definirNumBoard(mtb);
+                }
+                else if (control is UIX.txtUIX txt)
+                {
+                    definirNumBoard(txt);
+                }
+
+                definirNumBoard(control.Controls);
             }
         }
 
-        public static void definirNumBoard(UIX.mtbUIX masked, frmUtilNumBoard.NumBoardMode mode)
+        public static void definirNumBoard(UIX.txtUIX txt)
         {
-            definirNumBoard(masked.mtb, mode);
+            switch (txt.AllowedChars)
+            {
+                case UIX.uixEnum.uixAllowedChars.DOUBLE:
+                    definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
+                    break;
+                case UIX.uixEnum.uixAllowedChars.INT:
+                    definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
+                    break;
+            }
+        }
+
+        public static void definirNumBoard(UIX.mtbUIX masked)
+        {
+            definirNumBoard(masked.mtb, frmUtilNumBoard.NumBoardMode.INT);
         }
 
         public static void definirNumBoard(TextBoxBase input, frmUtilNumBoard.NumBoardMode mode)
@@ -407,6 +425,8 @@ namespace BURGUER_SHACK_DESKTOP
                 definirBotaoConfirmacao(form.Controls, form.AcceptButton);
                 form.AcceptButton = null;
             }
+
+            definirNumBoard(form.Controls);
         }
 
         public static void atualizarIndex(ControlCollection controls)

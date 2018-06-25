@@ -119,15 +119,9 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmCliente_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarForm(this);
-
             UIX.uixButton.btnApply(btnCancelar, App.VisualStyle.ButtonWarningColor);
 
-            clnUtil.definirNumBoard(mtbCNPJ, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.definirNumBoard(mtbTel, frmUtilNumBoard.NumBoardMode.INT);
-
-            clnUtil.definirNumBoard(mtbEndCEP, frmUtilNumBoard.NumBoardMode.INT);
-            clnUtil.definirNumBoard(txtEndNr);
+            clnUtil.atualizarForm(this);
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr);
 

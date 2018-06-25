@@ -150,7 +150,8 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmUtilNumBoard_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            UIX.uixMaskedTextBox.mtbApply(mtbNum, App.VisualStyle.FormColor);
+            UIX.uixMaskedTextBox.mtbApply(mtbNum, App.VisualStyle.ContentColor);
+
             clnUtil.atualizarForm(this);
         }
 

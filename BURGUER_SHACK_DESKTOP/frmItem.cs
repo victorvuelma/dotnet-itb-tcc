@@ -148,11 +148,9 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmPedidoProduto_Load(object sender, EventArgs e)
         {
             App.VisualTemplate.frmApply(this, hdrUIX);
-            clnUtil.atualizarForm(this);
-
-            clnUtil.definirNumBoard(txtQuantidade);
-
             UIX.uixButton.btnApply(btnRemover, App.VisualStyle.ButtonWarningColor);
+
+            clnUtil.atualizarForm(this);
 
             hdrUIX.Title = App.ConfigName + "- Pedido :: Alterando Item " + ObjItem.Cod;
 
