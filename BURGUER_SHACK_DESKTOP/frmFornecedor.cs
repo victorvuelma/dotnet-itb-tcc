@@ -118,10 +118,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
-            App.VisualTemplate.frmApply(this, hdrUIX);
-            UIX.uixButton.btnApply(btnCancelar, App.VisualStyle.ButtonWarningColor);
-
             clnUtil.atualizarForm(this);
+            UIX.uixButton.btnApply(btnCancelar, App.VisualStyle.ButtonWarningColor);
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr);
 

@@ -22,7 +22,7 @@ namespace BURGUER_SHACK_DESKTOP
         private void frmEstoque_Load(object sender, EventArgs e)
         {
             hdrUIX.Title = App.Name + " - Estoque";
-            App.VisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarForm(this);
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

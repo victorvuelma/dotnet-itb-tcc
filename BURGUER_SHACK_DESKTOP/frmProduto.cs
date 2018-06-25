@@ -260,11 +260,9 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
-            App.VisualTemplate.frmApply(this, hdrUIX);
+            clnUtil.atualizarForm(this);
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
             UIX.uixButton.btnApply(btnExcluir, App.VisualStyle.ButtonWarningColor);
-
-            clnUtil.atualizarForm(this);
 
             if (ObjProduto != null)
             {

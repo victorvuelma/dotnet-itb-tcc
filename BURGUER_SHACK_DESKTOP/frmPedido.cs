@@ -123,10 +123,8 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void frmPedido_Load(object sender, EventArgs e)
         {
-            App.VisualTemplate.frmApply(this, hdrUIX);
-            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
-
             clnUtil.atualizarForm(this);
+            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
 
             if (ObjPedido.Cod == -1)
             {

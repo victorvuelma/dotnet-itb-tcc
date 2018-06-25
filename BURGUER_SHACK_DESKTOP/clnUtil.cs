@@ -419,6 +419,20 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static void atualizarForm(Form form)
         {
+            UIX.hdrUIX hdr = null;
+            foreach (Control control in form.Controls)
+            {
+                if (control is UIX.hdrUIX hdrUIX)
+                {
+                    hdr = hdrUIX;
+                    break;
+                }
+            }
+            if (hdr != null)
+            {
+                App.VisualTemplate.frmApply(form, hdr);
+            }
+
             atualizarIndex(form.Controls);
             if (form.AcceptButton != null)
             {
