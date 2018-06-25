@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngrediente));
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new UIX.btnUIX();
@@ -80,13 +81,14 @@
             // 
             this.btnExcluir.Description = "Excluir";
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.excluir;
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.ImageLocation = null;
             this.btnExcluir.Location = new System.Drawing.Point(5, 105);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(90, 90);
             this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -100,6 +102,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
+            this.btnVoltar.Text = "Cancelar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -114,6 +117,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(90, 90);
             this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -179,7 +183,7 @@
             this.txtNome.AcceptButton = null;
             this.txtNome.AccessibleName = "Nome:*";
             this.txtNome.AllowedChars = UIX.uixEnum.uixAllowedChars.ALL;
-            this.txtNome.Campo = "Nome:*";
+            this.txtNome.Campo = "Nome*";
             this.txtNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -207,12 +211,13 @@
             // 
             this.btnImgRemover.Description = "Remover";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgRemover.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.remover;
+            this.btnImgRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnImgRemover.Image")));
             this.btnImgRemover.ImageLocation = null;
             this.btnImgRemover.Location = new System.Drawing.Point(10, 20);
             this.btnImgRemover.Name = "btnImgRemover";
             this.btnImgRemover.Size = new System.Drawing.Size(80, 80);
             this.btnImgRemover.TabIndex = 28;
+            this.btnImgRemover.Text = "Remover";
             this.btnImgRemover.UseVisualStyleBackColor = true;
             this.btnImgRemover.Click += new System.EventHandler(this.btnImgRemover_Click);
             // 
@@ -226,6 +231,7 @@
             this.btnImgAdicionar.Name = "btnImgAdicionar";
             this.btnImgAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnImgAdicionar.TabIndex = 26;
+            this.btnImgAdicionar.Text = "Adicionar";
             this.btnImgAdicionar.UseVisualStyleBackColor = true;
             this.btnImgAdicionar.Click += new System.EventHandler(this.btnImgAdicionar_Click);
             // 
