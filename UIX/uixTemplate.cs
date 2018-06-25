@@ -13,10 +13,13 @@ namespace UIX
     {
 
         private Icon _icon;
+        private Image _errorImage;
+
         private uixStyle _style;
 
         public Icon Icon { get => _icon; set => _icon = value; }
         public uixStyle Style { get => _style; set => _style = value; }
+        public Image ErrorImage { get => _errorImage; set => _errorImage = value; }
 
         public void ctlApply(Control[] ctls)
         {
@@ -51,6 +54,9 @@ namespace UIX
             else if (ctl is Panel pnl)
             {
                 this.pnlApply(pnl);
+            } else if(ctl is PictureBox pic)
+            {
+                this.picApply(pic);
             }
             else if (ctl is MaskedTextBox mtb)
             {
@@ -104,6 +110,11 @@ namespace UIX
             uixMaskedTextBox.mtbApply(mtb, Style.BoxColor, Style.ContentFont);
         }
 
+        private void picApply(PictureBox pic)
+        {
+            uixPictureBox.picApply(pic, Style.ContentColor, ErrorImage);
+        }
+
         private void pnlApply(Panel pnl)
         {
             uixPanel.pnlApply(pnl, Style.ContentColor, Style.ContentFont);
@@ -124,6 +135,12 @@ namespace UIX
             frm.Visible = false;
             Cursor.Current = Cursors.WaitCursor;
 
+            frm.Load += (object sender, EventArgs args) =>
+            {
+                frm.Visible = true;
+                Cursor.Current = Cursors.Default;
+            };
+
             uixForm.applyMargin(frm, Style);
             uixForm.frmApply(frm, hdr, Icon, Style);
 
@@ -134,12 +151,6 @@ namespace UIX
                     this.ctlApply(control);
                 }
             }
-
-            frm.Load += (object sender, EventArgs args) =>
-            {
-                frm.Visible = true;
-                Cursor.Current = Cursors.Default;
-            };
         }
 
     }

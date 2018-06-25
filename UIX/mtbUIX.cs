@@ -14,14 +14,40 @@ namespace UIX
     public partial class mtbUIX : UserControl
     {
 
-        private IButtonControl _acceptButton;
+        private bool _loaded = false;
 
+        private IButtonControl _acceptButton;
         private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
 
         public mtbUIX()
         {
             InitializeComponent();
         }
+
+        //---- PROPRIEDADES UIX
+        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
+        
+        public uixEnum.uixLabelPosition LabelPosition
+        {
+            get => _labelPosition;
+            set
+            {
+                _labelPosition = value;
+                update();
+            }
+        }
+        //---- PROPRIEDADES UIX
+
+        [Editor("System.Windows.Forms.Design.MaskPropertyEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        public String Mask { get => mtb.Mask; set => mtb.Mask = value; }
+
+        public Type ValidatingType { get => mtb.ValidatingType; set => mtb.ValidatingType = value; }
+
+        public int MaxLength { get => mtb.MaxLength; set => mtb.MaxLength = value; }
+
+        public new bool Enabled { get => mtb.Enabled; set => mtb.Enabled = value; }
+
+        public override String Text { get => mtb.Text; set => mtb.Text = value; }
 
         public String Campo
         {
@@ -54,46 +80,29 @@ namespace UIX
             }
         }
 
-        public uixEnum.uixLabelPosition LabelPosition {
-            get => _labelPosition;
-            set
-            {
-                _labelPosition = value;
-                update();
-            }
-        }
-
         private void update()
         {
-            lbl.AutoSize = true;
-            switch (LabelPosition)
+            if (_loaded)
             {
-                case uixEnum.uixLabelPosition.SIDE:
-                    mtb.Location = new Point(lbl.Location.X + lbl.Size.Width, mtb.Location.Y);
-                    mtb.Size = new Size(Size.Width - mtb.Location.X, Size.Height);
-                    break;
-                case uixEnum.uixLabelPosition.UP:
-                    mtb.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
-                    mtb.Size = new Size(Size.Width, Size.Height - mtb.Location.Y);
-                    break;
+                lbl.AutoSize = true;
+                switch (LabelPosition)
+                {
+                    case uixEnum.uixLabelPosition.SIDE:
+                        mtb.Location = new Point(lbl.Location.X + lbl.Size.Width, mtb.Location.Y);
+                        mtb.Size = new Size(Size.Width - mtb.Location.X, Size.Height);
+                        break;
+                    case uixEnum.uixLabelPosition.UP:
+                        mtb.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
+                        mtb.Size = new Size(Size.Width, Size.Height - mtb.Location.Y);
+                        break;
+                }
             }
         }
-
-        [Editor("System.Windows.Forms.Design.MaskPropertyEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        public String Mask { get => mtb.Mask; set => mtb.Mask = value; }
-
-        public Type ValidatingType { get => mtb.ValidatingType; set => mtb.ValidatingType = value; }
-
-        public int MaxLength { get => mtb.MaxLength; set => mtb.MaxLength = value; }
-
-        public new bool Enabled { get => mtb.Enabled; set => mtb.Enabled = value; }
-
-        public override String Text { get => mtb.Text; set => mtb.Text = value; }
-
-        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
 
         private void mtbUIX_Load(object sender, EventArgs e)
         {
+            _loaded = true;
+
             update();
         }
 

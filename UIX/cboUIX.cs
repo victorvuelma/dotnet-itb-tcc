@@ -15,14 +15,38 @@ namespace UIX
     public partial class cboUIX : UserControl
     {
 
-        private IButtonControl _acceptButton;
+        private bool _loaded = false;
 
+        private IButtonControl _acceptButton;
         private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
 
         public cboUIX()
         {
             InitializeComponent();
         }
+
+        //---- PROPRIEDADES UIX
+        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
+
+        public uixEnum.uixLabelPosition LabelPosition
+        {
+            get => _labelPosition;
+            set
+            {
+                _labelPosition = value;
+                update();
+            }
+        }
+        //---- PROPRIEDADES UIX
+
+        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        public ObjectCollection Items => cbo.Items;
+
+        public bool FormattingEnabled { get => cbo.FormattingEnabled; set => cbo.FormattingEnabled = value; }
+
+        public new bool Enabled { get => cbo.Enabled; set => cbo.Enabled = value; }
+
+        public override String Text { get => cbo.Text; set => cbo.Text = value; }
 
         public String Campo
         {
@@ -55,44 +79,29 @@ namespace UIX
             }
         }
 
-        public uixEnum.uixLabelPosition LabelPosition
-        {
-            get => _labelPosition;
-            set
-            {
-                _labelPosition = value;
-                update();
-            }
-        }
-
         private void update()
         {
-            lbl.AutoSize = true;
-            switch (LabelPosition)
+            if (_loaded)
             {
-                case uixEnum.uixLabelPosition.SIDE:
-                    cbo.Location = new Point(lbl.Location.X + lbl.Size.Width, cbo.Location.Y);
-                    cbo.Size = new Size(Size.Width - cbo.Location.X, Size.Height);
-                    break;
-                case uixEnum.uixLabelPosition.UP:
-                    cbo.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
-                    cbo.Size = new Size(Size.Width, Size.Height - cbo.Location.Y);
-                    break;
+                lbl.AutoSize = true;
+                switch (LabelPosition)
+                {
+                    case uixEnum.uixLabelPosition.SIDE:
+                        cbo.Location = new Point(lbl.Location.X + lbl.Size.Width, cbo.Location.Y);
+                        cbo.Size = new Size(Size.Width - cbo.Location.X, Size.Height);
+                        break;
+                    case uixEnum.uixLabelPosition.UP:
+                        cbo.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
+                        cbo.Size = new Size(Size.Width, Size.Height - cbo.Location.Y);
+                        break;
+                }
             }
         }
-
-        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        public ObjectCollection Items => cbo.Items;
-
-        public bool FormattingEnabled { get => cbo.FormattingEnabled; set => cbo.FormattingEnabled = value; }
-
-        public new bool Enabled { get => cbo.Enabled; set => cbo.Enabled = value; }
-
-        public override String Text { get => cbo.Text; set => cbo.Text = value; }
-        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
 
         private void cboUIX_Load(object sender, EventArgs e)
         {
+            _loaded = true;
+
             update();
         }
 

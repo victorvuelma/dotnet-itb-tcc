@@ -13,8 +13,9 @@ namespace UIX
     public partial class txtUIX : UserControl
     {
 
-        private IButtonControl _acceptButton;
+        private bool _loaded = false;
 
+        private IButtonControl _acceptButton;
         private uixEnum.uixLabelPosition _labelPosition = uixEnum.uixLabelPosition.SIDE;
 
         private uixEnum.uixAllowedChars _allowedChars = uixEnum.uixAllowedChars.ALL;
@@ -24,6 +25,37 @@ namespace UIX
         {
             InitializeComponent();
         }
+
+        //---- PROPRIEDADES UIX
+        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
+
+        public uixEnum.uixAllowedChars AllowedChars
+        {
+            get => _allowedChars; set
+            {
+                allowedChars = uixUtil.getChars(value);
+                _allowedChars = value;
+            }
+        }
+
+        public uixEnum.uixLabelPosition LabelPosition
+        {
+            get => _labelPosition;
+            set
+            {
+                _labelPosition = value;
+                update();
+            }
+        }
+        //---- PROPRIEDADES UIX
+
+        public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
+
+        public new bool Enabled { get => txt.Enabled; set => txt.Enabled = value; }
+
+        public override String Text { get => txt.Text; set => txt.Text = value; }
+
+        public ScrollBars ScrollBars { get => txt.ScrollBars; set => txt.ScrollBars = value; }
 
         public String Campo
         {
@@ -56,35 +88,6 @@ namespace UIX
             }
         }
 
-        public uixEnum.uixAllowedChars AllowedChars
-        {
-            get => _allowedChars; set
-            {
-                allowedChars = uixUtil.getChars(value);
-                _allowedChars = value;
-            }
-        }
-
-        public uixEnum.uixLabelPosition LabelPosition
-        {
-            get => _labelPosition;
-            set
-            {
-                _labelPosition = value;
-                update();
-            }
-        }
-
-        public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
-
-        public new bool Enabled { get => txt.Enabled; set => txt.Enabled = value; }
-
-        public override String Text { get => txt.Text; set => txt.Text = value; }
- 
-        public ScrollBars ScrollBars { get => txt.ScrollBars; set => txt.ScrollBars = value; }
-
-        public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
-
         public bool Multiline
         {
             get => txt.Multiline;
@@ -97,22 +100,27 @@ namespace UIX
 
         private void update()
         {
-            lbl.AutoSize = true;
-            switch (LabelPosition)
+            if (_loaded)
             {
-                case uixEnum.uixLabelPosition.SIDE:
-                    txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
-                    txt.Size = new Size(Size.Width - txt.Location.X, Size.Height);
-                    break;
-                case uixEnum.uixLabelPosition.UP:
-                    txt.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
-                    txt.Size = new Size(Size.Width, Size.Height - txt.Location.Y);
-                    break;
+                lbl.AutoSize = true;
+                switch (LabelPosition)
+                {
+                    case uixEnum.uixLabelPosition.SIDE:
+                        txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
+                        txt.Size = new Size(Size.Width - txt.Location.X, Size.Height);
+                        break;
+                    case uixEnum.uixLabelPosition.UP:
+                        txt.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
+                        txt.Size = new Size(Size.Width, Size.Height - txt.Location.Y);
+                        break;
+                }
             }
         }
 
         private void txtUIX_Load(object sender, EventArgs e)
         {
+            _loaded = true;
+
             update();
         }
 
@@ -129,10 +137,10 @@ namespace UIX
 
         private void txt_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
-                if(AcceptButton != null)
+                if (AcceptButton != null)
                 {
                     AcceptButton.PerformClick();
                 }

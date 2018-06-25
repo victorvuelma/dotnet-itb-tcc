@@ -108,6 +108,7 @@
     <Compile Include="uixLabel.cs" />
     <Compile Include="uixMaskedTextBox.cs" />
     <Compile Include="uixPanel.cs" />
+    <Compile Include="uixPictureBox.cs" />
     <Compile Include="uixSet.cs" />
     <Compile Include="uixStyle.cs" />
     <Compile Include="uixTemplate.cs" />
