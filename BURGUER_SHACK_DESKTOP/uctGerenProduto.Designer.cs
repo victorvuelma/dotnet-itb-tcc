@@ -226,7 +226,7 @@
             // 
             // picFotoProduto
             // 
-            this.picFotoProduto.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.padrao;
+            this.picFotoProduto.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.imagem;
             this.picFotoProduto.Location = new System.Drawing.Point(515, 39);
             this.picFotoProduto.Name = "picFotoProduto";
             this.picFotoProduto.Size = new System.Drawing.Size(201, 198);

@@ -33,7 +33,7 @@ namespace BURGUER_SHACK_DESKTOP
                 String.IsNullOrWhiteSpace(txtDescricao.Text) || String.IsNullOrWhiteSpace(txtDataCadastro.Text) ||
                 String.IsNullOrWhiteSpace(txtPeso.Text) ||
                 String.IsNullOrWhiteSpace(txtPrecoCusto.Text) || String.IsNullOrWhiteSpace(txtPrecoVenda.Text) ||
-                picFotoProduto.Image == Properties.Resources.padrao)
+                picFotoProduto.Image == Properties.Resources.imagem)
             {
                 MessageBox.Show("Campos com * são obrigatorios.", "Ops");
             }
@@ -55,7 +55,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            picFotoProduto.Image = Properties.Resources.padrao;
+            picFotoProduto.Image = Properties.Resources.imagem;
         }
 
         private void txtICMS_KeyPress(object sender, KeyPressEventArgs e)

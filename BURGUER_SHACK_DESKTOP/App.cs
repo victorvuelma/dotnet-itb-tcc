@@ -22,7 +22,8 @@ namespace BURGUER_SHACK_DESKTOP
             User = AppDb.USER,
             Pass = AppDb.PASS,
             Source = AppDb.SOURCE,
-            ExceptionCall = delegate (Exception ex) {
+            ExceptionCall = delegate (Exception ex)
+            {
                 clnUtilMensagem.mostrarOk("Banco de Dados", "Um erro ocorreu ao tentar processar a requisição\n" + ex.Message, clnUtilMensagem.MensagemIcone.ERRO);
                 Application.Restart();
             }
@@ -32,11 +33,12 @@ namespace BURGUER_SHACK_DESKTOP
         private static UIX.uixTemplate _visualTemplate = new UIX.uixTemplate
         {
             Style = VisualStyle,
-            Icon = Properties.Resources.app_ico
+            Icon = Properties.Resources.app_ico,
+            ErrorImage = Properties.Resources.imagem_erro
         };
 
         public static String Name { get => _name; }
-        
+
         public static sqlDatabase DatabaseSql { get => _databaseSql; }
 
         public static UIX.uixTemplate VisualTemplate { get => _visualTemplate; }

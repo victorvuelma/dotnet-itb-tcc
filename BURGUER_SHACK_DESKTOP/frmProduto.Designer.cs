@@ -243,7 +243,7 @@
             // 
             // picImagem
             // 
-            this.picImagem.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.padrao;
+            this.picImagem.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.imagem;
             this.picImagem.Location = new System.Drawing.Point(505, 55);
             this.picImagem.Name = "picImagem";
             this.picImagem.Size = new System.Drawing.Size(190, 190);

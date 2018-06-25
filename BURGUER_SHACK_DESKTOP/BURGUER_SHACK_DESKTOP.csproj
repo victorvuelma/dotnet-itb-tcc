@@ -573,9 +573,6 @@
     <None Include="Resources\confirmar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\padrao.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pagamento.png" />
   </ItemGroup>
   <ItemGroup>
@@ -595,7 +592,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fornecedor.png" />
-    <None Include="Resources\terceirizada1.png" />
     <None Include="Resources\pesquisar.png" />
     <None Include="Resources\entrar.png" />
     <None Include="Resources\cliente.png" />
@@ -615,9 +611,7 @@
     <None Include="Resources\pedido.png" />
     <None Include="Resources\atendimento.png" />
     <None Include="Resources\funcionario.png" />
-    <None Include="Resources\terceirizada.png" />
     <None Include="Resources\calculadora.png" />
-    <None Include="Resources\modelo.png" />
     <None Include="Resources\mesauso.png" />
     <None Include="Resources\voltar.png" />
   </ItemGroup>
@@ -635,6 +629,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem-erro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
