@@ -16,7 +16,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new frmAcesso());
+            System.Windows.Forms.Application.Run(new frmEntrar());
         }
     }
 }

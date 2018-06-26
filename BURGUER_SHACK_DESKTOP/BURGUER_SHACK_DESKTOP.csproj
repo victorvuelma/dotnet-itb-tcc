@@ -182,6 +182,12 @@
     <Compile Include="frmConta.Designer.cs">
       <DependentUpon>frmConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcesso.Designer.cs">
+      <DependentUpon>frmAcesso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,11 +319,11 @@
     <Compile Include="uctAtendimentoMesas.Designer.cs">
       <DependentUpon>uctAtendimentoMesas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAcesso.cs">
+    <Compile Include="frmEntrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAcesso.Designer.cs">
-      <DependentUpon>frmAcesso.cs</DependentUpon>
+    <Compile Include="frmEntrar.Designer.cs">
+      <DependentUpon>frmEntrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
