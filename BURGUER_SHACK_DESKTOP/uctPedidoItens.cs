@@ -67,26 +67,33 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void editarItem(clnItem objItem)
         {
-            List<clnItemIngrediente> objItemIngredientes = obterIngredientes(objItem);
-            frmItem frmEditarItem = new frmItem
+            if (ObjPedido.Situacao == clnPedido.pedidoSituacao.REALIZADO)
             {
-                ObjItem = objItem,
-                ObjItemIngredientes = objItemIngredientes
-            };
-            frmEditarItem.ShowDialog();
+                List<clnItemIngrediente> objItemIngredientes = obterIngredientes(objItem);
+                frmItem frmEditarItem = new frmItem
+                {
+                    ObjItem = objItem,
+                    ObjItemIngredientes = objItemIngredientes
+                };
+                frmEditarItem.ShowDialog();
 
-            if (frmEditarItem.ObjItem == null)
-            {
-                ObjItens.Remove(objItem);
-                clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnUtilMensagem.MensagemIcone.INFO);
+                if (frmEditarItem.ObjItem == null)
+                {
+                    ObjItens.Remove(objItem);
+                    clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnUtilMensagem.MensagemIcone.INFO);
 
-                exibirProdutos();
+                    exibirProdutos();
+                }
+                else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjItemIngredientes != objItemIngredientes)
+                {
+                    clnUtil.dictTrocar(ObjItens, objItem, frmEditarItem.ObjItem, frmEditarItem.ObjItemIngredientes);
+
+                    exibirProdutos();
+                }
             }
-            else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjItemIngredientes != objItemIngredientes)
+            else
             {
-                clnUtil.dictTrocar(ObjItens, objItem, frmEditarItem.ObjItem, frmEditarItem.ObjItemIngredientes);
-
-                exibirProdutos();
+                clnUtilMensagem.mostrarOk("Pedido", "Não é possivel alterar esse item pois ele está em prepardo.", clnUtilMensagem.MensagemIcone.ERRO);
             }
         }
 

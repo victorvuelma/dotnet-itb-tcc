@@ -104,23 +104,37 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private void salvarConta()
+        private void finalizarConta()
         {
-            double valor = clnUtilPedido.calcularValor(ObjAtendimento);
-
-            ObjConta = new clnConta
+            if (clnUtilMensagem.mostrarSimNao("Conta", "Você deseja realmente finalizar a conta?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                CodAtendimento = ObjAtendimento.Cod,
-                Desconto = obterDesconto(),
-                TaxaServico = chkServico.Checked,
-                CodFuncionario = CodFuncionario,
-                Valor = valor
-            };
-            ObjConta.gravar();
+                double valor = clnUtilPedido.calcularValor(ObjAtendimento);
 
-            btnFinalizar.Hide();
-            grbAlterar.Hide();
-            btnPagamento.Show();
+                ObjConta = new clnConta
+                {
+                    CodAtendimento = ObjAtendimento.Cod,
+                    Desconto = obterDesconto(),
+                    TaxaServico = chkServico.Checked,
+                    CodFuncionario = CodFuncionario,
+                    Valor = valor
+                };
+                ObjConta.gravar();
+
+                clnPedido objPedidos = new clnPedido
+                {
+                    CodAtendimento = ObjAtendimento.Cod
+                };
+
+                foreach (clnPedido objPedido in objPedidos.obterPorAtendimento())
+                {
+                    objPedido.Situacao = clnPedido.pedidoSituacao.PRONTO;
+                    objPedido.alterar();
+                }
+
+                btnFinalizar.Hide();
+                grbAlterar.Hide();
+                btnPagamento.Show();
+            }
         }
 
         private void fechar()
@@ -147,7 +161,8 @@ namespace BURGUER_SHACK_DESKTOP
                 chkServico.Checked = ObjConta.TaxaServico;
 
                 atualizarPago();
-            } else
+            }
+            else
             {
                 btnPagamento.Hide();
             }
@@ -182,7 +197,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            salvarConta();
+            finalizarConta();
         }
 
         private void btnPagamento_Click(object sender, EventArgs e)
