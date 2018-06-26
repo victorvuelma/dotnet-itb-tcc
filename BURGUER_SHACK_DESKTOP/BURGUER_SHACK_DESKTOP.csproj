@@ -236,12 +236,6 @@
     <Compile Include="frmReserva.Designer.cs">
       <DependentUpon>frmReserva.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEstoqueold.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEstoqueold.Designer.cs">
-      <DependentUpon>frmEstoqueold.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,12 +253,6 @@
     </Compile>
     <Compile Include="frmItemIngrediente.Designer.cs">
       <DependentUpon>frmItemIngrediente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCozinha.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCozinha.Designer.cs">
-      <DependentUpon>frmCozinha.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGerenciamento.cs">
       <SubType>Form</SubType>
@@ -325,24 +313,6 @@
     <Compile Include="uctAtendimentoMesas.Designer.cs">
       <DependentUpon>uctAtendimentoMesas.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctCozinha.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctCozinha.Designer.cs">
-      <DependentUpon>uctCozinha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="uctGerenDGV.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctGerenDGV.Designer.cs">
-      <DependentUpon>uctGerenDGV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="uctGerenFuncionario.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctGerenFuncionario.Designer.cs">
-      <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,12 +322,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="uctGerenProduto.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctGerenProduto.Designer.cs">
-      <DependentUpon>uctGerenProduto.cs</DependentUpon>
-    </Compile>
     <Compile Include="uctPedidoAdicionar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -400,12 +364,6 @@
     <Compile Include="uctAtendimentoPedidos.Designer.cs">
       <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctGerenTerceirizada.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctGerenTerceirizada.Designer.cs">
-      <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmAtendimento.resx">
       <DependentUpon>frmAtendimento.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,9 +375,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPagamento.resx">
       <DependentUpon>frmPagamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEstoqueold.resx">
-      <DependentUpon>frmEstoqueold.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFornecedor.resx">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
@@ -480,15 +435,6 @@
     <EmbeddedResource Include="uctAtendimentoMesas.resx">
       <DependentUpon>uctAtendimentoMesas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctGerenDGV.resx">
-      <DependentUpon>uctGerenDGV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uctGerenFuncionario.resx">
-      <DependentUpon>uctGerenFuncionario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uctGerenProduto.resx">
-      <DependentUpon>uctGerenProduto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoAdicionar.resx">
       <DependentUpon>uctPedidoAdicionar.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,9 +455,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uctAtendimentoPedidos.resx">
       <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uctGerenTerceirizada.resx">
-      <DependentUpon>uctGerenTerceirizada.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BURGUER_SHACK_DESKTOP.Properties.Resources.datasource" />
