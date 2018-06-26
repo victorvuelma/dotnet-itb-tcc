@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnProdutos = new UIX.btnUIX();
             this.btnVoltar = new UIX.btnUIX();
             this.btnFinalizar = new UIX.btnUIX();
             this.btnAdicionar = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
-            this.btnProdutos = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,21 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 600);
             this.pnlMenu.TabIndex = 2;
+            // 
+            // btnProdutos
+            // 
+            this.btnProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProdutos.Description = "Produtos";
+            this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
+            this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
+            this.btnProdutos.ImageLocation = null;
+            this.btnProdutos.Location = new System.Drawing.Point(5, 5);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(90, 90);
+            this.btnProdutos.TabIndex = 9;
+            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // btnVoltar
             // 
@@ -84,7 +99,7 @@
             this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAdicionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnAdicionar.ImageLocation = null;
-            this.btnAdicionar.Location = new System.Drawing.Point(5, 5);
+            this.btnAdicionar.Location = new System.Drawing.Point(5, 105);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(90, 90);
             this.btnAdicionar.TabIndex = 5;
@@ -112,21 +127,6 @@
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Pedido";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
-            // 
-            // btnProdutos
-            // 
-            this.btnProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProdutos.Description = "Produtos";
-            this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnProdutos.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.produto;
-            this.btnProdutos.ImageLocation = null;
-            this.btnProdutos.Location = new System.Drawing.Point(5, 101);
-            this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(90, 90);
-            this.btnProdutos.TabIndex = 9;
-            this.btnProdutos.Text = "Produtos";
-            this.btnProdutos.UseVisualStyleBackColor = true;
-            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // frmPedido
             // 

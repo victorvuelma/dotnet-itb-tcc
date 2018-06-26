@@ -128,11 +128,11 @@ namespace BURGUER_SHACK_DESKTOP
                 Cod = objItemIngrediente.CodIngrediente
             }.obterPorCod();
 
-            if (objItemIngrediente.CodProdutoIngrediente != -1)
+            if (objItemIngrediente.CodProdutoIngrediente != null)
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
-                    Cod = objItemIngrediente.CodProdutoIngrediente
+                    Cod = (int) objItemIngrediente.CodProdutoIngrediente
                 }.obterPorCod();
 
                 if (objProdutoIngrediente != null)

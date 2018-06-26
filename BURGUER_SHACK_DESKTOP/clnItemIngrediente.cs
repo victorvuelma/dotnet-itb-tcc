@@ -14,13 +14,13 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private int _codIngrediente = -1;
-        private int _codProdutoIngrediente = 0;
+        private int? _codProdutoIngrediente = null;
         private int _codItem = -1;
 
         private int _quantidade;
 
         public int CodIngrediente { get => _codIngrediente; set => _codIngrediente = value; }
-        public int CodProdutoIngrediente { get => _codProdutoIngrediente; set => _codProdutoIngrediente = value; }
+        public int? CodProdutoIngrediente { get => _codProdutoIngrediente; set => _codProdutoIngrediente = value; }
         public int CodItem { get => _codItem; set => _codItem = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
@@ -29,7 +29,7 @@ namespace BURGUER_SHACK_DESKTOP
             CodIngrediente = clnUtilConvert.ToInt(reader["id_ingrediente"]),
             CodItem = clnUtilConvert.ToInt(reader["id_item"]),
             Quantidade = clnUtilConvert.ToInt(reader["quantidade"]),
-            CodProdutoIngrediente = clnUtilConvert.ToInt(reader["id_produto_ingrediente"])
+            CodProdutoIngrediente = clnUtilConvert.ToNullableInt(reader["id_produto_ingrediente"])
         };
 
         public List<clnItemIngrediente> obterPorItem()

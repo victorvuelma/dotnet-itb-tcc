@@ -146,6 +146,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 btnFinalizar.Description = "Excluir";
                 btnFinalizar.Image = Properties.Resources.excluir;
+                btnAdicionar.Hide();
             }
 
             abrirItens();

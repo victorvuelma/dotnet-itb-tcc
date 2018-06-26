@@ -214,49 +214,52 @@ namespace BURGUER_SHACK_DESKTOP
         {
             public bool call(frmItem frmItem, clnItemIngrediente objItemIngrediente)
             {
-                clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                if (objItemIngrediente.CodProdutoIngrediente != null)
                 {
-                    Cod = objItemIngrediente.CodProdutoIngrediente
-                }.obterPorCod();
+                    clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                    {
+                        Cod = (int)objItemIngrediente.CodProdutoIngrediente
+                    }.obterPorCod();
 
-                if (objProdutoIngrediente == null || objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
-                {
-                    frmItemIngrediente frmIngrediente = new frmItemIngrediente
+                    if (objProdutoIngrediente == null || objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
                     {
-                        ObjItemIngrediente = objItemIngrediente
-                    };
-                    frmIngrediente.btnAlterar.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Alterar;
-                    frmIngrediente.btnRemover.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Remover;
-                    frmIngrediente.ShowDialog();
+                        frmItemIngrediente frmIngrediente = new frmItemIngrediente
+                        {
+                            ObjItemIngrediente = objItemIngrediente
+                        };
+                        frmIngrediente.btnAlterar.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Alterar;
+                        frmIngrediente.btnRemover.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Remover;
+                        frmIngrediente.ShowDialog();
 
-                    if (frmIngrediente.ObjItemIngrediente == null)
-                    {
-                        if (objItemIngrediente.CodItem != -1)
+                        if (frmIngrediente.ObjItemIngrediente == null)
                         {
-                            objItemIngrediente.remover();
-                        }
-                        frmItem.ObjItemIngredientes.Remove(objItemIngrediente);
-                    }
-                    else if (!objItemIngrediente.Equals(frmIngrediente.ObjItemIngrediente))
-                    {
-                        if (objItemIngrediente.CodItem != -1)
-                        {
-                            if (frmIngrediente.ObjItemIngrediente.CodIngrediente != objItemIngrediente.CodIngrediente)
+                            if (objItemIngrediente.CodItem != -1)
                             {
                                 objItemIngrediente.remover();
-                                frmIngrediente.ObjItemIngrediente.gravar();
                             }
-                            else
-                            {
-                                frmIngrediente.ObjItemIngrediente.alterar();
-                            }
+                            frmItem.ObjItemIngredientes.Remove(objItemIngrediente);
                         }
-                        clnUtil.listTrocar(frmItem.ObjItemIngredientes, objItemIngrediente, frmIngrediente.ObjItemIngrediente);
+                        else if (!objItemIngrediente.Equals(frmIngrediente.ObjItemIngrediente))
+                        {
+                            if (objItemIngrediente.CodItem != -1)
+                            {
+                                if (frmIngrediente.ObjItemIngrediente.CodIngrediente != objItemIngrediente.CodIngrediente)
+                                {
+                                    objItemIngrediente.remover();
+                                    frmIngrediente.ObjItemIngrediente.gravar();
+                                }
+                                else
+                                {
+                                    frmIngrediente.ObjItemIngrediente.alterar();
+                                }
+                            }
+                            clnUtil.listTrocar(frmItem.ObjItemIngredientes, objItemIngrediente, frmIngrediente.ObjItemIngrediente);
+                        }
                     }
-                }
-                else
-                {
-                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
+                    else
+                    {
+                        clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
+                    }
                 }
                 return true;
             }

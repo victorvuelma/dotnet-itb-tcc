@@ -13,15 +13,30 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmConta : Form
     {
 
+        private int _codFuncionario;
         private clnAtendimento _objAtendimento;
+
         private clnConta _objConta;
 
         public clnConta ObjConta { get => _objConta; set => _objConta = value; }
         public clnAtendimento ObjAtendimento { get => _objAtendimento; set => _objAtendimento = value; }
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmConta()
         {
             InitializeComponent();
+        }
+
+        private double obterValorTotal()
+        {
+            if (ObjConta == null)
+            {
+                return clnUtilConta.calcularValor(clnUtilPedido.calcularValor(ObjAtendimento), chkServico.Checked, obterDesconto());
+            }
+            else
+            {
+                return ObjConta.Valor;
+            }
         }
 
         private int obterPessoas()
@@ -44,10 +59,48 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void exibirConta()
         {
-            double valorTotal = clnUtilConta.calcularValor(clnUtilPedido.calcularValor(ObjAtendimento), chkServico.Checked, obterDesconto());
+            double valorTotal = obterValorTotal();
             lblValorTotal.Text = "Valor Total: " + clnUtil.formatarValor(valorTotal);
 
             webConta.Navigate(clnArquivo.CACHE.guardar("conta", clnUtilConta.gerarConta(ObjAtendimento, obterPessoas(), chkServico.Checked, obterDesconto())));
+        }
+
+        private void atualizarPago()
+        {
+            if (ObjConta != null)
+            {
+                double valor = 0.0;
+
+                clnPagamento objPagamentos = new clnPagamento
+                {
+                    CodConta = ObjConta.CodAtendimento
+                };
+
+                foreach(clnPagamento objPagamento in objPagamentos.obterPorConta())
+                {
+                    valor += objPagamento.Valor;
+                }
+
+                lblValorPago.Text = "Valor Pago: " + clnUtil.formatarValor(valor);
+            }
+        }
+
+        private void salvarConta()
+        {
+            double valor = clnUtilPedido.calcularValor(ObjAtendimento);
+
+            ObjConta = new clnConta
+            {
+                CodAtendimento = ObjAtendimento.Cod,
+                Desconto = obterDesconto(),
+                TaxaServico = chkServico.Checked,
+                CodFuncionario = CodFuncionario,
+                Valor = valor
+            };
+            ObjConta.gravar();
+
+            btnFinalizar.Hide();
+            grbAlterar.Hide();
         }
 
         private void fechar()
@@ -64,14 +117,15 @@ namespace BURGUER_SHACK_DESKTOP
             exibirConta();
             hdrUIX.Title = App.Name + " - Atendimento " + ObjAtendimento.Cod + " :: Conta";
 
-            if (ObjConta == null)
-            {
-
-            }
-            else
+            if (ObjConta != null)
             {
                 grbAlterar.Hide();
                 btnFinalizar.Hide();
+
+                txtDesconto.Text = clnUtilConvert.ToString(ObjConta.Desconto);
+                chkServico.Checked = ObjConta.TaxaServico;
+
+                atualizarPago();
             }
         }
 
@@ -100,6 +154,22 @@ namespace BURGUER_SHACK_DESKTOP
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             fechar();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            salvarConta();
+        }
+
+        private void btnPagamento_Click(object sender, EventArgs e)
+        {
+            frmPagamento frmNovoPagamento = new frmPagamento
+            {
+
+            };
+            frmNovoPagamento.ShowDialog();
+
+            atualizarPago();
         }
     }
 }

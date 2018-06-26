@@ -222,6 +222,10 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void mtbNum_TextChanged(object sender, EventArgs e)
         {
+            if (mtbNum.Text.Length > Input.MaxLength)
+            {
+                mtbNum.Text = mtbNum.Text.Substring(0, Input.MaxLength);
+            }
             if (Mode == NumBoardMode.MONEY)
             {
                 UIX.uixUtil.defineForMoney(mtbNum);

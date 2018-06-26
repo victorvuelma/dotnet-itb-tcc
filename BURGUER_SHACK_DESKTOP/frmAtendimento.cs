@@ -47,9 +47,16 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirConta()
         {
+            clnConta objConta = new clnConta
+            {
+                CodAtendimento = ObjAtendimento.Cod
+            }.obterPorCodAtendimento();
+
             frmConta frmConta = new frmConta
             {
-                ObjAtendimento = ObjAtendimento
+                ObjAtendimento = ObjAtendimento,
+                ObjConta = objConta,
+                CodFuncionario = CodFuncionario
             };
             frmConta.ShowDialog();
         }

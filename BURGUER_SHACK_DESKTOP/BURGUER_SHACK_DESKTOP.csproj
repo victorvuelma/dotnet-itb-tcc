@@ -154,6 +154,7 @@
     <Compile Include="clnFornecedor.cs" />
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
+    <Compile Include="clnPagamento.cs" />
     <Compile Include="clnPagamentoForma.cs" />
     <Compile Include="clnTipo.cs" />
     <Compile Include="clnUtilCache.cs" />

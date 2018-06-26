@@ -117,7 +117,7 @@ namespace BURGUER_SHACK_DESKTOP
             foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes.obterPorItem())
             {
                 int quantidade = 0;
-                if (objItemIngrediente.CodProdutoIngrediente == 0)
+                if (objItemIngrediente.CodProdutoIngrediente == null)
                 {
                     quantidade = objItemIngrediente.Quantidade;
                 }
@@ -125,7 +125,7 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                     {
-                        Cod = objItemIngrediente.CodProdutoIngrediente
+                        Cod = (int)objItemIngrediente.CodProdutoIngrediente
                     }.obterPorCod();
                     if (objProdutoIngrediente != null)
                     {

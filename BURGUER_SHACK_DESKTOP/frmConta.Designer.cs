@@ -37,12 +37,13 @@
             this.txtPessoas = new UIX.txtUIX();
             this.btnAtualizar = new UIX.btnUIX();
             this.grbValor = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblValorPago = new System.Windows.Forms.Label();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.grbAlterar = new System.Windows.Forms.GroupBox();
             this.chkServico = new System.Windows.Forms.CheckBox();
             this.txtDesconto = new UIX.txtUIX();
             this.btnFinalizar = new UIX.btnUIX();
+            this.btnPagamento = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbNota.SuspendLayout();
             this.grbValor.SuspendLayout();
@@ -128,7 +129,7 @@
             this.txtPessoas.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtPessoas.Location = new System.Drawing.Point(5, 15);
             this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPessoas.MaxLength = 32767;
+            this.txtPessoas.MaxLength = 2;
             this.txtPessoas.Mode = UIX.uixEnum.uixTextBoxMode.INT;
             this.txtPessoas.Multiline = false;
             this.txtPessoas.Name = "txtPessoas";
@@ -153,7 +154,7 @@
             // 
             // grbValor
             // 
-            this.grbValor.Controls.Add(this.label1);
+            this.grbValor.Controls.Add(this.lblValorPago);
             this.grbValor.Controls.Add(this.lblValorTotal);
             this.grbValor.Location = new System.Drawing.Point(500, 455);
             this.grbValor.Name = "grbValor";
@@ -164,13 +165,13 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 20);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(230, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Valor Pago: R$00,00";
+            this.lblValorPago.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorPago.Location = new System.Drawing.Point(5, 20);
+            this.lblValorPago.Name = "label1";
+            this.lblValorPago.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValorPago.Size = new System.Drawing.Size(230, 30);
+            this.lblValorPago.TabIndex = 1;
+            this.lblValorPago.Text = "Valor Pago: R$00,00";
             // 
             // lblValorTotal
             // 
@@ -188,7 +189,7 @@
             this.grbAlterar.Controls.Add(this.btnAtualizar);
             this.grbAlterar.Controls.Add(this.txtDesconto);
             this.grbAlterar.Controls.Add(this.txtPessoas);
-            this.grbAlterar.Location = new System.Drawing.Point(249, 455);
+            this.grbAlterar.Location = new System.Drawing.Point(105, 455);
             this.grbAlterar.Name = "grbAlterar";
             this.grbAlterar.Size = new System.Drawing.Size(245, 90);
             this.grbAlterar.TabIndex = 10;
@@ -212,7 +213,7 @@
             this.txtDesconto.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtDesconto.Location = new System.Drawing.Point(5, 40);
             this.txtDesconto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtDesconto.MaxLength = 32767;
+            this.txtDesconto.MaxLength = 5;
             this.txtDesconto.Mode = UIX.uixEnum.uixTextBoxMode.DOUBLE;
             this.txtDesconto.Multiline = false;
             this.txtDesconto.Name = "txtDesconto";
@@ -233,6 +234,22 @@
             this.btnFinalizar.TabIndex = 7;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnPagamento
+            // 
+            this.btnPagamento.Description = "Pagamento";
+            this.btnPagamento.HoverColor = System.Drawing.Color.Transparent;
+            this.btnPagamento.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPagamento.ImageLocation = null;
+            this.btnPagamento.Location = new System.Drawing.Point(380, 455);
+            this.btnPagamento.Name = "btnPagamento";
+            this.btnPagamento.Size = new System.Drawing.Size(90, 90);
+            this.btnPagamento.TabIndex = 8;
+            this.btnPagamento.Text = "Pagamento";
+            this.btnPagamento.UseVisualStyleBackColor = true;
+            this.btnPagamento.Click += new System.EventHandler(this.btnPagamento_Click);
             // 
             // frmConta
             // 
@@ -240,6 +257,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 550);
+            this.Controls.Add(this.btnPagamento);
             this.Controls.Add(this.grbAlterar);
             this.Controls.Add(this.grbValor);
             this.Controls.Add(this.grbNota);
@@ -270,12 +288,13 @@
         private UIX.txtUIX txtPessoas;
         private System.Windows.Forms.GroupBox grbValor;
         private System.Windows.Forms.Label lblValorTotal;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblValorPago;
         private System.Windows.Forms.GroupBox grbAlterar;
         private UIX.txtUIX txtDesconto;
         private UIX.btnUIX btnAtualizar;
         private System.Windows.Forms.CheckBox chkServico;
         private UIX.btnUIX btnFinalizar;
+        private UIX.btnUIX btnPagamento;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }
