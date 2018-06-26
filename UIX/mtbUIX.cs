@@ -111,9 +111,9 @@ namespace UIX
             mtb.SelectionStart = 0;
         }
 
-        private void mtb_KeyDown(object sender, KeyEventArgs e)
+        private void mtb_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyChar == 13)
             {
                 e.Handled = true;
                 if (AcceptButton != null)
@@ -122,6 +122,5 @@ namespace UIX
                 }
             }
         }
-
     }
 }
