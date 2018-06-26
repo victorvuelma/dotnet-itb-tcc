@@ -42,6 +42,8 @@ namespace UIX
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public ObjectCollection Items => cbo.Items;
 
+        public object SelectedItem => cbo.SelectedItem;
+
         public bool FormattingEnabled { get => cbo.FormattingEnabled; set => cbo.FormattingEnabled = value; }
 
         public new bool Enabled { get => cbo.Enabled; set => cbo.Enabled = value; }
