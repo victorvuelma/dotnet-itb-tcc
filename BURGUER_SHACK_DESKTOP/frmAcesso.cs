@@ -16,13 +16,16 @@ namespace BURGUER_SHACK_DESKTOP
     {
 
         private clnUtilValidar _validar;
+        private clnAcesso _objAcesso;
+
+        internal clnAcesso ObjAcesso { get => _objAcesso; set => _objAcesso = value; }
 
         public frmAcesso()
         {
             InitializeComponent();
 
             txtSenha.txt.PasswordChar = '*';
-            hdrUIX.Title = App.Name + " - Acesso ao Sistema";
+            hdrUIX.Title = App.Name + " - Gerenciar Acesso";
 
             _validar = new clnUtilValidar();
             _validar.addValidacao(txtUsuario, clnUtilValidar.ValidarTipo.OBRIGATORIO);
@@ -33,15 +36,15 @@ namespace BURGUER_SHACK_DESKTOP
         {
             clnUtil.atualizarForm(this);
 
-            Focus();
-            txtUsuario.Focus();
+            txtUsuario.Text = ObjAcesso.Usuario;
+            txtSenha.Text = ObjAcesso.Senha;
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnUtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (clnUtilMensagem.mostrarSimNao("Acesso", "Deseja cancelar esta operação?", clnUtilMensagem.MensagemIcone.ERRO))
             {
-                System.Windows.Forms.Application.Exit();
+                Close();
             }
         }
 
@@ -59,35 +62,14 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
-                clnAcesso objAcesso = new clnAcesso
-                {
-                    Usuario = txtUsuario.Text,
-                    Senha = txtSenha.Text
-                };
+                ObjAcesso.Senha = txtSenha.Text;
+                ObjAcesso.Usuario = txtUsuario.Text;
+                ObjAcesso.gravar();
 
-                int? codFuncionario = objAcesso.acessar();
+                clnUtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
 
-                if (codFuncionario != null)
-                {
-                    Hide();
-
-                    frmPrincipal frmPrincipal = new frmPrincipal
-                    {
-                        CodFuncionario = (int)codFuncionario
-                    };
-                    frmPrincipal.ShowDialog();
-
-                    Application.Restart();
-                    return;
-                }
-                else
-                {
-                    clnUtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.", clnUtilMensagem.MensagemIcone.ERRO);
-                    txtUsuario.Text = "";
-                    txtSenha.Text = "";
-                }
+                Close();
             }
-            txtUsuario.Focus();
         }
 
     }

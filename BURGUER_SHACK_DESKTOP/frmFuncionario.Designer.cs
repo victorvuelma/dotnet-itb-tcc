@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionario));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnAcesso = new UIX.btnUIX();
             this.btnVoltar = new UIX.btnUIX();
             this.btnSalvar = new UIX.btnUIX();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
@@ -58,7 +59,6 @@
             this.cboCargo = new UIX.cboUIX();
             this.cboSituacao = new UIX.cboUIX();
             this.txtSalario = new UIX.txtUIX();
-            this.btnAcesso = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -76,6 +76,20 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 400);
             this.pnlMenu.TabIndex = 5;
+            // 
+            // btnAcesso
+            // 
+            this.btnAcesso.Description = "Acesso";
+            this.btnAcesso.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAcesso.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.entrar;
+            this.btnAcesso.ImageLocation = null;
+            this.btnAcesso.Location = new System.Drawing.Point(5, 205);
+            this.btnAcesso.Name = "btnAcesso";
+            this.btnAcesso.Size = new System.Drawing.Size(90, 90);
+            this.btnAcesso.TabIndex = 7;
+            this.btnAcesso.Text = "Acesso";
+            this.btnAcesso.UseVisualStyleBackColor = true;
+            this.btnAcesso.Click += new System.EventHandler(this.btnAcesso_Click);
             // 
             // btnVoltar
             // 
@@ -482,19 +496,6 @@
             this.txtSalario.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSalario.Size = new System.Drawing.Size(180, 20);
             this.txtSalario.TabIndex = 0;
-            // 
-            // btnAcesso
-            // 
-            this.btnAcesso.Description = "Cancelar";
-            this.btnAcesso.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAcesso.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
-            this.btnAcesso.ImageLocation = null;
-            this.btnAcesso.Location = new System.Drawing.Point(5, 205);
-            this.btnAcesso.Name = "btnAcesso";
-            this.btnAcesso.Size = new System.Drawing.Size(90, 90);
-            this.btnAcesso.TabIndex = 7;
-            this.btnAcesso.Text = "Cancelar";
-            this.btnAcesso.UseVisualStyleBackColor = true;
             // 
             // frmFuncionario
             // 

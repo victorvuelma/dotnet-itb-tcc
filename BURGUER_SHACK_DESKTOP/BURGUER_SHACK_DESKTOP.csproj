@@ -370,6 +370,9 @@
     <Compile Include="uctAtendimentoPedidos.Designer.cs">
       <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAcesso.resx">
+      <DependentUpon>frmAcesso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAtendimento.resx">
       <DependentUpon>frmAtendimento.cs</DependentUpon>
     </EmbeddedResource>

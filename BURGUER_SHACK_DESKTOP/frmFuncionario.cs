@@ -192,6 +192,27 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void abrirAcesso()
+        {
+            clnAcesso objAcesso = new clnAcesso
+            {
+                CodFuncionario = ObjFuncionario.Cod
+            }.obterPorFuncionario();
+
+            if(objAcesso == null)
+            {
+                objAcesso = new clnAcesso
+                {
+                    CodFuncionario = ObjFuncionario.Cod
+                };
+            }
+            frmAcesso frmAcesso = new frmAcesso
+            {
+                ObjAcesso = objAcesso
+            };
+            frmAcesso.ShowDialog();
+        }
+
         private void frmCliente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
@@ -210,6 +231,7 @@ namespace BURGUER_SHACK_DESKTOP
                 hdrUIX.Title = App.Name + " - Novo Funcionário";
 
                 definirImagemPadrao();
+                btnAcesso.Hide();
             }
             else
             {
@@ -276,6 +298,11 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 definirImagemPadrao();
             }
+        }
+
+        private void btnAcesso_Click(object sender, EventArgs e)
+        {
+            abrirAcesso();
         }
     }
 }

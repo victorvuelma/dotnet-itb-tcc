@@ -21,11 +21,20 @@ namespace BURGUER_SHACK_DESKTOP
         public string Usuario { get => _usuario; set => _usuario = value; }
         public string Senha { get => _senha; set => _senha = value; }
 
+        private clnAcesso obter(SqlDataReader reader) => new clnAcesso
+        {
+            CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
+            Usuario = clnUtilConvert.ToString(reader["usuario"]),
+            Senha = clnUtilConvert.ToString(reader["senha"])
+        };
+
         public int? acessar()
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
-            objSelect.table("acesso").Columns.select("id_funcionario");
-            objSelect.Where.where("usuario", Usuario).where("senha", Senha);
+            objSelect.table("acesso");
+            objSelect.Columns.select("id_funcionario");
+            objSelect.Where.where("usuario", Usuario)
+                           .where("senha", Senha);
 
             int? codFuncionario = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -34,6 +43,41 @@ namespace BURGUER_SHACK_DESKTOP
             reader.Close();
 
             return codFuncionario;
+        }
+
+        internal clnAcesso obterPorFuncionario()
+        {
+            sqlCommandSelect objSelect = new sqlCommandSelect();
+            objSelect.table("acesso");
+            objSelect.Where.where("id_funcionario", CodFuncionario);
+
+            clnAcesso objAcesso = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+                objAcesso = obter(reader);
+            reader.Close();
+
+            return objAcesso;
+        }
+
+        public void gravar()
+        {
+            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            objUpdate.table("acesso");
+            objUpdate.Where.where("id_funcionario", CodFuncionario);
+            objUpdate.Set.val("senha", Senha)
+                         .val("usuario", Usuario);
+
+            if (objUpdate.execute(App.DatabaseSql) == 0)
+            {
+                sqlCommandInsert objInsert = new sqlCommandInsert();
+                objInsert.table("acesso");
+                objInsert.Insert.val("senha", Senha)
+                                .val("usuario", Usuario)
+                                .val("id_funcionario", CodFuncionario);
+
+                objInsert.execute(App.DatabaseSql);
+            }
         }
 
     }
