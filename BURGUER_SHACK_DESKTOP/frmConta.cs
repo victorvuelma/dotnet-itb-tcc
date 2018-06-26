@@ -76,12 +76,31 @@ namespace BURGUER_SHACK_DESKTOP
                     CodConta = ObjConta.CodAtendimento
                 };
 
-                foreach(clnPagamento objPagamento in objPagamentos.obterPorConta())
+                foreach (clnPagamento objPagamento in objPagamentos.obterPorConta())
                 {
                     valor += objPagamento.Valor;
                 }
 
                 lblValorPago.Text = "Valor Pago: " + clnUtil.formatarValor(valor);
+
+                if (valor >= ObjConta.Valor)
+                {
+                    ObjAtendimento.Fim = DateTime.Now;
+                    ObjAtendimento.Situacao = clnAtendimento.atendimentoSituacao.FINALIZADO;
+                    ObjAtendimento.alterar();
+
+                    foreach (int codMesa in ObjAtendimento.CodMesas)
+                    {
+                        clnMesa objMesa = new clnMesa
+                        {
+                            Cod = codMesa
+                        }.obterPorCodigo();
+                        objMesa.Situacao = clnMesa.mesaSituacao.DISPONIVEL;
+                        objMesa.alterar();
+                    }
+                    clnUtilMensagem.mostrarOk("Conta", "Atendimento finalizado automaticamente.", clnUtilMensagem.MensagemIcone.OK);
+                    Close();
+                }
             }
         }
 
@@ -101,6 +120,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             btnFinalizar.Hide();
             grbAlterar.Hide();
+            btnPagamento.Show();
         }
 
         private void fechar()
@@ -121,11 +141,15 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 grbAlterar.Hide();
                 btnFinalizar.Hide();
+                btnPagamento.Show();
 
                 txtDesconto.Text = clnUtilConvert.ToString(ObjConta.Desconto);
                 chkServico.Checked = ObjConta.TaxaServico;
 
                 atualizarPago();
+            } else
+            {
+                btnPagamento.Hide();
             }
         }
 

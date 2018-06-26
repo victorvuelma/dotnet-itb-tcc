@@ -59,6 +59,10 @@ namespace BURGUER_SHACK_DESKTOP
                 CodFuncionario = CodFuncionario
             };
             frmConta.ShowDialog();
+            if(frmConta.ObjAtendimento.Situacao == clnAtendimento.atendimentoSituacao.FINALIZADO)
+            {
+                Close();
+            }
         }
 
         private void abrirMesas()

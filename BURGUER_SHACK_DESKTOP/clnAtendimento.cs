@@ -83,12 +83,27 @@ namespace BURGUER_SHACK_DESKTOP
         public void gravar()
         {
             sqlCommandInsert objInsert = new sqlCommandInsert();
-            objInsert.Insert.val("id_cliente", CodCliente).val("id_funcionario", CodFuncionario).val("id_reserva", CodReserva)
-                            .val("inicio", Inicio).val("fim", Fim).val("situacao", prefixo(Situacao));
+            objInsert.Insert.val("id_cliente", CodCliente)
+                            .val("id_funcionario", CodFuncionario)
+                            .val("id_reserva", CodReserva)
+                            .val("inicio", Inicio)
+                            .val("fim", Fim)
+                            .val("situacao", prefixo(Situacao));
             objInsert.table("atendimento");
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
             this.obterMesas();
+        }
+
+        public void alterar()
+        {
+            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            objUpdate.Set.val("fim", Fim)
+                         .val("situacao", prefixo(Situacao));
+            objUpdate.Where.where("id", Cod);
+            objUpdate.table("atendimento");
+
+            objUpdate.execute(App.DatabaseSql);
         }
 
         public void adicionarMesa(int codMesa)

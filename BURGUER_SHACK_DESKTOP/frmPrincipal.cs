@@ -64,12 +64,40 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void atualizarBotoes()
+        {
+            clnFuncionario objFuncionario = new clnFuncionario
+            {
+                Cod = CodFuncionario
+            }.obterPorCod();
+
+            switch (objFuncionario.CodCargo)
+            {
+                case 1:
+                    btnReservas.Hide();
+                    btnGerenciamento.Hide();
+                    break;
+                case 2:
+                    btnMesas.Hide();
+                    btnGerenciamento.Hide();
+                    break;
+                case 3:
+                    btnGerenciamento.Hide();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
+        }
+
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
             UIX.uixButton.btnApply(btnSair, App.VisualStyle.ButtonWarningColor);
 
             abrirMesas();
+            atualizarBotoes();
         }
 
         private void btnMesas_Click(object sender, EventArgs e)
