@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnCargo
+    class clnCargo 
     {
 
         private int _cod = -1;
@@ -53,7 +53,6 @@ namespace BURGUER_SHACK_DESKTOP
 
             return objCargos;
         }
-
 
     }
 }

@@ -12,8 +12,8 @@ namespace BURGUER_SHACK_DESKTOP
     public class clnConta
     {
 
-        private int _codAtendimento;
-        private int _codFuncionario;
+        private int _codAtendimento = -1;
+        private int _codFuncionario = -1;
 
         private double _valor;
 

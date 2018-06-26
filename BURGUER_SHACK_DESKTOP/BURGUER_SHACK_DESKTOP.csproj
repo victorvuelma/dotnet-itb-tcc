@@ -161,6 +161,7 @@
     <Compile Include="clnUtilCallback.cs" />
     <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilConvert.cs" />
+    <Compile Include="clnUtilKeyVal.cs" />
     <Compile Include="clnUtilListar.cs" />
     <Compile Include="clnUtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />

@@ -58,7 +58,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (_validar.valido())
             {
-                int codCargo = clnUtilConvert.ToInt(cboCargo.Text.Split('-')[0]);
+                int codCargo = clnUtilConvert.ToInt(((clnUtilKeyVal)cboCargo.SelectedItem).Val);
                 clnArquivo objArquivo = null;
                 if (ObjFuncionario != null)
                 {
@@ -201,7 +201,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             foreach (clnCargo objCargo in new clnCargo().obterCargos())
             {
-                cboCargo.Items.Add(objCargo.Cod + " - " + objCargo.Nome);
+                cboCargo.Items.Add(new clnUtilKeyVal(objCargo.Cod + " - " + objCargo.Nome, objCargo.Cod));
             }
             cboSituacao.Items.AddRange(new object[] { clnFuncionario.funcionarioSituacao.TREINAMENTO, clnFuncionario.funcionarioSituacao.PLENO });
 

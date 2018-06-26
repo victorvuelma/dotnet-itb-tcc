@@ -17,19 +17,19 @@ namespace BURGUER_SHACK_DESKTOP
         private String _nome;
         private String _bandeira;
 
-        private double _desconto;
+        private double? _desconto;
 
         public int Cod { get => _cod; set => _cod = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public string Bandeira { get => _bandeira; set => _bandeira = value; }
-        public double Desconto { get => _desconto; set => _desconto = value; }
+        public double? Desconto { get => _desconto; set => _desconto = value; }
 
         private clnPagamentoForma obter(SqlDataReader reader) => new clnPagamentoForma
         {
             Cod = clnUtilConvert.ToInt(reader["id"]),
             Nome = clnUtilConvert.ToString(reader["nome"]),
             Bandeira = clnUtilConvert.ToString(reader["bandeira"]),
-            Desconto = clnUtilConvert.ToDouble(reader["desconto"])
+            Desconto = clnUtilConvert.ToNullableDouble(reader["desconto"])
         };
 
         public clnPagamentoForma obterPorCodigo()
@@ -51,7 +51,6 @@ namespace BURGUER_SHACK_DESKTOP
         {
             sqlCommandSelect objSelect = new sqlCommandSelect();
             objSelect.table("pagamento_forma");
-            objSelect.Where.where("id", Cod);
 
             List<clnPagamentoForma> objFormas = new List<clnPagamentoForma>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);

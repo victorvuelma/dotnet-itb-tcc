@@ -15,97 +15,137 @@ namespace BURGUER_SHACK_DESKTOP
 
         private clnUtilValidar _validar;
 
-        private clnEstoque _objEstoque;
+        private int _codFuncionario;
+        private int? _codCliente;
+        private clnConta _objConta;
+        private clnPagamento _objPagamento;
 
-        public clnEstoque ObjEstoque { get => _objEstoque; set => _objEstoque = value; }
+        public clnConta ObjConta { get => _objConta; set => _objConta = value; }
+        public clnPagamento ObjPagamento { get => _objPagamento; set => _objPagamento = value; }
+        public int? CodCliente { get => _codCliente; set => _codCliente = value; }
+        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmPagamento()
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtQuantidade, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.VALOR });
-            _validar.addValidacao(mtbValidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DATA });
-            _validar.addValidacao(mtbFornCNPJ, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CNPJ });
+            cboMetodo.cbo.SelectedIndexChanged += (object sender, EventArgs args) =>
+            {
+                carregarBandeiras();
+            };
+            txtDinheiro.txt.TextChanged += (object sender, EventArgs args) =>
+            {
+                atualizarTroco();
+            };
+            txtValor.txt.TextChanged += (object sender, EventArgs args) =>
+            {
+                atualizarTroco();
+                atualizarRestante();
+            };
 
-            mtbFornCNPJ.Mask = clnUtil.MASK_CNPJ;
-            mtbValidade.Mask = clnUtil.MASK_DATA;
+            _validar = new clnUtilValidar();
+            _validar.addValidacao(mtbCliCPF, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.CPF });
+            _validar.addValidacao(cboMetodo, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(cboBandeira, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.VALOR });
+
+            mtbCliCPF.Mask = clnUtil.MASK_CPF;
         }
 
         private void salvar()
         {
-            if (_validar.valido())
+            if (ObjPagamento.Cod == -1)
             {
-                if (ObjEstoque.Cod == -1)
+                if (_validar.valido())
                 {
-                    ObjEstoque = new clnEstoque
+                    if (CodCliente == null)
                     {
-                        CodFornecedor = ObjEstoque.CodFornecedor,
-                        CodIngrediente = ObjEstoque.CodIngrediente,
-                        Entrada = DateTime.Now.Date,
-                        Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text),
-                        Validade = clnUtilConvert.ToDateTime(mtbValidade.Text),
-                        Total = clnUtilConvert.ToInt(txtQuantidade.Text),
-                        Valor = clnUtilConvert.ToDouble(txtValor.Text)
+                        if (clnUtilMensagem.mostrarSimNao("Pagamento", "Deseja identificar o cliente?", clnUtilMensagem.MensagemIcone.INFO))
+                        {
+                            encontrarCliente();
+                            if (CodCliente == null)
+                            {
+                                return;
+                            }
+                        }
+                    }
+                    if (obterValorPago() > obterValorAPagar())
+                    {
+                        clnUtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.", clnUtilMensagem.MensagemIcone.ERRO);
+                        return;
+                    }
+                    int codForma = -1;
+                    if (cboBandeira.Visible)
+                    {
+                        codForma = clnUtilConvert.ToInt(((clnUtilKeyVal)cboBandeira.SelectedItem).Val);
+                    }
+                    else
+                    {
+                        codForma = clnUtilConvert.ToInt(((clnUtilKeyVal)cboBandeira.Items[0]).Val);
+                    }
+
+                    ObjPagamento = new clnPagamento
+                    {
+                        CodForma = codForma,
+                        CodConta = ObjConta.CodAtendimento,
+                        Data = DateTime.Now,
+                        Valor = obterValorPago(),
+                        CodCliente = CodCliente
                     };
-                    ObjEstoque.gravar();
+                    ObjPagamento.gravar();
 
-                    clnUtilMensagem.mostrarOk("Cadastro de Estoque", "Estoque cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Novo pagamento", "Pagamento registrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    Close();
                 }
-                else
-                {
-                    ObjEstoque.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
-
-                    ObjEstoque.alterar();
-                    clnUtilMensagem.mostrarOk("Altereção de Estoque", "Estoque alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                }
+            }
+            else
+            {
                 Close();
             }
         }
 
         private void fechar()
         {
-            if (ObjEstoque.Cod == -1)
+            if (ObjPagamento.Cod == -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Estoque", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (clnUtilMensagem.mostrarSimNao("Novo Pagamento", "Deseja cancelar o pagamento?", clnUtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Estoque", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
-                {
-                    Close();
-                }
+                Close();
             }
         }
 
-        private bool encontrarFornecedor()
+        private bool encontrarCliente()
         {
-            if (clnUtil.validarCNPJ(mtbFornCNPJ.Text))
+            if (clnUtil.validarCPF(mtbCliCPF.Text))
             {
-                clnFornecedor objFornecedor = new clnFornecedor
+                clnCliente objCliente = new clnCliente
                 {
-                    Cnpj = clnUtil.retirarFormatacao(mtbFornCNPJ.Text)
-                }.obterPorCNPJ();
-                if (objFornecedor != null)
+                    Cpf = clnUtil.retirarFormatacao(mtbCliCPF.Text)
+                }.obterPorCPF();
+                if (objCliente != null)
                 {
-                    definirFornecedor(objFornecedor);
+                    definirCliente(objCliente);
                     return true;
                 }
                 else
                 {
-                    if (clnUtilMensagem.mostrarSimNao("Fornecedor", "Fornecedor não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
+                    if (clnUtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
                     {
-                        frmFornecedor frmNovoFornecedor = new frmFornecedor();
-                        frmNovoFornecedor.mtbCNPJ.Text = mtbFornCNPJ.Text;
-                        frmNovoFornecedor.ShowDialog();
-
-                        if (frmNovoFornecedor.ObjFornecedor != null)
+                        frmCliente frmNovoCliente = new frmCliente
                         {
-                            definirFornecedor(frmNovoFornecedor.ObjFornecedor);
+                            CodFuncionario = CodFuncionario
+                        };
+                        frmNovoCliente.mtbCPF.Text = mtbCliCPF.Text;
+                        frmNovoCliente.ShowDialog();
+
+                        if (frmNovoCliente.ObjCliente != null)
+                        {
+                            definirCliente(frmNovoCliente.ObjCliente);
                             return true;
                         }
                     }
@@ -113,60 +153,106 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Fornecedor", "O CNPJ informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
             }
             return false;
         }
 
-        private void definirFornecedor(clnFornecedor objFornecedor)
+        private void definirCliente(clnCliente objCliente)
         {
-            ObjEstoque.CodFornecedor = objFornecedor.Cod;
-            lblFornecedor.Text = "Fornecedor " + objFornecedor.Cod +
-                            "\n" + "Razão Social: " + objFornecedor.RazaoSocial +
-                            "\n" + "CNPJ: " + clnUtil.formatarCNPJ(objFornecedor.Cnpj);
+            CodCliente = objCliente.Cod;
+            lblCliente.Text = "Cliente " + objCliente.Cod +
+                            "\n" + "CPF: " + clnUtil.formatarCPF(objCliente.Cpf) +
+                            "\n" + "Celular: " + clnUtil.formatarCelular(objCliente.TelCelular);
         }
 
-        private void definirIngrediente(clnIngrediente objIngrediente)
+        private void carregarBandeiras()
         {
-            ObjEstoque.CodIngrediente = objIngrediente.Cod;
+            clnPagamentoForma objFormas = new clnPagamentoForma();
+            cboBandeira.Items.Clear();
 
-            int estoqueAtual = new clnEstoque
+            bool dinheiro = true;
+            foreach (clnPagamentoForma objForma in objFormas.obterFormas())
             {
-                CodIngrediente = objIngrediente.Cod
-            }.obterQuantidadePorIngrediente();
-
-            lblIngrediente.Text = "Ingrediente " + objIngrediente.Cod +
-                            "\n" + "Nome: " + objIngrediente.Nome +
-                            "\n" + "Valor: " + objIngrediente.Valor;
-        }
-
-        private void selecionarIngrediente()
-        {
-            clnIngrediente objIngredientes = new clnIngrediente();
-
-            clnIngrediente.clnListar objListar = new clnIngrediente.clnListar
-            {
-                Icone = Properties.Resources.ingrediente,
-                Titulo = "Selecione o Ingrediente",
-                Opcoes = objIngredientes.obterIngredientes()
-            };
-
-            clnUtilSelecionar<clnIngrediente> objSelecionar = new clnUtilSelecionar<clnIngrediente>
-            {
-                Quantidade = 0,
-                ObjListar = objListar
-            };
-
-            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
-            {
-                ObjSelecionar = objSelecionar
-            };
-            frmSelecionar.ShowDialog();
-
-            if(objSelecionar.Selecionado != null)
-            {
-                definirIngrediente(objSelecionar.Selecionado);
+                if (objForma.Nome.Equals(cboMetodo.Text, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    if (!String.IsNullOrWhiteSpace(objForma.Bandeira))
+                    {
+                        dinheiro = false;
+                    }
+                    clnUtilKeyVal cboItem = new clnUtilKeyVal(objForma.Bandeira, objForma.Cod);
+                    cboBandeira.Items.Add(cboItem);
+                }
             }
+            if (dinheiro)
+            {
+                clnUtil.resetarCampos(grbDinheiro.Controls);
+                grbDinheiro.Show();
+                cboBandeira.Hide();
+            }
+            else
+            {
+                grbDinheiro.Hide();
+                cboBandeira.Show();
+            }
+        }
+
+        private void carregarMetodos()
+        {
+            clnPagamentoForma objFormas = new clnPagamentoForma();
+            cboMetodo.Items.Clear();
+
+            foreach (clnPagamentoForma objForma in objFormas.obterFormas())
+            {
+                if (!cboMetodo.Items.Contains(objForma.Nome))
+                {
+                    cboMetodo.Items.Add(objForma.Nome);
+                }
+            }
+        }
+
+        private double obterValorPago()
+        {
+            if (clnUtil.validarDouble(txtValor.Text))
+                return clnUtilConvert.ToDouble(txtValor.Text);
+            return 0.0;
+        }
+
+        private double obterValorAPagar()
+        {
+            double valor = 0.0d;
+
+            clnPagamento objPagamentos = new clnPagamento
+            {
+                CodConta = ObjConta.CodAtendimento
+            };
+
+            foreach (clnPagamento objPagamento in objPagamentos.obterPorConta())
+            {
+                valor += objPagamento.Valor;
+            }
+            valor = ObjConta.Valor - valor;
+
+            return valor;
+        }
+
+        private double obterDinheiro()
+        {
+            if (clnUtil.validarDouble(txtDinheiro.Text))
+                return clnUtilConvert.ToDouble(txtDinheiro.Text);
+            return 0.0;
+        }
+
+        private void atualizarTroco()
+        {
+            double valorPago = obterDinheiro() - obterValorPago();
+            lblTroco.Text = "Troco: " + clnUtil.formatarValor(valorPago);
+        }
+
+        private void atualizarRestante()
+        {
+            double valorRestante = obterValorAPagar() - obterValorPago();
+            lblValorRestante.Text = clnUtil.formatarValor(valorRestante);
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)
@@ -174,49 +260,22 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtil.atualizarForm(this);
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
 
-            if (ObjEstoque != null)
+            hdrUIX.Title = App.Name + " - Novo Pagamento";
+            lblValorTotal.Text = clnUtil.formatarValor(obterValorAPagar());
+
+            if (ObjPagamento == null)
             {
-                hdrUIX.Title = App.Name + " - Alterando Estoque " + ObjEstoque.Cod;
-
-                txtQuantidade.Text = clnUtilConvert.ToString(ObjEstoque.Quantidade);
-                txtValor.Text = ObjEstoque.Valor.ToString();
-                mtbValidade.Text = clnUtil.formatarData(ObjEstoque.Validade);
-
-                clnFornecedor objFornecedor = new clnFornecedor
-                {
-                    Cod = ObjEstoque.CodFornecedor
-                }.obterPorCod();
-
-                if (objFornecedor != null)
-                {
-                    mtbFornCNPJ.Text = objFornecedor.Cnpj;
-                    definirFornecedor(objFornecedor);
-                }
-                btnFornEncontrar.Hide();
-
-                clnIngrediente objIngrediente = new clnIngrediente
-                { 
-                    Cod = ObjEstoque.CodIngrediente
-                }.obterPorCod();
-
-                if(objIngrediente != null)
-                {
-                    definirIngrediente(objIngrediente);
-                }
-                btnIngSelecionar.Hide();
-
+                ObjPagamento = new clnPagamento();
+                CodCliente = null;
             }
             else
             {
-                ObjEstoque = new clnEstoque();
-
-                hdrUIX.Title = App.Name + " - Novo Estoque";
+                btnSalvar.Hide();
             }
-        }
 
-        private void btnIngSelecionar_Click(object sender, EventArgs e)
-        {
-            selecionarIngrediente();
+            carregarMetodos();
+
+            grbDinheiro.Hide();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -239,9 +298,14 @@ namespace BURGUER_SHACK_DESKTOP
             fechar();
         }
 
-        private void btnFornEncontrar_Click(object sender, EventArgs e)
+        private void btnCliEncontrar_Click(object sender, EventArgs e)
         {
-            encontrarFornecedor();
+            encontrarCliente();
+        }
+
+        private void cboMetodo_Leave(object sender, EventArgs e)
+        {
+            carregarBandeiras();
         }
 
     }

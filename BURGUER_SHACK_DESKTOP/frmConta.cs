@@ -165,7 +165,8 @@ namespace BURGUER_SHACK_DESKTOP
         {
             frmPagamento frmNovoPagamento = new frmPagamento
             {
-
+                ObjConta = ObjConta,
+                CodFuncionario = CodFuncionario
             };
             frmNovoPagamento.ShowDialog();
 

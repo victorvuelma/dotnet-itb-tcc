@@ -23,6 +23,15 @@ namespace BURGUER_SHACK_DESKTOP
 
         internal static int ToInt(object val) => Convert.ToInt32(val);
 
+        public static double? ToNullableDouble(object val)
+        {
+            if (!isNull(val))
+                return ToDouble(val);
+            return null;
+        }
+
+        internal static double ToDouble(object val) => Convert.ToDouble(val);
+
         public static DateTime? ToNullableDateTime(object val)
         {
             if (!isNull(val))
@@ -53,8 +62,6 @@ namespace BURGUER_SHACK_DESKTOP
         }
 
         internal static char ToChar(object val) => Convert.ToChar(val);
-
-        internal static double ToDouble(object val) => Convert.ToDouble(val);
 
         internal static bool ToBool(object val) => Convert.ToBoolean(val);
 

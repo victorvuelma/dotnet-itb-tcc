@@ -9,14 +9,14 @@ using SQL_POWERUP;
 
 namespace BURGUER_SHACK_DESKTOP
 {
-    class clnPagamento
+    public class clnPagamento
     {
 
-        private int _cod;
+        private int _cod = -1;
 
-        private int _codForma;
-        private int _codConta;
-        private int? _codCliente;
+        private int _codForma = -1;
+        private int _codConta = -1;
+        private int? _codCliente = null;
 
         private double _valor;
         private DateTime _data;
@@ -35,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
             CodForma = clnUtilConvert.ToInt(reader["id_forma"]),
             CodCliente = clnUtilConvert.ToNullableInt(reader["id_cliente"]),
             Valor = clnUtilConvert.ToDouble(reader["valor"]),
-            Data = clnUtilConvert.ToDateTime(reader["data_pagamento"])
+            Data = clnUtilConvert.ToDateTime(reader["data"])
         };
 
         public clnPagamento obterPorCod()
@@ -68,5 +68,18 @@ namespace BURGUER_SHACK_DESKTOP
             return objPagamentos;
         }
 
+        public void gravar()
+        {
+            sqlCommandInsert objInsert = new sqlCommandInsert();
+            objInsert.table("pagamento");
+            objInsert.Insert.val("id_conta", CodConta)
+                            .val("id_cliente", CodCliente)
+                            .val("id_forma", CodForma)
+                            .val("valor", Valor)
+                            .val("data", Data);
+
+            objInsert.execute(App.DatabaseSql);
+        }
+
     }
-}
+} 
