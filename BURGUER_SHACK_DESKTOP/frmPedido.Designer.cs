@@ -31,7 +31,7 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnProdutos = new UIX.btnUIX();
             this.btnVoltar = new UIX.btnUIX();
-            this.btnFinalizar = new UIX.btnUIX();
+            this.btnConfirmar = new UIX.btnUIX();
             this.btnAdicionar = new UIX.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new UIX.hdrUIX();
@@ -42,7 +42,7 @@
             // 
             this.pnlMenu.Controls.Add(this.btnProdutos);
             this.pnlMenu.Controls.Add(this.btnVoltar);
-            this.pnlMenu.Controls.Add(this.btnFinalizar);
+            this.pnlMenu.Controls.Add(this.btnConfirmar);
             this.pnlMenu.Controls.Add(this.btnAdicionar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
@@ -78,20 +78,20 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnFinalizar
+            // btnConfirmar
             // 
-            this.btnFinalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFinalizar.Description = "Finalizar";
-            this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.pagamento;
-            this.btnFinalizar.ImageLocation = null;
-            this.btnFinalizar.Location = new System.Drawing.Point(5, 405);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
-            this.btnFinalizar.TabIndex = 7;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirmar.Description = "Confirmar";
+            this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.ImageLocation = null;
+            this.btnConfirmar.Location = new System.Drawing.Point(5, 405);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(90, 90);
+            this.btnConfirmar.TabIndex = 7;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnAdicionar
             // 
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Panel pnlMenu;
         public UIX.hdrUIX hdrUIX;
         public System.Windows.Forms.Panel pnlConteudo;
-        private UIX.btnUIX btnFinalizar;
+        private UIX.btnUIX btnConfirmar;
         private UIX.btnUIX btnAdicionar;
         private UIX.btnUIX btnVoltar;
         private UIX.btnUIX btnProdutos;

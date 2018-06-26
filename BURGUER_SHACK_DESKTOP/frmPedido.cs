@@ -142,10 +142,10 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-                UIX.uixButton.btnApply(btnFinalizar, App.VisualStyle.ButtonWarningColor);
+                UIX.uixButton.btnApply(btnConfirmar, App.VisualStyle.ButtonWarningColor);
 
-                btnFinalizar.Description = "Excluir";
-                btnFinalizar.Image = Properties.Resources.excluir;
+                btnConfirmar.Description = "Excluir";
+                btnConfirmar.Image = Properties.Resources.excluir;
                 btnAdicionar.Hide();
             }
 

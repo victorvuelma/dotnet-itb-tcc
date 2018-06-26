@@ -78,6 +78,7 @@
             this.btnPagamentos.TabIndex = 16;
             this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Visible = false;
             // 
             // btnPedidos
             // 
@@ -92,6 +93,7 @@
             this.btnPedidos.TabIndex = 15;
             this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Visible = false;
             // 
             // btnReservas
             // 
@@ -106,6 +108,7 @@
             this.btnReservas.TabIndex = 14;
             this.btnReservas.Text = "Reservas";
             this.btnReservas.UseVisualStyleBackColor = true;
+            this.btnReservas.Visible = false;
             this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
             // btnAtendimentos
@@ -135,6 +138,7 @@
             this.btnMesas.TabIndex = 12;
             this.btnMesas.Text = "Mesas";
             this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Visible = false;
             // 
             // btnEstoque
             // 

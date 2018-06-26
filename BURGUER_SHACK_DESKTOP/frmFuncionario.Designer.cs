@@ -58,6 +58,7 @@
             this.cboCargo = new UIX.cboUIX();
             this.cboSituacao = new UIX.cboUIX();
             this.txtSalario = new UIX.txtUIX();
+            this.btnAcesso = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnAcesso);
             this.pnlMenu.Controls.Add(this.btnVoltar);
             this.pnlMenu.Controls.Add(this.btnSalvar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
@@ -481,6 +483,19 @@
             this.txtSalario.Size = new System.Drawing.Size(180, 20);
             this.txtSalario.TabIndex = 0;
             // 
+            // btnAcesso
+            // 
+            this.btnAcesso.Description = "Cancelar";
+            this.btnAcesso.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAcesso.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnAcesso.ImageLocation = null;
+            this.btnAcesso.Location = new System.Drawing.Point(5, 205);
+            this.btnAcesso.Name = "btnAcesso";
+            this.btnAcesso.Size = new System.Drawing.Size(90, 90);
+            this.btnAcesso.TabIndex = 7;
+            this.btnAcesso.Text = "Cancelar";
+            this.btnAcesso.UseVisualStyleBackColor = true;
+            // 
             // frmFuncionario
             // 
             this.AcceptButton = this.btnSalvar;
@@ -542,5 +557,6 @@
         private UIX.txtUIX txtSalario;
         private UIX.cboUIX cboSituacao;
         private UIX.cboUIX cboCargo;
+        private UIX.btnUIX btnAcesso;
     }
 }
