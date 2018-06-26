@@ -88,6 +88,41 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
+        private void atualizarSituacao()
+        {
+            clnConta objConta = new clnConta
+            {
+                CodAtendimento = CodAtendimento
+            }.obterPorCodAtendimento();
+
+            if(objConta != null)
+            {
+                btnNovoPedido.Hide();
+
+                double valorPago = 0.0d;
+                clnPagamento objPagamentos = new clnPagamento
+                {
+                    CodConta = objConta.CodAtendimento
+                };
+                foreach(clnPagamento objPagamento in objPagamentos.obterPorConta())
+                {
+                    valorPago += objPagamento.Valor;
+                }
+
+                if(valorPago < objConta.Valor)
+                {
+                    lblSituacao.Text = "Aguardando pagamento para finalizar atendimento.";
+                    grbSituacao.Show();
+                } else
+                {
+                    grbSituacao.Hide();
+                }
+            } else
+            {
+                grbSituacao.Hide();
+            }
+        }
+
         private void atualizarValor()
         {
             double valor = 0.0;
@@ -97,12 +132,22 @@ namespace BURGUER_SHACK_DESKTOP
                 valor += clnUtilPedido.calcularValor(objPedido);
             }
 
-            lblValor.Text = "Valor: " + clnUtil.formatarValor(valor);
+            if (valor > 0.0)
+            {
+                lblValor.Text = clnUtil.formatarValor(valor);
+                grbValor.Show();
+            }
+            else
+            {
+                grbValor.Hide();
+            }
         }
 
         private void uctAtendimentoPedidos_Load(object sender, EventArgs e)
         {
             exibirPedidos();
+
+            atualizarSituacao();
         }
 
         private void btnNovoPedido_Click(object sender, EventArgs e)

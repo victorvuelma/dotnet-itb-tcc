@@ -32,7 +32,12 @@
             this.pnlPedidos = new System.Windows.Forms.Panel();
             this.btnNovoPedido = new UIX.btnUIX();
             this.lblValor = new System.Windows.Forms.Label();
+            this.grbValor = new System.Windows.Forms.GroupBox();
+            this.grbSituacao = new System.Windows.Forms.GroupBox();
+            this.lblSituacao = new System.Windows.Forms.Label();
             this.grbPedidos.SuspendLayout();
+            this.grbValor.SuspendLayout();
+            this.grbSituacao.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbPedidos
@@ -72,19 +77,49 @@
             // 
             // lblValor
             // 
-            this.lblValor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(5, 600);
+            this.lblValor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(5, 20);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(200, 40);
+            this.lblValor.Size = new System.Drawing.Size(190, 40);
             this.lblValor.TabIndex = 10;
-            this.lblValor.Text = "Valor:";
-            this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblValor.Text = "0,00";
+            this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // grbValor
+            // 
+            this.grbValor.Controls.Add(this.lblValor);
+            this.grbValor.Location = new System.Drawing.Point(5, 580);
+            this.grbValor.Name = "grbValor";
+            this.grbValor.Size = new System.Drawing.Size(200, 65);
+            this.grbValor.TabIndex = 11;
+            this.grbValor.TabStop = false;
+            this.grbValor.Text = "VALOR TOTAL:";
+            // 
+            // grbSituacao
+            // 
+            this.grbSituacao.Controls.Add(this.lblSituacao);
+            this.grbSituacao.Location = new System.Drawing.Point(215, 550);
+            this.grbSituacao.Name = "grbSituacao";
+            this.grbSituacao.Size = new System.Drawing.Size(170, 95);
+            this.grbSituacao.TabIndex = 12;
+            this.grbSituacao.TabStop = false;
+            // 
+            // label1
+            // 
+            this.lblSituacao.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSituacao.Location = new System.Drawing.Point(5, 20);
+            this.lblSituacao.Name = "label1";
+            this.lblSituacao.Size = new System.Drawing.Size(160, 65);
+            this.lblSituacao.TabIndex = 10;
+            this.lblSituacao.Text = "Situação Top Aqui";
+            this.lblSituacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uctAtendimentoPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblValor);
+            this.Controls.Add(this.grbSituacao);
+            this.Controls.Add(this.grbValor);
             this.Controls.Add(this.btnNovoPedido);
             this.Controls.Add(this.grbPedidos);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,6 +128,8 @@
             this.Size = new System.Drawing.Size(500, 650);
             this.Load += new System.EventHandler(this.uctAtendimentoPedidos_Load);
             this.grbPedidos.ResumeLayout(false);
+            this.grbValor.ResumeLayout(false);
+            this.grbSituacao.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -102,5 +139,8 @@
         private System.Windows.Forms.Panel pnlPedidos;
         private UIX.btnUIX btnNovoPedido;
         private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.GroupBox grbValor;
+        private System.Windows.Forms.GroupBox grbSituacao;
+        private System.Windows.Forms.Label lblSituacao;
     }
 }
