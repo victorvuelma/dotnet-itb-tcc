@@ -55,6 +55,22 @@ namespace BURGUER_SHACK_DESKTOP
             objItemIngredientes.Add(objIngrediente);
         }
 
+        public static double calcularValor(clnAtendimento objAtendimento)
+        {
+            clnPedido objPedidos = new clnPedido
+            {
+                CodAtendimento = objAtendimento.Cod
+            };
+
+            double valor = 0.0d;
+            foreach (clnPedido objPedido in objPedidos.obterPorAtendimento())
+            {
+                valor += calcularValor(objPedido);
+            }
+
+            return valor;
+        }
+
         public static double calcularValor(clnPedido objPedido)
         {
             double valorTotal = 0.0;
@@ -95,11 +111,11 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 Cod = objItem.CodProduto
             }.obterPorCod();
-            double itemValor = objProduto.Valor;
+            double itemValor = objProduto.Valor * objItem.Quantidade;
 
             foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes)
             {
-                itemValor += clnUtilPedido.calcularValor(objItemIngrediente);
+                itemValor += clnUtilPedido.calcularValor(objItemIngrediente) * objItem.Quantidade;
             }
 
             return itemValor;

@@ -47,11 +47,11 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void abrirConta()
         {
-            uctAtendimentoConta uctConta = new uctAtendimentoConta
+            frmConta frmConta = new frmConta
             {
-                Atendimento = ObjAtendimento.Cod
+                ObjAtendimento = ObjAtendimento
             };
-            alterarConteudo(uctConta, "Conta");
+            frmConta.ShowDialog();
         }
 
         private void abrirMesas()

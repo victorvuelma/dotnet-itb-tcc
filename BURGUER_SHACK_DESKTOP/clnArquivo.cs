@@ -15,7 +15,7 @@ namespace BURGUER_SHACK_DESKTOP
     class clnArquivo
     {
 
-        private static clnUtilCache CACHE = new clnUtilCache("arquivo");
+        public static clnUtilCache CACHE = new clnUtilCache("arquivo");
 
         private int _cod = -1;
 

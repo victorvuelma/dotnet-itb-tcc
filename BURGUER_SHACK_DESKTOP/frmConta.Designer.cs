@@ -31,23 +31,22 @@
             this.hdrUIX = new UIX.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnVoltar = new UIX.btnUIX();
-            this.btnSalvar = new UIX.btnUIX();
-            this.grbEntrada = new System.Windows.Forms.GroupBox();
-            this.mtbValidade = new UIX.mtbUIX();
-            this.txtValor = new UIX.txtUIX();
-            this.txtQuantidade = new UIX.txtUIX();
-            this.grbFornecedor = new System.Windows.Forms.GroupBox();
-            this.lblFornecedor = new System.Windows.Forms.Label();
-            this.btnFornEncontrar = new UIX.btnUIX();
-            this.mtbFornCNPJ = new UIX.mtbUIX();
-            this.grbIngrediente = new System.Windows.Forms.GroupBox();
-            this.lblIngrediente = new System.Windows.Forms.Label();
+            this.btnImprimir = new UIX.btnUIX();
+            this.grbNota = new System.Windows.Forms.GroupBox();
+            this.webConta = new System.Windows.Forms.WebBrowser();
+            this.txtPessoas = new UIX.txtUIX();
+            this.btnAtualizar = new UIX.btnUIX();
+            this.grbValor = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnIngSelecionar = new UIX.btnUIX();
+            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.grbAlterar = new System.Windows.Forms.GroupBox();
+            this.chkServico = new System.Windows.Forms.CheckBox();
+            this.txtDesconto = new UIX.txtUIX();
+            this.btnFinalizar = new UIX.btnUIX();
             this.pnlMenu.SuspendLayout();
-            this.grbEntrada.SuspendLayout();
-            this.grbFornecedor.SuspendLayout();
-            this.grbIngrediente.SuspendLayout();
+            this.grbNota.SuspendLayout();
+            this.grbValor.SuspendLayout();
+            this.grbAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
             // hdrUIX
@@ -59,18 +58,19 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(450, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(750, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Conta";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnFinalizar);
             this.pnlMenu.Controls.Add(this.btnVoltar);
-            this.pnlMenu.Controls.Add(this.btnSalvar);
+            this.pnlMenu.Controls.Add(this.btnImprimir);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 300);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 500);
             this.pnlMenu.TabIndex = 6;
             // 
             // btnVoltar
@@ -87,178 +87,162 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnSalvar
+            // btnImprimir
             // 
-            this.btnSalvar.Description = "Salvar";
-            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.ImageLocation = null;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 205);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnImprimir.Description = "Imprimir";
+            this.btnImprimir.HoverColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImprimir.ImageLocation = null;
+            this.btnImprimir.Location = new System.Drawing.Point(5, 405);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(90, 90);
+            this.btnImprimir.TabIndex = 0;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // grbEntrada
+            // grbNota
             // 
-            this.grbEntrada.Controls.Add(this.mtbValidade);
-            this.grbEntrada.Controls.Add(this.txtValor);
-            this.grbEntrada.Controls.Add(this.txtQuantidade);
-            this.grbEntrada.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEntrada.Location = new System.Drawing.Point(105, 265);
-            this.grbEntrada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbEntrada.Name = "grbEntrada";
-            this.grbEntrada.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbEntrada.Size = new System.Drawing.Size(340, 80);
-            this.grbEntrada.TabIndex = 7;
-            this.grbEntrada.TabStop = false;
-            this.grbEntrada.Text = "ENTRADA";
+            this.grbNota.Controls.Add(this.webConta);
+            this.grbNota.Location = new System.Drawing.Point(105, 55);
+            this.grbNota.Name = "grbNota";
+            this.grbNota.Size = new System.Drawing.Size(640, 395);
+            this.grbNota.TabIndex = 7;
+            this.grbNota.TabStop = false;
+            this.grbNota.Text = "NOTA";
             // 
-            // mtbValidade
+            // webConta
             // 
-            this.mtbValidade.AcceptButton = null;
-            this.mtbValidade.AccessibleName = "CPF";
-            this.mtbValidade.Campo = "Validade*";
-            this.mtbValidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
-            this.mtbValidade.Location = new System.Drawing.Point(160, 20);
-            this.mtbValidade.Mask = "";
-            this.mtbValidade.MaxLength = 32767;
-            this.mtbValidade.Name = "mtbValidade";
-            this.mtbValidade.Size = new System.Drawing.Size(175, 21);
-            this.mtbValidade.TabIndex = 4;
-            this.mtbValidade.ValidatingType = null;
+            this.webConta.Location = new System.Drawing.Point(5, 15);
+            this.webConta.MaximumSize = new System.Drawing.Size(630, 100000);
+            this.webConta.MinimumSize = new System.Drawing.Size(630, 360);
+            this.webConta.Name = "webConta";
+            this.webConta.Size = new System.Drawing.Size(630, 370);
+            this.webConta.TabIndex = 0;
             // 
-            // txtValor
+            // txtPessoas
             // 
-            this.txtValor.AcceptButton = null;
-            this.txtValor.AccessibleName = "Nome:*";
-            this.txtValor.Campo = "Valor*";
-            this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
-            this.txtValor.Location = new System.Drawing.Point(5, 50);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtValor.MaxLength = 32767;
-            this.txtValor.Mode = UIX.uixEnum.uixTextBoxMode.MONEY;
-            this.txtValor.Multiline = false;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtValor.Size = new System.Drawing.Size(330, 21);
-            this.txtValor.TabIndex = 3;
+            this.txtPessoas.AcceptButton = this.btnAtualizar;
+            this.txtPessoas.Campo = "Pessoas";
+            this.txtPessoas.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtPessoas.Location = new System.Drawing.Point(5, 15);
+            this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPessoas.MaxLength = 32767;
+            this.txtPessoas.Mode = UIX.uixEnum.uixTextBoxMode.INT;
+            this.txtPessoas.Multiline = false;
+            this.txtPessoas.Name = "txtPessoas";
+            this.txtPessoas.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPessoas.Size = new System.Drawing.Size(160, 20);
+            this.txtPessoas.TabIndex = 8;
             // 
-            // txtQuantidade
+            // btnAtualizar
             // 
-            this.txtQuantidade.AcceptButton = null;
-            this.txtQuantidade.AccessibleName = "Nome:*";
-            this.txtQuantidade.Campo = "Quantidade*";
-            this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
-            this.txtQuantidade.Location = new System.Drawing.Point(5, 20);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Mode = UIX.uixEnum.uixTextBoxMode.INT;
-            this.txtQuantidade.Multiline = false;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtQuantidade.Size = new System.Drawing.Size(145, 21);
-            this.txtQuantidade.TabIndex = 2;
+            this.btnAtualizar.Description = "Atualizar";
+            this.btnAtualizar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAtualizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAtualizar.ImageLocation = null;
+            this.btnAtualizar.Location = new System.Drawing.Point(170, 15);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(70, 70);
+            this.btnAtualizar.TabIndex = 7;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
-            // grbFornecedor
+            // grbValor
             // 
-            this.grbFornecedor.Controls.Add(this.lblFornecedor);
-            this.grbFornecedor.Controls.Add(this.btnFornEncontrar);
-            this.grbFornecedor.Controls.Add(this.mtbFornCNPJ);
-            this.grbFornecedor.Location = new System.Drawing.Point(105, 55);
-            this.grbFornecedor.Name = "grbFornecedor";
-            this.grbFornecedor.Size = new System.Drawing.Size(340, 100);
-            this.grbFornecedor.TabIndex = 30;
-            this.grbFornecedor.TabStop = false;
-            this.grbFornecedor.Text = "FORNECEDOR";
-            // 
-            // lblFornecedor
-            // 
-            this.lblFornecedor.Location = new System.Drawing.Point(5, 45);
-            this.lblFornecedor.Name = "lblFornecedor";
-            this.lblFornecedor.Size = new System.Drawing.Size(245, 50);
-            this.lblFornecedor.TabIndex = 8;
-            // 
-            // btnFornEncontrar
-            // 
-            this.btnFornEncontrar.Description = "Encontrar";
-            this.btnFornEncontrar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFornEncontrar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.fornecedor;
-            this.btnFornEncontrar.ImageLocation = null;
-            this.btnFornEncontrar.Location = new System.Drawing.Point(255, 15);
-            this.btnFornEncontrar.Name = "btnFornEncontrar";
-            this.btnFornEncontrar.Size = new System.Drawing.Size(80, 80);
-            this.btnFornEncontrar.TabIndex = 7;
-            this.btnFornEncontrar.Text = "Encontrar";
-            this.btnFornEncontrar.UseVisualStyleBackColor = true;
-            this.btnFornEncontrar.Click += new System.EventHandler(this.btnFornEncontrar_Click);
-            // 
-            // mtbFornCNPJ
-            // 
-            this.mtbFornCNPJ.AcceptButton = this.btnFornEncontrar;
-            this.mtbFornCNPJ.AccessibleName = "CPF";
-            this.mtbFornCNPJ.Campo = "CNPJ";
-            this.mtbFornCNPJ.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
-            this.mtbFornCNPJ.Location = new System.Drawing.Point(5, 20);
-            this.mtbFornCNPJ.Mask = "";
-            this.mtbFornCNPJ.MaxLength = 32767;
-            this.mtbFornCNPJ.Name = "mtbFornCNPJ";
-            this.mtbFornCNPJ.Size = new System.Drawing.Size(245, 20);
-            this.mtbFornCNPJ.TabIndex = 0;
-            this.mtbFornCNPJ.ValidatingType = null;
-            // 
-            // grbIngrediente
-            // 
-            this.grbIngrediente.Controls.Add(this.lblIngrediente);
-            this.grbIngrediente.Controls.Add(this.label1);
-            this.grbIngrediente.Controls.Add(this.btnIngSelecionar);
-            this.grbIngrediente.Location = new System.Drawing.Point(105, 160);
-            this.grbIngrediente.Name = "grbIngrediente";
-            this.grbIngrediente.Size = new System.Drawing.Size(340, 100);
-            this.grbIngrediente.TabIndex = 31;
-            this.grbIngrediente.TabStop = false;
-            this.grbIngrediente.Text = "INGREDIENTE";
-            // 
-            // lblIngrediente
-            // 
-            this.lblIngrediente.Location = new System.Drawing.Point(5, 20);
-            this.lblIngrediente.Name = "lblIngrediente";
-            this.lblIngrediente.Size = new System.Drawing.Size(245, 75);
-            this.lblIngrediente.TabIndex = 9;
+            this.grbValor.Controls.Add(this.label1);
+            this.grbValor.Controls.Add(this.lblValorTotal);
+            this.grbValor.Location = new System.Drawing.Point(500, 455);
+            this.grbValor.Name = "grbValor";
+            this.grbValor.Size = new System.Drawing.Size(245, 90);
+            this.grbValor.TabIndex = 9;
+            this.grbValor.TabStop = false;
+            this.grbValor.Text = "VALOR";
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 75);
-            this.label1.TabIndex = 8;
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(230, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Valor Pago: R$00,00";
             // 
-            // btnIngSelecionar
+            // lblValorTotal
             // 
-            this.btnIngSelecionar.Description = "Selecionar";
-            this.btnIngSelecionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngSelecionar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.ingrediente;
-            this.btnIngSelecionar.ImageLocation = null;
-            this.btnIngSelecionar.Location = new System.Drawing.Point(255, 15);
-            this.btnIngSelecionar.Name = "btnIngSelecionar";
-            this.btnIngSelecionar.Size = new System.Drawing.Size(80, 80);
-            this.btnIngSelecionar.TabIndex = 7;
-            this.btnIngSelecionar.Text = "Selecionar";
-            this.btnIngSelecionar.UseVisualStyleBackColor = true;
-            this.btnIngSelecionar.Click += new System.EventHandler(this.btnIngSelecionar_Click);
+            this.lblValorTotal.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorTotal.Location = new System.Drawing.Point(5, 50);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValorTotal.Size = new System.Drawing.Size(230, 30);
+            this.lblValorTotal.TabIndex = 0;
+            this.lblValorTotal.Text = "Valor Total: R$00,00";
+            // 
+            // grbAlterar
+            // 
+            this.grbAlterar.Controls.Add(this.chkServico);
+            this.grbAlterar.Controls.Add(this.btnAtualizar);
+            this.grbAlterar.Controls.Add(this.txtDesconto);
+            this.grbAlterar.Controls.Add(this.txtPessoas);
+            this.grbAlterar.Location = new System.Drawing.Point(249, 455);
+            this.grbAlterar.Name = "grbAlterar";
+            this.grbAlterar.Size = new System.Drawing.Size(245, 90);
+            this.grbAlterar.TabIndex = 10;
+            this.grbAlterar.TabStop = false;
+            this.grbAlterar.Text = "ALTERAR";
+            // 
+            // chkServico
+            // 
+            this.chkServico.Location = new System.Drawing.Point(5, 65);
+            this.chkServico.Name = "chkServico";
+            this.chkServico.Size = new System.Drawing.Size(160, 20);
+            this.chkServico.TabIndex = 10;
+            this.chkServico.Text = "Incluir Serviço";
+            this.chkServico.UseVisualStyleBackColor = true;
+            this.chkServico.CheckedChanged += new System.EventHandler(this.chkServico_CheckedChanged);
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.AcceptButton = this.btnAtualizar;
+            this.txtDesconto.Campo = "Desconto";
+            this.txtDesconto.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtDesconto.Location = new System.Drawing.Point(5, 40);
+            this.txtDesconto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtDesconto.MaxLength = 32767;
+            this.txtDesconto.Mode = UIX.uixEnum.uixTextBoxMode.DOUBLE;
+            this.txtDesconto.Multiline = false;
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDesconto.Size = new System.Drawing.Size(160, 20);
+            this.txtDesconto.TabIndex = 9;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Description = "Finalizar";
+            this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnFinalizar.Image = global::BURGUER_SHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFinalizar.ImageLocation = null;
+            this.btnFinalizar.Location = new System.Drawing.Point(5, 305);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(90, 90);
+            this.btnFinalizar.TabIndex = 7;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
             // frmConta
             // 
-            this.AcceptButton = this.btnSalvar;
+            this.AcceptButton = this.btnImprimir;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 350);
-            this.Controls.Add(this.grbIngrediente);
-            this.Controls.Add(this.grbFornecedor);
-            this.Controls.Add(this.grbEntrada);
+            this.ClientSize = new System.Drawing.Size(750, 550);
+            this.Controls.Add(this.grbAlterar);
+            this.Controls.Add(this.grbValor);
+            this.Controls.Add(this.grbNota);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,11 +251,11 @@
             this.Name = "frmConta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Conta";
-            this.Load += new System.EventHandler(this.frmIngrediente_Load);
+            this.Load += new System.EventHandler(this.frmConta_Load);
             this.pnlMenu.ResumeLayout(false);
-            this.grbEntrada.ResumeLayout(false);
-            this.grbFornecedor.ResumeLayout(false);
-            this.grbIngrediente.ResumeLayout(false);
+            this.grbNota.ResumeLayout(false);
+            this.grbValor.ResumeLayout(false);
+            this.grbAlterar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,19 +264,18 @@
         public UIX.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private UIX.btnUIX btnVoltar;
-        private UIX.btnUIX btnSalvar;
-        public System.Windows.Forms.GroupBox grbEntrada;
-        private UIX.txtUIX txtQuantidade;
-        private System.Windows.Forms.GroupBox grbFornecedor;
-        private System.Windows.Forms.Label lblFornecedor;
-        private UIX.btnUIX btnFornEncontrar;
-        private UIX.mtbUIX mtbFornCNPJ;
-        private System.Windows.Forms.GroupBox grbIngrediente;
+        private UIX.btnUIX btnImprimir;
+        private System.Windows.Forms.GroupBox grbNota;
+        private System.Windows.Forms.WebBrowser webConta;
+        private UIX.txtUIX txtPessoas;
+        private System.Windows.Forms.GroupBox grbValor;
+        private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Label label1;
-        private UIX.btnUIX btnIngSelecionar;
-        private UIX.txtUIX txtValor;
-        private UIX.mtbUIX mtbValidade;
-        private System.Windows.Forms.Label lblIngrediente;
+        private System.Windows.Forms.GroupBox grbAlterar;
+        private UIX.txtUIX txtDesconto;
+        private UIX.btnUIX btnAtualizar;
+        private System.Windows.Forms.CheckBox chkServico;
+        private UIX.btnUIX btnFinalizar;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

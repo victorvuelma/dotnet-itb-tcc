@@ -149,13 +149,16 @@
     <Compile Include="clnAtendimento.cs" />
     <Compile Include="clnCargo.cs" />
     <Compile Include="clnCliente.cs" />
+    <Compile Include="clnConta.cs" />
     <Compile Include="clnEstoque.cs" />
     <Compile Include="clnFornecedor.cs" />
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
+    <Compile Include="clnPagamentoForma.cs" />
     <Compile Include="clnTipo.cs" />
     <Compile Include="clnUtilCache.cs" />
     <Compile Include="clnUtilCallback.cs" />
+    <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilConvert.cs" />
     <Compile Include="clnUtilListar.cs" />
     <Compile Include="clnUtilMensagem.cs" />

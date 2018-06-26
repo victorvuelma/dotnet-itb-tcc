@@ -33,6 +33,13 @@ namespace BURGUER_SHACK_DESKTOP
             return arquivo;
         }
 
+        public string guardar(String cod, String conteudo)
+        {
+            String arquivo = PASTA + cod + ".temp";
+            File.WriteAllText(arquivo, conteudo);
+            return arquivo;
+        }
+
         public string obter(String cod)
         {
             String arquivo = PASTA + cod + ".temp";

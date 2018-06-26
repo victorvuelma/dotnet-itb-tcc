@@ -554,5 +554,19 @@ namespace BURGUER_SHACK_DESKTOP
             Cursor.Current = Cursors.Default;
         }
 
+        public static String stringSize(object content, int size)
+        {
+            string str = Convert.ToString(content);
+            if (str.Length > size) {
+                str = str.Substring(0, size);
+            } else { 
+                while (str.Length < size)
+                {
+                    str += " ";
+                }
+            }
+            return str;
+        }
+
     }
 }

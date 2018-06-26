@@ -13,225 +13,66 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmConta : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnAtendimento _objAtendimento;
+        private clnConta _objConta;
 
-        private clnEstoque _objEstoque;
-
-        public clnEstoque ObjEstoque { get => _objEstoque; set => _objEstoque = value; }
+        public clnConta ObjConta { get => _objConta; set => _objConta = value; }
+        public clnAtendimento ObjAtendimento { get => _objAtendimento; set => _objAtendimento = value; }
 
         public frmConta()
         {
             InitializeComponent();
-
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtQuantidade, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.VALOR });
-            _validar.addValidacao(mtbValidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DATA });
-            _validar.addValidacao(mtbFornCNPJ, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CNPJ });
-
-            mtbFornCNPJ.Mask = clnUtil.MASK_CNPJ;
-            mtbValidade.Mask = clnUtil.MASK_DATA;
         }
 
-        private void salvar()
+        private int obterPessoas()
         {
-            if (_validar.valido())
+            if (clnUtil.validarInt(txtPessoas.Text))
             {
-                if (ObjEstoque.Cod == -1)
-                {
-                    ObjEstoque = new clnEstoque
-                    {
-                        CodFornecedor = ObjEstoque.CodFornecedor,
-                        CodIngrediente = ObjEstoque.CodIngrediente,
-                        Entrada = DateTime.Now.Date,
-                        Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text),
-                        Validade = clnUtilConvert.ToDateTime(mtbValidade.Text),
-                        Total = clnUtilConvert.ToInt(txtQuantidade.Text),
-                        Valor = clnUtilConvert.ToDouble(txtValor.Text)
-                    };
-                    ObjEstoque.gravar();
-
-                    clnUtilMensagem.mostrarOk("Cadastro de Estoque", "Estoque cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                }
-                else
-                {
-                    ObjEstoque.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
-
-                    ObjEstoque.alterar();
-                    clnUtilMensagem.mostrarOk("Altereção de Estoque", "Estoque alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                }
-                Close();
+                return clnUtilConvert.ToInt(txtPessoas.Text);
             }
+            return 1;
+        }
+
+        private double obterDesconto()
+        {
+            if (clnUtil.validarDouble(txtDesconto.Text))
+            {
+                return clnUtilConvert.ToDouble(txtDesconto.Text);
+            }
+            return 0.0;
+        }
+
+        private void exibirConta()
+        {
+            double valorTotal = clnUtilConta.calcularValor(clnUtilPedido.calcularValor(ObjAtendimento), chkServico.Checked, obterDesconto());
+            lblValorTotal.Text = "Valor Total: " + clnUtil.formatarValor(valorTotal);
+
+            webConta.Navigate(clnArquivo.CACHE.guardar("conta", clnUtilConta.gerarConta(ObjAtendimento, obterPessoas(), chkServico.Checked, obterDesconto())));
         }
 
         private void fechar()
         {
-            if (ObjEstoque.Cod == -1)
-            {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Estoque", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
-                {
-                    Close();
-                }
-            }
-            else
-            {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Estoque", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
-                {
-                    Close();
-                }
-            }
+            Close();
         }
 
-        private bool encontrarFornecedor()
-        {
-            if (clnUtil.validarCNPJ(mtbFornCNPJ.Text))
-            {
-                clnFornecedor objFornecedor = new clnFornecedor
-                {
-                    Cnpj = clnUtil.retirarFormatacao(mtbFornCNPJ.Text)
-                }.obterPorCNPJ();
-                if (objFornecedor != null)
-                {
-                    definirFornecedor(objFornecedor);
-                    return true;
-                }
-                else
-                {
-                    if (clnUtilMensagem.mostrarSimNao("Fornecedor", "Fornecedor não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
-                    {
-                        frmFornecedor frmNovoFornecedor = new frmFornecedor();
-                        frmNovoFornecedor.mtbCNPJ.Text = mtbFornCNPJ.Text;
-                        frmNovoFornecedor.ShowDialog();
-
-                        if (frmNovoFornecedor.ObjFornecedor != null)
-                        {
-                            definirFornecedor(frmNovoFornecedor.ObjFornecedor);
-                            return true;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                clnUtilMensagem.mostrarOk("Fornecedor", "O CNPJ informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
-            }
-            return false;
-        }
-
-        private void definirFornecedor(clnFornecedor objFornecedor)
-        {
-            ObjEstoque.CodFornecedor = objFornecedor.Cod;
-            lblFornecedor.Text = "Fornecedor " + objFornecedor.Cod +
-                            "\n" + "Razão Social: " + objFornecedor.RazaoSocial +
-                            "\n" + "CNPJ: " + clnUtil.formatarCNPJ(objFornecedor.Cnpj);
-        }
-
-        private void definirIngrediente(clnIngrediente objIngrediente)
-        {
-            ObjEstoque.CodIngrediente = objIngrediente.Cod;
-
-            int estoqueAtual = new clnEstoque
-            {
-                CodIngrediente = objIngrediente.Cod
-            }.obterQuantidadePorIngrediente();
-
-            lblIngrediente.Text = "Ingrediente " + objIngrediente.Cod +
-                            "\n" + "Nome: " + objIngrediente.Nome +
-                            "\n" + "Valor: " + objIngrediente.Valor;
-        }
-
-        private void selecionarIngrediente()
-        {
-            clnIngrediente objIngredientes = new clnIngrediente();
-
-            clnIngrediente.clnListar objListar = new clnIngrediente.clnListar
-            {
-                Icone = Properties.Resources.ingrediente,
-                Titulo = "Selecione o Ingrediente",
-                Opcoes = objIngredientes.obterIngredientes()
-            };
-
-            clnUtilSelecionar<clnIngrediente> objSelecionar = new clnUtilSelecionar<clnIngrediente>
-            {
-                Quantidade = 0,
-                ObjListar = objListar
-            };
-
-            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
-            {
-                ObjSelecionar = objSelecionar
-            };
-            frmSelecionar.ShowDialog();
-
-            if(objSelecionar.Selecionado != null)
-            {
-                definirIngrediente(objSelecionar.Selecionado);
-            }
-        }
-
-        private void frmIngrediente_Load(object sender, EventArgs e)
+        private void frmConta_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
             UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
+            txtPessoas.Text = "1";
 
-            if (ObjEstoque != null)
+            exibirConta();
+            hdrUIX.Title = App.Name + " - Atendimento " + ObjAtendimento.Cod + " :: Conta";
+
+            if (ObjConta == null)
             {
-                hdrUIX.Title = App.Name + " - Alterando Estoque " + ObjEstoque.Cod;
-
-                txtQuantidade.Text = clnUtilConvert.ToString(ObjEstoque.Quantidade);
-                txtValor.Text = ObjEstoque.Valor.ToString();
-                mtbValidade.Text = clnUtil.formatarData(ObjEstoque.Validade);
-
-                clnFornecedor objFornecedor = new clnFornecedor
-                {
-                    Cod = ObjEstoque.CodFornecedor
-                }.obterPorCod();
-
-                if (objFornecedor != null)
-                {
-                    mtbFornCNPJ.Text = objFornecedor.Cnpj;
-                    definirFornecedor(objFornecedor);
-                }
-                btnFornEncontrar.Hide();
-
-                clnIngrediente objIngrediente = new clnIngrediente
-                { 
-                    Cod = ObjEstoque.CodIngrediente
-                }.obterPorCod();
-
-                if(objIngrediente != null)
-                {
-                    definirIngrediente(objIngrediente);
-                }
-                btnIngSelecionar.Hide();
 
             }
             else
             {
-                ObjEstoque = new clnEstoque();
-
-                hdrUIX.Title = App.Name + " - Novo Estoque";
+                grbAlterar.Hide();
+                btnFinalizar.Hide();
             }
-        }
-
-        private void btnIngSelecionar_Click(object sender, EventArgs e)
-        {
-            selecionarIngrediente();
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            salvar();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            fechar();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -239,10 +80,26 @@ namespace BURGUER_SHACK_DESKTOP
             fechar();
         }
 
-        private void btnFornEncontrar_Click(object sender, EventArgs e)
+        private void btnImprimir_Click(object sender, EventArgs e)
         {
-            encontrarFornecedor();
+            exibirConta();
+
+            webConta.ShowPrintDialog();
         }
 
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            exibirConta();
+        }
+
+        private void chkServico_CheckedChanged(object sender, EventArgs e)
+        {
+            exibirConta();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            fechar();
+        }
     }
 }
