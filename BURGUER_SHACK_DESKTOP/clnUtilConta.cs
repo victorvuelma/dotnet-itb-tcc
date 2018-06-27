@@ -11,6 +11,8 @@ namespace BURGUER_SHACK_DESKTOP
     class clnUtilConta
     {
 
+        private static int codItem = 0;
+
         public static double calcularValor(clnConta objConta)
         {
             return calcularValor(objConta.Valor, objConta.TaxaServico, objConta.Desconto);
@@ -24,6 +26,7 @@ namespace BURGUER_SHACK_DESKTOP
             }.obterPorAtendimento();
 
             StringBuilder contaBuilder = new StringBuilder();
+            codItem = 1;
             foreach (String line in obterTemplate())
             {
                 if (line.Equals("{@items}"))
@@ -117,7 +120,7 @@ namespace BURGUER_SHACK_DESKTOP
                 CodItem = objItem.Cod
             };
 
-            adicionarItem(contaBuilder, 1, "PROD-" + objProduto.Cod, objProduto.Nome, objItem.Quantidade, objProduto.Valor);
+            adicionarItem(contaBuilder, codItem++, "PROD-" + objProduto.Cod, objProduto.Nome, objItem.Quantidade, objProduto.Valor);
 
             foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes.obterPorItem())
             {
@@ -149,7 +152,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 if (quantidade > 0)
                 {
-                    adicionarItem(contaBuilder, 1, "INGR-" + objIngrediente.Cod, "+ " + objIngrediente.Nome, quantidade, objIngrediente.Valor);
+                    adicionarItem(contaBuilder, codItem++, "INGR-" + objIngrediente.Cod, "+ " + objIngrediente.Nome, quantidade, objIngrediente.Valor);
                 }
             }
         }
