@@ -86,11 +86,11 @@ namespace BURGUER_SHACK_DESKTOP
             double valor = subTotal;
             if (incluirComissao)
             {
-                valor += subTotal * 0.1;
+                valor += Math.Round(subTotal * 0.1, 2);
             }
             if (desconto > 0.0)
             {
-                valor -= subTotal * (desconto / 100);
+                valor -= Math.Round(subTotal * (desconto / 100), 2);
             }
             return Math.Round(valor, 2);
         }
