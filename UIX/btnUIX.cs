@@ -90,7 +90,7 @@ namespace UIX
 
         private void update()
         {
-            UIX.uixUtil.defineSizeForWidht(lbl);
+            //UIX.uixUtil.defineSizeForWidht(lbl);
         }
 
         private void btnUIX_MouseEnter(object sender, EventArgs e)

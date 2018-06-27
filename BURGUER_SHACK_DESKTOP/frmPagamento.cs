@@ -220,18 +220,16 @@ namespace BURGUER_SHACK_DESKTOP
 
         private double obterValorAPagar()
         {
-            double valor = 0.0d;
+            double valor = clnUtilConta.calcularValor(ObjConta);
 
             clnPagamento objPagamentos = new clnPagamento
             {
                 CodConta = ObjConta.CodAtendimento
             };
-
             foreach (clnPagamento objPagamento in objPagamentos.obterPorConta())
             {
-                valor += objPagamento.Valor;
+                valor -= objPagamento.Valor;
             }
-            valor = ObjConta.Valor - valor;
 
             return valor;
         }

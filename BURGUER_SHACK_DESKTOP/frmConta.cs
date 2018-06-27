@@ -35,7 +35,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
             else
             {
-                return ObjConta.Valor;
+                return clnUtilConta.calcularValor(ObjConta);
             }
         }
 
@@ -83,7 +83,7 @@ namespace BURGUER_SHACK_DESKTOP
 
                 lblValorPago.Text = "Valor Pago: " + clnUtil.formatarValor(valor);
 
-                if (valor >= ObjConta.Valor)
+                if (valor >= obterValorTotal())
                 {
                     ObjAtendimento.Fim = DateTime.Now;
                     ObjAtendimento.Situacao = clnAtendimento.atendimentoSituacao.FINALIZADO;
@@ -108,15 +108,13 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (clnUtilMensagem.mostrarSimNao("Conta", "Você deseja realmente finalizar a conta?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                double valor = clnUtilPedido.calcularValor(ObjAtendimento);
-
                 ObjConta = new clnConta
                 {
                     CodAtendimento = ObjAtendimento.Cod,
                     Desconto = obterDesconto(),
                     TaxaServico = chkServico.Checked,
                     CodFuncionario = CodFuncionario,
-                    Valor = valor
+                    Valor = clnUtilPedido.calcularValor(ObjAtendimento)
                 };
                 ObjConta.gravar();
 

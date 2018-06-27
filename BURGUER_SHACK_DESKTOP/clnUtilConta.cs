@@ -11,6 +11,11 @@ namespace BURGUER_SHACK_DESKTOP
     class clnUtilConta
     {
 
+        public static double calcularValor(clnConta objConta)
+        {
+            return calcularValor(objConta.Valor, objConta.TaxaServico, objConta.Desconto);
+        }
+
         public static string gerarConta(clnAtendimento objAtendimento, int pessoas, bool incluirGorjeta, double desconto)
         {
             List<clnPedido> objPedidos = new clnPedido

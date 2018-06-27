@@ -305,7 +305,7 @@
             this.txtDinheiro.Location = new System.Drawing.Point(5, 15);
             this.txtDinheiro.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtDinheiro.MaxLength = 32767;
-            this.txtDinheiro.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtDinheiro.Mode = UIX.uixEnum.uixTextBoxMode.MONEY;
             this.txtDinheiro.Multiline = false;
             this.txtDinheiro.Name = "txtDinheiro";
             this.txtDinheiro.ScrollBars = System.Windows.Forms.ScrollBars.None;
