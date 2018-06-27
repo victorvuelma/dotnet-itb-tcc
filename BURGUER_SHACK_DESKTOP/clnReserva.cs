@@ -193,7 +193,7 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (CodMesas.Contains(mesa))
             {
-                CodMesas.Add(mesa);
+                CodMesas.Remove(mesa);
                 if (Cod != -1)
                 {
                     sqlCommandDelete objDelete = new sqlCommandDelete();
