@@ -13,38 +13,47 @@ namespace BURGUER_SHACK_DESKTOP
     public abstract class clnUtilVisualizar
     {
 
+        public enum visualizarAction
+        {
+            FECHAR,
+            REMOVER_ITEM,
+            NADA
+        }
+
+        internal interface visualizarCallback<X, Y> : clnUtilResponseCallback<visualizarAction, X, Y> { };
+
         private clnUtilListar objListar;
 
         public clnUtilListar ObjListar { get => objListar; set => objListar = value; }
 
-        public abstract bool click(object obj);
+        public abstract clnUtilVisualizar.visualizarAction action(object obj);
 
     }
 
     public class clnUtilVisualizar<O, V> : clnUtilVisualizar
     {
 
-        private clnUtilCallback<O, V> _callbackClick;
+        private clnUtilVisualizar.visualizarCallback<O, V> _callbackClick;
         private O _obj;
 
         public clnUtilVisualizar()
         {
-            if(this is O obj)
+            if (this is O obj)
             {
                 Obj = obj;
             }
         }
 
         public O Obj { get => _obj; set => _obj = value; }
-        internal clnUtilCallback<O, V> CallbackClick { get => _callbackClick; set => _callbackClick = value; }
+        internal clnUtilVisualizar.visualizarCallback<O, V> Callback { get => _callbackClick; set => _callbackClick = value; }
 
-        public override bool click(object obj)
+        public override clnUtilVisualizar.visualizarAction action(object obj)
         {
-            if (CallbackClick != null && obj != null && obj is V val)
+            if (Callback != null && obj != null && obj is V val)
             {
-                return CallbackClick.call(Obj, val);
+                return Callback.call(Obj, val);
             }
-            return false;
+            return clnUtilVisualizar.visualizarAction.NADA;
         }
 
     }

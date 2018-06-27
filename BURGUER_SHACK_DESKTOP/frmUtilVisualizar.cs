@@ -14,6 +14,13 @@ namespace BURGUER_SHACK_DESKTOP
     public partial class frmUtilVisualizar : Form
     {
 
+        public enum visualizarAction
+        {
+            FECHAR,
+            REMOVER_ITEM,
+            NADA
+        }
+
         private clnUtilVisualizar _objVisualizar;
 
         private List<object> _opcoes;
@@ -43,13 +50,18 @@ namespace BURGUER_SHACK_DESKTOP
                 };
                 btn.Click += (object sender, EventArgs e) =>
                 {
-                    if (ObjVisualizar.click(obj))
+                    switch (ObjVisualizar.action(obj))
                     {
-                        Close();
-                    }
-                    else
-                    {
-                        realizaPesquisa();
+                        case clnUtilVisualizar.visualizarAction.FECHAR:
+                            Close();
+                            break;
+                        case clnUtilVisualizar.visualizarAction.NADA:
+                            realizaPesquisa();
+                            break;
+                        case clnUtilVisualizar.visualizarAction.REMOVER_ITEM:
+                            ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
+                            realizaPesquisa();
+                            break;
                     }
                 };
 

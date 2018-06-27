@@ -205,7 +205,7 @@ namespace BURGUER_SHACK_DESKTOP
             clnUtilVisualizar<frmProduto, clnIngrediente> objVisualizar = new clnUtilVisualizar<frmProduto, clnIngrediente>
             {
                 Obj = this,
-                CallbackClick = new CallbackAdicionar(),
+                Callback = new CallbackAdicionar(),
                 ObjListar = objListar
             };
 
@@ -243,7 +243,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnUtilVisualizar objVisualizar = new clnUtilVisualizar<clnUtilVisualizar, clnProdutoIngrediente>
                 {
                     ObjListar = objListar,
-                    CallbackClick = new CallbackRemover()
+                    Callback = new CallbackRemover()
                 };
 
                 frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
@@ -350,10 +350,10 @@ namespace BURGUER_SHACK_DESKTOP
             exibirIngredientes();
         }
 
-        private class CallbackRemover : clnUtilCallback<clnUtilVisualizar, clnProdutoIngrediente>
+        private class CallbackRemover : clnUtilVisualizar.visualizarCallback<clnUtilVisualizar, clnProdutoIngrediente>
         {
 
-            public bool call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
+            public clnUtilVisualizar.visualizarAction call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
             {
                 frmProdutoIngrediente frmProdutoIngrediente = new frmProdutoIngrediente
                 {
@@ -369,14 +369,14 @@ namespace BURGUER_SHACK_DESKTOP
                     objProdutoIngrediente.remover();
                     objVisualizar.ObjListar.getOpcoes().Remove(objProdutoIngrediente);
                 }
-                return false;
+                return clnUtilVisualizar.visualizarAction.FECHAR;
             }
         }
 
-        private class CallbackAdicionar : clnUtilCallback<frmProduto, clnIngrediente>
+        private class CallbackAdicionar : clnUtilVisualizar.visualizarCallback<frmProduto, clnIngrediente>
         {
 
-            public bool call(frmProduto frmProduto, clnIngrediente objIngrediente)
+            public clnUtilVisualizar.visualizarAction call(frmProduto frmProduto, clnIngrediente objIngrediente)
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
@@ -402,9 +402,9 @@ namespace BURGUER_SHACK_DESKTOP
                         objProdutoIngrediente.gravar();
                     }
                     clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                    return true;
+                    return clnUtilVisualizar.visualizarAction.REMOVER_ITEM;
                 }
-                return false;
+                return clnUtilVisualizar.visualizarAction.NADA;
             }
         }
 

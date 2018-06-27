@@ -135,7 +135,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnUtilVisualizar<clnReserva, clnMesa> objVisualizar = new clnUtilVisualizar<clnReserva, clnMesa>
                 {
                     Obj = ObjReserva,
-                    CallbackClick = new CallbackRemover(),
+                    Callback = new CallbackRemover(),
                     ObjListar = objListar
                 };
 
@@ -172,11 +172,11 @@ namespace BURGUER_SHACK_DESKTOP
                         Titulo = "Adicionar uma Mesa",
                         Icone = Properties.Resources.mesa
                     };
-                    clnUtilVisualizar<frmReserva, clnMesa> objVisualizar = new clnUtilVisualizar<frmReserva, clnMesa>
+                    clnUtilVisualizar<clnReserva, clnMesa> objVisualizar = new clnUtilVisualizar<clnReserva, clnMesa>
                     {
                         ObjListar = objListar,
-                        CallbackClick = new CallbackAdicionar(),
-                        Obj = this
+                        Callback = new CallbackAdicionar(),
+                        Obj = ObjReserva
                     };
 
                     frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
@@ -447,29 +447,29 @@ namespace BURGUER_SHACK_DESKTOP
             cancelarReserva();
         }
 
-        private class CallbackRemover : clnUtilCallback<clnReserva, clnMesa>
+        private class CallbackRemover : clnUtilVisualizar.visualizarCallback<clnReserva, clnMesa>
         {
-            public bool call(clnReserva objReserva, clnMesa objMesa)
+            public clnUtilVisualizar.visualizarAction call(clnReserva objReserva, clnMesa objMesa)
             {
                 if (clnUtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", clnUtilMensagem.MensagemIcone.INFO))
                 {
                     objReserva.removerMesa(objMesa.Cod);
-                    return true;
+                    return clnUtilVisualizar.visualizarAction.REMOVER_ITEM;
                 }
-                return false;
+                return clnUtilVisualizar.visualizarAction.NADA;
             }
         }
 
-        private class CallbackAdicionar : clnUtilCallback<frmReserva, clnMesa>
+        private class CallbackAdicionar : clnUtilVisualizar.visualizarCallback<clnReserva, clnMesa>
         {
-            public bool call(frmReserva frmReserva, clnMesa objMesa)
+            public clnUtilVisualizar.visualizarAction call(clnReserva objReserva, clnMesa objMesa)
             {
-                frmReserva.ObjReserva.addMesa(objMesa.Cod);
+                objReserva.addMesa(objMesa.Cod);
                 if (clnUtilMensagem.mostrarSimNao("Mesas", "Mesa " + objMesa.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", clnUtilMensagem.MensagemIcone.INFO))
                 {
-                    frmReserva.adicionarMesa();
+                    return clnUtilVisualizar.visualizarAction.REMOVER_ITEM;
                 }
-                return true;
+                return clnUtilVisualizar.visualizarAction.NADA;
             }
         }
 

@@ -57,7 +57,8 @@ namespace BURGUER_SHACK_DESKTOP
 
                     exibirMesas();
                 }
-            } else
+            }
+            else
             {
                 clnUtilMensagem.mostrarOk("Atendimento", "Não é possível remover a única mesa do Atendimento atual.", clnUtilMensagem.MensagemIcone.ERRO);
             }
@@ -80,7 +81,7 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 ObjListar = objListar,
                 Obj = ObjAtendimento,
-                CallbackClick = new CallBackAdicionar()
+                Callback = new CallBackAdicionar()
             };
 
             frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
@@ -102,14 +103,14 @@ namespace BURGUER_SHACK_DESKTOP
             adicionarMesa();
         }
 
-        private class CallBackAdicionar : clnUtilCallback<clnAtendimento, clnMesa>
+        private class CallBackAdicionar : clnUtilVisualizar.visualizarCallback<clnAtendimento, clnMesa>
         {
 
-            public bool call(clnAtendimento objAtendimento, clnMesa objMesa)
+            public clnUtilVisualizar.visualizarAction call(clnAtendimento objAtendimento, clnMesa objMesa)
             {
                 objAtendimento.adicionarMesa(objMesa.Cod);
                 clnUtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Cod + " adicionada ao atendimento.", clnUtilMensagem.MensagemIcone.OK);
-                return true;
+                return clnUtilVisualizar.visualizarAction.FECHAR;
             }
         }
     }

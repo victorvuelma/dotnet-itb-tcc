@@ -12,7 +12,7 @@ namespace BURGUER_SHACK_DESKTOP
         bool call();
 
     }
-    
+
     internal interface clnUtilCallback<X>
     {
 
@@ -20,11 +20,13 @@ namespace BURGUER_SHACK_DESKTOP
 
     }
 
-    internal interface clnUtilCallback<X, Y>
+    internal interface clnUtilResponseCallback<R, X, Y>
     {
 
-        bool call(X x, Y y);
+        R call(X x, Y y);
 
     }
+
+    internal interface clnUtilCallback<X, Y> : clnUtilResponseCallback<bool, X, Y> { };
 
 }

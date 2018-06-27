@@ -11,7 +11,7 @@ namespace BURGUER_SHACK_DESKTOP
 
     public abstract class clnUtilListar
     {
-
+        
         private Image _icone = Properties.Resources.lista;
         private String _titulo = "";
 

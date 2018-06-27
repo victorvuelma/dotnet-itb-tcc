@@ -67,7 +67,7 @@ namespace BURGUER_SHACK_DESKTOP
                 clnUtilVisualizar<frmItem, clnItemIngrediente> objVisualizar = new clnUtilVisualizar<frmItem, clnItemIngrediente>
                 {
                     ObjListar = objListar,
-                    CallbackClick = new CallbackAlterar(),
+                    Callback = new CallbackAlterar(),
                     Obj = this
                 };
 
@@ -210,9 +210,9 @@ namespace BURGUER_SHACK_DESKTOP
             abrirAdicionarIngrediente();
         }
 
-        private class CallbackAlterar : clnUtilCallback<frmItem, clnItemIngrediente>
+        private class CallbackAlterar : clnUtilVisualizar.visualizarCallback<frmItem, clnItemIngrediente>
         {
-            public bool call(frmItem frmItem, clnItemIngrediente objItemIngrediente)
+            public clnUtilVisualizar.visualizarAction call(frmItem frmItem, clnItemIngrediente objItemIngrediente)
             {
                 if (objItemIngrediente.CodProdutoIngrediente != null)
                 {
@@ -261,7 +261,7 @@ namespace BURGUER_SHACK_DESKTOP
                         clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
                     }
                 }
-                return true;
+                return clnUtilVisualizar.visualizarAction.FECHAR;
             }
         }
     }
