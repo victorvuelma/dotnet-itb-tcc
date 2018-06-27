@@ -92,9 +92,8 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 valor -= subTotal * (desconto / 100);
             }
-            return valor;
+            return Math.Round(valor, 2);
         }
-
 
         public static void gerarConta(StringBuilder contaBuilder, clnPedido objPedido)
         {

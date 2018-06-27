@@ -57,23 +57,24 @@ namespace BURGUER_SHACK_DESKTOP
 
         public static double calcularValor(clnAtendimento objAtendimento)
         {
+            double atendimentoValor = 0.0;
+
             clnPedido objPedidos = new clnPedido
             {
                 CodAtendimento = objAtendimento.Cod
             };
 
-            double valor = 0.0d;
             foreach (clnPedido objPedido in objPedidos.obterPorAtendimento())
             {
-                valor += calcularValor(objPedido);
+                atendimentoValor += calcularValor(objPedido);
             }
 
-            return valor;
+            return Math.Round(atendimentoValor, 2);
         }
 
         public static double calcularValor(clnPedido objPedido)
         {
-            double valorTotal = 0.0;
+            double pedidoValor = 0.0;
 
             clnItem objItens = new clnItem
             {
@@ -86,23 +87,22 @@ namespace BURGUER_SHACK_DESKTOP
                 {
                     CodItem = objItem.Cod
                 };
-
-                valorTotal += calcularValor(objItem, objIngredientes.obterPorItem());
+                pedidoValor += calcularValor(objItem, objIngredientes.obterPorItem());
             }
 
-            return valorTotal;
+            return Math.Round(pedidoValor, 2);
         }
 
         public static double calcularValor(Dictionary<clnItem, List<clnItemIngrediente>> objItens)
         {
-            double valorTotal = 0.0;
+            double pedidoValor = 0.0;
 
             foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objItem in objItens)
             {
-                valorTotal += calcularValor(objItem.Key, objItem.Value);
+                pedidoValor += calcularValor(objItem.Key, objItem.Value);
             }
 
-            return valorTotal;
+            return Math.Round(pedidoValor, 2);
         }
 
         public static double calcularValor(clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
@@ -118,11 +118,13 @@ namespace BURGUER_SHACK_DESKTOP
                 itemValor += clnUtilPedido.calcularValor(objItemIngrediente) * objItem.Quantidade;
             }
 
-            return itemValor;
+            return Math.Round(itemValor, 2);
         }
 
         public static double calcularValor(clnItemIngrediente objItemIngrediente)
         {
+            double ingredienteValor = 0.0;
+
             clnIngrediente objIngrediente = new clnIngrediente
             {
                 Cod = objItemIngrediente.CodIngrediente
@@ -132,23 +134,24 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
-                    Cod = (int) objItemIngrediente.CodProdutoIngrediente
+                    Cod = (int)objItemIngrediente.CodProdutoIngrediente
                 }.obterPorCod();
 
                 if (objProdutoIngrediente != null)
                 {
                     if (objItemIngrediente.Quantidade > objProdutoIngrediente.Quantidade)
                     {
-                        return objIngrediente.Valor * (objItemIngrediente.Quantidade - objProdutoIngrediente.Quantidade);
+                        ingredienteValor = objIngrediente.Valor * (objItemIngrediente.Quantidade - objProdutoIngrediente.Quantidade);
                     }
-                    else
-                    {
-                        return 0.0;
-                    }
+                } else
+                {
+                    ingredienteValor = objIngrediente.Valor * objItemIngrediente.Quantidade;
                 }
+            } else
+            {
+                ingredienteValor = objIngrediente.Valor * objItemIngrediente.Quantidade;
             }
-
-            return objIngrediente.Valor * objItemIngrediente.Quantidade;
+            return Math.Round(ingredienteValor, 2);
         }
 
     }

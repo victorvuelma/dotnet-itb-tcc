@@ -30,7 +30,7 @@ namespace BURGUER_SHACK_DESKTOP
             return null;
         }
 
-        internal static double ToDouble(object val) => Convert.ToDouble(val);
+        internal static double ToDouble(object val) => Math.Round(Convert.ToDouble(val), 2);
 
         public static DateTime? ToNullableDateTime(object val)
         {

@@ -69,7 +69,7 @@ namespace BURGUER_SHACK_DESKTOP
                             }
                         }
                     }
-                    if (obterValorPago() > obterValorAPagar())
+                    if (Math.Round(obterValorPago(), 2) > Math.Round(obterValorAPagar(), 2))
                     {
                         clnUtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.", clnUtilMensagem.MensagemIcone.ERRO);
                         return;
@@ -230,7 +230,6 @@ namespace BURGUER_SHACK_DESKTOP
             {
                 valor -= objPagamento.Valor;
             }
-
             return valor;
         }
 
