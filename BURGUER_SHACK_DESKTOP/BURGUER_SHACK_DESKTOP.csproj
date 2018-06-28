@@ -370,6 +370,12 @@
     <Compile Include="uctAtendimentoPedidos.Designer.cs">
       <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctUtilListar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctUtilListar.Designer.cs">
+      <DependentUpon>uctUtilListar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAcesso.resx">
       <DependentUpon>frmAcesso.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uctAtendimentoPedidos.resx">
       <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctUtilListar.resx">
+      <DependentUpon>uctUtilListar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BURGUER_SHACK_DESKTOP.Properties.Resources.datasource" />

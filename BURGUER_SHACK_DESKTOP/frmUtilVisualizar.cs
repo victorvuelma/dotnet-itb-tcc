@@ -36,47 +36,53 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void exibirOpcoes()
         {
-            pnlOpcoes.Controls.Clear();
+            uctOpcoes.limpar();
 
-            List<Control> opcoesControles = new List<Control>();
             foreach (object obj in _opcoes)
             {
-                UIX.btnUIX btn = new UIX.btnUIX
-                {
-                    Description = ObjVisualizar.ObjListar.getNome(obj),
-                    Name = "btnVisualizar" + ObjVisualizar.ObjListar.getCod(obj),
-                    Size = new Size(110, 110),
-                    ImageLocation = ObjVisualizar.ObjListar.getImagem(obj)
-                };
-                btn.Click += (object sender, EventArgs e) =>
-                {
-                    switch (ObjVisualizar.action(obj))
-                    {
-                        case clnUtilVisualizar.visualizarAction.FECHAR:
-                            Close();
-                            break;
-                        case clnUtilVisualizar.visualizarAction.NADA:
-                            realizaPesquisa();
-                            break;
-                        case clnUtilVisualizar.visualizarAction.REMOVER_ITEM:
-                            ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
-                            realizaPesquisa();
-                            break;
-                    }
-                };
-
-                opcoesControles.Add(btn);
+                uctOpcoes.adicionarItem(ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), App.VisualStyle.ButtonImageColor);
             }
-            clnUtil.adicionarControles(pnlOpcoes, opcoesControles, 20);
+            //uctOpcoes.Controls.Clear();
 
-            foreach (Control control in opcoesControles)
-            {
-                if (control is Button btn)
-                {
-                    UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
-                }
-            }
-            opcoesControles.Clear();
+            //List<Control> opcoesControles = new List<Control>();
+            //foreach (object obj in _opcoes)
+            //{
+            //    UIX.btnUIX btn = new UIX.btnUIX
+            //    {
+            //        Description = ObjVisualizar.ObjListar.getNome(obj),
+            //        Name = "btnVisualizar" + ObjVisualizar.ObjListar.getCod(obj),
+            //        Size = new Size(110, 110),
+            //        ImageLocation = ObjVisualizar.ObjListar.getImagem(obj)
+            //    };
+            //    btn.Click += (object sender, EventArgs e) =>
+            //    {
+            //        switch (ObjVisualizar.action(obj))
+            //        {
+            //            case clnUtilVisualizar.visualizarAction.FECHAR:
+            //                Close();
+            //                break;
+            //            case clnUtilVisualizar.visualizarAction.NADA:
+            //                realizaPesquisa();
+            //                break;
+            //            case clnUtilVisualizar.visualizarAction.REMOVER_ITEM:
+            //                ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
+            //                realizaPesquisa();
+            //                break;
+            //        }
+            //    };
+
+            //    opcoesControles.Add(btn);
+            //}
+            //clnUtil.adicionarControles(uctOpcoes, opcoesControles, 20);
+
+            //foreach (Control control in opcoesControles)
+            //{
+            //    if (control is Button btn)
+            //    {
+            //        UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
+            //    }
+            //}
+            //opcoesControles.Clear();
 
             lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
         }

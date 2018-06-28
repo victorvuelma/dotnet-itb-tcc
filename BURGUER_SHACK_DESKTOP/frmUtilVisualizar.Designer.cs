@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUtilVisualizar));
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
-            this.pnlOpcoes = new System.Windows.Forms.Panel();
+            this.uctOpcoes = new BURGUER_SHACK_DESKTOP.uctUtilListar();
             this.hdrUIX = new UIX.hdrUIX();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
@@ -41,21 +42,21 @@
             // 
             // grbOpcoes
             // 
-            this.grbOpcoes.Controls.Add(this.pnlOpcoes);
+            this.grbOpcoes.Controls.Add(this.uctOpcoes);
             this.grbOpcoes.Location = new System.Drawing.Point(5, 165);
             this.grbOpcoes.Name = "grbOpcoes";
             this.grbOpcoes.Size = new System.Drawing.Size(540, 380);
             this.grbOpcoes.TabIndex = 5;
             this.grbOpcoes.TabStop = false;
             // 
-            // pnlOpcoes
+            // uctOpcoes
             // 
-            this.pnlOpcoes.AutoScroll = true;
-            this.pnlOpcoes.Location = new System.Drawing.Point(5, 15);
-            this.pnlOpcoes.MaximumSize = new System.Drawing.Size(530, 1000);
-            this.pnlOpcoes.Name = "pnlOpcoes";
-            this.pnlOpcoes.Size = new System.Drawing.Size(530, 355);
-            this.pnlOpcoes.TabIndex = 0;
+            this.uctOpcoes.AutoScroll = true;
+            this.uctOpcoes.Location = new System.Drawing.Point(5, 15);
+            this.uctOpcoes.MaximumSize = new System.Drawing.Size(530, 1000);
+            this.uctOpcoes.Name = "uctOpcoes";
+            this.uctOpcoes.Size = new System.Drawing.Size(530, 355);
+            this.uctOpcoes.TabIndex = 0;
             // 
             // hdrUIX
             // 
@@ -93,12 +94,12 @@
             // txtPesquisar
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
-            this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Campo = "Pesquisar por";
             this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisar.MaxLength = 32767;
+            this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -143,7 +144,7 @@
         #endregion
         private System.Windows.Forms.GroupBox grbOpcoes;
         private UIX.hdrUIX hdrUIX;
-        private System.Windows.Forms.Panel pnlOpcoes;
+        private BURGUER_SHACK_DESKTOP.uctUtilListar uctOpcoes;
         private System.Windows.Forms.GroupBox grbPesquisa;
         private System.Windows.Forms.Label lblPesquisaRes;
         private UIX.txtUIX txtPesquisar;

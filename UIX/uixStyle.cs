@@ -17,7 +17,6 @@ namespace UIX
         private int _headerButtonSize;
         private int _headerButtonSpace;
 
-        private Font _headerFont;
         private Font _contentFont;
         private Font _buttonFont;
 
@@ -35,7 +34,6 @@ namespace UIX
         public int HeaderButtonSize { get => _headerButtonSize; set => _headerButtonSize = value; }
         public int HeaderButtonSpace { get => _headerButtonSpace; set => _headerButtonSpace = value; }
 
-        public Font HeaderFont { get => _headerFont; set => _headerFont = value; }
         public Font ContentFont { get => _contentFont; set => _contentFont = value; }
         public Font BoldFont { get => _buttonFont; set => _buttonFont = value; }
 
@@ -52,7 +50,6 @@ namespace UIX
             FormColor = uixSet.INDIGO,
             HeaderButtonSize = 40,
             HeaderButtonSpace = 5,
-            HeaderFont = uixFont.LATO_BLACK,
             ContentFont = uixFont.CENTURY_REGULAR,
             BoldFont = uixFont.CENTURY_BOLD,
             ButtonColor = uixSet.BLUE,

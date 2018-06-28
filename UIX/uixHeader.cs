@@ -24,7 +24,7 @@ namespace UIX
 
             //Apply header title style
             hdr.lbl.BringToFront();
-            uixLabel.lblApply(hdr.lbl, style.FormColor, style.HeaderFont);
+            uixLabel.lblApply(hdr.lbl, style.FormColor, style.BoldFont);
             hdr.lbl.Font = uixFont.alterFont(hdr.lbl.Font, 12.5f);
             hdr.lbl.BackColor = style.FormColor.DarkColor;
             hdr.lbl.Location = new Point((style.HeaderButtonSpace * 2) + style.HeaderButtonSize,0);
