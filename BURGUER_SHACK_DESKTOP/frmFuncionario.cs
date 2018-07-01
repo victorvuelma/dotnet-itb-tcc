@@ -109,7 +109,7 @@ namespace BURGUER_SHACK_DESKTOP
                             TelRes = clnUtil.retirarFormatacao(mtbTelRes.Text),
                             TelCel = clnUtil.retirarFormatacao(mtbTelCel.Text),
                             Email = txtEmail.Text,
-                            Salario = clnUtilConvert.ToDouble(txtSalario.Text),
+                            Salario = clnUtilConvert.ToDecimal(txtSalario.Text),
                             DataContratacao = DateTime.Now,
                             Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text),
                             EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text),
@@ -141,7 +141,7 @@ namespace BURGUER_SHACK_DESKTOP
                     ObjFuncionario.Genero = cboGenero.Text;
                     ObjFuncionario.TelRes = clnUtil.retirarFormatacao(mtbTelRes.Text);
                     ObjFuncionario.TelCel = clnUtil.retirarFormatacao(mtbTelCel.Text);
-                    ObjFuncionario.Salario = clnUtilConvert.ToDouble(txtSalario.Text);
+                    ObjFuncionario.Salario = clnUtilConvert.ToDecimal(txtSalario.Text);
                     ObjFuncionario.Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text);
                     ObjFuncionario.EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text);
                     ObjFuncionario.EndLogradouro = txtEndLogradouro.Text;

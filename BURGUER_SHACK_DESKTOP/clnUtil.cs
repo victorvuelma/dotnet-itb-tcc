@@ -225,7 +225,7 @@ namespace BURGUER_SHACK_DESKTOP
             return new String(texto.Where(Char.IsDigit).ToArray());
         }
 
-        public static String formatarValor(double valor)
+        public static String formatarValor(decimal valor)
         {
             return string.Format("{0:C}", valor);
 
@@ -325,6 +325,11 @@ namespace BURGUER_SHACK_DESKTOP
         public static bool validarDouble(String val)
         {
             return Double.TryParse(val, out double r);
+        }
+
+        public static bool validarDecimal(String val)
+        {
+            return Decimal.TryParse(val, out decimal r);
         }
 
         public static bool validarCPF(String cpf)

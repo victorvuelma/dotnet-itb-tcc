@@ -93,7 +93,7 @@ namespace BURGUER_SHACK_DESKTOP
                 }
                 else if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
                 {
-                    double valor = clnUtilPedido.calcularValor(ObjItens);
+                    decimal valor = clnUtilPedido.calcularValor(ObjItens);
 
                     ObjPedido = new clnPedido
                     {

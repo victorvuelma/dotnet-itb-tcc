@@ -30,7 +30,16 @@ namespace BURGUER_SHACK_DESKTOP
             return null;
         }
 
-        internal static double ToDouble(object val) => Math.Round(Convert.ToDouble(val), 2);
+        internal static double ToDouble(object val) => Convert.ToDouble(val);
+
+        public static decimal? ToNullableDecimal(object val)
+        {
+            if (!isNull(val))
+                return ToDecimal(val);
+            return null;
+        }
+
+        internal static decimal ToDecimal(object val) => Convert.ToDecimal(val);
 
         public static DateTime? ToNullableDateTime(object val)
         {

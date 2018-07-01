@@ -15,24 +15,24 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codAtendimento = -1;
         private int _codFuncionario = -1;
 
-        private double _valor;
+        private decimal _valor;
 
         private bool _taxaServico;
-        private double _desconto;
+        private decimal _desconto;
 
         public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-        public double Valor { get => _valor; set => _valor = value; }
+        public decimal Valor { get => _valor; set => _valor = value; }
         public bool TaxaServico { get => _taxaServico; set => _taxaServico = value; }
-        public double Desconto { get => _desconto; set => _desconto = value; }
+        public decimal Desconto { get => _desconto; set => _desconto = value; }
 
         private clnConta obter(SqlDataReader reader) => new clnConta
         {
             CodAtendimento = clnUtilConvert.ToInt(reader["id_atendimento"]),
             CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-            Valor = clnUtilConvert.ToDouble(reader["valor"]),
+            Valor = clnUtilConvert.ToDecimal(reader["valor"]),
             TaxaServico = clnUtilConvert.ToBool(reader["taxa_servico"]),
-            Desconto = clnUtilConvert.ToDouble(reader["desconto"])
+            Desconto = clnUtilConvert.ToDecimal(reader["desconto"])
         };
 
         public clnConta obterPorCodAtendimento()

@@ -47,7 +47,7 @@ namespace BURGUER_SHACK_DESKTOP
                         Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text),
                         Validade = clnUtilConvert.ToDateTime(mtbValidade.Text),
                         Total = clnUtilConvert.ToInt(txtQuantidade.Text),
-                        Valor = clnUtilConvert.ToDouble(txtValor.Text)
+                        Valor = clnUtilConvert.ToDecimal(txtValor.Text)
                     };
                     ObjEstoque.gravar();
 

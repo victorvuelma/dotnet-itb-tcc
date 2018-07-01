@@ -21,7 +21,7 @@ namespace BURGUER_SHACK_DESKTOP
         private DateTime _validade;
 
         private int _total;
-        private double _valor;
+        private decimal _valor;
 
         private int _quantidade;
 
@@ -31,7 +31,7 @@ namespace BURGUER_SHACK_DESKTOP
         public DateTime Entrada { get => _entrada; set => _entrada = value; }
         public DateTime Validade { get => _validade; set => _validade = value; }
         public int Total { get => _total; set => _total = value; }
-        public double Valor { get => _valor; set => _valor = value; }
+        public decimal Valor { get => _valor; set => _valor = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
 
         private clnEstoque obter(SqlDataReader reader) => new clnEstoque
@@ -43,7 +43,7 @@ namespace BURGUER_SHACK_DESKTOP
             Validade = clnUtilConvert.ToDateTime(reader["validade"]),
             Quantidade = clnUtilConvert.ToInt(reader["quantidade"]),
             Total = clnUtilConvert.ToInt(reader["total"]),
-            Valor = clnUtilConvert.ToDouble(reader["valor"])
+            Valor = clnUtilConvert.ToDecimal(reader["valor"])
         };
 
         public clnEstoque obterPorCod()

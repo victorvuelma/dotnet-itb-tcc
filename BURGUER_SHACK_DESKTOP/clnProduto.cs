@@ -26,9 +26,9 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codImagem = -1;
         private int _codTipo = -1;
 
-        private String _nome;
-        private String _descricao;
-        private double _valor;
+        private string _nome;
+        private string _descricao;
+        private decimal _valor;
         private produtoSituacao _situacao;
 
         public int Cod { get => _cod; set => _cod = value; }
@@ -36,7 +36,7 @@ namespace BURGUER_SHACK_DESKTOP
         public int CodTipo { get => _codTipo; set => _codTipo = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
-        public double Valor { get => _valor; set => _valor = value; }
+        public decimal Valor { get => _valor; set => _valor = value; }
         internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
 
         private clnProduto obter(SqlDataReader reader) => new clnProduto
@@ -47,7 +47,7 @@ namespace BURGUER_SHACK_DESKTOP
             Descricao = clnUtilConvert.ToString(reader["descricao"]),
             Nome = clnUtilConvert.ToString(reader["nome"]),
             Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
-            Valor = clnUtilConvert.ToDouble(reader["valor"])
+            Valor = clnUtilConvert.ToDecimal(reader["valor"])
         };
 
         public clnProduto obterPorCod()
@@ -189,7 +189,7 @@ namespace BURGUER_SHACK_DESKTOP
 
             internal override string Detalhes(clnProduto obj)
             {
-                String detalhes = "";
+                string detalhes = "";
                 detalhes += "Categoria: " + obj.CodTipo;
                 detalhes += "\n";
                 detalhes += "Código: " + obj.Cod;

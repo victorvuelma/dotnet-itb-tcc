@@ -87,7 +87,7 @@ namespace BURGUER_SHACK_DESKTOP
                         Nome = txtNome.Text,
                         CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]),
                         CodImagem = objArquivo.Cod,
-                        Valor = clnUtilConvert.ToDouble(txtValor.Text),
+                        Valor = clnUtilConvert.ToDecimal(txtValor.Text),
                         Descricao = txtDesc.Text
                     };
                     ObjProduto.gravar();
@@ -120,7 +120,7 @@ namespace BURGUER_SHACK_DESKTOP
                     }
                     ObjProduto.CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]);
                     ObjProduto.Nome = txtNome.Text;
-                    ObjProduto.Valor = clnUtilConvert.ToDouble(txtValor.Text);
+                    ObjProduto.Valor = clnUtilConvert.ToDecimal(txtValor.Text);
                     ObjProduto.Descricao = txtDesc.Text;
                     ObjProduto.Situacao = (clnProduto.produtoSituacao)Enum.Parse(typeof(clnProduto.produtoSituacao), cboSituacao.Text);
 

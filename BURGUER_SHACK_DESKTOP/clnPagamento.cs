@@ -18,14 +18,14 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codConta = -1;
         private int? _codCliente = null;
 
-        private double _valor;
+        private decimal _valor;
         private DateTime _data;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodForma { get => _codForma; set => _codForma = value; }
         public int CodConta { get => _codConta; set => _codConta = value; }
         public int? CodCliente { get => _codCliente; set => _codCliente = value; }
-        public double Valor { get => _valor; set => _valor = value; }
+        public decimal Valor { get => _valor; set => _valor = value; }
         public DateTime Data { get => _data; set => _data = value; }
 
         private clnPagamento obter(SqlDataReader reader) => new clnPagamento
@@ -34,7 +34,7 @@ namespace BURGUER_SHACK_DESKTOP
             CodConta = clnUtilConvert.ToInt(reader["id_conta"]),
             CodForma = clnUtilConvert.ToInt(reader["id_forma"]),
             CodCliente = clnUtilConvert.ToNullableInt(reader["id_cliente"]),
-            Valor = clnUtilConvert.ToDouble(reader["valor"]),
+            Valor = clnUtilConvert.ToDecimal(reader["valor"]),
             Data = clnUtilConvert.ToDateTime(reader["data"])
         };
 

@@ -27,7 +27,7 @@ namespace BURGUER_SHACK_DESKTOP
             InitializeComponent();
         }
 
-        private double obterValorTotal()
+        private decimal obterValorTotal()
         {
             if (ObjConta == null)
             {
@@ -48,18 +48,18 @@ namespace BURGUER_SHACK_DESKTOP
             return 1;
         }
 
-        private double obterDesconto()
+        private decimal obterDesconto()
         {
-            if (clnUtil.validarDouble(txtDesconto.Text))
+            if (clnUtil.validarDecimal(txtDesconto.Text))
             {
-                return clnUtilConvert.ToDouble(txtDesconto.Text);
+                return clnUtilConvert.ToDecimal(txtDesconto.Text);
             }
-            return 0.0;
+            return 0;
         }
 
         private void exibirConta()
         {
-            double valorTotal = obterValorTotal();
+            decimal valorTotal = obterValorTotal();
             lblValorTotal.Text = "Valor Total: " + clnUtil.formatarValor(valorTotal);
 
             webConta.Navigate(clnArquivo.CACHE.guardar("conta", clnUtilConta.gerarConta(ObjAtendimento, obterPessoas(), chkServico.Checked, obterDesconto())));
@@ -69,21 +69,11 @@ namespace BURGUER_SHACK_DESKTOP
         {
             if (ObjConta != null)
             {
-                double valor = 0.0;
+                decimal valorPago = clnUtilConta.calcularValorPago(ObjConta.CodAtendimento);
 
-                clnPagamento objPagamentos = new clnPagamento
-                {
-                    CodConta = ObjConta.CodAtendimento
-                };
+                lblValorPago.Text = "Valor Pago: " + clnUtil.formatarValor(valorPago);
 
-                foreach (clnPagamento objPagamento in objPagamentos.obterPorConta())
-                {
-                    valor += objPagamento.Valor;
-                }
-
-                lblValorPago.Text = "Valor Pago: " + clnUtil.formatarValor(valor);
-
-                if (valor >= obterValorTotal())
+                if (valorPago >= obterValorTotal())
                 {
                     ObjAtendimento.Fim = DateTime.Now;
                     ObjAtendimento.Situacao = clnAtendimento.atendimentoSituacao.FINALIZADO;

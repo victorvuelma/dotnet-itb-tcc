@@ -95,29 +95,23 @@ namespace BURGUER_SHACK_DESKTOP
                 CodAtendimento = CodAtendimento
             }.obterPorCodAtendimento();
 
-            if(objConta != null)
+            if (objConta != null)
             {
                 btnNovoPedido.Hide();
 
-                double valorPago = 0.0d;
-                clnPagamento objPagamentos = new clnPagamento
-                {
-                    CodConta = objConta.CodAtendimento
-                };
-                foreach(clnPagamento objPagamento in objPagamentos.obterPorConta())
-                {
-                    valorPago += objPagamento.Valor;
-                }
+                decimal valorPago = clnUtilConta.calcularValorPago(objConta.CodAtendimento);
 
-                if(valorPago < objConta.Valor)
+                if (valorPago < objConta.Valor)
                 {
                     lblSituacao.Text = "Aguardando pagamento para finalizar atendimento.";
                     grbSituacao.Show();
-                } else
+                }
+                else
                 {
                     grbSituacao.Hide();
                 }
-            } else
+            }
+            else
             {
                 grbSituacao.Hide();
             }
@@ -125,14 +119,14 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void atualizarValor()
         {
-            double valor = 0.0;
+            decimal valor = 0;
 
             foreach (clnPedido objPedido in ObjPedidos)
             {
                 valor += clnUtilPedido.calcularValor(objPedido);
             }
 
-            if (valor > 0.0)
+            if (valor > 0)
             {
                 lblValor.Text = clnUtil.formatarValor(valor);
                 grbValor.Show();

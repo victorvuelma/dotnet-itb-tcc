@@ -24,13 +24,13 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codAtendimento = -1;
         private int _codFuncionario = -1;
 
-        private double _valor;
+        private decimal _valor;
         private pedidoSituacao _situacao;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-        public double Valor { get => _valor; set => _valor = value; }
+        public decimal Valor { get => _valor; set => _valor = value; }
         public pedidoSituacao Situacao { get => _situacao; set => _situacao = value; }
 
         private clnPedido obter(SqlDataReader reader) => new clnPedido
@@ -39,7 +39,7 @@ namespace BURGUER_SHACK_DESKTOP
             CodAtendimento = clnUtilConvert.ToInt(reader["id_atendimento"]),
             CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
             Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
-            Valor = clnUtilConvert.ToDouble(reader["valor"])
+            Valor = clnUtilConvert.ToDecimal(reader["valor"])
         };
 
         public List<clnPedido> obterPorAtendimento()

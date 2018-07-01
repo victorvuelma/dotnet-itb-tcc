@@ -25,9 +25,9 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codCargo = -1;
         private int _codFoto = -1;
 
-        private String _nome;
-        private String _cpf;
-        private String _rg;
+        private string _nome;
+        private string _cpf;
+        private string _rg;
 
         private string _genero;
         private DateTime _dataNascimento;
@@ -36,18 +36,18 @@ namespace BURGUER_SHACK_DESKTOP
         private string _telCel;
         private string _email;
 
-        private double _salario;
+        private decimal _salario;
         private DateTime _dataContratacao;
         private DateTime? _dataDemissao;
         private funcionarioSituacao _situacao;
 
-        private String _endLogradouro;
-        private String _endNumero;
-        private String _endComplemento;
-        private String _endCEP;
-        private String _endBairro;
-        private String _endLocalidade;
-        private String _endUF;
+        private string _endLogradouro;
+        private string _endNumero;
+        private string _endComplemento;
+        private string _endCEP;
+        private string _endBairro;
+        private string _endLocalidade;
+        private string _endUF;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodCargo { get => _codCargo; set => _codCargo = value; }
@@ -60,7 +60,7 @@ namespace BURGUER_SHACK_DESKTOP
         public string TelRes { get => _telRes; set => _telRes = value; }
         public string TelCel { get => _telCel; set => _telCel = value; }
         public string Email { get => _email; set => _email = value; }
-        public double Salario { get => _salario; set => _salario = value; }
+        public decimal Salario { get => _salario; set => _salario = value; }
         public DateTime DataContratacao { get => _dataContratacao; set => _dataContratacao = value; }
         public DateTime? DataDemissao { get => _dataDemissao; set => _dataDemissao = value; }
         internal funcionarioSituacao Situacao { get => _situacao; set => _situacao = value; }
@@ -85,7 +85,7 @@ namespace BURGUER_SHACK_DESKTOP
             TelRes = clnUtilConvert.ToString(reader["tel_res"]),
             TelCel = clnUtilConvert.ToString(reader["tel_cel"]),
             Email = clnUtilConvert.ToString(reader["email"]),
-            Salario = clnUtilConvert.ToDouble(reader["salario"]),
+            Salario = clnUtilConvert.ToDecimal(reader["salario"]),
             DataContratacao = clnUtilConvert.ToDateTime(reader["data_contratacao"]),
             DataDemissao = clnUtilConvert.ToNullableDateTime(reader["data_demissao"]),
             Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),

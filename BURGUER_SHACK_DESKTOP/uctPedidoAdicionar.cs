@@ -83,7 +83,7 @@ namespace BURGUER_SHACK_DESKTOP
 
         private void atualizarValor()
         {
-            double valor = clnUtilPedido.calcularValor(ObjItem, ObjItemIngredientes);
+            decimal valor = clnUtilPedido.calcularValor(ObjItem, ObjItemIngredientes);
 
             lblValor.Text = "Valor: " + clnUtil.formatarValor(valor);
         }

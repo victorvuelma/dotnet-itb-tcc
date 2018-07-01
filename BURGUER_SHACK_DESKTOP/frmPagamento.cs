@@ -211,44 +211,36 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        private double obterValorPago()
+        private decimal obterValorPago()
         {
-            if (clnUtil.validarDouble(txtValor.Text))
-                return clnUtilConvert.ToDouble(txtValor.Text);
-            return 0.0;
+            if (clnUtil.validarDecimal(txtValor.Text))
+                return clnUtilConvert.ToDecimal(txtValor.Text);
+            return 0;
         }
 
-        private double obterValorAPagar()
+        private decimal obterValorAPagar()
         {
-            double valor = clnUtilConta.calcularValor(ObjConta);
+            decimal valor = clnUtilConta.calcularValor(ObjConta) - clnUtilConta.calcularValorPago(ObjConta.CodAtendimento);
 
-            clnPagamento objPagamentos = new clnPagamento
-            {
-                CodConta = ObjConta.CodAtendimento
-            };
-            foreach (clnPagamento objPagamento in objPagamentos.obterPorConta())
-            {
-                valor -= objPagamento.Valor;
-            }
             return valor;
         }
 
-        private double obterDinheiro()
+        private decimal obterDinheiro()
         {
-            if (clnUtil.validarDouble(txtDinheiro.Text))
-                return clnUtilConvert.ToDouble(txtDinheiro.Text);
-            return 0.0;
+            if (clnUtil.validarDecimal(txtDinheiro.Text))
+                return clnUtilConvert.ToDecimal(txtDinheiro.Text);
+            return 0;
         }
 
         private void atualizarTroco()
         {
-            double valorPago = obterDinheiro() - obterValorPago();
+            decimal valorPago = obterDinheiro() - obterValorPago();
             lblTroco.Text = "Troco: " + clnUtil.formatarValor(valorPago);
         }
 
         private void atualizarRestante()
         {
-            double valorRestante = obterValorAPagar() - obterValorPago();
+            decimal valorRestante = obterValorAPagar() - obterValorPago();
             lblValorRestante.Text = clnUtil.formatarValor(valorRestante);
         }
 

@@ -26,14 +26,14 @@ namespace BURGUER_SHACK_DESKTOP
         private int _codTipo = -1;
 
         private String _nome;
-        private double _valor;
+        private decimal _valor;
 
         private ingredienteSituacao _situacao;
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodTipo { get => _codTipo; set => _codTipo = value; }
         public string Nome { get => _nome; set => _nome = value; }
-        public double Valor { get => _valor; set => _valor = value; }
+        public decimal Valor { get => _valor; set => _valor = value; }
         public ingredienteSituacao Situacao { get => _situacao; set => _situacao = value; }
         public int CodImagem { get => _codImagem; set => _codImagem = value; }
 
@@ -45,7 +45,7 @@ namespace BURGUER_SHACK_DESKTOP
                 CodImagem = clnUtilConvert.ToInt(reader["id_imagem"]),
                 CodTipo = clnUtilConvert.ToInt(reader["id_tipo"]),
                 Nome = clnUtilConvert.ToString(reader["nome"]),
-                Valor = clnUtilConvert.ToDouble(reader["valor"]),
+                Valor = clnUtilConvert.ToDecimal(reader["valor"]),
                 Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
             };
 

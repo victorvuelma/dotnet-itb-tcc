@@ -13,12 +13,27 @@ namespace BURGUER_SHACK_DESKTOP
 
         private static int codItem = 0;
 
-        public static double calcularValor(clnConta objConta)
+        public static decimal calcularValorPago(int codConta)
+        {
+            decimal valorPago = 0;
+            clnPagamento objPagamentos = new clnPagamento
+            {
+                CodConta = codConta
+            };
+            foreach (clnPagamento objPagamento in objPagamentos.obterPorConta())
+            {
+                valorPago += objPagamento.Valor;
+            }
+
+            return valorPago;
+        }
+
+        public static decimal calcularValor(clnConta objConta)
         {
             return calcularValor(objConta.Valor, objConta.TaxaServico, objConta.Desconto);
         }
 
-        public static string gerarConta(clnAtendimento objAtendimento, int pessoas, bool incluirGorjeta, double desconto)
+        public static string gerarConta(clnAtendimento objAtendimento, int pessoas, bool incluirGorjeta, decimal desconto)
         {
             List<clnPedido> objPedidos = new clnPedido
             {
@@ -53,12 +68,12 @@ namespace BURGUER_SHACK_DESKTOP
                     if (incluirGorjeta)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>+ Taxa de Serviço (10,0%)</td>");
-                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtil.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * 0.1)).Append("</td></tr>");
+                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtil.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (decimal) 0.1)).Append("</td></tr>");
                     }
                 }
                 else if (line.Equals("{@desconto}"))
                 {
-                    if (desconto > 0.0)
+                    if (desconto > 0)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>- Desconto (" + desconto.ToString("N") + "%)</td>");
                         contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtil.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (desconto / 100))).Append("</td></tr>");
@@ -81,18 +96,18 @@ namespace BURGUER_SHACK_DESKTOP
             return contaBuilder.ToString();
         }
 
-        public static double calcularValor(double subTotal, bool incluirComissao, double desconto)
+        public static decimal calcularValor(decimal subTotal, bool incluirComissao, decimal desconto)
         {
-            double valor = subTotal;
+            decimal valor = subTotal;
             if (incluirComissao)
             {
-                valor += Math.Round(subTotal * 0.1, 2);
+                valor += subTotal * (decimal ) 0.1;
             }
-            if (desconto > 0.0)
+            if (desconto > 0)
             {
-                valor -= Math.Round(subTotal * (desconto / 100), 2);
+                valor -= subTotal * (desconto / 100);
             }
-            return Math.Round(valor, 2);
+            return valor;
         }
 
         public static void gerarConta(StringBuilder contaBuilder, clnPedido objPedido)
@@ -156,7 +171,7 @@ namespace BURGUER_SHACK_DESKTOP
             }
         }
 
-        public static void adicionarItem(StringBuilder htmlBuilder, int item, String cod, String descricao, int quantidade, double valor)
+        public static void adicionarItem(StringBuilder htmlBuilder, int item, string cod, string descricao, int quantidade, decimal valor)
         {
             htmlBuilder.Append(@"<tr>");
             htmlBuilder.Append(@"<td class='left'>").Append(item).Append("</td>");

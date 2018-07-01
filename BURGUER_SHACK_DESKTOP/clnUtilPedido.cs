@@ -55,9 +55,9 @@ namespace BURGUER_SHACK_DESKTOP
             objItemIngredientes.Add(objIngrediente);
         }
 
-        public static double calcularValor(clnAtendimento objAtendimento)
+        public static decimal calcularValor(clnAtendimento objAtendimento)
         {
-            double atendimentoValor = 0.0;
+            decimal atendimentoValor = 0;
 
             clnPedido objPedidos = new clnPedido
             {
@@ -69,12 +69,12 @@ namespace BURGUER_SHACK_DESKTOP
                 atendimentoValor += calcularValor(objPedido);
             }
 
-            return Math.Round(atendimentoValor, 2);
+            return atendimentoValor;
         }
 
-        public static double calcularValor(clnPedido objPedido)
+        public static decimal calcularValor(clnPedido objPedido)
         {
-            double pedidoValor = 0.0;
+            decimal pedidoValor = 0;
 
             clnItem objItens = new clnItem
             {
@@ -90,40 +90,40 @@ namespace BURGUER_SHACK_DESKTOP
                 pedidoValor += calcularValor(objItem, objIngredientes.obterPorItem());
             }
 
-            return Math.Round(pedidoValor, 2);
+            return pedidoValor;
         }
 
-        public static double calcularValor(Dictionary<clnItem, List<clnItemIngrediente>> objItens)
+        public static decimal calcularValor(Dictionary<clnItem, List<clnItemIngrediente>> objItens)
         {
-            double pedidoValor = 0.0;
+            decimal pedidoValor = 0;
 
             foreach (KeyValuePair<clnItem, List<clnItemIngrediente>> objItem in objItens)
             {
                 pedidoValor += calcularValor(objItem.Key, objItem.Value);
             }
 
-            return Math.Round(pedidoValor, 2);
+            return pedidoValor;
         }
 
-        public static double calcularValor(clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
+        public static decimal calcularValor(clnItem objItem, List<clnItemIngrediente> objItemIngredientes)
         {
             clnProduto objProduto = new clnProduto
             {
                 Cod = objItem.CodProduto
             }.obterPorCod();
-            double itemValor = objProduto.Valor * objItem.Quantidade;
+            decimal itemValor = objProduto.Valor * objItem.Quantidade;
 
             foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes)
             {
-                itemValor += clnUtilPedido.calcularValor(objItemIngrediente) * objItem.Quantidade;
+                itemValor += calcularValor(objItemIngrediente) * objItem.Quantidade;
             }
 
-            return Math.Round(itemValor, 2);
+            return itemValor;
         }
 
-        public static double calcularValor(clnItemIngrediente objItemIngrediente)
+        public static decimal calcularValor(clnItemIngrediente objItemIngrediente)
         {
-            double ingredienteValor = 0.0;
+            decimal ingredienteValor = 0;
 
             clnIngrediente objIngrediente = new clnIngrediente
             {
