@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A6D75C14-046F-4D6D-999F-07ECF3B7D6A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BURGUER_SHACK_DESKTOP</RootNamespace>
-    <AssemblyName>BURGUER_SHACK_DESKTOP</AssemblyName>
+    <RootNamespace>BURGUERSHACK_DESKTOP</RootNamespace>
+    <AssemblyName>BURGUERSHACK_DESKTOP</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>BURGUER_SHACK_DESKTOP.Program</StartupObject>
+    <StartupObject>BURGUERSHACK_DESKTOP.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>
@@ -490,7 +490,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BURGUER_SHACK_COMMON\BURGUERSHACK_COMMON.csproj">
+    <ProjectReference Include="..\BURGUERSHACK_COMMON\BURGUERSHACK_COMMON.csproj">
       <Project>{452f8db0-90e2-4013-bfcc-c95ef01fb806}</Project>
       <Name>BURGUERSHACK_COMMON</Name>
     </ProjectReference>
