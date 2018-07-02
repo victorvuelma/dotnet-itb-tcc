@@ -38,10 +38,12 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnUtilVisualizar()
         {
-            if (this is O obj)
-            {
-                Obj = obj;
-            }
+
+        }
+
+        private Type getObjectType()
+        {
+            return typeof(O);
         }
 
         public O Obj { get => _obj; set => _obj = value; }
@@ -49,6 +51,10 @@ namespace BURGUERSHACK_DESKTOP
 
         public override clnUtilVisualizar.visualizarAction action(object obj)
         {
+            if (Obj == null && getObjectType() == GetType())
+            {
+                Obj = (O)(object)this;
+            }
             if (Callback != null && obj != null && obj is V val)
             {
                 return Callback.call(Obj, val);

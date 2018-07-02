@@ -22,7 +22,7 @@ namespace BURGUERSHACK_DESKTOP
             User = AppDb.USER,
             Pass = AppDb.PASS,
             Source = AppDb.SOURCE,
-            ExceptionCall = delegate (Exception ex)
+            ExceptionCall = (Exception ex) =>
             {
                 clnUtilMensagem.mostrarOk("Banco de Dados", "Um erro ocorreu ao tentar processar a requisição\n" + ex.Message, clnUtilMensagem.MensagemIcone.ERRO);
                 Application.Restart();
