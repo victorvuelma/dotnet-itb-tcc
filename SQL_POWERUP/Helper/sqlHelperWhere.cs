@@ -56,9 +56,14 @@ namespace SQL_POWERUP
             });
         }
 
+        public sqlHelperWhere where(String column, Object val, sqlObjWhereCommon.whereAssociation association)
+        {
+            return where(column, sqlObjWhereCommon.whereOperation.EQUALS, val, association);
+        }
+
         public sqlHelperWhere where(String column, Object val)
         {
-            return where(column, sqlObjWhereCommon.whereOperation.EQUALS, val);
+            return where(column, val, sqlObjWhereCommon.whereAssociation.AND);
         }
 
         internal void generate(StringBuilder builder)
