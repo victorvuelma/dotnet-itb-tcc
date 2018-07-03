@@ -51,77 +51,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="btnLabelUIX.cs">
+    <Compile Include="Control\btnLabelUIX.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="btnLabelUIX.Designer.cs">
+    <Compile Include="Control\btnLabelUIX.Designer.cs">
       <DependentUpon>btnLabelUIX.cs</DependentUpon>
     </Compile>
-    <Compile Include="btnUIX.cs">
+    <Compile Include="Control\btnUIX.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="btnUIX.Designer.cs">
+    <Compile Include="Control\btnUIX.Designer.cs">
       <DependentUpon>btnUIX.cs</DependentUpon>
     </Compile>
-    <Compile Include="msgUIX.cs">
+    <Compile Include="Control\msgUIX.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="msgUIX.Designer.cs">
+    <Compile Include="Control\msgUIX.Designer.cs">
       <DependentUpon>msgUIX.cs</DependentUpon>
     </Compile>
-    <Compile Include="cboUIX.cs">
+    <Compile Include="Control\cboUIX.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="cboUIX.Designer.cs">
+    <Compile Include="Control\cboUIX.Designer.cs">
       <DependentUpon>cboUIX.cs</DependentUpon>
     </Compile>
-    <Compile Include="mtbUIX.cs">
+    <Compile Include="Control\mtbUIX.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="mtbUIX.Designer.cs">
+    <Compile Include="Control\mtbUIX.Designer.cs">
       <DependentUpon>mtbUIX.cs</DependentUpon>
     </Compile>
-    <Compile Include="txtUIX.cs">
+    <Compile Include="Control\txtUIX.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="txtUIX.Designer.cs">
+    <Compile Include="Control\txtUIX.Designer.cs">
       <DependentUpon>txtUIX.cs</DependentUpon>
     </Compile>
-    <Compile Include="hdrUIX.cs">
+    <Compile Include="Control\hdrUIX.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="hdrUIX.Designer.cs">
+    <Compile Include="Control\hdrUIX.Designer.cs">
       <DependentUpon>hdrUIX.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="uixControl.cs" />
-    <Compile Include="uixEnum.cs" />
-    <Compile Include="uixButton.cs" />
-    <Compile Include="uixCheckBox.cs" />
-    <Compile Include="uixColor.cs" />
-    <Compile Include="uixComboBox.cs" />
-    <Compile Include="uixDataGridView.cs" />
-    <Compile Include="uixFont.cs" />
-    <Compile Include="uixForm.cs" />
-    <Compile Include="uixGroupBox.cs" />
-    <Compile Include="uixHeader.cs" />
-    <Compile Include="uixLabel.cs" />
-    <Compile Include="uixMaskedTextBox.cs" />
-    <Compile Include="uixPanel.cs" />
-    <Compile Include="uixPictureBox.cs" />
-    <Compile Include="uixSet.cs" />
-    <Compile Include="uixStyle.cs" />
-    <Compile Include="uixTemplate.cs" />
-    <Compile Include="uixTextBox.cs" />
-    <Compile Include="uixUserControl.cs" />
-    <Compile Include="uixUtil.cs" />
-    <EmbeddedResource Include="btnLabelUIX.resx">
+    <Compile Include="Manager\uixControl.cs" />
+    <Compile Include="Constant\uixEnum.cs" />
+    <Compile Include="Manager\uixButton.cs" />
+    <Compile Include="Manager\uixCheckBox.cs" />
+    <Compile Include="Constant\uixColor.cs" />
+    <Compile Include="Manager\uixComboBox.cs" />
+    <Compile Include="Manager\uixDataGridView.cs" />
+    <Compile Include="Constant\uixFont.cs" />
+    <Compile Include="Manager\uixForm.cs" />
+    <Compile Include="Manager\uixGroupBox.cs" />
+    <Compile Include="Manager\uixHeader.cs" />
+    <Compile Include="Manager\uixLabel.cs" />
+    <Compile Include="Manager\uixMaskedTextBox.cs" />
+    <Compile Include="Manager\uixPanel.cs" />
+    <Compile Include="Manager\uixPictureBox.cs" />
+    <Compile Include="Constant\uixSet.cs" />
+    <Compile Include="Constant\uixStyle.cs" />
+    <Compile Include="Manager\uixTemplate.cs" />
+    <Compile Include="Manager\uixTextBox.cs" />
+    <Compile Include="Manager\uixUserControl.cs" />
+    <Compile Include="Manager\uixUtil.cs" />
+    <EmbeddedResource Include="Control\btnLabelUIX.resx">
       <DependentUpon>btnLabelUIX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="btnUIX.resx">
+    <EmbeddedResource Include="Control\btnUIX.resx">
       <DependentUpon>btnUIX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="msgUIX.resx">
+    <EmbeddedResource Include="Control\msgUIX.resx">
       <DependentUpon>msgUIX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -134,16 +134,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="cboUIX.resx">
+    <EmbeddedResource Include="Control\cboUIX.resx">
       <DependentUpon>cboUIX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mtbUIX.resx">
+    <EmbeddedResource Include="Control\mtbUIX.resx">
       <DependentUpon>mtbUIX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="txtUIX.resx">
+    <EmbeddedResource Include="Control\txtUIX.resx">
       <DependentUpon>txtUIX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hdrUIX.resx">
+    <EmbeddedResource Include="Control\hdrUIX.resx">
       <DependentUpon>hdrUIX.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
