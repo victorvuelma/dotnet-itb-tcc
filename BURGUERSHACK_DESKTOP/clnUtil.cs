@@ -129,7 +129,7 @@ namespace BURGUERSHACK_DESKTOP
             cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
         }
 
-        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
+        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
         {
             ctlLogradouro.Enabled = false;
             ctlBairro.Enabled = false;
@@ -141,12 +141,12 @@ namespace BURGUERSHACK_DESKTOP
             {
                 if (clnUtilValidar.validarCEP(mtbCEP.Text))
                 {
-                    clnUtil.definirEndereco(mtbCEP.Text, ctlLogradouro, ctlBairro, ctlCidade, cboUF, ctlNr);
+                    clnUtil.definirEndereco(mtbCEP.Text, ctlLogradouro, ctlBairro, ctlCidade, cboUF, ctlNr, ctlComplemento);
                 }
             };
         }
 
-        public static void definirEndereco(String cep, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
+        public static void definirEndereco(String cep, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
         {
             if (clnUtilValidar.validarCEP(cep))
             {
@@ -162,6 +162,7 @@ namespace BURGUERSHACK_DESKTOP
                     ctlBairro.Text = objEndereco.Bairro;
                     ctlCidade.Text = objEndereco.Localidade;
                     cboUF.Text = objEndereco.UF;
+                    ctlComplemento.Text = objEndereco.Complemento;
                     ctlNr.Focus();
                 }
                 else
