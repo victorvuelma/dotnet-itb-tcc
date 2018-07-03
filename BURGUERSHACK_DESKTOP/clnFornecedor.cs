@@ -60,7 +60,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnFornecedor obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("fornecedor");
             objSelect.Where.where("id", Cod);
 
@@ -74,7 +74,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnFornecedor obterPorCNPJ()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("fornecedor");
             objSelect.Where.where("cnpj", Cnpj);
 
@@ -88,7 +88,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnFornecedor> obterPorRazaoCNPJ()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("fornecedor");
             objSelect.Where.where("cnpj", sqlObjWhereCommon.whereOperation.LIKE, "%" + Cnpj + "%", sqlObjWhere.whereAssociation.OR)
                            .where("razao_social", sqlObjWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%");
@@ -103,7 +103,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("fornecedor");
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("razao_social", RazaoSocial)
@@ -122,7 +122,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("fornecedor");
             objInsert.Insert.val("razao_social", RazaoSocial)
                             .val("cnpj", Cnpj)

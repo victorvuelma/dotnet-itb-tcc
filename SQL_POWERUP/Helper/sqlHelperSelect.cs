@@ -9,13 +9,13 @@ namespace SQL_POWERUP
     public class sqlHelperSelect
     {
 
-        private List<sqlObjSelect> _params = new List<sqlObjSelect>();
+        private List<sqlObjTable> _params = new List<sqlObjTable>();
 
-        internal List<sqlObjSelect> Params { get => _params; }
+        internal List<sqlObjTable> Params { get => _params; }
 
         internal bool isIncluded(String tableColumn)
         {
-            foreach (sqlObjSelect objParam in Params)
+            foreach (sqlObjTable objParam in Params)
             {
                 if (objParam.TableColumn.Equals(tableColumn.ToUpper(), StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -25,9 +25,9 @@ namespace SQL_POWERUP
             return false;
         }
 
-        public sqlHelperSelect select(sqlObjSelect objSelect)
+        public sqlHelperSelect select(sqlObjTable objSelect)
         {
-            foreach (sqlObjSelect objParam in Params)
+            foreach (sqlObjTable objParam in Params)
             {
                 if (objParam.TableColumn.Equals(objSelect.TableColumn, StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -39,9 +39,9 @@ namespace SQL_POWERUP
             return this;
         }
 
-        public sqlHelperSelect select(String tableColumn, sqlObjSelect.selectOperation operation, String asName)
+        public sqlHelperSelect select(String tableColumn, sqlObjTable.selectOperation operation, String asName)
         {
-            return select(new sqlObjSelect
+            return select(new sqlObjTable
             {
                 TableColumn = tableColumn.ToUpper(),
                 As = asName.ToUpper(),
@@ -49,9 +49,9 @@ namespace SQL_POWERUP
             });
         }
 
-        public sqlHelperSelect select(String tableColumn, sqlObjSelect.selectOperation operation, String asName, int coalesce)
+        public sqlHelperSelect select(String tableColumn, sqlObjTable.selectOperation operation, String asName, int coalesce)
         {
-            return select(new sqlObjSelect
+            return select(new sqlObjTable
             {
                 TableColumn = tableColumn.ToUpper(),
                 As = asName.ToUpper(),
@@ -63,7 +63,7 @@ namespace SQL_POWERUP
 
         public sqlHelperSelect select(String tableColumn, String asName)
         {
-            return select(tableColumn, sqlObjSelect.selectOperation.NONE, asName);
+            return select(tableColumn, sqlObjTable.selectOperation.NONE, asName);
         }
 
         public sqlHelperSelect select(String tableColumn)
@@ -85,7 +85,7 @@ namespace SQL_POWERUP
             if (Params.Count > 0)
             {
                 StringBuilder selectBuilder = new StringBuilder();
-                foreach (sqlObjSelect objSelect in Params)
+                foreach (sqlObjTable objSelect in Params)
                 {
                     if (selectBuilder.Length > 0)
                     {
@@ -97,7 +97,7 @@ namespace SQL_POWERUP
                         selectBuilder.Append("COALESCE(");
                     }
 
-                    if (objSelect.Operation != sqlObjSelect.selectOperation.NONE)
+                    if (objSelect.Operation != sqlObjTable.selectOperation.NONE)
                     {
                         selectBuilder.Append(objSelect.Operation.ToString()).Append('(').Append(objSelect.TableColumn).Append(')');
                     }

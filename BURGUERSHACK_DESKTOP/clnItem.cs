@@ -38,7 +38,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnItem> obterPorPedido()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("item");
             objSelect.Where.where("id_pedido", CodPedido);
 
@@ -53,7 +53,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("item");
             objInsert.Insert.val("id_pedido", CodPedido)
                             .val("id_produto", CodProduto)
@@ -65,7 +65,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("item");
             objUpdate.Set.val("adicional", Adicional)
                          .val("quantidade", Quantidade);

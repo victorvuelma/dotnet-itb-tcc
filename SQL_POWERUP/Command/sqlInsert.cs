@@ -8,13 +8,13 @@ using System.Data.SqlClient;
 
 namespace SQL_POWERUP
 {
-    public class sqlCommandInsert : sqlCommand
+    public class sqlInsert : sqlCommand
     {
 
         private sqlHelperValue _insert;
         private bool _output = false;
 
-        public sqlCommandInsert table(String table)
+        public sqlInsert table(String table)
         {
             Table = table;
             return this;

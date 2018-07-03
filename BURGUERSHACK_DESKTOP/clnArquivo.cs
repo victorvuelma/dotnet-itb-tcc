@@ -48,7 +48,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                sqlCommandSelect objSelect = new sqlCommandSelect();
+                sqlSelect objSelect = new sqlSelect();
                 objSelect.table("arquivo");
                 objSelect.Where.where("id", Cod);
 
@@ -68,7 +68,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             byte[] conteudo = File.ReadAllBytes(Local);
 
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("arquivo");
             objInsert.Insert.val("conteudo", conteudo);
 

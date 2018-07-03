@@ -36,7 +36,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnMesa> obterMesas()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA");
 
             List<clnMesa> objMesas = new List<clnMesa>();
@@ -50,7 +50,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnMesa obterPorCodigo()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA").Where.where("id", Cod);
 
             clnMesa objMesa = null;
@@ -64,7 +64,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal int? obterCodAtendimento()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("ATENDIMENTO");
             objSelect.Columns.select("ATENDIMENTO.ID");
             objSelect.Where.where("ATENDIMENTO.SITUACAO", 'A').where("ATENDIMENTO_MESA.ID_MESA", Cod);
@@ -81,7 +81,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("MESA");
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("situacao", prefixo(Situacao));
@@ -116,7 +116,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal List<clnMesa> obterPorSituacao()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA").Where.where("situacao", prefixo(Situacao));
 
             List<clnMesa> objMesas = new List<clnMesa>();

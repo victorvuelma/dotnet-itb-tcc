@@ -49,7 +49,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnEstoque obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("estoque");
             objSelect.Where.where("id", Cod);
 
@@ -64,7 +64,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnEstoque> obterEstoques()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("estoque");
 
             List<clnEstoque> objEstoques = new List<clnEstoque>();
@@ -78,9 +78,9 @@ namespace BURGUERSHACK_DESKTOP
 
         public int obterQuantidadePorIngrediente()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("estoque");
-            objSelect.Columns.select("quantidade", sqlObjSelect.selectOperation.SUM, "quantidade", 0);
+            objSelect.Columns.select("quantidade", sqlObjTable.selectOperation.SUM, "quantidade", 0);
             objSelect.Where.where("id_ingrediente", CodIngrediente);
 
             int quantidade = 0;
@@ -94,7 +94,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("estoque");
             objInsert.Insert.val("id_ingrediente", CodIngrediente)
                             .val("id_fornecedor", CodFornecedor)
@@ -111,7 +111,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objInsert = new sqlCommandUpdate();
+            sqlUpdate objInsert = new sqlUpdate();
             objInsert.table("estoque");
             objInsert.Where.where("id", Cod);
             objInsert.Set.val("quantidade", Quantidade);

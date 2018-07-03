@@ -8,12 +8,12 @@ using System.Data.SqlClient;
 
 namespace SQL_POWERUP
 {
-    public class sqlCommandDelete : sqlCommand
+    public class sqlDelete : sqlCommand
     {
 
         private sqlHelperWhere _where;
 
-        public sqlCommandDelete table(String table)
+        public sqlDelete table(String table)
         {
             Table = table;
             return this;

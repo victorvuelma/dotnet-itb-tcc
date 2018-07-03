@@ -35,7 +35,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnItemIngrediente> obterPorItem()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("item_ingrediente");
             objSelect.Where.where("id_item", CodItem);
 
@@ -50,7 +50,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("item_ingrediente");
             objInsert.Insert.val("id_ingrediente", CodIngrediente)
                             .val("id_item", CodItem)
@@ -62,7 +62,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("item_ingrediente");
             objUpdate.Set.val("id_ingrediente", CodIngrediente)
                          .val("quantidade", Quantidade);
@@ -74,7 +74,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal void remover()
         {
-            sqlCommandDelete objDelete = new sqlCommandDelete();
+            sqlDelete objDelete = new sqlDelete();
             objDelete.table("item_ingrediente");
             objDelete.Where.where("id_ingrediente", CodIngrediente)
                            .where("id_item", CodItem)

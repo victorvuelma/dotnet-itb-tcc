@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQL_POWERUP
 {
-    public class sqlObjSelect
+    public class sqlObjTable
     {
 
         public enum selectOperation

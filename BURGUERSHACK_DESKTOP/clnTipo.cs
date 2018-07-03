@@ -37,7 +37,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnTipo obterPorCodigo()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table(Tipo.ToString() + "_tipo");
             objSelect.Where.where("id", Cod);
 
@@ -52,7 +52,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnTipo> obterTipos()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table(Tipo.ToString() + "_tipo");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -66,7 +66,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table(Tipo.ToString() + "_tipo");
             objInsert.Insert.val("nome", Nome);
 
@@ -75,7 +75,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table(Tipo.ToString() + "_tipo");
             objUpdate.Set.val("nome", Nome);
             objUpdate.Where.where("id", Cod);

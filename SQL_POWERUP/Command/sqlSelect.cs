@@ -9,7 +9,7 @@ using System.Data;
 
 namespace SQL_POWERUP
 {
-    public class sqlCommandSelect : sqlCommand
+    public class sqlSelect : sqlCommand
     {
 
         private String _group;
@@ -50,13 +50,13 @@ namespace SQL_POWERUP
             }
         }
 
-        public sqlCommandSelect table(String table)
+        public sqlSelect table(String table)
         {
             Table = table;
             return this;
         }
 
-        public sqlCommandSelect groupBy(String tableColumn)
+        public sqlSelect groupBy(String tableColumn)
         {
             tableColumn = tableColumn.ToUpper();
             if (!Columns.isIncluded(tableColumn))

@@ -31,7 +31,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public int? acessar()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");
             objSelect.Columns.select("id_funcionario");
             objSelect.Where.where("usuario", Usuario)
@@ -48,7 +48,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal clnAcesso obterPorFuncionario()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");
             objSelect.Where.where("id_funcionario", CodFuncionario);
 
@@ -63,7 +63,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("acesso");
             objUpdate.Where.where("id_funcionario", CodFuncionario);
             objUpdate.Set.val("senha", Senha)
@@ -71,7 +71,7 @@ namespace BURGUERSHACK_DESKTOP
 
             if (objUpdate.execute(App.DatabaseSql) == 0)
             {
-                sqlCommandInsert objInsert = new sqlCommandInsert();
+                sqlInsert objInsert = new sqlInsert();
                 objInsert.table("acesso");
                 objInsert.Insert.val("senha", Senha)
                                 .val("usuario", Usuario)

@@ -41,7 +41,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnPagamento obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("pagamento");
             objSelect.Where.where("id", Cod);
 
@@ -56,7 +56,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnPagamento> obterPorConta()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("pagamento");
             objSelect.Where.where("id_conta", CodConta);
 
@@ -71,7 +71,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("pagamento");
             objInsert.Insert.val("id_conta", CodConta)
                             .val("id_cliente", CodCliente)

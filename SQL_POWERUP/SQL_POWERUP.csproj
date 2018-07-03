@@ -43,25 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sqlCommand.cs" />
+    <Compile Include="Command\sqlCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sqlCommandInsert.cs" />
-    <Compile Include="sqlCommandDelete.cs" />
+    <Compile Include="Command\sqlInsert.cs" />
+    <Compile Include="Command\sqlDelete.cs" />
     <Compile Include="sqlCredential.cs" />
     <Compile Include="sqlDatabase.cs" />
-    <Compile Include="sqlHelperJoin.cs" />
-    <Compile Include="sqlHelperSelect.cs" />
-    <Compile Include="sqlObjSelect.cs" />
-    <Compile Include="sqlObjJoin.cs" />
-    <Compile Include="sqlCommandSelect.cs" />
-    <Compile Include="sqlHelperValue.cs" />
-    <Compile Include="sqlCommandUpdate.cs" />
-    <Compile Include="sqlObjWhereBetween.cs" />
-    <Compile Include="sqlObjWhere.cs" />
-    <Compile Include="sqlObjWhereIn.cs" />
+    <Compile Include="Helper\sqlHelperJoin.cs" />
+    <Compile Include="Helper\sqlHelperSelect.cs" />
+    <Compile Include="Object\sqlObjTable.cs" />
+    <Compile Include="Object\sqlObjJoin.cs" />
+    <Compile Include="Command\sqlSelect.cs" />
+    <Compile Include="Helper\sqlHelperValue.cs" />
+    <Compile Include="Command\sqlUpdate.cs" />
+    <Compile Include="Object\sqlObjWhereBetween.cs" />
+    <Compile Include="Object\sqlObjWhere.cs" />
+    <Compile Include="Object\sqlObjWhereIn.cs" />
     <Compile Include="sqlUtil.cs" />
-    <Compile Include="sqlObjWhereCommon.cs" />
-    <Compile Include="sqlHelperWhere.cs" />
+    <Compile Include="Object\sqlObjWhereCommon.cs" />
+    <Compile Include="Helper\sqlHelperWhere.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

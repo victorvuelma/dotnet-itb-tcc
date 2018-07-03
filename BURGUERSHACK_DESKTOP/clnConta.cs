@@ -38,7 +38,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnConta obterPorCodAtendimento()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("conta");
             objSelect.Where.where("id_atendimento", CodAtendimento);
 
@@ -53,7 +53,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("conta");
             objInsert.Insert.val("id_atendimento", CodAtendimento)
                             .val("id_funcionario", CodFuncionario)

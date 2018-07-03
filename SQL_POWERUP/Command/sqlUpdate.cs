@@ -8,13 +8,13 @@ using System.Data.SqlClient;
 
 namespace SQL_POWERUP
 {
-    public class sqlCommandUpdate : sqlCommand
+    public class sqlUpdate : sqlCommand
     {
 
         private sqlHelperWhere _where;
         private sqlHelperValue _set;
 
-        public sqlCommandUpdate table(String table)
+        public sqlUpdate table(String table)
         {
             base.Table = table;
             return this;

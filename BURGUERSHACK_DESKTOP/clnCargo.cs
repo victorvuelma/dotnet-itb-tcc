@@ -28,7 +28,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnCargo obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("cargo");
             objSelect.Where.where("id", Cod);
 
@@ -43,7 +43,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnCargo> obterCargos()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("cargo");
 
             List<clnCargo> objCargos = new List<clnCargo>();

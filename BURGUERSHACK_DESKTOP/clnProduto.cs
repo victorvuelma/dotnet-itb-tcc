@@ -53,7 +53,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnProduto obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");
             objSelect.Where.where("id", Cod);
 
@@ -68,7 +68,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnProduto> obterPorTipoSituacao()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");
             objSelect.Where.where("id_tipo", CodTipo)
                            .where("situacao", prefixo(Situacao));
@@ -85,7 +85,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal List<clnProduto> obterPorNome()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");
             objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
 
@@ -100,7 +100,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("produto");
             objInsert.Insert.val("id_imagem", CodImagem)
                             .val("id_tipo", CodTipo)
@@ -114,7 +114,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto");
             objUpdate.Set.val("id_imagem", CodImagem)
                          .val("id_tipo", CodTipo)

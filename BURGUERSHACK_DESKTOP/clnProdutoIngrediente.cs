@@ -43,7 +43,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnProdutoIngrediente obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto_ingrediente");
             objSelect.Where.where("id", Cod);
 
@@ -58,7 +58,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnProdutoIngrediente> obterPorProduto()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto_ingrediente");
             objSelect.Where.where("id_produto", CodProduto);
 
@@ -73,7 +73,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnProdutoIngrediente> obterPorIngrediente()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto_ingrediente");
             objSelect.Where.where("id_ingrediente", CodIngrediente);
 
@@ -88,7 +88,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("produto_ingrediente");
             objInsert.Insert.val("id_produto", CodProduto)
                             .val("id_ingrediente", CodIngrediente)
@@ -101,7 +101,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto_ingrediente");
             objUpdate.Set.val("quantidade", Quantidade)
                             .val("alterar", clnUtilConvert.ToBit(Alterar))
@@ -113,7 +113,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal void remover()
         {
-            sqlCommandDelete objDelete = new sqlCommandDelete();
+            sqlDelete objDelete = new sqlDelete();
             objDelete.table("produto_ingrediente");
             objDelete.Where.where("id", Cod);
 

@@ -55,7 +55,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnIngrediente obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("ingrediente");
             objSelect.Where.where("id", Cod);
 
@@ -70,7 +70,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnIngrediente> obterPorTipoSituacao()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("ingrediente");
             objSelect.Where.where("id_tipo", CodTipo)
                            .where("situacao", prefixo(Situacao));
@@ -86,7 +86,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal List<clnIngrediente> obterIngredientes()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("ingrediente");
 
             List<clnIngrediente> objIngredientes = new List<clnIngrediente>();
@@ -101,7 +101,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal List<clnIngrediente> obterPorNome()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("ingrediente");
             objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
 
@@ -116,7 +116,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("ingrediente");
             objInsert.Insert.val("id_tipo", CodTipo)
                             .val("id_imagem", CodImagem)
@@ -129,7 +129,7 @@ namespace BURGUERSHACK_DESKTOP
 
         internal void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("ingrediente");
             objUpdate.Set.val("id_tipo", CodTipo)
                         .val("id_imagem", CodImagem)

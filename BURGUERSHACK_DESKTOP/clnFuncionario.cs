@@ -101,7 +101,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnFuncionario obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("funcionario");
             objSelect.Where.where("id", Cod);
 
@@ -116,7 +116,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnFuncionario obterPorCPF()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("funcionario");
             objSelect.Where.where("cpf", Cpf);
 
@@ -131,7 +131,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnFuncionario> obterPorNomeCPF()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("funcionario");
             objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlObjWhere.whereAssociation.OR)
                            .where("cpf", sqlObjWhereCommon.whereOperation.LIKE, "%" + Cpf + "%");
@@ -147,7 +147,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("funcionario");
             objInsert.Insert.val("id_cargo", CodCargo)
                             .val("id_foto", CodFoto)
@@ -176,7 +176,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("funcionario");
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("id_cargo", CodCargo)

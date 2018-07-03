@@ -35,7 +35,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnPagamentoForma obterPorCodigo()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("pagamento_forma");
             objSelect.Where.where("id", Cod);
 
@@ -50,7 +50,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnPagamentoForma> obterFormas()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("pagamento_forma");
 
             List<clnPagamentoForma> objFormas = new List<clnPagamentoForma>();

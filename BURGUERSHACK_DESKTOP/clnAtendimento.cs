@@ -56,7 +56,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void obterMesas()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("atendimento_mesa").Columns.select("id_mesa");
             objSelect.Where.where("id_atendimento", Cod);
 
@@ -68,7 +68,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnAtendimento obterPorCodigo()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("atendimento");
             objSelect.Where.where("id", Cod);
 
@@ -83,7 +83,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.Insert.val("id_cliente", CodCliente)
                             .val("id_funcionario", CodFuncionario)
                             .val("id_reserva", CodReserva)
@@ -98,7 +98,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.Set.val("fim", Fim)
                          .val("situacao", prefixo(Situacao));
             objUpdate.Where.where("id", Cod);
@@ -112,7 +112,7 @@ namespace BURGUERSHACK_DESKTOP
             if (!CodMesas.Contains(codMesa))
             {
                 CodMesas.Add(codMesa);
-                sqlCommandInsert objInsert = new sqlCommandInsert();
+                sqlInsert objInsert = new sqlInsert();
                 objInsert.table("atendimento_mesa");
                 objInsert.Insert.val("id_atendimento", Cod)
                                 .val("id_mesa", codMesa);
@@ -132,7 +132,7 @@ namespace BURGUERSHACK_DESKTOP
             if (CodMesas.Contains(codMesa))
             {
                 CodMesas.Remove(codMesa);
-                sqlCommandDelete objDelete = new sqlCommandDelete();
+                sqlDelete objDelete = new sqlDelete();
                 objDelete.table("atendimento_mesa");
                 objDelete.Where.where("id_atendimento", Cod)
                                 .where("id_mesa", codMesa);

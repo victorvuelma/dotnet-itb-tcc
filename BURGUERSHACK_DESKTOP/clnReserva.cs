@@ -61,7 +61,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void obterMesas()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva_mesa").Columns.select("id_mesa");
             objSelect.Where.where("id_reserva", Cod);
 
@@ -73,7 +73,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public clnReserva obterPorCod()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
             objSelect.Where.where("id", Cod);
 
@@ -88,7 +88,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnReserva> obterPorDataAgendada()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
             objSelect.Where.between("agendado", Agendado, Agendado.AddDays(1));
 
@@ -103,7 +103,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<clnReserva> obterReservas()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
 
             List<clnReserva> objReservas = new List<clnReserva>();
@@ -117,7 +117,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public List<int> obterMesasReservadas()
         {
-            sqlCommandSelect objSelect = new sqlCommandSelect();
+            sqlSelect objSelect = new sqlSelect();
             objSelect.table("mesa");
             objSelect.Columns.select("mesa.id");
             objSelect.Join.innerJoin("reserva_mesa", "id_mesa", "mesa.id")
@@ -137,7 +137,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void gravar()
         {
-            sqlCommandInsert objInsert = new sqlCommandInsert();
+            sqlInsert objInsert = new sqlInsert();
             objInsert.table("reserva");
             objInsert.Insert.val("id_cliente", CodCliente)
                             .val("id_funcionario", CodFuncionario)
@@ -155,7 +155,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             foreach (int codMesa in CodMesas)
             {
-                sqlCommandInsert objInsert = new sqlCommandInsert();
+                sqlInsert objInsert = new sqlInsert();
                 objInsert.table("reserva_mesa");
                 objInsert.Insert.val("id_reserva", Cod)
                                 .val("id_mesa", codMesa);
@@ -165,7 +165,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public void alterar()
         {
-            sqlCommandUpdate objUpdate = new sqlCommandUpdate();
+            sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("reserva");
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("pessoas", Pessoas)
@@ -180,7 +180,7 @@ namespace BURGUERSHACK_DESKTOP
                 CodMesas.Add(mesa);
                 if (Cod != -1)
                 {
-                    sqlCommandInsert objInsert = new sqlCommandInsert();
+                    sqlInsert objInsert = new sqlInsert();
                     objInsert.table("reserva_mesa");
                     objInsert.Insert.val("id_reserva", Cod)
                                     .val("id_mesa", mesa);
@@ -197,7 +197,7 @@ namespace BURGUERSHACK_DESKTOP
                 CodMesas.Remove(mesa);
                 if (Cod != -1)
                 {
-                    sqlCommandDelete objDelete = new sqlCommandDelete();
+                    sqlDelete objDelete = new sqlDelete();
                     objDelete.table("reserva_mesa");
                     objDelete.Where.where("id_reserva", Cod)
                                    .where("id_mesa", mesa);

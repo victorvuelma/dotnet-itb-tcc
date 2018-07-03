@@ -111,10 +111,10 @@
     <Compile Include="Manager\uixPictureBox.cs" />
     <Compile Include="Constant\uixSet.cs" />
     <Compile Include="Constant\uixStyle.cs" />
-    <Compile Include="Manager\uixTemplate.cs" />
+    <Compile Include="uixTemplate.cs" />
     <Compile Include="Manager\uixTextBox.cs" />
     <Compile Include="Manager\uixUserControl.cs" />
-    <Compile Include="Manager\uixUtil.cs" />
+    <Compile Include="uixUtil.cs" />
     <EmbeddedResource Include="Control\btnLabelUIX.resx">
       <DependentUpon>btnLabelUIX.cs</DependentUpon>
     </EmbeddedResource>
