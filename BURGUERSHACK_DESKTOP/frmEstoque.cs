@@ -13,7 +13,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmEstoque : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
 
         private clnEstoque _objEstoque;
 
@@ -23,11 +23,11 @@ namespace BURGUERSHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtQuantidade, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.VALOR });
-            _validar.addValidacao(mtbValidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DATA });
-            _validar.addValidacao(mtbFornCNPJ, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CNPJ });
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(txtQuantidade, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtValor, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.VALOR });
+            _validar.addValidacao(mtbValidade, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.DATA });
+            _validar.addValidacao(mtbFornCNPJ, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CNPJ });
 
             mtbFornCNPJ.Mask = clnUtil.MASK_CNPJ;
             mtbValidade.Mask = clnUtil.MASK_DATA;

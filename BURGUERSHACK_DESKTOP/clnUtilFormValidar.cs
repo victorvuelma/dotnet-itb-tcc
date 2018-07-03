@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BURGUERSHACK_DESKTOP
 {
-    class clnUtilValidar
+    class clnUtilFormValidar
     {
 
         public enum ValidarTipo

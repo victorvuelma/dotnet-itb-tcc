@@ -13,7 +13,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmProduto : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
 
         private clnProduto _objProduto;
         private List<clnProdutoIngrediente> _objProdutoIngredientes;
@@ -25,10 +25,10 @@ namespace BURGUERSHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtNome, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.VALOR });
-            _validar.addValidacao(cboTipo, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(txtNome, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtValor, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.VALOR });
+            _validar.addValidacao(cboTipo, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
         }
 
         private void abrirTipos()

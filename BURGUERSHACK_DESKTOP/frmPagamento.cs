@@ -13,7 +13,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmPagamento : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
 
         private int _codFuncionario;
         private int? _codCliente;
@@ -43,11 +43,11 @@ namespace BURGUERSHACK_DESKTOP
                 atualizarRestante();
             };
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(mtbCliCPF, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.CPF });
-            _validar.addValidacao(cboMetodo, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(cboBandeira, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtValor, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.VALOR });
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(mtbCliCPF, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.CPF });
+            _validar.addValidacao(cboMetodo, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(cboBandeira, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtValor, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.VALOR });
 
             mtbCliCPF.Mask = clnUtil.MASK_CPF;
         }

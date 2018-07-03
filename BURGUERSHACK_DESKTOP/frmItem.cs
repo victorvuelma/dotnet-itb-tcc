@@ -12,7 +12,7 @@ namespace BURGUERSHACK_DESKTOP
 {
     public partial class frmItem : Form
     {
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
 
         private clnItem _objItem;
         private List<clnItemIngrediente> _objIngredientes;
@@ -24,8 +24,8 @@ namespace BURGUERSHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(txtQuantidade, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.INT, clnUtilFormValidar.ValidarTipo.INT_MAIOR_0 });
         }
 
         private List<clnItemIngrediente> obterIngredientes()

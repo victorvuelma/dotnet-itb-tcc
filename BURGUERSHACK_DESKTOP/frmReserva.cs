@@ -13,7 +13,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmReserva : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
 
         private int _codFuncionario;
         private clnReserva _objReserva;
@@ -25,11 +25,11 @@ namespace BURGUERSHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(mtbData, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.DATA, clnUtilValidar.ValidarTipo.DATA_FUTURA });
-            _validar.addValidacao(mtbHora, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.HORA });
-            _validar.addValidacao(txtPessoas, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
-            _validar.addValidacao(mtbCliCPF, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CPF });
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(mtbData, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.DATA, clnUtilFormValidar.ValidarTipo.DATA_FUTURA });
+            _validar.addValidacao(mtbHora, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.HORA });
+            _validar.addValidacao(txtPessoas, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.INT, clnUtilFormValidar.ValidarTipo.INT_MAIOR_0 });
+            _validar.addValidacao(mtbCliCPF, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CPF });
 
             mtbCliCPF.Mask = clnUtil.MASK_CPF;
             mtbData.Mask = clnUtil.MASK_DATA;

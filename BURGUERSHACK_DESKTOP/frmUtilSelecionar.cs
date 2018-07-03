@@ -14,7 +14,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmUtilSelecionar : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
         private List<object> _opcoes;
 
         private clnUtilSelecionar _objSelecionar;
@@ -25,8 +25,8 @@ namespace BURGUERSHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtQuantidade, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT });
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(txtQuantidade, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.INT });
 
             _opcoes = new List<object>();
         }

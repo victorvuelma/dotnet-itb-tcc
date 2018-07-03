@@ -160,7 +160,6 @@
     <Compile Include="clnUtilCallback.cs" />
     <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilConvert.cs" />
-    <Compile Include="clnUtilKeyVal.cs" />
     <Compile Include="clnUtilListar.cs" />
     <Compile Include="clnUtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />
@@ -174,7 +173,7 @@
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
-    <Compile Include="clnUtilValidar.cs" />
+    <Compile Include="clnUtilFormValidar.cs" />
     <Compile Include="frmConta.cs">
       <SubType>Form</SubType>
     </Compile>

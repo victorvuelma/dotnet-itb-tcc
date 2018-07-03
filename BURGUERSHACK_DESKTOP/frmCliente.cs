@@ -13,7 +13,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmCliente : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
 
         private int _codFuncionario;
         private clnCliente _objCliente;
@@ -25,13 +25,13 @@ namespace BURGUERSHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtNome, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(mtbCPF, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CPF });
-            _validar.addValidacao(mtbDataNasc, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.DATA, clnUtilValidar.ValidarTipo.DATA_NASC });
-            _validar.addValidacao(mtbTelCel, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CELULAR });
-            _validar.addValidacao(txtEmail, clnUtilValidar.ValidarTipo.EMAIL);
-            _validar.addValidacao(cboGenero, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(txtNome, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(mtbCPF, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CPF });
+            _validar.addValidacao(mtbDataNasc, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.DATA, clnUtilFormValidar.ValidarTipo.DATA_NASC });
+            _validar.addValidacao(mtbTelCel, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CELULAR });
+            _validar.addValidacao(txtEmail, clnUtilFormValidar.ValidarTipo.EMAIL);
+            _validar.addValidacao(cboGenero, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
 
             mtbCPF.Mask = clnUtil.MASK_CPF;
             mtbDataNasc.Mask = clnUtil.MASK_DATA;

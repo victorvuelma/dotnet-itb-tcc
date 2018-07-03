@@ -15,7 +15,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmAcesso : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
         private clnAcesso _objAcesso;
 
         internal clnAcesso ObjAcesso { get => _objAcesso; set => _objAcesso = value; }
@@ -27,9 +27,9 @@ namespace BURGUERSHACK_DESKTOP
             txtSenha.txt.PasswordChar = '*';
             hdrUIX.Title = App.Name + " - Gerenciar Acesso";
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtUsuario, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtSenha, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(txtUsuario, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtSenha, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

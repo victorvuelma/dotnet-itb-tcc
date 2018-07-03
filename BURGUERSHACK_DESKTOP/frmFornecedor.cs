@@ -13,7 +13,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmFornecedor : Form
     {
 
-        private clnUtilValidar _validar;
+        private clnUtilFormValidar _validar;
 
         private clnFornecedor _objFuncionario;
 
@@ -23,18 +23,18 @@ namespace BURGUERSHACK_DESKTOP
         {
             InitializeComponent();
 
-            _validar = new clnUtilValidar();
-            _validar.addValidacao(txtRazaoSocial, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(mtbCNPJ, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CNPJ });
-            _validar.addValidacao(mtbTel, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.TELEFONE });
-            _validar.addValidacao(txtEmail, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.EMAIL });
+            _validar = new clnUtilFormValidar();
+            _validar.addValidacao(txtRazaoSocial, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(mtbCNPJ, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CNPJ });
+            _validar.addValidacao(mtbTel, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.TELEFONE });
+            _validar.addValidacao(txtEmail, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.EMAIL });
 
-            _validar.addValidacao(mtbEndCEP, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.CEP });
-            _validar.addValidacao(txtEndLogradouro, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtEndNr, new clnUtilValidar.ValidarTipo[] { clnUtilValidar.ValidarTipo.OBRIGATORIO, clnUtilValidar.ValidarTipo.INT, clnUtilValidar.ValidarTipo.INT_MAIOR_0 });
-            _validar.addValidacao(txtEndBairro, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtEndCidade, clnUtilValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(cboEndUF, clnUtilValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(mtbEndCEP, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CEP });
+            _validar.addValidacao(txtEndLogradouro, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtEndNr, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.INT, clnUtilFormValidar.ValidarTipo.INT_MAIOR_0 });
+            _validar.addValidacao(txtEndBairro, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtEndCidade, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(cboEndUF, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
 
             mtbCNPJ.Mask = clnUtil.MASK_CNPJ;
             mtbTel.Mask = clnUtil.MASK_TEL;
