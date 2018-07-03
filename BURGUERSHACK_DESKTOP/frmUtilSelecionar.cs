@@ -58,7 +58,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 if (control is Button btn)
                 {
-                    UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
+                    UIX.uixButton.btnApply(btn, AppDesktop.VisualStyle.ButtonImageColor);
                 }
             }
             opcoesControles.Clear();

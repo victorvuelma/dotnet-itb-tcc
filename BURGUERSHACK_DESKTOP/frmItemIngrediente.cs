@@ -139,7 +139,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmAlteraIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnRemover, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnRemover, AppDesktop.VisualStyle.ButtonWarningColor);
 
             picIngrediente.Hide();
             lblNome.Hide();

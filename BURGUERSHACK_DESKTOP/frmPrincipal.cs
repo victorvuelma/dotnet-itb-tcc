@@ -94,7 +94,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnSair, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnSair, AppDesktop.VisualStyle.ButtonWarningColor);
 
             abrirMesas();
             atualizarBotoes();

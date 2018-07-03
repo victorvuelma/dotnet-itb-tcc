@@ -168,8 +168,8 @@ namespace BURGUERSHACK_DESKTOP
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
-            UIX.uixButton.btnApply(btnExcluir, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnExcluir, AppDesktop.VisualStyle.ButtonWarningColor);
 
             if (ObjIngrediente != null)
             {

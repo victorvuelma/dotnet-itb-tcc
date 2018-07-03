@@ -45,7 +45,7 @@ namespace BURGUERSHACK_DESKTOP
                 {
                     abrirPedido(objPedido);
                 };
-                App.VisualTemplate.ctlApply(btn);
+                AppDesktop.VisualTemplate.ctlApply(btn);
 
                 pedidosControles.Add(btn);
             }

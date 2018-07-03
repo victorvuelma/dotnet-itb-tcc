@@ -1,6 +1,5 @@
 # PROJECT GIT IGNORE
-BURGUERSHACK_DESKTOP/AppDb.cs
-
+AppLocal.cs
 
 # GITIGNORE.IO
 # Created by https://www.gitignore.io/api/aspnetcore,visualstudio

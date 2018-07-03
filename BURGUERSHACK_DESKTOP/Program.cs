@@ -14,6 +14,8 @@ namespace BURGUERSHACK_DESKTOP
         [STAThread]
         static void Main()
         {
+            AppDesktop.startup();
+
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             System.Windows.Forms.Application.Run(new frmEntrar());

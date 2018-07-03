@@ -14,22 +14,16 @@ namespace SQL_POWERUP
 
         private Action<Exception> _exceptionCall;
 
-        private string _database;
-        private string _user;
-        private string _pass;
-        private string _source;
+        private sqlCredential _credential;
 
         public Action<Exception> ExceptionCall { get => _exceptionCall; set => _exceptionCall = value; }
-        public string Database { get => _database; set => _database = value; }
-        public string User { get => _user; set => _user = value; }
-        public string Pass { get => _pass; set => _pass = value; }
-        public string Source { get => _source; set => _source = value; }
+        public sqlCredential Credential { get => _credential; set => _credential = value; }
 
         public SqlConnection connect()
         {
             try
             {
-                string connStr = "Data Source=" + Source + ";Initial Catalog=" + Database + ";User Id=" + User + ";Password=" + Pass;
+                string connStr = "Data Source=" + Credential.Source + ";Initial Catalog=" + Credential.Database + ";User Id=" + Credential.User + ";Password=" + Credential.Pass;
 
                 SqlConnection conn = new SqlConnection(connStr);
                 conn.Open();

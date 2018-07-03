@@ -119,7 +119,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmCliente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnCancelar, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnCancelar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr);
 

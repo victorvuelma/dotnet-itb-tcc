@@ -417,7 +417,7 @@ namespace BURGUERSHACK_DESKTOP
                 }
             }
 
-            App.VisualTemplate.ctlApply(panel);
+            AppDesktop.VisualTemplate.ctlApply(panel);
             clnUtil.atualizarIndex(panel.Controls);
 
             panel.Show();
@@ -436,7 +436,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             if (hdr != null)
             {
-                App.VisualTemplate.frmApply(form, hdr);
+                AppDesktop.VisualTemplate.frmApply(form, hdr);
             }
 
             atualizarIndex(form.Controls);
@@ -549,7 +549,7 @@ namespace BURGUERSHACK_DESKTOP
             }
 
             clnUtil.atualizarIndex(uctConteudo.Controls);
-            App.VisualTemplate.ctlApply(uctConteudo);
+            AppDesktop.VisualTemplate.ctlApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);
             uctConteudo.Location = new Point(0, 0);

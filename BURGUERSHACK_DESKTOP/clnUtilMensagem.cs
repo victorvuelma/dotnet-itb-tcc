@@ -34,7 +34,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private static msgUIX mostrarMensagem(String titulo, String mensagem, MensagemIcone icone, int tipo)
         {
-            msgUIX msg = msgUIX.messageBox(titulo, mensagem, Icone(icone), App.VisualTemplate);
+            msgUIX msg = msgUIX.messageBox(titulo, mensagem, Icone(icone), AppDesktop.VisualTemplate);
 
             switch (tipo)
             {

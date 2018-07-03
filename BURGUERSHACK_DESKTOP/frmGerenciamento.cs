@@ -84,7 +84,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             abrirFuncionarios();
         }

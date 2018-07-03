@@ -163,7 +163,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmUtilNumBoard_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixMaskedTextBox.mtbApply(mtbNum, App.VisualStyle.ContentColor);
+            UIX.uixMaskedTextBox.mtbApply(mtbNum, AppDesktop.VisualStyle.ContentColor);
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

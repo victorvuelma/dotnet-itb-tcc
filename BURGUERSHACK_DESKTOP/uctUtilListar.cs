@@ -65,7 +65,7 @@ namespace BURGUERSHACK_DESKTOP
                 Description = nome,
                 ImageLocation = imagem
             };
-            UIX.uixButton.btnApply(itemNovo, colorSet, App.VisualStyle.BoldFont);
+            UIX.uixButton.btnApply(itemNovo, colorSet, AppDesktop.VisualStyle.BoldFont);
 
             Itens.Add(itemNovo);
             exibirItem(itemNovo);

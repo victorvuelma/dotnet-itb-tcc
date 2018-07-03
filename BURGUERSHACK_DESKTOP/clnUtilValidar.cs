@@ -231,21 +231,21 @@ namespace BURGUERSHACK_DESKTOP
                 {
                     if (Control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt, App.VisualStyle.BoxWarningColor);
+                        UIX.uixTextBox.txtApply(txt, AppDesktop.VisualStyle.BoxWarningColor);
                     } else if (Control is ComboBox cbo)
                     {
-                        UIX.uixComboBox.cboApply(cbo, App.VisualStyle.BoxWarningColor);
+                        UIX.uixComboBox.cboApply(cbo, AppDesktop.VisualStyle.BoxWarningColor);
                     }
                 }
                 else
                 {
                     if (Control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt, App.VisualStyle.BoxColor);
+                        UIX.uixTextBox.txtApply(txt, AppDesktop.VisualStyle.BoxColor);
                     }
                     else if (Control is ComboBox cbo)
                     {
-                        UIX.uixComboBox.cboApply(cbo, App.VisualStyle.BoxColor);
+                        UIX.uixComboBox.cboApply(cbo, AppDesktop.VisualStyle.BoxColor);
                     }
                 }
             }

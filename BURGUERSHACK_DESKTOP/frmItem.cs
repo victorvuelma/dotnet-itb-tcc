@@ -157,7 +157,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmPedidoProduto_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnRemover, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnRemover, AppDesktop.VisualStyle.ButtonWarningColor);
 
             hdrUIX.Title = App.Name + "- Pedido :: Alterando Item " + ObjItem.Cod;
 

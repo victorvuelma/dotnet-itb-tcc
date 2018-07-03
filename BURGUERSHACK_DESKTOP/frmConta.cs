@@ -133,7 +133,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmConta_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
             txtPessoas.Text = "1";
 
             exibirConta();

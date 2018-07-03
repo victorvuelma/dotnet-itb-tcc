@@ -40,7 +40,7 @@ namespace BURGUERSHACK_DESKTOP
 
             foreach (object obj in _opcoes)
             {
-                uctOpcoes.adicionarItem(ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), App.VisualStyle.ButtonImageColor);
+                uctOpcoes.adicionarItem(ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor);
             }
             //uctOpcoes.Controls.Clear();
 

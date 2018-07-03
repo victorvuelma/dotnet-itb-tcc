@@ -134,7 +134,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmPedido_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, App.VisualStyle.ButtonWarningColor);
+            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             if (ObjPedido.Cod == -1)
             {
@@ -142,7 +142,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                UIX.uixButton.btnApply(btnConfirmar, App.VisualStyle.ButtonWarningColor);
+                UIX.uixButton.btnApply(btnConfirmar, AppDesktop.VisualStyle.ButtonWarningColor);
 
                 btnConfirmar.Description = "Excluir";
                 btnConfirmar.Image = Properties.Resources.excluir;

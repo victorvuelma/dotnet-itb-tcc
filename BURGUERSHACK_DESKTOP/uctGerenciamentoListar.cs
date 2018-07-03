@@ -54,7 +54,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 dgvItens.Columns.Add(coluna.ToLower(), coluna);
             }
-            App.VisualTemplate.ctlApply(dgvItens);
+            AppDesktop.VisualTemplate.ctlApply(dgvItens);
 
             btnNovo.Visible = CallbackNovo != null;
 
