@@ -36,6 +36,7 @@ namespace UIX
             {
                 pic.BackColor = value;
                 lbl.BackColor = value;
+                pnl.BackColor = value;
                 base.BackColor = value;
             }
         }
@@ -70,18 +71,6 @@ namespace UIX
             get => base.Size;
             set
             {
-                Size oldSize = base.Size;
-
-                int heightDiff = value.Height - oldSize.Height;
-                int widthDiff = value.Width - oldSize.Width;
-
-                pic.Size = new Size(pic.Size.Width + widthDiff, pic.Size.Height + heightDiff);
-                pic.Location = new Point((value.Width / 2) - (pic.Size.Width / 2), pic.Location.Y);
-
-                lbl.Size = new Size(value.Width, lbl.Size.Height);
-                int lblY = value.Height - lbl.Height;
-                lbl.Location = new Point(lbl.Location.X, lblY);
-
                 base.Size = value;
 
                 update();
@@ -90,16 +79,29 @@ namespace UIX
 
         private void update()
         {
-            //UIX.uixUtil.defineSizeForWidht(lbl);
+            int MARGIN = 3;
+
+            pnl.Size = new Size(Size.Width - (MARGIN * 2), Size.Height - (MARGIN * 2));
+            pnl.Location = new Point(MARGIN, MARGIN);
+
+            lbl.AutoSize = true;
+            lbl.Location = new Point(0, pnl.Height - lbl.Height);
+            int height = lbl.Height;
+            lbl.AutoSize = false;
+            lbl.Size = new Size(pnl.Width, height);
+
+            int picSize = pnl.Height - lbl.Height;
+            pic.Size = new Size(picSize, picSize);
+            pic.Location = new Point((pnl.Height / 2) - (pic.Height / 2), 0);
         }
 
-        private void btnUIX_MouseEnter(object sender, EventArgs e)
+        private void onMouseEnter(object sender, EventArgs e)
         {
             _backColor = BackColor;
             BackColor = HoverColor;
         }
 
-        private void btnUIX_MouseLeave(object sender, EventArgs e)
+        private void onMouseLeave(object sender, EventArgs e)
         {
             BackColor = _backColor;
         }
