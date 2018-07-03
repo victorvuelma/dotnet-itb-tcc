@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private bool encontrarCliente()
         {
-            if (clnUtil.validarCPF(mtbCliCPF.Text))
+            if (clnUtilValidar.validarCPF(mtbCliCPF.Text))
             {
                 clnCliente objCliente = new clnCliente
                 {
@@ -198,7 +199,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private DateTime? obterDataAgendada()
         {
-            if (clnUtil.validarData(mtbData.Text) && clnUtil.validarDataFutura(mtbData.Text))
+            if (clnUtilValidar.validarData(mtbData.Text) && clnUtilValidar.validarDataFutura(mtbData.Text))
             {
                 return clnUtilConvert.ObterNullableData(mtbData.Text);
             }
@@ -254,7 +255,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void tentarDefinirData()
         {
-            if (clnUtil.validarData(mtbData.Text) && clnUtil.validarDataFutura(mtbData.Text))
+            if (clnUtilValidar.validarData(mtbData.Text) && clnUtilValidar.validarDataFutura(mtbData.Text))
             {
                 DateTime dataAgendada = clnUtilConvert.ObterData(mtbData.Text).Date;
                 if (!ObjReserva.Agendado.Equals(dataAgendada))

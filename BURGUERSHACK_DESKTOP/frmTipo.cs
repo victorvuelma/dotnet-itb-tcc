@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -104,7 +105,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (ObjTipo != null)
             {
-                if (!clnUtil.vazio(txtNome.Text))
+                if (!clnUtilValidar.vazio(txtNome.Text))
                 {
                     ObjTipo.Nome = txtNome.Text;
                     ObjTipo.alterar();
@@ -120,7 +121,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else if (grbEditar.Visible)
             {
-                if (!clnUtil.vazio(txtNome.Text))
+                if (!clnUtilValidar.vazio(txtNome.Text))
                 {
                     clnTipo objTipo = new clnTipo
                     {

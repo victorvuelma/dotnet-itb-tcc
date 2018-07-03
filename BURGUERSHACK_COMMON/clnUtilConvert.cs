@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGUERSHACK_COMMON
 {
-    class clnUtilConvert
+    public class clnUtilConvert
     {
 
         public static bool isNull(object val)
@@ -21,7 +21,7 @@ namespace BURGUERSHACK_DESKTOP
             return null;
         }
 
-        internal static int ToInt(object val) => Convert.ToInt32(val);
+        public static int ToInt(object val) => Convert.ToInt32(val);
 
         public static double? ToNullableDouble(object val)
         {
@@ -30,7 +30,7 @@ namespace BURGUERSHACK_DESKTOP
             return null;
         }
 
-        internal static double ToDouble(object val) => Convert.ToDouble(val);
+        public static double ToDouble(object val) => Convert.ToDouble(val);
 
         public static decimal? ToNullableDecimal(object val)
         {
@@ -39,7 +39,7 @@ namespace BURGUERSHACK_DESKTOP
             return null;
         }
 
-        internal static decimal ToDecimal(object val) => Convert.ToDecimal(val);
+        public static decimal ToDecimal(object val) => Convert.ToDecimal(val);
 
         public static DateTime? ToNullableDateTime(object val)
         {
@@ -48,33 +48,33 @@ namespace BURGUERSHACK_DESKTOP
             return null;
         }
 
-        internal static DateTime ToDateTime(object val) => Convert.ToDateTime(val);
+        public static DateTime ToDateTime(object val) => Convert.ToDateTime(val);
 
-        internal static string ToString(object val) => Convert.ToString(val);
+        public static string ToString(object val) => Convert.ToString(val);
 
-        internal static DateTime ObterData(object val) => DateTime.ParseExact(Convert.ToString(val), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+        public static DateTime ObterData(object val) => DateTime.ParseExact(Convert.ToString(val), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-        internal static DateTime? ObterNullableData(object val)
+        public static DateTime? ObterNullableData(object val)
         {
-            if (!isNull(val) && clnUtil.validarData(val.ToString()))
+            if (!isNull(val) && clnUtilValidar.validarData(val.ToString()))
                 return ObterData(val);
             return null;
         }
 
-        internal static DateTime ObterHora(object val) => DateTime.ParseExact(Convert.ToString(val), "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+        public static DateTime ObterHora(object val) => DateTime.ParseExact(Convert.ToString(val), "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
 
-        internal static char? ToNullableChar(object val)
+        public static char? ToNullableChar(object val)
         {
             if (!isNull(val))
                 return ToNullableChar(val);
             return null;
         }
 
-        internal static char ToChar(object val) => Convert.ToChar(val);
+        public static char ToChar(object val) => Convert.ToChar(val);
 
-        internal static bool ToBool(object val) => Convert.ToBoolean(val);
+        public static bool ToBool(object val) => Convert.ToBoolean(val);
 
-        internal static object ToBit(object val) => (val.Equals(true) ? 1 : 0);
+        public static object ToBit(object val) => (val.Equals(true) ? 1 : 0);
 
     }
 }

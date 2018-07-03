@@ -37,12 +37,62 @@ namespace UIX
                 update();
             }
         }
+
+        public void add(int id, object obj)
+        {
+            cbo.Items.Add(new UIXComboBoxItem
+            {
+                Id = id,
+                Name = obj.ToString()
+            });
+        }
+
+        public void add(object obj)
+        {
+            add(cbo.Items.Count, obj);
+        }
+
+        public void addRange(object[] objects)
+        {
+            foreach (object obj in objects)
+            {
+                add(obj);
+            }
+        }
+
+        public void clear()
+        {
+            cbo.Items.Clear();
+        }
+
+        public bool contains(string nome)
+        {
+            foreach (UIXComboBoxItem item in Items)
+            {
+                if (item.Name.Equals(nome))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public List<UIXComboBoxItem> Items
+        {
+            get
+            {
+                List<UIXComboBoxItem> items = new List<UIXComboBoxItem>();
+                foreach (object obj in cbo.Items)
+                {
+                    if (obj is UIXComboBoxItem item)
+                        items.Add(item);
+                }
+                return items;
+            }
+        }
+
+        public UIXComboBoxItem SelectedItem => (UIXComboBoxItem)cbo.SelectedItem;
         //---- PROPRIEDADES UIX
-
-        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        public ObjectCollection Items => cbo.Items;
-
-        public object SelectedItem => cbo.SelectedItem;
 
         public bool FormattingEnabled { get => cbo.FormattingEnabled; set => cbo.FormattingEnabled = value; }
 
@@ -118,5 +168,22 @@ namespace UIX
                 }
             }
         }
+
+        public class UIXComboBoxItem
+        {
+
+            private string _name;
+            private int _id;
+
+            public string Name { get => _name; set => _name = value; }
+            public int Id { get => _id; set => _id = value; }
+
+            public override string ToString()
+            {
+                return Name;
+            }
+
+        }
+
     }
 }

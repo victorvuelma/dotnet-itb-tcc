@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,7 +95,7 @@ namespace BURGUERSHACK_DESKTOP
             String pesquisa = txtPesquisar.Text.ToLower();
             foreach (object opcao in ObjVisualizar.ObjListar.getOpcoes())
             {
-                if (clnUtil.vazio(pesquisa) || ObjVisualizar.ObjListar.getNome(opcao).ToLower().Contains(pesquisa))
+                if (clnUtilValidar.vazio(pesquisa) || ObjVisualizar.ObjListar.getNome(opcao).ToLower().Contains(pesquisa))
                 {
                     _opcoes.Add(opcao);
                 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,7 +85,7 @@ namespace BURGUERSHACK_DESKTOP
                     {
                         Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE,
                         Nome = txtNome.Text,
-                        CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]),
+                        CodTipo = cboTipo.SelectedItem.Id,
                         CodImagem = objArquivo.Cod,
                         Valor = clnUtilConvert.ToDecimal(txtValor.Text)
                     };
@@ -134,12 +135,11 @@ namespace BURGUERSHACK_DESKTOP
 
         private void carregarTipos()
         {
-            cboTipo.Items.Clear();
+            cboTipo.clear();
 
             foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.INGREDIENTE }.obterTipos())
             {
-                String nome = objTipo.Cod + " - " + objTipo.Nome;
-                cboTipo.Items.Add(nome);
+                cboTipo.add(objTipo.Cod, objTipo.Cod + " - " + objTipo.Nome);
                 if (ObjIngrediente != null && ObjIngrediente.CodTipo.Equals(objTipo.Cod))
                 {
                     definirTipo(objTipo);
@@ -192,11 +192,11 @@ namespace BURGUERSHACK_DESKTOP
                 if (ObjIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
                 {
                     cboSituacao.Enabled = false;
-                    cboSituacao.Items.Add(clnUtilConvert.ToString(clnIngrediente.ingredienteSituacao.FORADEESTOQUE));
+                    cboSituacao.add(clnIngrediente.ingredienteSituacao.FORADEESTOQUE);
                 }
                 else
                 {
-                    cboSituacao.Items.AddRange(new String[] { clnUtilConvert.ToString(clnIngrediente.ingredienteSituacao.DISPONIVEL), clnUtilConvert.ToString(clnIngrediente.ingredienteSituacao.INDISPONIVEL) });
+                    cboSituacao.addRange(new object[] { clnIngrediente.ingredienteSituacao.DISPONIVEL, clnIngrediente.ingredienteSituacao.INDISPONIVEL });
                 }
                 cboSituacao.Text = ObjIngrediente.Situacao.ToString();
                 lblEstoque.Text = "Estoque: " + ingredienteEstoque;

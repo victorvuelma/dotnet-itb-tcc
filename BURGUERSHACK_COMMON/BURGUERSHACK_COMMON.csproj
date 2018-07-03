@@ -132,6 +132,8 @@
     <Compile Include="App.cs" />
     <Compile Include="AppLocal.cs" />
     <Compile Include="clnEndereco.cs" />
+    <Compile Include="clnUtilConvert.cs" />
+    <Compile Include="clnUtilValidar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

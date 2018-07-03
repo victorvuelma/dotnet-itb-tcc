@@ -34,8 +34,13 @@ WHERE LOCALIDADE.CEP = '69945000' OR LOGRADOURO.CEP = '69945000';
         public string Localidade { get => _localidade; set => _localidade = value; }
         public string Uf { get => _uf; set => _uf = value; }
 
+        private clnEndereco obter(SqlDataReader reader)
+        {
+            return new clnEndereco
+            {
 
-
+            };
+        }
 
     }
 }

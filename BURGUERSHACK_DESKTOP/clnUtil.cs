@@ -15,6 +15,7 @@ using Caelum.Stella.CSharp.Http.Exceptions;
 using static System.Windows.Forms.Control;
 using System.Text.RegularExpressions;
 using System.Collections;
+using BURGUERSHACK_COMMON;
 
 namespace BURGUERSHACK_DESKTOP
 {
@@ -37,12 +38,6 @@ namespace BURGUERSHACK_DESKTOP
 
         private static String FORMAT_CEL = @"(00) 00000-0000";
         private static String FORMAT_TEL = @"(00) 0000-0000";
-
-        private static String REGEX_CEL = @"^\([1-9]{2}\) (9[1-9])[0-9]{3}\-[0-9]{4}$";
-        private static String REGEX_TEL = @"^\([1-9]{2}\) ([2-8])[0-9]{3}\-[0-9]{4}$";
-
-        private static CPFValidator _cpfValidator = new CPFValidator();
-        private static CNPJValidator _cnpjValidator = new CNPJValidator();
 
         private static CPFFormatter _cpfFormatter = new CPFFormatter();
         private static CNPJFormatter _cnpjFormatter = new CNPJFormatter();
@@ -144,7 +139,7 @@ namespace BURGUERSHACK_DESKTOP
             addUFs(cboUF);
             mtbCEP.mtb.Validated += (object sender, EventArgs e) =>
             {
-                if (clnUtil.validarCEP(mtbCEP.Text))
+                if (clnUtilValidar.validarCEP(mtbCEP.Text))
                 {
                     clnUtil.definirEndereco(mtbCEP.Text, ctlLogradouro, ctlBairro, ctlCidade, cboUF, ctlNr);
                 }
@@ -153,7 +148,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public static void definirEndereco(String cep, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr)
         {
-            if (validarCEP(cep))
+            if (clnUtilValidar.validarCEP(cep))
             {
                 Endereco end = obterEndereco(cep);
                 if (end != null)
@@ -203,18 +198,6 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        public static bool validarCEP(String cep)
-        {
-            try
-            {
-                new CEP(cep);
-                return true;
-            }
-            catch (InvalidZipCodeFormat)
-            {
-                return false;
-            }
-        }
         // ---- ENDERECO
 
         // ---- FORMATACOES
@@ -233,14 +216,14 @@ namespace BURGUERSHACK_DESKTOP
 
         public static String formatarCelular(String celular)
         {
-            if (celular == null || vazio(celular))
+            if (celular == null || clnUtilValidar.vazio(celular))
                 return null;
             return long.Parse(celular).ToString(FORMAT_CEL);
         }
 
         public static String formatarTelefone(String telefone)
         {
-            if (telefone == null || vazio(telefone))
+            if (telefone == null || clnUtilValidar.vazio(telefone))
                 return null;
             return long.Parse(telefone).ToString(FORMAT_TEL);
         }
@@ -275,86 +258,6 @@ namespace BURGUERSHACK_DESKTOP
             return dataHora.ToString("dd/MM/yyyy HH:mm");
         }
         // ---- FORMATACOES
-
-        // ---- VALIDACOES
-        public static bool validarCelular(String cel)
-        {
-            return Regex.IsMatch(cel, REGEX_CEL);
-        }
-
-        public static bool validarTelefone(String cel)
-        {
-            return Regex.IsMatch(cel, REGEX_TEL);
-        }
-
-        public static bool validarData(String data)
-        {
-            return DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
-        }
-
-        public static bool validarDataNasc(String data)
-        {
-            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now.Date) < 0;
-        }
-
-        public static bool validarDataFutura(String data)
-        {
-            return clnUtilConvert.ObterData(data).CompareTo(DateTime.Now.Date) >= 0;
-        }
-
-        public static bool validarHora(String hora)
-        {
-            return DateTime.TryParseExact(hora, "HH:mm", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
-        }
-
-        public static bool vazio(String str)
-        {
-            return String.IsNullOrWhiteSpace(str);
-        }
-
-        public static bool validarInt(String inteiro)
-        {
-            return Int32.TryParse(inteiro, out int r);
-        }
-
-        public static bool validarValor(String val)
-        {
-            return Double.TryParse(val, out double value) && value > 0.0;
-        }
-
-        public static bool validarDouble(String val)
-        {
-            return Double.TryParse(val, out double r);
-        }
-
-        public static bool validarDecimal(String val)
-        {
-            return Decimal.TryParse(val, out decimal r);
-        }
-
-        public static bool validarCPF(String cpf)
-        {
-            return _cpfValidator.IsValid(cpf);
-        }
-
-        public static bool validarCNPJ(String cnpj)
-        {
-            return _cnpjValidator.IsValid(cnpj);
-        }
-
-        public static bool validarEmail(String mail)
-        {
-            try
-            {
-                System.Net.Mail.MailAddress mailAddress = new System.Net.Mail.MailAddress(mail);
-                return mailAddress.Address.ToLower().Equals(mail.ToLower());
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-        // ---- VALIDACOES
 
         public static String obterConteudo(Control control)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,7 +86,7 @@ namespace BURGUERSHACK_DESKTOP
                     {
                         Situacao = ((ObjProdutoIngredientes.Count == 0) ? clnProduto.produtoSituacao.DISPONIVEL : clnProduto.produtoSituacao.FORADEESTOQUE),
                         Nome = txtNome.Text,
-                        CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]),
+                        CodTipo = cboTipo.SelectedItem.Id,
                         CodImagem = objArquivo.Cod,
                         Valor = clnUtilConvert.ToDecimal(txtValor.Text),
                         Descricao = txtDesc.Text
@@ -141,12 +142,11 @@ namespace BURGUERSHACK_DESKTOP
 
         private void carregarTipos()
         {
-            cboTipo.Items.Clear();
+            cboTipo.clear();
 
             foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.PRODUTO }.obterTipos())
             {
-                String nome = objTipo.Cod + " - " + objTipo.Nome;
-                cboTipo.Items.Add(nome);
+                cboTipo.add(objTipo.Cod, objTipo.Cod + " - " + objTipo.Nome);
                 if (ObjProduto != null && ObjProduto.CodTipo.Equals(objTipo.Cod))
                 {
                     definirTipo(objTipo);
@@ -281,11 +281,11 @@ namespace BURGUERSHACK_DESKTOP
                 if (ObjProduto.Situacao == clnProduto.produtoSituacao.FORADEESTOQUE)
                 {
                     cboSituacao.Enabled = false;
-                    cboSituacao.Items.Add(clnUtilConvert.ToString(clnProduto.produtoSituacao.FORADEESTOQUE));
+                    cboSituacao.add(clnProduto.produtoSituacao.FORADEESTOQUE);
                 }
                 else
                 {
-                    cboSituacao.Items.AddRange(new String[] { clnUtilConvert.ToString(clnProduto.produtoSituacao.DISPONIVEL), clnUtilConvert.ToString(clnProduto.produtoSituacao.INDISPONIVEL) });
+                    cboSituacao.addRange(new object[] { clnProduto.produtoSituacao.DISPONIVEL, clnProduto.produtoSituacao.INDISPONIVEL });
                 }
                 cboSituacao.Text = ObjProduto.Situacao.ToString();
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -77,11 +78,11 @@ namespace BURGUERSHACK_DESKTOP
                     int codForma = -1;
                     if (cboBandeira.Visible)
                     {
-                        codForma = clnUtilConvert.ToInt(((clnUtilKeyVal)cboBandeira.SelectedItem).Val);
+                        codForma = cboBandeira.SelectedItem.Id;
                     }
                     else
                     {
-                        codForma = clnUtilConvert.ToInt(((clnUtilKeyVal)cboBandeira.Items[0]).Val);
+                        codForma = cboBandeira.Items[0].Id;
                     }
 
                     ObjPagamento = new clnPagamento
@@ -121,7 +122,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private bool encontrarCliente()
         {
-            if (clnUtil.validarCPF(mtbCliCPF.Text))
+            if (clnUtilValidar.validarCPF(mtbCliCPF.Text))
             {
                 clnCliente objCliente = new clnCliente
                 {
@@ -169,7 +170,7 @@ namespace BURGUERSHACK_DESKTOP
         private void carregarBandeiras()
         {
             clnPagamentoForma objFormas = new clnPagamentoForma();
-            cboBandeira.Items.Clear();
+            cboBandeira.clear();
 
             bool dinheiro = true;
             foreach (clnPagamentoForma objForma in objFormas.obterFormas())
@@ -180,8 +181,7 @@ namespace BURGUERSHACK_DESKTOP
                     {
                         dinheiro = false;
                     }
-                    clnUtilKeyVal cboItem = new clnUtilKeyVal(objForma.Bandeira, objForma.Cod);
-                    cboBandeira.Items.Add(cboItem);
+                    cboBandeira.add(objForma.Cod, objForma.Bandeira);
                 }
             }
             if (dinheiro)
@@ -200,20 +200,20 @@ namespace BURGUERSHACK_DESKTOP
         private void carregarMetodos()
         {
             clnPagamentoForma objFormas = new clnPagamentoForma();
-            cboMetodo.Items.Clear();
+            cboMetodo.clear();
 
             foreach (clnPagamentoForma objForma in objFormas.obterFormas())
             {
-                if (!cboMetodo.Items.Contains(objForma.Nome))
+                if (!cboMetodo.contains(objForma.Nome))
                 {
-                    cboMetodo.Items.Add(objForma.Nome);
+                    cboMetodo.add(objForma.Cod, objForma.Nome);
                 }
             }
         }
 
         private decimal obterValorPago()
         {
-            if (clnUtil.validarDecimal(txtValor.Text))
+            if (clnUtilValidar.validarDecimal(txtValor.Text))
                 return clnUtilConvert.ToDecimal(txtValor.Text);
             return 0;
         }
@@ -227,7 +227,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private decimal obterDinheiro()
         {
-            if (clnUtil.validarDecimal(txtDinheiro.Text))
+            if (clnUtilValidar.validarDecimal(txtDinheiro.Text))
                 return clnUtilConvert.ToDecimal(txtDinheiro.Text);
             return 0;
         }

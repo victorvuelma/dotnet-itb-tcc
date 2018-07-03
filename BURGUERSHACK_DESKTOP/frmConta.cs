@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +42,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private int obterPessoas()
         {
-            if (clnUtil.validarInt(txtPessoas.Text))
+            if (clnUtilValidar.validarInt(txtPessoas.Text))
             {
                 return clnUtilConvert.ToInt(txtPessoas.Text);
             }
@@ -50,7 +51,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private decimal obterDesconto()
         {
-            if (clnUtil.validarDecimal(txtDesconto.Text))
+            if (clnUtilValidar.validarDecimal(txtDesconto.Text))
             {
                 return clnUtilConvert.ToDecimal(txtDesconto.Text);
             }

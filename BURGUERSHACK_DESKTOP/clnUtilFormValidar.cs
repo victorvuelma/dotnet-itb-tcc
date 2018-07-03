@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -139,7 +140,7 @@ namespace BURGUERSHACK_DESKTOP
                     return true;
                 }
                 String conteudo = clnUtil.obterConteudo(Control);
-                if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO) && clnUtil.vazio(conteudo))
+                if (!_validacoes.Contains(ValidarTipo.OBRIGATORIO) && clnUtilValidar.vazio(conteudo))
                 {
                     return true;
                 }
@@ -154,27 +155,27 @@ namespace BURGUERSHACK_DESKTOP
                     switch (tipo)
                     {
                         case ValidarTipo.OBRIGATORIO:
-                            val = !clnUtil.vazio(conteudo);
+                            val = !clnUtilValidar.vazio(conteudo);
                             res = "precisa ser preenchido.";
                             break;
                         case ValidarTipo.EMAIL:
-                            val = clnUtil.validarEmail(conteudo);
+                            val = clnUtilValidar.validarEmail(conteudo);
                             res = "deve conter um e-mail válido.";
                             break;
                         case ValidarTipo.CPF:
-                            val = clnUtil.validarCPF(conteudo);
+                            val = clnUtilValidar.validarCPF(conteudo);
                             res = "deve conter um CPF válido.";
                             break;
                         case ValidarTipo.CNPJ:
-                            val = clnUtil.validarCNPJ(conteudo);
+                            val = clnUtilValidar.validarCNPJ(conteudo);
                             res = "deve conter um CNPJ válido.";
                             break;
                         case ValidarTipo.CEP:
-                            val = clnUtil.validarCEP(conteudo);
+                            val = clnUtilValidar.validarCEP(conteudo);
                             res = "deve conter um CEP válido.";
                             break;
                         case ValidarTipo.INT:
-                            val = clnUtil.validarInt(conteudo);
+                            val = clnUtilValidar.validarInt(conteudo);
                             res = "deve conter um número inteiro.";
                             break;
                         case ValidarTipo.INT_MAIOR_0:
@@ -182,35 +183,35 @@ namespace BURGUERSHACK_DESKTOP
                             res = "deve conter um número maior que ZERO.";
                             break;
                         case ValidarTipo.DATA:
-                            val = clnUtil.validarData(conteudo);
+                            val = clnUtilValidar.validarData(conteudo);
                             res = "deve conter uma data válida";
                             break;
                         case ValidarTipo.DATA_NASC:
-                            val = clnUtil.validarDataNasc(conteudo);
+                            val = clnUtilValidar.validarDataNasc(conteudo);
                             res = "deve conter uma data da nascimento.";
                             break;
                         case ValidarTipo.CELULAR:
-                            val = clnUtil.validarCelular(conteudo);
+                            val = clnUtilValidar.validarCelular(conteudo);
                             res = "deve conter um número de celular válido.";
                             break;
                         case ValidarTipo.TELEFONE:
-                            val = clnUtil.validarTelefone(conteudo);
+                            val = clnUtilValidar.validarTelefone(conteudo);
                             res = "deve conter um número de telefone válido.";
                             break;
                         case ValidarTipo.DATA_FUTURA:
-                            val = clnUtil.validarDataFutura(conteudo);
+                            val = clnUtilValidar.validarDataFutura(conteudo);
                             res = "deve conter uma data futura.";
                             break;
                         case ValidarTipo.HORA:
-                            val = clnUtil.validarHora(conteudo);
+                            val = clnUtilValidar.validarHora(conteudo);
                             res = "deve conter uma hora válida.";
                             break;
                         case ValidarTipo.VALOR:
-                            val = clnUtil.validarValor(conteudo);
+                            val = clnUtilValidar.validarValor(conteudo);
                             res = "deve conter um valor válido.";
                             break;
                         case ValidarTipo.DOUBLE:
-                            val = clnUtil.validarDouble(conteudo);
+                            val = clnUtilValidar.validarDouble(conteudo);
                             res = "deve conter um número decimal válido.";
                             break;
                     }

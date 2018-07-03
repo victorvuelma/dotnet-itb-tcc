@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,7 +85,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private bool encontrarFornecedor()
         {
-            if (clnUtil.validarCNPJ(mtbFornCNPJ.Text))
+            if (clnUtilValidar.validarCNPJ(mtbFornCNPJ.Text))
             {
                 clnFornecedor objFornecedor = new clnFornecedor
                 {

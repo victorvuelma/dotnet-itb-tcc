@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,7 +36,7 @@ namespace BURGUERSHACK_DESKTOP
 
             mtbCPF.Mask = clnUtil.MASK_CPF;
             mtbDataNasc.Mask = clnUtil.MASK_DATA;
-            cboGenero.Items.AddRange(new String[] { "M", "F" });
+            cboGenero.addRange(new String[] { "M", "F" });
             mtbTelCel.Mask = clnUtil.MASK_CEL;
         }
 

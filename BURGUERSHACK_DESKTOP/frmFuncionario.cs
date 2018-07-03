@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,7 +49,7 @@ namespace BURGUERSHACK_DESKTOP
 
             mtbCPF.Mask = clnUtil.MASK_CPF;
             mtbDataNasc.Mask = clnUtil.MASK_DATA;
-            cboGenero.Items.AddRange(new String[] { "M", "F" });
+            cboGenero.addRange(new String[] { "M", "F" });
             mtbTelCel.Mask = clnUtil.MASK_CEL;
             mtbTelRes.Mask = clnUtil.MASK_TEL;
             mtbEndCEP.Mask = clnUtil.MASK_CEP;
@@ -58,7 +59,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (_validar.valido())
             {
-                int codCargo = clnUtilConvert.ToInt(((clnUtilKeyVal)cboCargo.SelectedItem).Val);
+                int codCargo = cboCargo.SelectedItem.Id;
                 clnArquivo objArquivo = null;
                 if (ObjFuncionario != null)
                 {
@@ -199,7 +200,7 @@ namespace BURGUERSHACK_DESKTOP
                 CodFuncionario = ObjFuncionario.Cod
             }.obterPorFuncionario();
 
-            if(objAcesso == null)
+            if (objAcesso == null)
             {
                 objAcesso = new clnAcesso
                 {
@@ -222,9 +223,9 @@ namespace BURGUERSHACK_DESKTOP
 
             foreach (clnCargo objCargo in new clnCargo().obterCargos())
             {
-                cboCargo.Items.Add(new clnUtilKeyVal(objCargo.Cod + " - " + objCargo.Nome, objCargo.Cod));
+                cboCargo.add(objCargo.Cod, objCargo.Cod + " - " + objCargo.Nome);
             }
-            cboSituacao.Items.AddRange(new object[] { clnFuncionario.funcionarioSituacao.TREINAMENTO, clnFuncionario.funcionarioSituacao.PLENO });
+            cboSituacao.addRange(new object[] { clnFuncionario.funcionarioSituacao.TREINAMENTO, clnFuncionario.funcionarioSituacao.PLENO });
 
             if (ObjFuncionario == null)
             {
