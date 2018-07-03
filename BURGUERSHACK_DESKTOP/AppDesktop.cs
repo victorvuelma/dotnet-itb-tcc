@@ -8,6 +8,7 @@ using System.Drawing;
 using UIX;
 using SQL_POWERUP;
 using System.Windows.Forms;
+using BURGUERSHACK_COMMON;
 
 namespace BURGUERSHACK_DESKTOP
 {

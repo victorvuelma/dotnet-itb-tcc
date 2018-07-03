@@ -150,18 +150,18 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (clnUtilValidar.validarCEP(cep))
             {
-                Endereco end = obterEndereco(cep);
-                if (end != null)
+                clnEndereco objEndereco = obterEndereco(cep);
+                if (objEndereco != null)
                 {
                     ctlLogradouro.Enabled = false;
                     ctlBairro.Enabled = false;
                     ctlCidade.Enabled = false;
                     cboUF.Enabled = false;
 
-                    ctlLogradouro.Text = end.Logradouro;
-                    ctlBairro.Text = end.Bairro;
-                    ctlCidade.Text = end.Localidade;
-                    cboUF.Text = end.UF;
+                    ctlLogradouro.Text = objEndereco.Logradouro;
+                    ctlBairro.Text = objEndereco.Bairro;
+                    ctlCidade.Text = objEndereco.Localidade;
+                    cboUF.Text = objEndereco.UF;
                     ctlNr.Focus();
                 }
                 else
@@ -177,13 +177,20 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        public static Endereco obterEndereco(String cep)
+        public static clnEndereco obterEndereco(String cep)
         {
             Cursor.Current = Cursors.WaitCursor;
-            // PEGAR DO BANCO, SE NÃO..
-            Endereco end = obterEnderecoViaCep(cep);
+            clnEndereco objEndereco = new clnEndereco
+            {
+                CEP = retirarFormatacao(cep)
+            }.obterPorCep();
+            MessageBox.Show(objEndereco.ToString());
+            if (objEndereco == null)
+            {
+                objEndereco = clnEndereco.from(obterEnderecoViaCep(cep));
+            }
             Cursor.Current = Cursors.Default;
-            return end;
+            return objEndereco;
         }
 
         public static Endereco obterEnderecoViaCep(String cep)
@@ -465,9 +472,12 @@ namespace BURGUERSHACK_DESKTOP
         public static String stringSize(object content, int size)
         {
             string str = Convert.ToString(content);
-            if (str.Length > size) {
+            if (str.Length > size)
+            {
                 str = str.Substring(0, size);
-            } else { 
+            }
+            else
+            {
                 while (str.Length < size)
                 {
                     str += " ";

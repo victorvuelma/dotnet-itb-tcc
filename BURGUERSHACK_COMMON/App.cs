@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using SQL_POWERUP;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGUERSHACK_COMMON
 {
     public class App
     {
