@@ -44,6 +44,7 @@
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
+            this.pic.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pic_LoadCompleted);
             this.pic.Click += new System.EventHandler(this.onClick);
             this.pic.MouseEnter += new System.EventHandler(this.onMouseEnter);
             this.pic.MouseLeave += new System.EventHandler(this.onMouseLeave);

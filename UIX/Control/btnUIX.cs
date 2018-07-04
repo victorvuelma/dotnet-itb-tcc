@@ -20,8 +20,6 @@ namespace UIX
 
         public btnUIX()
         {
-            base.Size = new Size(80, 80);
-
             InitializeComponent();
 
             HoverColor = Color.Transparent;
@@ -43,7 +41,7 @@ namespace UIX
 
         public new Font Font
         {
-            get => base.Font;
+            get => lbl.Font;
             set
             {
                 lbl.Font = value;
@@ -119,6 +117,11 @@ namespace UIX
         private void btnUIX_BackColorChanged(object sender, EventArgs e)
         {
             BackColor = BackColor;
+        }
+
+        private void pic_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            update();
         }
     }
 }
