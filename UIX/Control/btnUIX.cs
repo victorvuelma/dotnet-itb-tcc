@@ -90,7 +90,7 @@ namespace UIX
 
             int picSize = pnl.Height - lbl.Height;
             pic.Size = new Size(picSize, picSize);
-            pic.Location = new Point((pnl.Height / 2) - (pic.Height / 2), 0);
+            pic.Location = new Point((pnl.Width / 2) - (picSize / 2), 0);
         }
 
         private void onMouseEnter(object sender, EventArgs e)
