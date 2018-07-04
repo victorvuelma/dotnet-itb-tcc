@@ -185,7 +185,6 @@ namespace BURGUERSHACK_DESKTOP
             {
                 CEP = retirarFormatacao(cep)
             }.obterPorCep();
-            MessageBox.Show(objEndereco.ToString());
             if (objEndereco == null)
             {
                 objEndereco = clnEndereco.from(obterEnderecoViaCep(cep));
