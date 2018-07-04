@@ -159,6 +159,16 @@ namespace UIX
                 }
                 else
                 {
+                    string[] num = txt.Text.Split(',');
+                    if (num.Length > 1)
+                    {
+                        if (num[1].Length > 2)
+                        {
+                            num[1] = num[1].Substring(0, 2);
+                        }
+                        txt.Text = num[0] + "," + num[1];
+                    }
+
                     uixUtil.defineForMoney(txt);
                 }
             }

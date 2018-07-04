@@ -19,7 +19,7 @@ namespace UIX
         public static void defineForMoney(TextBoxBase box)
         {
             string input = string.Empty;
-            double value = 0;
+            decimal value = 0;
             try
             {
                 input = box.Text.Replace(",", "").Replace(".", "");
@@ -29,7 +29,7 @@ namespace UIX
                 input = input.PadLeft(3, '0');
                 if (input.Length > 3 & input.Substring(0, 1) == "0")
                     input = input.Substring(1, input.Length - 1);
-                value = Convert.ToDouble(input) / 100;
+                value = Convert.ToDecimal(input) / 100;
                 box.Text = string.Format("{0:n}", value);
                 box.SelectionStart = box.Text.Length;
             }
