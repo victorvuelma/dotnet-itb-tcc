@@ -157,7 +157,6 @@
     <Compile Include="clnPagamentoForma.cs" />
     <Compile Include="clnTipo.cs" />
     <Compile Include="clnUtilCache.cs" />
-    <Compile Include="clnUtilCallback.cs" />
     <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilListar.cs" />
     <Compile Include="clnUtilMensagem.cs" />

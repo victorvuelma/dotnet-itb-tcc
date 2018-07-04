@@ -132,6 +132,7 @@
     <Compile Include="App.cs" />
     <Compile Include="AppLocal.cs" />
     <Compile Include="clnEndereco.cs" />
+    <Compile Include="Util\clnUtilCallback.cs" />
     <Compile Include="Util\clnUtilConvert.cs" />
     <Compile Include="Util\clnUtilValidar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
