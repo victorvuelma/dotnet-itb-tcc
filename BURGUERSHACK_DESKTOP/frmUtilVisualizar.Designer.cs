@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUtilVisualizar));
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
             this.uctOpcoes = new BURGUERSHACK_DESKTOP.uctUtilListar();
             this.hdrUIX = new UIX.hdrUIX();
@@ -43,19 +42,21 @@
             // grbOpcoes
             // 
             this.grbOpcoes.Controls.Add(this.uctOpcoes);
-            this.grbOpcoes.Location = new System.Drawing.Point(5, 165);
+            this.grbOpcoes.Location = new System.Drawing.Point(5, 190);
             this.grbOpcoes.Name = "grbOpcoes";
-            this.grbOpcoes.Size = new System.Drawing.Size(540, 380);
+            this.grbOpcoes.Size = new System.Drawing.Size(590, 405);
             this.grbOpcoes.TabIndex = 5;
             this.grbOpcoes.TabStop = false;
             // 
             // uctOpcoes
             // 
             this.uctOpcoes.AutoScroll = true;
+            this.uctOpcoes.Espacamento = 10;
             this.uctOpcoes.Location = new System.Drawing.Point(5, 15);
-            this.uctOpcoes.MaximumSize = new System.Drawing.Size(530, 1000);
+            this.uctOpcoes.MaximumSize = new System.Drawing.Size(580, 10000);
             this.uctOpcoes.Name = "uctOpcoes";
-            this.uctOpcoes.Size = new System.Drawing.Size(530, 355);
+            this.uctOpcoes.PosIndex = 0;
+            this.uctOpcoes.Size = new System.Drawing.Size(580, 380);
             this.uctOpcoes.TabIndex = 0;
             // 
             // hdrUIX
@@ -67,7 +68,7 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(550, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(600, 50);
             this.hdrUIX.TabIndex = 4;
             this.hdrUIX.Title = "Visualizar";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
@@ -79,7 +80,7 @@
             this.grbPesquisa.Controls.Add(this.btnPesquisar);
             this.grbPesquisa.Location = new System.Drawing.Point(5, 55);
             this.grbPesquisa.Name = "grbPesquisa";
-            this.grbPesquisa.Size = new System.Drawing.Size(540, 105);
+            this.grbPesquisa.Size = new System.Drawing.Size(590, 120);
             this.grbPesquisa.TabIndex = 3;
             this.grbPesquisa.TabStop = false;
             this.grbPesquisa.Text = "ENCONTRAR";
@@ -96,15 +97,16 @@
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
             this.txtPesquisar.Campo = "Pesquisar por";
             this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
-            this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
+            this.txtPesquisar.Location = new System.Drawing.Point(10, 20);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisar.MaxLength = 32767;
             this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPesquisar.Size = new System.Drawing.Size(440, 40);
+            this.txtPesquisar.Size = new System.Drawing.Size(470, 40);
             this.txtPesquisar.TabIndex = 3;
+            this.txtPesquisar.TextChange += new System.EventHandler(this.txtPesquisar_TextChange);
             // 
             // btnPesquisar
             // 
@@ -112,9 +114,9 @@
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
             this.btnPesquisar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
-            this.btnPesquisar.Location = new System.Drawing.Point(450, 15);
+            this.btnPesquisar.Location = new System.Drawing.Point(485, 15);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(80, 80);
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 100);
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "btnUIX1";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -124,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 550);
+            this.ClientSize = new System.Drawing.Size(600, 600);
             this.Controls.Add(this.grbPesquisa);
             this.Controls.Add(this.grbOpcoes);
             this.Controls.Add(this.hdrUIX);

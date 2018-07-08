@@ -16,7 +16,6 @@ using static System.Windows.Forms.Control;
 using System.Text.RegularExpressions;
 using System.Collections;
 using BURGUERSHACK_COMMON;
-
 namespace BURGUERSHACK_DESKTOP
 {
     class clnUtil
@@ -218,7 +217,6 @@ namespace BURGUERSHACK_DESKTOP
         public static String formatarValor(decimal valor)
         {
             return string.Format("{0:C}", valor);
-
         }
 
         public static String formatarCelular(String celular)
@@ -467,23 +465,6 @@ namespace BURGUERSHACK_DESKTOP
 
             pnlConteudo.Show();
             Cursor.Current = Cursors.Default;
-        }
-
-        public static String stringSize(object content, int size)
-        {
-            string str = Convert.ToString(content);
-            if (str.Length > size)
-            {
-                str = str.Substring(0, size);
-            }
-            else
-            {
-                while (str.Length < size)
-                {
-                    str += " ";
-                }
-            }
-            return str;
         }
 
     }

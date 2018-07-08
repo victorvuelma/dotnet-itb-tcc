@@ -41,51 +41,20 @@ namespace BURGUERSHACK_DESKTOP
 
             foreach (object obj in _opcoes)
             {
-                uctOpcoes.adicionarItem(ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor);
+                uctOpcoes.adicionarItem(ObjVisualizar.ObjListar.getCod(obj), ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor, () =>
+                {
+                    switch (ObjVisualizar.action(obj))
+                    {
+                        case clnUtilVisualizar.visualizarAction.REMOVER_ITEM:
+                            ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
+                            _opcoes.Remove(obj);
+                            lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
+                            return uctUtilListar.ListarResult.REMOVER;
+                        default:
+                            return uctUtilListar.ListarResult.NENHUM;
+                    }
+                });
             }
-            //uctOpcoes.Controls.Clear();
-
-            //List<Control> opcoesControles = new List<Control>();
-            //foreach (object obj in _opcoes)
-            //{
-            //    UIX.btnUIX btn = new UIX.btnUIX
-            //    {
-            //        Description = ObjVisualizar.ObjListar.getNome(obj),
-            //        Name = "btnVisualizar" + ObjVisualizar.ObjListar.getCod(obj),
-            //        Size = new Size(110, 110),
-            //        ImageLocation = ObjVisualizar.ObjListar.getImagem(obj)
-            //    };
-            //    btn.Click += (object sender, EventArgs e) =>
-            //    {
-            //        switch (ObjVisualizar.action(obj))
-            //        {
-            //            case clnUtilVisualizar.visualizarAction.FECHAR:
-            //                Close();
-            //                break;
-            //            case clnUtilVisualizar.visualizarAction.NADA:
-            //                realizaPesquisa();
-            //                break;
-            //            case clnUtilVisualizar.visualizarAction.REMOVER_ITEM:
-            //                ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
-            //                realizaPesquisa();
-            //                break;
-            //        }
-            //    };
-
-            //    opcoesControles.Add(btn);
-            //}
-            //clnUtil.adicionarControles(uctOpcoes, opcoesControles, 20);
-
-            //foreach (Control control in opcoesControles)
-            //{
-            //    if (control is Button btn)
-            //    {
-            //        UIX.uixButton.btnApply(btn, App.VisualStyle.ButtonImageColor);
-            //    }
-            //}
-            //opcoesControles.Clear();
-
-            lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
         }
 
         private void realizaPesquisa()
@@ -123,6 +92,11 @@ namespace BURGUERSHACK_DESKTOP
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            realizaPesquisa();
+        }
+
+        private void txtPesquisar_TextChange(object sender, EventArgs e)
         {
             realizaPesquisa();
         }
