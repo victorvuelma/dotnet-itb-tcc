@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace BURGUERSHACK_DESKTOP
                 {
                     clnFornecedor objFornecedorCNPJ = new clnFornecedor
                     {
-                        Cnpj = clnUtil.retirarFormatacao(mtbCNPJ.Text)
+                        Cnpj = clnUtilFormatar.retirarFormatacao(mtbCNPJ.Text)
                     }.obterPorCNPJ();
 
                     if (objFornecedorCNPJ == null)
@@ -58,10 +59,10 @@ namespace BURGUERSHACK_DESKTOP
                         clnFornecedor objFornecedor = new clnFornecedor
                         {
                             RazaoSocial = txtRazaoSocial.Text,
-                            Cnpj = clnUtil.retirarFormatacao(mtbCNPJ.Text),
-                            Telefone = clnUtil.retirarFormatacao(mtbTel.Text),
+                            Cnpj = clnUtilFormatar.retirarFormatacao(mtbCNPJ.Text),
+                            Telefone = clnUtilFormatar.retirarFormatacao(mtbTel.Text),
                             Email = txtEmail.Text,
-                            EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text),
+                            EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text),
                             EndLogradouro = txtEndLogradouro.Text,
                             EndNumero = txtEndNr.Text,
                             EndComplemento = txtEndComplemento.Text,
@@ -84,8 +85,8 @@ namespace BURGUERSHACK_DESKTOP
                 {
                     ObjFornecedor.RazaoSocial = txtRazaoSocial.Text;
                     ObjFornecedor.Email = txtEmail.Text;
-                    ObjFornecedor.Telefone = clnUtil.retirarFormatacao(mtbTel.Text);
-                    ObjFornecedor.EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text);
+                    ObjFornecedor.Telefone = clnUtilFormatar.retirarFormatacao(mtbTel.Text);
+                    ObjFornecedor.EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text);
                     ObjFornecedor.EndLogradouro = txtEndLogradouro.Text;
                     ObjFornecedor.EndNumero = txtEndNr.Text;
                     ObjFornecedor.EndComplemento = txtEndComplemento.Text;

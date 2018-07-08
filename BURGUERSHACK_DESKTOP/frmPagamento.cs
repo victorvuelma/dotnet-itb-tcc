@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,7 +127,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 clnCliente objCliente = new clnCliente
                 {
-                    Cpf = clnUtil.retirarFormatacao(mtbCliCPF.Text)
+                    Cpf = clnUtilFormatar.retirarFormatacao(mtbCliCPF.Text)
                 }.obterPorCPF();
                 if (objCliente != null)
                 {
@@ -163,8 +164,8 @@ namespace BURGUERSHACK_DESKTOP
         {
             CodCliente = objCliente.Cod;
             lblCliente.Text = "Cliente " + objCliente.Cod +
-                            "\n" + "CPF: " + clnUtil.formatarCPF(objCliente.Cpf) +
-                            "\n" + "Celular: " + clnUtil.formatarCelular(objCliente.TelCelular);
+                            "\n" + "CPF: " + clnUtilFormatar.formatarCPF(objCliente.Cpf) +
+                            "\n" + "Celular: " + clnUtilFormatar.formatarCelular(objCliente.TelCelular);
         }
 
         private void carregarBandeiras()
@@ -235,13 +236,13 @@ namespace BURGUERSHACK_DESKTOP
         private void atualizarTroco()
         {
             decimal valorPago = obterDinheiro() - obterValorPago();
-            lblTroco.Text = "Troco: " + clnUtil.formatarValor(valorPago);
+            lblTroco.Text = "Troco: " + clnUtilFormatar.formatarValor(valorPago);
         }
 
         private void atualizarRestante()
         {
             decimal valorRestante = obterValorAPagar() - obterValorPago();
-            lblValorRestante.Text = clnUtil.formatarValor(valorRestante);
+            lblValorRestante.Text = clnUtilFormatar.formatarValor(valorRestante);
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)
@@ -250,7 +251,7 @@ namespace BURGUERSHACK_DESKTOP
             UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             hdrUIX.Title = App.Name + " - Novo Pagamento";
-            lblValorTotal.Text = clnUtil.formatarValor(obterValorAPagar());
+            lblValorTotal.Text = clnUtilFormatar.formatarValor(obterValorAPagar());
 
             if (ObjPagamento == null)
             {

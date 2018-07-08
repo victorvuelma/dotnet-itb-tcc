@@ -17,15 +17,15 @@ namespace BURGUERSHACK_DESKTOP
         private int _codFuncionario;
 
         private String[] colunas;
-        private clnUtilCallback<DataGridView, String> _callbackObter;
-        private clnUtilCallback<int> _callbackNovo;
-        private clnUtilCallback<DataGridViewRow> _callbackAlterar;
+        private IUtilCallback<DataGridView, String> _callbackObter;
+        private IUtilCallback<int> _callbackNovo;
+        private IUtilCallback<DataGridViewRow> _callbackAlterar;
 
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public string[] Colunas { get => colunas; set => colunas = value; }
-        internal clnUtilCallback<DataGridView, string> CallbackObter { get => _callbackObter; set => _callbackObter = value; }
-        internal clnUtilCallback<int> CallbackNovo { get => _callbackNovo; set => _callbackNovo = value; }
-        internal clnUtilCallback<DataGridViewRow> CallbackAlterar { get => _callbackAlterar; set => _callbackAlterar = value; }
+        internal IUtilCallback<DataGridView, string> CallbackObter { get => _callbackObter; set => _callbackObter = value; }
+        internal IUtilCallback<int> CallbackNovo { get => _callbackNovo; set => _callbackNovo = value; }
+        internal IUtilCallback<DataGridViewRow> CallbackAlterar { get => _callbackAlterar; set => _callbackAlterar = value; }
 
         public uctGerenciamentoListar()
         {

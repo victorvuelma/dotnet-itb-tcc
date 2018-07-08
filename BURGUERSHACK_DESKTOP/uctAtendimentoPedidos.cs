@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BURGUERSHACK_COMMON.UTIL;
 
 namespace BURGUERSHACK_DESKTOP
 {
@@ -128,7 +129,7 @@ namespace BURGUERSHACK_DESKTOP
 
             if (valor > 0)
             {
-                lblValor.Text = clnUtil.formatarValor(valor);
+                lblValor.Text = clnUtilFormatar.formatarValor(valor);
                 grbValor.Show();
             }
             else

@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -211,7 +212,7 @@ namespace BURGUERSHACK_DESKTOP
             abrirAdicionarIngrediente();
         }
 
-        private class CallbackAlterar : clnUtilVisualizar.visualizarCallback<frmItem, clnItemIngrediente>
+        private class CallbackAlterar : clnUtilVisualizar.IVisualizarCallback<frmItem, clnItemIngrediente>
         {
             public clnUtilVisualizar.visualizarAction call(frmItem frmItem, clnItemIngrediente objItemIngrediente)
             {

@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 clnCliente objClienteCPF = new clnCliente
                 {
-                    Cpf = clnUtil.retirarFormatacao(mtbCPF.Text)
+                    Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text)
                 }.obterPorCPF();
 
                 if (ObjCliente == null)
@@ -57,10 +58,10 @@ namespace BURGUERSHACK_DESKTOP
                         {
                             CodFuncionario = CodFuncionario,
                             Nome = txtNome.Text,
-                            Cpf = clnUtil.retirarFormatacao(mtbCPF.Text),
+                            Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text),
                             DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text),
                             Email = txtEmail.Text,
-                            TelCelular = clnUtil.retirarFormatacao(mtbTelCel.Text),
+                            TelCelular = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text),
                             Genero = cboGenero.Text,
                             Cadastro = DateTime.Now
                         };
@@ -80,7 +81,7 @@ namespace BURGUERSHACK_DESKTOP
                     ObjCliente.Nome = txtNome.Text;
                     ObjCliente.DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text);
                     ObjCliente.Email = txtEmail.Text;
-                    ObjCliente.TelCelular = clnUtil.retirarFormatacao(mtbTelCel.Text);
+                    ObjCliente.TelCelular = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text);
                     ObjCliente.Genero = cboGenero.Text;
                     ObjCliente.alterar();
                     clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);

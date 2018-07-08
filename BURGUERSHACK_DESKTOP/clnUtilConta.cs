@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BURGUERSHACK_COMMON.UTIL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,22 +54,22 @@ namespace BURGUERSHACK_DESKTOP
                 }
                 else if (line.Equals("{@valorsubtotal}"))
                 {
-                    contaBuilder.Append(clnUtil.formatarValor(clnUtilPedido.calcularValor(objAtendimento)));
+                    contaBuilder.Append(clnUtilFormatar.formatarValor(clnUtilPedido.calcularValor(objAtendimento)));
                 }
                 else if (line.Equals("{@valortotal}"))
                 {
-                    contaBuilder.Append(clnUtil.formatarValor(calcularValor(clnUtilPedido.calcularValor(objAtendimento), incluirGorjeta, desconto)));
+                    contaBuilder.Append(clnUtilFormatar.formatarValor(calcularValor(clnUtilPedido.calcularValor(objAtendimento), incluirGorjeta, desconto)));
                 }
                 else if (line.Equals("{@valorpessoa}"))
                 {
-                    contaBuilder.Append(clnUtil.formatarValor(calcularValor(clnUtilPedido.calcularValor(objAtendimento), incluirGorjeta, desconto) / pessoas));
+                    contaBuilder.Append(clnUtilFormatar.formatarValor(calcularValor(clnUtilPedido.calcularValor(objAtendimento), incluirGorjeta, desconto) / pessoas));
                 }
                 else if (line.Equals("{@gorjeta}"))
                 {
                     if (incluirGorjeta)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>+ Taxa de Serviço (10,0%)</td>");
-                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtil.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (decimal) 0.1)).Append("</td></tr>");
+                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (decimal) 0.1)).Append("</td></tr>");
                     }
                 }
                 else if (line.Equals("{@desconto}"))
@@ -76,7 +77,7 @@ namespace BURGUERSHACK_DESKTOP
                     if (desconto > 0)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>- Desconto (" + desconto.ToString("N") + "%)</td>");
-                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtil.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (desconto / 100))).Append("</td></tr>");
+                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (desconto / 100))).Append("</td></tr>");
                     }
                 }
                 else if (line.Equals("{@pessoas}"))
@@ -85,7 +86,7 @@ namespace BURGUERSHACK_DESKTOP
                 }
                 else if (line.Equals("{@datahora}"))
                 {
-                    contaBuilder.Append(clnUtil.formatarDataHora(DateTime.Now));
+                    contaBuilder.Append(clnUtilFormatar.formatarDataHora(DateTime.Now));
                 }
                 else
                 {
@@ -178,8 +179,8 @@ namespace BURGUERSHACK_DESKTOP
             htmlBuilder.Append(@"<td class='left'>").Append(cod).Append("</td>");
             htmlBuilder.Append(@"<td class='left'>").Append(descricao).Append("</td>");
             htmlBuilder.Append(@"<td class='right'>").Append(quantidade).Append("</td>");
-            htmlBuilder.Append(@"<td class='right'>").Append(clnUtil.formatarValor(valor)).Append("</td>");
-            htmlBuilder.Append(@"<td class='right'>").Append(clnUtil.formatarValor(valor * quantidade)).Append("</td>");
+            htmlBuilder.Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor)).Append("</td>");
+            htmlBuilder.Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor * quantidade)).Append("</td>");
             htmlBuilder.Append(@"</tr>");
         }
 

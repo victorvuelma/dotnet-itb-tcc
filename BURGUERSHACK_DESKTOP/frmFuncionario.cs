@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,7 +94,7 @@ namespace BURGUERSHACK_DESKTOP
                 {
                     clnFuncionario objFuncionarioCpf = new clnFuncionario
                     {
-                        Cpf = clnUtil.retirarFormatacao(mtbCPF.Text)
+                        Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text)
                     }.obterPorCPF();
 
                     if (objFuncionarioCpf == null)
@@ -103,17 +104,17 @@ namespace BURGUERSHACK_DESKTOP
                             CodCargo = codCargo,
                             CodFoto = objArquivo.Cod,
                             Nome = txtNome.Text,
-                            Cpf = clnUtil.retirarFormatacao(mtbCPF.Text),
+                            Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text),
                             Rg = txtRG.Text,
                             Genero = cboGenero.Text,
                             DataNascimento = clnUtilConvert.ObterData(mtbDataNasc.Text),
-                            TelRes = clnUtil.retirarFormatacao(mtbTelRes.Text),
-                            TelCel = clnUtil.retirarFormatacao(mtbTelCel.Text),
+                            TelRes = clnUtilFormatar.retirarFormatacao(mtbTelRes.Text),
+                            TelCel = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text),
                             Email = txtEmail.Text,
                             Salario = clnUtilConvert.ToDecimal(txtSalario.Text),
                             DataContratacao = DateTime.Now,
                             Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text),
-                            EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text),
+                            EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text),
                             EndLogradouro = txtEndLogradouro.Text,
                             EndNumero = txtEndNr.Text,
                             EndComplemento = txtEndComplemento.Text,
@@ -140,11 +141,11 @@ namespace BURGUERSHACK_DESKTOP
                     ObjFuncionario.DataNascimento = clnUtilConvert.ObterData(mtbDataNasc.Text);
                     ObjFuncionario.Email = txtEmail.Text;
                     ObjFuncionario.Genero = cboGenero.Text;
-                    ObjFuncionario.TelRes = clnUtil.retirarFormatacao(mtbTelRes.Text);
-                    ObjFuncionario.TelCel = clnUtil.retirarFormatacao(mtbTelCel.Text);
+                    ObjFuncionario.TelRes = clnUtilFormatar.retirarFormatacao(mtbTelRes.Text);
+                    ObjFuncionario.TelCel = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text);
                     ObjFuncionario.Salario = clnUtilConvert.ToDecimal(txtSalario.Text);
                     ObjFuncionario.Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text);
-                    ObjFuncionario.EndCEP = clnUtil.retirarFormatacao(mtbEndCEP.Text);
+                    ObjFuncionario.EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text);
                     ObjFuncionario.EndLogradouro = txtEndLogradouro.Text;
                     ObjFuncionario.EndNumero = txtEndNr.Text;
                     ObjFuncionario.EndComplemento = txtEndComplemento.Text;
@@ -242,7 +243,7 @@ namespace BURGUERSHACK_DESKTOP
                 txtNome.Text = ObjFuncionario.Nome;
                 mtbCPF.Text = ObjFuncionario.Cpf;
                 txtRG.Text = ObjFuncionario.Rg;
-                mtbDataNasc.Text = clnUtil.formatarData(ObjFuncionario.DataNascimento);
+                mtbDataNasc.Text = clnUtilFormatar.formatarData(ObjFuncionario.DataNascimento);
                 cboGenero.Text = clnUtilConvert.ToString(ObjFuncionario.Genero);
                 txtEmail.Text = ObjFuncionario.Email;
                 mtbTelCel.Text = ObjFuncionario.TelCel;

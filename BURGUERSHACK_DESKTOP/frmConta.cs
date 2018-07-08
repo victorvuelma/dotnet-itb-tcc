@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace BURGUERSHACK_DESKTOP
         private void exibirConta()
         {
             decimal valorTotal = obterValorTotal();
-            lblValorTotal.Text = "Valor Total: " + clnUtil.formatarValor(valorTotal);
+            lblValorTotal.Text = "Valor Total: " + clnUtilFormatar.formatarValor(valorTotal);
 
             webConta.Navigate(clnArquivo.CACHE.guardar("conta", clnUtilConta.gerarConta(ObjAtendimento, obterPessoas(), chkServico.Checked, obterDesconto())));
         }
@@ -72,7 +73,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 decimal valorPago = clnUtilConta.calcularValorPago(ObjConta.CodAtendimento);
 
-                lblValorPago.Text = "Valor Pago: " + clnUtil.formatarValor(valorPago);
+                lblValorPago.Text = "Valor Pago: " + clnUtilFormatar.formatarValor(valorPago);
 
                 if (valorPago >= obterValorTotal())
                 {

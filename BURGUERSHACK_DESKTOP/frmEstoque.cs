@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,7 +90,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 clnFornecedor objFornecedor = new clnFornecedor
                 {
-                    Cnpj = clnUtil.retirarFormatacao(mtbFornCNPJ.Text)
+                    Cnpj = clnUtilFormatar.retirarFormatacao(mtbFornCNPJ.Text)
                 }.obterPorCNPJ();
                 if (objFornecedor != null)
                 {
@@ -124,7 +125,7 @@ namespace BURGUERSHACK_DESKTOP
             ObjEstoque.CodFornecedor = objFornecedor.Cod;
             lblFornecedor.Text = "Fornecedor " + objFornecedor.Cod +
                             "\n" + "Razão Social: " + objFornecedor.RazaoSocial +
-                            "\n" + "CNPJ: " + clnUtil.formatarCNPJ(objFornecedor.Cnpj);
+                            "\n" + "CNPJ: " + clnUtilFormatar.formatarCNPJ(objFornecedor.Cnpj);
         }
 
         private void definirIngrediente(clnIngrediente objIngrediente)
@@ -181,7 +182,7 @@ namespace BURGUERSHACK_DESKTOP
 
                 txtQuantidade.Text = clnUtilConvert.ToString(ObjEstoque.Quantidade);
                 txtValor.Text = ObjEstoque.Valor.ToString();
-                mtbValidade.Text = clnUtil.formatarData(ObjEstoque.Validade);
+                mtbValidade.Text = clnUtilFormatar.formatarData(ObjEstoque.Validade);
 
                 clnFornecedor objFornecedor = new clnFornecedor
                 {

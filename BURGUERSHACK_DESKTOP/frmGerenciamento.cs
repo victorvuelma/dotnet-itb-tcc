@@ -29,7 +29,7 @@ namespace BURGUERSHACK_DESKTOP
             clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Gerenciamento :: " + titulo, ignorarTipo);
         }
 
-        private void abrirLista(String tipo, clnUtilCallback<int> callbackNovo, clnUtilCallback<DataGridView, String> callbackObter, clnUtilCallback<DataGridViewRow> callbackAlterar, String[] colunas)
+        private void abrirLista(String tipo, IUtilCallback<int> callbackNovo, IUtilCallback<DataGridView, String> callbackObter, IUtilCallback<DataGridViewRow> callbackAlterar, String[] colunas)
         {
             uctGerenciamentoListar objListar = new uctGerenciamentoListar
             {
@@ -134,7 +134,7 @@ namespace BURGUERSHACK_DESKTOP
             abrirReservas();
         }
 
-        private class CallbackIngredienteNovo : clnUtilCallback<int>
+        private class CallbackIngredienteNovo : IUtilCallback<int>
         {
             public bool call(int x)
             {
@@ -144,7 +144,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackIngredienteAlterar : clnUtilCallback<DataGridViewRow>
+        private class CallbackIngredienteAlterar : IUtilCallback<DataGridViewRow>
         {
             public bool call(DataGridViewRow row)
             {
@@ -166,7 +166,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackIngredienteObter : clnUtilCallback<DataGridView, String>
+        private class CallbackIngredienteObter : IUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
             {
@@ -193,7 +193,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackProdutoNovo : clnUtilCallback<int>
+        private class CallbackProdutoNovo : IUtilCallback<int>
         {
             public bool call(int x)
             {
@@ -203,7 +203,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackProdutoAlterar : clnUtilCallback<DataGridViewRow>
+        private class CallbackProdutoAlterar : IUtilCallback<DataGridViewRow>
         {
             public bool call(DataGridViewRow row)
             {
@@ -225,7 +225,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackProdutoObter : clnUtilCallback<DataGridView, String>
+        private class CallbackProdutoObter : IUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
             {
@@ -247,7 +247,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackClienteNovo : clnUtilCallback<int>
+        private class CallbackClienteNovo : IUtilCallback<int>
         {
             public bool call(int codFuncionario)
             {
@@ -260,7 +260,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackClienteAlterar : clnUtilCallback<DataGridViewRow>
+        private class CallbackClienteAlterar : IUtilCallback<DataGridViewRow>
         {
             public bool call(DataGridViewRow row)
             {
@@ -282,7 +282,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackClienteObter : clnUtilCallback<DataGridView, String>
+        private class CallbackClienteObter : IUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
             {
@@ -300,7 +300,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackFuncionarioNovo : clnUtilCallback<int>
+        private class CallbackFuncionarioNovo : IUtilCallback<int>
         {
             public bool call(int codFuncionario)
             {
@@ -310,7 +310,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackFuncionarioAlterar : clnUtilCallback<DataGridViewRow>
+        private class CallbackFuncionarioAlterar : IUtilCallback<DataGridViewRow>
         {
             public bool call(DataGridViewRow row)
             {
@@ -332,7 +332,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackFuncionarioObter : clnUtilCallback<DataGridView, String>
+        private class CallbackFuncionarioObter : IUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
             {
@@ -355,7 +355,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackFornecedorNovo : clnUtilCallback<int>
+        private class CallbackFornecedorNovo : IUtilCallback<int>
         {
             public bool call(int codFuncionario)
             {
@@ -365,7 +365,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackFornecedorAlterar : clnUtilCallback<DataGridViewRow>
+        private class CallbackFornecedorAlterar : IUtilCallback<DataGridViewRow>
         {
             public bool call(DataGridViewRow row)
             {
@@ -387,7 +387,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackFornecedorObter : clnUtilCallback<DataGridView, String>
+        private class CallbackFornecedorObter : IUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
             {
@@ -405,7 +405,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackReservaNovo : clnUtilCallback<int>
+        private class CallbackReservaNovo : IUtilCallback<int>
         {
             public bool call(int codFuncionario)
             {
@@ -418,7 +418,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackReservaAlterar : clnUtilCallback<DataGridViewRow>
+        private class CallbackReservaAlterar : IUtilCallback<DataGridViewRow>
         {
             public bool call(DataGridViewRow row)
             {
@@ -440,7 +440,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackReservaObter : clnUtilCallback<DataGridView, String>
+        private class CallbackReservaObter : IUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
             {
@@ -466,7 +466,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackEstoqueNovo : clnUtilCallback<int>
+        private class CallbackEstoqueNovo : IUtilCallback<int>
         {
             public bool call(int codFuncionario)
             {
@@ -476,7 +476,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackEstoqueAlterar : clnUtilCallback<DataGridViewRow>
+        private class CallbackEstoqueAlterar : IUtilCallback<DataGridViewRow>
         {
             public bool call(DataGridViewRow row)
             {
@@ -498,7 +498,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackEstoqueObter : clnUtilCallback<DataGridView, String>
+        private class CallbackEstoqueObter : IUtilCallback<DataGridView, String>
         {
             public bool call(DataGridView dgv, string pesquisa)
             {

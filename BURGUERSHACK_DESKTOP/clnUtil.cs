@@ -16,7 +16,7 @@ using static System.Windows.Forms.Control;
 using System.Text.RegularExpressions;
 using System.Collections;
 using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON.UTIL;
+using BURGUERSHACK_COMMON;
 
 namespace BURGUERSHACK_DESKTOP
 {
@@ -143,7 +143,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (clnUtilValidar.validarCEP(cep))
             {
-                clnEndereco objEndereco = obterEndereco(cep);
+                clnEndereco objEndereco = clnUtilEndereco.obterEndereco(cep);
                 if (objEndereco != null)
                 {
                     ctlLogradouro.Enabled = false;

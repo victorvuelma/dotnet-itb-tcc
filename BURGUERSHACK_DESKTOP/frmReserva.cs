@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +44,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 clnCliente objCliente = new clnCliente
                 {
-                    Cpf = clnUtil.retirarFormatacao(mtbCliCPF.Text)
+                    Cpf = clnUtilFormatar.retirarFormatacao(mtbCliCPF.Text)
                 }.obterPorCPF();
                 if (objCliente != null)
                 {
@@ -86,7 +87,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             lblCliente.Text = "Cliente #" + objCliente.Cod + "\n"
                                           + "Nome: " + objCliente.Nome + "\n"
-                                          + "Celular: " + clnUtil.formatarCelular(objCliente.TelCelular);
+                                          + "Celular: " + clnUtilFormatar.formatarCelular(objCliente.TelCelular);
         }
 
         private void fechar()
@@ -371,8 +372,8 @@ namespace BURGUERSHACK_DESKTOP
                 exibirCliente(objCliente);
                 mtbCliCPF.Text = objCliente.Cpf;
 
-                mtbData.Text = clnUtil.formatarData(ObjReserva.Agendado);
-                mtbHora.Text = clnUtil.formatarHora(ObjReserva.Agendado);
+                mtbData.Text = clnUtilFormatar.formatarData(ObjReserva.Agendado);
+                mtbHora.Text = clnUtilFormatar.formatarHora(ObjReserva.Agendado);
                 txtPessoas.Text = clnUtilConvert.ToString(ObjReserva.Pessoas);
 
                 if (ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
@@ -448,7 +449,7 @@ namespace BURGUERSHACK_DESKTOP
             cancelarReserva();
         }
 
-        private class CallbackRemover : clnUtilVisualizar.visualizarCallback<clnReserva, clnMesa>
+        private class CallbackRemover : clnUtilVisualizar.IVisualizarCallback<clnReserva, clnMesa>
         {
             public clnUtilVisualizar.visualizarAction call(clnReserva objReserva, clnMesa objMesa)
             {
@@ -461,7 +462,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackAdicionar : clnUtilVisualizar.visualizarCallback<clnReserva, clnMesa>
+        private class CallbackAdicionar : clnUtilVisualizar.IVisualizarCallback<clnReserva, clnMesa>
         {
             public clnUtilVisualizar.visualizarAction call(clnReserva objReserva, clnMesa objMesa)
             {

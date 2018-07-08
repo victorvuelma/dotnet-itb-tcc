@@ -21,7 +21,7 @@ namespace BURGUERSHACK_DESKTOP
             NADA
         }
 
-        internal interface visualizarCallback<X, Y> : clnUtilResponseCallback<visualizarAction, X, Y> { };
+        internal interface IVisualizarCallback<X, Y> : IUtilResponseCallback<visualizarAction, X, Y> { };
 
         private clnUtilListar objListar;
 
@@ -34,7 +34,7 @@ namespace BURGUERSHACK_DESKTOP
     public class clnUtilVisualizar<O, V> : clnUtilVisualizar
     {
 
-        private clnUtilVisualizar.visualizarCallback<O, V> _callbackClick;
+        private clnUtilVisualizar.IVisualizarCallback<O, V> _callbackClick;
         private O _obj;
 
         public clnUtilVisualizar()
@@ -48,7 +48,7 @@ namespace BURGUERSHACK_DESKTOP
         }
 
         public O Obj { get => _obj; set => _obj = value; }
-        internal clnUtilVisualizar.visualizarCallback<O, V> Callback { get => _callbackClick; set => _callbackClick = value; }
+        internal clnUtilVisualizar.IVisualizarCallback<O, V> Callback { get => _callbackClick; set => _callbackClick = value; }
 
         public override clnUtilVisualizar.visualizarAction action(object obj)
         {

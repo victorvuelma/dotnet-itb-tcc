@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BURGUERSHACK_COMMON.UTIL;
 
 namespace BURGUERSHACK_DESKTOP
 {
@@ -85,7 +86,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             decimal valor = clnUtilPedido.calcularValor(ObjItem, ObjItemIngredientes);
 
-            lblValor.Text = "Valor: " + clnUtil.formatarValor(valor);
+            lblValor.Text = "Valor: " + clnUtilFormatar.formatarValor(valor);
         }
 
         private void selecionarProduto(int categoria)
@@ -317,7 +318,7 @@ namespace BURGUERSHACK_DESKTOP
             abrirIngredientes();
         }
 
-        private class CallbackAlterar : clnUtilVisualizar.visualizarCallback<uctPedidoAdicionar, clnItemIngrediente>
+        private class CallbackAlterar : clnUtilVisualizar.IVisualizarCallback<uctPedidoAdicionar, clnItemIngrediente>
         {
             public clnUtilVisualizar.visualizarAction call(uctPedidoAdicionar uctAdicionar, clnItemIngrediente objItemIngrediente)
             {

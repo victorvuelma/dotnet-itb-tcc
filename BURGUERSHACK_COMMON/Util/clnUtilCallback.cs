@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 namespace BURGUERSHACK_COMMON.UTIL
 {
 
-    public interface clnUtilResponseCallback<R>
+    public interface IUtilResponseCallback<R>
     {
         R call();
     }
 
 
-    public interface clnUtilResponseCallback<R, X, Y>
+    public interface IUtilResponseCallback<R, X, Y>
     {
         R call(X x, Y y);
     }
 
-    public interface clnUtilResponseCallback<R, X>
+    public interface IUtilResponseCallback<R, X>
     {
         R call(X x);
     }
 
-    public interface clnUtilCallback : clnUtilResponseCallback<bool> { };
+    public interface IUtilCallback : IUtilResponseCallback<bool> { };
 
-    public interface clnUtilCallback<X> : clnUtilResponseCallback<bool, X> { };
+    public interface IUtilCallback<X> : IUtilResponseCallback<bool, X> { };
 
-    public interface clnUtilCallback<X, Y> : clnUtilResponseCallback<bool, X, Y> { };
+    public interface IUtilCallback<X, Y> : IUtilResponseCallback<bool, X, Y> { };
 
 }

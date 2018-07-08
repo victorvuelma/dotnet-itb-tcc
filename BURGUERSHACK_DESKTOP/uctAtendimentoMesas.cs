@@ -103,7 +103,7 @@ namespace BURGUERSHACK_DESKTOP
             adicionarMesa();
         }
 
-        private class CallBackAdicionar : clnUtilVisualizar.visualizarCallback<clnAtendimento, clnMesa>
+        private class CallBackAdicionar : clnUtilVisualizar.IVisualizarCallback<clnAtendimento, clnMesa>
         {
 
             public clnUtilVisualizar.visualizarAction call(clnAtendimento objAtendimento, clnMesa objMesa)

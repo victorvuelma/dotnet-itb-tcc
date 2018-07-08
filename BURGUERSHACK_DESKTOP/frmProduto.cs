@@ -1,4 +1,5 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -350,7 +351,7 @@ namespace BURGUERSHACK_DESKTOP
             exibirIngredientes();
         }
 
-        private class CallbackRemover : clnUtilVisualizar.visualizarCallback<clnUtilVisualizar, clnProdutoIngrediente>
+        private class CallbackRemover : clnUtilVisualizar.IVisualizarCallback<clnUtilVisualizar, clnProdutoIngrediente>
         {
 
             public clnUtilVisualizar.visualizarAction call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
@@ -373,7 +374,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        private class CallbackAdicionar : clnUtilVisualizar.visualizarCallback<frmProduto, clnIngrediente>
+        private class CallbackAdicionar : clnUtilVisualizar.IVisualizarCallback<frmProduto, clnIngrediente>
         {
 
             public clnUtilVisualizar.visualizarAction call(frmProduto frmProduto, clnIngrediente objIngrediente)
