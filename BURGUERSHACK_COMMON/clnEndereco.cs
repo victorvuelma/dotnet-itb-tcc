@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using SQL_POWERUP;
 using Caelum.Stella.CSharp.Http;
+using BURGUERSHACK_COMMON.UTIL;
 
 namespace BURGUERSHACK_COMMON
 {
@@ -63,7 +64,7 @@ namespace BURGUERSHACK_COMMON
             return objEndereco;
         }
 
-        public static clnEndereco from(Endereco endereco)
+        public static clnEndereco Transform(Endereco endereco)
         {
             if (endereco != null)
             {

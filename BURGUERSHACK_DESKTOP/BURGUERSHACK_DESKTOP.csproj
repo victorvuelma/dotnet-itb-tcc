@@ -156,7 +156,6 @@
     <Compile Include="clnPagamento.cs" />
     <Compile Include="clnPagamentoForma.cs" />
     <Compile Include="clnTipo.cs" />
-    <Compile Include="clnUtilCache.cs" />
     <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilListar.cs" />
     <Compile Include="clnUtilMensagem.cs" />
@@ -601,6 +600,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imagem-erro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BURGUERSHACK_COMMON\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />

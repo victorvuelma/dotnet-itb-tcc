@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
-using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 
 namespace BURGUERSHACK_DESKTOP
 {

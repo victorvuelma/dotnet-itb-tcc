@@ -7,7 +7,7 @@ using System.Drawing;
 
 using SQL_POWERUP;
 using System.Data.SqlClient;
-using BURGUERSHACK_COMMON;
+using BURGUERSHACK_COMMON.UTIL;
 
 namespace BURGUERSHACK_DESKTOP
 {

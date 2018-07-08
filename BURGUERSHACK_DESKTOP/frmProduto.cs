@@ -1,4 +1,4 @@
-﻿using BURGUERSHACK_COMMON;
+﻿using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

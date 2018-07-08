@@ -9,6 +9,7 @@ using SQL_POWERUP;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Drawing;
+using BURGUERSHACK_COMMON.UTIL;
 using BURGUERSHACK_COMMON;
 
 namespace BURGUERSHACK_DESKTOP

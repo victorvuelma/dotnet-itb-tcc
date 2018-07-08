@@ -1,4 +1,4 @@
-﻿using BURGUERSHACK_COMMON;
+﻿using BURGUERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -187,7 +187,7 @@ namespace BURGUERSHACK_DESKTOP
                         CodIngrediente = objIngrediente.Cod
                     }.obterQuantidadePorIngrediente();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
-                    dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, clnUtil.formatarValor(objIngrediente.Valor) });
+                    dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, clnUtilFormatar.formatarValor(objIngrediente.Valor) });
                 }
                 return false;
             }
@@ -241,7 +241,7 @@ namespace BURGUERSHACK_DESKTOP
                         Tipo = clnTipo.tipo.PRODUTO
                     }.obterPorCodigo();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
-                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, clnUtil.formatarValor(objProduto.Valor) });
+                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, clnUtilFormatar.formatarValor(objProduto.Valor) });
                 }
                 return false;
             }
@@ -294,7 +294,7 @@ namespace BURGUERSHACK_DESKTOP
                 foreach (clnCliente objCliente in objClientes.obterPorNomeCPF())
                 {
                     //"Código", "Nome", "CPF", "Celular", "Data Nasc", "Genero", "Email"
-                    dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, clnUtil.formatarCPF(objCliente.Cpf), clnUtil.formatarCelular(objCliente.TelCelular), clnUtil.formatarData(objCliente.DataNascimento), objCliente.Genero, objCliente.Email });
+                    dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, clnUtilFormatar.formatarCPF(objCliente.Cpf), clnUtilFormatar.formatarCelular(objCliente.TelCelular), clnUtilFormatar.formatarData(objCliente.DataNascimento), objCliente.Genero, objCliente.Email });
                 }
                 return false;
             }
@@ -349,7 +349,7 @@ namespace BURGUERSHACK_DESKTOP
                     }.obterPorCod();
 
                     //"Código", "Nome", "CPF", "RG", "Data Nasc", "Genero", "Email","Celular", "Cargo", "Salario", "Situacao"
-                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtil.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtil.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objCargo.Nome, clnUtil.formatarValor(objFuncionario.Salario), objFuncionario.Situacao });
+                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtilFormatar.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtilFormatar.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objCargo.Nome, clnUtilFormatar.formatarValor(objFuncionario.Salario), objFuncionario.Situacao });
                 }
                 return false;
             }
@@ -399,7 +399,7 @@ namespace BURGUERSHACK_DESKTOP
                 foreach (clnFornecedor objFornecedor in objFornecedores.obterPorRazaoCNPJ())
                 {
                     //"Código", "Razão Social", "CNPJ", "Telefone", "Email"
-                    dgv.Rows.Add(new object[] { objFornecedor.Cod, objFornecedor.RazaoSocial, clnUtil.formatarCNPJ(objFornecedor.Cnpj), clnUtil.formatarTelefone(objFornecedor.Telefone), objFornecedor.Email });
+                    dgv.Rows.Add(new object[] { objFornecedor.Cod, objFornecedor.RazaoSocial, clnUtilFormatar.formatarCNPJ(objFornecedor.Cnpj), clnUtilFormatar.formatarTelefone(objFornecedor.Telefone), objFornecedor.Email });
                 }
                 return false;
             }
@@ -460,7 +460,7 @@ namespace BURGUERSHACK_DESKTOP
                 foreach (clnReserva objReserva in objReservas)
                 {
                     //"Código", "Pessoas", "Data", "Situação"
-                    dgv.Rows.Add(new object[] { objReserva.Cod, objReserva.Pessoas, clnUtil.formatarData(objReserva.Agendado), objReserva.Situacao });
+                    dgv.Rows.Add(new object[] { objReserva.Cod, objReserva.Pessoas, clnUtilFormatar.formatarData(objReserva.Agendado), objReserva.Situacao });
                 }
                 return false;
             }
@@ -516,7 +516,7 @@ namespace BURGUERSHACK_DESKTOP
                     }.obterPorCod();
 
                     //"Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor"
-                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, clnUtil.formatarData(objEstoque.Validade), clnUtil.formatarValor(objEstoque.Valor) });
+                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, clnUtilFormatar.formatarData(objEstoque.Validade), clnUtilFormatar.formatarValor(objEstoque.Valor) });
                 }
                 return false;
             }

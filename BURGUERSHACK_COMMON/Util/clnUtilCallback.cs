@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BURGUERSHACK_COMMON
+namespace BURGUERSHACK_COMMON.UTIL
 {
 
     public interface clnUtilResponseCallback<R>

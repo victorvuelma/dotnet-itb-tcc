@@ -132,9 +132,12 @@
     <Compile Include="App.cs" />
     <Compile Include="AppLocal.cs" />
     <Compile Include="clnEndereco.cs" />
-    <Compile Include="Util\clnUtilCallback.cs" />
-    <Compile Include="Util\clnUtilConvert.cs" />
-    <Compile Include="Util\clnUtilValidar.cs" />
+    <Compile Include="UTIL\clnUtilCache.cs" />
+    <Compile Include="UTIL\clnUtilCallback.cs" />
+    <Compile Include="UTIL\clnUtilConvert.cs" />
+    <Compile Include="UTIL\clnUtilEndereco.cs" />
+    <Compile Include="UTIL\clnUtilFormatar.cs" />
+    <Compile Include="UTIL\clnUtilValidar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
