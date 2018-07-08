@@ -39,6 +39,7 @@
             // 
             this.pic.BackColor = System.Drawing.SystemColors.Control;
             this.pic.Location = new System.Drawing.Point(2, 5);
+            this.pic.Margin = new System.Windows.Forms.Padding(0);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(76, 60);
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -53,6 +54,7 @@
             // 
             this.lbl.BackColor = System.Drawing.SystemColors.Control;
             this.lbl.Location = new System.Drawing.Point(0, 65);
+            this.lbl.Margin = new System.Windows.Forms.Padding(0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(80, 15);
             this.lbl.TabIndex = 1;
@@ -67,6 +69,7 @@
             this.pnl.Controls.Add(this.lbl);
             this.pnl.Controls.Add(this.pic);
             this.pnl.Location = new System.Drawing.Point(0, 0);
+            this.pnl.Margin = new System.Windows.Forms.Padding(0);
             this.pnl.Name = "pnl";
             this.pnl.Size = new System.Drawing.Size(200, 100);
             this.pnl.TabIndex = 0;

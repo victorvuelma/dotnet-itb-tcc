@@ -22,7 +22,7 @@ namespace UIX
         {
             uixControl.ctlApply(pnl, colorSet);
 
-            if(pnl.Parent is Form)
+            if (pnl.Parent is Form || pnl.Parent is UserControl)
             {
                 pnl.BackColor = colorSet.DarkColor;
             }

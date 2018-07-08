@@ -14,6 +14,8 @@ namespace UIX
     public partial class mtbUIX : UserControl
     {
 
+        public EventHandler TextChange;
+
         private bool _loaded = false;
 
         private IButtonControl _acceptButton;
@@ -26,7 +28,7 @@ namespace UIX
 
         //---- PROPRIEDADES UIX
         public IButtonControl AcceptButton { get => _acceptButton; set => _acceptButton = value; }
-        
+
         public uixEnum.uixLabelPosition LabelPosition
         {
             get => _labelPosition;
@@ -120,6 +122,14 @@ namespace UIX
                 {
                     AcceptButton.PerformClick();
                 }
+            }
+        }
+
+        private void mtb_TextChanged(object sender, EventArgs e)
+        {
+            if (TextChange != null)
+            {
+                TextChange(sender, e);
             }
         }
     }

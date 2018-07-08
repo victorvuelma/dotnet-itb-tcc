@@ -13,6 +13,8 @@ namespace UIX
     public partial class txtUIX : UserControl
     {
 
+        public EventHandler TextChange;
+
         private bool _loaded = false;
 
         private IButtonControl _acceptButton;
@@ -171,6 +173,10 @@ namespace UIX
 
                     uixUtil.defineForMoney(txt);
                 }
+            }
+            if (TextChange != null)
+            {
+                TextChange(sender, e);
             }
         }
     }
