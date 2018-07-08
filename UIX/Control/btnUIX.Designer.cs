@@ -88,6 +88,7 @@
             this.pnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
+            base.Click += new System.EventHandler(this.onClick);
         }
 
         #endregion

@@ -106,12 +106,15 @@ namespace UIX
 
         private void onClick(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            if (Click != null)
+            if (sender != null)
             {
-                Click(sender, e);
+                Cursor.Current = Cursors.WaitCursor;
+                if (Click != null)
+                {
+                    Click(null, e);
+                }
+                Cursor.Current = Cursors.Default;
             }
-            Cursor.Current = Cursors.Default;
         }
 
         private void btnUIX_BackColorChanged(object sender, EventArgs e)
