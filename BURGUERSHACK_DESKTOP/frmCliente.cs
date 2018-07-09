@@ -1,5 +1,6 @@
 ﻿using BURGUERSHACK_COMMON;
 using BURGUERSHACK_COMMON.UTIL;
+using BURGUERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,12 +29,12 @@ namespace BURGUERSHACK_DESKTOP
             InitializeComponent();
 
             _validar = new clnUtilFormValidar();
-            _validar.addValidacao(txtNome, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(mtbCPF, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CPF });
-            _validar.addValidacao(mtbDataNasc, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.DATA, clnUtilFormValidar.ValidarTipo.DATA_NASC });
-            _validar.addValidacao(mtbTelCel, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.CELULAR });
-            _validar.addValidacao(txtEmail, clnUtilFormValidar.ValidarTipo.EMAIL);
-            _validar.addValidacao(cboGenero, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtNome, clnUtilFormValidar.Validacao.OBRIGATORIO);
+            _validar.addValidacao(mtbCPF, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.CPF });
+            _validar.addValidacao(mtbDataNasc, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.DATA, clnUtilFormValidar.Validacao.DATA_NASC });
+            _validar.addValidacao(mtbTelCel, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.CELULAR });
+            _validar.addValidacao(txtEmail, clnUtilFormValidar.Validacao.EMAIL);
+            _validar.addValidacao(cboGenero, clnUtilFormValidar.Validacao.OBRIGATORIO);
 
             mtbCPF.Mask = clnUtil.MASK_CPF;
             mtbDataNasc.Mask = clnUtil.MASK_DATA;
@@ -43,7 +44,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void salvar()
         {
-            if (_validar.valido())
+            if (_validar.validar(this))
             {
                 clnCliente objClienteCPF = new clnCliente
                 {

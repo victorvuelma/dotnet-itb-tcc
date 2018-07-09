@@ -1,5 +1,6 @@
 ﻿using BURGUERSHACK_COMMON;
 using BURGUERSHACK_COMMON.UTIL;
+using BURGUERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace BURGUERSHACK_DESKTOP
             InitializeComponent();
 
             _validar = new clnUtilFormValidar();
-            _validar.addValidacao(txtQuantidade, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.INT, clnUtilFormValidar.ValidarTipo.INT_MAIOR_0 });
+            _validar.addValidacao(txtQuantidade, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.INT, clnUtilFormValidar.Validacao.QUANTIDADE });
         }
 
         private List<clnItemIngrediente> obterIngredientes()
@@ -193,7 +194,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (_validar.valido())
+            if (_validar.validar(this))
             {
                 ObjItem.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
                 ObjItem.Adicional = txtAdicional.Text;

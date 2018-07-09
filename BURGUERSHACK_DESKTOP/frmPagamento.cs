@@ -1,5 +1,6 @@
 ﻿using BURGUERSHACK_COMMON;
 using BURGUERSHACK_COMMON.UTIL;
+using BURGUERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,10 +47,10 @@ namespace BURGUERSHACK_DESKTOP
             };
 
             _validar = new clnUtilFormValidar();
-            _validar.addValidacao(mtbCliCPF, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.CPF });
-            _validar.addValidacao(cboMetodo, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(cboBandeira, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtValor, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.VALOR });
+            _validar.addValidacao(mtbCliCPF, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.CPF });
+            _validar.addValidacao(cboMetodo, clnUtilFormValidar.Validacao.OBRIGATORIO);
+            _validar.addValidacao(cboBandeira, clnUtilFormValidar.Validacao.OBRIGATORIO);
+            _validar.addValidacao(txtValor, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.VALOR });
 
             mtbCliCPF.Mask = clnUtil.MASK_CPF;
         }
@@ -58,7 +59,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (ObjPagamento.Cod == -1)
             {
-                if (_validar.valido())
+                if (_validar.validar(this))
                 {
                     if (CodCliente == null)
                     {

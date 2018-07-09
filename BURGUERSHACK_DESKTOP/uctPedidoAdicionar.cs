@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BURGUERSHACK_COMMON.UTIL;
+using BURGUERSHACK_DESKTOP.UTIL;
 
 namespace BURGUERSHACK_DESKTOP
 {
@@ -30,7 +31,7 @@ namespace BURGUERSHACK_DESKTOP
             InitializeComponent();
 
             _validar = new clnUtilFormValidar();
-            _validar.addValidacao(txtQuantidade, new clnUtilFormValidar.ValidarTipo[] { clnUtilFormValidar.ValidarTipo.OBRIGATORIO, clnUtilFormValidar.ValidarTipo.INT, clnUtilFormValidar.ValidarTipo.INT_MAIOR_0 });
+            _validar.addValidacao(txtQuantidade, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.INT, clnUtilFormValidar.Validacao.QUANTIDADE });
         }
 
         private void selecionaCategoria(int categoria)
@@ -195,7 +196,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (ObjItem != null)
             {
-                if (_validar.valido())
+                if (_validar.validar(this))
                 {
                     ObjItem.Adicional = txtAdicional.Text;
                     ObjItem.Quantidade = Convert.ToInt32(txtQuantidade.Text);

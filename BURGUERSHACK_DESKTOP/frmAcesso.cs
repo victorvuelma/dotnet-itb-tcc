@@ -1,5 +1,6 @@
 ﻿using BURGUERSHACK_COMMON;
 using BURGUERSHACK_COMMON.UTIL;
+using BURGUERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,8 +31,8 @@ namespace BURGUERSHACK_DESKTOP
             hdrUIX.Title = App.Name + " - Gerenciar Acesso";
 
             _validar = new clnUtilFormValidar();
-            _validar.addValidacao(txtUsuario, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
-            _validar.addValidacao(txtSenha, clnUtilFormValidar.ValidarTipo.OBRIGATORIO);
+            _validar.addValidacao(txtUsuario, clnUtilFormValidar.Validacao.OBRIGATORIO);
+            _validar.addValidacao(txtSenha, clnUtilFormValidar.Validacao.OBRIGATORIO);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (_validar.valido())
+            if (_validar.validar(this))
             {
                 ObjAcesso.Senha = txtSenha.Text;
                 ObjAcesso.Usuario = txtUsuario.Text;

@@ -170,7 +170,7 @@
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
-    <Compile Include="clnUtilFormValidar.cs" />
+    <Compile Include="UTIL\clnUtilFormValidar.cs" />
     <Compile Include="frmConta.cs">
       <SubType>Form</SubType>
     </Compile>
