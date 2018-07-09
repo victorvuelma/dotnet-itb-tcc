@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrar));
             this.picVer = new System.Windows.Forms.PictureBox();
             this.picUser = new System.Windows.Forms.PictureBox();
             this.lblProgram = new System.Windows.Forms.Label();
@@ -88,27 +87,33 @@
             // 
             // txtSenha
             // 
+            this.txtSenha.AcceptButton = null;
             this.txtSenha.AccessibleName = "Senha";
-            this.txtSenha.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtSenha.Campo = "Senha";
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtSenha.Location = new System.Drawing.Point(190, 120);
             this.txtSenha.MaxLength = 32767;
+            this.txtSenha.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSenha.Size = new System.Drawing.Size(270, 30);
             this.txtSenha.TabIndex = 8;
             // 
             // txtUsuario
             // 
+            this.txtUsuario.AcceptButton = null;
             this.txtUsuario.AccessibleName = "Usuário";
-            this.txtUsuario.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtUsuario.Campo = "Usuário";
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
             this.txtUsuario.Location = new System.Drawing.Point(190, 80);
             this.txtUsuario.MaxLength = 32767;
+            this.txtUsuario.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUsuario.Size = new System.Drawing.Size(270, 30);
             this.txtUsuario.TabIndex = 7;
             // 
@@ -127,7 +132,7 @@
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
-            // frmAcesso
+            // frmEntrar
             // 
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -140,9 +145,10 @@
             this.Controls.Add(this.hdrUIX);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmAcesso";
+            this.Name = "frmEntrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acesso ao Sistema";
             this.Load += new System.EventHandler(this.frmLogin_Load);
