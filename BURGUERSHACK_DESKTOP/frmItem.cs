@@ -215,7 +215,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private class CallbackAlterar : clnUtilVisualizar.IVisualizarCallback<frmItem, clnItemIngrediente>
         {
-            public clnUtilVisualizar.visualizarAction call(frmItem frmItem, clnItemIngrediente objItemIngrediente)
+            public clnUtilVisualizar.VisualizarResult call(frmItem frmItem, clnItemIngrediente objItemIngrediente)
             {
                 if (objItemIngrediente.CodProdutoIngrediente != null)
                 {
@@ -264,7 +264,7 @@ namespace BURGUERSHACK_DESKTOP
                         clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
                     }
                 }
-                return clnUtilVisualizar.visualizarAction.FECHAR;
+                return clnUtilVisualizar.VisualizarResult.FECHAR;
             }
         }
     }

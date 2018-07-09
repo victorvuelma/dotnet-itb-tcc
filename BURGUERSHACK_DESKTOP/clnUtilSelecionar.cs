@@ -21,7 +21,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public abstract object getSelecionado();
 
-        public abstract bool setSelecionado(object obj);
+        public abstract bool selecionar(object obj);
 
 
     }
@@ -35,7 +35,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public override object getSelecionado() => Selecionado;
 
-        public override bool setSelecionado(object obj)
+        public override bool selecionar(object obj)
         {
             if (obj != null && obj is T val && !val.Equals(Selecionado))
             {

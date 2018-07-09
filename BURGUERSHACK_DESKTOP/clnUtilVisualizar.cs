@@ -14,20 +14,20 @@ namespace BURGUERSHACK_DESKTOP
     public abstract class clnUtilVisualizar
     {
 
-        public enum visualizarAction
+        public enum VisualizarResult
         {
             FECHAR,
-            REMOVER_ITEM,
-            NADA
+            REMOVER,
+            NENHUM
         }
 
-        internal interface IVisualizarCallback<X, Y> : IUtilResponseCallback<visualizarAction, X, Y> { };
+        internal interface IVisualizarCallback<X, Y> : IUtilResponseCallback<VisualizarResult, X, Y> { };
 
         private clnUtilListar objListar;
 
         public clnUtilListar ObjListar { get => objListar; set => objListar = value; }
 
-        public abstract clnUtilVisualizar.visualizarAction action(object obj);
+        public abstract clnUtilVisualizar.VisualizarResult execute(object obj);
 
     }
 
@@ -37,22 +37,12 @@ namespace BURGUERSHACK_DESKTOP
         private clnUtilVisualizar.IVisualizarCallback<O, V> _callbackClick;
         private O _obj;
 
-        public clnUtilVisualizar()
-        {
-
-        }
-
-        private Type getObjectType()
-        {
-            return typeof(O);
-        }
-
         public O Obj { get => _obj; set => _obj = value; }
         internal clnUtilVisualizar.IVisualizarCallback<O, V> Callback { get => _callbackClick; set => _callbackClick = value; }
 
-        public override clnUtilVisualizar.visualizarAction action(object obj)
+        public override clnUtilVisualizar.VisualizarResult execute(object obj)
         {
-            if (Obj == null && getObjectType() == GetType())
+            if (Obj == null && typeof(O).Equals(typeof(clnUtilVisualizar)))
             {
                 Obj = (O)(object)this;
             }
@@ -60,7 +50,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 return Callback.call(Obj, val);
             }
-            return clnUtilVisualizar.visualizarAction.NADA;
+            return clnUtilVisualizar.VisualizarResult.NENHUM;
         }
 
     }

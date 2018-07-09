@@ -452,27 +452,27 @@ namespace BURGUERSHACK_DESKTOP
 
         private class CallbackRemover : clnUtilVisualizar.IVisualizarCallback<clnReserva, clnMesa>
         {
-            public clnUtilVisualizar.visualizarAction call(clnReserva objReserva, clnMesa objMesa)
+            public clnUtilVisualizar.VisualizarResult call(clnReserva objReserva, clnMesa objMesa)
             {
                 if (clnUtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", clnUtilMensagem.MensagemIcone.INFO))
                 {
                     objReserva.removerMesa(objMesa.Cod);
-                    return clnUtilVisualizar.visualizarAction.REMOVER_ITEM;
+                    return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }
-                return clnUtilVisualizar.visualizarAction.NADA;
+                return clnUtilVisualizar.VisualizarResult.NENHUM;
             }
         }
 
         private class CallbackAdicionar : clnUtilVisualizar.IVisualizarCallback<clnReserva, clnMesa>
         {
-            public clnUtilVisualizar.visualizarAction call(clnReserva objReserva, clnMesa objMesa)
+            public clnUtilVisualizar.VisualizarResult call(clnReserva objReserva, clnMesa objMesa)
             {
                 objReserva.addMesa(objMesa.Cod);
                 if (clnUtilMensagem.mostrarSimNao("Mesas", "Mesa " + objMesa.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", clnUtilMensagem.MensagemIcone.INFO))
                 {
-                    return clnUtilVisualizar.visualizarAction.REMOVER_ITEM;
+                    return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }
-                return clnUtilVisualizar.visualizarAction.NADA;
+                return clnUtilVisualizar.VisualizarResult.NENHUM;
             }
         }
 

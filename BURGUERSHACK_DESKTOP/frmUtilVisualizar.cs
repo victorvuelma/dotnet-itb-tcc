@@ -16,12 +16,6 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmUtilVisualizar : Form
     {
 
-        public enum visualizarAction
-        {
-            FECHAR,
-            REMOVER_ITEM,
-            NADA
-        }
 
         private clnUtilVisualizar _objVisualizar;
 
@@ -44,9 +38,9 @@ namespace BURGUERSHACK_DESKTOP
             {
                 uctOpcoes.adicionarItem(ObjVisualizar.ObjListar.getCod(obj), ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor, () =>
                 {
-                    switch (ObjVisualizar.action(obj))
+                    switch (ObjVisualizar.execute(obj))
                     {
-                        case clnUtilVisualizar.visualizarAction.REMOVER_ITEM:
+                        case clnUtilVisualizar.VisualizarResult.REMOVER:
                             ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
                             _opcoes.Remove(obj);
                             lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";

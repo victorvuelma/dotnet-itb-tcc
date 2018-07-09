@@ -71,7 +71,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void selecionaOpcao(object obj)
         {
-            if (ObjSelecionar.setSelecionado(obj))
+            if (ObjSelecionar.selecionar(obj))
             {
                 exibirOpcao(obj);
 
@@ -121,7 +121,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (clnUtilMensagem.mostrarSimNao(ObjSelecionar.ObjListar.Titulo, "Deseja realmente cancelar?", clnUtilMensagem.MensagemIcone.INFO))
             {
-                ObjSelecionar.setSelecionado(null);
+                ObjSelecionar.selecionar(null);
 
                 Close();
             }
