@@ -104,7 +104,11 @@ namespace BURGUERSHACK_DESKTOP.UTIL
                         String motivoControl = validar.Motivo;
                         if (motivoControl.Length > 0)
                         {
-                            motivoBuilder.Append(control.AccessibleName.Replace("*", "")).Append(' ').Append(motivoControl).Append('\n');
+                            if (motivoBuilder.Length > 0)
+                            {
+                                motivoBuilder.Append('\r').Append('\n');
+                            }
+                            motivoBuilder.Append(control.AccessibleName.Replace("*", "")).Append(' ').Append(motivoControl);
                         }
                     }
                 }

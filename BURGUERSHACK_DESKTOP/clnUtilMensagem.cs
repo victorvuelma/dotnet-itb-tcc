@@ -24,7 +24,7 @@ namespace BURGUERSHACK_DESKTOP
 
         public static bool mostrarSimNao(String titulo, String mensagem, MensagemIcone icone)
         {
-            return (mostrarMensagem(titulo, mensagem, icone, OP_S_N).resultado == 2);
+            return (mostrarMensagem(titulo, mensagem, icone, OP_S_N).Result == 2);
         }
 
         public static void mostrarOk(String titulo, String mensagem, MensagemIcone icone)
