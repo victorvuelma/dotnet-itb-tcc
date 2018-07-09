@@ -60,6 +60,11 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Deseja cancelar as alterações no ingrediente?", clnUtilMensagem.MensagemIcone.ERRO))
             {
+                if (ObjProdutoIngrediente.Cod == -1)
+                {
+                    ObjProdutoIngrediente = null;
+                }
+
                 Close();
             }
 
@@ -106,11 +111,12 @@ namespace BURGUERSHACK_DESKTOP
 
             if (ObjProdutoIngrediente.Cod == -1)
             {
-                btnRemover.Text = "Cancelar";
+                btnRemover.Image = Properties.Resources.voltar;
+                btnRemover.Description = "Cancelar";
             }
             else
             {
-                btnRemover.Text = "Remover";
+                btnRemover.Description = "Remover";
             }
         }
 

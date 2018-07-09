@@ -245,7 +245,7 @@ namespace BURGUERSHACK_DESKTOP
                 clnUtilVisualizar objVisualizar = new clnUtilVisualizar<clnUtilVisualizar, clnProdutoIngrediente>
                 {
                     ObjListar = objListar,
-                    Callback = new CallbackRemover()
+                    Callback = new CallbackVisualizar()
                 };
 
                 frmUtilVisualizar frmVisualizar = new frmUtilVisualizar
@@ -352,10 +352,10 @@ namespace BURGUERSHACK_DESKTOP
             exibirIngredientes();
         }
 
-        private class CallbackRemover : clnUtilVisualizar.IVisualizarCallback<clnUtilVisualizar, clnProdutoIngrediente>
+        private class CallbackVisualizar : clnUtilVisualizar.IVisualizarCallback<clnUtilVisualizar, clnProdutoIngrediente>
         {
 
-            public clnUtilVisualizar.visualizarAction call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
+            public clnUtilVisualizar.VisualizarResult call(clnUtilVisualizar objVisualizar, clnProdutoIngrediente objProdutoIngrediente)
             {
                 frmProdutoIngrediente frmProdutoIngrediente = new frmProdutoIngrediente
                 {
@@ -370,15 +370,16 @@ namespace BURGUERSHACK_DESKTOP
                 {
                     objProdutoIngrediente.remover();
                     objVisualizar.ObjListar.getOpcoes().Remove(objProdutoIngrediente);
+                    return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }
-                return clnUtilVisualizar.visualizarAction.FECHAR;
+                return clnUtilVisualizar.VisualizarResult.FECHAR;
             }
         }
 
         private class CallbackAdicionar : clnUtilVisualizar.IVisualizarCallback<frmProduto, clnIngrediente>
         {
 
-            public clnUtilVisualizar.visualizarAction call(frmProduto frmProduto, clnIngrediente objIngrediente)
+            public clnUtilVisualizar.VisualizarResult call(frmProduto frmProduto, clnIngrediente objIngrediente)
             {
                 clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
                 {
@@ -404,9 +405,9 @@ namespace BURGUERSHACK_DESKTOP
                         objProdutoIngrediente.gravar();
                     }
                     clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
-                    return clnUtilVisualizar.visualizarAction.REMOVER_ITEM;
+                    return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }
-                return clnUtilVisualizar.visualizarAction.NADA;
+                return clnUtilVisualizar.VisualizarResult.NENHUM;
             }
         }
 
