@@ -110,26 +110,6 @@ namespace UIX
                 update();
             }
         }
-
-        public new Font Font
-        {
-            get => base.Font;
-            set
-            {
-                base.Font = value;
-                update();
-            }
-        }
-
-        public new Size Size
-        {
-            get => base.Size;
-            set
-            {
-                base.Size = value;
-                update();
-            }
-        }
         
         public new String Name
         {
@@ -195,5 +175,14 @@ namespace UIX
 
         }
 
+        private void cboUIX_SizeChanged(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void cboUIX_FontChanged(object sender, EventArgs e)
+        {
+            update();
+        }
     }
 }

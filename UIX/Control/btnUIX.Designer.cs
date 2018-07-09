@@ -45,7 +45,6 @@
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
-            this.pic.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pic_LoadCompleted);
             this.pic.Click += new System.EventHandler(this.onClick);
             this.pic.MouseEnter += new System.EventHandler(this.onMouseEnter);
             this.pic.MouseLeave += new System.EventHandler(this.onMouseLeave);
@@ -82,13 +81,15 @@
             this.Controls.Add(this.pnl);
             this.Size = new System.Drawing.Size(80, 80);
             this.BackColorChanged += new System.EventHandler(this.btnUIX_BackColorChanged);
+            this.FontChanged += new System.EventHandler(this.btnUIX_FontChanged);
+            this.SizeChanged += new System.EventHandler(this.btnUIX_SizeChanged);
+            this.Click += new System.EventHandler(this.onClick);
             this.MouseEnter += new System.EventHandler(this.onMouseEnter);
             this.MouseLeave += new System.EventHandler(this.onMouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.pnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
-            base.Click += new System.EventHandler(this.onClick);
         }
 
         #endregion

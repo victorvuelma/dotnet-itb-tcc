@@ -61,26 +61,6 @@ namespace UIX
                 update();
             }
         }
-
-        public new Font Font
-        {
-            get => base.Font;
-            set
-            {
-                base.Font = value;
-                update();
-            }
-        }
-
-        public new Size Size
-        {
-            get => base.Size;
-            set
-            {
-                base.Size = value;
-                update();
-            }
-        }
         
         public new String Name
         {
@@ -141,6 +121,16 @@ namespace UIX
             {
                 TextChange(sender, e);
             }
+        }
+
+        private void mtbUIX_SizeChanged(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void mtbUIX_FontChanged(object sender, EventArgs e)
+        {
+            update();
         }
     }
 }

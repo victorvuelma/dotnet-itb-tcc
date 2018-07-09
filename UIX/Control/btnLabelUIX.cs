@@ -23,19 +23,22 @@ namespace UIX
             HoverColor = Color.Transparent;
         }
 
-        public new Size Size
+        private new void update()
         {
-            get => base.Size;
-            set
-            {
-                base.Size = value;
+            pic.Size = new Size(Width - 20, Width - 20);
 
-                pic.Size = new Size(value.Width - 20, value.Width - 20);
-
-                lbl.Size = new Size(value.Width, value.Height - value.Width + 10);
-                lbl.Location = new Point(0, value.Width - 10);
-            }
+            lbl.Size = new Size(Width, Height - Width + 10);
+            lbl.Location = new Point(0, Width - 10);
         }
 
+        private void btnLabelUIX_Resize(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void btnLabelUIX_FontChanged(object sender, EventArgs e)
+        {
+            update();
+        }
     }
 }

@@ -27,28 +27,6 @@ namespace UIX
 
         public Color HoverColor { get => _hoverColor; set => _hoverColor = value; }
 
-        public new Color BackColor
-        {
-            get => base.BackColor;
-            set
-            {
-                pic.BackColor = value;
-                lbl.BackColor = value;
-                pnl.BackColor = value;
-                base.BackColor = value;
-            }
-        }
-
-        public new Font Font
-        {
-            get => lbl.Font;
-            set
-            {
-                lbl.Font = value;
-                update();
-            }
-        }
-
         public String Description
         {
             get => lbl.Text;
@@ -63,17 +41,6 @@ namespace UIX
         public new Image Image { get => pic.Image; set => pic.Image = value; }
 
         public String ImageLocation { get => pic.ImageLocation; set => pic.ImageLocation = value; }
-
-        public new Size Size
-        {
-            get => base.Size;
-            set
-            {
-                base.Size = value;
-
-                update();
-            }
-        }
 
         private void update()
         {
@@ -119,10 +86,17 @@ namespace UIX
 
         private void btnUIX_BackColorChanged(object sender, EventArgs e)
         {
-            BackColor = BackColor;
+            pic.BackColor = BackColor;
+            lbl.BackColor = BackColor;
+            pnl.BackColor = BackColor;
         }
 
-        private void pic_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        private void btnUIX_FontChanged(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void btnUIX_SizeChanged(object sender, EventArgs e)
         {
             update();
         }

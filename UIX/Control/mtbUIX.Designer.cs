@@ -59,6 +59,8 @@
             this.Name = "mtbUIX";
             this.Size = new System.Drawing.Size(150, 20);
             this.Load += new System.EventHandler(this.mtbUIX_Load);
+            this.FontChanged += new System.EventHandler(this.mtbUIX_FontChanged);
+            this.SizeChanged += new System.EventHandler(this.mtbUIX_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

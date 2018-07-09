@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnUIX
+            // btnLabelUIX
             // 
+            this.FontChanged += new System.EventHandler(this.btnLabelUIX_FontChanged);
+            this.Resize += new System.EventHandler(this.btnLabelUIX_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
 
         }

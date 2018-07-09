@@ -53,8 +53,6 @@ namespace UIX
 
         public int MaxLength { get => txt.MaxLength; set => txt.MaxLength = value; }
 
-        public new bool Enabled { get => txt.Enabled; set => txt.Enabled = value; }
-
         public override String Text { get => txt.Text; set => txt.Text = value; }
 
         public ScrollBars ScrollBars { get => txt.ScrollBars; set => txt.ScrollBars = value; }
@@ -66,26 +64,6 @@ namespace UIX
             {
                 txt.AccessibleName = value;
                 lbl.Text = value + ":";
-                update();
-            }
-        }
-
-        public new Font Font
-        {
-            get => base.Font;
-            set
-            {
-                base.Font = value;
-                update();
-            }
-        }
-
-        public new Size Size
-        {
-            get => base.Size;
-            set
-            {
-                base.Size = value;
                 update();
             }
         }
@@ -188,6 +166,21 @@ namespace UIX
             {
                 TextChange(sender, e);
             }
+        }
+
+        private void txtUIX_SizeChanged(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void txtUIX_FontChanged(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void txtUIX_EnabledChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

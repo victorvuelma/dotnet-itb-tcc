@@ -61,6 +61,8 @@
             this.Name = "cboUIX";
             this.Size = new System.Drawing.Size(150, 20);
             this.Load += new System.EventHandler(this.cboUIX_Load);
+            this.FontChanged += new System.EventHandler(this.cboUIX_FontChanged);
+            this.SizeChanged += new System.EventHandler(this.cboUIX_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
