@@ -26,6 +26,10 @@ namespace UIX
             {
                 box.ScrollBars = ScrollBars.Vertical;
             }
+            if (txt.ReadOnly)
+            {
+                txt.Cursor = Cursors.Default;
+            }
         }
     }
 }

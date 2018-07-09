@@ -13,50 +13,58 @@ namespace UIX
     public partial class msgUIX : Form
     {
 
-        public int resultado = -1;
+        private int _result = -1;
+
+        public int Result { get => _result; set => _result = value; }
 
         public msgUIX()
         {
             InitializeComponent();
         }
 
-        public static msgUIX messageBox(String titulo, String mensagem, Image image, uixTemplate template)
+        public static msgUIX messageBox(String title, String message, Image img, uixTemplate template)
         {
             msgUIX msg = new msgUIX();
 
-            msg.hdrUIX.Title = titulo;
-            msg.Text = titulo;
+            msg.hdrUIX.Title = title;
+            msg.Text = title;
             msg.Icon = template.Icon;
 
-            msg.lbl.Text = mensagem;
+            msg.txt.Text = message;
 
-            msg.hdrUIX.Image = image;
-            msg.pic.Image = image;
+            msg.hdrUIX.Image = img;
+            msg.pic.Image = img;
 
             template.frmApply(msg, msg.hdrUIX);
+            UIX.uixTextBox.txtApply(msg.txt, template.Style.FormColor);
 
             return msg;
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            resultado = 0;
+            Result = 0;
 
             Close();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            resultado = 1;
+            Result = 1;
 
             Close();
         }
 
         private void btnYes_Click(object sender, EventArgs e)
         {
-            resultado = 2;
+            Result = 2;
 
             Close();
+        }
+
+        private void msgUIX_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
