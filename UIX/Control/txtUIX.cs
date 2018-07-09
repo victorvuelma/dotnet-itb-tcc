@@ -100,6 +100,16 @@ namespace UIX
             }
         }
 
+        public new String Name
+        {
+            get => base.Name;
+            set
+            {
+                base.Name = value;
+                txt.Name = value;
+            }
+        }
+
         private void update()
         {
             if (_loaded)

@@ -81,6 +81,16 @@ namespace UIX
                 update();
             }
         }
+        
+        public new String Name
+        {
+            get => base.Name;
+            set
+            {
+                base.Name = value;
+                mtb.Name = value;
+            }
+        }
 
         private void update()
         {

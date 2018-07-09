@@ -130,6 +130,16 @@ namespace UIX
                 update();
             }
         }
+        
+        public new String Name
+        {
+            get => base.Name;
+            set
+            {
+                base.Name = value;
+                cbo.Name = value;
+            }
+        }
 
         private void update()
         {
