@@ -83,17 +83,18 @@
             // txtPesquisar
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
-            this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Campo = "Pesquisar por";
             this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisar.MaxLength = 32767;
+            this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPesquisar.Size = new System.Drawing.Size(480, 40);
             this.txtPesquisar.TabIndex = 3;
+            this.txtPesquisar.TextChange += new System.EventHandler(this.txtPesquisar_TextChange);
             // 
             // btnPesquisar
             // 

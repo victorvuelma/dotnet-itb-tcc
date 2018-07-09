@@ -74,5 +74,10 @@ namespace BURGUERSHACK_DESKTOP
                 pesquisar();
             }
         }
+
+        private void txtPesquisar_TextChange(object sender, EventArgs e)
+        {
+            pesquisar();
+        }
     }
 }

@@ -160,5 +160,10 @@ namespace BURGUERSHACK_DESKTOP
         {
             realizaPesquisa();
         }
+
+        private void txtPesquisar_TextChange(object sender, EventArgs e)
+        {
+            realizaPesquisa();
+        }
     }
 }
