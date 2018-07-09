@@ -44,29 +44,20 @@ namespace SQL_POWERUP
             }
         }
 
-        public SqlCommand getCommand(String query) => new SqlCommand(query, connect());
-
-        public DataTable returnTable(SqlCommand command)
+        public SqlCommand getCommand(String query)
         {
             try
             {
-                DataTable table = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(table);
-                return table;
+                return new SqlCommand(query, connect());
             }
             catch (Exception ex)
             {
                 ExceptionCall.Invoke(ex);
             }
-            finally
-            {
-                close(command.Connection);
-            }
             return null;
         }
 
-        public SqlDataReader returnReader(SqlCommand command)
+        public SqlDataReader executeReader(SqlCommand command)
         {
             try
             {

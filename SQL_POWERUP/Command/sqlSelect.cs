@@ -91,24 +91,14 @@ namespace SQL_POWERUP
             return commandBuilder.ToString();
         }
 
-        private object execute(sqlDatabase db, bool table)
+        private SqlDataReader execute(sqlDatabase db)
         {
             SqlCommand cmd = db.getCommand(generateCommand());
-            if(_where != null)
+            if (_where != null)
                 _where.prepare(cmd);
 
-            if (table)
-            {
-                return db.returnTable(cmd);
-            } else
-            {
-                return db.returnReader(cmd);
-            }
+            return db.executeReader(cmd);
         }
-
-        public DataTable executeTable(sqlDatabase db) => (DataTable) execute(db, true);
-
-        public SqlDataReader execute(sqlDatabase db) => (SqlDataReader) execute(db, false);
 
     }
 }
