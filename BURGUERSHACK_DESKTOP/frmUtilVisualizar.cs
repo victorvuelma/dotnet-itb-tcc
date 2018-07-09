@@ -16,6 +16,7 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmUtilVisualizar : Form
     {
 
+
         private clnUtilVisualizar _objVisualizar;
 
         private List<object> _opcoes;

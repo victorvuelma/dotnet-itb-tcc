@@ -37,7 +37,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private static frmUtilNumBoard frmNumBoard;
 
-                // ---- NUMBOARD
+        // ---- NUMBOARD
         public static void definirNumBoard(ControlCollection controls)
         {
             foreach (Control control in controls)
@@ -143,6 +143,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             if (clnUtilValidar.validarCEP(cep))
             {
+                Cursor.Current = Cursors.WaitCursor;
                 clnEndereco objEndereco = clnUtilEndereco.obterEndereco(cep);
                 if (objEndereco != null)
                 {
@@ -168,12 +169,13 @@ namespace BURGUERSHACK_DESKTOP
                     clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnUtilMensagem.MensagemIcone.INFO);
                     ctlLogradouro.Focus();
                 }
+                Cursor.Current = Cursors.Default;
             }
         }
 
         // ---- ENDERECO
 
-               public static String obterConteudo(Control control)
+        public static String obterConteudo(Control control)
         {
             String conteudo = control.Text;
             if (control is MaskedTextBox mtb)
