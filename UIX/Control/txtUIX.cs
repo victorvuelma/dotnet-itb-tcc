@@ -13,7 +13,7 @@ namespace UIX
     public partial class txtUIX : UserControl
     {
 
-        public EventHandler TextChange;
+        public new event EventHandler TextChange;
 
         private bool _loaded = false;
 

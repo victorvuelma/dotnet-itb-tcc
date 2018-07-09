@@ -14,7 +14,7 @@ namespace UIX
     public partial class mtbUIX : UserControl
     {
 
-        public EventHandler TextChange;
+        public event EventHandler TextChange;
 
         private bool _loaded = false;
 
