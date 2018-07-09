@@ -91,7 +91,7 @@ namespace SQL_POWERUP
             return commandBuilder.ToString();
         }
 
-        private SqlDataReader execute(sqlDatabase db)
+        public SqlDataReader execute(sqlDatabase db)
         {
             SqlCommand cmd = db.getCommand(generateCommand());
             if (_where != null)
