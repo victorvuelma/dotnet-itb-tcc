@@ -16,7 +16,6 @@ namespace BURGUERSHACK_DESKTOP
     public partial class frmUtilVisualizar : Form
     {
 
-
         private clnUtilVisualizar _objVisualizar;
 
         private List<object> _opcoes;
@@ -43,12 +42,29 @@ namespace BURGUERSHACK_DESKTOP
                         case clnUtilVisualizar.VisualizarResult.REMOVER:
                             ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
                             _opcoes.Remove(obj);
-                            lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
+                            exibirResultados();
                             return uctUtilListar.ListarResult.REMOVER;
                         default:
                             return uctUtilListar.ListarResult.NENHUM;
                     }
                 });
+            }
+            exibirResultados();
+        }
+
+        private void exibirResultados()
+        {
+            if (_opcoes.Count == 1)
+            {
+                lblPesquisaRes.Text = "1 resultado encontrado.";
+            }
+            else if (_opcoes.Count == 0)
+            {
+                lblPesquisaRes.Text = "Nenhum resultado encontrado.";
+            }
+            else
+            {
+                lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
             }
         }
 
