@@ -76,10 +76,7 @@ namespace UIX
             if (sender != null)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                if (Click != null)
-                {
-                    Click(null, e);
-                }
+                Click?.Invoke(null, e);
                 Cursor.Current = Cursors.Default;
             }
         }

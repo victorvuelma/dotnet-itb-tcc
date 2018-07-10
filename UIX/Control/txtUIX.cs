@@ -92,14 +92,22 @@ namespace UIX
         {
             if (_loaded)
             {
+                if (Size.Height < txt.Height)
+                {
+                    Size = new Size(Width, txt.Height);
+                    return;
+                }
+
                 lbl.AutoSize = true;
                 switch (LabelPosition)
                 {
                     case uixEnum.uixLabelPosition.SIDE:
+                        lbl.MaximumSize = new Size(0, 0);
                         txt.Location = new Point(lbl.Location.X + lbl.Size.Width, txt.Location.Y);
                         txt.Size = new Size(Size.Width - txt.Location.X, Size.Height);
                         break;
                     case uixEnum.uixLabelPosition.UP:
+                        lbl.MaximumSize = new Size(Width, 1000);
                         txt.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
                         txt.Size = new Size(Size.Width, Size.Height - txt.Location.Y);
                         break;
@@ -162,10 +170,7 @@ namespace UIX
                     uixUtil.defineForMoney(txt);
                 }
             }
-            if (TextChange != null)
-            {
-                TextChange(sender, e);
-            }
+            TextChange?.Invoke(sender, e);
         }
 
         private void txtUIX_SizeChanged(object sender, EventArgs e)
@@ -178,9 +183,5 @@ namespace UIX
             update();
         }
 
-        private void txtUIX_EnabledChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

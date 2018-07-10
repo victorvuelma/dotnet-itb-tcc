@@ -110,7 +110,7 @@ namespace UIX
                 update();
             }
         }
-        
+
         public new String Name
         {
             get => base.Name;
@@ -125,14 +125,22 @@ namespace UIX
         {
             if (_loaded)
             {
+                if (Size.Height < cbo.Height)
+                {
+                    Size = new Size(Width, cbo.Height);
+                    return;
+                }
+
                 lbl.AutoSize = true;
                 switch (LabelPosition)
                 {
                     case uixEnum.uixLabelPosition.SIDE:
+                        lbl.MaximumSize = new Size(0, 0);
                         cbo.Location = new Point(lbl.Location.X + lbl.Size.Width, cbo.Location.Y);
                         cbo.Size = new Size(Size.Width - cbo.Location.X, Size.Height);
                         break;
                     case uixEnum.uixLabelPosition.UP:
+                        lbl.MaximumSize = new Size(Width, 1000);
                         cbo.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
                         cbo.Size = new Size(Size.Width, Size.Height - cbo.Location.Y);
                         break;

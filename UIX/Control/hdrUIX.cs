@@ -35,14 +35,12 @@ namespace UIX
 
         private void btnMin_Click(object sender, EventArgs e)
         {
-            if (Min != null)
-                Min(this, e);
+            Min?.Invoke(this, e);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (Close != null)
-                Close(this, e);
+            Close?.Invoke(this, e);
         }
 
         private void hdrUIX_SizeChanged(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace UIX
             HoverColor = Color.Transparent;
         }
 
-        private new void update()
+        private void update()
         {
             pic.Size = new Size(Width - 20, Width - 20);
 

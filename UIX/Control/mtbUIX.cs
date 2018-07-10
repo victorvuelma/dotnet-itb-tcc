@@ -76,14 +76,22 @@ namespace UIX
         {
             if (_loaded)
             {
+                if (Size.Height < mtb.Height)
+                {
+                    Size = new Size(Width, mtb.Height);
+                    return;
+                }
+
                 lbl.AutoSize = true;
                 switch (LabelPosition)
                 {
                     case uixEnum.uixLabelPosition.SIDE:
+                        lbl.MaximumSize = new Size(0, 0);
                         mtb.Location = new Point(lbl.Location.X + lbl.Size.Width, mtb.Location.Y);
                         mtb.Size = new Size(Size.Width - mtb.Location.X, Size.Height);
                         break;
                     case uixEnum.uixLabelPosition.UP:
+                        lbl.MaximumSize = new Size(Width, 1000);
                         mtb.Location = new Point(0, lbl.Location.Y + lbl.Size.Height);
                         mtb.Size = new Size(Size.Width, Size.Height - mtb.Location.Y);
                         break;
@@ -117,10 +125,7 @@ namespace UIX
 
         private void mtb_TextChanged(object sender, EventArgs e)
         {
-            if (TextChange != null)
-            {
-                TextChange(sender, e);
-            }
+            TextChange?.Invoke(sender, e);
         }
 
         private void mtbUIX_SizeChanged(object sender, EventArgs e)

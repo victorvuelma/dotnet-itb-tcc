@@ -60,7 +60,6 @@
             this.Name = "txtUIX";
             this.Size = new System.Drawing.Size(150, 20);
             this.Load += new System.EventHandler(this.txtUIX_Load);
-            this.EnabledChanged += new System.EventHandler(this.txtUIX_EnabledChanged);
             this.FontChanged += new System.EventHandler(this.txtUIX_FontChanged);
             this.SizeChanged += new System.EventHandler(this.txtUIX_SizeChanged);
             this.ResumeLayout(false);
