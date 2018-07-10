@@ -24,9 +24,9 @@ namespace BURGUERSHACK_DESKTOP
             InitializeComponent();
         }
 
-        private void alterarConteudo(UserControl uctConteudo, String titulo, bool ignorarTipo)
+        private void alterarConteudo(UserControl uctConteudo, String titulo)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Gerenciamento :: " + titulo, ignorarTipo);
+            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Gerenciamento :: " + titulo);
         }
 
         private void abrirLista(String tipo, IUtilCallback<int> callbackNovo, IUtilCallback<DataGridView, String> callbackObter, IUtilCallback<DataGridViewRow> callbackAlterar, String[] colunas)
@@ -39,7 +39,7 @@ namespace BURGUERSHACK_DESKTOP
                 CallbackAlterar = callbackAlterar,
                 CodFuncionario = CodFuncionario
             };
-            alterarConteudo(objListar, tipo, true);
+            alterarConteudo(objListar, tipo);
         }
 
         private void abrirIngredientes()

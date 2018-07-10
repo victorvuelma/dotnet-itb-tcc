@@ -336,15 +336,10 @@ namespace BURGUERSHACK_DESKTOP
 
         public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo)
         {
-            alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, titulo, false);
-        }
-
-        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo, bool ignorarTipo)
-        {
             if (pnlConteudo.Controls.Count == 1)
             {
                 Control controlAnterior = pnlConteudo.Controls[0];
-                if (ignorarTipo || uctConteudo == null || !uctConteudo.GetType().Equals(controlAnterior.GetType()))
+                if (uctConteudo == null || !titulo.Equals(pnlConteudo.AccessibleName))
                 {
                     pnlConteudo.Hide();
                     Cursor.Current = Cursors.WaitCursor;
@@ -359,6 +354,7 @@ namespace BURGUERSHACK_DESKTOP
                 }
             }
 
+            pnlConteudo.AccessibleName = titulo;
             hdrUIX.Title = App.Name + " - " + titulo;
             if (uctConteudo == null)
             {
