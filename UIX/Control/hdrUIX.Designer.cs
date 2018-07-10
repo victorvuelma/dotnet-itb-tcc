@@ -44,6 +44,9 @@
             this.lbl.TabIndex = 7;
             this.lbl.Text = "Título";
             this.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
+            this.lbl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove);
+            this.lbl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp);
             // 
             // pic
             // 
@@ -54,6 +57,9 @@
             this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic.TabIndex = 6;
             this.pic.TabStop = false;
+            this.pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
+            this.pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove);
+            this.pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp);
             // 
             // btnClo
             // 
@@ -88,6 +94,11 @@
             this.Controls.Add(this.pic);
             this.Name = "hdrUIX";
             this.Size = new System.Drawing.Size(250, 50);
+            this.Load += new System.EventHandler(this.hdrUIX_Load);
+            this.SizeChanged += new System.EventHandler(this.hdrUIX_SizeChanged);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
 

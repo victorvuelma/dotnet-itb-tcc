@@ -25,8 +25,6 @@ namespace UIX
             hdr.AutoScaleMode = AutoScaleMode.None;
 
             uixHeader.hdrApply(frm, hdr, style);
-
-            uixHeader.hdrMove(frm, new Control[] { hdr, hdr.lbl, hdr.pic });
         }
 
         public static void applyMargin(Form frm, uixStyle style)
