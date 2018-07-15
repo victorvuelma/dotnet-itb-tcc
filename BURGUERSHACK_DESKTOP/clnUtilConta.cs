@@ -41,9 +41,12 @@ namespace BURGUERSHACK_DESKTOP
                 CodAtendimento = objAtendimento.Cod
             }.obterPorAtendimento();
 
+            decimal valorSubTotal = clnUtilPedido.calcularValor(objAtendimento);
+            decimal valorTotal = calcularValor(valorSubTotal, incluirGorjeta, desconto);
+
             StringBuilder contaBuilder = new StringBuilder();
             codItem = 1;
-            foreach (String line in obterTemplate())
+                        foreach (String line in obterTemplate())
             {
                 if (line.Equals("{@items}"))
                 {
@@ -54,22 +57,22 @@ namespace BURGUERSHACK_DESKTOP
                 }
                 else if (line.Equals("{@valorsubtotal}"))
                 {
-                    contaBuilder.Append(clnUtilFormatar.formatarValor(clnUtilPedido.calcularValor(objAtendimento)));
+                    contaBuilder.Append(clnUtilFormatar.formatarValor(valorSubTotal));
                 }
                 else if (line.Equals("{@valortotal}"))
                 {
-                    contaBuilder.Append(clnUtilFormatar.formatarValor(calcularValor(clnUtilPedido.calcularValor(objAtendimento), incluirGorjeta, desconto)));
+                    contaBuilder.Append(clnUtilFormatar.formatarValor(valorTotal));
                 }
                 else if (line.Equals("{@valorpessoa}"))
                 {
-                    contaBuilder.Append(clnUtilFormatar.formatarValor(calcularValor(clnUtilPedido.calcularValor(objAtendimento), incluirGorjeta, desconto) / pessoas));
+                    contaBuilder.Append(clnUtilFormatar.formatarValor(valorTotal / pessoas));
                 }
                 else if (line.Equals("{@gorjeta}"))
                 {
                     if (incluirGorjeta)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>+ Taxa de Serviço (10,0%)</td>");
-                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (decimal) 0.1)).Append("</td></tr>");
+                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(valorSubTotal * (decimal) 0.1)).Append("</td></tr>");
                     }
                 }
                 else if (line.Equals("{@desconto}"))
@@ -77,7 +80,7 @@ namespace BURGUERSHACK_DESKTOP
                     if (desconto > 0)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>- Desconto (" + desconto.ToString("N") + "%)</td>");
-                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(clnUtilPedido.calcularValor(objAtendimento) * (desconto / 100))).Append("</td></tr>");
+                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(valorSubTotal * (desconto / 100))).Append("</td></tr>");
                     }
                 }
                 else if (line.Equals("{@pessoas}"))
@@ -174,20 +177,19 @@ namespace BURGUERSHACK_DESKTOP
 
         public static void adicionarItem(StringBuilder htmlBuilder, int item, string cod, string descricao, int quantidade, decimal valor)
         {
-            htmlBuilder.Append(@"<tr>");
-            htmlBuilder.Append(@"<td class='left'>").Append(item).Append("</td>");
-            htmlBuilder.Append(@"<td class='left'>").Append(cod).Append("</td>");
-            htmlBuilder.Append(@"<td class='left'>").Append(descricao).Append("</td>");
-            htmlBuilder.Append(@"<td class='right'>").Append(quantidade).Append("</td>");
-            htmlBuilder.Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor)).Append("</td>");
-            htmlBuilder.Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor * quantidade)).Append("</td>");
-            htmlBuilder.Append(@"</tr>");
+            htmlBuilder.Append(@"<tr>")
+                       .Append(@"<td class='left'>").Append(item).Append("</td>")
+                       .Append(@"<td class='left'>").Append(cod).Append("</td>")
+                       .Append(@"<td class='left'>").Append(descricao).Append("</td>")
+                       .Append(@"<td class='right'>").Append(quantidade).Append("</td>")
+                       .Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor)).Append("</td>")
+                       .Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor * quantidade)).Append("</td>")
+                       .Append(@"</tr>");
         }
-
-
+        
         public static IEnumerable<string> obterTemplate()
         {
-            return File.ReadLines(Directory.GetParent(Directory.GetParent(Application.StartupPath.ToString()).ToString()).ToString() + @"\conta-template.html");
+            return File.ReadLines(global::BURGUERSHACK_COMMON.Properties.Resources.html_template_conta);
         }
 
     }

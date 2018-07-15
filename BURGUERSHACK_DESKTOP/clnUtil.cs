@@ -7,13 +7,7 @@ using System.Runtime;
 using System.Windows.Forms;
 using System.Drawing;
 
-using Caelum.Stella.CSharp.Validation;
-using Caelum.Stella.CSharp.Format;
-
-using Caelum.Stella.CSharp.Http;
-using Caelum.Stella.CSharp.Http.Exceptions;
 using static System.Windows.Forms.Control;
-using System.Text.RegularExpressions;
 using System.Collections;
 using BURGUERSHACK_COMMON.UTIL;
 using BURGUERSHACK_COMMON;
