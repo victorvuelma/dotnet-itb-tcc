@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using SQL_POWERUP;
+using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON;
+using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.SqlMaster.Element;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class clnFornecedor
     {
@@ -91,8 +93,8 @@ namespace BURGUERSHACK_DESKTOP
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("fornecedor");
-            objSelect.Where.where("cnpj", sqlObjWhereCommon.whereOperation.LIKE, "%" + Cnpj + "%", sqlObjWhere.whereAssociation.OR)
-                           .where("razao_social", sqlObjWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%");
+            objSelect.Where.where("cnpj", sqlElementWhereCommon.whereOperation.LIKE, "%" + Cnpj + "%", sqlElementWhere.whereAssociation.OR)
+                           .where("razao_social", sqlElementWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnFornecedor> objFornecedor = new List<clnFornecedor>();

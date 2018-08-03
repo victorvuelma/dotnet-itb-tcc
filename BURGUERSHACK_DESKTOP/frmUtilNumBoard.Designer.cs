@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmUtilNumBoard
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hdrUIX = new UIX.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.btnCorrigir = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnPoint = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.calculadora;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.calculadora;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(220, 50);
@@ -261,7 +261,7 @@
 
         #endregion
 
-        private UIX.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
         private System.Windows.Forms.Button btnCorrigir;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnNum0;

@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmEstoque : Form
     {
@@ -54,14 +55,14 @@ namespace BURGUERSHACK_DESKTOP
                     };
                     ObjEstoque.gravar();
 
-                    clnUtilMensagem.mostrarOk("Cadastro de Estoque", "Estoque cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Cadastro de Estoque", "Estoque cadastrado com sucesso!");
                 }
                 else
                 {
                     ObjEstoque.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
 
                     ObjEstoque.alterar();
-                    clnUtilMensagem.mostrarOk("Altereção de Estoque", "Estoque alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Altereção de Estoque", "Estoque alterado com sucesso!");
                 }
                 Close();
             }
@@ -116,7 +117,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Fornecedor", "O CNPJ informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Fornecedor", "O CNPJ informado é inválido.");
             }
             return false;
         }
@@ -175,7 +176,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             if (ObjEstoque != null)
             {

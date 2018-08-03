@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class uctPedidoAdicionar : UserControl
     {
@@ -162,7 +162,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.");
             }
         }
 
@@ -206,7 +206,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Pedido", "Selecione o produto antes de finalizar", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Pedido", "Selecione o produto antes de finalizar");
             }
         }
 
@@ -264,7 +264,7 @@ namespace BURGUERSHACK_DESKTOP
                     CodProdutoIngrediente = null
                 };
 
-                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!");
                 clnUtilPedido.adicionarIngrediente(ObjItemIngredientes, objItemIngrediente);
 
                 exibirDetalhes();
@@ -353,7 +353,7 @@ namespace BURGUERSHACK_DESKTOP
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
+                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
                 }
                 return clnUtilVisualizar.VisualizarResult.NENHUM;
             }

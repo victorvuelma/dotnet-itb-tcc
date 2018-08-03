@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmFornecedor : Form
     {
@@ -73,12 +74,12 @@ namespace BURGUERSHACK_DESKTOP
                         };
                         objFornecedor.gravar();
                         ObjFornecedor = objFornecedor;
-                        clnUtilMensagem.mostrarOk("Cadastro de Fornecedor", "Fornecedor cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                        clnUtilMensagem.mostrarOk("Cadastro de Fornecedor", "Fornecedor cadastrado com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Cadastro de Fornecedor", "Não foi possível cadastrar o fornecedor, o CNPJ já está cadastrado!", clnUtilMensagem.MensagemIcone.ERRO);
+                        clnUtilMensagem.mostrarOk("Cadastro de Fornecedor", "Não foi possível cadastrar o fornecedor, o CNPJ já está cadastrado!");
                         mtbCNPJ.Focus();
                     }
                 }
@@ -95,7 +96,7 @@ namespace BURGUERSHACK_DESKTOP
                     ObjFornecedor.EndLocalidade = txtEndCidade.Text;
                     ObjFornecedor.EndUF = cboEndUF.Text;
                     ObjFornecedor.alterar();
-                    clnUtilMensagem.mostrarOk("Alteração de Fornecedor", "Fornecedor alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Alteração de Fornecedor", "Fornecedor alterado com sucesso!");
                     Close();
                 }
             }
@@ -122,7 +123,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmCliente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnCancelar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnCancelar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr, txtEndComplemento);
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BURGUERSHACK_COMMON.UTIL
+namespace BURGERSHACK_COMMON.UTIL
 {
     public class clnUtilEndereco
     {

@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
+using vitorrdgs.UiX.Component;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class uctPedidoItens : UserControl
     {
@@ -80,7 +82,7 @@ namespace BURGUERSHACK_DESKTOP
                 if (frmEditarItem.ObjItem == null)
                 {
                     ObjItens.Remove(objItem);
-                    clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido", clnUtilMensagem.MensagemIcone.INFO);
+                    clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido");
 
                     exibirProdutos();
                 }
@@ -93,7 +95,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Pedido", "Não é possivel alterar esse item pois ele está em prepardo.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Pedido", "Não é possivel alterar esse item pois ele está em prepardo.");
             }
         }
 
@@ -114,7 +116,7 @@ namespace BURGUERSHACK_DESKTOP
                     Cod = objProduto.CodImagem
                 }.obterPorCodigo();
 
-                UIX.btnUIX btn = new UIX.btnUIX
+                btnUIX btn = new btnUIX
                 {
                     Description = objProduto.Nome,
                     Name = "btnItem" + objProduto.Cod,
@@ -134,7 +136,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 if (control is Button btn)
                 {
-                    UIX.uixButton.btnApply(btn, AppDesktop.VisualStyle.ButtonImageColor);
+                    uixButton.btnApply(btn, AppDesktop.VisualStyle.ButtonImageColor);
                 }
             }
             opcoesControles.Clear();

@@ -9,10 +9,12 @@ using System.Drawing;
 
 using static System.Windows.Forms.Control;
 using System.Collections;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON;
+using vitorrdgs.UiX.Component;
+using vitorrdgs.UiX.Property;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class clnUtil
     {
@@ -36,11 +38,11 @@ namespace BURGUERSHACK_DESKTOP
         {
             foreach (Control control in controls)
             {
-                if (control is UIX.mtbUIX mtb)
+                if (control is mtbUIX mtb)
                 {
                     definirNumBoard(mtb);
                 }
-                else if (control is UIX.txtUIX txt)
+                else if (control is txtUIX txt)
                 {
                     definirNumBoard(txt);
                 }
@@ -49,25 +51,25 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        public static void definirNumBoard(UIX.txtUIX txt)
+        public static void definirNumBoard(txtUIX txt)
         {
             switch (txt.Mode)
             {
-                case UIX.uixEnum.uixTextBoxMode.DOUBLE:
+                case uixEnum.uixTextBoxMode.DOUBLE:
                     definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
                     break;
-                case UIX.uixEnum.uixTextBoxMode.MONEY:
+                case uixEnum.uixTextBoxMode.MONEY:
                     definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.MONEY);
                     break;
-                case UIX.uixEnum.uixTextBoxMode.INT:
+                case uixEnum.uixTextBoxMode.INT:
                     definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
                     break;
             }
         }
 
-        public static void definirNumBoard(UIX.mtbUIX masked)
+        public static void definirNumBoard(mtbUIX mtb)
         {
-            definirNumBoard(masked.mtb, frmUtilNumBoard.NumBoardMode.INT);
+            definirNumBoard(mtb.mtb, frmUtilNumBoard.NumBoardMode.INT);
         }
 
         public static void definirNumBoard(TextBoxBase input, frmUtilNumBoard.NumBoardMode mode)
@@ -116,7 +118,7 @@ namespace BURGUERSHACK_DESKTOP
             cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
         }
 
-        public static void definirCEP(UIX.mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
+        public static void definirCEP(mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
         {
             ctlLogradouro.Enabled = false;
             ctlBairro.Enabled = false;
@@ -160,7 +162,7 @@ namespace BURGUERSHACK_DESKTOP
                     ctlCidade.Enabled = true;
                     cboUF.Enabled = true;
 
-                    clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente", clnUtilMensagem.MensagemIcone.INFO);
+                    clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente");
                     ctlLogradouro.Focus();
                 }
                 Cursor.Current = Cursors.Default;
@@ -238,10 +240,10 @@ namespace BURGUERSHACK_DESKTOP
 
         public static void atualizarForm(Form form)
         {
-            UIX.hdrUIX hdr = null;
+            hdrUIX hdr = null;
             foreach (Control control in form.Controls)
             {
-                if (control is UIX.hdrUIX hdrUIX)
+                if (control is hdrUIX hdrUIX)
                 {
                     hdr = hdrUIX;
                     break;
@@ -309,17 +311,17 @@ namespace BURGUERSHACK_DESKTOP
         {
             foreach (Control control in controls)
             {
-                if (control is UIX.txtUIX txt)
+                if (control is txtUIX txt)
                 {
                     if (txt.AcceptButton == null)
                         txt.AcceptButton = acceptButton;
                 }
-                else if (control is UIX.mtbUIX mtb)
+                else if (control is mtbUIX mtb)
                 {
                     if (mtb.AcceptButton == null)
                         mtb.AcceptButton = acceptButton;
                 }
-                else if (control is UIX.cboUIX cbo)
+                else if (control is cboUIX cbo)
                 {
                     if (cbo.AcceptButton == null)
                         cbo.AcceptButton = acceptButton;
@@ -328,7 +330,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIX.hdrUIX hdrUIX, String titulo)
+        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, hdrUIX hdr, String titulo)
         {
             if (pnlConteudo.Controls.Count == 1)
             {
@@ -349,7 +351,7 @@ namespace BURGUERSHACK_DESKTOP
             }
 
             pnlConteudo.AccessibleName = titulo;
-            hdrUIX.Title = App.Name + " - " + titulo;
+            hdr.Title = App.Name + " - " + titulo;
             if (uctConteudo == null)
             {
                 pnlConteudo.Show();

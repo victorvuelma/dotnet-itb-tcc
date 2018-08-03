@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class uctAtendimentoMesas : UserControl
     {
@@ -29,7 +30,7 @@ namespace BURGUERSHACK_DESKTOP
             List<Control> pedidosControles = new List<Control>();
             foreach (int codMesa in ObjAtendimento.CodMesas)
             {
-                UIX.btnUIX btn = new UIX.btnUIX
+                btnUIX btn = new btnUIX
                 {
                     Description = "Mesa #" + codMesa,
                     Name = "btnMesa" + codMesa,
@@ -60,7 +61,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Atendimento", "Não é possível remover a única mesa do Atendimento atual.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Atendimento", "Não é possível remover a única mesa do Atendimento atual.");
             }
         }
 
@@ -109,7 +110,7 @@ namespace BURGUERSHACK_DESKTOP
             public clnUtilVisualizar.VisualizarResult call(clnAtendimento objAtendimento, clnMesa objMesa)
             {
                 objAtendimento.adicionarMesa(objMesa.Cod);
-                clnUtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Cod + " adicionada ao atendimento.", clnUtilMensagem.MensagemIcone.OK);
+                clnUtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Cod + " adicionada ao atendimento.");
                 return clnUtilVisualizar.VisualizarResult.FECHAR;
             }
         }

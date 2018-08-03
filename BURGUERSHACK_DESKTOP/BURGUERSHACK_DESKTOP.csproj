@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>BURGUERSHACK_DESKTOP.Program</StartupObject>
+    <StartupObject>BURGERSHACK_DESKTOP.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>
@@ -335,12 +335,6 @@
     <Compile Include="uctPrincipalCardapio.Designer.cs">
       <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctAtendimentoConta.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctAtendimentoConta.Designer.cs">
-      <DependentUpon>uctAtendimentoConta.cs</DependentUpon>
-    </Compile>
     <Compile Include="uctPrincipalReservas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -392,14 +386,8 @@
     <EmbeddedResource Include="frmFornecedor.resx">
       <DependentUpon>frmFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFuncionario.resx">
-      <DependentUpon>frmFuncionario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmGerenciamento.resx">
       <DependentUpon>frmGerenciamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmIngrediente.resx">
-      <DependentUpon>frmIngrediente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
@@ -415,9 +403,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProduto.resx">
-      <DependentUpon>frmProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProdutoIngrediente.resx">
       <DependentUpon>frmProdutoIngrediente.cs</DependentUpon>
@@ -454,9 +439,6 @@
     <EmbeddedResource Include="uctPrincipalCardapio.resx">
       <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uctAtendimentoConta.resx">
-      <DependentUpon>uctAtendimentoConta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="uctPrincipalReservas.resx">
       <DependentUpon>uctPrincipalReservas.cs</DependentUpon>
     </EmbeddedResource>
@@ -488,17 +470,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\COMMON\FORM_UTIL\FORM_UTIL.csproj">
+      <Project>{36f01f19-26eb-4bdc-9398-fcb26c29b062}</Project>
+      <Name>FORM_UTIL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\COMMON\SQLMASTER\SQLMASTER.csproj">
+      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
+      <Name>SQLMASTER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\COMMON\UIX\UIX.csproj">
+      <Project>{23c69ba9-632d-47df-b963-927e43f5f800}</Project>
+      <Name>UIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\COMMON\UTIL\UTIL.csproj">
+      <Project>{94c33f17-938d-4605-8715-0bf21c28a997}</Project>
+      <Name>UTIL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BURGUERSHACK_COMMON\BURGUERSHACK_COMMON.csproj">
       <Project>{452f8db0-90e2-4013-bfcc-c95ef01fb806}</Project>
       <Name>BURGUERSHACK_COMMON</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SQL_POWERUP\SQL_POWERUP.csproj">
-      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
-      <Name>SQL_POWERUP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UIX\UIX.csproj">
-      <Project>{23c69ba9-632d-47df-b963-927e43f5f800}</Project>
-      <Name>UIX</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

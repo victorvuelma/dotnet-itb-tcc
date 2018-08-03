@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using SQL_POWERUP;
+using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON;
+using vitorrdgs.SqlMaster.Command;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class clnTipo
     {

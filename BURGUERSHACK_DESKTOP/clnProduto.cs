@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-using SQL_POWERUP;
+using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
 using System.IO;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON;
+using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.SqlMaster.Element;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public class clnProduto
     {
@@ -88,7 +90,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");
-            objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
+            objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnProduto> objProdutos = new List<clnProduto>();

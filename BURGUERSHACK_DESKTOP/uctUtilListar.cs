@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UIX;
+using vitorrdgs.UiX.Property;
+using vitorrdgs.UiX.Component;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class uctUtilListar : UserControl
     {
@@ -61,7 +63,7 @@ namespace BURGUERSHACK_DESKTOP
             }
         }
 
-        public void adicionarItem(int cod, String nome, String imagem, UIX.uixSet colorSet, Func<ListarResult> callback)
+        public void adicionarItem(int cod, String nome, String imagem, uixSet colorSet, Func<ListarResult> callback)
         {
             ListarItem item = new ListarItem
             {
@@ -122,7 +124,7 @@ namespace BURGUERSHACK_DESKTOP
                     PosY += Espacamento;
                     PosY += btn.Height;
                 }
-                UIX.uixButton.btnApply(btn, item.UixSet, AppDesktop.VisualStyle.BoldFont);
+                uixButton.btnApply(btn, item.UixSet, AppDesktop.VisualStyle.BoldFont);
 
                 btn.Click += (object sender, EventArgs args) =>
                 {
@@ -140,7 +142,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                btn = (UIX.btnUIX)Controls[PosIndex];
+                btn = (btnUIX)Controls[PosIndex];
             }
 
             btn.Name = "btnListar" + item.Cod;
@@ -180,7 +182,7 @@ namespace BURGUERSHACK_DESKTOP
             private string _imagem;
             private Func<ListarResult> _callback;
 
-            private UIX.uixSet _uixSet;
+            private uixSet _uixSet;
 
             public int Cod { get => _cod; set => _cod = value; }
             public string Nome { get => _nome; set => _nome = value; }

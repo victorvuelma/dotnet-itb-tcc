@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmProdutoIngrediente
     {
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
-            this.txtQuantidade = new UIX.txtUIX();
+            this.txtQuantidade = new vitorrdgs.UiX.Component.txtUIX();
             this.lblNome = new System.Windows.Forms.Label();
             this.picIngrediente = new System.Windows.Forms.PictureBox();
             this.chkRemover = new System.Windows.Forms.CheckBox();
             this.chkAlterar = new System.Windows.Forms.CheckBox();
-            this.hdrUIX = new UIX.hdrUIX();
-            this.btnConfirmar = new UIX.btnUIX();
-            this.btnRemover = new UIX.btnUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.btnConfirmar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnRemover = new vitorrdgs.UiX.Component.btnUIX();
             this.grbPode = new System.Windows.Forms.GroupBox();
             this.grbIngrediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).BeginInit();
@@ -58,9 +58,9 @@
             // 
             this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.Mode = UIX.uixEnum.uixTextBoxMode.INT;
+            this.txtQuantidade.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtQuantidade.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(130, 110);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantidade.MaxLength = 32767;
@@ -115,7 +115,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.produto;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.produto;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -128,7 +128,7 @@
             // 
             this.btnConfirmar.Description = "Confirmar";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.confirmar;
             this.btnConfirmar.ImageLocation = null;
             this.btnConfirmar.Location = new System.Drawing.Point(355, 205);
             this.btnConfirmar.Name = "btnConfirmar";
@@ -142,7 +142,7 @@
             // 
             this.btnRemover.Description = "Remover";
             this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnRemover.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.remover;
+            this.btnRemover.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.remover;
             this.btnRemover.ImageLocation = null;
             this.btnRemover.Location = new System.Drawing.Point(5, 205);
             this.btnRemover.Name = "btnRemover";
@@ -192,14 +192,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbIngrediente;
-        private UIX.txtUIX txtQuantidade;
+        private vitorrdgs.UiX.Component.txtUIX txtQuantidade;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox picIngrediente;
-        private UIX.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
         private System.Windows.Forms.CheckBox chkAlterar;
         private System.Windows.Forms.CheckBox chkRemover;
-        private UIX.btnUIX btnConfirmar;
-        public UIX.btnUIX btnRemover;
+        private vitorrdgs.UiX.Component.btnUIX btnConfirmar;
+        public vitorrdgs.UiX.Component.btnUIX btnRemover;
         private System.Windows.Forms.GroupBox grbPode;
     }
 }

@@ -1,5 +1,5 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmTipo : Form
     {
@@ -111,13 +111,13 @@ namespace BURGUERSHACK_DESKTOP
                     ObjTipo.Nome = txtNome.Text;
                     ObjTipo.alterar();
 
-                    clnUtilMensagem.mostrarOk("Tipo", "Tipo alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Tipo", "Tipo alterado com sucesso!");
                     exibirTipos();
                     definirPadrao();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.", clnUtilMensagem.MensagemIcone.ERRO);
+                    clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.");
                 }
             }
             else if (grbEditar.Visible)
@@ -130,13 +130,13 @@ namespace BURGUERSHACK_DESKTOP
                         Tipo = Tipo
                     };
                     objTipo.gravar();
-                    clnUtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!");
                     exibirTipos();
                     definirPadrao();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.", clnUtilMensagem.MensagemIcone.ERRO);
+                    clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.");
                 }
             }
             else if(dgvTipos.SelectedRows.Count > 0)

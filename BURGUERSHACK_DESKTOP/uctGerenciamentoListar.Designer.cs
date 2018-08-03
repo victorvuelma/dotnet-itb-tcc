@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class uctGerenciamentoListar
     {
@@ -32,9 +32,9 @@
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
-            this.txtPesquisar = new UIX.txtUIX();
-            this.btnPesquisar = new UIX.btnUIX();
-            this.btnNovo = new UIX.btnUIX();
+            this.txtPesquisar = new vitorrdgs.UiX.Component.txtUIX();
+            this.btnPesquisar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnNovo = new vitorrdgs.UiX.Component.btnUIX();
             this.grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.grbPesquisa.SuspendLayout();
@@ -84,11 +84,11 @@
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
             this.txtPesquisar.Campo = "Pesquisar por";
-            this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
+            this.txtPesquisar.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisar.MaxLength = 32767;
-            this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtPesquisar.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -100,7 +100,7 @@
             // 
             this.btnPesquisar.Description = "Pesquisar";
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.pesquisar;
+            this.btnPesquisar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
             this.btnPesquisar.Location = new System.Drawing.Point(490, 15);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -114,7 +114,7 @@
             // 
             this.btnNovo.Description = "Novo";
             this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovo.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNovo.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnNovo.ImageLocation = null;
             this.btnNovo.Location = new System.Drawing.Point(595, 5);
             this.btnNovo.Name = "btnNovo";
@@ -146,11 +146,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbItens;
-        private UIX.btnUIX btnNovo;
+        private vitorrdgs.UiX.Component.btnUIX btnNovo;
         private System.Windows.Forms.DataGridView dgvItens;
         private System.Windows.Forms.GroupBox grbPesquisa;
-        private UIX.btnUIX btnPesquisar;
-        private UIX.txtUIX txtPesquisar;
+        private vitorrdgs.UiX.Component.btnUIX btnPesquisar;
+        private vitorrdgs.UiX.Component.txtUIX txtPesquisar;
         private System.Windows.Forms.Label lblPesquisaRes;
     }
 }

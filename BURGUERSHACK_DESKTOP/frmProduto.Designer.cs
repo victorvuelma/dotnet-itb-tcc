@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmProduto
     {
@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
-            this.hdrUIX = new UIX.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnExcluir = new UIX.btnUIX();
-            this.btnVoltar = new UIX.btnUIX();
-            this.btnSalvar = new UIX.btnUIX();
+            this.btnExcluir = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.cboSituacao = new UIX.cboUIX();
-            this.txtDesc = new UIX.txtUIX();
-            this.txtValor = new UIX.txtUIX();
-            this.cboTipo = new UIX.cboUIX();
-            this.txtNome = new UIX.txtUIX();
-            this.btnImgRemover = new UIX.btnUIX();
-            this.btnImgAdicionar = new UIX.btnUIX();
+            this.cboSituacao = new vitorrdgs.UiX.Component.cboUIX();
+            this.txtDesc = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtValor = new vitorrdgs.UiX.Component.txtUIX();
+            this.cboTipo = new vitorrdgs.UiX.Component.cboUIX();
+            this.txtNome = new vitorrdgs.UiX.Component.txtUIX();
+            this.btnImgRemover = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnImgAdicionar = new vitorrdgs.UiX.Component.btnUIX();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbImagem = new System.Windows.Forms.GroupBox();
             this.grbIngredientes = new System.Windows.Forms.GroupBox();
-            this.btnIngredienteAdd = new UIX.btnUIX();
-            this.btnIngredientes = new UIX.btnUIX();
+            this.btnIngredienteAdd = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnIngredientes = new vitorrdgs.UiX.Component.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -59,7 +59,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.produto;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.produto;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -98,7 +98,7 @@
             // 
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
@@ -112,7 +112,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 205);
@@ -146,7 +146,7 @@
             this.cboSituacao.AccessibleName = "Tipo:*";
             this.cboSituacao.Campo = "Situação*";
             this.cboSituacao.FormattingEnabled = true;
-            this.cboSituacao.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.cboSituacao.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.cboSituacao.Location = new System.Drawing.Point(170, 40);
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboSituacao.Name = "cboSituacao";
@@ -158,11 +158,11 @@
             this.txtDesc.AcceptButton = null;
             this.txtDesc.AccessibleName = "Preço de Venda: (R$)*";
             this.txtDesc.Campo = "Descrição";
-            this.txtDesc.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtDesc.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtDesc.Location = new System.Drawing.Point(5, 70);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 11, 3, 11);
             this.txtDesc.MaxLength = 32767;
-            this.txtDesc.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtDesc.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -174,11 +174,11 @@
             this.txtValor.AcceptButton = null;
             this.txtValor.AccessibleName = "Preço de Venda: (R$)*";
             this.txtValor.Campo = "Valor (R$)*";
-            this.txtValor.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtValor.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtValor.Location = new System.Drawing.Point(5, 39);
             this.txtValor.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtValor.MaxLength = 32767;
-            this.txtValor.Mode = UIX.uixEnum.uixTextBoxMode.MONEY;
+            this.txtValor.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.MONEY;
             this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
             this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -191,7 +191,7 @@
             this.cboTipo.AccessibleName = "Tipo:*";
             this.cboTipo.Campo = "Tipo*";
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.cboTipo.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.cboTipo.Location = new System.Drawing.Point(5, 150);
             this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTipo.Name = "cboTipo";
@@ -203,11 +203,11 @@
             this.txtNome.AcceptButton = null;
             this.txtNome.AccessibleName = "Nome:*";
             this.txtNome.Campo = "Nome:*";
-            this.txtNome.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtNome.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtNome.Location = new System.Drawing.Point(5, 15);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNome.MaxLength = 32767;
-            this.txtNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtNome.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -232,7 +232,7 @@
             // 
             this.btnImgAdicionar.Description = "Adicionar";
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgAdicionar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnImgAdicionar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnImgAdicionar.ImageLocation = null;
             this.btnImgAdicionar.Location = new System.Drawing.Point(100, 15);
             this.btnImgAdicionar.Name = "btnImgAdicionar";
@@ -244,7 +244,7 @@
             // 
             // picImagem
             // 
-            this.picImagem.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.imagem;
+            this.picImagem.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.imagem;
             this.picImagem.Location = new System.Drawing.Point(505, 55);
             this.picImagem.Name = "picImagem";
             this.picImagem.Size = new System.Drawing.Size(190, 190);
@@ -284,7 +284,7 @@
             // 
             this.btnIngredienteAdd.Description = "Adicionar";
             this.btnIngredienteAdd.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngredienteAdd.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnIngredienteAdd.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnIngredienteAdd.ImageLocation = null;
             this.btnIngredienteAdd.Location = new System.Drawing.Point(100, 15);
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
@@ -298,7 +298,7 @@
             // 
             this.btnIngredientes.Description = "Visualizar";
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngredientes.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.lista;
+            this.btnIngredientes.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.lista;
             this.btnIngredientes.ImageLocation = null;
             this.btnIngredientes.Location = new System.Drawing.Point(10, 15);
             this.btnIngredientes.Name = "btnIngredientes";
@@ -337,24 +337,24 @@
         }
 
         #endregion
-        public UIX.hdrUIX hdrUIX;
+        public vitorrdgs.UiX.Component.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnVoltar;
-        private UIX.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
+        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
         public System.Windows.Forms.GroupBox grbDadosPessoais;
-        private UIX.txtUIX txtValor;
-        private UIX.cboUIX cboTipo;
-        private UIX.txtUIX txtNome;
-        private UIX.btnUIX btnImgRemover;
-        private UIX.btnUIX btnImgAdicionar;
+        private vitorrdgs.UiX.Component.txtUIX txtValor;
+        private vitorrdgs.UiX.Component.cboUIX cboTipo;
+        private vitorrdgs.UiX.Component.txtUIX txtNome;
+        private vitorrdgs.UiX.Component.btnUIX btnImgRemover;
+        private vitorrdgs.UiX.Component.btnUIX btnImgAdicionar;
         private System.Windows.Forms.PictureBox picImagem;
         public System.Windows.Forms.GroupBox grbImagem;
-        private UIX.cboUIX cboSituacao;
-        private UIX.btnUIX btnExcluir;
-        private UIX.txtUIX txtDesc;
+        private vitorrdgs.UiX.Component.cboUIX cboSituacao;
+        private vitorrdgs.UiX.Component.btnUIX btnExcluir;
+        private vitorrdgs.UiX.Component.txtUIX txtDesc;
         public System.Windows.Forms.GroupBox grbIngredientes;
-        private UIX.btnUIX btnIngredienteAdd;
-        private UIX.btnUIX btnIngredientes;
+        private vitorrdgs.UiX.Component.btnUIX btnIngredienteAdd;
+        private vitorrdgs.UiX.Component.btnUIX btnIngredientes;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

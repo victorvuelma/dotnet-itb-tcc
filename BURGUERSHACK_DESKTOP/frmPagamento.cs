@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmPagamento : Form
     {
@@ -74,7 +75,7 @@ namespace BURGUERSHACK_DESKTOP
                     }
                     if (obterValorPago() > obterValorAPagar())
                     {
-                        clnUtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.", clnUtilMensagem.MensagemIcone.ERRO);
+                        clnUtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.");
                         return;
                     }
                     int codForma = -1;
@@ -97,7 +98,7 @@ namespace BURGUERSHACK_DESKTOP
                     };
                     ObjPagamento.gravar();
 
-                    clnUtilMensagem.mostrarOk("Novo pagamento", "Pagamento registrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Novo pagamento", "Pagamento registrado com sucesso!");
                     Close();
                 }
             }
@@ -156,7 +157,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.");
             }
             return false;
         }
@@ -249,7 +250,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             hdrUIX.Title = App.Name + " - Novo Pagamento";
             lblValorTotal.Text = clnUtilFormatar.formatarValor(obterValorAPagar());

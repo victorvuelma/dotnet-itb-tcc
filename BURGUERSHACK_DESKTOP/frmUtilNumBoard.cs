@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
+using vitorrdgs.Utl.Form;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmUtilNumBoard : Form
     {
@@ -163,7 +165,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmUtilNumBoard_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixMaskedTextBox.mtbApply(mtbNum, AppDesktop.VisualStyle.ContentColor);
+            uixMaskedTextBox.mtbApply(mtbNum, AppDesktop.VisualStyle.ContentColor);
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -228,7 +230,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             if (Mode == NumBoardMode.MONEY)
             {
-                UIX.uixUtil.defineForMoney(mtbNum);
+                UtilFormValor.defineForMoney(mtbNum);
             }
         }
     }

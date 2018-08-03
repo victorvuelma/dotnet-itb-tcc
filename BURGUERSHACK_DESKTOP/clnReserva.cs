@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using SQL_POWERUP;
+using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON;
+using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.SqlMaster.Element;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class clnReserva
     {
@@ -123,9 +125,9 @@ namespace BURGUERSHACK_DESKTOP
             objSelect.Columns.select("mesa.id");
             objSelect.Join.innerJoin("reserva_mesa", "id_mesa", "mesa.id")
                           .innerJoin("reserva", "id", "reserva_mesa.id_reserva");
-            objSelect.Where.where("reserva.agendado", sqlObjWhereCommon.whereOperation.MAJOR_EQUALS, Agendado)
-                           .where("reserva.agendado", sqlObjWhereCommon.whereOperation.LESS, Agendado.AddDays(1))
-                           .where("reserva.situacao", sqlObjWhereCommon.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
+            objSelect.Where.where("reserva.agendado", sqlElementWhereCommon.whereOperation.MAJOR_EQUALS, Agendado)
+                           .where("reserva.agendado", sqlElementWhereCommon.whereOperation.LESS, Agendado.AddDays(1))
+                           .where("reserva.situacao", sqlElementWhereCommon.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
 
             List<int> objMesas = new List<int>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);

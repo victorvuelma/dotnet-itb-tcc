@@ -137,19 +137,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UTIL\clnUtilCache.cs" />
-    <Compile Include="UTIL\clnUtilCallback.cs" />
-    <Compile Include="UTIL\clnUtilConvert.cs" />
-    <Compile Include="UTIL\clnUtilEndereco.cs" />
-    <Compile Include="UTIL\clnUtilFormatar.cs" />
-    <Compile Include="UTIL\clnUtilValidar.cs" />
+    <Compile Include="Util\clnUtilCache.cs" />
+    <Compile Include="Util\clnUtilCallback.cs" />
+    <Compile Include="Util\clnUtilConvert.cs" />
+    <Compile Include="Util\clnUtilEndereco.cs" />
+    <Compile Include="Util\clnUtilFormatar.cs" />
+    <Compile Include="Util\clnUtilValidar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SQL_POWERUP\SQL_POWERUP.csproj">
-      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
-      <Name>SQL_POWERUP</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -164,6 +158,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\html_template_conta.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\COMMON\SQLMASTER\SQLMASTER.csproj">
+      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
+      <Name>SQLMASTER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\COMMON\UTIL\UTIL.csproj">
+      <Project>{94c33f17-938d-4605-8715-0bf21c28a997}</Project>
+      <Name>UTIL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />

@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmReserva
     {
@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnAtendimento = new UIX.btnUIX();
-            this.btnVoltar = new UIX.btnUIX();
-            this.btnSalvar = new UIX.btnUIX();
+            this.btnAtendimento = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.btnCliEncontrar = new UIX.btnUIX();
-            this.mtbCliCPF = new UIX.mtbUIX();
+            this.btnCliEncontrar = new vitorrdgs.UiX.Component.btnUIX();
+            this.mtbCliCPF =new vitorrdgs.UiX.Component.mtbUIX();
             this.grbReserva = new System.Windows.Forms.GroupBox();
-            this.mtbHora = new UIX.mtbUIX();
-            this.txtPessoas = new UIX.txtUIX();
-            this.mtbData = new UIX.mtbUIX();
+            this.mtbHora =new vitorrdgs.UiX.Component.mtbUIX();
+            this.txtPessoas = new vitorrdgs.UiX.Component.txtUIX();
+            this.mtbData =new vitorrdgs.UiX.Component.mtbUIX();
             this.grbMesas = new System.Windows.Forms.GroupBox();
-            this.btnMesaVer = new UIX.btnUIX();
-            this.btnMesaAdd = new UIX.btnUIX();
-            this.hdrUIX = new UIX.hdrUIX();
+            this.btnMesaVer = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnMesaAdd = new vitorrdgs.UiX.Component.btnUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.grbSituacao = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new UIX.btnUIX();
-            this.btnConfirmar = new UIX.btnUIX();
+            this.btnCancelar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnConfirmar = new vitorrdgs.UiX.Component.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbCliente.SuspendLayout();
             this.grbReserva.SuspendLayout();
@@ -68,7 +68,7 @@
             // 
             this.btnAtendimento.Description = "Atendimento";
             this.btnAtendimento.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAtendimento.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.atendimento;
+            this.btnAtendimento.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.atendimento;
             this.btnAtendimento.ImageLocation = null;
             this.btnAtendimento.Location = new System.Drawing.Point(5, 105);
             this.btnAtendimento.Name = "btnAtendimento";
@@ -81,7 +81,7 @@
             // 
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
@@ -94,7 +94,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 205);
@@ -127,7 +127,7 @@
             // 
             this.btnCliEncontrar.Description = "Encontrar";
             this.btnCliEncontrar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCliEncontrar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.cliente;
+            this.btnCliEncontrar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.cliente;
             this.btnCliEncontrar.ImageLocation = null;
             this.btnCliEncontrar.Location = new System.Drawing.Point(255, 15);
             this.btnCliEncontrar.Name = "btnCliEncontrar";
@@ -141,7 +141,7 @@
             this.mtbCliCPF.AcceptButton = this.btnCliEncontrar;
             this.mtbCliCPF.AccessibleName = "CPF";
             this.mtbCliCPF.Campo = "CPF";
-            this.mtbCliCPF.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.mtbCliCPF.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbCliCPF.Location = new System.Drawing.Point(5, 20);
             this.mtbCliCPF.Mask = "";
             this.mtbCliCPF.MaxLength = 32767;
@@ -167,7 +167,7 @@
             this.mtbHora.AcceptButton = null;
             this.mtbHora.AccessibleName = "Hora";
             this.mtbHora.Campo = "Hora";
-            this.mtbHora.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.mtbHora.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbHora.Location = new System.Drawing.Point(127, 20);
             this.mtbHora.Mask = "";
             this.mtbHora.MaxLength = 32767;
@@ -180,9 +180,9 @@
             // 
             this.txtPessoas.AcceptButton = null;
             this.txtPessoas.AccessibleName = "Pessoas";
-            this.txtPessoas.Mode = UIX.uixEnum.uixTextBoxMode.INT;
+            this.txtPessoas.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtPessoas.Campo = "Pessoas";
-            this.txtPessoas.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtPessoas.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtPessoas.Location = new System.Drawing.Point(230, 20);
             this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPessoas.MaxLength = 32767;
@@ -197,7 +197,7 @@
             this.mtbData.AcceptButton = null;
             this.mtbData.AccessibleName = "Dia";
             this.mtbData.Campo = "Dia";
-            this.mtbData.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.mtbData.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbData.Location = new System.Drawing.Point(5, 20);
             this.mtbData.Mask = "";
             this.mtbData.MaxLength = 32767;
@@ -222,7 +222,7 @@
             // 
             this.btnMesaVer.Description = "Visualizar";
             this.btnMesaVer.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesaVer.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.lista;
+            this.btnMesaVer.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.lista;
             this.btnMesaVer.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMesaVer.ImageLocation = null;
             this.btnMesaVer.Location = new System.Drawing.Point(85, 15);
@@ -236,7 +236,7 @@
             // 
             this.btnMesaAdd.Description = "Adicionar";
             this.btnMesaAdd.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesaAdd.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnMesaAdd.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnMesaAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMesaAdd.ImageLocation = null;
             this.btnMesaAdd.Location = new System.Drawing.Point(10, 15);
@@ -251,7 +251,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.reserva;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.reserva;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -275,7 +275,7 @@
             // 
             this.btnCancelar.Description = "Cancelar";
             this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.excluir;
+            this.btnCancelar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.excluir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancelar.ImageLocation = null;
             this.btnCancelar.Location = new System.Drawing.Point(85, 15);
@@ -289,7 +289,7 @@
             // 
             this.btnConfirmar.Description = "Confirmar";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.confirmar;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnConfirmar.ImageLocation = null;
             this.btnConfirmar.Location = new System.Drawing.Point(10, 15);
@@ -329,24 +329,24 @@
 
         #endregion
 
-        private UIX.hdrUIX hdrUIX;
-        private UIX.btnUIX btnSalvar;
-        private UIX.btnUIX btnVoltar;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.GroupBox grbCliente;
-        private UIX.mtbUIX mtbCliCPF;
-        private UIX.btnUIX btnCliEncontrar;
+        private vitorrdgs.UiX.Component.mtbUIX mtbCliCPF;
+        private vitorrdgs.UiX.Component.btnUIX btnCliEncontrar;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.GroupBox grbReserva;
-        private UIX.mtbUIX mtbData;
-        private UIX.mtbUIX mtbHora;
-        private UIX.txtUIX txtPessoas;
-        private UIX.btnUIX btnMesaAdd;
-        private UIX.btnUIX btnMesaVer;
+        private vitorrdgs.UiX.Component.mtbUIX mtbData;
+        private vitorrdgs.UiX.Component.mtbUIX mtbHora;
+        private vitorrdgs.UiX.Component.txtUIX txtPessoas;
+        private vitorrdgs.UiX.Component.btnUIX btnMesaAdd;
+        private vitorrdgs.UiX.Component.btnUIX btnMesaVer;
         private System.Windows.Forms.GroupBox grbMesas;
-        private UIX.btnUIX btnAtendimento;
+        private vitorrdgs.UiX.Component.btnUIX btnAtendimento;
         private System.Windows.Forms.GroupBox grbSituacao;
-        private UIX.btnUIX btnCancelar;
-        private UIX.btnUIX btnConfirmar;
+        private vitorrdgs.UiX.Component.btnUIX btnCancelar;
+        private vitorrdgs.UiX.Component.btnUIX btnConfirmar;
     }
 }

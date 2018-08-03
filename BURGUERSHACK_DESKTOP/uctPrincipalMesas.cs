@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
+using vitorrdgs.UiX.Property;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class uctPrincipalMesas : UserControl
     {
@@ -29,7 +31,7 @@ namespace BURGUERSHACK_DESKTOP
             List<Control> mesaControles = new List<Control>();
             foreach (clnMesa objMesa in new clnMesa().obterMesas())
             {
-                UIX.btnUIX btn = new UIX.btnUIX
+                btnUIX btn = new btnUIX
                 {
                     Description = "MESA " + objMesa.Cod,
                     Name = "btnMesa" + objMesa.Cod,
@@ -104,8 +106,8 @@ namespace BURGUERSHACK_DESKTOP
 
         private void uctPedidoMesa_Load(object sender, EventArgs e)
         {
-            pnlLivre.BackColor = UIX.uixColor.WHITE;
-            pnlOcupada.BackColor = UIX.uixColor.INDIGO_DARK;
+            pnlLivre.BackColor = uixColor.WHITE;
+            pnlOcupada.BackColor = uixColor.INDIGO_DARK;
 
             exibirMesas();
         }

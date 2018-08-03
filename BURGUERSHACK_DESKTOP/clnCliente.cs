@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using SQL_POWERUP;
+using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON;
+using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.SqlMaster.Element;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class clnCliente
     {
@@ -83,8 +85,8 @@ namespace BURGUERSHACK_DESKTOP
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("cliente");
-            objSelect.Where.where("nome", sqlObjWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlObjWhere.whereAssociation.OR)
-                           .where("cpf", sqlObjWhereCommon.whereOperation.LIKE, Cpf + "%");
+            objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlElementWhere.whereAssociation.OR)
+                           .where("cpf", sqlElementWhereCommon.whereOperation.LIKE, Cpf + "%");
                     
 
             List<clnCliente> objClientes = new List<clnCliente>();

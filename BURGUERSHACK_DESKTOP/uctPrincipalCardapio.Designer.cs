@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class uctPrincipalCardapio
     {
@@ -30,7 +30,7 @@
         {
             this.grbProdutoRemover = new System.Windows.Forms.GroupBox();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
-            this.txtPesquisa = new UIX.txtUIX();
+            this.txtPesquisa = new vitorrdgs.UiX.Component.txtUIX();
             this.rdbLanches = new System.Windows.Forms.RadioButton();
             this.rdbBebidas = new System.Windows.Forms.RadioButton();
             this.grbProdutoRemover.SuspendLayout();
@@ -110,6 +110,6 @@
         private System.Windows.Forms.DataGridView dgvPedidos;
         private System.Windows.Forms.RadioButton rdbBebidas;
         private System.Windows.Forms.RadioButton rdbLanches;
-        private UIX.txtUIX txtPesquisa;
+        private vitorrdgs.UiX.Component.txtUIX txtPesquisa;
     }
 }

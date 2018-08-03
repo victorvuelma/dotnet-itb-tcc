@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmUtilVisualizar
     {
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
-            this.uctOpcoes = new BURGUERSHACK_DESKTOP.uctUtilListar();
-            this.hdrUIX = new UIX.hdrUIX();
+            this.uctOpcoes = new BURGERSHACK_DESKTOP.uctUtilListar();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
-            this.txtPesquisar = new UIX.txtUIX();
-            this.btnPesquisar = new UIX.btnUIX();
+            this.txtPesquisar = new vitorrdgs.UiX.Component.txtUIX();
+            this.btnPesquisar = new vitorrdgs.UiX.Component.btnUIX();
             this.grbOpcoes.SuspendLayout();
             this.grbPesquisa.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.lista;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.lista;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -96,11 +96,11 @@
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
             this.txtPesquisar.Campo = "Pesquisar por";
-            this.txtPesquisar.LabelPosition = UIX.uixEnum.uixLabelPosition.UP;
+            this.txtPesquisar.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 20);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisar.MaxLength = 32767;
-            this.txtPesquisar.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtPesquisar.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -112,7 +112,7 @@
             // 
             this.btnPesquisar.Description = "Pesquisar";
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.pesquisar;
+            this.btnPesquisar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
             this.btnPesquisar.Location = new System.Drawing.Point(485, 15);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -145,11 +145,11 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grbOpcoes;
-        private UIX.hdrUIX hdrUIX;
-        private BURGUERSHACK_DESKTOP.uctUtilListar uctOpcoes;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private BURGERSHACK_DESKTOP.uctUtilListar uctOpcoes;
         private System.Windows.Forms.GroupBox grbPesquisa;
         private System.Windows.Forms.Label lblPesquisaRes;
-        private UIX.txtUIX txtPesquisar;
-        private UIX.btnUIX btnPesquisar;
+        private vitorrdgs.UiX.Component.txtUIX txtPesquisar;
+        private vitorrdgs.UiX.Component.btnUIX btnPesquisar;
     }
 }

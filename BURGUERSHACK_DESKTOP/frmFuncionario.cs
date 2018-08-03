@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmFuncionario : Form
     {
@@ -125,12 +126,12 @@ namespace BURGUERSHACK_DESKTOP
                         };
                         objFuncionario.gravar();
                         ObjFuncionario = objFuncionario;
-                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Funcionário cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Funcionário cadastrado com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Não foi possível cadastrar o funcionário, o CPF já está cadastrado!", clnUtilMensagem.MensagemIcone.ERRO);
+                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Não foi possível cadastrar o funcionário, o CPF já está cadastrado!");
                         mtbCPF.Focus();
                     }
                 }
@@ -154,7 +155,7 @@ namespace BURGUERSHACK_DESKTOP
                     ObjFuncionario.EndLocalidade = txtEndCidade.Text;
                     ObjFuncionario.EndUF = cboEndUF.Text;
                     ObjFuncionario.alterar();
-                    clnUtilMensagem.mostrarOk("Alteração de Funcionário", "Funcionário alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Alteração de Funcionário", "Funcionário alterado com sucesso!");
                     Close();
                 }
             }
@@ -180,7 +181,7 @@ namespace BURGUERSHACK_DESKTOP
 
         private void definirImagemPadrao()
         {
-            picImagem.ImageLocation = clnArquivo.tempImage(global::BURGUERSHACK_DESKTOP.Properties.Resources.ingrediente);
+            picImagem.ImageLocation = clnArquivo.tempImage(global::BURGERSHACK_DESKTOP.Properties.Resources.ingrediente);
         }
 
         private void adicionarImagem()
@@ -219,7 +220,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmCliente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr, txtEndComplemento);
 

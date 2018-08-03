@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmReserva : Form
     {
@@ -73,7 +74,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.");
             }
             return false;
         }
@@ -190,12 +191,12 @@ namespace BURGUERSHACK_DESKTOP
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Mesas", "Não há mais mesas disponiveis para esta data.", clnUtilMensagem.MensagemIcone.ERRO);
+                    clnUtilMensagem.mostrarOk("Mesas", "Não há mais mesas disponiveis para esta data.");
                 }
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Mesas", "É necessário informar a data da reserva antes de adicionar mesas.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Mesas", "É necessário informar a data da reserva antes de adicionar mesas.");
             }
         }
 
@@ -231,7 +232,7 @@ namespace BURGUERSHACK_DESKTOP
 
                             ObjReserva.gravar();
 
-                            clnUtilMensagem.mostrarOk("Nova Reserva", "Reserva realizada com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                            clnUtilMensagem.mostrarOk("Nova Reserva", "Reserva realizada com sucesso!");
                             Close();
                         }
                     }
@@ -240,17 +241,17 @@ namespace BURGUERSHACK_DESKTOP
                         ObjReserva.Pessoas = clnUtilConvert.ToInt(txtPessoas.Text);
                         ObjReserva.alterar();
 
-                        clnUtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                        clnUtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Alteração de Reserva", "Não é possivel alterar esta reserva.", clnUtilMensagem.MensagemIcone.ERRO);
+                        clnUtilMensagem.mostrarOk("Alteração de Reserva", "Não é possivel alterar esta reserva.");
                     }
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Mesas", "É necessário selecionar pelo menos 1 mesa.", clnUtilMensagem.MensagemIcone.ERRO);
+                    clnUtilMensagem.mostrarOk("Mesas", "É necessário selecionar pelo menos 1 mesa.");
                 }
             }
         }
@@ -267,7 +268,7 @@ namespace BURGUERSHACK_DESKTOP
                     if (ObjReserva.CodMesas.Count > 0)
                     {
                         ObjReserva.CodMesas.Clear();
-                        clnUtilMensagem.mostrarOk("Mesas", "Como você alterou a data da reserva, sera necessário redefinir as mesas", clnUtilMensagem.MensagemIcone.INFO);
+                        clnUtilMensagem.mostrarOk("Mesas", "Como você alterou a data da reserva, sera necessário redefinir as mesas");
                     }
                 }
             }
@@ -312,12 +313,12 @@ namespace BURGUERSHACK_DESKTOP
                         objAtendimento.adicionarMesa(codMesa);
                     }
 
-                    clnUtilMensagem.mostrarOk("Reserva", "O atendimento foi iniciado para a(s) mesa(s) " + String.Join(",", ObjReserva.CodMesas.ToArray()), clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Reserva", "O atendimento foi iniciado para a(s) mesa(s) " + String.Join(",", ObjReserva.CodMesas.ToArray()));
                     Close();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Reserva", "Não foi possível iniciar o atendimento, a(s) mesa(s) " + String.Join(",", objMesasIndisponiveis.ToArray()) + " estão ocupadas.", clnUtilMensagem.MensagemIcone.ERRO);
+                    clnUtilMensagem.mostrarOk("Reserva", "Não foi possível iniciar o atendimento, a(s) mesa(s) " + String.Join(",", objMesasIndisponiveis.ToArray()) + " estão ocupadas.");
                 }
             }
         }
@@ -328,7 +329,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CONFIRMADA;
                 ObjReserva.alterar();
-                clnUtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                clnUtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!");
                 grbSituacao.Hide();
             }
         }
@@ -339,7 +340,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CANCELADA;
                 ObjReserva.alterar();
-                clnUtilMensagem.mostrarOk("Reserva", "Reserva CANCELADA com sucesso!", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Reserva", "Reserva CANCELADA com sucesso!");
                 Close();
             }
         }
@@ -347,7 +348,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmReserva_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             btnAtendimento.Hide();
             grbSituacao.Hide();

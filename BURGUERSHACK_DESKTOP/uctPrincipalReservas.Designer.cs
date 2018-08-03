@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class uctPrincipalReservas
     {
@@ -32,7 +32,7 @@
             this.pnlReservas = new System.Windows.Forms.Panel();
             this.dtpListar = new System.Windows.Forms.DateTimePicker();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnNova = new UIX.btnUIX();
+            this.btnNova = new vitorrdgs.UiX.Component.btnUIX();
             this.grbListar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +76,7 @@
             // 
             this.btnNova.Description = "Nova Reserva";
             this.btnNova.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNova.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNova.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
             this.btnNova.ImageLocation = null;
             this.btnNova.Location = new System.Drawing.Point(5, 5);
             this.btnNova.Name = "btnNova";
@@ -108,6 +108,6 @@
         private System.Windows.Forms.DateTimePicker dtpListar;
         private System.Windows.Forms.Panel pnlReservas;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnNova;
+        private vitorrdgs.UiX.Component.btnUIX btnNova;
     }
 }

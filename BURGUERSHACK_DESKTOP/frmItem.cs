@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmItem : Form
     {
@@ -139,7 +140,7 @@ namespace BURGUERSHACK_DESKTOP
                     clnUtilPedido.adicionarIngrediente(ObjItemIngredientes, objItemIngrediente);
                 }
 
-                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!");
             }
         }
 
@@ -160,7 +161,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmPedidoProduto_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnRemover, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnRemover, AppDesktop.VisualStyle.ButtonWarningColor);
 
             hdrUIX.Title = App.Name + "- Pedido :: Alterando Item " + ObjItem.Cod;
 
@@ -261,7 +262,7 @@ namespace BURGUERSHACK_DESKTOP
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.", clnUtilMensagem.MensagemIcone.ERRO);
+                        clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
                     }
                 }
                 return clnUtilVisualizar.VisualizarResult.FECHAR;

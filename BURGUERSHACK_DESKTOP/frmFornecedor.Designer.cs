@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmFornecedor
     {
@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnCancelar = new UIX.btnUIX();
-            this.btnSalvar = new UIX.btnUIX();
+            this.btnCancelar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
-            this.txtEmail = new UIX.txtUIX();
-            this.mtbTel = new UIX.mtbUIX();
-            this.mtbCNPJ = new UIX.mtbUIX();
-            this.txtRazaoSocial = new UIX.txtUIX();
-            this.hdrUIX = new UIX.hdrUIX();
+            this.txtEmail = new vitorrdgs.UiX.Component.txtUIX();
+            this.mtbTel =new vitorrdgs.UiX.Component.mtbUIX();
+            this.mtbCNPJ =new vitorrdgs.UiX.Component.mtbUIX();
+            this.txtRazaoSocial = new vitorrdgs.UiX.Component.txtUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
-            this.txtEndComplemento = new UIX.txtUIX();
-            this.txtEndCidade = new UIX.txtUIX();
-            this.txtEndBairro = new UIX.txtUIX();
-            this.mtbEndCEP = new UIX.mtbUIX();
-            this.cboEndUF = new UIX.cboUIX();
-            this.txtEndLogradouro = new UIX.txtUIX();
-            this.txtEndNr = new UIX.txtUIX();
+            this.txtEndComplemento = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtEndCidade = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtEndBairro = new vitorrdgs.UiX.Component.txtUIX();
+            this.mtbEndCEP =new vitorrdgs.UiX.Component.mtbUIX();
+            this.cboEndUF = new vitorrdgs.UiX.Component.cboUIX();
+            this.txtEndLogradouro = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtEndNr = new vitorrdgs.UiX.Component.txtUIX();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.btnCancelar.Description = "Cancelar";
             this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnCancelar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
             this.btnCancelar.ImageLocation = null;
             this.btnCancelar.Location = new System.Drawing.Point(5, 5);
             this.btnCancelar.Name = "btnCancelar";
@@ -76,7 +76,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 205);
@@ -102,9 +102,9 @@
             // txtEmail
             // 
             this.txtEmail.AccessibleName = "E-mail";
-            this.txtEmail.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtEmail.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtEmail.Campo = "E-mail*";
-            this.txtEmail.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtEmail.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEmail.Location = new System.Drawing.Point(5, 78);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.MaxLength = 32767;
@@ -118,7 +118,7 @@
             // 
             this.mtbTel.AccessibleName = "Tel. Cel.*";
             this.mtbTel.Campo = "Telefone*";
-            this.mtbTel.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.mtbTel.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbTel.Location = new System.Drawing.Point(5, 110);
             this.mtbTel.Mask = "";
             this.mtbTel.MaxLength = 32767;
@@ -131,7 +131,7 @@
             // 
             this.mtbCNPJ.AccessibleName = "CPF*";
             this.mtbCNPJ.Campo = "CNPJ*";
-            this.mtbCNPJ.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.mtbCNPJ.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbCNPJ.Location = new System.Drawing.Point(5, 50);
             this.mtbCNPJ.Mask = "";
             this.mtbCNPJ.MaxLength = 32767;
@@ -143,9 +143,9 @@
             // txtRazaoSocial
             // 
             this.txtRazaoSocial.AccessibleName = "Nome*";
-            this.txtRazaoSocial.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtRazaoSocial.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtRazaoSocial.Campo = "Razão Social*";
-            this.txtRazaoSocial.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtRazaoSocial.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtRazaoSocial.Location = new System.Drawing.Point(5, 20);
             this.txtRazaoSocial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRazaoSocial.MaxLength = 32767;
@@ -160,7 +160,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.fornecedor;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.fornecedor;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -191,9 +191,9 @@
             // txtEndComplemento
             // 
             this.txtEndComplemento.AccessibleName = "Complemento";
-            this.txtEndComplemento.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtEndComplemento.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtEndComplemento.Campo = "Complemento";
-            this.txtEndComplemento.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtEndComplemento.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndComplemento.Location = new System.Drawing.Point(135, 80);
             this.txtEndComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndComplemento.MaxLength = 100;
@@ -206,9 +206,9 @@
             // txtEndCidade
             // 
             this.txtEndCidade.AccessibleName = "Cidade*";
-            this.txtEndCidade.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtEndCidade.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtEndCidade.Campo = "Cidade*";
-            this.txtEndCidade.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtEndCidade.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndCidade.Location = new System.Drawing.Point(150, 110);
             this.txtEndCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndCidade.MaxLength = 100;
@@ -221,9 +221,9 @@
             // txtEndBairro
             // 
             this.txtEndBairro.AccessibleName = "Bairro*";
-            this.txtEndBairro.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtEndBairro.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtEndBairro.Campo = "Bairro*";
-            this.txtEndBairro.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtEndBairro.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndBairro.Location = new System.Drawing.Point(5, 110);
             this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndBairro.MaxLength = 100;
@@ -237,7 +237,7 @@
             // 
             this.mtbEndCEP.AccessibleName = "CEP*";
             this.mtbEndCEP.Campo = "CEP*";
-            this.mtbEndCEP.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.mtbEndCEP.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbEndCEP.Location = new System.Drawing.Point(5, 20);
             this.mtbEndCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mtbEndCEP.Mask = "";
@@ -252,7 +252,7 @@
             this.cboEndUF.AccessibleName = "Estado*";
             this.cboEndUF.Campo = "UF*";
             this.cboEndUF.FormattingEnabled = true;
-            this.cboEndUF.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.cboEndUF.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.cboEndUF.Location = new System.Drawing.Point(305, 110);
             this.cboEndUF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboEndUF.Name = "cboEndUF";
@@ -262,9 +262,9 @@
             // txtEndLogradouro
             // 
             this.txtEndLogradouro.AccessibleName = "Logradouro*";
-            this.txtEndLogradouro.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtEndLogradouro.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtEndLogradouro.Campo = "Logradouro*";
-            this.txtEndLogradouro.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtEndLogradouro.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndLogradouro.Location = new System.Drawing.Point(5, 50);
             this.txtEndLogradouro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndLogradouro.MaxLength = 100;
@@ -277,9 +277,9 @@
             // txtEndNr
             // 
             this.txtEndNr.AccessibleName = "Número*";
-            this.txtEndNr.Mode = UIX.uixEnum.uixTextBoxMode.INT;
+            this.txtEndNr.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtEndNr.Campo = "Número*";
-            this.txtEndNr.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtEndNr.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndNr.Location = new System.Drawing.Point(5, 80);
             this.txtEndNr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEndNr.MaxLength = 100;
@@ -315,22 +315,22 @@
 
         #endregion
 
-        private UIX.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnCancelar;
-        private UIX.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.btnUIX btnCancelar;
+        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
         private System.Windows.Forms.GroupBox grbInformacoes;
-        private UIX.txtUIX txtRazaoSocial;
-        private UIX.txtUIX txtEmail;
-        private UIX.mtbUIX mtbTel;
-        public UIX.mtbUIX mtbCNPJ;
+        private vitorrdgs.UiX.Component.txtUIX txtRazaoSocial;
+        private vitorrdgs.UiX.Component.txtUIX txtEmail;
+        private vitorrdgs.UiX.Component.mtbUIX mtbTel;
+        public vitorrdgs.UiX.Component.mtbUIX mtbCNPJ;
         public System.Windows.Forms.GroupBox grpEndereco;
-        public UIX.txtUIX txtEndComplemento;
-        public UIX.txtUIX txtEndCidade;
-        public UIX.txtUIX txtEndBairro;
-        public UIX.mtbUIX mtbEndCEP;
-        public UIX.cboUIX cboEndUF;
-        public UIX.txtUIX txtEndLogradouro;
-        public UIX.txtUIX txtEndNr;
+        public vitorrdgs.UiX.Component.txtUIX txtEndComplemento;
+        public vitorrdgs.UiX.Component.txtUIX txtEndCidade;
+        public vitorrdgs.UiX.Component.txtUIX txtEndBairro;
+        public vitorrdgs.UiX.Component.mtbUIX mtbEndCEP;
+        public vitorrdgs.UiX.Component.cboUIX cboEndUF;
+        public vitorrdgs.UiX.Component.txtUIX txtEndLogradouro;
+        public vitorrdgs.UiX.Component.txtUIX txtEndNr;
     }
 }

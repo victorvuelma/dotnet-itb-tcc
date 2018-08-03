@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmCliente : Form
     {
@@ -68,12 +69,12 @@ namespace BURGUERSHACK_DESKTOP
                         };
                         objCliente.gravar();
                         ObjCliente = objCliente;
-                        clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                        clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Não foi possível cadastrar o cliente, o CPF já está cadastrado!", clnUtilMensagem.MensagemIcone.ERRO);
+                        clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Não foi possível cadastrar o cliente, o CPF já está cadastrado!");
                         mtbCPF.Focus();
                     }
                 }
@@ -85,7 +86,7 @@ namespace BURGUERSHACK_DESKTOP
                     ObjCliente.TelCelular = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text);
                     ObjCliente.Genero = cboGenero.Text;
                     ObjCliente.alterar();
-                    clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!");
                     Close();
                 }
             }
@@ -112,7 +113,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmCliente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             if (ObjCliente == null)
             {

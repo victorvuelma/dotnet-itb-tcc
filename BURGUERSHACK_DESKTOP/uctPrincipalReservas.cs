@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class uctPrincipalReservas : UserControl
     {
@@ -34,7 +35,7 @@ namespace BURGUERSHACK_DESKTOP
             List<Control> reservasControles = new List<Control>();
             foreach (clnReserva objReserva in objReservas.obterPorDataAgendada())
             {
-                UIX.btnLabelUIX btn = new UIX.btnLabelUIX
+                btnLabelUIX btn = new btnLabelUIX
                 {
                     Description = ("RESERVA #" + objReserva.Cod + " - " + objReserva.Agendado.ToString("HH:mm") +
                                     "\n" + objReserva.Situacao +

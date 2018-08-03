@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
 
     public abstract class clnUtilListar

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BURGUERSHACK_COMMON.Properties {
+namespace BURGERSHACK_COMMON.Properties {
     using System;
     
     

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using UIX;
+using vitorrdgs.UiX;
 using System.Drawing;
+using vitorrdgs.UiX.Component;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class clnUtilMensagem
     {
@@ -24,46 +25,12 @@ namespace BURGUERSHACK_DESKTOP
 
         public static bool mostrarSimNao(String titulo, String mensagem, MensagemIcone icone)
         {
-            return (mostrarMensagem(titulo, mensagem, icone, OP_S_N).Result == 2);
+            return (msgUIX.confirmarSim(AppDesktop.VisualTemplate, titulo, mensagem).Equals(msgUIX.MessageResult.YES));
         }
 
-        public static void mostrarOk(String titulo, String mensagem, MensagemIcone icone)
+        public static void mostrarOk(String titulo, String mensagem)
         {
-            mostrarMensagem(titulo, mensagem, icone, OP_OK);
-        }
-
-        private static msgUIX mostrarMensagem(String titulo, String mensagem, MensagemIcone icone, int tipo)
-        {
-            msgUIX msg = msgUIX.messageBox(titulo, mensagem, Icone(icone), AppDesktop.VisualTemplate);
-
-            switch (tipo)
-            {
-                case 0:
-                    msg.btnYes.Text = "Ok";
-                    msg.btnNo.Visible = false;
-                    break;
-                case 1:
-                    msg.btnYes.Text = "Sim";
-                    msg.btnNo.Text = "Não";
-                    break;
-            }
-
-            msg.ShowDialog();
-
-            return msg;
-        }
-
-        private static Image Icone(MensagemIcone tipo)
-        {
-            switch (tipo)
-            {
-                case MensagemIcone.ERRO:
-                    return Properties.Resources.erro;
-                case MensagemIcone.INFO:
-                    return Properties.Resources.info;
-                default:
-                    return Properties.Resources.confirmar;
-            }
+            msgUIX.mostrarOk(AppDesktop.VisualTemplate, titulo, mensagem);
         }
 
     }

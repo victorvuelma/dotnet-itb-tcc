@@ -1,4 +1,4 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UIX;
+using vitorrdgs.UiX;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmGerenciamento : Form
     {
@@ -85,7 +86,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmGerenciador_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             abrirFuncionarios();
         }

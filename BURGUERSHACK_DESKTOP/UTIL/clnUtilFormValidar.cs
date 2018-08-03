@@ -1,4 +1,4 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
+using vitorrdgs.UiX.Manager;
 using static System.Windows.Forms.Control;
 
-namespace BURGUERSHACK_DESKTOP.UTIL
+namespace BURGERSHACK_DESKTOP.UTIL
 {
     class clnUtilFormValidar
     {
@@ -41,15 +43,15 @@ namespace BURGUERSHACK_DESKTOP.UTIL
 
         public void addValidacao(Control control, Validacao[] validacoes)
         {
-            if (control is UIX.cboUIX cbo)
+            if (control is cboUIX cbo)
             {
                 control = cbo.cbo;
             }
-            else if (control is UIX.mtbUIX mtb)
+            else if (control is vitorrdgs.UiX.Component.mtbUIX mtb)
             {
                 control = mtb.mtb;
             }
-            else if (control is UIX.txtUIX txt)
+            else if (control is txtUIX txt)
             {
                 control = txt.txt;
             }
@@ -69,7 +71,7 @@ namespace BURGUERSHACK_DESKTOP.UTIL
 
             if (!frmValido)
             {
-                clnUtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString(), clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString());
             }
 
             return frmValido;
@@ -82,7 +84,7 @@ namespace BURGUERSHACK_DESKTOP.UTIL
 
             if (!uctValido)
             {
-                clnUtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString(), clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString());
             }
 
             return uctValido;
@@ -259,22 +261,22 @@ namespace BURGUERSHACK_DESKTOP.UTIL
                 {
                     if (control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt, AppDesktop.VisualStyle.BoxWarningColor);
+                        uixTextBox.txtApply(txt, AppDesktop.VisualStyle.BoxWarningColor);
                     }
                     else if (control is ComboBox cbo)
                     {
-                        UIX.uixComboBox.cboApply(cbo, AppDesktop.VisualStyle.BoxWarningColor);
+                        uixComboBox.cboApply(cbo, AppDesktop.VisualStyle.BoxWarningColor);
                     }
                 }
                 else
                 {
                     if (control is TextBoxBase txt)
                     {
-                        UIX.uixTextBox.txtApply(txt, AppDesktop.VisualStyle.BoxColor);
+                        uixTextBox.txtApply(txt, AppDesktop.VisualStyle.BoxColor);
                     }
                     else if (control is ComboBox cbo)
                     {
-                        UIX.uixComboBox.cboApply(cbo, AppDesktop.VisualStyle.BoxColor);
+                        uixComboBox.cboApply(cbo, AppDesktop.VisualStyle.BoxColor);
                     }
                 }
             }

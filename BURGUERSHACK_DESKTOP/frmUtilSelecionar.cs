@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,8 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmUtilSelecionar : Form
     {
@@ -41,7 +43,7 @@ namespace BURGUERSHACK_DESKTOP
             List<Control> opcoesControles = new List<Control>();
             foreach (object obj in _opcoes)
             {
-                UIX.btnUIX btn = new UIX.btnUIX
+                btnUIX btn = new btnUIX
                 {
                     Description = ObjSelecionar.ObjListar.getNome(obj),
                     Name = "btnSelecionar" + ObjSelecionar.ObjListar.getCod(obj),
@@ -61,7 +63,7 @@ namespace BURGUERSHACK_DESKTOP
             {
                 if (control is Button btn)
                 {
-                    UIX.uixButton.btnApply(btn, AppDesktop.VisualStyle.ButtonImageColor);
+                    uixButton.btnApply(btn, AppDesktop.VisualStyle.ButtonImageColor);
                 }
             }
             opcoesControles.Clear();

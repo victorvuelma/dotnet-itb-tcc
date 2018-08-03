@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BURGUERSHACK_DESKTOP.Properties {
+namespace BURGERSHACK_DESKTOP.Properties {
     using System;
     
     

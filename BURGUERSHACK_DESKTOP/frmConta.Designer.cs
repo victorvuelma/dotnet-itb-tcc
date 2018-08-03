@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmConta
     {
@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hdrUIX = new UIX.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnVoltar = new UIX.btnUIX();
-            this.btnImprimir = new UIX.btnUIX();
+            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnImprimir = new vitorrdgs.UiX.Component.btnUIX();
             this.grbNota = new System.Windows.Forms.GroupBox();
             this.webConta = new System.Windows.Forms.WebBrowser();
-            this.txtPessoas = new UIX.txtUIX();
-            this.btnAtualizar = new UIX.btnUIX();
+            this.txtPessoas = new vitorrdgs.UiX.Component.txtUIX();
+            this.btnAtualizar = new vitorrdgs.UiX.Component.btnUIX();
             this.grbValor = new System.Windows.Forms.GroupBox();
             this.lblValorPago = new System.Windows.Forms.Label();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.grbAlterar = new System.Windows.Forms.GroupBox();
             this.chkServico = new System.Windows.Forms.CheckBox();
-            this.txtDesconto = new UIX.txtUIX();
-            this.btnFinalizar = new UIX.btnUIX();
-            this.btnPagamento = new UIX.btnUIX();
+            this.txtDesconto = new vitorrdgs.UiX.Component.txtUIX();
+            this.btnFinalizar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnPagamento = new vitorrdgs.UiX.Component.btnUIX();
             this.pnlMenu.SuspendLayout();
             this.grbNota.SuspendLayout();
             this.grbValor.SuspendLayout();
@@ -55,7 +55,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.conta;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.conta;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -78,7 +78,7 @@
             // 
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
@@ -92,7 +92,7 @@
             // 
             this.btnImprimir.Description = "Imprimir";
             this.btnImprimir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImprimir.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnImprimir.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnImprimir.ImageLocation = null;
             this.btnImprimir.Location = new System.Drawing.Point(5, 405);
@@ -126,11 +126,11 @@
             // 
             this.txtPessoas.AcceptButton = this.btnAtualizar;
             this.txtPessoas.Campo = "Pessoas";
-            this.txtPessoas.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtPessoas.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtPessoas.Location = new System.Drawing.Point(5, 15);
             this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPessoas.MaxLength = 2;
-            this.txtPessoas.Mode = UIX.uixEnum.uixTextBoxMode.INT;
+            this.txtPessoas.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtPessoas.Multiline = false;
             this.txtPessoas.Name = "txtPessoas";
             this.txtPessoas.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -141,7 +141,7 @@
             // 
             this.btnAtualizar.Description = "Atualizar";
             this.btnAtualizar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAtualizar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnAtualizar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
             this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAtualizar.ImageLocation = null;
             this.btnAtualizar.Location = new System.Drawing.Point(170, 15);
@@ -210,11 +210,11 @@
             // 
             this.txtDesconto.AcceptButton = this.btnAtualizar;
             this.txtDesconto.Campo = "Desconto";
-            this.txtDesconto.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtDesconto.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtDesconto.Location = new System.Drawing.Point(5, 40);
             this.txtDesconto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtDesconto.MaxLength = 5;
-            this.txtDesconto.Mode = UIX.uixEnum.uixTextBoxMode.DOUBLE;
+            this.txtDesconto.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.DOUBLE;
             this.txtDesconto.Multiline = false;
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -225,7 +225,7 @@
             // 
             this.btnFinalizar.Description = "Finalizar";
             this.btnFinalizar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFinalizar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnFinalizar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.confirmar;
             this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnFinalizar.ImageLocation = null;
             this.btnFinalizar.Location = new System.Drawing.Point(5, 305);
@@ -240,7 +240,7 @@
             // 
             this.btnPagamento.Description = "Pagamento";
             this.btnPagamento.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPagamento.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnPagamento.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pagamento;
             this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPagamento.ImageLocation = null;
             this.btnPagamento.Location = new System.Drawing.Point(380, 455);
@@ -279,22 +279,22 @@
         }
 
         #endregion
-        public UIX.hdrUIX hdrUIX;
+        public vitorrdgs.UiX.Component.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnVoltar;
-        private UIX.btnUIX btnImprimir;
+        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
+        private vitorrdgs.UiX.Component.btnUIX btnImprimir;
         private System.Windows.Forms.GroupBox grbNota;
         private System.Windows.Forms.WebBrowser webConta;
-        private UIX.txtUIX txtPessoas;
+        private vitorrdgs.UiX.Component.txtUIX txtPessoas;
         private System.Windows.Forms.GroupBox grbValor;
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Label lblValorPago;
         private System.Windows.Forms.GroupBox grbAlterar;
-        private UIX.txtUIX txtDesconto;
-        private UIX.btnUIX btnAtualizar;
+        private vitorrdgs.UiX.Component.txtUIX txtDesconto;
+        private vitorrdgs.UiX.Component.btnUIX btnAtualizar;
         private System.Windows.Forms.CheckBox chkServico;
-        private UIX.btnUIX btnFinalizar;
-        private UIX.btnUIX btnPagamento;
+        private vitorrdgs.UiX.Component.btnUIX btnFinalizar;
+        private vitorrdgs.UiX.Component.btnUIX btnPagamento;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

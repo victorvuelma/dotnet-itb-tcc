@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Drawing;
-using SQL_POWERUP;
+using vitorrdgs.SqlMaster;
 
-namespace BURGUERSHACK_COMMON
+namespace BURGERSHACK_COMMON
 {
     public class App
     {
 
-        private static string _name = "Burguer Shack";
+        private static string _name = "Burger Shack";
 
         private static sqlCredential _databaseSqlCredential = new sqlCredential
         {

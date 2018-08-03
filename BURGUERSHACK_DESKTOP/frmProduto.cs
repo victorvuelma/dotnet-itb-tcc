@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmProduto : Form
     {
@@ -103,7 +104,7 @@ namespace BURGUERSHACK_DESKTOP
 
                     ObjProduto.atualizarEstoque();
 
-                    clnUtilMensagem.mostrarOk("Cadastro de Produto", "Produto cadastrado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Cadastro de Produto", "Produto cadastrado com sucesso!");
                 }
                 else
                 {
@@ -131,7 +132,7 @@ namespace BURGUERSHACK_DESKTOP
 
                     ObjProduto.atualizarEstoque();
 
-                    clnUtilMensagem.mostrarOk("Altereção de Produto", "Produto alterado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Altereção de Produto", "Produto alterado com sucesso!");
                 }
                 Close();
             }
@@ -263,8 +264,8 @@ namespace BURGUERSHACK_DESKTOP
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
-            UIX.uixButton.btnApply(btnExcluir, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnExcluir, AppDesktop.VisualStyle.ButtonWarningColor);
 
             if (ObjProduto != null)
             {
@@ -404,7 +405,7 @@ namespace BURGUERSHACK_DESKTOP
                     {
                         objProdutoIngrediente.gravar();
                     }
-                    clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso!");
                     return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }
                 return clnUtilVisualizar.VisualizarResult.NENHUM;

@@ -1,4 +1,4 @@
-﻿using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class clnUtilConta
     {
@@ -189,7 +189,7 @@ namespace BURGUERSHACK_DESKTOP
         
         public static IEnumerable<string> obterTemplate()
         {
-            return File.ReadLines(global::BURGUERSHACK_COMMON.Properties.Resources.html_template_conta);
+            return File.ReadLines(global::BURGERSHACK_COMMON.Properties.Resources.html_template_conta);
         }
 
     }

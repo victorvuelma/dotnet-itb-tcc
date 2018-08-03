@@ -5,25 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Drawing;
-using UIX;
-using SQL_POWERUP;
+using vitorrdgs.UiX;
+using vitorrdgs.SqlMaster;
 using System.Windows.Forms;
-using BURGUERSHACK_COMMON;
+using BURGERSHACK_COMMON;
+using vitorrdgs.UiX.Property;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     class AppDesktop
     {
 
-        private static UIX.uixStyle _visualStyle = UIX.uixStyle.BLUE;
-        private static UIX.uixTemplate _visualTemplate = new UIX.uixTemplate
+        private static uixStyle _visualStyle = uixStyle.BLUE;
+        private static uixTemplate _visualTemplate = new uixTemplate
         {
             Style = VisualStyle,
             Icon = Properties.Resources.app_ico,
             ErrorImage = Properties.Resources.imagem_erro
         };
 
-        public static UIX.uixTemplate VisualTemplate { get => _visualTemplate; }
+        public static uixTemplate VisualTemplate { get => _visualTemplate; }
         public static uixStyle VisualStyle { get => _visualStyle; }
 
         internal static void startup()

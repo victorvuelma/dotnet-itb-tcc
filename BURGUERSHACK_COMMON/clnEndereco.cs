@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data.SqlClient;
-using SQL_POWERUP;
+using vitorrdgs.SqlMaster;
 using Caelum.Stella.CSharp.Http;
-using BURGUERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON.UTIL;
+using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.SqlMaster.Element;
 
-namespace BURGUERSHACK_COMMON
+namespace BURGERSHACK_COMMON
 {
 
     public class clnEndereco
@@ -50,7 +52,7 @@ namespace BURGUERSHACK_COMMON
                              .select("bairro.nome", "bairro")
                              .select("localidade.nome", "localidade")
                              .select("localidade.uf", "uf");
-            objSelect.Where.where("localidade.cep", CEP, sqlObjWhere.whereAssociation.OR)
+            objSelect.Where.where("localidade.cep", CEP, sqlElementWhere.whereAssociation.OR)
                            .where("logradouro.cep", CEP);
             objSelect.Join.fullJoin("logradouro", "id_localidade", "localidade.id")
                           .fullJoin("bairro", "id", "logradouro.id_bairro");

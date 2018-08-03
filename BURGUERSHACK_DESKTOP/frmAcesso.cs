@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UIX;
+using vitorrdgs.UiX;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmAcesso : Form
     {
@@ -69,7 +69,7 @@ namespace BURGUERSHACK_DESKTOP
                 ObjAcesso.Usuario = txtUsuario.Text;
                 ObjAcesso.gravar();
 
-                clnUtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!", clnUtilMensagem.MensagemIcone.OK);
+                clnUtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!");
 
                 Close();
             }

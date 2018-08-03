@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmGerenciamento
     {
@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnPagamentos = new UIX.btnUIX();
-            this.btnPedidos = new UIX.btnUIX();
-            this.btnReservas = new UIX.btnUIX();
-            this.btnAtendimentos = new UIX.btnUIX();
-            this.btnMesas = new UIX.btnUIX();
-            this.btnEstoque = new UIX.btnUIX();
-            this.btnFornecedores = new UIX.btnUIX();
-            this.btnFuncionarios = new UIX.btnUIX();
-            this.btnClientes = new UIX.btnUIX();
-            this.btnProdutos = new UIX.btnUIX();
-            this.btnIngredientes = new UIX.btnUIX();
-            this.btnVoltar = new UIX.btnUIX();
+            this.btnPagamentos = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnPedidos = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnReservas = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnAtendimentos = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnMesas = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnEstoque = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnFornecedores = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnFuncionarios = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnClientes = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnProdutos = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnIngredientes = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.hdrUIX = new UIX.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             this.btnPagamentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPagamentos.Description = "Pagamentos";
             this.btnPagamentos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPagamentos.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.pagamento;
+            this.btnPagamentos.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pagamento;
             this.btnPagamentos.ImageLocation = null;
             this.btnPagamentos.Location = new System.Drawing.Point(205, 305);
             this.btnPagamentos.Name = "btnPagamentos";
@@ -85,7 +85,7 @@
             this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPedidos.Description = "Pedidos";
             this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPedidos.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.pedido;
+            this.btnPedidos.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pedido;
             this.btnPedidos.ImageLocation = null;
             this.btnPedidos.Location = new System.Drawing.Point(205, 205);
             this.btnPedidos.Name = "btnPedidos";
@@ -100,7 +100,7 @@
             this.btnReservas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReservas.Description = "Reservas";
             this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnReservas.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.reserva;
+            this.btnReservas.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.reserva;
             this.btnReservas.ImageLocation = null;
             this.btnReservas.Location = new System.Drawing.Point(205, 5);
             this.btnReservas.Name = "btnReservas";
@@ -116,7 +116,7 @@
             this.btnAtendimentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAtendimentos.Description = "Atendimentos";
             this.btnAtendimentos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAtendimentos.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.atendimento;
+            this.btnAtendimentos.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.atendimento;
             this.btnAtendimentos.ImageLocation = null;
             this.btnAtendimentos.Location = new System.Drawing.Point(205, 105);
             this.btnAtendimentos.Name = "btnAtendimentos";
@@ -130,7 +130,7 @@
             this.btnMesas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMesas.Description = "Mesas";
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesas.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnMesas.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.mesa;
             this.btnMesas.ImageLocation = null;
             this.btnMesas.Location = new System.Drawing.Point(105, 305);
             this.btnMesas.Name = "btnMesas";
@@ -145,7 +145,7 @@
             this.btnEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEstoque.Description = "Estoque";
             this.btnEstoque.HoverColor = System.Drawing.Color.Transparent;
-            this.btnEstoque.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.estoque;
+            this.btnEstoque.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.estoque;
             this.btnEstoque.ImageLocation = null;
             this.btnEstoque.Location = new System.Drawing.Point(105, 205);
             this.btnEstoque.Name = "btnEstoque";
@@ -160,7 +160,7 @@
             this.btnFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFornecedores.Description = "Fornecedores";
             this.btnFornecedores.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFornecedores.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.fornecedor;
+            this.btnFornecedores.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.fornecedor;
             this.btnFornecedores.ImageLocation = null;
             this.btnFornecedores.Location = new System.Drawing.Point(5, 205);
             this.btnFornecedores.Name = "btnFornecedores";
@@ -175,7 +175,7 @@
             this.btnFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFuncionarios.Description = "Funcionários";
             this.btnFuncionarios.HoverColor = System.Drawing.Color.Transparent;
-            this.btnFuncionarios.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.funcionario;
+            this.btnFuncionarios.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.funcionario;
             this.btnFuncionarios.ImageLocation = null;
             this.btnFuncionarios.Location = new System.Drawing.Point(5, 5);
             this.btnFuncionarios.Name = "btnFuncionarios";
@@ -190,7 +190,7 @@
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClientes.Description = "Clientes";
             this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
-            this.btnClientes.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.cliente;
+            this.btnClientes.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.cliente;
             this.btnClientes.ImageLocation = null;
             this.btnClientes.Location = new System.Drawing.Point(5, 105);
             this.btnClientes.Name = "btnClientes";
@@ -205,7 +205,7 @@
             this.btnProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProdutos.Description = "Produtos";
             this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnProdutos.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.produto;
+            this.btnProdutos.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.produto;
             this.btnProdutos.ImageLocation = null;
             this.btnProdutos.Location = new System.Drawing.Point(105, 105);
             this.btnProdutos.Name = "btnProdutos";
@@ -220,7 +220,7 @@
             this.btnIngredientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIngredientes.Description = "Ingredientes";
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngredientes.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.ingrediente;
+            this.btnIngredientes.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.ingrediente;
             this.btnIngredientes.ImageLocation = null;
             this.btnIngredientes.Location = new System.Drawing.Point(105, 5);
             this.btnIngredientes.Name = "btnIngredientes";
@@ -235,7 +235,7 @@
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVoltar.Description = "Sair";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 405);
             this.btnVoltar.Name = "btnVoltar";
@@ -259,7 +259,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.gerenciador;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.gerenciador;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -291,19 +291,19 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnIngredientes;
-        private UIX.btnUIX btnVoltar;
+        private vitorrdgs.UiX.Component.btnUIX btnIngredientes;
+        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
         public System.Windows.Forms.Panel pnlConteudo;
-        private UIX.hdrUIX hdrUIX;
-        private UIX.btnUIX btnProdutos;
-        private UIX.btnUIX btnClientes;
-        private UIX.btnUIX btnFuncionarios;
-        private UIX.btnUIX btnFornecedores;
-        private UIX.btnUIX btnEstoque;
-        private UIX.btnUIX btnMesas;
-        private UIX.btnUIX btnAtendimentos;
-        private UIX.btnUIX btnReservas;
-        private UIX.btnUIX btnPedidos;
-        private UIX.btnUIX btnPagamentos;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.btnUIX btnProdutos;
+        private vitorrdgs.UiX.Component.btnUIX btnClientes;
+        private vitorrdgs.UiX.Component.btnUIX btnFuncionarios;
+        private vitorrdgs.UiX.Component.btnUIX btnFornecedores;
+        private vitorrdgs.UiX.Component.btnUIX btnEstoque;
+        private vitorrdgs.UiX.Component.btnUIX btnMesas;
+        private vitorrdgs.UiX.Component.btnUIX btnAtendimentos;
+        private vitorrdgs.UiX.Component.btnUIX btnReservas;
+        private vitorrdgs.UiX.Component.btnUIX btnPedidos;
+        private vitorrdgs.UiX.Component.btnUIX btnPagamentos;
     }
 }

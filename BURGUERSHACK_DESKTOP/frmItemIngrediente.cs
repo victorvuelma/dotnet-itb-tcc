@@ -1,6 +1,6 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_DESKTOP.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_DESKTOP.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,9 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UIX;
+using vitorrdgs.UiX;
+using vitorrdgs.UiX.Component;
+using vitorrdgs.UiX.Manager;
+using vitorrdgs.UiX.Property;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmItemIngrediente : Form
     {
@@ -91,7 +94,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.", clnUtilMensagem.MensagemIcone.ERRO);
+                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.");
             }
         }
 
@@ -142,7 +145,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmAlteraIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnRemover, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnRemover, AppDesktop.VisualStyle.ButtonWarningColor);
 
             picIngrediente.Hide();
             lblNome.Hide();

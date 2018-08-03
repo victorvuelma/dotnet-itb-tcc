@@ -1,5 +1,5 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,8 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmConta : Form
     {
@@ -90,7 +91,7 @@ namespace BURGUERSHACK_DESKTOP
                         objMesa.Situacao = clnMesa.mesaSituacao.DISPONIVEL;
                         objMesa.alterar();
                     }
-                    clnUtilMensagem.mostrarOk("Conta", "Atendimento finalizado automaticamente.", clnUtilMensagem.MensagemIcone.OK);
+                    clnUtilMensagem.mostrarOk("Conta", "Atendimento finalizado automaticamente.");
                     Close();
                 }
             }
@@ -135,7 +136,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmConta_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
             txtPessoas.Text = "1";
 
             exibirConta();

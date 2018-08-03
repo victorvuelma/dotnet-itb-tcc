@@ -1,5 +1,5 @@
-﻿using BURGUERSHACK_COMMON;
-using BURGUERSHACK_COMMON.UTIL;
+﻿using BURGERSHACK_COMMON;
+using BURGERSHACK_COMMON.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,8 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Manager;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmPrincipal : Form
     {
@@ -96,7 +97,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnSair, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnSair, AppDesktop.VisualStyle.ButtonWarningColor);
 
             abrirMesas();
             atualizarBotoes();

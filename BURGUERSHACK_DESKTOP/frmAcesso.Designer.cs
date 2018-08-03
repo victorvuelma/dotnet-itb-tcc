@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmAcesso
     {
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.picVer = new System.Windows.Forms.PictureBox();
-            this.hdrUIX = new UIX.hdrUIX();
-            this.txtSenha = new UIX.txtUIX();
-            this.txtUsuario = new UIX.txtUIX();
-            this.btnSalvar = new UIX.btnUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.txtSenha = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtUsuario = new vitorrdgs.UiX.Component.txtUIX();
+            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
             this.grbAcesso = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
             this.grbAcesso.SuspendLayout();
@@ -41,7 +41,7 @@
             // picVer
             // 
             this.picVer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picVer.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.eye;
+            this.picVer.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.eye;
             this.picVer.Location = new System.Drawing.Point(314, 50);
             this.picVer.Name = "picVer";
             this.picVer.Size = new System.Drawing.Size(20, 20);
@@ -56,7 +56,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.entrar;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.entrar;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -71,10 +71,10 @@
             this.txtSenha.AccessibleName = "Senha";
             this.txtSenha.Campo = "Senha";
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtSenha.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtSenha.Location = new System.Drawing.Point(5, 50);
             this.txtSenha.MaxLength = 32767;
-            this.txtSenha.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtSenha.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -87,10 +87,10 @@
             this.txtUsuario.AccessibleName = "Usuário";
             this.txtUsuario.Campo = "Usuário";
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.LabelPosition = UIX.uixEnum.uixLabelPosition.SIDE;
+            this.txtUsuario.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtUsuario.Location = new System.Drawing.Point(5, 20);
             this.txtUsuario.MaxLength = 32767;
-            this.txtUsuario.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtUsuario.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -102,7 +102,7 @@
             this.btnSalvar.BackColor = System.Drawing.Color.White;
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(255, 155);
             this.btnSalvar.Name = "btnSalvar";
@@ -146,11 +146,11 @@
         }
 
         #endregion
-        private UIX.txtUIX txtUsuario;
-        private UIX.txtUIX txtSenha;
-        private UIX.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.txtUIX txtUsuario;
+        private vitorrdgs.UiX.Component.txtUIX txtSenha;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
         private System.Windows.Forms.PictureBox picVer;
-        private UIX.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
         private System.Windows.Forms.GroupBox grbAcesso;
     }
 }

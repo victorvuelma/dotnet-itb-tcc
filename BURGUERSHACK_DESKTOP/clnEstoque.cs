@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data.SqlClient;
-using SQL_POWERUP;
-using BURGUERSHACK_COMMON.UTIL;
-using BURGUERSHACK_COMMON;
+using vitorrdgs.SqlMaster;
+using BURGERSHACK_COMMON.UTIL;
+using BURGERSHACK_COMMON;
+using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.SqlMaster.Element;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public class clnEstoque
     {
@@ -81,7 +83,7 @@ namespace BURGUERSHACK_DESKTOP
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("estoque");
-            objSelect.Columns.select("quantidade", sqlObjTable.selectOperation.SUM, "quantidade", 0);
+            objSelect.Columns.select("quantidade", sqlElementTable.selectOperation.SUM, "quantidade", 0);
             objSelect.Where.where("id_ingrediente", CodIngrediente);
 
             int quantidade = 0;

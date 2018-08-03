@@ -1,4 +1,4 @@
-﻿namespace BURGUERSHACK_DESKTOP
+﻿namespace BURGERSHACK_DESKTOP
 {
     partial class frmCliente
     {
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnVoltar = new UIX.btnUIX();
-            this.btnSalvar = new UIX.btnUIX();
+            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
-            this.txtEmail = new UIX.txtUIX();
-            this.mtbTelCel = new UIX.mtbUIX();
-            this.cboGenero = new UIX.cboUIX();
-            this.mtbCPF = new UIX.mtbUIX();
-            this.mtbDataNasc = new UIX.mtbUIX();
-            this.txtNome = new UIX.txtUIX();
-            this.hdrUIX = new UIX.hdrUIX();
+            this.txtEmail = new vitorrdgs.UiX.Component.txtUIX();
+            this.mtbTelCel =new vitorrdgs.UiX.Component.mtbUIX();
+            this.cboGenero = new vitorrdgs.UiX.Component.cboUIX();
+            this.mtbCPF =new vitorrdgs.UiX.Component.mtbUIX();
+            this.mtbDataNasc =new vitorrdgs.UiX.Component.mtbUIX();
+            this.txtNome = new vitorrdgs.UiX.Component.txtUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
@@ -69,7 +69,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 105);
@@ -97,7 +97,7 @@
             // txtEmail
             // 
             this.txtEmail.AccessibleName = "E-mail";
-            this.txtEmail.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtEmail.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtEmail.Campo = "E-mail";
             this.txtEmail.Location = new System.Drawing.Point(5, 120);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -157,7 +157,7 @@
             // txtNome
             // 
             this.txtNome.AccessibleName = "Nome*";
-            this.txtNome.Mode = UIX.uixEnum.uixTextBoxMode.ALL;
+            this.txtNome.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtNome.Campo = "Nome*";
             this.txtNome.Location = new System.Drawing.Point(5, 25);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -172,7 +172,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGUERSHACK_DESKTOP.Properties.Resources.cliente;
+            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.cliente;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -205,16 +205,16 @@
 
         #endregion
 
-        private UIX.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private UIX.btnUIX btnVoltar;
-        private UIX.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
+        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
         private System.Windows.Forms.GroupBox grbInformacoes;
-        private UIX.txtUIX txtNome;
-        private UIX.mtbUIX mtbDataNasc;
-        private UIX.cboUIX cboGenero;
-        private UIX.txtUIX txtEmail;
-        private UIX.mtbUIX mtbTelCel;
-        public UIX.mtbUIX mtbCPF;
+        private vitorrdgs.UiX.Component.txtUIX txtNome;
+        private vitorrdgs.UiX.Component.mtbUIX mtbDataNasc;
+        private vitorrdgs.UiX.Component.cboUIX cboGenero;
+        private vitorrdgs.UiX.Component.txtUIX txtEmail;
+        private vitorrdgs.UiX.Component.mtbUIX mtbTelCel;
+        public vitorrdgs.UiX.Component.mtbUIX mtbCPF;
     }
 }

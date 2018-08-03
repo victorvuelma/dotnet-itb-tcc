@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
+using vitorrdgs.UiX.Manager;
+using vitorrdgs.UiX.Property;
 
-namespace BURGUERSHACK_DESKTOP
+namespace BURGERSHACK_DESKTOP
 {
     public partial class frmPedido : Form
     {
@@ -134,7 +137,7 @@ namespace BURGUERSHACK_DESKTOP
         private void frmPedido_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            UIX.uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             if (ObjPedido.Cod == -1)
             {
@@ -142,7 +145,7 @@ namespace BURGUERSHACK_DESKTOP
             }
             else
             {
-                UIX.uixButton.btnApply(btnConfirmar, AppDesktop.VisualStyle.ButtonWarningColor);
+                uixButton.btnApply(btnConfirmar, AppDesktop.VisualStyle.ButtonWarningColor);
 
                 btnConfirmar.Description = "Excluir";
                 btnConfirmar.Image = Properties.Resources.excluir;
