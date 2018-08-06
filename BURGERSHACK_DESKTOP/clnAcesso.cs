@@ -27,8 +27,7 @@ namespace BURGERSHACK_DESKTOP
         private clnAcesso obter(SqlDataReader reader) => new clnAcesso
         {
             CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-            Usuario = clnUtilConvert.ToString(reader["usuario"]),
-            Senha = clnUtilConvert.ToString(reader["senha"])
+            Usuario = clnUtilConvert.ToString(reader["usuario"])
         };
 
         public int? acessar()

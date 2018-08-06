@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A6D75C14-046F-4D6D-999F-07ECF3B7D6A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BURGUERSHACK_DESKTOP</RootNamespace>
-    <AssemblyName>BURGUERSHACK_DESKTOP</AssemblyName>
+    <RootNamespace>BURGERSHACK_DESKTOP</RootNamespace>
+    <AssemblyName>BURGERSHACK_DESKTOP</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

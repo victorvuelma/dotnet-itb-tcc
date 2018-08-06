@@ -7,8 +7,8 @@
     <ProjectGuid>{452F8DB0-90E2-4013-BFCC-C95EF01FB806}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BURGUERSHACK_COMMON</RootNamespace>
-    <AssemblyName>BURGUERSHACK_COMMON</AssemblyName>
+    <RootNamespace>BURGERSHACK_COMMON</RootNamespace>
+    <AssemblyName>BURGERSHACK_COMMON</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

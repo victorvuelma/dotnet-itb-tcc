@@ -68,7 +68,7 @@
             this.lblProgram.Name = "lblProgram";
             this.lblProgram.Size = new System.Drawing.Size(500, 25);
             this.lblProgram.TabIndex = 14;
-            this.lblProgram.Text = "BurguerShack :: Versão 1.0 :: Copyright 2018";
+            this.lblProgram.Text = "BurgerShack - Copyright 2018";
             this.lblProgram.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // hdrUIX

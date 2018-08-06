@@ -65,7 +65,6 @@ namespace BURGERSHACK_DESKTOP
         {
             if (_validar.validar(this))
             {
-                ObjAcesso.Senha = txtSenha.Text;
                 ObjAcesso.Usuario = txtUsuario.Text;
                 ObjAcesso.gravar();
 
