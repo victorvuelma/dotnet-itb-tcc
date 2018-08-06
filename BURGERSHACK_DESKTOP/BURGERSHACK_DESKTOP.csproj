@@ -486,7 +486,7 @@
       <Project>{94c33f17-938d-4605-8715-0bf21c28a997}</Project>
       <Name>UTIL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BURGUERSHACK_COMMON\BURGUERSHACK_COMMON.csproj">
+    <ProjectReference Include="..\BURGERSHACK_COMMON\BURGERSHACK_COMMON.csproj">
       <Project>{452f8db0-90e2-4013-bfcc-c95ef01fb806}</Project>
       <Name>BURGUERSHACK_COMMON</Name>
     </ProjectReference>
