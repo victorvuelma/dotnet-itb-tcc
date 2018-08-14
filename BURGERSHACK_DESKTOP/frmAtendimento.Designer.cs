@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmAtendimento
     {
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnMesas = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnConta = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnPedidos = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnMesas = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnConta = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnPedidos = new vitorrdgs.UiX.Component.UIXButton();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             // 
             this.btnMesas.Description = "Mesas";
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesas.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnMesas.Image = global::BurgerShack.Desktop.Properties.Resources.mesa;
             this.btnMesas.ImageLocation = null;
             this.btnMesas.Location = new System.Drawing.Point(5, 105);
             this.btnMesas.Name = "btnMesas";
@@ -67,7 +67,7 @@
             // 
             this.btnVoltar.Description = "Voltar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 555);
             this.btnVoltar.Name = "btnVoltar";
@@ -82,7 +82,7 @@
             this.btnConta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConta.Description = "Conta";
             this.btnConta.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConta.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.conta;
+            this.btnConta.Image = global::BurgerShack.Desktop.Properties.Resources.conta;
             this.btnConta.ImageLocation = null;
             this.btnConta.Location = new System.Drawing.Point(5, 455);
             this.btnConta.Name = "btnConta";
@@ -96,7 +96,7 @@
             // 
             this.btnPedidos.Description = "Pedidos";
             this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPedidos.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pedido;
+            this.btnPedidos.Image = global::BurgerShack.Desktop.Properties.Resources.pedido;
             this.btnPedidos.ImageLocation = null;
             this.btnPedidos.Location = new System.Drawing.Point(5, 5);
             this.btnPedidos.Name = "btnPedidos";
@@ -118,7 +118,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.atendimento;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.atendimento;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Name = "hdrUIX";
             this.hdrUIX.Size = new System.Drawing.Size(600, 50);
@@ -146,12 +146,12 @@
 
         #endregion
 
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private vitorrdgs.UiX.Component.btnUIX btnConta;
-        private vitorrdgs.UiX.Component.btnUIX btnPedidos;
+        private vitorrdgs.UiX.Component.UIXButton btnConta;
+        private vitorrdgs.UiX.Component.UIXButton btnPedidos;
         public System.Windows.Forms.Panel pnlConteudo;
-        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
-        private vitorrdgs.UiX.Component.btnUIX btnMesas;
+        private vitorrdgs.UiX.Component.UIXButton btnVoltar;
+        private vitorrdgs.UiX.Component.UIXButton btnMesas;
     }
 }

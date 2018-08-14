@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_COMMON;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public class clnAtendimento
     {

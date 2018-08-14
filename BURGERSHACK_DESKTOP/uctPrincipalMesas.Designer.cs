@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class uctPrincipalMesas
     {

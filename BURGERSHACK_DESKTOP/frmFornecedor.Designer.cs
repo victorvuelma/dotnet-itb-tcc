@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmFornecedor
     {
@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnCancelar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnCancelar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
-            this.txtEmail = new vitorrdgs.UiX.Component.txtUIX();
-            this.mtbTel =new vitorrdgs.UiX.Component.mtbUIX();
-            this.mtbCNPJ =new vitorrdgs.UiX.Component.mtbUIX();
-            this.txtRazaoSocial = new vitorrdgs.UiX.Component.txtUIX();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.txtEmail = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.mtbTel =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbCNPJ =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.txtRazaoSocial = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
-            this.txtEndComplemento = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtEndCidade = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtEndBairro = new vitorrdgs.UiX.Component.txtUIX();
-            this.mtbEndCEP =new vitorrdgs.UiX.Component.mtbUIX();
-            this.cboEndUF = new vitorrdgs.UiX.Component.cboUIX();
-            this.txtEndLogradouro = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtEndNr = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtEndComplemento = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtEndCidade = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtEndBairro = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.mtbEndCEP =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.cboEndUF = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.txtEndLogradouro = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtEndNr = new vitorrdgs.UiX.Component.UIXTextBox();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.btnCancelar.Description = "Cancelar";
             this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnCancelar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnCancelar.ImageLocation = null;
             this.btnCancelar.Location = new System.Drawing.Point(5, 5);
             this.btnCancelar.Name = "btnCancelar";
@@ -76,7 +76,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 205);
@@ -160,7 +160,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.fornecedor;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -315,22 +315,22 @@
 
         #endregion
 
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private vitorrdgs.UiX.Component.btnUIX btnCancelar;
-        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.UIXButton btnCancelar;
+        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
         private System.Windows.Forms.GroupBox grbInformacoes;
-        private vitorrdgs.UiX.Component.txtUIX txtRazaoSocial;
-        private vitorrdgs.UiX.Component.txtUIX txtEmail;
-        private vitorrdgs.UiX.Component.mtbUIX mtbTel;
-        public vitorrdgs.UiX.Component.mtbUIX mtbCNPJ;
+        private vitorrdgs.UiX.Component.UIXTextBox txtRazaoSocial;
+        private vitorrdgs.UiX.Component.UIXTextBox txtEmail;
+        private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbTel;
+        public vitorrdgs.UiX.Component.UIXMaskedTextBox mtbCNPJ;
         public System.Windows.Forms.GroupBox grpEndereco;
-        public vitorrdgs.UiX.Component.txtUIX txtEndComplemento;
-        public vitorrdgs.UiX.Component.txtUIX txtEndCidade;
-        public vitorrdgs.UiX.Component.txtUIX txtEndBairro;
-        public vitorrdgs.UiX.Component.mtbUIX mtbEndCEP;
-        public vitorrdgs.UiX.Component.cboUIX cboEndUF;
-        public vitorrdgs.UiX.Component.txtUIX txtEndLogradouro;
-        public vitorrdgs.UiX.Component.txtUIX txtEndNr;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndComplemento;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndCidade;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndBairro;
+        public vitorrdgs.UiX.Component.UIXMaskedTextBox mtbEndCEP;
+        public vitorrdgs.UiX.Component.UIXComboBox cboEndUF;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndLogradouro;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndNr;
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     static class Program
     {
@@ -14,8 +14,6 @@ namespace BURGERSHACK_DESKTOP
         [STAThread]
         static void Main()
         {
-            AppDesktop.startup();
-
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
             System.Windows.Forms.Application.Run(new frmEntrar());

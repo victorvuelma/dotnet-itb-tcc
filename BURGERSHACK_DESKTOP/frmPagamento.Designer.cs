@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmPagamento
     {
@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.btnCliEncontrar = new vitorrdgs.UiX.Component.btnUIX();
-            this.mtbCliCPF =new vitorrdgs.UiX.Component.mtbUIX();
+            this.btnCliEncontrar = new vitorrdgs.UiX.Component.UIXButton();
+            this.mtbCliCPF =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.grbValorTotal = new System.Windows.Forms.GroupBox();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.grbValorPagar = new System.Windows.Forms.GroupBox();
-            this.txtValor = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtValor = new vitorrdgs.UiX.Component.UIXTextBox();
             this.grbMeio = new System.Windows.Forms.GroupBox();
-            this.cboBandeira = new vitorrdgs.UiX.Component.cboUIX();
-            this.cboMetodo = new vitorrdgs.UiX.Component.cboUIX();
+            this.cboBandeira = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.cboMetodo = new vitorrdgs.UiX.Component.UIXComboBox();
             this.grbValorRestante = new System.Windows.Forms.GroupBox();
             this.lblValorRestante = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grbDinheiro = new System.Windows.Forms.GroupBox();
             this.lblTroco = new System.Windows.Forms.Label();
-            this.txtDinheiro = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtDinheiro = new vitorrdgs.UiX.Component.UIXTextBox();
             this.pnlMenu.SuspendLayout();
             this.grbCliente.SuspendLayout();
             this.grbValorTotal.SuspendLayout();
@@ -63,7 +63,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pagamento;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.pagamento;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -85,7 +85,7 @@
             // 
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
@@ -99,7 +99,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 205);
@@ -133,7 +133,7 @@
             // 
             this.btnCliEncontrar.Description = "Encontrar";
             this.btnCliEncontrar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnCliEncontrar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.cliente;
+            this.btnCliEncontrar.Image = global::BurgerShack.Desktop.Properties.Resources.cliente;
             this.btnCliEncontrar.ImageLocation = null;
             this.btnCliEncontrar.Location = new System.Drawing.Point(255, 15);
             this.btnCliEncontrar.Name = "btnCliEncontrar";
@@ -345,25 +345,25 @@
         }
 
         #endregion
-        public vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        public vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
-        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.UIXButton btnVoltar;
+        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
         private System.Windows.Forms.GroupBox grbCliente;
         private System.Windows.Forms.Label lblCliente;
-        private vitorrdgs.UiX.Component.btnUIX btnCliEncontrar;
-        private vitorrdgs.UiX.Component.mtbUIX mtbCliCPF;
+        private vitorrdgs.UiX.Component.UIXButton btnCliEncontrar;
+        private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbCliCPF;
         private System.Windows.Forms.GroupBox grbValorTotal;
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.GroupBox grbValorPagar;
-        private vitorrdgs.UiX.Component.txtUIX txtValor;
+        private vitorrdgs.UiX.Component.UIXTextBox txtValor;
         public System.Windows.Forms.GroupBox grbMeio;
-        private vitorrdgs.UiX.Component.cboUIX cboMetodo;
-        private vitorrdgs.UiX.Component.cboUIX cboBandeira;
+        private vitorrdgs.UiX.Component.UIXComboBox cboMetodo;
+        private vitorrdgs.UiX.Component.UIXComboBox cboBandeira;
         private System.Windows.Forms.GroupBox grbValorRestante;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.GroupBox grbDinheiro;
-        private vitorrdgs.UiX.Component.txtUIX txtDinheiro;
+        private vitorrdgs.UiX.Component.UIXTextBox txtDinheiro;
         private System.Windows.Forms.Label lblValorRestante;
         private System.Windows.Forms.Label lblTroco;
     }

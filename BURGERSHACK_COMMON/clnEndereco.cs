@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster;
 using Caelum.Stella.CSharp.Http;
-using BURGERSHACK_COMMON.UTIL;
+using BurgerShack.Common.UTIL;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element;
 
-namespace BURGERSHACK_COMMON
+namespace BurgerShack.Common
 {
 
     public class clnEndereco

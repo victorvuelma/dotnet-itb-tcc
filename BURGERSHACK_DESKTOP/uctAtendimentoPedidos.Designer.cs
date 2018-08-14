@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class uctAtendimentoPedidos
     {
@@ -30,7 +30,7 @@
         {
             this.grbPedidos = new System.Windows.Forms.GroupBox();
             this.pnlPedidos = new System.Windows.Forms.Panel();
-            this.btnNovoPedido = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnNovoPedido = new vitorrdgs.UiX.Component.UIXButton();
             this.lblValor = new System.Windows.Forms.Label();
             this.grbValor = new System.Windows.Forms.GroupBox();
             this.grbSituacao = new System.Windows.Forms.GroupBox();
@@ -65,7 +65,7 @@
             // 
             this.btnNovoPedido.Description = "Novo Pedido";
             this.btnNovoPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovoPedido.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNovoPedido.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnNovoPedido.ImageLocation = null;
             this.btnNovoPedido.Location = new System.Drawing.Point(395, 545);
             this.btnNovoPedido.Name = "btnNovoPedido";
@@ -137,7 +137,7 @@
         #endregion
         private System.Windows.Forms.GroupBox grbPedidos;
         private System.Windows.Forms.Panel pnlPedidos;
-        private vitorrdgs.UiX.Component.btnUIX btnNovoPedido;
+        private vitorrdgs.UiX.Component.UIXButton btnNovoPedido;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.GroupBox grbValor;
         private System.Windows.Forms.GroupBox grbSituacao;

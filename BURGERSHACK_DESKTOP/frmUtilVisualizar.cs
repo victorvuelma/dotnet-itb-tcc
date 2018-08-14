@@ -1,5 +1,5 @@
-﻿using BURGERSHACK_COMMON;
-using BURGERSHACK_COMMON.UTIL;
+﻿using BurgerShack.Common;
+using BurgerShack.Common.UTIL;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmUtilVisualizar : Form
     {
@@ -32,11 +33,11 @@ namespace BURGERSHACK_DESKTOP
 
         private void exibirOpcoes()
         {
-            uctOpcoes.limpar();
+            lstOpcoes.Clear();
 
             foreach (object obj in _opcoes)
             {
-                uctOpcoes.adicionarItem(ObjVisualizar.ObjListar.getCod(obj), ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor, () =>
+                lstOpcoes.Adicionar(ObjVisualizar.ObjListar.getCod(obj), ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor, () =>
                 {
                     switch (ObjVisualizar.execute(obj))
                     {
@@ -44,9 +45,9 @@ namespace BURGERSHACK_DESKTOP
                             ObjVisualizar.ObjListar.getOpcoes().Remove(obj);
                             _opcoes.Remove(obj);
                             exibirResultados();
-                            return uctUtilListar.ListarResult.REMOVER;
+                            return UIXItemsList.ListResult.REMOVER;
                         default:
-                            return uctUtilListar.ListarResult.NENHUM;
+                            return UIXItemsList.ListResult.NENHUM;
                     }
                 });
             }

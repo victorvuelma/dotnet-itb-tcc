@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_COMMON;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     class clnAcesso
     {
@@ -47,6 +47,21 @@ namespace BURGERSHACK_DESKTOP
             return codFuncionario;
         }
 
+        internal clnAcesso obterPorUsuario()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("acesso");
+            objSelect.Where.where("usuario", Usuario);
+
+            clnAcesso objAcesso = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+                objAcesso = obter(reader);
+            reader.Close();
+
+            return objAcesso;
+        }
+
         internal clnAcesso obterPorFuncionario()
         {
             sqlSelect objSelect = new sqlSelect();
@@ -60,6 +75,20 @@ namespace BURGERSHACK_DESKTOP
             reader.Close();
 
             return objAcesso;
+        }
+
+        internal List<clnAcesso> obterTodos()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("acesso");
+
+            List<clnAcesso> objAcessos = new List<clnAcesso>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objAcessos.Add(obter(reader));
+            reader.Close();
+
+            return objAcessos;
         }
 
         public void gravar()

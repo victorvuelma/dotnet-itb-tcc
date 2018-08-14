@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BURGERSHACK_COMMON.UTIL;
+using BurgerShack.Common.UTIL;
 using vitorrdgs.UiX.Component;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class uctAtendimentoPedidos : UserControl
     {
@@ -36,7 +36,7 @@ namespace BURGERSHACK_DESKTOP
             List<Control> pedidosControles = new List<Control>();
             foreach (clnPedido objPedido in ObjPedidos)
             {
-                btnUIX btn = new btnUIX
+                UIXButton btn = new UIXButton
                 {
                     Description = "Pedido " + objPedido.Cod,
                     Name = "btnPedido" + objPedido.Cod,

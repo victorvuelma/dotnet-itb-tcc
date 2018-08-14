@@ -11,7 +11,7 @@ using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.UiX.Property;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmPedido : Form
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace BURGERSHACK_COMMON.UTIL
+namespace BurgerShack.Common.UTIL
 {
     public class clnUtilValidar
     {

@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmAcesso
     {
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.picVer = new System.Windows.Forms.PictureBox();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
-            this.txtSenha = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtUsuario = new vitorrdgs.UiX.Component.txtUIX();
-            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
+            this.txtSenha = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtUsuario = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbAcesso = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
             this.grbAcesso.SuspendLayout();
@@ -41,7 +41,7 @@
             // picVer
             // 
             this.picVer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picVer.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.eye;
+            this.picVer.Image = global::BurgerShack.Desktop.Properties.Resources.eye;
             this.picVer.Location = new System.Drawing.Point(314, 50);
             this.picVer.Name = "picVer";
             this.picVer.Size = new System.Drawing.Size(20, 20);
@@ -56,7 +56,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.entrar;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.entrar;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -102,7 +102,7 @@
             this.btnSalvar.BackColor = System.Drawing.Color.White;
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(255, 155);
             this.btnSalvar.Name = "btnSalvar";
@@ -146,11 +146,11 @@
         }
 
         #endregion
-        private vitorrdgs.UiX.Component.txtUIX txtUsuario;
-        private vitorrdgs.UiX.Component.txtUIX txtSenha;
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXTextBox txtUsuario;
+        private vitorrdgs.UiX.Component.UIXTextBox txtSenha;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.PictureBox picVer;
-        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
         private System.Windows.Forms.GroupBox grbAcesso;
     }
 }

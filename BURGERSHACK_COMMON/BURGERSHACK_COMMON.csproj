@@ -7,8 +7,8 @@
     <ProjectGuid>{452F8DB0-90E2-4013-BFCC-C95EF01FB806}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BURGERSHACK_COMMON</RootNamespace>
-    <AssemblyName>BURGERSHACK_COMMON</AssemblyName>
+    <RootNamespace>BurgerShack.Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

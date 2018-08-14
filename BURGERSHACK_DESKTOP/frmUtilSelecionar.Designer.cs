@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmUtilSelecionar
     {
@@ -30,17 +30,17 @@
         {
             this.grbDetalhes = new System.Windows.Forms.GroupBox();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.txtQuantidade = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtQuantidade = new vitorrdgs.UiX.Component.UIXTextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
             this.pnlOpcoes = new System.Windows.Forms.Panel();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
-            this.txtPesquisar = new vitorrdgs.UiX.Component.txtUIX();
-            this.btnPesquisar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnConfirmar = new vitorrdgs.UiX.Component.btnUIX();
+            this.txtPesquisar = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.btnPesquisar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnConfirmar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.grbOpcoes.SuspendLayout();
@@ -123,7 +123,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.alterar;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.alterar;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -171,7 +171,7 @@
             // 
             this.btnPesquisar.Description = "Pesquisar";
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pesquisar;
+            this.btnPesquisar.Image = global::BurgerShack.Desktop.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
             this.btnPesquisar.Location = new System.Drawing.Point(450, 15);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -185,7 +185,7 @@
             // 
             this.btnConfirmar.Description = "Confirmar";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.Image = global::BurgerShack.Desktop.Properties.Resources.confirmar;
             this.btnConfirmar.ImageLocation = null;
             this.btnConfirmar.Location = new System.Drawing.Point(560, 410);
             this.btnConfirmar.Name = "btnConfirmar";
@@ -224,16 +224,16 @@
         #endregion
         private System.Windows.Forms.GroupBox grbDetalhes;
         private System.Windows.Forms.GroupBox grbOpcoes;
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlOpcoes;
         private System.Windows.Forms.PictureBox picImagem;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblDesc;
-        public vitorrdgs.UiX.Component.txtUIX txtQuantidade;
+        public vitorrdgs.UiX.Component.UIXTextBox txtQuantidade;
         private System.Windows.Forms.GroupBox grbPesquisa;
         private System.Windows.Forms.Label lblPesquisaRes;
-        private vitorrdgs.UiX.Component.txtUIX txtPesquisar;
-        private vitorrdgs.UiX.Component.btnUIX btnPesquisar;
-        private vitorrdgs.UiX.Component.btnUIX btnConfirmar;
+        private vitorrdgs.UiX.Component.UIXTextBox txtPesquisar;
+        private vitorrdgs.UiX.Component.UIXButton btnPesquisar;
+        private vitorrdgs.UiX.Component.UIXButton btnConfirmar;
     }
 }

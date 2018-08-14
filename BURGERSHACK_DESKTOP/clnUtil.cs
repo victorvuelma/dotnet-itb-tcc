@@ -9,12 +9,13 @@ using System.Drawing;
 
 using static System.Windows.Forms.Control;
 using System.Collections;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_COMMON;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Common;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Property;
+using vitorrdgs.Util.Form;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     class clnUtil
     {
@@ -38,11 +39,11 @@ namespace BURGERSHACK_DESKTOP
         {
             foreach (Control control in controls)
             {
-                if (control is mtbUIX mtb)
+                if (control is UIXMaskedTextBox mtb)
                 {
                     definirNumBoard(mtb);
                 }
-                else if (control is txtUIX txt)
+                else if (control is UIXTextBox txt)
                 {
                     definirNumBoard(txt);
                 }
@@ -51,7 +52,7 @@ namespace BURGERSHACK_DESKTOP
             }
         }
 
-        public static void definirNumBoard(txtUIX txt)
+        public static void definirNumBoard(UIXTextBox txt)
         {
             switch (txt.Mode)
             {
@@ -67,7 +68,7 @@ namespace BURGERSHACK_DESKTOP
             }
         }
 
-        public static void definirNumBoard(mtbUIX mtb)
+        public static void definirNumBoard(UIXMaskedTextBox mtb)
         {
             definirNumBoard(mtb.mtb, frmUtilNumBoard.NumBoardMode.INT);
         }
@@ -118,7 +119,7 @@ namespace BURGERSHACK_DESKTOP
             cbo.Items.AddRange(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
         }
 
-        public static void definirCEP(mtbUIX mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
+        public static void definirCEP(UIXMaskedTextBox mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
         {
             ctlLogradouro.Enabled = false;
             ctlBairro.Enabled = false;
@@ -233,17 +234,17 @@ namespace BURGERSHACK_DESKTOP
             }
 
             AppDesktop.VisualTemplate.ctlApply(panel);
-            clnUtil.atualizarIndex(panel.Controls);
+            UtilForm.AtualizarIndexes(panel.Controls);
 
             panel.Show();
         }
 
         public static void atualizarForm(Form form)
         {
-            hdrUIX hdr = null;
+            UIXHeader hdr = null;
             foreach (Control control in form.Controls)
             {
-                if (control is hdrUIX hdrUIX)
+                if (control is UIXHeader hdrUIX)
                 {
                     hdr = hdrUIX;
                     break;
@@ -254,7 +255,7 @@ namespace BURGERSHACK_DESKTOP
                 AppDesktop.VisualTemplate.frmApply(form, hdr);
             }
 
-            atualizarIndex(form.Controls);
+            UtilForm.AtualizarIndexes(form.Controls);
             if (form.AcceptButton != null)
             {
                 definirBotaoConfirmacao(form.Controls, form.AcceptButton);
@@ -264,64 +265,21 @@ namespace BURGERSHACK_DESKTOP
             definirNumBoard(form.Controls);
         }
 
-        public static void atualizarIndex(ControlCollection controls)
-        {
-            SortedDictionary<int, SortedDictionary<int, List<Control>>> positionControl = new SortedDictionary<int, SortedDictionary<int, List<Control>>>();
-
-            foreach (Control control in controls)
-            {
-                int Y = control.Location.Y;
-                int X = control.Location.X;
-
-                if (!positionControl.TryGetValue(Y, out SortedDictionary<int, List<Control>> yControls))
-                {
-                    yControls = new SortedDictionary<int, List<Control>>();
-                    positionControl.Add(Y, yControls);
-                }
-
-                if (!yControls.TryGetValue(X, out List<Control> xControls))
-                {
-                    xControls = new List<Control>();
-                    yControls.Add(X, xControls);
-                }
-                xControls.Add(control);
-
-                atualizarIndex(control.Controls);
-            }
-
-            int index = 1;
-            foreach (KeyValuePair<int, SortedDictionary<int, List<Control>>> yControls in positionControl)
-            {
-                foreach (KeyValuePair<int, List<Control>> xControls in yControls.Value)
-                {
-                    foreach (Control control in xControls.Value)
-                    {
-                        control.TabIndex = index;
-                        index++;
-                    }
-                    xControls.Value.Clear();
-                }
-                yControls.Value.Clear();
-            }
-
-            positionControl.Clear();
-        }
-
         public static void definirBotaoConfirmacao(ControlCollection controls, IButtonControl acceptButton)
         {
             foreach (Control control in controls)
             {
-                if (control is txtUIX txt)
+                if (control is UIXTextBox txt)
                 {
                     if (txt.AcceptButton == null)
                         txt.AcceptButton = acceptButton;
                 }
-                else if (control is mtbUIX mtb)
+                else if (control is UIXMaskedTextBox mtb)
                 {
                     if (mtb.AcceptButton == null)
                         mtb.AcceptButton = acceptButton;
                 }
-                else if (control is cboUIX cbo)
+                else if (control is UIXComboBox cbo)
                 {
                     if (cbo.AcceptButton == null)
                         cbo.AcceptButton = acceptButton;
@@ -330,7 +288,7 @@ namespace BURGERSHACK_DESKTOP
             }
         }
 
-        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, hdrUIX hdr, String titulo)
+        public static void alterarConteudo(Panel pnlConteudo, UserControl uctConteudo, UIXHeader hdr, String titulo)
         {
             if (pnlConteudo.Controls.Count == 1)
             {
@@ -359,7 +317,7 @@ namespace BURGERSHACK_DESKTOP
                 return;
             }
 
-            clnUtil.atualizarIndex(uctConteudo.Controls);
+            UtilForm.AtualizarIndexes(uctConteudo.Controls);
             AppDesktop.VisualTemplate.ctlApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);

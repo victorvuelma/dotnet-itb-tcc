@@ -9,11 +9,11 @@ using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Drawing;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_COMMON;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     class clnArquivo
     {

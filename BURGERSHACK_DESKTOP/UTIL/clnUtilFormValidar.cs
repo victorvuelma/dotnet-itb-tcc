@@ -1,4 +1,4 @@
-﻿using BURGERSHACK_COMMON.UTIL;
+﻿using BurgerShack.Common.UTIL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Manager;
 using static System.Windows.Forms.Control;
 
-namespace BURGERSHACK_DESKTOP.UTIL
+namespace BurgerShack.Desktop.UTIL
 {
     class clnUtilFormValidar
     {
@@ -43,15 +43,15 @@ namespace BURGERSHACK_DESKTOP.UTIL
 
         public void addValidacao(Control control, Validacao[] validacoes)
         {
-            if (control is cboUIX cbo)
+            if (control is UIXComboBox cbo)
             {
                 control = cbo.cbo;
             }
-            else if (control is vitorrdgs.UiX.Component.mtbUIX mtb)
+            else if (control is vitorrdgs.UiX.Component.UIXMaskedTextBox mtb)
             {
                 control = mtb.mtb;
             }
-            else if (control is txtUIX txt)
+            else if (control is UIXTextBox txt)
             {
                 control = txt.txt;
             }

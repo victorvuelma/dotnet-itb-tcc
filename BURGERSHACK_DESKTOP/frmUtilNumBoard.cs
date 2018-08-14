@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Utl.Form;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmUtilNumBoard : Form
     {

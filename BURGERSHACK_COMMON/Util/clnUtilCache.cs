@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BURGERSHACK_COMMON.UTIL
+namespace BurgerShack.Common.UTIL
 {
     public class clnUtilCache
     {

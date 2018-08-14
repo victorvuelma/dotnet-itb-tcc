@@ -1,6 +1,6 @@
-﻿using BURGERSHACK_COMMON;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_DESKTOP.UTIL;
+﻿using BurgerShack.Common;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Desktop.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,18 +12,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmFuncionario : Form
     {
 
         private clnUtilFormValidar _validar;
 
-        private int _codFuncionario;
+        private bool _primeiro;
         private clnFuncionario _objFuncionario;
 
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         internal clnFuncionario ObjFuncionario { get => _objFuncionario; set => _objFuncionario = value; }
+        public bool Primeiro { get => _primeiro; set => _primeiro = value; }
 
         public frmFuncionario()
         {
@@ -181,7 +181,7 @@ namespace BURGERSHACK_DESKTOP
 
         private void definirImagemPadrao()
         {
-            picImagem.ImageLocation = clnArquivo.tempImage(global::BURGERSHACK_DESKTOP.Properties.Resources.ingrediente);
+            picImagem.ImageLocation = clnArquivo.tempImage(global::BurgerShack.Desktop.Properties.Resources.ingrediente);
         }
 
         private void adicionarImagem()
@@ -273,6 +273,11 @@ namespace BURGERSHACK_DESKTOP
                     Cod = ObjFuncionario.CodFoto
                 }.obterPorCodigo();
                 picImagem.ImageLocation = objFoto.Local;
+            }
+
+            if (Primeiro)
+            {
+                btnAcesso.Visible = false;
             }
         }
 

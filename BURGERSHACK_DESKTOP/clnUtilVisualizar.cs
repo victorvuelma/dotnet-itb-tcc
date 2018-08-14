@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
-using BURGERSHACK_COMMON.UTIL;
+using BurgerShack.Common.UTIL;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
 
     public abstract class clnUtilVisualizar

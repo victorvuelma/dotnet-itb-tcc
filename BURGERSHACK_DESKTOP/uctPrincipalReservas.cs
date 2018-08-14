@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class uctPrincipalReservas : UserControl
     {
@@ -27,32 +27,20 @@ namespace BURGERSHACK_DESKTOP
         {
             pnlReservas.Controls.Clear();
 
-            clnReserva objReservas = new clnReserva
+            List<clnReserva> objReservas = new clnReserva
             {
                 Agendado = dtpListar.Value.Date
-            };
+            }.obterPorDataAgendada();
 
-            List<Control> reservasControles = new List<Control>();
-            foreach (clnReserva objReserva in objReservas.obterPorDataAgendada())
+            lstReservas.Clear();
+            foreach (clnReserva objReserva in objReservas)
             {
-                btnLabelUIX btn = new btnLabelUIX
-                {
-                    Description = ("RESERVA #" + objReserva.Cod + " - " + objReserva.Agendado.ToString("HH:mm") +
-                                    "\n" + objReserva.Situacao +
-                                    "\n" + objReserva.Pessoas + " pessoas"),
-                    Name = "btnReserva" + objReserva.Cod,
-                    Size = new Size(120, 160),
-                    Image = Properties.Resources.reserva
-                };
-                btn.Click += (object sender, EventArgs e) =>
+                lstReservas.Adicionar(objReserva.Cod, "RESERVA " + objReserva.Cod, Properties.Resources.reserva, AppDesktop.VisualStyle.BoxColor, () =>
                 {
                     abrirReserva(objReserva);
-                };
-
-                reservasControles.Add(btn);
+                    return UIXItemsList.ListResult.NENHUM;
+                });
             }
-            clnUtil.adicionarControles(pnlReservas, reservasControles, 20);
-            reservasControles.Clear();
         }
 
         private void abrirReserva(clnReserva objReserva)
@@ -63,8 +51,6 @@ namespace BURGERSHACK_DESKTOP
                 CodFuncionario = CodFuncionario
             };
             frmReserva.ShowDialog();
-
-            exibirReservas();
         }
 
         private void uctPrincipalReservas_Load(object sender, EventArgs e)

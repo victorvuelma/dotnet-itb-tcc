@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class uctGerenciamentoListar
     {
@@ -32,9 +32,9 @@
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
-            this.txtPesquisar = new vitorrdgs.UiX.Component.txtUIX();
-            this.btnPesquisar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnNovo = new vitorrdgs.UiX.Component.btnUIX();
+            this.txtPesquisar = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.btnPesquisar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnNovo = new vitorrdgs.UiX.Component.UIXButton();
             this.grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.grbPesquisa.SuspendLayout();
@@ -100,7 +100,7 @@
             // 
             this.btnPesquisar.Description = "Pesquisar";
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pesquisar;
+            this.btnPesquisar.Image = global::BurgerShack.Desktop.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
             this.btnPesquisar.Location = new System.Drawing.Point(490, 15);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -114,7 +114,7 @@
             // 
             this.btnNovo.Description = "Novo";
             this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovo.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNovo.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnNovo.ImageLocation = null;
             this.btnNovo.Location = new System.Drawing.Point(595, 5);
             this.btnNovo.Name = "btnNovo";
@@ -146,11 +146,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbItens;
-        private vitorrdgs.UiX.Component.btnUIX btnNovo;
+        private vitorrdgs.UiX.Component.UIXButton btnNovo;
         private System.Windows.Forms.DataGridView dgvItens;
         private System.Windows.Forms.GroupBox grbPesquisa;
-        private vitorrdgs.UiX.Component.btnUIX btnPesquisar;
-        private vitorrdgs.UiX.Component.txtUIX txtPesquisar;
+        private vitorrdgs.UiX.Component.UIXButton btnPesquisar;
+        private vitorrdgs.UiX.Component.UIXTextBox txtPesquisar;
         private System.Windows.Forms.Label lblPesquisaRes;
     }
 }

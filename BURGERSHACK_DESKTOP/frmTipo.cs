@@ -1,5 +1,5 @@
-﻿using BURGERSHACK_COMMON;
-using BURGERSHACK_COMMON.UTIL;
+﻿using BurgerShack.Common;
+using BurgerShack.Common.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmTipo : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmFuncionario
     {
@@ -30,35 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionario));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnAcesso = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnAcesso = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
-            this.mtbTelRes =new vitorrdgs.UiX.Component.mtbUIX();
-            this.txtRG = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtEmail = new vitorrdgs.UiX.Component.txtUIX();
-            this.mtbTelCel =new vitorrdgs.UiX.Component.mtbUIX();
-            this.cboGenero = new vitorrdgs.UiX.Component.cboUIX();
-            this.mtbCPF =new vitorrdgs.UiX.Component.mtbUIX();
-            this.mtbDataNasc =new vitorrdgs.UiX.Component.mtbUIX();
-            this.txtNome = new vitorrdgs.UiX.Component.txtUIX();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.mtbTelRes =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.txtRG = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtEmail = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.mtbTelCel =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.cboGenero = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.mtbCPF =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbDataNasc =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.txtNome = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
-            this.txtEndComplemento = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtEndCidade = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtEndBairro = new vitorrdgs.UiX.Component.txtUIX();
-            this.mtbEndCEP =new vitorrdgs.UiX.Component.mtbUIX();
-            this.cboEndUF = new vitorrdgs.UiX.Component.cboUIX();
-            this.txtEndLogradouro = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtEndNr = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtEndComplemento = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtEndCidade = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtEndBairro = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.mtbEndCEP =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.cboEndUF = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.txtEndLogradouro = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtEndNr = new vitorrdgs.UiX.Component.UIXTextBox();
             this.grbImagem = new System.Windows.Forms.GroupBox();
-            this.btnImgAdicionar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnImgRemover = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnImgAdicionar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnImgRemover = new vitorrdgs.UiX.Component.UIXButton();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbContrato = new System.Windows.Forms.GroupBox();
-            this.cboCargo = new vitorrdgs.UiX.Component.cboUIX();
-            this.cboSituacao = new vitorrdgs.UiX.Component.cboUIX();
-            this.txtSalario = new vitorrdgs.UiX.Component.txtUIX();
+            this.cboCargo = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.cboSituacao = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.txtSalario = new vitorrdgs.UiX.Component.UIXTextBox();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -81,7 +81,7 @@
             // 
             this.btnAcesso.Description = "Acesso";
             this.btnAcesso.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAcesso.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.entrar;
+            this.btnAcesso.Image = global::BurgerShack.Desktop.Properties.Resources.entrar;
             this.btnAcesso.ImageLocation = null;
             this.btnAcesso.Location = new System.Drawing.Point(5, 205);
             this.btnAcesso.Name = "btnAcesso";
@@ -95,7 +95,7 @@
             // 
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
@@ -109,7 +109,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 305);
@@ -258,7 +258,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.funcionario;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.funcionario;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -412,7 +412,7 @@
             // 
             this.btnImgAdicionar.Description = "Adicionar";
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgAdicionar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnImgAdicionar.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnImgAdicionar.ImageLocation = null;
             this.btnImgAdicionar.Location = new System.Drawing.Point(100, 15);
             this.btnImgAdicionar.Name = "btnImgAdicionar";
@@ -438,7 +438,7 @@
             // 
             // picImagem
             // 
-            this.picImagem.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.imagem;
+            this.picImagem.Image = global::BurgerShack.Desktop.Properties.Resources.imagem;
             this.picImagem.Location = new System.Drawing.Point(505, 55);
             this.picImagem.Name = "picImagem";
             this.picImagem.Size = new System.Drawing.Size(190, 190);
@@ -529,35 +529,35 @@
 
         #endregion
 
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
-        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.UIXButton btnVoltar;
+        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
         private System.Windows.Forms.GroupBox grbInformacoes;
-        private vitorrdgs.UiX.Component.txtUIX txtNome;
-        private vitorrdgs.UiX.Component.mtbUIX mtbDataNasc;
-        private vitorrdgs.UiX.Component.cboUIX cboGenero;
-        private vitorrdgs.UiX.Component.txtUIX txtEmail;
-        private vitorrdgs.UiX.Component.mtbUIX mtbTelCel;
-        public vitorrdgs.UiX.Component.mtbUIX mtbCPF;
-        public vitorrdgs.UiX.Component.txtUIX txtRG;
-        private vitorrdgs.UiX.Component.mtbUIX mtbTelRes;
+        private vitorrdgs.UiX.Component.UIXTextBox txtNome;
+        private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbDataNasc;
+        private vitorrdgs.UiX.Component.UIXComboBox cboGenero;
+        private vitorrdgs.UiX.Component.UIXTextBox txtEmail;
+        private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbTelCel;
+        public vitorrdgs.UiX.Component.UIXMaskedTextBox mtbCPF;
+        public vitorrdgs.UiX.Component.UIXTextBox txtRG;
+        private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbTelRes;
         public System.Windows.Forms.GroupBox grpEndereco;
-        public vitorrdgs.UiX.Component.txtUIX txtEndComplemento;
-        public vitorrdgs.UiX.Component.txtUIX txtEndCidade;
-        public vitorrdgs.UiX.Component.txtUIX txtEndBairro;
-        public vitorrdgs.UiX.Component.mtbUIX mtbEndCEP;
-        public vitorrdgs.UiX.Component.cboUIX cboEndUF;
-        public vitorrdgs.UiX.Component.txtUIX txtEndLogradouro;
-        public vitorrdgs.UiX.Component.txtUIX txtEndNr;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndComplemento;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndCidade;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndBairro;
+        public vitorrdgs.UiX.Component.UIXMaskedTextBox mtbEndCEP;
+        public vitorrdgs.UiX.Component.UIXComboBox cboEndUF;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndLogradouro;
+        public vitorrdgs.UiX.Component.UIXTextBox txtEndNr;
         public System.Windows.Forms.GroupBox grbImagem;
-        private vitorrdgs.UiX.Component.btnUIX btnImgAdicionar;
-        private vitorrdgs.UiX.Component.btnUIX btnImgRemover;
+        private vitorrdgs.UiX.Component.UIXButton btnImgAdicionar;
+        private vitorrdgs.UiX.Component.UIXButton btnImgRemover;
         private System.Windows.Forms.PictureBox picImagem;
         private System.Windows.Forms.GroupBox grbContrato;
-        private vitorrdgs.UiX.Component.txtUIX txtSalario;
-        private vitorrdgs.UiX.Component.cboUIX cboSituacao;
-        private vitorrdgs.UiX.Component.cboUIX cboCargo;
-        private vitorrdgs.UiX.Component.btnUIX btnAcesso;
+        private vitorrdgs.UiX.Component.UIXTextBox txtSalario;
+        private vitorrdgs.UiX.Component.UIXComboBox cboSituacao;
+        private vitorrdgs.UiX.Component.UIXComboBox cboCargo;
+        private vitorrdgs.UiX.Component.UIXButton btnAcesso;
     }
 }

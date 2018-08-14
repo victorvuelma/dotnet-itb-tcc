@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BURGERSHACK_COMMON.UTIL;
+using BurgerShack.Common.UTIL;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class uctGerenciamentoListar : UserControl
     {

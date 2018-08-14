@@ -1,6 +1,6 @@
-﻿using BURGERSHACK_COMMON;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_DESKTOP.UTIL;
+﻿using BurgerShack.Common;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Desktop.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.UiX.Property;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmItemIngrediente : Form
     {

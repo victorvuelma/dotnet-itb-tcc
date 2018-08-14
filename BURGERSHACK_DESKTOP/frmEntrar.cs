@@ -1,6 +1,6 @@
-﻿using BURGERSHACK_COMMON;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_DESKTOP.UTIL;
+﻿using BurgerShack.Common;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Desktop.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmEntrar : Form
     {
@@ -22,6 +22,8 @@ namespace BURGERSHACK_DESKTOP
 
         public frmEntrar()
         {
+            AppDesktop.startup();
+
             InitializeComponent();
 
             txtSenha.txt.PasswordChar = '*';
@@ -34,6 +36,32 @@ namespace BURGERSHACK_DESKTOP
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            List<clnFuncionario> objFuncionarios = new clnFuncionario { }.obterTodos();
+            if (objFuncionarios.Count == 0)
+            {
+                frmFuncionario frmFuncionario = new frmFuncionario();
+                frmFuncionario.Primeiro = true;
+
+                Hide();
+                Close();
+                return;
+            }
+            List<clnAcesso> objAcessos = new clnAcesso { }.obterTodos();
+            if (objAcessos.Count == 0)
+            {
+                frmAcesso frmAcesso = new frmAcesso();
+                frmAcesso.ObjAcesso = new clnAcesso
+                {
+                    CodFuncionario = objFuncionarios.First().Cod,
+                    Senha = "",
+                    Usuario = ""
+                };
+                
+                Hide();
+                Close();
+                return;
+            }
+
             clnUtil.atualizarForm(this);
 
             Focus();

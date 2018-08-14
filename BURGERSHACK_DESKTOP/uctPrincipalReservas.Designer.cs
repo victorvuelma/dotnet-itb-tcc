@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class uctPrincipalReservas
     {
@@ -28,33 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbListar = new System.Windows.Forms.GroupBox();
-            this.pnlReservas = new System.Windows.Forms.Panel();
+            this.lstReservas = new vitorrdgs.UiX.Component.UIXItemsList();
             this.dtpListar = new System.Windows.Forms.DateTimePicker();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnNova = new vitorrdgs.UiX.Component.btnUIX();
-            this.grbListar.SuspendLayout();
+            this.btnNova = new vitorrdgs.UiX.Component.UIXButton();
+            this.pnlReservas = new System.Windows.Forms.Panel();
+            this.lstReservas.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbListar
             // 
-            this.grbListar.Controls.Add(this.pnlReservas);
-            this.grbListar.Controls.Add(this.dtpListar);
-            this.grbListar.Location = new System.Drawing.Point(10, 10);
-            this.grbListar.Name = "grbListar";
-            this.grbListar.Size = new System.Drawing.Size(780, 630);
-            this.grbListar.TabIndex = 0;
-            this.grbListar.TabStop = false;
-            this.grbListar.Text = "RESERVAS";
-            // 
-            // pnlReservas
-            // 
-            this.pnlReservas.Location = new System.Drawing.Point(5, 30);
-            this.pnlReservas.MaximumSize = new System.Drawing.Size(770, 10000);
-            this.pnlReservas.Name = "pnlReservas";
-            this.pnlReservas.Size = new System.Drawing.Size(770, 590);
-            this.pnlReservas.TabIndex = 1;
+            this.lstReservas.Controls.Add(this.pnlReservas);
+            this.lstReservas.Controls.Add(this.dtpListar);
+            this.lstReservas.Location = new System.Drawing.Point(10, 10);
+            this.lstReservas.Name = "grbListar";
+            this.lstReservas.Size = new System.Drawing.Size(780, 630);
+            this.lstReservas.TabIndex = 0;
+            this.lstReservas.TabStop = false;
+            this.lstReservas.Text = "RESERVAS";
             // 
             // dtpListar
             // 
@@ -76,27 +68,36 @@
             // 
             this.btnNova.Description = "Nova Reserva";
             this.btnNova.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNova.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNova.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnNova.ImageLocation = null;
             this.btnNova.Location = new System.Drawing.Point(5, 5);
             this.btnNova.Name = "btnNova";
             this.btnNova.Size = new System.Drawing.Size(90, 90);
             this.btnNova.TabIndex = 0;
+            this.btnNova.Text = "Nova Reserva";
             this.btnNova.UseVisualStyleBackColor = true;
             this.btnNova.Click += new System.EventHandler(this.btnNova_Click);
+            // 
+            // pnlReservas
+            // 
+            this.pnlReservas.Location = new System.Drawing.Point(5, 30);
+            this.pnlReservas.MaximumSize = new System.Drawing.Size(770, 10000);
+            this.pnlReservas.Name = "pnlReservas";
+            this.pnlReservas.Size = new System.Drawing.Size(770, 590);
+            this.pnlReservas.TabIndex = 1;
             // 
             // uctPrincipalReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.grbListar);
+            this.Controls.Add(this.lstReservas);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctPrincipalReservas";
             this.Size = new System.Drawing.Size(900, 650);
             this.Load += new System.EventHandler(this.uctPrincipalReservas_Load);
-            this.grbListar.ResumeLayout(false);
+            this.lstReservas.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -104,10 +105,10 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbListar;
+        private vitorrdgs.UiX.Component.UIXItemsList lstReservas;
         private System.Windows.Forms.DateTimePicker dtpListar;
-        private System.Windows.Forms.Panel pnlReservas;
         private System.Windows.Forms.Panel pnlMenu;
-        private vitorrdgs.UiX.Component.btnUIX btnNova;
+        private vitorrdgs.UiX.Component.UIXButton btnNova;
+        private System.Windows.Forms.Panel pnlReservas;
     }
 }

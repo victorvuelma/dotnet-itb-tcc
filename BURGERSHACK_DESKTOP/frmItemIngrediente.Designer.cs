@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmItemIngrediente
     {
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.grbIngrediente = new System.Windows.Forms.GroupBox();
-            this.txtQuantidade = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtQuantidade = new vitorrdgs.UiX.Component.UIXTextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.picIngrediente = new System.Windows.Forms.PictureBox();
-            this.btnAlterar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnConfirmar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnRemover = new vitorrdgs.UiX.Component.btnUIX();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.btnAlterar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnConfirmar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnRemover = new vitorrdgs.UiX.Component.UIXButton();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grbIngrediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIngrediente)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             // 
             this.btnAlterar.Description = "Alterar";
             this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAlterar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.alterar;
             this.btnAlterar.ImageLocation = null;
             this.btnAlterar.Location = new System.Drawing.Point(260, 205);
             this.btnAlterar.Name = "btnAlterar";
@@ -103,7 +103,7 @@
             // 
             this.btnConfirmar.Description = "Confirmar";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.Image = global::BurgerShack.Desktop.Properties.Resources.confirmar;
             this.btnConfirmar.ImageLocation = null;
             this.btnConfirmar.Location = new System.Drawing.Point(355, 205);
             this.btnConfirmar.Name = "btnConfirmar";
@@ -117,7 +117,7 @@
             // 
             this.btnRemover.Description = "Remover";
             this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnRemover.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.remover;
+            this.btnRemover.Image = global::BurgerShack.Desktop.Properties.Resources.remover;
             this.btnRemover.ImageLocation = null;
             this.btnRemover.Location = new System.Drawing.Point(5, 205);
             this.btnRemover.Name = "btnRemover";
@@ -132,7 +132,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pedido;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.pedido;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -168,12 +168,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbIngrediente;
-        private vitorrdgs.UiX.Component.txtUIX txtQuantidade;
-        public vitorrdgs.UiX.Component.btnUIX btnAlterar;
+        private vitorrdgs.UiX.Component.UIXTextBox txtQuantidade;
+        public vitorrdgs.UiX.Component.UIXButton btnAlterar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox picIngrediente;
-        private vitorrdgs.UiX.Component.btnUIX btnConfirmar;
-        public vitorrdgs.UiX.Component.btnUIX btnRemover;
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXButton btnConfirmar;
+        public vitorrdgs.UiX.Component.UIXButton btnRemover;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
     }
 }

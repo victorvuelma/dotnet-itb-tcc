@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmProduto
     {
@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnExcluir = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnVoltar = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnSalvar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.cboSituacao = new vitorrdgs.UiX.Component.cboUIX();
-            this.txtDesc = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtValor = new vitorrdgs.UiX.Component.txtUIX();
-            this.cboTipo = new vitorrdgs.UiX.Component.cboUIX();
-            this.txtNome = new vitorrdgs.UiX.Component.txtUIX();
-            this.btnImgRemover = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnImgAdicionar = new vitorrdgs.UiX.Component.btnUIX();
+            this.cboSituacao = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.txtDesc = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtValor = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.cboTipo = new vitorrdgs.UiX.Component.UIXComboBox();
+            this.txtNome = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.btnImgRemover = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnImgAdicionar = new vitorrdgs.UiX.Component.UIXButton();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbImagem = new System.Windows.Forms.GroupBox();
             this.grbIngredientes = new System.Windows.Forms.GroupBox();
-            this.btnIngredienteAdd = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnIngredientes = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnIngredienteAdd = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnIngredientes = new vitorrdgs.UiX.Component.UIXButton();
             this.pnlMenu.SuspendLayout();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -59,7 +59,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.produto;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.produto;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -98,7 +98,7 @@
             // 
             this.btnVoltar.Description = "Cancelar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.voltar;
+            this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
             this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
@@ -112,7 +112,7 @@
             // 
             this.btnSalvar.Description = "Salvar";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.salvar;
+            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.ImageLocation = null;
             this.btnSalvar.Location = new System.Drawing.Point(5, 205);
@@ -232,7 +232,7 @@
             // 
             this.btnImgAdicionar.Description = "Adicionar";
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgAdicionar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnImgAdicionar.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnImgAdicionar.ImageLocation = null;
             this.btnImgAdicionar.Location = new System.Drawing.Point(100, 15);
             this.btnImgAdicionar.Name = "btnImgAdicionar";
@@ -244,7 +244,7 @@
             // 
             // picImagem
             // 
-            this.picImagem.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.imagem;
+            this.picImagem.Image = global::BurgerShack.Desktop.Properties.Resources.imagem;
             this.picImagem.Location = new System.Drawing.Point(505, 55);
             this.picImagem.Name = "picImagem";
             this.picImagem.Size = new System.Drawing.Size(190, 190);
@@ -284,7 +284,7 @@
             // 
             this.btnIngredienteAdd.Description = "Adicionar";
             this.btnIngredienteAdd.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngredienteAdd.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnIngredienteAdd.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnIngredienteAdd.ImageLocation = null;
             this.btnIngredienteAdd.Location = new System.Drawing.Point(100, 15);
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
@@ -298,7 +298,7 @@
             // 
             this.btnIngredientes.Description = "Visualizar";
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngredientes.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.lista;
+            this.btnIngredientes.Image = global::BurgerShack.Desktop.Properties.Resources.lista;
             this.btnIngredientes.ImageLocation = null;
             this.btnIngredientes.Location = new System.Drawing.Point(10, 15);
             this.btnIngredientes.Name = "btnIngredientes";
@@ -337,24 +337,24 @@
         }
 
         #endregion
-        public vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        public vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
-        private vitorrdgs.UiX.Component.btnUIX btnVoltar;
-        private vitorrdgs.UiX.Component.btnUIX btnSalvar;
+        private vitorrdgs.UiX.Component.UIXButton btnVoltar;
+        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
         public System.Windows.Forms.GroupBox grbDadosPessoais;
-        private vitorrdgs.UiX.Component.txtUIX txtValor;
-        private vitorrdgs.UiX.Component.cboUIX cboTipo;
-        private vitorrdgs.UiX.Component.txtUIX txtNome;
-        private vitorrdgs.UiX.Component.btnUIX btnImgRemover;
-        private vitorrdgs.UiX.Component.btnUIX btnImgAdicionar;
+        private vitorrdgs.UiX.Component.UIXTextBox txtValor;
+        private vitorrdgs.UiX.Component.UIXComboBox cboTipo;
+        private vitorrdgs.UiX.Component.UIXTextBox txtNome;
+        private vitorrdgs.UiX.Component.UIXButton btnImgRemover;
+        private vitorrdgs.UiX.Component.UIXButton btnImgAdicionar;
         private System.Windows.Forms.PictureBox picImagem;
         public System.Windows.Forms.GroupBox grbImagem;
-        private vitorrdgs.UiX.Component.cboUIX cboSituacao;
-        private vitorrdgs.UiX.Component.btnUIX btnExcluir;
-        private vitorrdgs.UiX.Component.txtUIX txtDesc;
+        private vitorrdgs.UiX.Component.UIXComboBox cboSituacao;
+        private vitorrdgs.UiX.Component.UIXButton btnExcluir;
+        private vitorrdgs.UiX.Component.UIXTextBox txtDesc;
         public System.Windows.Forms.GroupBox grbIngredientes;
-        private vitorrdgs.UiX.Component.btnUIX btnIngredienteAdd;
-        private vitorrdgs.UiX.Component.btnUIX btnIngredientes;
+        private vitorrdgs.UiX.Component.UIXButton btnIngredienteAdd;
+        private vitorrdgs.UiX.Component.UIXButton btnIngredientes;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

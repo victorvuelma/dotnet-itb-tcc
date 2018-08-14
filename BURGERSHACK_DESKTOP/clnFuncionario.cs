@@ -7,12 +7,12 @@ using System.Drawing;
 
 using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_COMMON;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     class clnFuncionario
     {
@@ -138,6 +138,20 @@ namespace BURGERSHACK_DESKTOP
             objSelect.table("funcionario");
             objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlElementWhere.whereAssociation.OR)
                            .where("cpf", sqlElementWhereCommon.whereOperation.LIKE, "%" + Cpf + "%");
+
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            List<clnFuncionario> objFuncionarios = new List<clnFuncionario>();
+            while (reader.Read())
+                objFuncionarios.Add(obter(reader));
+            reader.Close();
+
+            return objFuncionarios;
+        }
+
+        public List<clnFuncionario> obterTodos()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("funcionario");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnFuncionario> objFuncionarios = new List<clnFuncionario>();

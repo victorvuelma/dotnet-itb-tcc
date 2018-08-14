@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmTipo
     {
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.dgvTipos = new System.Windows.Forms.DataGridView();
             this.columnCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbEditar = new System.Windows.Forms.GroupBox();
-            this.txtNome = new vitorrdgs.UiX.Component.txtUIX();
-            this.btnNovo = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnAcao = new vitorrdgs.UiX.Component.btnUIX();
+            this.txtNome = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.btnNovo = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnAcao = new vitorrdgs.UiX.Component.UIXButton();
             this.grbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.grbEditar.SuspendLayout();
@@ -47,7 +47,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.alterar;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.alterar;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -129,7 +129,7 @@
             // 
             this.btnNovo.Description = "Novo";
             this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovo.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnNovo.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnNovo.ImageLocation = null;
             this.btnNovo.Location = new System.Drawing.Point(5, 305);
             this.btnNovo.Name = "btnNovo";
@@ -143,7 +143,7 @@
             // 
             this.btnAcao.Description = "Alterar";
             this.btnAcao.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAcao.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.alterar;
+            this.btnAcao.Image = global::BurgerShack.Desktop.Properties.Resources.alterar;
             this.btnAcao.ImageLocation = null;
             this.btnAcao.Location = new System.Drawing.Point(305, 305);
             this.btnAcao.Name = "btnAcao";
@@ -179,15 +179,15 @@
         }
 
         #endregion
-        public vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        public vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         public System.Windows.Forms.GroupBox grbDadosPessoais;
         public System.Windows.Forms.GroupBox grbEditar;
         private System.Windows.Forms.DataGridView dgvTipos;
-        private vitorrdgs.UiX.Component.txtUIX txtNome;
+        private vitorrdgs.UiX.Component.UIXTextBox txtNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnCod;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDesc;
-        private vitorrdgs.UiX.Component.btnUIX btnNovo;
-        private vitorrdgs.UiX.Component.btnUIX btnAcao;
+        private vitorrdgs.UiX.Component.UIXButton btnNovo;
+        private vitorrdgs.UiX.Component.UIXButton btnAcao;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

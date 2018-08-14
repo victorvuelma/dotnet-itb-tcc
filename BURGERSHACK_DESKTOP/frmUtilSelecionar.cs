@@ -1,6 +1,6 @@
-﻿using BURGERSHACK_COMMON;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_DESKTOP.UTIL;
+﻿using BurgerShack.Common;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Desktop.UTIL;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Manager;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmUtilSelecionar : Form
     {
@@ -43,7 +43,7 @@ namespace BURGERSHACK_DESKTOP
             List<Control> opcoesControles = new List<Control>();
             foreach (object obj in _opcoes)
             {
-                btnUIX btn = new btnUIX
+                UIXButton btn = new UIXButton
                 {
                     Description = ObjSelecionar.ObjListar.getNome(obj),
                     Name = "btnSelecionar" + ObjSelecionar.ObjListar.getCod(obj),

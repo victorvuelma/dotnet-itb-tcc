@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmEntrar
     {
@@ -31,10 +31,10 @@
             this.picVer = new System.Windows.Forms.PictureBox();
             this.picUser = new System.Windows.Forms.PictureBox();
             this.lblProgram = new System.Windows.Forms.Label();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
-            this.txtSenha = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtUsuario = new vitorrdgs.UiX.Component.txtUIX();
-            this.btnEntrar = new vitorrdgs.UiX.Component.btnUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
+            this.txtSenha = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtUsuario = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.btnEntrar = new vitorrdgs.UiX.Component.UIXButton();
             ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             // picVer
             // 
             this.picVer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picVer.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.eye;
+            this.picVer.Image = global::BurgerShack.Desktop.Properties.Resources.eye;
             this.picVer.Location = new System.Drawing.Point(465, 120);
             this.picVer.Name = "picVer";
             this.picVer.Size = new System.Drawing.Size(20, 20);
@@ -54,7 +54,7 @@
             // 
             // picUser
             // 
-            this.picUser.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.usuarios;
+            this.picUser.Image = global::BurgerShack.Desktop.Properties.Resources.usuarios;
             this.picUser.Location = new System.Drawing.Point(30, 80);
             this.picUser.Name = "picUser";
             this.picUser.Size = new System.Drawing.Size(150, 150);
@@ -76,7 +76,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.usuarios;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.usuarios;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -122,7 +122,7 @@
             this.btnEntrar.BackColor = System.Drawing.Color.White;
             this.btnEntrar.Description = "Acessar";
             this.btnEntrar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnEntrar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.entrar;
+            this.btnEntrar.Image = global::BurgerShack.Desktop.Properties.Resources.entrar;
             this.btnEntrar.ImageLocation = null;
             this.btnEntrar.Location = new System.Drawing.Point(380, 155);
             this.btnEntrar.Name = "btnEntrar";
@@ -136,7 +136,6 @@
             // 
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(500, 270);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblProgram);
@@ -159,13 +158,13 @@
         }
 
         #endregion
-        private vitorrdgs.UiX.Component.txtUIX txtUsuario;
-        private vitorrdgs.UiX.Component.txtUIX txtSenha;
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXTextBox txtUsuario;
+        private vitorrdgs.UiX.Component.UIXTextBox txtSenha;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.PictureBox picVer;
         private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Label lblProgram;
-        private vitorrdgs.UiX.Component.btnUIX btnEntrar;
+        private vitorrdgs.UiX.Component.UIXButton btnEntrar;
     }
 }
 

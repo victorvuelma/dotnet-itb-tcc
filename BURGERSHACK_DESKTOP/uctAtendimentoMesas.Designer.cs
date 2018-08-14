@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class uctAtendimentoMesas
     {
@@ -30,7 +30,7 @@
         {
             this.grbMesas = new System.Windows.Forms.GroupBox();
             this.pnlMesas = new System.Windows.Forms.Panel();
-            this.btnAdicionar = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnAdicionar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbMesas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // 
             this.btnAdicionar.Description = "Adicionar";
             this.btnAdicionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAdicionar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnAdicionar.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnAdicionar.ImageLocation = null;
             this.btnAdicionar.Location = new System.Drawing.Point(400, 550);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -89,6 +89,6 @@
         #endregion
         private System.Windows.Forms.GroupBox grbMesas;
         private System.Windows.Forms.Panel pnlMesas;
-        private vitorrdgs.UiX.Component.btnUIX btnAdicionar;
+        private vitorrdgs.UiX.Component.UIXButton btnAdicionar;
     }
 }

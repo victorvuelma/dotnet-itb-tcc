@@ -1,6 +1,6 @@
-﻿using BURGERSHACK_COMMON;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_DESKTOP.UTIL;
+﻿using BurgerShack.Common;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Desktop.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmAcesso : Form
     {
@@ -65,12 +65,25 @@ namespace BURGERSHACK_DESKTOP
         {
             if (_validar.validar(this))
             {
-                ObjAcesso.Usuario = txtUsuario.Text;
-                ObjAcesso.gravar();
+                clnAcesso objAcessoUsuario = new clnAcesso
+                {
+                    Usuario = txtUsuario.Text
+                }.obterPorUsuario();
 
-                clnUtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!");
+                if (objAcessoUsuario == null || objAcessoUsuario.CodFuncionario == ObjAcesso.CodFuncionario)
+                {
+                    ObjAcesso.Usuario = txtUsuario.Text;
+                    ObjAcesso.Senha = txtSenha.Text;
+                    ObjAcesso.gravar();
 
-                Close();
+                    clnUtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!");
+
+                    Close();
+                }
+                else
+                {
+                    clnUtilMensagem.mostrarOk("Acesso", "Erro, o usuario informado já está em uso.");
+                }
             }
         }
 

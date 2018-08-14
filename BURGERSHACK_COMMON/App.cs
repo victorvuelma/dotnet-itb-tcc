@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using vitorrdgs.SqlMaster;
 
-namespace BURGERSHACK_COMMON
+namespace BurgerShack.Common
 {
     public class App
     {

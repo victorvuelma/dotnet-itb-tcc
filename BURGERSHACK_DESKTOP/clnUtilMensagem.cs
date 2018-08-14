@@ -8,7 +8,7 @@ using vitorrdgs.UiX;
 using System.Drawing;
 using vitorrdgs.UiX.Component;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     class clnUtilMensagem
     {
@@ -25,13 +25,14 @@ namespace BURGERSHACK_DESKTOP
 
         public static bool mostrarSimNao(String titulo, String mensagem, MensagemIcone icone)
         {
-            return (msgUIX.confirmarSim(AppDesktop.VisualTemplate, titulo, mensagem).Equals(msgUIX.MessageResult.YES));
+            return (UIXMessage.confirmarSim(AppDesktop.VisualTemplate, titulo, mensagem).Equals(UIXMessage.MessageResult.YES));
         }
 
         public static void mostrarOk(String titulo, String mensagem)
         {
-            msgUIX.mostrarOk(AppDesktop.VisualTemplate, titulo, mensagem);
+            UIXMessage.mostrarOk(AppDesktop.VisualTemplate, titulo, mensagem);
         }
+
 
     }
 }

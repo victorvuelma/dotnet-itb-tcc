@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmUtilVisualizar
     {
@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
-            this.uctOpcoes = new BURGERSHACK_DESKTOP.uctUtilListar();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.lstOpcoes = new vitorrdgs.UiX.Component.UIXItemsList();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
-            this.txtPesquisar = new vitorrdgs.UiX.Component.txtUIX();
-            this.btnPesquisar = new vitorrdgs.UiX.Component.btnUIX();
+            this.txtPesquisar = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.btnPesquisar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbOpcoes.SuspendLayout();
             this.grbPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbOpcoes
             // 
-            this.grbOpcoes.Controls.Add(this.uctOpcoes);
+            this.grbOpcoes.Controls.Add(this.lstOpcoes);
             this.grbOpcoes.Location = new System.Drawing.Point(5, 190);
             this.grbOpcoes.Name = "grbOpcoes";
             this.grbOpcoes.Size = new System.Drawing.Size(590, 405);
@@ -50,21 +50,21 @@
             // 
             // uctOpcoes
             // 
-            this.uctOpcoes.AutoScroll = true;
-            this.uctOpcoes.Espacamento = 10;
-            this.uctOpcoes.Location = new System.Drawing.Point(5, 15);
-            this.uctOpcoes.MaximumSize = new System.Drawing.Size(580, 10000);
-            this.uctOpcoes.Name = "uctOpcoes";
-            this.uctOpcoes.PosIndex = 0;
-            this.uctOpcoes.Size = new System.Drawing.Size(580, 380);
-            this.uctOpcoes.TabIndex = 0;
+            this.lstOpcoes.AutoScroll = true;
+            this.lstOpcoes.ItemsSpace = 10;
+            this.lstOpcoes.Location = new System.Drawing.Point(5, 15);
+            this.lstOpcoes.MaximumSize = new System.Drawing.Size(580, 10000);
+            this.lstOpcoes.Name = "uctOpcoes";
+            this.lstOpcoes.PosIndex = 0;
+            this.lstOpcoes.Size = new System.Drawing.Size(580, 380);
+            this.lstOpcoes.TabIndex = 0;
             // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.lista;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.lista;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -112,7 +112,7 @@
             // 
             this.btnPesquisar.Description = "Pesquisar";
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pesquisar;
+            this.btnPesquisar.Image = global::BurgerShack.Desktop.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
             this.btnPesquisar.Location = new System.Drawing.Point(485, 15);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -145,11 +145,11 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grbOpcoes;
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
-        private BURGERSHACK_DESKTOP.uctUtilListar uctOpcoes;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
+        private vitorrdgs.UiX.Component.UIXItemsList lstOpcoes;
         private System.Windows.Forms.GroupBox grbPesquisa;
         private System.Windows.Forms.Label lblPesquisaRes;
-        private vitorrdgs.UiX.Component.txtUIX txtPesquisar;
-        private vitorrdgs.UiX.Component.btnUIX btnPesquisar;
+        private vitorrdgs.UiX.Component.UIXTextBox txtPesquisar;
+        private vitorrdgs.UiX.Component.UIXButton btnPesquisar;
     }
 }

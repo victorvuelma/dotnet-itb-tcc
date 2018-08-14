@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmItem
     {
@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
-            this.btnConfirmar = new vitorrdgs.UiX.Component.btnUIX();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
+            this.btnConfirmar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbProduto = new System.Windows.Forms.GroupBox();
-            this.txtAdicional = new vitorrdgs.UiX.Component.txtUIX();
-            this.txtQuantidade = new vitorrdgs.UiX.Component.txtUIX();
+            this.txtAdicional = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtQuantidade = new vitorrdgs.UiX.Component.UIXTextBox();
             this.lblProdutoNome = new System.Windows.Forms.Label();
             this.picProduto = new System.Windows.Forms.PictureBox();
-            this.btnRemover = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnRemover = new vitorrdgs.UiX.Component.UIXButton();
             this.grbIngredientes = new System.Windows.Forms.GroupBox();
-            this.btnIngredienteAdd = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnIngredientes = new vitorrdgs.UiX.Component.btnUIX();
+            this.btnIngredienteAdd = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnIngredientes = new vitorrdgs.UiX.Component.UIXButton();
             this.grbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduto)).BeginInit();
             this.grbIngredientes.SuspendLayout();
@@ -49,7 +49,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.pedido;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.pedido;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
@@ -62,7 +62,7 @@
             // 
             this.btnConfirmar.Description = "Confirmar";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.confirmar;
+            this.btnConfirmar.Image = global::BurgerShack.Desktop.Properties.Resources.confirmar;
             this.btnConfirmar.ImageLocation = null;
             this.btnConfirmar.Location = new System.Drawing.Point(345, 195);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -134,7 +134,7 @@
             // 
             this.btnRemover.Description = "Remover";
             this.btnRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnRemover.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.remover;
+            this.btnRemover.Image = global::BurgerShack.Desktop.Properties.Resources.remover;
             this.btnRemover.ImageLocation = null;
             this.btnRemover.Location = new System.Drawing.Point(5, 195);
             this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -163,7 +163,7 @@
             // 
             this.btnIngredienteAdd.Description = "Adicionar";
             this.btnIngredienteAdd.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngredienteAdd.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.adicionar;
+            this.btnIngredienteAdd.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnIngredienteAdd.ImageLocation = null;
             this.btnIngredienteAdd.Location = new System.Drawing.Point(90, 15);
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
@@ -176,7 +176,7 @@
             // 
             this.btnIngredientes.Description = "Visualizar";
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngredientes.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.lista;
+            this.btnIngredientes.Image = global::BurgerShack.Desktop.Properties.Resources.lista;
             this.btnIngredientes.ImageLocation = null;
             this.btnIngredientes.Location = new System.Drawing.Point(5, 15);
             this.btnIngredientes.Name = "btnIngredientes";
@@ -211,16 +211,16 @@
         }
 
         #endregion
-        public vitorrdgs.UiX.Component.hdrUIX hdrUIX;
-        private vitorrdgs.UiX.Component.btnUIX btnConfirmar;
+        public vitorrdgs.UiX.Component.UIXHeader hdrUIX;
+        private vitorrdgs.UiX.Component.UIXButton btnConfirmar;
         private System.Windows.Forms.GroupBox grbProduto;
-        private vitorrdgs.UiX.Component.txtUIX txtAdicional;
-        private vitorrdgs.UiX.Component.txtUIX txtQuantidade;
-        private vitorrdgs.UiX.Component.btnUIX btnRemover;
+        private vitorrdgs.UiX.Component.UIXTextBox txtAdicional;
+        private vitorrdgs.UiX.Component.UIXTextBox txtQuantidade;
+        private vitorrdgs.UiX.Component.UIXButton btnRemover;
         private System.Windows.Forms.Label lblProdutoNome;
         private System.Windows.Forms.PictureBox picProduto;
-        private vitorrdgs.UiX.Component.btnUIX btnIngredienteAdd;
-        private vitorrdgs.UiX.Component.btnUIX btnIngredientes;
+        private vitorrdgs.UiX.Component.UIXButton btnIngredienteAdd;
+        private vitorrdgs.UiX.Component.UIXButton btnIngredientes;
         private System.Windows.Forms.GroupBox grbIngredientes;
         //private uctProdutoRemover uctPedidoRemover1;
     }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Property;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class uctPrincipalMesas : UserControl
     {
@@ -31,7 +31,7 @@ namespace BURGERSHACK_DESKTOP
             List<Control> mesaControles = new List<Control>();
             foreach (clnMesa objMesa in new clnMesa().obterMesas())
             {
-                btnUIX btn = new btnUIX
+                UIXButton btn = new UIXButton
                 {
                     Description = "MESA " + objMesa.Cod,
                     Name = "btnMesa" + objMesa.Cod,

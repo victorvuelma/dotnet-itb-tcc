@@ -1,4 +1,4 @@
-﻿namespace BURGERSHACK_DESKTOP
+﻿namespace BurgerShack.Desktop
 {
     partial class frmPrincipal
     {
@@ -30,11 +30,11 @@
         {
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnReservas = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnSair = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnGerenciamento = new vitorrdgs.UiX.Component.btnUIX();
-            this.btnMesas = new vitorrdgs.UiX.Component.btnUIX();
-            this.hdrUIX = new vitorrdgs.UiX.Component.hdrUIX();
+            this.btnReservas = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnSair = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnGerenciamento = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnMesas = new vitorrdgs.UiX.Component.UIXButton();
+            this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@
             // 
             this.btnReservas.Description = "Reservas";
             this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnReservas.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.reserva;
+            this.btnReservas.Image = global::BurgerShack.Desktop.Properties.Resources.reserva;
             this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReservas.ImageLocation = null;
             this.btnReservas.Location = new System.Drawing.Point(5, 105);
@@ -74,7 +74,7 @@
             // 
             this.btnSair.Description = "Sair";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSair.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.sair;
+            this.btnSair.Image = global::BurgerShack.Desktop.Properties.Resources.sair;
             this.btnSair.ImageLocation = null;
             this.btnSair.Location = new System.Drawing.Point(5, 555);
             this.btnSair.Name = "btnSair";
@@ -87,7 +87,7 @@
             // 
             this.btnGerenciamento.Description = "Gerenciar";
             this.btnGerenciamento.HoverColor = System.Drawing.Color.Transparent;
-            this.btnGerenciamento.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.gerenciador;
+            this.btnGerenciamento.Image = global::BurgerShack.Desktop.Properties.Resources.gerenciador;
             this.btnGerenciamento.ImageLocation = null;
             this.btnGerenciamento.Location = new System.Drawing.Point(5, 455);
             this.btnGerenciamento.Name = "btnGerenciamento";
@@ -100,7 +100,7 @@
             // 
             this.btnMesas.Description = "Mesas";
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMesas.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.mesa;
+            this.btnMesas.Image = global::BurgerShack.Desktop.Properties.Resources.mesa;
             this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMesas.ImageLocation = null;
             this.btnMesas.Location = new System.Drawing.Point(5, 5);
@@ -115,7 +115,7 @@
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
             this.hdrUIX.ButtonCloseEnabled = true;
             this.hdrUIX.ButtonMinEnabled = false;
-            this.hdrUIX.Image = global::BURGERSHACK_DESKTOP.Properties.Resources.garcom;
+            this.hdrUIX.Image = global::BurgerShack.Desktop.Properties.Resources.garcom;
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hdrUIX.Name = "hdrUIX";
@@ -146,12 +146,12 @@
 
         #endregion
 
-        private vitorrdgs.UiX.Component.hdrUIX hdrUIX;
+        private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         public System.Windows.Forms.Panel pnlConteudo;
         private System.Windows.Forms.Panel pnlMenu;
-        private vitorrdgs.UiX.Component.btnUIX btnSair;
-        private vitorrdgs.UiX.Component.btnUIX btnGerenciamento;
-        private vitorrdgs.UiX.Component.btnUIX btnMesas;
-        private vitorrdgs.UiX.Component.btnUIX btnReservas;
+        private vitorrdgs.UiX.Component.UIXButton btnSair;
+        private vitorrdgs.UiX.Component.UIXButton btnGerenciamento;
+        private vitorrdgs.UiX.Component.UIXButton btnMesas;
+        private vitorrdgs.UiX.Component.UIXButton btnReservas;
     }
 }

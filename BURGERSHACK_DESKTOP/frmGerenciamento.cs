@@ -1,4 +1,4 @@
-﻿using BURGERSHACK_COMMON.UTIL;
+﻿using BurgerShack.Common.UTIL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using vitorrdgs.UiX;
 using vitorrdgs.UiX.Manager;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class frmGerenciamento : Form
     {

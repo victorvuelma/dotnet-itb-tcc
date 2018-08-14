@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.UiX.Component;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class uctPedidoItens : UserControl
     {
@@ -116,7 +116,7 @@ namespace BURGERSHACK_DESKTOP
                     Cod = objProduto.CodImagem
                 }.obterPorCodigo();
 
-                btnUIX btn = new btnUIX
+                UIXButton btn = new UIXButton
                 {
                     Description = objProduto.Nome,
                     Name = "btnItem" + objProduto.Cod,

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     public partial class uctAtendimentoMesas : UserControl
     {
@@ -30,7 +30,7 @@ namespace BURGERSHACK_DESKTOP
             List<Control> pedidosControles = new List<Control>();
             foreach (int codMesa in ObjAtendimento.CodMesas)
             {
-                btnUIX btn = new btnUIX
+                UIXButton btn = new UIXButton
                 {
                     Description = "Mesa #" + codMesa,
                     Name = "btnMesa" + codMesa,

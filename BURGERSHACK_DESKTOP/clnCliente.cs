@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BURGERSHACK_COMMON.UTIL;
-using BURGERSHACK_COMMON;
+using BurgerShack.Common.UTIL;
+using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element;
 
-namespace BURGERSHACK_DESKTOP
+namespace BurgerShack.Desktop
 {
     class clnCliente
     {
