@@ -374,6 +374,9 @@
     <EmbeddedResource Include="frmEntrar.resx">
       <DependentUpon>frmEntrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFuncionario.resx">
+      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPagamento.resx">
       <DependentUpon>frmPagamento.cs</DependentUpon>
     </EmbeddedResource>

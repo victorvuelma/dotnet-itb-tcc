@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {
@@ -278,6 +279,9 @@ namespace BurgerShack.Desktop
             if (Primeiro)
             {
                 btnAcesso.Visible = false;
+                btnVoltar.Visible = false;
+                cboCargo.SelectedItem = cboCargo.Items.Last();
+                UtilForm.Disable(cboCargo);
             }
         }
 

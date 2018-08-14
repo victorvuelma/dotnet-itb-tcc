@@ -41,6 +41,7 @@ namespace BurgerShack.Desktop
             {
                 frmFuncionario frmFuncionario = new frmFuncionario();
                 frmFuncionario.Primeiro = true;
+                frmFuncionario.ShowDialog();
 
                 Hide();
                 Close();
@@ -56,6 +57,7 @@ namespace BurgerShack.Desktop
                     Senha = "",
                     Usuario = ""
                 };
+                frmAcesso.ShowDialog();
                 
                 Hide();
                 Close();

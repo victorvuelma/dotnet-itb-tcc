@@ -119,7 +119,6 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.BackColor = System.Drawing.Color.White;
             this.btnEntrar.Description = "Acessar";
             this.btnEntrar.HoverColor = System.Drawing.Color.Transparent;
             this.btnEntrar.Image = global::BurgerShack.Desktop.Properties.Resources.entrar;

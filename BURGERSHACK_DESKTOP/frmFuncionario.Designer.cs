@@ -28,26 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFuncionario));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnAcesso = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
             this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
-            this.mtbTelRes =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbTelRes = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.txtRG = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtEmail = new vitorrdgs.UiX.Component.UIXTextBox();
-            this.mtbTelCel =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbTelCel = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.cboGenero = new vitorrdgs.UiX.Component.UIXComboBox();
-            this.mtbCPF =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
-            this.mtbDataNasc =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbCPF = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbDataNasc = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.txtNome = new vitorrdgs.UiX.Component.UIXTextBox();
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
             this.txtEndComplemento = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtEndCidade = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtEndBairro = new vitorrdgs.UiX.Component.UIXTextBox();
-            this.mtbEndCEP =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbEndCEP = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.cboEndUF = new vitorrdgs.UiX.Component.UIXComboBox();
             this.txtEndLogradouro = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtEndNr = new vitorrdgs.UiX.Component.UIXTextBox();
@@ -206,7 +205,8 @@
             this.cboGenero.Location = new System.Drawing.Point(280, 80);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(105, 20);
+            this.cboGenero.SelectedItem = null;
+            this.cboGenero.Size = new System.Drawing.Size(105, 25);
             this.cboGenero.TabIndex = 10;
             // 
             // mtbCPF
@@ -345,7 +345,7 @@
             this.mtbEndCEP.Mask = "";
             this.mtbEndCEP.MaxLength = 32767;
             this.mtbEndCEP.Name = "mtbEndCEP";
-            this.mtbEndCEP.Size = new System.Drawing.Size(95, 20);
+            this.mtbEndCEP.Size = new System.Drawing.Size(95, 21);
             this.mtbEndCEP.TabIndex = 4;
             this.mtbEndCEP.ValidatingType = null;
             // 
@@ -359,6 +359,7 @@
             this.cboEndUF.Location = new System.Drawing.Point(305, 110);
             this.cboEndUF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboEndUF.Name = "cboEndUF";
+            this.cboEndUF.SelectedItem = null;
             this.cboEndUF.Size = new System.Drawing.Size(80, 25);
             this.cboEndUF.TabIndex = 7;
             // 
@@ -426,7 +427,7 @@
             // 
             this.btnImgRemover.Description = "Remover";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnImgRemover.Image")));
+            this.btnImgRemover.Image = global::BurgerShack.Desktop.Properties.Resources.remover;
             this.btnImgRemover.ImageLocation = null;
             this.btnImgRemover.Location = new System.Drawing.Point(10, 15);
             this.btnImgRemover.Name = "btnImgRemover";
@@ -467,7 +468,8 @@
             this.cboCargo.Location = new System.Drawing.Point(5, 45);
             this.cboCargo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboCargo.Name = "cboCargo";
-            this.cboCargo.Size = new System.Drawing.Size(380, 25);
+            this.cboCargo.SelectedItem = null;
+            this.cboCargo.Size = new System.Drawing.Size(380, 30);
             this.cboCargo.TabIndex = 2;
             // 
             // cboSituacao
@@ -479,7 +481,8 @@
             this.cboSituacao.Location = new System.Drawing.Point(195, 15);
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboSituacao.Name = "cboSituacao";
-            this.cboSituacao.Size = new System.Drawing.Size(190, 20);
+            this.cboSituacao.SelectedItem = null;
+            this.cboSituacao.Size = new System.Drawing.Size(190, 25);
             this.cboSituacao.TabIndex = 1;
             // 
             // txtSalario

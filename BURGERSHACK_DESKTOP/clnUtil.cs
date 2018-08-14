@@ -121,10 +121,10 @@ namespace BurgerShack.Desktop
 
         public static void definirCEP(UIXMaskedTextBox mtbCEP, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
         {
-            ctlLogradouro.Enabled = false;
-            ctlBairro.Enabled = false;
-            ctlCidade.Enabled = false;
-            cboUF.Enabled = false;
+            UtilForm.Disable(ctlLogradouro);
+            UtilForm.Disable(ctlBairro);
+            UtilForm.Disable(ctlCidade);
+            UtilForm.Disable(cboUF);
 
             addUFs(cboUF);
             mtbCEP.mtb.Validated += (object sender, EventArgs e) =>
@@ -144,10 +144,10 @@ namespace BurgerShack.Desktop
                 clnEndereco objEndereco = clnUtilEndereco.obterEndereco(cep);
                 if (objEndereco != null)
                 {
-                    ctlLogradouro.Enabled = false;
-                    ctlBairro.Enabled = false;
-                    ctlCidade.Enabled = false;
-                    cboUF.Enabled = false;
+                    UtilForm.Disable(ctlLogradouro);
+                    UtilForm.Disable(ctlBairro);
+                    UtilForm.Disable(ctlCidade);
+                    UtilForm.Disable(cboUF);
 
                     ctlLogradouro.Text = objEndereco.Logradouro;
                     ctlBairro.Text = objEndereco.Bairro;
@@ -158,10 +158,10 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    ctlLogradouro.Enabled = true;
-                    ctlBairro.Enabled = true;
-                    ctlCidade.Enabled = true;
-                    cboUF.Enabled = true;
+                    UtilForm.Enable(ctlLogradouro);
+                    UtilForm.Enable(ctlBairro);
+                    UtilForm.Enable(ctlCidade);
+                    UtilForm.Enable(cboUF);
 
                     clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente");
                     ctlLogradouro.Focus();
@@ -234,7 +234,7 @@ namespace BurgerShack.Desktop
             }
 
             AppDesktop.VisualTemplate.ctlApply(panel);
-            UtilForm.AtualizarIndexes(panel.Controls);
+            UtilForm.UpdateIndexes(panel.Controls);
 
             panel.Show();
         }
@@ -255,7 +255,7 @@ namespace BurgerShack.Desktop
                 AppDesktop.VisualTemplate.frmApply(form, hdr);
             }
 
-            UtilForm.AtualizarIndexes(form.Controls);
+            UtilForm.UpdateIndexes(form.Controls);
             if (form.AcceptButton != null)
             {
                 definirBotaoConfirmacao(form.Controls, form.AcceptButton);
@@ -317,7 +317,7 @@ namespace BurgerShack.Desktop
                 return;
             }
 
-            UtilForm.AtualizarIndexes(uctConteudo.Controls);
+            UtilForm.UpdateIndexes(uctConteudo.Controls);
             AppDesktop.VisualTemplate.ctlApply(uctConteudo);
 
             pnlConteudo.Controls.Add(uctConteudo);
