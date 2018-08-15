@@ -141,6 +141,7 @@
             this.mtbTelRes.AcceptButton = null;
             this.mtbTelRes.AccessibleName = "Tel. Cel.*";
             this.mtbTelRes.Campo = "Tel. Res.*";
+            this.mtbTelRes.DisabledColor = System.Drawing.Color.Empty;
             this.mtbTelRes.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbTelRes.Location = new System.Drawing.Point(190, 140);
             this.mtbTelRes.Mask = "";
@@ -155,6 +156,7 @@
             this.txtRG.AcceptButton = null;
             this.txtRG.AccessibleName = "CPF*";
             this.txtRG.Campo = "RG*";
+            this.txtRG.DisabledColor = System.Drawing.Color.Empty;
             this.txtRG.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtRG.Location = new System.Drawing.Point(180, 50);
             this.txtRG.MaxLength = 32767;
@@ -170,6 +172,7 @@
             this.txtEmail.AcceptButton = null;
             this.txtEmail.AccessibleName = "E-mail";
             this.txtEmail.Campo = "E-mail*";
+            this.txtEmail.DisabledColor = System.Drawing.Color.Empty;
             this.txtEmail.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEmail.Location = new System.Drawing.Point(5, 110);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -186,6 +189,7 @@
             this.mtbTelCel.AcceptButton = null;
             this.mtbTelCel.AccessibleName = "Tel. Cel.*";
             this.mtbTelCel.Campo = "Tel. Cel.*";
+            this.mtbTelCel.DisabledColor = System.Drawing.Color.Empty;
             this.mtbTelCel.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbTelCel.Location = new System.Drawing.Point(5, 140);
             this.mtbTelCel.Mask = "";
@@ -200,13 +204,14 @@
             this.cboGenero.AcceptButton = null;
             this.cboGenero.AccessibleName = "Genero*";
             this.cboGenero.Campo = "Gênero*";
+            this.cboGenero.DisabledColor = System.Drawing.Color.Empty;
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.cboGenero.Location = new System.Drawing.Point(280, 80);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.SelectedItem = null;
-            this.cboGenero.Size = new System.Drawing.Size(105, 25);
+            this.cboGenero.Size = new System.Drawing.Size(105, 30);
             this.cboGenero.TabIndex = 10;
             // 
             // mtbCPF
@@ -214,6 +219,7 @@
             this.mtbCPF.AcceptButton = null;
             this.mtbCPF.AccessibleName = "CPF*";
             this.mtbCPF.Campo = "CPF*";
+            this.mtbCPF.DisabledColor = System.Drawing.Color.Empty;
             this.mtbCPF.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbCPF.Location = new System.Drawing.Point(5, 50);
             this.mtbCPF.Mask = "";
@@ -227,13 +233,14 @@
             // 
             this.mtbDataNasc.AcceptButton = null;
             this.mtbDataNasc.AccessibleName = "Data de Nascimento*";
-            this.mtbDataNasc.Campo = "Data de Nascimento";
+            this.mtbDataNasc.Campo = "Data de Nascimento*";
+            this.mtbDataNasc.DisabledColor = System.Drawing.Color.Empty;
             this.mtbDataNasc.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbDataNasc.Location = new System.Drawing.Point(5, 80);
             this.mtbDataNasc.Mask = "";
             this.mtbDataNasc.MaxLength = 32767;
             this.mtbDataNasc.Name = "mtbDataNasc";
-            this.mtbDataNasc.Size = new System.Drawing.Size(270, 20);
+            this.mtbDataNasc.Size = new System.Drawing.Size(270, 21);
             this.mtbDataNasc.TabIndex = 8;
             this.mtbDataNasc.ValidatingType = null;
             // 
@@ -242,6 +249,7 @@
             this.txtNome.AcceptButton = null;
             this.txtNome.AccessibleName = "Nome*";
             this.txtNome.Campo = "Nome*";
+            this.txtNome.DisabledColor = System.Drawing.Color.Empty;
             this.txtNome.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtNome.Location = new System.Drawing.Point(5, 20);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -291,6 +299,7 @@
             this.txtEndComplemento.AcceptButton = null;
             this.txtEndComplemento.AccessibleName = "Complemento";
             this.txtEndComplemento.Campo = "Complemento";
+            this.txtEndComplemento.DisabledColor = System.Drawing.Color.Empty;
             this.txtEndComplemento.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndComplemento.Location = new System.Drawing.Point(135, 80);
             this.txtEndComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -307,6 +316,7 @@
             this.txtEndCidade.AcceptButton = null;
             this.txtEndCidade.AccessibleName = "Cidade*";
             this.txtEndCidade.Campo = "Cidade*";
+            this.txtEndCidade.DisabledColor = System.Drawing.Color.Empty;
             this.txtEndCidade.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndCidade.Location = new System.Drawing.Point(150, 110);
             this.txtEndCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -323,6 +333,7 @@
             this.txtEndBairro.AcceptButton = null;
             this.txtEndBairro.AccessibleName = "Bairro*";
             this.txtEndBairro.Campo = "Bairro*";
+            this.txtEndBairro.DisabledColor = System.Drawing.Color.Empty;
             this.txtEndBairro.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndBairro.Location = new System.Drawing.Point(5, 110);
             this.txtEndBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -339,6 +350,7 @@
             this.mtbEndCEP.AcceptButton = null;
             this.mtbEndCEP.AccessibleName = "CEP*";
             this.mtbEndCEP.Campo = "CEP*";
+            this.mtbEndCEP.DisabledColor = System.Drawing.Color.Empty;
             this.mtbEndCEP.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.mtbEndCEP.Location = new System.Drawing.Point(5, 20);
             this.mtbEndCEP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -354,6 +366,7 @@
             this.cboEndUF.AcceptButton = null;
             this.cboEndUF.AccessibleName = "Estado*";
             this.cboEndUF.Campo = "UF*";
+            this.cboEndUF.DisabledColor = System.Drawing.Color.Empty;
             this.cboEndUF.FormattingEnabled = true;
             this.cboEndUF.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.cboEndUF.Location = new System.Drawing.Point(305, 110);
@@ -368,6 +381,7 @@
             this.txtEndLogradouro.AcceptButton = null;
             this.txtEndLogradouro.AccessibleName = "Logradouro*";
             this.txtEndLogradouro.Campo = "Logradouro*";
+            this.txtEndLogradouro.DisabledColor = System.Drawing.Color.Empty;
             this.txtEndLogradouro.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndLogradouro.Location = new System.Drawing.Point(5, 50);
             this.txtEndLogradouro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -384,6 +398,7 @@
             this.txtEndNr.AcceptButton = null;
             this.txtEndNr.AccessibleName = "Número*";
             this.txtEndNr.Campo = "Número*";
+            this.txtEndNr.DisabledColor = System.Drawing.Color.Empty;
             this.txtEndNr.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEndNr.Location = new System.Drawing.Point(5, 80);
             this.txtEndNr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -463,32 +478,35 @@
             // 
             this.cboCargo.AcceptButton = null;
             this.cboCargo.Campo = "Cargo*";
+            this.cboCargo.DisabledColor = System.Drawing.Color.Empty;
             this.cboCargo.FormattingEnabled = true;
             this.cboCargo.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.cboCargo.Location = new System.Drawing.Point(5, 45);
             this.cboCargo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboCargo.Name = "cboCargo";
             this.cboCargo.SelectedItem = null;
-            this.cboCargo.Size = new System.Drawing.Size(380, 30);
+            this.cboCargo.Size = new System.Drawing.Size(380, 36);
             this.cboCargo.TabIndex = 2;
             // 
             // cboSituacao
             // 
             this.cboSituacao.AcceptButton = null;
             this.cboSituacao.Campo = "Situação";
+            this.cboSituacao.DisabledColor = System.Drawing.Color.Empty;
             this.cboSituacao.FormattingEnabled = true;
             this.cboSituacao.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.cboSituacao.Location = new System.Drawing.Point(195, 15);
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboSituacao.Name = "cboSituacao";
             this.cboSituacao.SelectedItem = null;
-            this.cboSituacao.Size = new System.Drawing.Size(190, 25);
+            this.cboSituacao.Size = new System.Drawing.Size(190, 30);
             this.cboSituacao.TabIndex = 1;
             // 
             // txtSalario
             // 
             this.txtSalario.AcceptButton = null;
             this.txtSalario.Campo = "Salário*";
+            this.txtSalario.DisabledColor = System.Drawing.Color.Empty;
             this.txtSalario.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtSalario.Location = new System.Drawing.Point(5, 15);
             this.txtSalario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
