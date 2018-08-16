@@ -475,6 +475,10 @@
       <Project>{94c33f17-938d-4605-8715-0bf21c28a997}</Project>
       <Name>UTIL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\COMMON\UTIL_FORM\UTIL_FORM.csproj">
+      <Project>{36f01f19-26eb-4bdc-9398-fcb26c29b062}</Project>
+      <Name>UTIL_FORM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BURGERSHACK_COMMON\BURGERSHACK_COMMON.csproj">
       <Project>{452f8db0-90e2-4013-bfcc-c95ef01fb806}</Project>
       <Name>BURGERSHACK_COMMON</Name>
