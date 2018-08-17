@@ -1,15 +1,10 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
-using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -17,6 +12,7 @@ namespace BurgerShack.Desktop
     {
 
         private int _cod;
+        private bool _ativo;
 
         private string _razaoSocial;
         private string _cnpj;
@@ -44,21 +40,22 @@ namespace BurgerShack.Desktop
         public string EndBairro { get => _endBairro; set => _endBairro = value; }
         public string EndLocalidade { get => _endLocalidade; set => _endLocalidade = value; }
         public string EndUF { get => _endUF; set => _endUF = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnFornecedor obter(SqlDataReader reader) => new clnFornecedor
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            RazaoSocial = clnUtilConvert.ToString(reader["razao_social"]),
-            Email = clnUtilConvert.ToString(reader["email"]),
-            Cnpj = clnUtilConvert.ToString(reader["cnpj"]),
-            Telefone = clnUtilConvert.ToString(reader["telefone"]),
-            EndLogradouro = clnUtilConvert.ToString(reader["end_logradouro"]),
-            EndNumero = clnUtilConvert.ToString(reader["end_nr"]),
-            EndComplemento = clnUtilConvert.ToString(reader["end_complemento"]),
-            EndCEP = clnUtilConvert.ToString(reader["end_cep"]),
-            EndBairro = clnUtilConvert.ToString(reader["end_bairro"]),
-            EndLocalidade = clnUtilConvert.ToString(reader["end_localidade"]),
-            EndUF = clnUtilConvert.ToString(reader["end_uf"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            RazaoSocial = UtilConvert.ToString(reader["razao_social"]),
+            Email = UtilConvert.ToString(reader["email"]),
+            Cnpj = UtilConvert.ToString(reader["cnpj"]),
+            Telefone = UtilConvert.ToString(reader["telefone"]),
+            EndLogradouro = UtilConvert.ToString(reader["end_logradouro"]),
+            EndNumero = UtilConvert.ToString(reader["end_nr"]),
+            EndComplemento = UtilConvert.ToString(reader["end_complemento"]),
+            EndCEP = UtilConvert.ToString(reader["end_cep"]),
+            EndBairro = UtilConvert.ToString(reader["end_bairro"]),
+            EndLocalidade = UtilConvert.ToString(reader["end_localidade"]),
+            EndUF = UtilConvert.ToString(reader["end_uf"])
         };
 
         public clnFornecedor obterPorCod()
@@ -71,6 +68,7 @@ namespace BurgerShack.Desktop
             clnFornecedor objFornecedor = null;
             if (reader.Read())
                 objFornecedor = obter(reader);
+            reader.Close();
 
             return objFornecedor;
         }
@@ -85,6 +83,7 @@ namespace BurgerShack.Desktop
             clnFornecedor objFornecedor = null;
             if (reader.Read())
                 objFornecedor = obter(reader);
+            reader.Close();
 
             return objFornecedor;
         }
@@ -94,12 +93,14 @@ namespace BurgerShack.Desktop
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("fornecedor");
             objSelect.Where.where("cnpj", sqlElementWhereCommon.whereOperation.LIKE, "%" + Cnpj + "%", sqlElementWhere.whereAssociation.OR)
-                           .where("razao_social", sqlElementWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%");
+                           .where("razao_social", sqlElementWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%")
+                           .where("ativo", UtilConvert.ToBit(Ativo));
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnFornecedor> objFornecedor = new List<clnFornecedor>();
             while (reader.Read())
                 objFornecedor.Add(obter(reader));
+            reader.Close();
 
             return objFornecedor;
         }

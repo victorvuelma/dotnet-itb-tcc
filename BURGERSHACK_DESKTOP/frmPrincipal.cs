@@ -1,5 +1,5 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +16,6 @@ namespace BurgerShack.Desktop
     public partial class frmPrincipal : Form
     {
 
-        private int _codFuncionario;
-
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-
         public frmPrincipal()
         {
             InitializeComponent();
@@ -32,30 +28,21 @@ namespace BurgerShack.Desktop
 
         private void abrirMesas()
         {
-            uctPrincipalMesas uctMesas = new uctPrincipalMesas
-            {
-                CodFuncionario = CodFuncionario
-            };
+            uctPrincipalMesas uctMesas = new uctPrincipalMesas{};
 
             alterarConteudo(uctMesas, "Mesas");
         }
 
         private void abrirReservas()
         {
-            uctPrincipalReservas uctMesas = new uctPrincipalReservas
-            {
-                CodFuncionario = CodFuncionario
-            };
+            uctPrincipalReservas uctMesas = new uctPrincipalReservas{};
 
             alterarConteudo(uctMesas, "Reservas");
         }
 
         private void abrirGerenciamento()
         {
-            frmGerenciamento frmGerenciamento = new frmGerenciamento
-            {
-                CodFuncionario = CodFuncionario
-            };
+            frmGerenciamento frmGerenciamento = new frmGerenciamento{};
             frmGerenciamento.ShowDialog();
         }
 
@@ -69,12 +56,7 @@ namespace BurgerShack.Desktop
 
         private void atualizarBotoes()
         {
-            clnFuncionario objFuncionario = new clnFuncionario
-            {
-                Cod = CodFuncionario
-            }.obterPorCod();
-
-            switch (objFuncionario.CodCargo)
+            switch (AppDesktop.FuncionarioAtual.CodCargo)
             {
                 case 1:
                     btnReservas.Hide();

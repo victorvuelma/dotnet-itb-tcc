@@ -1,16 +1,9 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -19,10 +12,8 @@ namespace BurgerShack.Desktop
 
         private clnUtilFormValidar _validar;
 
-        private int _codFuncionario;
         private clnCliente _objCliente;
 
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         internal clnCliente ObjCliente { get => _objCliente; set => _objCliente = value; }
 
         public frmCliente()
@@ -37,10 +28,10 @@ namespace BurgerShack.Desktop
             _validar.addValidacao(txtEmail, clnUtilFormValidar.Validacao.EMAIL);
             _validar.addValidacao(cboGenero, clnUtilFormValidar.Validacao.OBRIGATORIO);
 
-            mtbCPF.Mask = clnUtil.MASK_CPF;
-            mtbDataNasc.Mask = clnUtil.MASK_DATA;
+            mtbCPF.Mask = UtilMask.MASK_CPF;
+            mtbDataNasc.Mask = UtilMask.MASK_DATA;
             cboGenero.addRange(new String[] { "M", "F" });
-            mtbTelCel.Mask = clnUtil.MASK_CEL;
+            mtbTelCel.Mask = UtilMask.MASK_CEL;
         }
 
         private void salvar()
@@ -49,7 +40,7 @@ namespace BurgerShack.Desktop
             {
                 clnCliente objClienteCPF = new clnCliente
                 {
-                    Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text)
+                    Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text)
                 }.obterPorCPF();
 
                 if (ObjCliente == null)
@@ -58,12 +49,12 @@ namespace BurgerShack.Desktop
                     {
                         clnCliente objCliente = new clnCliente
                         {
-                            CodFuncionario = CodFuncionario,
+                            CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
                             Nome = txtNome.Text,
-                            Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text),
-                            DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text),
+                            Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text),
+                            DataNascimento = UtilConvert.ObterNullableData(mtbDataNasc.Text),
                             Email = txtEmail.Text,
-                            TelCelular = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text),
+                            TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text),
                             Genero = cboGenero.Text,
                             Cadastro = DateTime.Now
                         };
@@ -81,9 +72,9 @@ namespace BurgerShack.Desktop
                 else
                 {
                     ObjCliente.Nome = txtNome.Text;
-                    ObjCliente.DataNascimento = clnUtilConvert.ObterNullableData(mtbDataNasc.Text);
+                    ObjCliente.DataNascimento = UtilConvert.ObterNullableData(mtbDataNasc.Text);
                     ObjCliente.Email = txtEmail.Text;
-                    ObjCliente.TelCelular = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text);
+                    ObjCliente.TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text);
                     ObjCliente.Genero = cboGenero.Text;
                     ObjCliente.alterar();
                     clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!");

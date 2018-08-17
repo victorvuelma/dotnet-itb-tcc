@@ -1,16 +1,10 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
@@ -20,11 +14,11 @@ namespace BurgerShack.Desktop
 
         private clnUtilFormValidar _validar;
 
-        private bool _primeiro;
+        private bool _primeiroCadastro;
         private clnFuncionario _objFuncionario;
 
         internal clnFuncionario ObjFuncionario { get => _objFuncionario; set => _objFuncionario = value; }
-        public bool Primeiro { get => _primeiro; set => _primeiro = value; }
+        public bool PrimeiroCadastro { get => _primeiroCadastro; set => _primeiroCadastro = value; }
 
         public frmFuncionario()
         {
@@ -51,12 +45,12 @@ namespace BurgerShack.Desktop
             _validar.addValidacao(txtEndCidade, clnUtilFormValidar.Validacao.OBRIGATORIO);
             _validar.addValidacao(cboEndUF, clnUtilFormValidar.Validacao.OBRIGATORIO);
 
-            mtbCPF.Mask = clnUtil.MASK_CPF;
-            mtbDataNasc.Mask = clnUtil.MASK_DATA;
+            mtbCPF.Mask = UtilMask.MASK_CPF;
+            mtbDataNasc.Mask = UtilMask.MASK_DATA;
             cboGenero.addRange(new String[] { "M", "F" });
-            mtbTelCel.Mask = clnUtil.MASK_CEL;
-            mtbTelRes.Mask = clnUtil.MASK_TEL;
-            mtbEndCEP.Mask = clnUtil.MASK_CEP;
+            mtbTelCel.Mask = UtilMask.MASK_CEL;
+            mtbTelRes.Mask = UtilMask.MASK_TEL;
+            mtbEndCEP.Mask = UtilMask.MASK_CEP;
         }
 
         private void salvar()
@@ -97,7 +91,7 @@ namespace BurgerShack.Desktop
                 {
                     clnFuncionario objFuncionarioCpf = new clnFuncionario
                     {
-                        Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text)
+                        Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text)
                     }.obterPorCPF();
 
                     if (objFuncionarioCpf == null)
@@ -107,17 +101,17 @@ namespace BurgerShack.Desktop
                             CodCargo = codCargo,
                             CodFoto = objArquivo.Cod,
                             Nome = txtNome.Text,
-                            Cpf = clnUtilFormatar.retirarFormatacao(mtbCPF.Text),
+                            Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text),
                             Rg = txtRG.Text,
                             Genero = cboGenero.Text,
-                            DataNascimento = clnUtilConvert.ObterData(mtbDataNasc.Text),
-                            TelRes = clnUtilFormatar.retirarFormatacao(mtbTelRes.Text),
-                            TelCel = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text),
+                            DataNascimento = UtilConvert.ObterData(mtbDataNasc.Text),
+                            TelRes = UtilFormatar.retirarFormatacao(mtbTelRes.Text),
+                            TelCel = UtilFormatar.retirarFormatacao(mtbTelCel.Text),
                             Email = txtEmail.Text,
-                            Salario = clnUtilConvert.ToDecimal(txtSalario.Text),
+                            Salario = UtilConvert.ToDecimal(txtSalario.Text),
                             DataContratacao = DateTime.Now,
                             Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text),
-                            EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text),
+                            EndCEP = UtilFormatar.retirarFormatacao(mtbEndCEP.Text),
                             EndLogradouro = txtEndLogradouro.Text,
                             EndNumero = txtEndNr.Text,
                             EndComplemento = txtEndComplemento.Text,
@@ -141,14 +135,14 @@ namespace BurgerShack.Desktop
                     ObjFuncionario.Nome = txtNome.Text;
                     ObjFuncionario.CodCargo = codCargo;
                     ObjFuncionario.CodFoto = objArquivo.Cod;
-                    ObjFuncionario.DataNascimento = clnUtilConvert.ObterData(mtbDataNasc.Text);
+                    ObjFuncionario.DataNascimento = UtilConvert.ObterData(mtbDataNasc.Text);
                     ObjFuncionario.Email = txtEmail.Text;
                     ObjFuncionario.Genero = cboGenero.Text;
-                    ObjFuncionario.TelRes = clnUtilFormatar.retirarFormatacao(mtbTelRes.Text);
-                    ObjFuncionario.TelCel = clnUtilFormatar.retirarFormatacao(mtbTelCel.Text);
-                    ObjFuncionario.Salario = clnUtilConvert.ToDecimal(txtSalario.Text);
+                    ObjFuncionario.TelRes = UtilFormatar.retirarFormatacao(mtbTelRes.Text);
+                    ObjFuncionario.TelCel = UtilFormatar.retirarFormatacao(mtbTelCel.Text);
+                    ObjFuncionario.Salario = UtilConvert.ToDecimal(txtSalario.Text);
                     ObjFuncionario.Situacao = (clnFuncionario.funcionarioSituacao)Enum.Parse(typeof(clnFuncionario.funcionarioSituacao), cboSituacao.Text);
-                    ObjFuncionario.EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text);
+                    ObjFuncionario.EndCEP = UtilFormatar.retirarFormatacao(mtbEndCEP.Text);
                     ObjFuncionario.EndLogradouro = txtEndLogradouro.Text;
                     ObjFuncionario.EndNumero = txtEndNr.Text;
                     ObjFuncionario.EndComplemento = txtEndComplemento.Text;
@@ -246,14 +240,14 @@ namespace BurgerShack.Desktop
                 txtNome.Text = ObjFuncionario.Nome;
                 mtbCPF.Text = ObjFuncionario.Cpf;
                 txtRG.Text = ObjFuncionario.Rg;
-                mtbDataNasc.Text = clnUtilFormatar.formatarData(ObjFuncionario.DataNascimento);
-                cboGenero.Text = clnUtilConvert.ToString(ObjFuncionario.Genero);
+                mtbDataNasc.Text = UtilFormatar.formatarData(ObjFuncionario.DataNascimento);
+                cboGenero.Text = UtilConvert.ToString(ObjFuncionario.Genero);
                 txtEmail.Text = ObjFuncionario.Email;
                 mtbTelCel.Text = ObjFuncionario.TelCel;
                 mtbTelRes.Text = ObjFuncionario.TelRes;
 
-                txtSalario.Text = clnUtilConvert.ToString(ObjFuncionario.Salario);
-                cboSituacao.Text = clnUtilConvert.ToString(ObjFuncionario.Situacao);
+                txtSalario.Text = UtilConvert.ToString(ObjFuncionario.Salario);
+                cboSituacao.Text = UtilConvert.ToString(ObjFuncionario.Situacao);
 
                 mtbEndCEP.Text = ObjFuncionario.EndCEP;
                 txtEndLogradouro.Text = ObjFuncionario.EndLogradouro;
@@ -276,12 +270,16 @@ namespace BurgerShack.Desktop
                 picImagem.ImageLocation = objFoto.Local;
             }
 
-            if (Primeiro)
+            if (PrimeiroCadastro)
             {
                 btnAcesso.Visible = false;
                 btnVoltar.Visible = false;
+
                 cboCargo.SelectedItem = cboCargo.Items.Last();
+                cboSituacao.SelectedItem = cboSituacao.Items.Last();
+
                 UtilForm.Disable(cboCargo);
+                UtilForm.Disable(cboSituacao);
             }
         }
 

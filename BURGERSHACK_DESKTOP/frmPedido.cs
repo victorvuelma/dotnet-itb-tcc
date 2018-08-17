@@ -15,8 +15,8 @@ namespace BurgerShack.Desktop
 {
     public partial class frmPedido : Form
     {
+
         private int _codAtendimento;
-        private int _codFuncionario;
 
         private clnPedido _objPedido;
         private Dictionary<clnItem, List<clnItemIngrediente>> _objItens;
@@ -24,7 +24,6 @@ namespace BurgerShack.Desktop
         internal int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
         internal clnPedido ObjPedido { get => _objPedido; set => _objPedido = value; }
         internal Dictionary<clnItem, List<clnItemIngrediente>> ObjItens { get => _objItens; set => _objItens = value; }
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmPedido()
         {
@@ -42,7 +41,6 @@ namespace BurgerShack.Desktop
             {
                 Form = this,
                 CodAtendimento = CodAtendimento,
-                CodFuncionario = CodFuncionario,
                 ObjItens = ObjItens,
                 ObjPedido = ObjPedido
             };
@@ -101,7 +99,7 @@ namespace BurgerShack.Desktop
                     ObjPedido = new clnPedido
                     {
                         CodAtendimento = CodAtendimento,
-                        CodFuncionario = CodFuncionario,
+                        CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
                         Valor = valor,
                         Situacao = clnPedido.pedidoSituacao.REALIZADO
                     };

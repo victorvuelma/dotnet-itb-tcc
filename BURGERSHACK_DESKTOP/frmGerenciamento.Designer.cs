@@ -41,13 +41,15 @@
             this.btnProdutos = new vitorrdgs.UiX.Component.UIXButton();
             this.btnIngredientes = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
-            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
+            this.btnMercadorias = new vitorrdgs.UiX.Component.UIXButton();
+            this.uctListar = new BurgerShack.Desktop.uctGerenciamentoListar();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnMercadorias);
             this.pnlMenu.Controls.Add(this.btnPagamentos);
             this.pnlMenu.Controls.Add(this.btnPedidos);
             this.pnlMenu.Controls.Add(this.btnReservas);
@@ -72,7 +74,7 @@
             this.btnPagamentos.HoverColor = System.Drawing.Color.Transparent;
             this.btnPagamentos.Image = global::BurgerShack.Desktop.Properties.Resources.pagamento;
             this.btnPagamentos.ImageLocation = null;
-            this.btnPagamentos.Location = new System.Drawing.Point(205, 305);
+            this.btnPagamentos.Location = new System.Drawing.Point(5, 305);
             this.btnPagamentos.Name = "btnPagamentos";
             this.btnPagamentos.Size = new System.Drawing.Size(90, 90);
             this.btnPagamentos.TabIndex = 16;
@@ -132,7 +134,7 @@
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesas.Image = global::BurgerShack.Desktop.Properties.Resources.mesa;
             this.btnMesas.ImageLocation = null;
-            this.btnMesas.Location = new System.Drawing.Point(105, 305);
+            this.btnMesas.Location = new System.Drawing.Point(205, 305);
             this.btnMesas.Name = "btnMesas";
             this.btnMesas.Size = new System.Drawing.Size(90, 90);
             this.btnMesas.TabIndex = 12;
@@ -147,7 +149,7 @@
             this.btnEstoque.HoverColor = System.Drawing.Color.Transparent;
             this.btnEstoque.Image = global::BurgerShack.Desktop.Properties.Resources.estoque;
             this.btnEstoque.ImageLocation = null;
-            this.btnEstoque.Location = new System.Drawing.Point(105, 205);
+            this.btnEstoque.Location = new System.Drawing.Point(105, 305);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(90, 90);
             this.btnEstoque.TabIndex = 11;
@@ -162,7 +164,7 @@
             this.btnFornecedores.HoverColor = System.Drawing.Color.Transparent;
             this.btnFornecedores.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
             this.btnFornecedores.ImageLocation = null;
-            this.btnFornecedores.Location = new System.Drawing.Point(5, 205);
+            this.btnFornecedores.Location = new System.Drawing.Point(3, 105);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(90, 90);
             this.btnFornecedores.TabIndex = 10;
@@ -192,7 +194,7 @@
             this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnClientes.Image = global::BurgerShack.Desktop.Properties.Resources.cliente;
             this.btnClientes.ImageLocation = null;
-            this.btnClientes.Location = new System.Drawing.Point(5, 105);
+            this.btnClientes.Location = new System.Drawing.Point(5, 205);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(90, 90);
             this.btnClientes.TabIndex = 8;
@@ -245,15 +247,6 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // pnlConteudo
-            // 
-            this.pnlConteudo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlConteudo.Location = new System.Drawing.Point(300, 50);
-            this.pnlConteudo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(700, 500);
-            this.pnlConteudo.TabIndex = 8;
-            // 
             // hdrUIX
             // 
             this.hdrUIX.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -268,13 +261,38 @@
             this.hdrUIX.Title = "Gerenciamento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
+            // btnMercadorias
+            // 
+            this.btnMercadorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMercadorias.Description = "Mercadorias";
+            this.btnMercadorias.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMercadorias.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
+            this.btnMercadorias.ImageLocation = null;
+            this.btnMercadorias.Location = new System.Drawing.Point(105, 205);
+            this.btnMercadorias.Name = "btnMercadorias";
+            this.btnMercadorias.Size = new System.Drawing.Size(90, 90);
+            this.btnMercadorias.TabIndex = 17;
+            this.btnMercadorias.Text = "Mercadorias";
+            this.btnMercadorias.UseVisualStyleBackColor = true;
+            // 
+            // uctGerenciamentoListar1
+            // 
+            this.uctListar.Colunas = null;
+            this.uctListar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uctListar.Inativos = false;
+            this.uctListar.Location = new System.Drawing.Point(300, 50);
+            this.uctListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uctListar.Name = "uctGerenciamentoListar1";
+            this.uctListar.Size = new System.Drawing.Size(700, 500);
+            this.uctListar.TabIndex = 8;
+            // 
             // frmGerenciamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 550);
+            this.Controls.Add(this.uctListar);
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -293,7 +311,6 @@
         private System.Windows.Forms.Panel pnlMenu;
         private vitorrdgs.UiX.Component.UIXButton btnIngredientes;
         private vitorrdgs.UiX.Component.UIXButton btnVoltar;
-        public System.Windows.Forms.Panel pnlConteudo;
         private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private vitorrdgs.UiX.Component.UIXButton btnProdutos;
         private vitorrdgs.UiX.Component.UIXButton btnClientes;
@@ -305,5 +322,7 @@
         private vitorrdgs.UiX.Component.UIXButton btnReservas;
         private vitorrdgs.UiX.Component.UIXButton btnPedidos;
         private vitorrdgs.UiX.Component.UIXButton btnPagamentos;
+        private vitorrdgs.UiX.Component.UIXButton btnMercadorias;
+        private uctGerenciamentoListar uctListar;
     }
 }

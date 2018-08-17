@@ -1,16 +1,9 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -90,7 +83,7 @@ namespace BurgerShack.Desktop
                         Nome = txtNome.Text,
                         CodTipo = cboTipo.SelectedItem.Id,
                         CodImagem = objArquivo.Cod,
-                        Valor = clnUtilConvert.ToDecimal(txtValor.Text)
+                        Valor = UtilConvert.ToDecimal(txtValor.Text)
                     };
 
                     ObjIngrediente.gravar();
@@ -112,18 +105,18 @@ namespace BurgerShack.Desktop
                         objArquivo.gravar();
                         ObjIngrediente.CodImagem = objArquivo.Cod;
                     }
-                    ObjIngrediente.CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]);
+                    ObjIngrediente.CodTipo = UtilConvert.ToInt(cboTipo.Text.Split('-')[0]);
                     ObjIngrediente.Nome = txtNome.Text;
-                    ObjIngrediente.Valor = clnUtilConvert.ToDecimal(txtValor.Text);
+                    ObjIngrediente.Valor = UtilConvert.ToDecimal(txtValor.Text);
                     ObjIngrediente.Situacao = (clnIngrediente.ingredienteSituacao)Enum.Parse(typeof(clnIngrediente.ingredienteSituacao), cboSituacao.Text);
 
                     ObjIngrediente.alterar();
 
                     clnEstoque objEstoque = new clnEstoque
                     {
-                        CodIngrediente = ObjIngrediente.Cod
+                        CodMercadoria = ObjIngrediente.Cod
                     };
-                    objEstoque.atualizarIngrediente();
+                    objEstoque.atualizarIngredientes();
 
                     clnUtilMensagem.mostrarOk("Altereção de Ingrediente", "Ingrediente alterado com sucesso!");
                 }
@@ -189,8 +182,8 @@ namespace BurgerShack.Desktop
 
                 int ingredienteEstoque = new clnEstoque
                 {
-                    CodIngrediente = ObjIngrediente.Cod
-                }.obterQuantidadePorIngrediente();
+                    CodMercadoria = ObjIngrediente.Cod
+                }.obterQuantidadePorMercadoria();
 
                 if (ObjIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
                 {

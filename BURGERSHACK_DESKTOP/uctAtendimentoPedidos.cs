@@ -1,26 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BurgerShack.Common.UTIL;
 using vitorrdgs.UiX.Component;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
     public partial class uctAtendimentoPedidos : UserControl
     {
 
-        private int _codFuncionario;
         private int _codAtendimento;
 
         private List<clnPedido> _objPedidos;
 
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
         public List<clnPedido> ObjPedidos { get => _objPedidos; set => _objPedidos = value; }
 
@@ -62,7 +55,6 @@ namespace BurgerShack.Desktop
             frmPedido frmNovoPedido = new frmPedido
             {
                 CodAtendimento = CodAtendimento,
-                CodFuncionario = CodFuncionario,
                 ObjPedido = new clnPedido(),
                 ObjItens = new Dictionary<clnItem, List<clnItemIngrediente>>()
             };
@@ -130,7 +122,7 @@ namespace BurgerShack.Desktop
 
             if (valor > 0)
             {
-                lblValor.Text = clnUtilFormatar.formatarValor(valor);
+                lblValor.Text = UtilFormatar.formatarValor(valor);
                 grbValor.Show();
             }
             else

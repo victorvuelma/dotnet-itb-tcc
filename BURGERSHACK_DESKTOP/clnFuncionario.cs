@@ -1,16 +1,10 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
-using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -78,28 +72,28 @@ namespace BurgerShack.Desktop
 
         private clnFuncionario obter(SqlDataReader reader) => new clnFuncionario
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodCargo = clnUtilConvert.ToInt(reader["id_cargo"]),
-            CodFoto = clnUtilConvert.ToInt(reader["id_foto"]),
-            Nome = clnUtilConvert.ToString(reader["nome"]),
-            Cpf = clnUtilConvert.ToString(reader["cpf"]),
-            Rg = clnUtilConvert.ToString(reader["rg"]),
-            Genero = clnUtilConvert.ToString(reader["genero"]),
-            DataNascimento = clnUtilConvert.ToDateTime(reader["data_nascimento"]),
-            TelRes = clnUtilConvert.ToString(reader["tel_res"]),
-            TelCel = clnUtilConvert.ToString(reader["tel_cel"]),
-            Email = clnUtilConvert.ToString(reader["email"]),
-            Salario = clnUtilConvert.ToDecimal(reader["salario"]),
-            DataContratacao = clnUtilConvert.ToDateTime(reader["data_contratacao"]),
-            DataDemissao = clnUtilConvert.ToNullableDateTime(reader["data_demissao"]),
-            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
-            EndLogradouro = clnUtilConvert.ToString(reader["end_logradouro"]),
-            EndNumero = clnUtilConvert.ToString(reader["end_nr"]),
-            EndComplemento = clnUtilConvert.ToString(reader["end_complemento"]),
-            EndCEP = clnUtilConvert.ToString(reader["end_cep"]),
-            EndBairro = clnUtilConvert.ToString(reader["end_bairro"]),
-            EndLocalidade = clnUtilConvert.ToString(reader["end_localidade"]),
-            EndUF = clnUtilConvert.ToString(reader["end_uf"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            CodCargo = UtilConvert.ToInt(reader["id_cargo"]),
+            CodFoto = UtilConvert.ToInt(reader["id_foto"]),
+            Nome = UtilConvert.ToString(reader["nome"]),
+            Cpf = UtilConvert.ToString(reader["cpf"]),
+            Rg = UtilConvert.ToString(reader["rg"]),
+            Genero = UtilConvert.ToString(reader["genero"]),
+            DataNascimento = UtilConvert.ToDateTime(reader["data_nascimento"]),
+            TelRes = UtilConvert.ToString(reader["tel_res"]),
+            TelCel = UtilConvert.ToString(reader["tel_cel"]),
+            Email = UtilConvert.ToString(reader["email"]),
+            Salario = UtilConvert.ToDecimal(reader["salario"]),
+            DataContratacao = UtilConvert.ToDateTime(reader["data_contratacao"]),
+            DataDemissao = UtilConvert.ToNullableDateTime(reader["data_demissao"]),
+            Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
+            EndLogradouro = UtilConvert.ToString(reader["end_logradouro"]),
+            EndNumero = UtilConvert.ToString(reader["end_nr"]),
+            EndComplemento = UtilConvert.ToString(reader["end_complemento"]),
+            EndCEP = UtilConvert.ToString(reader["end_cep"]),
+            EndBairro = UtilConvert.ToString(reader["end_bairro"]),
+            EndLocalidade = UtilConvert.ToString(reader["end_localidade"]),
+            EndUF = UtilConvert.ToString(reader["end_uf"])
         };
 
         public clnFuncionario obterPorCod()

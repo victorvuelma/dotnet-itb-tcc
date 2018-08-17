@@ -1,17 +1,7 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using vitorrdgs.UiX;
 
 namespace BurgerShack.Desktop
 {
@@ -40,7 +30,7 @@ namespace BurgerShack.Desktop
             clnUtil.atualizarForm(this);
 
             txtUsuario.Text = ObjAcesso.Usuario;
-            txtSenha.Text = ObjAcesso.Senha;
+            txtSenha.Text = ObjAcesso.Hash;
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -73,7 +63,7 @@ namespace BurgerShack.Desktop
                 if (objAcessoUsuario == null || objAcessoUsuario.CodFuncionario == ObjAcesso.CodFuncionario)
                 {
                     ObjAcesso.Usuario = txtUsuario.Text;
-                    ObjAcesso.Senha = txtSenha.Text;
+                    ObjAcesso.Hash = txtSenha.Text;
                     ObjAcesso.gravar();
 
                     clnUtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!");

@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster;
 using System.Drawing;
-using BurgerShack.Common.UTIL;
+
 using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -35,12 +36,12 @@ namespace BurgerShack.Desktop
 
         private clnProdutoIngrediente obter(SqlDataReader reader) => new clnProdutoIngrediente
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodProduto = clnUtilConvert.ToInt(reader["id_produto"]),
-            CodIngrediente = clnUtilConvert.ToInt(reader["id_ingrediente"]),
-            Quantidade = clnUtilConvert.ToInt(reader["quantidade"]),
-            Remover = clnUtilConvert.ToBool(reader["remover"]),
-            Alterar = clnUtilConvert.ToBool(reader["alterar"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            CodProduto = UtilConvert.ToInt(reader["id_produto"]),
+            CodIngrediente = UtilConvert.ToInt(reader["id_ingrediente"]),
+            Quantidade = UtilConvert.ToInt(reader["quantidade"]),
+            Remover = UtilConvert.ToBool(reader["remover"]),
+            Alterar = UtilConvert.ToBool(reader["alterar"])
         };
 
         public clnProdutoIngrediente obterPorCod()
@@ -95,8 +96,8 @@ namespace BurgerShack.Desktop
             objInsert.Insert.val("id_produto", CodProduto)
                             .val("id_ingrediente", CodIngrediente)
                             .val("quantidade", Quantidade)
-                            .val("alterar", clnUtilConvert.ToBit(Alterar))
-                            .val("remover", clnUtilConvert.ToBit(Remover));
+                            .val("alterar", UtilConvert.ToBit(Alterar))
+                            .val("remover", UtilConvert.ToBit(Remover));
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
@@ -106,8 +107,8 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto_ingrediente");
             objUpdate.Set.val("quantidade", Quantidade)
-                            .val("alterar", clnUtilConvert.ToBit(Alterar))
-                            .val("remover", clnUtilConvert.ToBit(Remover));
+                            .val("alterar", UtilConvert.ToBit(Alterar))
+                            .val("remover", UtilConvert.ToBit(Remover));
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);

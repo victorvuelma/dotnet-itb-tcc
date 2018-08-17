@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+
+using BurgerShack.Desktop.Util;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -87,7 +88,7 @@ namespace BurgerShack.Desktop
         {
             decimal valor = clnUtilPedido.calcularValor(ObjItem, ObjItemIngredientes);
 
-            lblValor.Text = "Valor: " + clnUtilFormatar.formatarValor(valor);
+            lblValor.Text = "Valor: " + UtilFormatar.formatarValor(valor);
         }
 
         private void selecionarProduto(int categoria)

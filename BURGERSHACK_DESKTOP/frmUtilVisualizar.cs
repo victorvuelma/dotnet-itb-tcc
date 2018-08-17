@@ -1,16 +1,9 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -77,7 +70,7 @@ namespace BurgerShack.Desktop
             String pesquisa = txtPesquisar.Text.ToLower();
             foreach (object opcao in ObjVisualizar.ObjListar.getOpcoes())
             {
-                if (clnUtilValidar.vazio(pesquisa) || ObjVisualizar.ObjListar.getNome(opcao).ToLower().Contains(pesquisa))
+                if (UtilValidar.vazio(pesquisa) || ObjVisualizar.ObjListar.getNome(opcao).ToLower().Contains(pesquisa))
                 {
                     _opcoes.Add(opcao);
                 }

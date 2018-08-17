@@ -1,19 +1,14 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
-using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
-    class clnReserva
+    public class clnReserva
     {
 
         public enum reservaSituacao
@@ -25,6 +20,7 @@ namespace BurgerShack.Desktop
         }
 
         private int _cod = -1;
+        private bool _ativo = true;
 
         private int _codCliente = -1;
         private int _codFuncionario = -1;
@@ -44,18 +40,20 @@ namespace BurgerShack.Desktop
         public int Pessoas { get => _pessoas; set => _pessoas = value; }
         public DateTime Agendado { get => _agendado; set => _agendado = value; }
         public DateTime Agendamento { get => _agendamento; set => _agendamento = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnReserva obter(SqlDataReader reader)
         {
             clnReserva objReserva = new clnReserva
             {
-                Cod = clnUtilConvert.ToInt(reader["id"]),
-                CodCliente = clnUtilConvert.ToInt(reader["id_cliente"]),
-                CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-                Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
-                Pessoas = clnUtilConvert.ToInt(reader["pessoas"]),
-                Agendado = clnUtilConvert.ToDateTime(reader["agendado"]),
-                Agendamento = clnUtilConvert.ToDateTime(reader["agendamento"])
+                Cod = UtilConvert.ToInt(reader["id"]),
+                CodCliente = UtilConvert.ToInt(reader["id_cliente"]),
+                CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
+                Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
+                Pessoas = UtilConvert.ToInt(reader["pessoas"]),
+                Agendado = UtilConvert.ToDateTime(reader["agendado"]),
+                Agendamento = UtilConvert.ToDateTime(reader["agendamento"]),
+                Ativo = UtilConvert.ToBool(reader["ativo"])
             };
             objReserva.obterMesas();
 
@@ -70,7 +68,7 @@ namespace BurgerShack.Desktop
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
-                CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
+                CodMesas.Add(UtilConvert.ToInt(reader["id_mesa"]));
             reader.Close();
         }
 
@@ -93,7 +91,8 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
-            objSelect.Where.between("agendado", Agendado, Agendado.AddDays(1));
+            objSelect.Where.between("agendado", Agendado, Agendado.AddDays(1))
+                           .where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnReserva> objReservas = new List<clnReserva>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -108,6 +107,7 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnReserva> objReservas = new List<clnReserva>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -132,7 +132,7 @@ namespace BurgerShack.Desktop
             List<int> objMesas = new List<int>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
-                objMesas.Add(clnUtilConvert.ToInt(reader["id"]));
+                objMesas.Add(UtilConvert.ToInt(reader["id"]));
             reader.Close();
 
             return objMesas;

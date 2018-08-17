@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
+﻿using BurgerShack.Common;
+using System;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 using System.Drawing;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
+using System.IO;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
     class clnArquivo
     {
 
-        public static clnUtilCache CACHE = new clnUtilCache("arquivo");
+        public static UtilCache CACHE = new UtilCache("arquivo");
 
         private int _cod = -1;
 
@@ -32,14 +25,14 @@ namespace BurgerShack.Desktop
         public static String tempImage(Image img)
         {
             byte[] conteudo = null;
-            using(var ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
                 img.Save(ms, img.RawFormat);
                 conteudo = ms.ToArray();
                 ms.Close();
             }
             return CACHE.guardar("tempimage" + tempId++, conteudo);
-            
+
         }
 
         public clnArquivo obterPorCodigo()
@@ -60,6 +53,7 @@ namespace BurgerShack.Desktop
                 if (reader.Read())
                 {
                     arquivo = CACHE.guardar(Convert.ToString(Cod), (byte[])reader["conteudo"]);
+                    reader.Close();
                     return new clnArquivo { Cod = Cod, Local = arquivo };
                 }
 

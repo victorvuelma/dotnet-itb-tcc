@@ -14,10 +14,6 @@ namespace BurgerShack.Desktop
     public partial class uctPrincipalReservas : UserControl
     {
 
-        private int _codFuncionario;
-
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-
         public uctPrincipalReservas()
         {
             InitializeComponent();
@@ -47,8 +43,7 @@ namespace BurgerShack.Desktop
         {
             frmReserva frmReserva = new frmReserva
             {
-                ObjReserva = objReserva,
-                CodFuncionario = CodFuncionario
+                ObjReserva = objReserva
             };
             frmReserva.ShowDialog();
         }
@@ -65,10 +60,7 @@ namespace BurgerShack.Desktop
 
         private void btnNova_Click(object sender, EventArgs e)
         {
-            new frmReserva
-            {
-                CodFuncionario = CodFuncionario
-            }.ShowDialog();
+            new frmReserva{}.ShowDialog();
         }
     }
 }

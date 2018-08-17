@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
+
 using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -29,10 +30,10 @@ namespace BurgerShack.Desktop
 
         private clnItemIngrediente obter(SqlDataReader reader) => new clnItemIngrediente
         {
-            CodIngrediente = clnUtilConvert.ToInt(reader["id_ingrediente"]),
-            CodItem = clnUtilConvert.ToInt(reader["id_item"]),
-            Quantidade = clnUtilConvert.ToInt(reader["quantidade"]),
-            CodProdutoIngrediente = clnUtilConvert.ToNullableInt(reader["id_produto_ingrediente"])
+            CodIngrediente = UtilConvert.ToInt(reader["id_ingrediente"]),
+            CodItem = UtilConvert.ToInt(reader["id_item"]),
+            Quantidade = UtilConvert.ToInt(reader["quantidade"]),
+            CodProdutoIngrediente = UtilConvert.ToNullableInt(reader["id_produto_ingrediente"])
         };
 
         public List<clnItemIngrediente> obterPorItem()

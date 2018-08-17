@@ -1,16 +1,9 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -33,8 +26,8 @@ namespace BurgerShack.Desktop
             _validar.addValidacao(mtbValidade, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.DATA });
             _validar.addValidacao(mtbFornCNPJ, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.CNPJ });
 
-            mtbFornCNPJ.Mask = clnUtil.MASK_CNPJ;
-            mtbValidade.Mask = clnUtil.MASK_DATA;
+            mtbFornCNPJ.Mask = UtilMask.MASK_CNPJ;
+            mtbValidade.Mask = UtilMask.MASK_DATA;
         }
 
         private void salvar()
@@ -46,12 +39,12 @@ namespace BurgerShack.Desktop
                     ObjEstoque = new clnEstoque
                     {
                         CodFornecedor = ObjEstoque.CodFornecedor,
-                        CodIngrediente = ObjEstoque.CodIngrediente,
+                        CodMercadoria = ObjEstoque.CodMercadoria,
                         Entrada = DateTime.Now.Date,
-                        Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text),
-                        Validade = clnUtilConvert.ToDateTime(mtbValidade.Text),
-                        Total = clnUtilConvert.ToInt(txtQuantidade.Text),
-                        Valor = clnUtilConvert.ToDecimal(txtValor.Text)
+                        Quantidade = UtilConvert.ToInt(txtQuantidade.Text),
+                        Validade = UtilConvert.ToDateTime(mtbValidade.Text),
+                        Total = UtilConvert.ToInt(txtQuantidade.Text),
+                        Valor = UtilConvert.ToDecimal(txtValor.Text)
                     };
                     ObjEstoque.gravar();
 
@@ -59,7 +52,7 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    ObjEstoque.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
+                    ObjEstoque.Quantidade = UtilConvert.ToInt(txtQuantidade.Text);
 
                     ObjEstoque.alterar();
                     clnUtilMensagem.mostrarOk("Altereção de Estoque", "Estoque alterado com sucesso!");
@@ -88,11 +81,11 @@ namespace BurgerShack.Desktop
 
         private bool encontrarFornecedor()
         {
-            if (clnUtilValidar.validarCNPJ(mtbFornCNPJ.Text))
+            if (UtilValidar.validarCNPJ(mtbFornCNPJ.Text))
             {
                 clnFornecedor objFornecedor = new clnFornecedor
                 {
-                    Cnpj = clnUtilFormatar.retirarFormatacao(mtbFornCNPJ.Text)
+                    Cnpj = UtilFormatar.retirarFormatacao(mtbFornCNPJ.Text)
                 }.obterPorCNPJ();
                 if (objFornecedor != null)
                 {
@@ -127,17 +120,17 @@ namespace BurgerShack.Desktop
             ObjEstoque.CodFornecedor = objFornecedor.Cod;
             lblFornecedor.Text = "Fornecedor " + objFornecedor.Cod +
                             "\n" + "Razão Social: " + objFornecedor.RazaoSocial +
-                            "\n" + "CNPJ: " + clnUtilFormatar.formatarCNPJ(objFornecedor.Cnpj);
+                            "\n" + "CNPJ: " + UtilFormatar.formatarCNPJ(objFornecedor.Cnpj);
         }
 
         private void definirIngrediente(clnIngrediente objIngrediente)
         {
-            ObjEstoque.CodIngrediente = objIngrediente.Cod;
+            ObjEstoque.CodMercadoria = objIngrediente.Cod;
 
             int estoqueAtual = new clnEstoque
             {
-                CodIngrediente = objIngrediente.Cod
-            }.obterQuantidadePorIngrediente();
+                CodMercadoria = objIngrediente.Cod
+            }.obterQuantidadePorMercadoria();
 
             lblIngrediente.Text = "Ingrediente " + objIngrediente.Cod +
                             "\n" + "Nome: " + objIngrediente.Nome +
@@ -167,7 +160,7 @@ namespace BurgerShack.Desktop
             };
             frmSelecionar.ShowDialog();
 
-            if(objSelecionar.Selecionado != null)
+            if (objSelecionar.Selecionado != null)
             {
                 definirIngrediente(objSelecionar.Selecionado);
             }
@@ -182,9 +175,9 @@ namespace BurgerShack.Desktop
             {
                 hdrUIX.Title = App.Name + " - Alterando Estoque " + ObjEstoque.Cod;
 
-                txtQuantidade.Text = clnUtilConvert.ToString(ObjEstoque.Quantidade);
+                txtQuantidade.Text = UtilConvert.ToString(ObjEstoque.Quantidade);
                 txtValor.Text = ObjEstoque.Valor.ToString();
-                mtbValidade.Text = clnUtilFormatar.formatarData(ObjEstoque.Validade);
+                mtbValidade.Text = UtilFormatar.formatarData(ObjEstoque.Validade);
 
                 clnFornecedor objFornecedor = new clnFornecedor
                 {
@@ -199,11 +192,11 @@ namespace BurgerShack.Desktop
                 btnFornEncontrar.Hide();
 
                 clnIngrediente objIngrediente = new clnIngrediente
-                { 
-                    Cod = ObjEstoque.CodIngrediente
+                {
+                    Cod = ObjEstoque.CodMercadoria
                 }.obterPorCod();
 
-                if(objIngrediente != null)
+                if (objIngrediente != null)
                 {
                     definirIngrediente(objIngrediente);
                 }

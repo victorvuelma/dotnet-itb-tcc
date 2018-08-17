@@ -1,31 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BurgerShack.Common.UTIL;
+using vitorrdgs.Util;
 
 namespace BurgerShack.Desktop
 {
     public partial class uctGerenciamentoListar : UserControl
     {
 
-        private int _codFuncionario;
+        private String[] _colunas;
+        private bool _inativos;
 
-        private String[] colunas;
-        private IUtilCallback<DataGridView, String> _callbackObter;
-        private IUtilCallback<int> _callbackNovo;
+        private IUtilCallback<DataGridView, String, bool> _callbackObter;
+        private IUtilCallback _callbackNovo;
         private IUtilCallback<DataGridViewRow> _callbackAlterar;
 
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-        public string[] Colunas { get => colunas; set => colunas = value; }
-        internal IUtilCallback<DataGridView, string> CallbackObter { get => _callbackObter; set => _callbackObter = value; }
-        internal IUtilCallback<int> CallbackNovo { get => _callbackNovo; set => _callbackNovo = value; }
+        public string[] Colunas { get => _colunas; set => _colunas = value; }
+        internal IUtilCallback<DataGridView, string, bool> CallbackObter { get => _callbackObter; set => _callbackObter = value; }
+        internal IUtilCallback CallbackNovo { get => _callbackNovo; set => _callbackNovo = value; }
         internal IUtilCallback<DataGridViewRow> CallbackAlterar { get => _callbackAlterar; set => _callbackAlterar = value; }
+        public bool Inativos { get => _inativos; set => _inativos = value; }
 
         public uctGerenciamentoListar()
         {
@@ -37,27 +30,32 @@ namespace BurgerShack.Desktop
             dgvItens.Rows.Clear();
             dgvItens.ClearSelection();
 
-            CallbackObter.call(dgvItens, txtPesquisar.Text);
+            CallbackObter.call(dgvItens, txtPesquisar.Text, !chkInativo.Checked);
             lblPesquisaRes.Text = dgvItens.Rows.Count + " resultados encontrados.";
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            if (CallbackNovo.call(CodFuncionario))
+            if (CallbackNovo.call())
             {
                 pesquisar();
             }
         }
 
-        private void uctGerenciamentoListar_Load(object sender, EventArgs e)
+        public void atualizar()
         {
+            dgvItens.Rows.Clear();
+            dgvItens.Columns.Clear();
             foreach (string coluna in Colunas)
             {
                 dgvItens.Columns.Add(coluna.ToLower(), coluna);
             }
             AppDesktop.VisualTemplate.ctlApply(dgvItens);
 
+            chkInativo.Visible = Inativos;
+            chkInativo.Checked = false;
             btnNovo.Visible = CallbackNovo != null;
+            txtPesquisar.Text = "";
 
             pesquisar();
         }
@@ -69,13 +67,18 @@ namespace BurgerShack.Desktop
 
         private void dgvItens_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(CallbackAlterar != null && CallbackAlterar.call(dgvItens.CurrentRow))
+            if (CallbackAlterar != null && CallbackAlterar.call(dgvItens.CurrentRow))
             {
                 pesquisar();
             }
         }
 
         private void txtPesquisar_TextChange(object sender, EventArgs e)
+        {
+            pesquisar();
+        }
+
+        private void chkInativo_CheckedChanged(object sender, EventArgs e)
         {
             pesquisar();
         }

@@ -7,15 +7,39 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster;
 using Caelum.Stella.CSharp.Http;
-using BurgerShack.Common.UTIL;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.Util.Data;
+using vitorrdgs.SqlMaster.Element.Where;
 
 namespace BurgerShack.Common
 {
 
-    public class clnEndereco
+    public class Endereco
     {
+
+
+        private static ViaCEP ViaCEP = new ViaCEP();
+
+        public static Endereco obterEndereco(String cep)
+        {
+            Endereco objEndereco = new Endereco
+            {
+                CEP = UtilFormatar.retirarFormatacao(cep)
+            }.obterPorCep();
+            if (objEndereco == null)
+            {
+                try
+                {
+                    return Endereco.Transform(ViaCEP.GetEndereco(cep));
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+            return objEndereco;
+        }
 
         private string _logradouro;
         private string _complemento;
@@ -31,19 +55,19 @@ namespace BurgerShack.Common
         public string UF { get => _uf; set => _uf = value; }
         public string CEP { get => _cep; set => _cep = value; }
 
-        private clnEndereco obter(SqlDataReader reader)
+        private Endereco obter(SqlDataReader reader)
         {
-            return new clnEndereco
+            return new Endereco
             {
-                Logradouro = clnUtilConvert.ToString(reader["logradouro"]),
-                Complemento = clnUtilConvert.ToString(reader["complemento"]),
-                Bairro = clnUtilConvert.ToString(reader["bairro"]),
-                Localidade = clnUtilConvert.ToString(reader["localidade"]),
-                UF = clnUtilConvert.ToString(reader["uf"])
+                Logradouro = UtilConvert.ToString(reader["logradouro"]),
+                Complemento = UtilConvert.ToString(reader["complemento"]),
+                Bairro = UtilConvert.ToString(reader["bairro"]),
+                Localidade = UtilConvert.ToString(reader["localidade"]),
+                UF = UtilConvert.ToString(reader["uf"])
             };
         }
 
-        public clnEndereco obterPorCep()
+        public Endereco obterPorCep()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("localidade");
@@ -58,7 +82,7 @@ namespace BurgerShack.Common
                           .fullJoin("bairro", "id", "logradouro.id_bairro");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
-            clnEndereco objEndereco = null;
+            Endereco objEndereco = null;
             if (reader.Read())
                 objEndereco = obter(reader);
             reader.Close();
@@ -66,11 +90,11 @@ namespace BurgerShack.Common
             return objEndereco;
         }
 
-        public static clnEndereco Transform(Endereco endereco)
+        public static Endereco Transform(Caelum.Stella.CSharp.Http.Endereco endereco)
         {
             if (endereco != null)
             {
-                return new clnEndereco
+                return new Endereco
                 {
                     Bairro = endereco.Bairro,
                     CEP = endereco.CEP,

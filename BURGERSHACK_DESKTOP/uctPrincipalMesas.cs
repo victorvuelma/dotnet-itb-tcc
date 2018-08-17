@@ -15,10 +15,6 @@ namespace BurgerShack.Desktop
     public partial class uctPrincipalMesas : UserControl
     {
 
-        private int _codFuncionario;
-
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-
         public uctPrincipalMesas()
         {
             InitializeComponent();
@@ -78,7 +74,6 @@ namespace BurgerShack.Desktop
                 {
                     objAtendimento = new clnAtendimento
                     {
-                        CodFuncionario = CodFuncionario,
                         Inicio = DateTime.Now,
                         Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO
                     };
@@ -96,8 +91,7 @@ namespace BurgerShack.Desktop
             }
             frmAtendimento frmAtendimento = new frmAtendimento
             {
-                ObjAtendimento = objAtendimento,
-                CodFuncionario = CodFuncionario
+                ObjAtendimento = objAtendimento
             };
             frmAtendimento.ShowDialog();
 

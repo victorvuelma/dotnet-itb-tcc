@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster;
-using BurgerShack.Common.UTIL;
+
 using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -18,7 +19,7 @@ namespace BurgerShack.Desktop
 
         private int _cod = -1;
 
-        private int _codIngrediente;
+        private int _codMercadoria;
         private int _codFornecedor;
 
         private DateTime _entrada;
@@ -30,7 +31,7 @@ namespace BurgerShack.Desktop
         private int _quantidade;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public int CodIngrediente { get => _codIngrediente; set => _codIngrediente = value; }
+        public int CodMercadoria { get => _codMercadoria; set => _codMercadoria = value; }
         public int CodFornecedor { get => _codFornecedor; set => _codFornecedor = value; }
         public DateTime Entrada { get => _entrada; set => _entrada = value; }
         public DateTime Validade { get => _validade; set => _validade = value; }
@@ -40,14 +41,14 @@ namespace BurgerShack.Desktop
 
         private clnEstoque obter(SqlDataReader reader) => new clnEstoque
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodFornecedor = clnUtilConvert.ToInt(reader["id_fornecedor"]),
-            CodIngrediente = clnUtilConvert.ToInt(reader["id_ingrediente"]),
-            Entrada = clnUtilConvert.ToDateTime(reader["entrada"]),
-            Validade = clnUtilConvert.ToDateTime(reader["validade"]),
-            Quantidade = clnUtilConvert.ToInt(reader["quantidade"]),
-            Total = clnUtilConvert.ToInt(reader["total"]),
-            Valor = clnUtilConvert.ToDecimal(reader["valor"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            CodFornecedor = UtilConvert.ToInt(reader["id_fornecedor"]),
+            CodMercadoria = UtilConvert.ToInt(reader["id_mercadoria"]),
+            Entrada = UtilConvert.ToDateTime(reader["entrada"]),
+            Validade = UtilConvert.ToDateTime(reader["validade"]),
+            Quantidade = UtilConvert.ToInt(reader["quantidade"]),
+            Total = UtilConvert.ToInt(reader["total"]),
+            Valor = UtilConvert.ToDecimal(reader["valor"])
         };
 
         public clnEstoque obterPorCod()
@@ -79,17 +80,17 @@ namespace BurgerShack.Desktop
             return objEstoques;
         }
 
-        public int obterQuantidadePorIngrediente()
+        public int obterQuantidadePorMercadoria()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("estoque");
             objSelect.Columns.select("quantidade", sqlElementTable.selectOperation.SUM, "quantidade", 0);
-            objSelect.Where.where("id_ingrediente", CodIngrediente);
+            objSelect.Where.where("id_mercadoria", CodMercadoria);
 
             int quantidade = 0;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
-                quantidade = clnUtilConvert.ToInt(reader["quantidade"]);
+                quantidade = UtilConvert.ToInt(reader["quantidade"]);
             reader.Close();
 
             return quantidade;
@@ -99,7 +100,7 @@ namespace BurgerShack.Desktop
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("estoque");
-            objInsert.Insert.val("id_ingrediente", CodIngrediente)
+            objInsert.Insert.val("id_mercadoria", CodMercadoria)
                             .val("id_fornecedor", CodFornecedor)
                             .val("entrada", Entrada)
                             .val("validade", Validade)
@@ -109,7 +110,7 @@ namespace BurgerShack.Desktop
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
 
-            atualizarIngrediente();
+            atualizarIngredientes();
         }
 
         public void alterar()
@@ -121,19 +122,33 @@ namespace BurgerShack.Desktop
 
             objInsert.execute(App.DatabaseSql);
 
-            atualizarIngrediente();
+            atualizarIngredientes();
+            atualizarProdutos();
         }
 
-        public void atualizarIngrediente()
+        public void atualizarIngredientes()
         {
-            clnIngrediente objIngrediente = new clnIngrediente
+            List<clnIngrediente> objIngredientes = new clnIngrediente
             {
-                Cod = CodIngrediente
-            }.obterPorCod();
+                CodMercadoria = CodMercadoria
+            }.obterPorMercadoria();
 
-            if (objIngrediente != null)
+            foreach(clnIngrediente objIngrediente in objIngredientes)
             {
                 objIngrediente.atualizarEstoque(true);
+            }
+        }
+
+        public void atualizarProdutos()
+        {
+            List<clnProduto> objProdutos = new clnProduto
+            {
+                CodMercadoria = CodMercadoria
+            }.obterPorMercadoria();
+
+            foreach (clnProduto objProduto in objProdutos)
+            {
+                objProduto.atualizarEstoque();
             }
         }
 

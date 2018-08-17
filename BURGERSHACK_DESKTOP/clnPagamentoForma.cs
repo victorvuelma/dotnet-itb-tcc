@@ -1,14 +1,9 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using System.Data.SqlClient;
-using vitorrdgs.SqlMaster;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -29,10 +24,10 @@ namespace BurgerShack.Desktop
 
         private clnPagamentoForma obter(SqlDataReader reader) => new clnPagamentoForma
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            Nome = clnUtilConvert.ToString(reader["nome"]),
-            Bandeira = clnUtilConvert.ToString(reader["bandeira"]),
-            Desconto = clnUtilConvert.ToNullableDouble(reader["desconto"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            Nome = UtilConvert.ToString(reader["nome"]),
+            Bandeira = UtilConvert.ToString(reader["bandeira"]),
+            Desconto = UtilConvert.ToNullableDouble(reader["desconto"])
         };
 
         public clnPagamentoForma obterPorCodigo()

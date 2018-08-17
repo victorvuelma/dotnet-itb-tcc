@@ -1,17 +1,10 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using System.IO;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
-using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -25,8 +18,10 @@ namespace BurgerShack.Desktop
         }
 
         private int _cod = -1;
+        private bool _ativo = true;
 
         private int _codImagem = -1;
+        private int _codMercadoria = -1;
         private int _codTipo = -1;
 
         private String _nome;
@@ -40,17 +35,20 @@ namespace BurgerShack.Desktop
         public decimal Valor { get => _valor; set => _valor = value; }
         public ingredienteSituacao Situacao { get => _situacao; set => _situacao = value; }
         public int CodImagem { get => _codImagem; set => _codImagem = value; }
+        public int CodMercadoria { get => _codMercadoria; set => _codMercadoria = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnIngrediente obter(SqlDataReader reader)
         {
             clnIngrediente objIngrediente = new clnIngrediente
             {
-                Cod = clnUtilConvert.ToInt(reader["id"]),
-                CodImagem = clnUtilConvert.ToInt(reader["id_imagem"]),
-                CodTipo = clnUtilConvert.ToInt(reader["id_tipo"]),
-                Nome = clnUtilConvert.ToString(reader["nome"]),
-                Valor = clnUtilConvert.ToDecimal(reader["valor"]),
-                Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
+                Cod = UtilConvert.ToInt(reader["id"]),
+                CodImagem = UtilConvert.ToInt(reader["id_imagem"]),
+                CodTipo = UtilConvert.ToInt(reader["id_tipo"]),
+                Nome = UtilConvert.ToString(reader["nome"]),
+                Valor = UtilConvert.ToDecimal(reader["valor"]),
+                Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
+                Ativo = UtilConvert.ToBool(reader["ativo"])
             };
 
             return objIngrediente;
@@ -117,6 +115,21 @@ namespace BurgerShack.Desktop
             return objIngredientes;
         }
 
+        internal List<clnIngrediente> obterPorMercadoria()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("ingrediente");
+            objSelect.Where.where("id_mercadoria", CodMercadoria);
+
+            List<clnIngrediente> objIngredientes = new List<clnIngrediente>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objIngredientes.Add(obter(reader));
+            reader.Close();
+
+            return objIngredientes;
+        }
+
         public void gravar()
         {
             sqlInsert objInsert = new sqlInsert();
@@ -125,7 +138,8 @@ namespace BurgerShack.Desktop
                             .val("id_imagem", CodImagem)
                             .val("nome", Nome)
                             .val("valor", Valor)
-                            .val("situacao", prefixo(Situacao));
+                            .val("situacao", prefixo(Situacao))
+                            .val("ativo", UtilConvert.ToBit(Ativo));
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
@@ -138,7 +152,8 @@ namespace BurgerShack.Desktop
                         .val("id_imagem", CodImagem)
                         .val("nome", Nome)
                         .val("valor", Valor)
-                        .val("situacao", prefixo(Situacao));
+                        .val("situacao", prefixo(Situacao))
+                        .val("ativo", UtilConvert.ToBit(Ativo));
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);
@@ -148,8 +163,8 @@ namespace BurgerShack.Desktop
         {
             int estoqueAtual = new clnEstoque
             {
-                CodIngrediente = Cod
-            }.obterQuantidadePorIngrediente();
+                CodMercadoria = Cod
+            }.obterQuantidadePorMercadoria();
 
             if (Situacao != clnIngrediente.ingredienteSituacao.INDISPONIVEL)
             {

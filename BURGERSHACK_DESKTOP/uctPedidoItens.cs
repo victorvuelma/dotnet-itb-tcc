@@ -18,14 +18,12 @@ namespace BurgerShack.Desktop
         private frmPedido _form;
 
         private int _codAtendimento;
-        private int _codFuncionario;
 
         private clnPedido _objPedido;
         private Dictionary<clnItem, List<clnItemIngrediente>> _objItens;
 
         public frmPedido Form { get => _form; set => _form = value; }
         public int CodAtendimento { get => _codAtendimento; set => _codAtendimento = value; }
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public clnPedido ObjPedido { get => _objPedido; set => _objPedido = value; }
         public Dictionary<clnItem, List<clnItemIngrediente>> ObjItens { get => _objItens; set => _objItens = value; }
 

@@ -1,16 +1,10 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -19,10 +13,8 @@ namespace BurgerShack.Desktop
 
         private clnUtilFormValidar _validar;
 
-        private int _codFuncionario;
         private clnReserva _objReserva;
 
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         internal clnReserva ObjReserva { get => _objReserva; set => _objReserva = value; }
 
         public frmReserva()
@@ -35,18 +27,18 @@ namespace BurgerShack.Desktop
             _validar.addValidacao(txtPessoas, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.INT, clnUtilFormValidar.Validacao.QUANTIDADE });
             _validar.addValidacao(mtbCliCPF, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.CPF });
 
-            mtbCliCPF.Mask = clnUtil.MASK_CPF;
-            mtbData.Mask = clnUtil.MASK_DATA;
-            mtbHora.Mask = clnUtil.MASK_HORA;
+            mtbCliCPF.Mask = UtilMask.MASK_CPF;
+            mtbData.Mask = UtilMask.MASK_DATA;
+            mtbHora.Mask = UtilMask.MASK_HORA;
         }
 
         private bool encontrarCliente()
         {
-            if (clnUtilValidar.validarCPF(mtbCliCPF.Text))
+            if (UtilValidar.validarCPF(mtbCliCPF.Text))
             {
                 clnCliente objCliente = new clnCliente
                 {
-                    Cpf = clnUtilFormatar.retirarFormatacao(mtbCliCPF.Text)
+                    Cpf = UtilFormatar.retirarFormatacao(mtbCliCPF.Text)
                 }.obterPorCPF();
                 if (objCliente != null)
                 {
@@ -57,10 +49,7 @@ namespace BurgerShack.Desktop
                 {
                     if (clnUtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
                     {
-                        frmCliente frmNovoCliente = new frmCliente
-                        {
-                            CodFuncionario = CodFuncionario
-                        };
+                        frmCliente frmNovoCliente = new frmCliente { };
                         frmNovoCliente.mtbCPF.Text = mtbCliCPF.Text;
                         frmNovoCliente.ShowDialog();
 
@@ -89,7 +78,7 @@ namespace BurgerShack.Desktop
         {
             lblCliente.Text = "Cliente #" + objCliente.Cod + "\n"
                                           + "Nome: " + objCliente.Nome + "\n"
-                                          + "Celular: " + clnUtilFormatar.formatarCelular(objCliente.TelCelular);
+                                          + "Celular: " + UtilFormatar.formatarCelular(objCliente.TelCelular);
         }
 
         private void fechar()
@@ -202,9 +191,9 @@ namespace BurgerShack.Desktop
 
         private DateTime? obterDataAgendada()
         {
-            if (clnUtilValidar.validarData(mtbData.Text) && clnUtilValidar.validarDataFutura(mtbData.Text))
+            if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text))
             {
-                return clnUtilConvert.ObterNullableData(mtbData.Text);
+                return UtilConvert.ObterNullableData(mtbData.Text);
             }
             return null;
         }
@@ -220,13 +209,13 @@ namespace BurgerShack.Desktop
                         if (ObjReserva.CodCliente != -1 || encontrarCliente())
                         {
                             DateTime dataAgendada = (DateTime)obterDataAgendada();
-                            DateTime horaAgendada = clnUtilConvert.ObterHora(mtbHora.Text);
+                            DateTime horaAgendada = UtilConvert.ObterHora(mtbHora.Text);
                             dataAgendada = dataAgendada.AddHours(horaAgendada.Hour);
                             dataAgendada = dataAgendada.AddMinutes(horaAgendada.Minute);
 
-                            ObjReserva.CodFuncionario = CodFuncionario;
+                            ObjReserva.CodFuncionario = AppDesktop.FuncionarioAtual.Cod;
                             ObjReserva.Situacao = clnReserva.reservaSituacao.MARCADA;
-                            ObjReserva.Pessoas = clnUtilConvert.ToInt(txtPessoas.Text);
+                            ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
                             ObjReserva.Agendado = dataAgendada;
                             ObjReserva.Agendamento = DateTime.Now;
 
@@ -238,7 +227,7 @@ namespace BurgerShack.Desktop
                     }
                     else if (txtPessoas.Enabled)
                     {
-                        ObjReserva.Pessoas = clnUtilConvert.ToInt(txtPessoas.Text);
+                        ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
                         ObjReserva.alterar();
 
                         clnUtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!");
@@ -258,9 +247,9 @@ namespace BurgerShack.Desktop
 
         private void tentarDefinirData()
         {
-            if (clnUtilValidar.validarData(mtbData.Text) && clnUtilValidar.validarDataFutura(mtbData.Text))
+            if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text))
             {
-                DateTime dataAgendada = clnUtilConvert.ObterData(mtbData.Text).Date;
+                DateTime dataAgendada = UtilConvert.ObterData(mtbData.Text).Date;
                 if (!ObjReserva.Agendado.Equals(dataAgendada))
                 {
                     ObjReserva.Agendado = dataAgendada;
@@ -300,7 +289,7 @@ namespace BurgerShack.Desktop
                         CodCliente = ObjReserva.CodCliente,
                         CodReserva = ObjReserva.Cod,
                         Inicio = DateTime.Now,
-                        CodFuncionario = CodFuncionario,
+                        CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
                         Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO
                     };
                     objAtendimento.gravar();
@@ -374,9 +363,9 @@ namespace BurgerShack.Desktop
                 exibirCliente(objCliente);
                 mtbCliCPF.Text = objCliente.Cpf;
 
-                mtbData.Text = clnUtilFormatar.formatarData(ObjReserva.Agendado);
-                mtbHora.Text = clnUtilFormatar.formatarHora(ObjReserva.Agendado);
-                txtPessoas.Text = clnUtilConvert.ToString(ObjReserva.Pessoas);
+                mtbData.Text = UtilFormatar.formatarData(ObjReserva.Agendado);
+                mtbHora.Text = UtilFormatar.formatarHora(ObjReserva.Agendado);
+                txtPessoas.Text = UtilConvert.ToString(ObjReserva.Pessoas);
 
                 if (ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
                 {

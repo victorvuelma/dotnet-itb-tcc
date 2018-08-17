@@ -1,16 +1,10 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -91,7 +85,7 @@ namespace BurgerShack.Desktop
                         Nome = txtNome.Text,
                         CodTipo = cboTipo.SelectedItem.Id,
                         CodImagem = objArquivo.Cod,
-                        Valor = clnUtilConvert.ToDecimal(txtValor.Text),
+                        Valor = UtilConvert.ToDecimal(txtValor.Text),
                         Descricao = txtDesc.Text
                     };
                     ObjProduto.gravar();
@@ -122,9 +116,9 @@ namespace BurgerShack.Desktop
                         objArquivo.gravar();
                         ObjProduto.CodImagem = objArquivo.Cod;
                     }
-                    ObjProduto.CodTipo = clnUtilConvert.ToInt(cboTipo.Text.Split('-')[0]);
+                    ObjProduto.CodTipo = UtilConvert.ToInt(cboTipo.Text.Split('-')[0]);
                     ObjProduto.Nome = txtNome.Text;
-                    ObjProduto.Valor = clnUtilConvert.ToDecimal(txtValor.Text);
+                    ObjProduto.Valor = UtilConvert.ToDecimal(txtValor.Text);
                     ObjProduto.Descricao = txtDesc.Text;
                     ObjProduto.Situacao = (clnProduto.produtoSituacao)Enum.Parse(typeof(clnProduto.produtoSituacao), cboSituacao.Text);
 

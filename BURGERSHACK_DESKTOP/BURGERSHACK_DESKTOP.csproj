@@ -153,6 +153,7 @@
     <Compile Include="clnFornecedor.cs" />
     <Compile Include="clnFuncionario.cs" />
     <Compile Include="clnIngrediente.cs" />
+    <Compile Include="clnMercadoria.cs" />
     <Compile Include="clnPagamento.cs" />
     <Compile Include="clnPagamentoForma.cs" />
     <Compile Include="clnTipo.cs" />
@@ -170,7 +171,8 @@
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
-    <Compile Include="UTIL\clnUtilFormValidar.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Util\clnUtilFormValidar.cs" />
     <Compile Include="frmConta.cs">
       <SubType>Form</SubType>
     </Compile>

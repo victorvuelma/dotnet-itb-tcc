@@ -131,18 +131,12 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="AppLocal.cs" />
-    <Compile Include="clnEndereco.cs" />
+    <Compile Include="Endereco.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Util\clnUtilCache.cs" />
-    <Compile Include="Util\clnUtilCallback.cs" />
-    <Compile Include="Util\clnUtilConvert.cs" />
-    <Compile Include="Util\clnUtilEndereco.cs" />
-    <Compile Include="Util\clnUtilFormatar.cs" />
-    <Compile Include="Util\clnUtilValidar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

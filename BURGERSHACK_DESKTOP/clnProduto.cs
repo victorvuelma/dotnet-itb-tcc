@@ -1,17 +1,9 @@
-﻿using System;
+﻿using BurgerShack.Common;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using System.IO;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
-using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -29,6 +21,7 @@ namespace BurgerShack.Desktop
 
         private int _codImagem = -1;
         private int _codTipo = -1;
+        private int _codMercadoria = -1;
 
         private string _nome;
         private string _descricao;
@@ -42,16 +35,17 @@ namespace BurgerShack.Desktop
         public string Descricao { get => _descricao; set => _descricao = value; }
         public decimal Valor { get => _valor; set => _valor = value; }
         internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
+        public int CodMercadoria { get => _codMercadoria; set => _codMercadoria = value; }
 
         private clnProduto obter(SqlDataReader reader) => new clnProduto
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodImagem = clnUtilConvert.ToInt(reader["id_imagem"]),
-            CodTipo = clnUtilConvert.ToInt(reader["id_tipo"]),
-            Descricao = clnUtilConvert.ToString(reader["descricao"]),
-            Nome = clnUtilConvert.ToString(reader["nome"]),
-            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
-            Valor = clnUtilConvert.ToDecimal(reader["valor"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            CodImagem = UtilConvert.ToInt(reader["id_imagem"]),
+            CodTipo = UtilConvert.ToInt(reader["id_tipo"]),
+            Descricao = UtilConvert.ToString(reader["descricao"]),
+            Nome = UtilConvert.ToString(reader["nome"]),
+            Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
+            Valor = UtilConvert.ToDecimal(reader["valor"])
         };
 
         public clnProduto obterPorCod()
@@ -85,12 +79,26 @@ namespace BurgerShack.Desktop
             return objProdutos;
         }
 
-
         internal List<clnProduto> obterPorNome()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");
             objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
+
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            List<clnProduto> objProdutos = new List<clnProduto>();
+            while (reader.Read())
+                objProdutos.Add(obter(reader));
+            reader.Close();
+
+            return objProdutos;
+        }
+
+        internal List<clnProduto> obterPorMercadoria()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("produto");
+            objSelect.Where.where("id_mercadoria", CodMercadoria);
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnProduto> objProdutos = new List<clnProduto>();
@@ -134,29 +142,39 @@ namespace BurgerShack.Desktop
         {
             if (Situacao != clnProduto.produtoSituacao.INDISPONIVEL)
             {
-                clnProdutoIngrediente objProdutoIngredientes = new clnProdutoIngrediente
+                clnProduto.produtoSituacao novaSituacao = clnProduto.produtoSituacao.DISPONIVEL;
+
+                List<clnProdutoIngrediente> objProdutoIngredientes = new clnProdutoIngrediente
                 {
                     CodProduto = Cod
-                };
+                }.obterPorProduto();
 
-                clnProduto.produtoSituacao situacao = clnProduto.produtoSituacao.DISPONIVEL;
-
-                foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes.obterPorProduto())
+                if (CodMercadoria != -1)
                 {
-                    clnIngrediente objIngrediente = new clnIngrediente
+                    clnMercadoria objMercadoria = new clnMercadoria
                     {
-                        Cod = objProdutoIngrediente.CodIngrediente
+                        Cod = CodMercadoria
                     }.obterPorCod();
-
-                    if (objIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
+                }
+                else
+                {
+                    foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes)
                     {
-                        situacao = clnProduto.produtoSituacao.FORADEESTOQUE;
-                        break;
+                        clnIngrediente objIngrediente = new clnIngrediente
+                        {
+                            Cod = objProdutoIngrediente.CodIngrediente
+                        }.obterPorCod();
+
+                        if (objIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
+                        {
+                            novaSituacao = clnProduto.produtoSituacao.FORADEESTOQUE;
+                            break;
+                        }
                     }
                 }
-                if (Situacao != situacao)
+                if (Situacao != novaSituacao)
                 {
-                    Situacao = situacao;
+                    Situacao = novaSituacao;
                     alterar();
                 }
             }

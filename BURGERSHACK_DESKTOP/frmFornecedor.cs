@@ -1,16 +1,9 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -40,9 +33,9 @@ namespace BurgerShack.Desktop
             _validar.addValidacao(txtEndCidade, clnUtilFormValidar.Validacao.OBRIGATORIO);
             _validar.addValidacao(cboEndUF, clnUtilFormValidar.Validacao.OBRIGATORIO);
 
-            mtbCNPJ.Mask = clnUtil.MASK_CNPJ;
-            mtbTel.Mask = clnUtil.MASK_TEL;
-            mtbEndCEP.Mask = clnUtil.MASK_CEP;
+            mtbCNPJ.Mask = UtilMask.MASK_CNPJ;
+            mtbTel.Mask = UtilMask.MASK_TEL;
+            mtbEndCEP.Mask = UtilMask.MASK_CEP;
         }
 
         private void salvar()
@@ -53,7 +46,7 @@ namespace BurgerShack.Desktop
                 {
                     clnFornecedor objFornecedorCNPJ = new clnFornecedor
                     {
-                        Cnpj = clnUtilFormatar.retirarFormatacao(mtbCNPJ.Text)
+                        Cnpj = UtilFormatar.retirarFormatacao(mtbCNPJ.Text)
                     }.obterPorCNPJ();
 
                     if (objFornecedorCNPJ == null)
@@ -61,10 +54,10 @@ namespace BurgerShack.Desktop
                         clnFornecedor objFornecedor = new clnFornecedor
                         {
                             RazaoSocial = txtRazaoSocial.Text,
-                            Cnpj = clnUtilFormatar.retirarFormatacao(mtbCNPJ.Text),
-                            Telefone = clnUtilFormatar.retirarFormatacao(mtbTel.Text),
+                            Cnpj = UtilFormatar.retirarFormatacao(mtbCNPJ.Text),
+                            Telefone = UtilFormatar.retirarFormatacao(mtbTel.Text),
                             Email = txtEmail.Text,
-                            EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text),
+                            EndCEP = UtilFormatar.retirarFormatacao(mtbEndCEP.Text),
                             EndLogradouro = txtEndLogradouro.Text,
                             EndNumero = txtEndNr.Text,
                             EndComplemento = txtEndComplemento.Text,
@@ -87,8 +80,8 @@ namespace BurgerShack.Desktop
                 {
                     ObjFornecedor.RazaoSocial = txtRazaoSocial.Text;
                     ObjFornecedor.Email = txtEmail.Text;
-                    ObjFornecedor.Telefone = clnUtilFormatar.retirarFormatacao(mtbTel.Text);
-                    ObjFornecedor.EndCEP = clnUtilFormatar.retirarFormatacao(mtbEndCEP.Text);
+                    ObjFornecedor.Telefone = UtilFormatar.retirarFormatacao(mtbTel.Text);
+                    ObjFornecedor.EndCEP = UtilFormatar.retirarFormatacao(mtbEndCEP.Text);
                     ObjFornecedor.EndLogradouro = txtEndLogradouro.Text;
                     ObjFornecedor.EndNumero = txtEndNr.Text;
                     ObjFornecedor.EndComplemento = txtEndComplemento.Text;

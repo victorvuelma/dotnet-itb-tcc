@@ -1,36 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime;
-using System.Windows.Forms;
-using System.Drawing;
-
-using static System.Windows.Forms.Control;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Property;
+using vitorrdgs.Util.Data;
 using vitorrdgs.Util.Form;
+using static System.Windows.Forms.Control;
 
 namespace BurgerShack.Desktop
 {
     class clnUtil
     {
-
-        public static String MASK_TEL = "(00) 0000-0000";
-        public static String MASK_CEL = "(00) 00000-0000";
-
-        public static String MASK_DATA = "00/00/0000";
-        public static String MASK_HORA = "00:00";
-
-        public static String MASK_CEP = "00000-000";
-
-        public static String MASK_CNPJ = "00,000,000/0000-00";
-        public static String MASK_IE = "000,000,000,000";
-        public static String MASK_CPF = "000,000,000-00";
 
         private static frmUtilNumBoard frmNumBoard;
 
@@ -129,7 +112,7 @@ namespace BurgerShack.Desktop
             addUFs(cboUF);
             mtbCEP.mtb.Validated += (object sender, EventArgs e) =>
             {
-                if (clnUtilValidar.validarCEP(mtbCEP.Text))
+                if (UtilValidar.validarCEP(mtbCEP.Text))
                 {
                     clnUtil.definirEndereco(mtbCEP.Text, ctlLogradouro, ctlBairro, ctlCidade, cboUF, ctlNr, ctlComplemento);
                 }
@@ -138,10 +121,10 @@ namespace BurgerShack.Desktop
 
         public static void definirEndereco(String cep, Control ctlLogradouro, Control ctlBairro, Control ctlCidade, ComboBox cboUF, Control ctlNr, Control ctlComplemento)
         {
-            if (clnUtilValidar.validarCEP(cep))
+            if (UtilValidar.validarCEP(cep))
             {
                 Cursor.Current = Cursors.WaitCursor;
-                clnEndereco objEndereco = clnUtilEndereco.obterEndereco(cep);
+                Endereco objEndereco = Endereco.obterEndereco(cep);
                 if (objEndereco != null)
                 {
                     UtilForm.Disable(ctlLogradouro);

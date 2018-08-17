@@ -31,6 +31,7 @@
             this.grbItens = new System.Windows.Forms.GroupBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
+            this.chkInativo = new System.Windows.Forms.CheckBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
             this.txtPesquisar = new vitorrdgs.UiX.Component.UIXTextBox();
             this.btnPesquisar = new vitorrdgs.UiX.Component.UIXButton();
@@ -63,6 +64,7 @@
             // 
             // grbPesquisa
             // 
+            this.grbPesquisa.Controls.Add(this.chkInativo);
             this.grbPesquisa.Controls.Add(this.lblPesquisaRes);
             this.grbPesquisa.Controls.Add(this.txtPesquisar);
             this.grbPesquisa.Controls.Add(this.btnPesquisar);
@@ -72,6 +74,17 @@
             this.grbPesquisa.TabIndex = 1;
             this.grbPesquisa.TabStop = false;
             this.grbPesquisa.Text = "ENCONTRAR";
+            // 
+            // chkInativo
+            // 
+            this.chkInativo.AutoSize = true;
+            this.chkInativo.Location = new System.Drawing.Point(371, 71);
+            this.chkInativo.Name = "chkInativo";
+            this.chkInativo.Size = new System.Drawing.Size(113, 20);
+            this.chkInativo.TabIndex = 2;
+            this.chkInativo.Text = "Exibir os inativos";
+            this.chkInativo.UseVisualStyleBackColor = true;
+            this.chkInativo.CheckedChanged += new System.EventHandler(this.chkInativo_CheckedChanged);
             // 
             // lblPesquisaRes
             // 
@@ -84,6 +97,7 @@
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
             this.txtPesquisar.Campo = "Pesquisar por";
+            this.txtPesquisar.DisabledColor = System.Drawing.Color.Empty;
             this.txtPesquisar.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -92,7 +106,7 @@
             this.txtPesquisar.Multiline = false;
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPesquisar.Size = new System.Drawing.Size(480, 40);
+            this.txtPesquisar.Size = new System.Drawing.Size(479, 39);
             this.txtPesquisar.TabIndex = 3;
             this.txtPesquisar.TextChange += new System.EventHandler(this.txtPesquisar_TextChange);
             // 
@@ -135,10 +149,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctGerenciamentoListar";
             this.Size = new System.Drawing.Size(700, 500);
-            this.Load += new System.EventHandler(this.uctGerenciamentoListar_Load);
             this.grbItens.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.grbPesquisa.ResumeLayout(false);
+            this.grbPesquisa.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -152,5 +166,6 @@
         private vitorrdgs.UiX.Component.UIXButton btnPesquisar;
         private vitorrdgs.UiX.Component.UIXTextBox txtPesquisar;
         private System.Windows.Forms.Label lblPesquisaRes;
+        private System.Windows.Forms.CheckBox chkInativo;
     }
 }

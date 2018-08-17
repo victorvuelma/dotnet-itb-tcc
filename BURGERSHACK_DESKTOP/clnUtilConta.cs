@@ -1,11 +1,8 @@
-﻿using BurgerShack.Common.UTIL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -46,7 +43,7 @@ namespace BurgerShack.Desktop
 
             StringBuilder contaBuilder = new StringBuilder();
             codItem = 1;
-                        foreach (String line in obterTemplate())
+            foreach (String line in obterTemplate())
             {
                 if (line.Equals("{@items}"))
                 {
@@ -57,22 +54,22 @@ namespace BurgerShack.Desktop
                 }
                 else if (line.Equals("{@valorsubtotal}"))
                 {
-                    contaBuilder.Append(clnUtilFormatar.formatarValor(valorSubTotal));
+                    contaBuilder.Append(UtilFormatar.formatarValor(valorSubTotal));
                 }
                 else if (line.Equals("{@valortotal}"))
                 {
-                    contaBuilder.Append(clnUtilFormatar.formatarValor(valorTotal));
+                    contaBuilder.Append(UtilFormatar.formatarValor(valorTotal));
                 }
                 else if (line.Equals("{@valorpessoa}"))
                 {
-                    contaBuilder.Append(clnUtilFormatar.formatarValor(valorTotal / pessoas));
+                    contaBuilder.Append(UtilFormatar.formatarValor(valorTotal / pessoas));
                 }
                 else if (line.Equals("{@gorjeta}"))
                 {
                     if (incluirGorjeta)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>+ Taxa de Serviço (10,0%)</td>");
-                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(valorSubTotal * (decimal) 0.1)).Append("</td></tr>");
+                        contaBuilder.Append("<td colspan='3' class='right'>").Append(UtilFormatar.formatarValor(valorSubTotal * (decimal)0.1)).Append("</td></tr>");
                     }
                 }
                 else if (line.Equals("{@desconto}"))
@@ -80,7 +77,7 @@ namespace BurgerShack.Desktop
                     if (desconto > 0)
                     {
                         contaBuilder.Append("<tr><td colspan='3' class='left'>- Desconto (" + desconto.ToString("N") + "%)</td>");
-                        contaBuilder.Append("<td colspan='3' class='right'>").Append(clnUtilFormatar.formatarValor(valorSubTotal * (desconto / 100))).Append("</td></tr>");
+                        contaBuilder.Append("<td colspan='3' class='right'>").Append(UtilFormatar.formatarValor(valorSubTotal * (desconto / 100))).Append("</td></tr>");
                     }
                 }
                 else if (line.Equals("{@pessoas}"))
@@ -89,7 +86,7 @@ namespace BurgerShack.Desktop
                 }
                 else if (line.Equals("{@datahora}"))
                 {
-                    contaBuilder.Append(clnUtilFormatar.formatarDataHora(DateTime.Now));
+                    contaBuilder.Append(UtilFormatar.formatarDataHora(DateTime.Now));
                 }
                 else
                 {
@@ -105,7 +102,7 @@ namespace BurgerShack.Desktop
             decimal valor = subTotal;
             if (incluirComissao)
             {
-                valor += subTotal * (decimal ) 0.1;
+                valor += subTotal * (decimal)0.1;
             }
             if (desconto > 0)
             {
@@ -182,11 +179,11 @@ namespace BurgerShack.Desktop
                        .Append(@"<td class='left'>").Append(cod).Append("</td>")
                        .Append(@"<td class='left'>").Append(descricao).Append("</td>")
                        .Append(@"<td class='right'>").Append(quantidade).Append("</td>")
-                       .Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor)).Append("</td>")
-                       .Append(@"<td class='right'>").Append(clnUtilFormatar.formatarValor(valor * quantidade)).Append("</td>")
+                       .Append(@"<td class='right'>").Append(UtilFormatar.formatarValor(valor)).Append("</td>")
+                       .Append(@"<td class='right'>").Append(UtilFormatar.formatarValor(valor * quantidade)).Append("</td>")
                        .Append(@"</tr>");
         }
-        
+
         public static IEnumerable<string> obterTemplate()
         {
             return File.ReadLines(global::BurgerShack.Common.Properties.Resources.html_template_conta);

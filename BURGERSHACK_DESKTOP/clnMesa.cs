@@ -1,15 +1,8 @@
-﻿using System;
+﻿using BurgerShack.Common;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -24,16 +17,26 @@ namespace BurgerShack.Desktop
         }
 
         private int _cod = -1;
+        private bool _ativo = true;
+
+        private int _numero;
+        private int _pessoas;
 
         private mesaSituacao _situacao;
 
         public int Cod { get => _cod; set => _cod = value; }
         public mesaSituacao Situacao { get => _situacao; set => _situacao = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
+        public int Numero { get => _numero; set => _numero = value; }
+        public int Pessoas { get => _pessoas; set => _pessoas = value; }
 
         private clnMesa obter(SqlDataReader reader) => new clnMesa
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"]))
+            Cod = UtilConvert.ToInt(reader["id"]),
+            Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
+            Ativo = UtilConvert.ToBool(reader["ativo"]),
+            Numero = UtilConvert.ToInt(reader["numero"]),
+            Pessoas = UtilConvert.ToInt(reader["pessoas"])
         };
 
         public List<clnMesa> obterMesas()
@@ -75,7 +78,7 @@ namespace BurgerShack.Desktop
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             int? codAtendimento = null;
             if (reader.Read())
-                codAtendimento = clnUtilConvert.ToInt(reader["id"]);
+                codAtendimento = UtilConvert.ToInt(reader["id"]);
             reader.Close();
 
             return codAtendimento;
@@ -86,7 +89,10 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("MESA");
             objUpdate.Where.where("id", Cod);
-            objUpdate.Set.val("situacao", prefixo(Situacao));
+            objUpdate.Set.val("situacao", prefixo(Situacao))
+                         .val("ativo", UtilConvert.ToBit(Ativo))
+                         .val("pessoas", Pessoas)
+                         .val("numero", Numero);
             objUpdate.execute(App.DatabaseSql);
         }
 
@@ -124,9 +130,7 @@ namespace BurgerShack.Desktop
             List<clnMesa> objMesas = new List<clnMesa>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
-            {
                 objMesas.Add(obter(reader));
-            }
             reader.Close();
 
             return objMesas;

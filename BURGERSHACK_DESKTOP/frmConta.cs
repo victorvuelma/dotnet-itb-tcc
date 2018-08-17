@@ -1,29 +1,20 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
     public partial class frmConta : Form
     {
 
-        private int _codFuncionario;
         private clnAtendimento _objAtendimento;
 
         private clnConta _objConta;
 
         public clnConta ObjConta { get => _objConta; set => _objConta = value; }
         public clnAtendimento ObjAtendimento { get => _objAtendimento; set => _objAtendimento = value; }
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmConta()
         {
@@ -44,18 +35,18 @@ namespace BurgerShack.Desktop
 
         private int obterPessoas()
         {
-            if (clnUtilValidar.validarInt(txtPessoas.Text))
+            if (UtilValidar.validarInt(txtPessoas.Text))
             {
-                return clnUtilConvert.ToInt(txtPessoas.Text);
+                return UtilConvert.ToInt(txtPessoas.Text);
             }
             return 1;
         }
 
         private decimal obterDesconto()
         {
-            if (clnUtilValidar.validarDecimal(txtDesconto.Text))
+            if (UtilValidar.validarDecimal(txtDesconto.Text))
             {
-                return clnUtilConvert.ToDecimal(txtDesconto.Text);
+                return UtilConvert.ToDecimal(txtDesconto.Text);
             }
             return 0;
         }
@@ -63,7 +54,7 @@ namespace BurgerShack.Desktop
         private void exibirConta()
         {
             decimal valorTotal = obterValorTotal();
-            lblValorTotal.Text = "Valor Total: " + clnUtilFormatar.formatarValor(valorTotal);
+            lblValorTotal.Text = "Valor Total: " + UtilFormatar.formatarValor(valorTotal);
 
             webConta.Navigate(clnArquivo.CACHE.guardar("conta", clnUtilConta.gerarConta(ObjAtendimento, obterPessoas(), chkServico.Checked, obterDesconto())));
         }
@@ -74,7 +65,7 @@ namespace BurgerShack.Desktop
             {
                 decimal valorPago = clnUtilConta.calcularValorPago(ObjConta.CodAtendimento);
 
-                lblValorPago.Text = "Valor Pago: " + clnUtilFormatar.formatarValor(valorPago);
+                lblValorPago.Text = "Valor Pago: " + UtilFormatar.formatarValor(valorPago);
 
                 if (valorPago >= obterValorTotal())
                 {
@@ -106,7 +97,7 @@ namespace BurgerShack.Desktop
                     CodAtendimento = ObjAtendimento.Cod,
                     Desconto = obterDesconto(),
                     TaxaServico = chkServico.Checked,
-                    CodFuncionario = CodFuncionario,
+                    CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
                     Valor = clnUtilPedido.calcularValor(ObjAtendimento)
                 };
                 ObjConta.gravar();
@@ -148,7 +139,7 @@ namespace BurgerShack.Desktop
                 btnFinalizar.Hide();
                 btnPagamento.Show();
 
-                txtDesconto.Text = clnUtilConvert.ToString(ObjConta.Desconto);
+                txtDesconto.Text = UtilConvert.ToString(ObjConta.Desconto);
                 chkServico.Checked = ObjConta.TaxaServico;
 
                 atualizarPago();
@@ -195,8 +186,7 @@ namespace BurgerShack.Desktop
         {
             frmPagamento frmNovoPagamento = new frmPagamento
             {
-                ObjConta = ObjConta,
-                CodFuncionario = CodFuncionario
+                ObjConta = ObjConta
             };
             frmNovoPagamento.ShowDialog();
 

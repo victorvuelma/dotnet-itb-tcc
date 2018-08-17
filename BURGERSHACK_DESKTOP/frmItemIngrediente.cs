@@ -1,19 +1,10 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using vitorrdgs.UiX;
-using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Manager;
-using vitorrdgs.UiX.Property;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -168,7 +159,7 @@ namespace BurgerShack.Desktop
         {
             if (_validar.validar(this))
             {
-                ObjItemIngrediente.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
+                ObjItemIngrediente.Quantidade = UtilConvert.ToInt(txtQuantidade.Text);
 
                 Close();
             }

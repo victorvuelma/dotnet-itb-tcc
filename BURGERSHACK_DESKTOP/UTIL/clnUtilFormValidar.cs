@@ -1,16 +1,14 @@
-﻿using BurgerShack.Common.UTIL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 using static System.Windows.Forms.Control;
 
-namespace BurgerShack.Desktop.UTIL
+namespace BurgerShack.Desktop.Util
 {
     class clnUtilFormValidar
     {
@@ -169,7 +167,7 @@ namespace BurgerShack.Desktop.UTIL
                     return true;
                 }
                 String conteudo = clnUtil.obterConteudo(control);
-                if (!_validacoes.Contains(Validacao.OBRIGATORIO) && clnUtilValidar.vazio(conteudo))
+                if (!_validacoes.Contains(Validacao.OBRIGATORIO) && UtilValidar.vazio(conteudo))
                 {
                     return true;
                 }
@@ -184,63 +182,63 @@ namespace BurgerShack.Desktop.UTIL
                     switch (tipo)
                     {
                         case Validacao.OBRIGATORIO:
-                            val = !clnUtilValidar.vazio(conteudo);
+                            val = !UtilValidar.vazio(conteudo);
                             res = "precisa ser preenchido.";
                             break;
                         case Validacao.EMAIL:
-                            val = clnUtilValidar.validarEmail(conteudo);
+                            val = UtilValidar.validarEmail(conteudo);
                             res = "deve conter um e-mail válido.";
                             break;
                         case Validacao.CPF:
-                            val = clnUtilValidar.validarCPF(conteudo);
+                            val = UtilValidar.validarCPF(conteudo);
                             res = "deve conter um CPF válido.";
                             break;
                         case Validacao.CNPJ:
-                            val = clnUtilValidar.validarCNPJ(conteudo);
+                            val = UtilValidar.validarCNPJ(conteudo);
                             res = "deve conter um CNPJ válido.";
                             break;
                         case Validacao.CEP:
-                            val = clnUtilValidar.validarCEP(conteudo);
+                            val = UtilValidar.validarCEP(conteudo);
                             res = "deve conter um CEP válido.";
                             break;
                         case Validacao.INT:
-                            val = clnUtilValidar.validarInt(conteudo);
+                            val = UtilValidar.validarInt(conteudo);
                             res = "deve conter um número inteiro.";
                             break;
                         case Validacao.QUANTIDADE:
-                            val = clnUtilConvert.ToInt(conteudo) > 0;
+                            val = UtilConvert.ToInt(conteudo) > 0;
                             res = "deve conter um número maior que ZERO.";
                             break;
                         case Validacao.DATA:
-                            val = clnUtilValidar.validarData(conteudo);
+                            val = UtilValidar.validarData(conteudo);
                             res = "deve conter uma data válida";
                             break;
                         case Validacao.DATA_NASC:
-                            val = clnUtilValidar.validarDataNasc(conteudo);
+                            val = UtilValidar.validarDataNasc(conteudo);
                             res = "deve conter uma data da nascimento.";
                             break;
                         case Validacao.CELULAR:
-                            val = clnUtilValidar.validarCelular(conteudo);
+                            val = UtilValidar.validarCelular(conteudo);
                             res = "deve conter um número de celular válido.";
                             break;
                         case Validacao.TELEFONE:
-                            val = clnUtilValidar.validarTelefone(conteudo);
+                            val = UtilValidar.validarTelefone(conteudo);
                             res = "deve conter um número de telefone válido.";
                             break;
                         case Validacao.DATA_FUTURA:
-                            val = clnUtilValidar.validarDataFutura(conteudo);
+                            val = UtilValidar.validarDataFutura(conteudo);
                             res = "deve conter uma data futura.";
                             break;
                         case Validacao.HORA:
-                            val = clnUtilValidar.validarHora(conteudo);
+                            val = UtilValidar.validarHora(conteudo);
                             res = "deve conter uma hora válida.";
                             break;
                         case Validacao.VALOR:
-                            val = clnUtilValidar.validarValor(conteudo);
+                            val = UtilValidar.validarValor(conteudo);
                             res = "deve conter um valor válido.";
                             break;
                         case Validacao.DOUBLE:
-                            val = clnUtilValidar.validarDouble(conteudo);
+                            val = UtilValidar.validarDouble(conteudo);
                             res = "deve conter um número decimal válido.";
                             break;
                     }

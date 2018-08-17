@@ -1,15 +1,10 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
-using vitorrdgs.SqlMaster.Element;
+using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -17,6 +12,8 @@ namespace BurgerShack.Desktop
     {
 
         private int _cod = -1;
+        private bool _ativo = true;
+
         private int _codFuncionario = -1;
 
         private String _nome;
@@ -39,18 +36,20 @@ namespace BurgerShack.Desktop
         public string TelCelular { get => _telCelular; set => _telCelular = value; }
         public string Email { get => _email; set => _email = value; }
         public DateTime Cadastro { get => _cadastro; set => _cadastro = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnCliente obter(SqlDataReader reader) => new clnCliente
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-            Nome = clnUtilConvert.ToString(reader["nome"]),
-            Cpf = clnUtilConvert.ToString(reader["cpf"]),
-            DataNascimento = clnUtilConvert.ToNullableDateTime(reader["data_nascimento"]),
-            Genero = clnUtilConvert.ToString(reader["genero"]),
-            TelCelular = clnUtilConvert.ToString(reader["tel_cel"]),
-            Email = clnUtilConvert.ToString(reader["email"]),
-            Cadastro = clnUtilConvert.ToDateTime(reader["cadastro"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
+            Nome = UtilConvert.ToString(reader["nome"]),
+            Cpf = UtilConvert.ToString(reader["cpf"]),
+            DataNascimento = UtilConvert.ToNullableDateTime(reader["data_nascimento"]),
+            Genero = UtilConvert.ToString(reader["genero"]),
+            TelCelular = UtilConvert.ToString(reader["tel_cel"]),
+            Email = UtilConvert.ToString(reader["email"]),
+            Cadastro = UtilConvert.ToDateTime(reader["cadastro"]),
+            Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
         public clnCliente obterPorCod()
@@ -64,6 +63,7 @@ namespace BurgerShack.Desktop
             if (reader.Read())
                 objCliente = obter(reader);
             reader.Close();
+
             return objCliente;
         }
 
@@ -78,6 +78,7 @@ namespace BurgerShack.Desktop
             if (reader.Read())
                 objCliente = obter(reader);
             reader.Close();
+
             return objCliente;
         }
 
@@ -85,15 +86,16 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("cliente");
-            objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlElementWhere.whereAssociation.OR)
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlElementWhere.whereAssociation.OR)
                            .where("cpf", sqlElementWhereCommon.whereOperation.LIKE, Cpf + "%");
-                    
 
             List<clnCliente> objClientes = new List<clnCliente>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
                 objClientes.Add(obter(reader));
             reader.Close();
+
             return objClientes;
         }
 
@@ -108,7 +110,8 @@ namespace BurgerShack.Desktop
                             .val("genero", Genero)
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
-                            .val("cadastro", Cadastro);
+                            .val("cadastro", Cadastro)
+                            .val("ativo", Ativo);
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 

@@ -1,14 +1,9 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using System.Data.SqlClient;
-using vitorrdgs.SqlMaster;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -33,12 +28,12 @@ namespace BurgerShack.Desktop
 
         private clnPagamento obter(SqlDataReader reader) => new clnPagamento
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodConta = clnUtilConvert.ToInt(reader["id_conta"]),
-            CodForma = clnUtilConvert.ToInt(reader["id_forma"]),
-            CodCliente = clnUtilConvert.ToNullableInt(reader["id_cliente"]),
-            Valor = clnUtilConvert.ToDecimal(reader["valor"]),
-            Data = clnUtilConvert.ToDateTime(reader["data"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            CodConta = UtilConvert.ToInt(reader["id_conta"]),
+            CodForma = UtilConvert.ToInt(reader["id_forma"]),
+            CodCliente = UtilConvert.ToNullableInt(reader["id_cliente"]),
+            Valor = UtilConvert.ToDecimal(reader["valor"]),
+            Data = UtilConvert.ToDateTime(reader["data"])
         };
 
         public clnPagamento obterPorCod()
@@ -85,4 +80,4 @@ namespace BurgerShack.Desktop
         }
 
     }
-} 
+}

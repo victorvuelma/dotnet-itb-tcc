@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
 using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -16,18 +16,21 @@ namespace BurgerShack.Desktop
     {
 
         private int _codFuncionario = -1;
+        private bool _ativo = true;
 
         private String _usuario;
-        private String _senha;
+        private String _hash;
 
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public string Usuario { get => _usuario; set => _usuario = value; }
-        public string Senha { get => _senha; set => _senha = value; }
+        public string Hash { get => _hash; set => _hash = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnAcesso obter(SqlDataReader reader) => new clnAcesso
         {
-            CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-            Usuario = clnUtilConvert.ToString(reader["usuario"])
+            CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
+            Hash = UtilConvert.ToString(reader["hash"]),
+            Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
         public int? acessar()
@@ -36,12 +39,13 @@ namespace BurgerShack.Desktop
             objSelect.table("acesso");
             objSelect.Columns.select("id_funcionario");
             objSelect.Where.where("usuario", Usuario)
-                           .where("senha", Senha);
+                           .where("hash", Hash)
+                           .where("ativo", 1);
 
             int? codFuncionario = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
-                codFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]);
+                codFuncionario = UtilConvert.ToInt(reader["id_funcionario"]);
             reader.Close();
 
             return codFuncionario;
@@ -96,16 +100,18 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("acesso");
             objUpdate.Where.where("id_funcionario", CodFuncionario);
-            objUpdate.Set.val("senha", Senha)
-                         .val("usuario", Usuario);
+            objUpdate.Set.val("hash", Hash)
+                         .val("usuario", Usuario)
+                         .val("ativo", UtilConvert.ToBit(Ativo));
 
             if (objUpdate.execute(App.DatabaseSql) == 0)
             {
                 sqlInsert objInsert = new sqlInsert();
                 objInsert.table("acesso");
-                objInsert.Insert.val("senha", Senha)
+                objInsert.Insert.val("hash", Hash)
                                 .val("usuario", Usuario)
-                                .val("id_funcionario", CodFuncionario);
+                                .val("id_funcionario", CodFuncionario)
+                                .val("ativo", UtilConvert.ToBit(Ativo));
 
                 objInsert.execute(App.DatabaseSql);
             }

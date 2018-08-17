@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
-using vitorrdgs.Utl.Form;
+using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {

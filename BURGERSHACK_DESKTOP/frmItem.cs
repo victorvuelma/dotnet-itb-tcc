@@ -1,16 +1,10 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -113,7 +107,7 @@ namespace BurgerShack.Desktop
             clnUtilSelecionar<clnIngrediente> objSelecionar = new clnUtilSelecionar<clnIngrediente>
             {
                 ObjListar = objListar,
-                Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text)
+                Quantidade = UtilConvert.ToInt(txtQuantidade.Text)
             };
 
             frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
@@ -197,7 +191,7 @@ namespace BurgerShack.Desktop
         {
             if (_validar.validar(this))
             {
-                ObjItem.Quantidade = clnUtilConvert.ToInt(txtQuantidade.Text);
+                ObjItem.Quantidade = UtilConvert.ToInt(txtQuantidade.Text);
                 ObjItem.Adicional = txtAdicional.Text;
 
                 if (ObjItem != null && ObjItem.Cod != -1)

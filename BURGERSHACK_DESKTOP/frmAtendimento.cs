@@ -15,10 +15,8 @@ namespace BurgerShack.Desktop
     {
 
         private clnAtendimento _objAtendimento;
-        private int _codFuncionario;
 
         public clnAtendimento ObjAtendimento { get => _objAtendimento; set => _objAtendimento = value; }
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmAtendimento()
         {
@@ -40,8 +38,7 @@ namespace BurgerShack.Desktop
             uctAtendimentoPedidos uctPedidos = new uctAtendimentoPedidos
             {
                 CodAtendimento = ObjAtendimento.Cod,
-                ObjPedidos = objPedidos,
-                CodFuncionario = CodFuncionario
+                ObjPedidos = objPedidos
             };
             alterarConteudo(uctPedidos, "Pedidos");
         }
@@ -56,8 +53,7 @@ namespace BurgerShack.Desktop
             frmConta frmConta = new frmConta
             {
                 ObjAtendimento = ObjAtendimento,
-                ObjConta = objConta,
-                CodFuncionario = CodFuncionario
+                ObjConta = objConta
             };
             frmConta.ShowDialog();
             if(frmConta.ObjAtendimento.Situacao == clnAtendimento.atendimentoSituacao.FINALIZADO)

@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
+
 using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -43,13 +44,13 @@ namespace BurgerShack.Desktop
         {
             clnAtendimento objAtendimento = new clnAtendimento
             {
-                Cod = clnUtilConvert.ToInt(reader["id"]),
-                CodCliente = clnUtilConvert.ToNullableInt(reader["id_cliente"]),
-                CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-                CodReserva = clnUtilConvert.ToNullableInt(reader["id_reserva"]),
-                Inicio = clnUtilConvert.ToDateTime(reader["inicio"]),
-                Fim = clnUtilConvert.ToNullableDateTime(reader["fim"]),
-                Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"]))
+                Cod = UtilConvert.ToInt(reader["id"]),
+                CodCliente = UtilConvert.ToNullableInt(reader["id_cliente"]),
+                CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
+                CodReserva = UtilConvert.ToNullableInt(reader["id_reserva"]),
+                Inicio = UtilConvert.ToDateTime(reader["inicio"]),
+                Fim = UtilConvert.ToNullableDateTime(reader["fim"]),
+                Situacao = situacao(UtilConvert.ToChar(reader["situacao"]))
             };
             objAtendimento.obterMesas();
 
@@ -64,7 +65,7 @@ namespace BurgerShack.Desktop
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             while (reader.Read())
-                CodMesas.Add(clnUtilConvert.ToInt(reader["id_mesa"]));
+                CodMesas.Add(UtilConvert.ToInt(reader["id_mesa"]));
             reader.Close();
         }
 

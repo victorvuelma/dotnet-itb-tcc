@@ -1,17 +1,9 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using vitorrdgs.UiX;
 
 namespace BurgerShack.Desktop
 {
@@ -40,7 +32,7 @@ namespace BurgerShack.Desktop
             if (objFuncionarios.Count == 0)
             {
                 frmFuncionario frmFuncionario = new frmFuncionario();
-                frmFuncionario.Primeiro = true;
+                frmFuncionario.PrimeiroCadastro = true;
                 frmFuncionario.ShowDialog();
 
                 Hide();
@@ -54,11 +46,11 @@ namespace BurgerShack.Desktop
                 frmAcesso.ObjAcesso = new clnAcesso
                 {
                     CodFuncionario = objFuncionarios.First().Cod,
-                    Senha = "",
+                    Hash = "",
                     Usuario = ""
                 };
                 frmAcesso.ShowDialog();
-                
+
                 Hide();
                 Close();
                 return;
@@ -95,22 +87,36 @@ namespace BurgerShack.Desktop
                 clnAcesso objAcesso = new clnAcesso
                 {
                     Usuario = txtUsuario.Text,
-                    Senha = txtSenha.Text
+                    Hash = txtSenha.Text
                 };
 
                 int? codFuncionario = objAcesso.acessar();
 
                 if (codFuncionario != null)
                 {
-                    Hide();
-
-                    frmPrincipal frmPrincipal = new frmPrincipal
+                    clnFuncionario objFuncionario = new clnFuncionario
                     {
-                        CodFuncionario = (int)codFuncionario
-                    };
-                    frmPrincipal.ShowDialog();
+                        Cod = (int)codFuncionario
+                    }.obterPorCod();
 
-                    Application.Restart();
+                    if (!objFuncionario.Situacao.Equals(clnFuncionario.funcionarioSituacao.DEMITIDO))
+                    {
+                        AppDesktop.FuncionarioAtual = objFuncionario;
+
+                        Hide();
+
+                        frmPrincipal frmPrincipal = new frmPrincipal { };
+                        frmPrincipal.ShowDialog();
+
+                        Application.Restart();
+                    }
+                    else
+                    {
+                        clnUtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.");
+                        txtUsuario.Text = "";
+                        txtSenha.Text = "";
+                    }
+
                     return;
                 }
                 else

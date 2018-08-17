@@ -1,6 +1,6 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Desktop.UTIL;
+
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -19,7 +20,6 @@ namespace BurgerShack.Desktop
 
         private clnUtilFormValidar _validar;
 
-        private int _codFuncionario;
         private int? _codCliente;
         private clnConta _objConta;
         private clnPagamento _objPagamento;
@@ -27,7 +27,6 @@ namespace BurgerShack.Desktop
         public clnConta ObjConta { get => _objConta; set => _objConta = value; }
         public clnPagamento ObjPagamento { get => _objPagamento; set => _objPagamento = value; }
         public int? CodCliente { get => _codCliente; set => _codCliente = value; }
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
 
         public frmPagamento()
         {
@@ -53,7 +52,7 @@ namespace BurgerShack.Desktop
             _validar.addValidacao(cboBandeira, clnUtilFormValidar.Validacao.OBRIGATORIO);
             _validar.addValidacao(txtValor, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.VALOR });
 
-            mtbCliCPF.Mask = clnUtil.MASK_CPF;
+            mtbCliCPF.Mask = UtilMask.MASK_CPF;
         }
 
         private void salvar()
@@ -125,11 +124,11 @@ namespace BurgerShack.Desktop
 
         private bool encontrarCliente()
         {
-            if (clnUtilValidar.validarCPF(mtbCliCPF.Text))
+            if (UtilValidar.validarCPF(mtbCliCPF.Text))
             {
                 clnCliente objCliente = new clnCliente
                 {
-                    Cpf = clnUtilFormatar.retirarFormatacao(mtbCliCPF.Text)
+                    Cpf = UtilFormatar.retirarFormatacao(mtbCliCPF.Text)
                 }.obterPorCPF();
                 if (objCliente != null)
                 {
@@ -140,10 +139,7 @@ namespace BurgerShack.Desktop
                 {
                     if (clnUtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
                     {
-                        frmCliente frmNovoCliente = new frmCliente
-                        {
-                            CodFuncionario = CodFuncionario
-                        };
+                        frmCliente frmNovoCliente = new frmCliente{};
                         frmNovoCliente.mtbCPF.Text = mtbCliCPF.Text;
                         frmNovoCliente.ShowDialog();
 
@@ -166,8 +162,8 @@ namespace BurgerShack.Desktop
         {
             CodCliente = objCliente.Cod;
             lblCliente.Text = "Cliente " + objCliente.Cod +
-                            "\n" + "CPF: " + clnUtilFormatar.formatarCPF(objCliente.Cpf) +
-                            "\n" + "Celular: " + clnUtilFormatar.formatarCelular(objCliente.TelCelular);
+                            "\n" + "CPF: " + UtilFormatar.formatarCPF(objCliente.Cpf) +
+                            "\n" + "Celular: " + UtilFormatar.formatarCelular(objCliente.TelCelular);
         }
 
         private void carregarBandeiras()
@@ -216,8 +212,8 @@ namespace BurgerShack.Desktop
 
         private decimal obterValorPago()
         {
-            if (clnUtilValidar.validarDecimal(txtValor.Text))
-                return clnUtilConvert.ToDecimal(txtValor.Text);
+            if (UtilValidar.validarDecimal(txtValor.Text))
+                return UtilConvert.ToDecimal(txtValor.Text);
             return 0;
         }
 
@@ -230,21 +226,21 @@ namespace BurgerShack.Desktop
 
         private decimal obterDinheiro()
         {
-            if (clnUtilValidar.validarDecimal(txtDinheiro.Text))
-                return clnUtilConvert.ToDecimal(txtDinheiro.Text);
+            if (UtilValidar.validarDecimal(txtDinheiro.Text))
+                return UtilConvert.ToDecimal(txtDinheiro.Text);
             return 0;
         }
 
         private void atualizarTroco()
         {
             decimal valorPago = obterDinheiro() - obterValorPago();
-            lblTroco.Text = "Troco: " + clnUtilFormatar.formatarValor(valorPago);
+            lblTroco.Text = "Troco: " + UtilFormatar.formatarValor(valorPago);
         }
 
         private void atualizarRestante()
         {
             decimal valorRestante = obterValorAPagar() - obterValorPago();
-            lblValorRestante.Text = clnUtilFormatar.formatarValor(valorRestante);
+            lblValorRestante.Text = UtilFormatar.formatarValor(valorRestante);
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)
@@ -253,7 +249,7 @@ namespace BurgerShack.Desktop
             uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             hdrUIX.Title = App.Name + " - Novo Pagamento";
-            lblValorTotal.Text = clnUtilFormatar.formatarValor(obterValorAPagar());
+            lblValorTotal.Text = UtilFormatar.formatarValor(obterValorAPagar());
 
             if (ObjPagamento == null)
             {

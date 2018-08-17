@@ -1,14 +1,8 @@
-﻿using System;
+﻿using BurgerShack.Common;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -38,11 +32,11 @@ namespace BurgerShack.Desktop
 
         private clnPedido obter(SqlDataReader reader) => new clnPedido
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            CodAtendimento = clnUtilConvert.ToInt(reader["id_atendimento"]),
-            CodFuncionario = clnUtilConvert.ToInt(reader["id_funcionario"]),
-            Situacao = situacao(clnUtilConvert.ToChar(reader["situacao"])),
-            Valor = clnUtilConvert.ToDecimal(reader["valor"])
+            Cod = UtilConvert.ToInt(reader["id"]),
+            CodAtendimento = UtilConvert.ToInt(reader["id_atendimento"]),
+            CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
+            Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
+            Valor = UtilConvert.ToDecimal(reader["valor"])
         };
 
         public List<clnPedido> obterPorAtendimento()

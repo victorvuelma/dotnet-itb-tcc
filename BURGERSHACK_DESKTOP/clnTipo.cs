@@ -1,14 +1,9 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common.UTIL;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -32,8 +27,8 @@ namespace BurgerShack.Desktop
 
         private clnTipo obter(SqlDataReader reader) => new clnTipo
         {
-            Cod = clnUtilConvert.ToInt(reader["id"]),
-            Nome = clnUtilConvert.ToString(reader["nome"]),
+            Cod = UtilConvert.ToInt(reader["id"]),
+            Nome = UtilConvert.ToString(reader["nome"]),
             Tipo = Tipo
         };
 

@@ -1,14 +1,8 @@
 ﻿using BurgerShack.Common;
-using BurgerShack.Common.UTIL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -106,7 +100,7 @@ namespace BurgerShack.Desktop
         {
             if (ObjTipo != null)
             {
-                if (!clnUtilValidar.vazio(txtNome.Text))
+                if (!UtilValidar.vazio(txtNome.Text))
                 {
                     ObjTipo.Nome = txtNome.Text;
                     ObjTipo.alterar();
@@ -122,7 +116,7 @@ namespace BurgerShack.Desktop
             }
             else if (grbEditar.Visible)
             {
-                if (!clnUtilValidar.vazio(txtNome.Text))
+                if (!UtilValidar.vazio(txtNome.Text))
                 {
                     clnTipo objTipo = new clnTipo
                     {
@@ -139,7 +133,7 @@ namespace BurgerShack.Desktop
                     clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.");
                 }
             }
-            else if(dgvTipos.SelectedRows.Count > 0)
+            else if (dgvTipos.SelectedRows.Count > 0)
             {
                 object cod = dgvTipos.CurrentRow.Cells[0].Value;
 

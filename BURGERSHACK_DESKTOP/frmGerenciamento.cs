@@ -1,81 +1,66 @@
-﻿using BurgerShack.Common.UTIL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using vitorrdgs.UiX;
 using vitorrdgs.UiX.Manager;
+using vitorrdgs.Util;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
     public partial class frmGerenciamento : Form
     {
 
-        private int _codFuncionario;
-
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
-
         public frmGerenciamento()
         {
             InitializeComponent();
         }
 
-        private void alterarConteudo(UserControl uctConteudo, String titulo)
+        private void abrirLista(String tipo, IUtilCallback callbackNovo, IUtilCallback<DataGridView, String, bool> callbackObter, IUtilCallback<DataGridViewRow> callbackAlterar, bool inativos, String[] colunas)
         {
-            clnUtil.alterarConteudo(pnlConteudo, uctConteudo, hdrUIX, "Gerenciamento :: " + titulo);
-        }
+            uctListar.CallbackNovo = callbackNovo;
+            uctListar.Colunas = colunas;
+            uctListar.CallbackObter = callbackObter;
+            uctListar.CallbackAlterar = callbackAlterar;
+            uctListar.Inativos = inativos;
 
-        private void abrirLista(String tipo, IUtilCallback<int> callbackNovo, IUtilCallback<DataGridView, String> callbackObter, IUtilCallback<DataGridViewRow> callbackAlterar, String[] colunas)
-        {
-            uctGerenciamentoListar objListar = new uctGerenciamentoListar
-            {
-                CallbackNovo = callbackNovo,
-                Colunas = colunas,
-                CallbackObter = callbackObter,
-                CallbackAlterar = callbackAlterar,
-                CodFuncionario = CodFuncionario
-            };
-            alterarConteudo(objListar, tipo);
+            hdrUIX.Title = "Gerenciamento :: " + tipo;
+
+            uctListar.atualizar();
         }
 
         private void abrirIngredientes()
         {
-            abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new CallbackIngredienteAlterar(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
+            //abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new CallbackIngredienteAlterar(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
         }
 
         private void abrirProdutos()
         {
-            abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), new String[] { "Código", "Nome", "Situação", "Tipo", "Valor" });
+            //abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), new String[] { "Código", "Nome", "Situação", "Tipo", "Valor" });
         }
 
         private void abrirClientes()
         {
-            abrirLista("Clientes", new CallbackClienteNovo(), new CallbackClienteObter(), new CallbackClienteAlterar(), new String[] { "Código", "Nome", "CPF", "Celular", "Data Nasc.", "Gênero", "Email" });
+            abrirLista("Clientes", new CallbackClienteNovo(), new CallbackClienteObter(), new CallbackClienteAlterar(), true, new String[] { "Código", "Nome", "CPF", "Celular", "Data Nasc.", "Gênero", "Email" });
         }
 
         private void abrirFuncionarios()
         {
-            abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero", "Cargo", "Salário", "Situação" });
+            //abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero", "Cargo", "Salário", "Situação" });
         }
 
         private void abrirFornecedores()
         {
-            abrirLista("Fornecedores", new CallbackFornecedorNovo(), new CallbackFornecedorObter(), new CallbackFornecedorAlterar(), new String[] { "Código", "Razão Social", "CNPJ", "Telefone", "Email" });
+            abrirLista("Fornecedores", new CallbackFornecedorNovo(), new CallbackFornecedorObter(), new CallbackFornecedorAlterar(), true, new String[] { "Código", "Razão Social", "CNPJ", "Telefone", "Email" });
         }
 
         private void abrirReservas()
         {
-            abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), new String[] { "Código", "Pessoas", "Data", "Situação" });
+            abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), true, new String[] { "Código", "Pessoas", "Data", "Situação" });
         }
 
         private void abrirEstoques()
         {
-            abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor" });
+            //abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), false, new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor" });
         }
 
         private void sair()
@@ -135,9 +120,9 @@ namespace BurgerShack.Desktop
             abrirReservas();
         }
 
-        private class CallbackIngredienteNovo : IUtilCallback<int>
+        private class CallbackIngredienteNovo : IUtilCallback
         {
-            public bool call(int x)
+            public bool call()
             {
                 frmIngrediente frmNovoIngrediente = new frmIngrediente { };
                 frmNovoIngrediente.ShowDialog();
@@ -151,7 +136,7 @@ namespace BurgerShack.Desktop
             {
                 clnIngrediente objIngrediente = new clnIngrediente
                 {
-                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
                 }.obterPorCod();
 
                 if (objIngrediente != null)
@@ -185,10 +170,10 @@ namespace BurgerShack.Desktop
 
                     int estoque = new clnEstoque
                     {
-                        CodIngrediente = objIngrediente.Cod
-                    }.obterQuantidadePorIngrediente();
+                        CodMercadoria = objIngrediente.Cod
+                    }.obterQuantidadePorMercadoria();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
-                    dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, clnUtilFormatar.formatarValor(objIngrediente.Valor) });
+                    dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, UtilFormatar.formatarValor(objIngrediente.Valor) });
                 }
                 return false;
             }
@@ -210,7 +195,7 @@ namespace BurgerShack.Desktop
             {
                 clnProduto objProduto = new clnProduto
                 {
-                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
                 }.obterPorCod();
 
                 if (objProduto != null)
@@ -242,20 +227,17 @@ namespace BurgerShack.Desktop
                         Tipo = clnTipo.tipo.PRODUTO
                     }.obterPorCodigo();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
-                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, clnUtilFormatar.formatarValor(objProduto.Valor) });
+                    dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, UtilFormatar.formatarValor(objProduto.Valor) });
                 }
                 return false;
             }
         }
 
-        private class CallbackClienteNovo : IUtilCallback<int>
+        private class CallbackClienteNovo : IUtilCallback
         {
-            public bool call(int codFuncionario)
+            public bool call()
             {
-                frmCliente frmNovoCliente = new frmCliente
-                {
-                    CodFuncionario = codFuncionario
-                };
+                frmCliente frmNovoCliente = new frmCliente { };
                 frmNovoCliente.ShowDialog();
                 return frmNovoCliente.ObjCliente != null;
             }
@@ -267,7 +249,7 @@ namespace BurgerShack.Desktop
             {
                 clnCliente objCliente = new clnCliente
                 {
-                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
                 }.obterPorCod();
 
                 if (objCliente != null)
@@ -283,19 +265,20 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackClienteObter : IUtilCallback<DataGridView, String>
+        private class CallbackClienteObter : IUtilCallback<DataGridView, String, bool>
         {
-            public bool call(DataGridView dgv, string pesquisa)
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
                 clnCliente objClientes = new clnCliente
                 {
                     Nome = pesquisa,
-                    Cpf = pesquisa
+                    Cpf = pesquisa,
+                    Ativo = ativo
                 };
                 foreach (clnCliente objCliente in objClientes.obterPorNomeCPF())
                 {
                     //"Código", "Nome", "CPF", "Celular", "Data Nasc", "Genero", "Email"
-                    dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, clnUtilFormatar.formatarCPF(objCliente.Cpf), clnUtilFormatar.formatarCelular(objCliente.TelCelular), clnUtilFormatar.formatarData(objCliente.DataNascimento), objCliente.Genero, objCliente.Email });
+                    dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, UtilFormatar.formatarCPF(objCliente.Cpf), UtilFormatar.formatarCelular(objCliente.TelCelular), UtilFormatar.formatarData(objCliente.DataNascimento), objCliente.Genero, objCliente.Email });
                 }
                 return false;
             }
@@ -317,7 +300,7 @@ namespace BurgerShack.Desktop
             {
                 clnFuncionario objFuncionario = new clnFuncionario
                 {
-                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
                 }.obterPorCod();
 
                 if (objFuncionario != null)
@@ -350,15 +333,15 @@ namespace BurgerShack.Desktop
                     }.obterPorCod();
 
                     //"Código", "Nome", "CPF", "RG", "Data Nasc", "Genero", "Email","Celular", "Cargo", "Salario", "Situacao"
-                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, clnUtilFormatar.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, clnUtilFormatar.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objCargo.Nome, clnUtilFormatar.formatarValor(objFuncionario.Salario), objFuncionario.Situacao });
+                    dgv.Rows.Add(new object[] { objFuncionario.Cod, objFuncionario.Nome, UtilFormatar.formatarCPF(objFuncionario.Cpf), objFuncionario.Rg, UtilFormatar.formatarData(objFuncionario.DataNascimento), objFuncionario.Genero, objCargo.Nome, UtilFormatar.formatarValor(objFuncionario.Salario), objFuncionario.Situacao });
                 }
                 return false;
             }
         }
 
-        private class CallbackFornecedorNovo : IUtilCallback<int>
+        private class CallbackFornecedorNovo : IUtilCallback
         {
-            public bool call(int codFuncionario)
+            public bool call()
             {
                 frmFornecedor frmNovoFornecedor = new frmFornecedor();
                 frmNovoFornecedor.ShowDialog();
@@ -372,7 +355,7 @@ namespace BurgerShack.Desktop
             {
                 clnFornecedor objFornecedor = new clnFornecedor
                 {
-                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
                 }.obterPorCod();
 
                 if (objFornecedor != null)
@@ -388,32 +371,30 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackFornecedorObter : IUtilCallback<DataGridView, String>
+        private class CallbackFornecedorObter : IUtilCallback<DataGridView, String, bool>
         {
-            public bool call(DataGridView dgv, string pesquisa)
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
                 clnFornecedor objFornecedores = new clnFornecedor
                 {
                     RazaoSocial = pesquisa,
-                    Cnpj = pesquisa
+                    Cnpj = pesquisa,
+                    Ativo = ativo
                 };
                 foreach (clnFornecedor objFornecedor in objFornecedores.obterPorRazaoCNPJ())
                 {
                     //"Código", "Razão Social", "CNPJ", "Telefone", "Email"
-                    dgv.Rows.Add(new object[] { objFornecedor.Cod, objFornecedor.RazaoSocial, clnUtilFormatar.formatarCNPJ(objFornecedor.Cnpj), clnUtilFormatar.formatarTelefone(objFornecedor.Telefone), objFornecedor.Email });
+                    dgv.Rows.Add(new object[] { objFornecedor.Cod, objFornecedor.RazaoSocial, UtilFormatar.formatarCNPJ(objFornecedor.Cnpj), UtilFormatar.formatarTelefone(objFornecedor.Telefone), objFornecedor.Email });
                 }
                 return false;
             }
         }
 
-        private class CallbackReservaNovo : IUtilCallback<int>
+        private class CallbackReservaNovo : IUtilCallback
         {
-            public bool call(int codFuncionario)
+            public bool call()
             {
-                frmReserva frmNovoReserva = new frmReserva
-                {
-                    CodFuncionario = codFuncionario
-                };
+                frmReserva frmNovoReserva = new frmReserva { };
                 frmNovoReserva.ShowDialog();
                 return frmNovoReserva.ObjReserva != null;
             }
@@ -425,7 +406,7 @@ namespace BurgerShack.Desktop
             {
                 clnReserva objReserva = new clnReserva
                 {
-                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
                 }.obterPorCod();
 
                 if (objReserva != null)
@@ -441,35 +422,40 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackReservaObter : IUtilCallback<DataGridView, String>
+        private class CallbackReservaObter : IUtilCallback<DataGridView, String, bool>
         {
-            public bool call(DataGridView dgv, string pesquisa)
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
-                DateTime? data = clnUtilConvert.ObterNullableData(pesquisa);
+                DateTime? data = UtilConvert.ObterNullableData(pesquisa);
                 List<clnReserva> objReservas = null;
                 if (data != null)
                 {
                     objReservas = new clnReserva
                     {
-                        Agendado = (DateTime)data
+                        Agendado = (DateTime)data,
+                        Ativo = !ativo
+
                     }.obterPorDataAgendada();
                 }
                 else
                 {
-                    objReservas = new clnReserva().obterReservas();
+                    objReservas = new clnReserva
+                    {
+                        Ativo = ativo
+                    }.obterReservas();
                 }
                 foreach (clnReserva objReserva in objReservas)
                 {
                     //"Código", "Pessoas", "Data", "Situação"
-                    dgv.Rows.Add(new object[] { objReserva.Cod, objReserva.Pessoas, clnUtilFormatar.formatarData(objReserva.Agendado), objReserva.Situacao });
+                    dgv.Rows.Add(new object[] { objReserva.Cod, objReserva.Pessoas, UtilFormatar.formatarData(objReserva.Agendado), objReserva.Situacao });
                 }
                 return false;
             }
         }
 
-        private class CallbackEstoqueNovo : IUtilCallback<int>
+        private class CallbackEstoqueNovo : IUtilCallback
         {
-            public bool call(int codFuncionario)
+            public bool call()
             {
                 frmEstoque frmNovoEstoque = new frmEstoque();
                 frmNovoEstoque.ShowDialog();
@@ -483,7 +469,7 @@ namespace BurgerShack.Desktop
             {
                 clnEstoque objEstoque = new clnEstoque
                 {
-                    Cod = clnUtilConvert.ToInt(row.Cells[0].Value)
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
                 }.obterPorCod();
 
                 if (objEstoque != null)
@@ -508,7 +494,7 @@ namespace BurgerShack.Desktop
                 {
                     clnIngrediente objIngrediente = new clnIngrediente
                     {
-                        Cod = objEstoque.CodIngrediente
+                        Cod = objEstoque.CodMercadoria
                     }.obterPorCod();
 
                     clnFornecedor objFornecedor = new clnFornecedor
@@ -517,7 +503,7 @@ namespace BurgerShack.Desktop
                     }.obterPorCod();
 
                     //"Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor"
-                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, clnUtilFormatar.formatarData(objEstoque.Validade), clnUtilFormatar.formatarValor(objEstoque.Valor) });
+                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, UtilFormatar.formatarData(objEstoque.Validade), UtilFormatar.formatarValor(objEstoque.Valor) });
                 }
                 return false;
             }
