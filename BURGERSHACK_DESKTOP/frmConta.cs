@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
@@ -82,7 +83,7 @@ namespace BurgerShack.Desktop
                         objMesa.Situacao = clnMesa.mesaSituacao.DISPONIVEL;
                         objMesa.alterar();
                     }
-                    clnUtilMensagem.mostrarOk("Conta", "Atendimento finalizado automaticamente.");
+                    UtilMensagem.mostrarOk("Conta", "Atendimento finalizado automaticamente.");
                     Close();
                 }
             }
@@ -90,7 +91,7 @@ namespace BurgerShack.Desktop
 
         private void finalizarConta()
         {
-            if (clnUtilMensagem.mostrarSimNao("Conta", "Você deseja realmente finalizar a conta?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Conta", "Você deseja realmente finalizar a conta?", UtilMensagem.MensagemIcone.INFO))
             {
                 ObjConta = new clnConta
                 {

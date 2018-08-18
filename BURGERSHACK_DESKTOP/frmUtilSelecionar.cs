@@ -122,7 +122,7 @@ namespace BurgerShack.Desktop
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnUtilMensagem.mostrarSimNao(ObjSelecionar.ObjListar.Titulo, "Deseja realmente cancelar?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao(ObjSelecionar.ObjListar.Titulo, "Deseja realmente cancelar?", UtilMensagem.MensagemIcone.INFO))
             {
                 ObjSelecionar.selecionar(null);
 

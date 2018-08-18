@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -105,13 +106,13 @@ namespace BurgerShack.Desktop
                     ObjTipo.Nome = txtNome.Text;
                     ObjTipo.alterar();
 
-                    clnUtilMensagem.mostrarOk("Tipo", "Tipo alterado com sucesso!");
+                    UtilMensagem.mostrarOk("Tipo", "Tipo alterado com sucesso!");
                     exibirTipos();
                     definirPadrao();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.");
+                    UtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.");
                 }
             }
             else if (grbEditar.Visible)
@@ -124,13 +125,13 @@ namespace BurgerShack.Desktop
                         Tipo = Tipo
                     };
                     objTipo.gravar();
-                    clnUtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!");
+                    UtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!");
                     exibirTipos();
                     definirPadrao();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.");
+                    UtilMensagem.mostrarOk("Tipo", "É necessário informar uma descrição para o tipo.");
                 }
             }
             else if (dgvTipos.SelectedRows.Count > 0)

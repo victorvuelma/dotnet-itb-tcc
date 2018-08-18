@@ -97,7 +97,6 @@
             // 
             this.txtPesquisar.AcceptButton = this.btnPesquisar;
             this.txtPesquisar.Campo = "Pesquisar por";
-            this.txtPesquisar.DisabledColor = System.Drawing.Color.Empty;
             this.txtPesquisar.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
             this.txtPesquisar.Location = new System.Drawing.Point(5, 25);
             this.txtPesquisar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

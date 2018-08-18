@@ -111,7 +111,7 @@ namespace BurgerShack.Desktop
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
                             .val("cadastro", Cadastro)
-                            .val("ativo", Ativo);
+                            .val("ativo", UtilConvert.ToBit(Ativo));
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
@@ -124,7 +124,8 @@ namespace BurgerShack.Desktop
                             .val("data_nascimento", DataNascimento)
                             .val("genero", Genero)
                             .val("tel_cel", TelCelular)
-                            .val("email", Email);
+                            .val("email", Email)
+                            .val("ativo", UtilConvert.ToBit(Ativo));
             objUpdate.execute(App.DatabaseSql);
         }
 

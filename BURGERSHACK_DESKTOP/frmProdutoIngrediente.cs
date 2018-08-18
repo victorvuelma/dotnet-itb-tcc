@@ -60,7 +60,7 @@ namespace BurgerShack.Desktop
 
         private void finalizar()
         {
-            if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Deseja cancelar as alterações no ingrediente?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (UtilMensagem.mostrarSimNao("Ingrediente", "Deseja cancelar as alterações no ingrediente?", UtilMensagem.MensagemIcone.ERRO))
             {
                 if (ObjProdutoIngrediente.Cod == -1)
                 {
@@ -76,7 +76,7 @@ namespace BurgerShack.Desktop
         {
             if (ObjProdutoIngrediente.Cod == -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente cancelar a adição deste ingrediente?", clnUtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente cancelar a adição deste ingrediente?", UtilMensagem.MensagemIcone.INFO))
                 {
                     ObjProdutoIngrediente = null;
 
@@ -85,7 +85,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente remover este ingrediente?", clnUtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente remover este ingrediente?", UtilMensagem.MensagemIcone.INFO))
                 {
                     ObjProdutoIngrediente = null;
 

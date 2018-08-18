@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -146,7 +147,7 @@ namespace BurgerShack.Desktop
                     UtilForm.Enable(ctlCidade);
                     UtilForm.Enable(cboUF);
 
-                    clnUtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente");
+                    UtilMensagem.mostrarOk("Endereço", "Não foi possível obter as informações a partir do CEP, preencha manualmente");
                     ctlLogradouro.Focus();
                 }
                 Cursor.Current = Cursors.Default;

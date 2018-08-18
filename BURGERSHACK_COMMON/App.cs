@@ -12,7 +12,7 @@ namespace BurgerShack.Common
     public class App
     {
 
-        private static string _name = "Burger Shack";
+        private static string _name = "BurgerShack";
 
         private static sqlCredential _databaseSqlCredential = new sqlCredential
         {

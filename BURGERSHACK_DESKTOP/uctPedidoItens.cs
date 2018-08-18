@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.UiX.Component;
+using BurgerShack.Desktop.Util;
 
 namespace BurgerShack.Desktop
 {
@@ -80,7 +81,7 @@ namespace BurgerShack.Desktop
                 if (frmEditarItem.ObjItem == null)
                 {
                     ObjItens.Remove(objItem);
-                    clnUtilMensagem.mostrarOk("Pedido", "Produto removido do pedido");
+                    UtilMensagem.mostrarOk("Pedido", "Produto removido do pedido");
 
                     exibirProdutos();
                 }
@@ -93,7 +94,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Pedido", "Não é possivel alterar esse item pois ele está em prepardo.");
+                UtilMensagem.mostrarOk("Pedido", "Não é possivel alterar esse item pois ele está em prepardo.");
             }
         }
 

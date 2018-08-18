@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Property;
+using BurgerShack.Desktop.Util;
 
 namespace BurgerShack.Desktop
 {
@@ -70,7 +71,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Atendimento", "Você deseja iniciar um novo atendimento para a Mesa " + objMesa.Cod + "?", clnUtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Atendimento", "Você deseja iniciar um novo atendimento para a Mesa " + objMesa.Cod + "?", UtilMensagem.MensagemIcone.INFO))
                 {
                     objAtendimento = new clnAtendimento
                     {

@@ -163,7 +163,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.");
+                UtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.");
             }
         }
 
@@ -207,7 +207,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Pedido", "Selecione o produto antes de finalizar");
+                UtilMensagem.mostrarOk("Pedido", "Selecione o produto antes de finalizar");
             }
         }
 
@@ -265,7 +265,7 @@ namespace BurgerShack.Desktop
                     CodProdutoIngrediente = null
                 };
 
-                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!");
+                UtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!");
                 clnUtilPedido.adicionarIngrediente(ObjItemIngredientes, objItemIngrediente);
 
                 exibirDetalhes();
@@ -354,7 +354,7 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
+                    UtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
                 }
                 return clnUtilVisualizar.VisualizarResult.NENHUM;
             }

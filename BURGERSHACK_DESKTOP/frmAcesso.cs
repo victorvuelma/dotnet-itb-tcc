@@ -35,7 +35,7 @@ namespace BurgerShack.Desktop
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnUtilMensagem.mostrarSimNao("Acesso", "Deseja cancelar esta operação?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (UtilMensagem.mostrarSimNao("Acesso", "Deseja cancelar esta operação?", UtilMensagem.MensagemIcone.ERRO))
             {
                 Close();
             }
@@ -66,13 +66,13 @@ namespace BurgerShack.Desktop
                     ObjAcesso.Hash = txtSenha.Text;
                     ObjAcesso.gravar();
 
-                    clnUtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!");
+                    UtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!");
 
                     Close();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Acesso", "Erro, o usuario informado já está em uso.");
+                    UtilMensagem.mostrarOk("Acesso", "Erro, o usuario informado já está em uso.");
                 }
             }
         }

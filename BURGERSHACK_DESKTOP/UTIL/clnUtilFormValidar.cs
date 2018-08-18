@@ -69,7 +69,7 @@ namespace BurgerShack.Desktop.Util
 
             if (!frmValido)
             {
-                clnUtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString());
+                UtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString());
             }
 
             return frmValido;
@@ -82,7 +82,7 @@ namespace BurgerShack.Desktop.Util
 
             if (!uctValido)
             {
-                clnUtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString());
+                UtilMensagem.mostrarOk("Verifique as informações", motivoBuilder.ToString());
             }
 
             return uctValido;

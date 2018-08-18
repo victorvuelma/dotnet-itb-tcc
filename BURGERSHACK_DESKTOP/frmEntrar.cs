@@ -64,7 +64,7 @@ namespace BurgerShack.Desktop
 
         private void hdrUIX_Close(object sender, EventArgs e)
         {
-            if (clnUtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (UtilMensagem.mostrarSimNao("Sistema", "Deseja realmente encerrar o sistema?", UtilMensagem.MensagemIcone.ERRO))
             {
                 System.Windows.Forms.Application.Exit();
             }
@@ -112,7 +112,7 @@ namespace BurgerShack.Desktop
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.");
+                        UtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.");
                         txtUsuario.Text = "";
                         txtSenha.Text = "";
                     }
@@ -121,7 +121,7 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.");
+                    UtilMensagem.mostrarOk("Falha ao acessar", "Não foi possível acessar o sistema pois as credenciais informadas são inválidas.");
                     txtUsuario.Text = "";
                     txtSenha.Text = "";
                 }

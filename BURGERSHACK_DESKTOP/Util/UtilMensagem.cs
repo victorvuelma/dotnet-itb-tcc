@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.UiX;
-using System.Drawing;
 using vitorrdgs.UiX.Component;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Desktop.Util
 {
-    class clnUtilMensagem
+    class UtilMensagem
     {
 
         public enum MensagemIcone
@@ -24,6 +17,11 @@ namespace BurgerShack.Desktop
         public static int OP_S_N = 1;
 
         public static bool mostrarSimNao(String titulo, String mensagem, MensagemIcone icone)
+        {
+            return mostrarSimNao(titulo, mensagem);
+        }
+
+        public static bool mostrarSimNao(String titulo, String mensagem)
         {
             return (UIXMessage.confirmarSim(AppDesktop.VisualTemplate, titulo, mensagem).Equals(UIXMessage.MessageResult.YES));
         }

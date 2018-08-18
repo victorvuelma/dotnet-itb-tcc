@@ -44,7 +44,7 @@ namespace BurgerShack.Desktop
 
         private void removerImagem()
         {
-            if (clnUtilMensagem.mostrarSimNao("Produto", "Deseja realmente remover a imagem?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Produto", "Deseja realmente remover a imagem?", UtilMensagem.MensagemIcone.INFO))
             {
                 definirImagemPadrao();
             }
@@ -98,7 +98,7 @@ namespace BurgerShack.Desktop
 
                     ObjProduto.atualizarEstoque();
 
-                    clnUtilMensagem.mostrarOk("Cadastro de Produto", "Produto cadastrado com sucesso!");
+                    UtilMensagem.mostrarOk("Cadastro de Produto", "Produto cadastrado com sucesso!");
                 }
                 else
                 {
@@ -126,7 +126,7 @@ namespace BurgerShack.Desktop
 
                     ObjProduto.atualizarEstoque();
 
-                    clnUtilMensagem.mostrarOk("Altereção de Produto", "Produto alterado com sucesso!");
+                    UtilMensagem.mostrarOk("Altereção de Produto", "Produto alterado com sucesso!");
                 }
                 Close();
             }
@@ -155,14 +155,14 @@ namespace BurgerShack.Desktop
         {
             if (ObjProduto.Cod == -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Produto", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Cadastro de Produto", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Produto", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Alteração de Produto", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
@@ -249,7 +249,7 @@ namespace BurgerShack.Desktop
                 };
                 frmVisualizar.ShowDialog();
             }
-            else if (clnUtilMensagem.mostrarSimNao("Produto", "Este produto não conta com ingredientes, deseja adicionar?", clnUtilMensagem.MensagemIcone.INFO))
+            else if (UtilMensagem.mostrarSimNao("Produto", "Este produto não conta com ingredientes, deseja adicionar?", UtilMensagem.MensagemIcone.INFO))
             {
                 adicionarIngrediente();
             }
@@ -399,7 +399,7 @@ namespace BurgerShack.Desktop
                     {
                         objProdutoIngrediente.gravar();
                     }
-                    clnUtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso!");
+                    UtilMensagem.mostrarOk("Produto", "Ingrediente adicionado com sucesso!");
                     return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }
                 return clnUtilVisualizar.VisualizarResult.NENHUM;

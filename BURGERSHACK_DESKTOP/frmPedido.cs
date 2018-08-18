@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BurgerShack.Desktop.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,7 +66,7 @@ namespace BurgerShack.Desktop
         {
             if (ObjPedido.Cod == -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
@@ -84,7 +85,7 @@ namespace BurgerShack.Desktop
             {
                 if (ObjItens.Count == 0)
                 {
-                    if(clnUtilMensagem.mostrarSimNao("Pedido", "Não foi encontrado nenhum item no pedido, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
+                    if(UtilMensagem.mostrarSimNao("Pedido", "Não foi encontrado nenhum item no pedido, deseja adicionar?", UtilMensagem.MensagemIcone.OK))
                     {
                         abrirAdicionar();
                     } else
@@ -92,7 +93,7 @@ namespace BurgerShack.Desktop
                         Close();
                     }                   
                 }
-                else if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", clnUtilMensagem.MensagemIcone.OK))
+                else if (UtilMensagem.mostrarSimNao("Pedido", "Deseja finalizar o pedido?", UtilMensagem.MensagemIcone.OK))
                 {
                     decimal valor = clnUtilPedido.calcularValor(ObjItens);
 
@@ -115,7 +116,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Pedido", "Deseja cancelar o pedido?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }

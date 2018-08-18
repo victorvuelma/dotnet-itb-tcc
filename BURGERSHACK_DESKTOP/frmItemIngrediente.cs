@@ -85,7 +85,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.");
+                UtilMensagem.mostrarOk("Produto", "Não há outros produtos disponiveis.");
             }
         }
 
@@ -112,7 +112,7 @@ namespace BurgerShack.Desktop
 
         private void finalizar()
         {
-            if (clnUtilMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", clnUtilMensagem.MensagemIcone.ERRO))
+            if (UtilMensagem.mostrarSimNao("Ingredientes", "Deseja cancelar as alterações de ingredientes?", UtilMensagem.MensagemIcone.ERRO))
             {
                 Close();
             }
@@ -120,7 +120,7 @@ namespace BurgerShack.Desktop
 
         private void removerIngrediente()
         {
-            if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente remover este ingrediente?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente remover este ingrediente?", UtilMensagem.MensagemIcone.INFO))
             {
                 ObjItemIngrediente = null;
 

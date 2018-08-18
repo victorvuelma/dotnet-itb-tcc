@@ -67,12 +67,12 @@ namespace BurgerShack.Desktop
                         };
                         objFornecedor.gravar();
                         ObjFornecedor = objFornecedor;
-                        clnUtilMensagem.mostrarOk("Cadastro de Fornecedor", "Fornecedor cadastrado com sucesso!");
+                        UtilMensagem.mostrarOk("Cadastro de Fornecedor", "Fornecedor cadastrado com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Cadastro de Fornecedor", "Não foi possível cadastrar o fornecedor, o CNPJ já está cadastrado!");
+                        UtilMensagem.mostrarOk("Cadastro de Fornecedor", "Não foi possível cadastrar o fornecedor, o CNPJ já está cadastrado!");
                         mtbCNPJ.Focus();
                     }
                 }
@@ -89,7 +89,7 @@ namespace BurgerShack.Desktop
                     ObjFornecedor.EndLocalidade = txtEndCidade.Text;
                     ObjFornecedor.EndUF = cboEndUF.Text;
                     ObjFornecedor.alterar();
-                    clnUtilMensagem.mostrarOk("Alteração de Fornecedor", "Fornecedor alterado com sucesso!");
+                    UtilMensagem.mostrarOk("Alteração de Fornecedor", "Fornecedor alterado com sucesso!");
                     Close();
                 }
             }
@@ -99,14 +99,14 @@ namespace BurgerShack.Desktop
         {
             if (ObjFornecedor == null)
             {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Fornecedor", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Cadastro de Fornecedor", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Fornecedor", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Alteração de Fornecedor", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }

@@ -43,7 +43,7 @@ namespace BurgerShack.Desktop
 
         private void fechar()
         {
-            if (clnUtilMensagem.mostrarSimNao("Item", "Deseja cancelar as alterações realizadas no item?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Item", "Deseja cancelar as alterações realizadas no item?", UtilMensagem.MensagemIcone.INFO))
             {
                 Close();
             }
@@ -75,7 +75,7 @@ namespace BurgerShack.Desktop
                 };
                 frmVisualizar.ShowDialog();
             }
-            else if (clnUtilMensagem.mostrarSimNao("Item", "Não foi encontrado nenhum ingrediente, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
+            else if (UtilMensagem.mostrarSimNao("Item", "Não foi encontrado nenhum ingrediente, deseja adicionar?", UtilMensagem.MensagemIcone.OK))
             {
                 abrirAdicionarIngrediente();
             }
@@ -134,13 +134,13 @@ namespace BurgerShack.Desktop
                     clnUtilPedido.adicionarIngrediente(ObjItemIngredientes, objItemIngrediente);
                 }
 
-                clnUtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!");
+                UtilMensagem.mostrarOk("Ingrediente", "Ingrediente adicionado com sucesso!");
             }
         }
 
         private void removerItem()
         {
-            if (clnUtilMensagem.mostrarSimNao("Pedido", "Deseja realmente remover esse item do pedido?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Pedido", "Deseja realmente remover esse item do pedido?", UtilMensagem.MensagemIcone.INFO))
             {
                 if (ObjItem != null && ObjItem.Cod != -1)
                 {
@@ -256,7 +256,7 @@ namespace BurgerShack.Desktop
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
+                        UtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
                     }
                 }
                 return clnUtilVisualizar.VisualizarResult.FECHAR;

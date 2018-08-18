@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
             this.btnAcao = new vitorrdgs.UiX.Component.UIXButton();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
@@ -45,12 +46,29 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnExcluir);
             this.pnlMenu.Controls.Add(this.btnVoltar);
             this.pnlMenu.Controls.Add(this.btnAcao);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 200);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 300);
             this.pnlMenu.TabIndex = 5;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Description = "Excluir";
+            this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.ImageLocation = null;
+            this.btnExcluir.Location = new System.Drawing.Point(5, 105);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(90, 90);
+            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Visible = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnVoltar
             // 
@@ -58,7 +76,7 @@
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
-            this.btnVoltar.Location = new System.Drawing.Point(5, 105);
+            this.btnVoltar.Location = new System.Drawing.Point(5, 205);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
@@ -77,7 +95,7 @@
             this.btnAcao.Name = "btnAcao";
             this.btnAcao.Size = new System.Drawing.Size(90, 90);
             this.btnAcao.TabIndex = 0;
-            this.btnAcao.Text = "Salvar";
+            this.btnAcao.Text = "Editar";
             this.btnAcao.UseVisualStyleBackColor = true;
             this.btnAcao.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -102,14 +120,14 @@
             this.txtEmail.AccessibleName = "E-mail";
             this.txtEmail.Campo = "E-mail";
             this.txtEmail.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.txtEmail.Location = new System.Drawing.Point(5, 120);
+            this.txtEmail.Location = new System.Drawing.Point(5, 121);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtEmail.Size = new System.Drawing.Size(380, 25);
+            this.txtEmail.Size = new System.Drawing.Size(380, 26);
             this.txtEmail.TabIndex = 12;
             // 
             // mtbTelCel
@@ -122,7 +140,7 @@
             this.mtbTelCel.Mask = "";
             this.mtbTelCel.MaxLength = 32767;
             this.mtbTelCel.Name = "mtbTelCel";
-            this.mtbTelCel.Size = new System.Drawing.Size(200, 20);
+            this.mtbTelCel.Size = new System.Drawing.Size(200, 26);
             this.mtbTelCel.TabIndex = 11;
             this.mtbTelCel.ValidatingType = null;
             // 
@@ -136,7 +154,8 @@
             this.cboGenero.Location = new System.Drawing.Point(283, 90);
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(102, 25);
+            this.cboGenero.SelectedItem = null;
+            this.cboGenero.Size = new System.Drawing.Size(102, 94);
             this.cboGenero.TabIndex = 10;
             // 
             // mtbCPF
@@ -149,7 +168,7 @@
             this.mtbCPF.Mask = "";
             this.mtbCPF.MaxLength = 32767;
             this.mtbCPF.Name = "mtbCPF";
-            this.mtbCPF.Size = new System.Drawing.Size(170, 20);
+            this.mtbCPF.Size = new System.Drawing.Size(170, 26);
             this.mtbCPF.TabIndex = 9;
             this.mtbCPF.ValidatingType = null;
             // 
@@ -163,7 +182,7 @@
             this.mtbDataNasc.Mask = "";
             this.mtbDataNasc.MaxLength = 32767;
             this.mtbDataNasc.Name = "mtbDataNasc";
-            this.mtbDataNasc.Size = new System.Drawing.Size(270, 20);
+            this.mtbDataNasc.Size = new System.Drawing.Size(270, 26);
             this.mtbDataNasc.TabIndex = 8;
             this.mtbDataNasc.ValidatingType = null;
             // 
@@ -180,7 +199,7 @@
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNome.Size = new System.Drawing.Size(380, 20);
+            this.txtNome.Size = new System.Drawing.Size(380, 26);
             this.txtNome.TabIndex = 7;
             // 
             // hdrUIX
@@ -202,7 +221,7 @@
             this.AcceptButton = this.btnAcao;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 250);
+            this.ClientSize = new System.Drawing.Size(500, 350);
             this.Controls.Add(this.grbInformacoes);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
@@ -232,5 +251,6 @@
         private vitorrdgs.UiX.Component.UIXTextBox txtEmail;
         private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbTelCel;
         public vitorrdgs.UiX.Component.UIXMaskedTextBox mtbCPF;
+        private vitorrdgs.UiX.Component.UIXButton btnExcluir;
     }
 }

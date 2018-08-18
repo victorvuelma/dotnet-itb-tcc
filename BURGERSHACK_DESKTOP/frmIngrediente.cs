@@ -42,7 +42,7 @@ namespace BurgerShack.Desktop
 
         private void removerImagem()
         {
-            if (clnUtilMensagem.mostrarSimNao("Ingrediente", "Deseja realmente remover a imagem?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Ingrediente", "Deseja realmente remover a imagem?", UtilMensagem.MensagemIcone.INFO))
             {
                 definirImagemPadrao();
             }
@@ -87,7 +87,7 @@ namespace BurgerShack.Desktop
                     };
 
                     ObjIngrediente.gravar();
-                    clnUtilMensagem.mostrarOk("Cadastro de Ingrediente", "Ingrediente cadastrado com sucesso!");
+                    UtilMensagem.mostrarOk("Cadastro de Ingrediente", "Ingrediente cadastrado com sucesso!");
                 }
                 else
                 {
@@ -118,7 +118,7 @@ namespace BurgerShack.Desktop
                     };
                     objEstoque.atualizarIngredientes();
 
-                    clnUtilMensagem.mostrarOk("Altereção de Ingrediente", "Ingrediente alterado com sucesso!");
+                    UtilMensagem.mostrarOk("Altereção de Ingrediente", "Ingrediente alterado com sucesso!");
                 }
                 Close();
             }
@@ -147,14 +147,14 @@ namespace BurgerShack.Desktop
         {
             if (ObjIngrediente == null)
             {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Ingrediente", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Cadastro de Ingrediente", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Ingrediente", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Alteração de Ingrediente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }

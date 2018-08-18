@@ -63,7 +63,7 @@ namespace BurgerShack.Desktop
                 {
                     if (CodCliente == null)
                     {
-                        if (clnUtilMensagem.mostrarSimNao("Pagamento", "Deseja identificar o cliente?", clnUtilMensagem.MensagemIcone.INFO))
+                        if (UtilMensagem.mostrarSimNao("Pagamento", "Deseja identificar o cliente?", UtilMensagem.MensagemIcone.INFO))
                         {
                             encontrarCliente();
                             if (CodCliente == null)
@@ -74,7 +74,7 @@ namespace BurgerShack.Desktop
                     }
                     if (obterValorPago() > obterValorAPagar())
                     {
-                        clnUtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.");
+                        UtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.");
                         return;
                     }
                     int codForma = -1;
@@ -97,7 +97,7 @@ namespace BurgerShack.Desktop
                     };
                     ObjPagamento.gravar();
 
-                    clnUtilMensagem.mostrarOk("Novo pagamento", "Pagamento registrado com sucesso!");
+                    UtilMensagem.mostrarOk("Novo pagamento", "Pagamento registrado com sucesso!");
                     Close();
                 }
             }
@@ -111,7 +111,7 @@ namespace BurgerShack.Desktop
         {
             if (ObjPagamento.Cod == -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Novo Pagamento", "Deseja cancelar o pagamento?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Novo Pagamento", "Deseja cancelar o pagamento?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
@@ -137,7 +137,7 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    if (clnUtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
+                    if (UtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", UtilMensagem.MensagemIcone.INFO))
                     {
                         frmCliente frmNovoCliente = new frmCliente{};
                         frmNovoCliente.mtbCPF.Text = mtbCliCPF.Text;
@@ -153,7 +153,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.");
+                UtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.");
             }
             return false;
         }

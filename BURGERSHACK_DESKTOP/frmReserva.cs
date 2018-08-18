@@ -47,7 +47,7 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    if (clnUtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
+                    if (UtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", UtilMensagem.MensagemIcone.INFO))
                     {
                         frmCliente frmNovoCliente = new frmCliente { };
                         frmNovoCliente.mtbCPF.Text = mtbCliCPF.Text;
@@ -63,7 +63,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.");
+                UtilMensagem.mostrarOk("Cliente", "O CPF informado é inválido.");
             }
             return false;
         }
@@ -85,14 +85,14 @@ namespace BurgerShack.Desktop
         {
             if (ObjReserva.Cod != -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Reserva", "Deseja descartar as alterações realizadas?", clnUtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Alteração de Reserva", "Deseja descartar as alterações realizadas?", UtilMensagem.MensagemIcone.INFO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Nova Reserva", "Deseja cancelar a reserva?", clnUtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Nova Reserva", "Deseja cancelar a reserva?", UtilMensagem.MensagemIcone.INFO))
                 {
                     ObjReserva = null;
                     Close();
@@ -138,7 +138,7 @@ namespace BurgerShack.Desktop
                 };
                 frmVisualizar.ShowDialog();
             }
-            else if (clnUtilMensagem.mostrarSimNao("Mesas", "Esta reserva não possui nenhuma mesa, deseja adicionar?", clnUtilMensagem.MensagemIcone.OK))
+            else if (UtilMensagem.mostrarSimNao("Mesas", "Esta reserva não possui nenhuma mesa, deseja adicionar?", UtilMensagem.MensagemIcone.OK))
             {
                 adicionarMesa();
             }
@@ -180,12 +180,12 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Mesas", "Não há mais mesas disponiveis para esta data.");
+                    UtilMensagem.mostrarOk("Mesas", "Não há mais mesas disponiveis para esta data.");
                 }
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Mesas", "É necessário informar a data da reserva antes de adicionar mesas.");
+                UtilMensagem.mostrarOk("Mesas", "É necessário informar a data da reserva antes de adicionar mesas.");
             }
         }
 
@@ -221,7 +221,7 @@ namespace BurgerShack.Desktop
 
                             ObjReserva.gravar();
 
-                            clnUtilMensagem.mostrarOk("Nova Reserva", "Reserva realizada com sucesso!");
+                            UtilMensagem.mostrarOk("Nova Reserva", "Reserva realizada com sucesso!");
                             Close();
                         }
                     }
@@ -230,17 +230,17 @@ namespace BurgerShack.Desktop
                         ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
                         ObjReserva.alterar();
 
-                        clnUtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!");
+                        UtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Alteração de Reserva", "Não é possivel alterar esta reserva.");
+                        UtilMensagem.mostrarOk("Alteração de Reserva", "Não é possivel alterar esta reserva.");
                     }
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Mesas", "É necessário selecionar pelo menos 1 mesa.");
+                    UtilMensagem.mostrarOk("Mesas", "É necessário selecionar pelo menos 1 mesa.");
                 }
             }
         }
@@ -257,7 +257,7 @@ namespace BurgerShack.Desktop
                     if (ObjReserva.CodMesas.Count > 0)
                     {
                         ObjReserva.CodMesas.Clear();
-                        clnUtilMensagem.mostrarOk("Mesas", "Como você alterou a data da reserva, sera necessário redefinir as mesas");
+                        UtilMensagem.mostrarOk("Mesas", "Como você alterou a data da reserva, sera necessário redefinir as mesas");
                     }
                 }
             }
@@ -265,7 +265,7 @@ namespace BurgerShack.Desktop
 
         private void iniciarAtendimento()
         {
-            if (clnUtilMensagem.mostrarSimNao("Reserva", "Deseja iniciar um atendimento para esta reserva?", clnUtilMensagem.MensagemIcone.OK))
+            if (UtilMensagem.mostrarSimNao("Reserva", "Deseja iniciar um atendimento para esta reserva?", UtilMensagem.MensagemIcone.OK))
             {
                 List<int> objMesasIndisponiveis = new List<int>();
 
@@ -302,34 +302,34 @@ namespace BurgerShack.Desktop
                         objAtendimento.adicionarMesa(codMesa);
                     }
 
-                    clnUtilMensagem.mostrarOk("Reserva", "O atendimento foi iniciado para a(s) mesa(s) " + String.Join(",", ObjReserva.CodMesas.ToArray()));
+                    UtilMensagem.mostrarOk("Reserva", "O atendimento foi iniciado para a(s) mesa(s) " + String.Join(",", ObjReserva.CodMesas.ToArray()));
                     Close();
                 }
                 else
                 {
-                    clnUtilMensagem.mostrarOk("Reserva", "Não foi possível iniciar o atendimento, a(s) mesa(s) " + String.Join(",", objMesasIndisponiveis.ToArray()) + " estão ocupadas.");
+                    UtilMensagem.mostrarOk("Reserva", "Não foi possível iniciar o atendimento, a(s) mesa(s) " + String.Join(",", objMesasIndisponiveis.ToArray()) + " estão ocupadas.");
                 }
             }
         }
 
         private void confirmarReserva()
         {
-            if (clnUtilMensagem.mostrarSimNao("Reserva", "Voce deseja CONFIRMAR esta reserva?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Reserva", "Voce deseja CONFIRMAR esta reserva?", UtilMensagem.MensagemIcone.INFO))
             {
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CONFIRMADA;
                 ObjReserva.alterar();
-                clnUtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!");
+                UtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!");
                 grbSituacao.Hide();
             }
         }
 
         private void cancelarReserva()
         {
-            if (clnUtilMensagem.mostrarSimNao("Reserva", "Voce deseja CANCELAR esta reserva?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Reserva", "Voce deseja CANCELAR esta reserva?", UtilMensagem.MensagemIcone.INFO))
             {
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CANCELADA;
                 ObjReserva.alterar();
-                clnUtilMensagem.mostrarOk("Reserva", "Reserva CANCELADA com sucesso!");
+                UtilMensagem.mostrarOk("Reserva", "Reserva CANCELADA com sucesso!");
                 Close();
             }
         }
@@ -444,7 +444,7 @@ namespace BurgerShack.Desktop
         {
             public clnUtilVisualizar.VisualizarResult call(clnReserva objReserva, clnMesa objMesa)
             {
-                if (clnUtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", clnUtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", UtilMensagem.MensagemIcone.INFO))
                 {
                     objReserva.removerMesa(objMesa.Cod);
                     return clnUtilVisualizar.VisualizarResult.REMOVER;
@@ -458,7 +458,7 @@ namespace BurgerShack.Desktop
             public clnUtilVisualizar.VisualizarResult call(clnReserva objReserva, clnMesa objMesa)
             {
                 objReserva.addMesa(objMesa.Cod);
-                if (clnUtilMensagem.mostrarSimNao("Mesas", "Mesa " + objMesa.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", clnUtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Mesas", "Mesa " + objMesa.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", UtilMensagem.MensagemIcone.INFO))
                 {
                     return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }

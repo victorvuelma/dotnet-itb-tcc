@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
+using BurgerShack.Desktop.Util;
 
 namespace BurgerShack.Desktop
 {
@@ -52,7 +53,7 @@ namespace BurgerShack.Desktop
         {
             if (ObjAtendimento.CodMesas.Count > 1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Atendimento", "Deseja remover a mesa " + codMesa + " do atendimento?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Atendimento", "Deseja remover a mesa " + codMesa + " do atendimento?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     ObjAtendimento.removerMesa(codMesa);
 
@@ -61,7 +62,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Atendimento", "Não é possível remover a única mesa do Atendimento atual.");
+                UtilMensagem.mostrarOk("Atendimento", "Não é possível remover a única mesa do Atendimento atual.");
             }
         }
 
@@ -110,7 +111,7 @@ namespace BurgerShack.Desktop
             public clnUtilVisualizar.VisualizarResult call(clnAtendimento objAtendimento, clnMesa objMesa)
             {
                 objAtendimento.adicionarMesa(objMesa.Cod);
-                clnUtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Cod + " adicionada ao atendimento.");
+                UtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Cod + " adicionada ao atendimento.");
                 return clnUtilVisualizar.VisualizarResult.FECHAR;
             }
         }

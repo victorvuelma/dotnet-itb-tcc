@@ -48,14 +48,14 @@ namespace BurgerShack.Desktop
                     };
                     ObjEstoque.gravar();
 
-                    clnUtilMensagem.mostrarOk("Cadastro de Estoque", "Estoque cadastrado com sucesso!");
+                    UtilMensagem.mostrarOk("Cadastro de Estoque", "Estoque cadastrado com sucesso!");
                 }
                 else
                 {
                     ObjEstoque.Quantidade = UtilConvert.ToInt(txtQuantidade.Text);
 
                     ObjEstoque.alterar();
-                    clnUtilMensagem.mostrarOk("Altereção de Estoque", "Estoque alterado com sucesso!");
+                    UtilMensagem.mostrarOk("Altereção de Estoque", "Estoque alterado com sucesso!");
                 }
                 Close();
             }
@@ -65,14 +65,14 @@ namespace BurgerShack.Desktop
         {
             if (ObjEstoque.Cod == -1)
             {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Estoque", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Cadastro de Estoque", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Estoque", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Alteração de Estoque", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
@@ -94,7 +94,7 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    if (clnUtilMensagem.mostrarSimNao("Fornecedor", "Fornecedor não encontrado, deseja cadastrar?", clnUtilMensagem.MensagemIcone.INFO))
+                    if (UtilMensagem.mostrarSimNao("Fornecedor", "Fornecedor não encontrado, deseja cadastrar?", UtilMensagem.MensagemIcone.INFO))
                     {
                         frmFornecedor frmNovoFornecedor = new frmFornecedor();
                         frmNovoFornecedor.mtbCNPJ.Text = mtbFornCNPJ.Text;
@@ -110,7 +110,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                clnUtilMensagem.mostrarOk("Fornecedor", "O CNPJ informado é inválido.");
+                UtilMensagem.mostrarOk("Fornecedor", "O CNPJ informado é inválido.");
             }
             return false;
         }

@@ -1,5 +1,5 @@
 ﻿using BurgerShack.Common;
-
+using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,7 +48,7 @@ namespace BurgerShack.Desktop
 
         private void sair()
         {
-            if (clnUtilMensagem.mostrarSimNao(App.Name, "Deseja realmente encerrar o sistema?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao(App.Name, "Deseja realmente encerrar o sistema?", UtilMensagem.MensagemIcone.INFO))
             {
                 Close();
             }

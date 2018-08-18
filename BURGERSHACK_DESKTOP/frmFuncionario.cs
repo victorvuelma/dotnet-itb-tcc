@@ -121,12 +121,12 @@ namespace BurgerShack.Desktop
                         };
                         objFuncionario.gravar();
                         ObjFuncionario = objFuncionario;
-                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Funcionário cadastrado com sucesso!");
+                        UtilMensagem.mostrarOk("Cadastro de Funcionário", "Funcionário cadastrado com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Cadastro de Funcionário", "Não foi possível cadastrar o funcionário, o CPF já está cadastrado!");
+                        UtilMensagem.mostrarOk("Cadastro de Funcionário", "Não foi possível cadastrar o funcionário, o CPF já está cadastrado!");
                         mtbCPF.Focus();
                     }
                 }
@@ -150,7 +150,7 @@ namespace BurgerShack.Desktop
                     ObjFuncionario.EndLocalidade = txtEndCidade.Text;
                     ObjFuncionario.EndUF = cboEndUF.Text;
                     ObjFuncionario.alterar();
-                    clnUtilMensagem.mostrarOk("Alteração de Funcionário", "Funcionário alterado com sucesso!");
+                    UtilMensagem.mostrarOk("Alteração de Funcionário", "Funcionário alterado com sucesso!");
                     Close();
                 }
             }
@@ -160,14 +160,14 @@ namespace BurgerShack.Desktop
         {
             if (ObjFuncionario == null)
             {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Funcionário", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Cadastro de Funcionário", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Funcionário", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Alteração de Funcionário", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
@@ -305,7 +305,7 @@ namespace BurgerShack.Desktop
 
         private void btnImgRemover_Click(object sender, EventArgs e)
         {
-            if (clnUtilMensagem.mostrarSimNao("Imagem", "Deseja realmente remover a imagem?", clnUtilMensagem.MensagemIcone.INFO))
+            if (UtilMensagem.mostrarSimNao("Imagem", "Deseja realmente remover a imagem?", UtilMensagem.MensagemIcone.INFO))
             {
                 definirImagemPadrao();
             }

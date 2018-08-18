@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Data;
+using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {
@@ -60,12 +61,12 @@ namespace BurgerShack.Desktop
                         };
                         objCliente.gravar();
                         ObjCliente = objCliente;
-                        clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!");
+                        UtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!");
                         Close();
                     }
                     else
                     {
-                        clnUtilMensagem.mostrarOk("Cadastro de Cliente", "Não foi possível cadastrar o cliente, o CPF já está cadastrado!");
+                        UtilMensagem.mostrarOk("Cadastro de Cliente", "Não foi possível cadastrar o cliente, o CPF já está cadastrado!");
                         mtbCPF.Focus();
                     }
                 }
@@ -77,7 +78,7 @@ namespace BurgerShack.Desktop
                     ObjCliente.TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text);
                     ObjCliente.Genero = cboGenero.Text;
                     ObjCliente.alterar();
-                    clnUtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!");
+                    UtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!");
                     Close();
                 }
             }
@@ -87,17 +88,43 @@ namespace BurgerShack.Desktop
         {
             if (ObjCliente == null)
             {
-                if (clnUtilMensagem.mostrarSimNao("Cadastro de Cliente", "Deseja cancelar o cadastro?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Cadastro de Cliente", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
             }
             else
             {
-                if (clnUtilMensagem.mostrarSimNao("Alteração de Cliente", "Deseja cancelar as alterações?", clnUtilMensagem.MensagemIcone.ERRO))
+                if (btnAcao.Text == "Salvar" && UtilMensagem.mostrarSimNao("Alteração de Cliente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
+            }
+        }
+
+        private void excluir()
+        {
+            if (UtilMensagem.mostrarSimNao("Cliente", "Você deseja realmente excluir este cliente?", UtilMensagem.MensagemIcone.ERRO))
+            {
+                ObjCliente.Ativo = false;
+                ObjCliente.alterar();
+
+                btnAcao.Hide();
+                UtilButton.restaurar(btnExcluir);
+                UtilForm.Disable(grbInformacoes);
+            }
+        }
+
+        private void restaurar()
+        {
+            if (UtilMensagem.mostrarSimNao("Cliente", "Você deseja realmente restaurar este cliente?", UtilMensagem.MensagemIcone.OK))
+            {
+                ObjCliente.Ativo = true;
+                ObjCliente.alterar();
+
+                btnAcao.Show();
+                UtilButton.excluir(btnExcluir);
+                UtilForm.Enable(grbInformacoes);
             }
         }
 
@@ -112,7 +139,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                hdrUIX.Title = App.Name + " - Alterando Cliente " + ObjCliente.Cod;
+                hdrUIX.Title = App.Name + " - Cliente " + ObjCliente.Cod;
                 mtbCPF.Enabled = false;
                 txtNome.Text = ObjCliente.Nome;
                 mtbCPF.Text = ObjCliente.Cpf;
@@ -126,12 +153,35 @@ namespace BurgerShack.Desktop
                 {
                     cboGenero.Text = ObjCliente.Genero;
                 }
+                UtilForm.Disable(grbInformacoes);
+                if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
+                {
+                    btnExcluir.Show();
+                    UtilButton.alterar(btnAcao);
+                    if (ObjCliente.Ativo)
+                    {
+                        UtilButton.excluir(btnExcluir);
+                    }
+                    else
+                    {
+                        btnAcao.Hide();
+                        UtilButton.restaurar(btnExcluir);
+                    }
+                }
             }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            salvar();
+            if (btnAcao.Text == "Salvar")
+            {
+                salvar();
+            }
+            else
+            {
+                UtilForm.Enable(grbInformacoes);
+                UtilButton.salvar(btnAcao);
+            }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -142,6 +192,18 @@ namespace BurgerShack.Desktop
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             fechar();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (ObjCliente.Ativo)
+            {
+                excluir();
+            }
+            else
+            {
+                restaurar();
+            }
         }
     }
 }
