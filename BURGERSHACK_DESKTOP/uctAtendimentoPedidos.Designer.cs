@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grbPedidos = new System.Windows.Forms.GroupBox();
-            this.pnlPedidos = new System.Windows.Forms.Panel();
+            this.lstPedidos = new vitorrdgs.UiX.Component.UIXItemsList();
             this.btnNovoPedido = new vitorrdgs.UiX.Component.UIXButton();
             this.lblValor = new System.Windows.Forms.Label();
             this.grbValor = new System.Windows.Forms.GroupBox();
@@ -42,7 +42,7 @@
             // 
             // grbPedidos
             // 
-            this.grbPedidos.Controls.Add(this.pnlPedidos);
+            this.grbPedidos.Controls.Add(this.lstPedidos);
             this.grbPedidos.Location = new System.Drawing.Point(5, 5);
             this.grbPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbPedidos.Name = "grbPedidos";
@@ -54,12 +54,12 @@
             // 
             // pnlPedidos
             // 
-            this.pnlPedidos.Location = new System.Drawing.Point(5, 20);
-            this.pnlPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlPedidos.MaximumSize = new System.Drawing.Size(480, 10000);
-            this.pnlPedidos.Name = "pnlPedidos";
-            this.pnlPedidos.Size = new System.Drawing.Size(480, 510);
-            this.pnlPedidos.TabIndex = 4;
+            this.lstPedidos.Location = new System.Drawing.Point(5, 20);
+            this.lstPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lstPedidos.MaximumSize = new System.Drawing.Size(480, 10000);
+            this.lstPedidos.Name = "pnlPedidos";
+            this.lstPedidos.Size = new System.Drawing.Size(480, 510);
+            this.lstPedidos.TabIndex = 4;
             // 
             // btnNovoPedido
             // 
@@ -136,7 +136,7 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grbPedidos;
-        private System.Windows.Forms.Panel pnlPedidos;
+        private vitorrdgs.UiX.Component.UIXItemsList lstPedidos;
         private vitorrdgs.UiX.Component.UIXButton btnNovoPedido;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.GroupBox grbValor;

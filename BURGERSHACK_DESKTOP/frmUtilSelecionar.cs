@@ -39,37 +39,34 @@ namespace BurgerShack.Desktop
 
         private void exibirOpcoes()
         {
-            pnlOpcoes.Controls.Clear();
-
-            List<Control> opcoesControles = new List<Control>();
+            lstOpcoes.LimparOpcoes();
             foreach (object obj in _opcoes)
             {
-                UIXButton btn = new UIXButton
-                {
-                    Description = ObjSelecionar.ObjListar.getNome(obj),
-                    Name = "btnSelecionar" + ObjSelecionar.ObjListar.getCod(obj),
-                    Size = new Size(110, 110),
-                    ImageLocation = ObjSelecionar.ObjListar.getImagem(obj)
-                };
-                btn.Click += (object sender, EventArgs e) =>
+                lstOpcoes.Adicionar(ObjSelecionar.ObjListar.getCod(obj), ObjSelecionar.ObjListar.getNome(obj), ObjSelecionar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor, () =>
                 {
                     selecionaOpcao(obj);
-                };
-
-                opcoesControles.Add(btn);
+                    return UIXItemsList.ListResult.NENHUM;
+                });
             }
-            clnUtil.adicionarControles(pnlOpcoes, opcoesControles, 20);
+            lstOpcoes.exibirItens();
 
-            foreach (Control control in opcoesControles)
+            exibirResultados();
+        }
+
+        private void exibirResultados()
+        {
+            if (_opcoes.Count == 1)
             {
-                if (control is Button btn)
-                {
-                    uixButton.btnApply(btn, AppDesktop.VisualStyle.ButtonImageColor);
-                }
+                lblPesquisaRes.Text = "1 resultado encontrado.";
             }
-            opcoesControles.Clear();
-
-            lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
+            else if (_opcoes.Count == 0)
+            {
+                lblPesquisaRes.Text = "Nenhum resultado encontrado.";
+            }
+            else
+            {
+                lblPesquisaRes.Text = _opcoes.Count + " resultados encontrados.";
+            }
         }
 
         private void selecionaOpcao(object obj)

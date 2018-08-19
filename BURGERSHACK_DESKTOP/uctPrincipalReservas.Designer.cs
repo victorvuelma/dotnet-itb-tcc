@@ -32,27 +32,26 @@
             this.dtpListar = new System.Windows.Forms.DateTimePicker();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnNova = new vitorrdgs.UiX.Component.UIXButton();
-            this.pnlReservas = new System.Windows.Forms.Panel();
-            this.lstReservas.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grbListar
+            // lstReservas
             // 
-            this.lstReservas.Controls.Add(this.pnlReservas);
-            this.lstReservas.Controls.Add(this.dtpListar);
+            this.lstReservas.ItemsSize = 100;
+            this.lstReservas.ItemsSpace = 10;
             this.lstReservas.Location = new System.Drawing.Point(10, 10);
-            this.lstReservas.Name = "grbListar";
+            this.lstReservas.MaximumSize = new System.Drawing.Size(780, 10000);
+            this.lstReservas.Name = "lstReservas";
+            this.lstReservas.PosIndex = 0;
             this.lstReservas.Size = new System.Drawing.Size(780, 630);
             this.lstReservas.TabIndex = 0;
             this.lstReservas.TabStop = false;
-            this.lstReservas.Text = "RESERVAS";
             // 
             // dtpListar
             // 
             this.dtpListar.Location = new System.Drawing.Point(514, 3);
             this.dtpListar.Name = "dtpListar";
-            this.dtpListar.Size = new System.Drawing.Size(250, 21);
+            this.dtpListar.Size = new System.Drawing.Size(250, 20);
             this.dtpListar.TabIndex = 0;
             this.dtpListar.ValueChanged += new System.EventHandler(this.dtpListar_ValueChanged);
             // 
@@ -78,14 +77,6 @@
             this.btnNova.UseVisualStyleBackColor = true;
             this.btnNova.Click += new System.EventHandler(this.btnNova_Click);
             // 
-            // pnlReservas
-            // 
-            this.pnlReservas.Location = new System.Drawing.Point(5, 30);
-            this.pnlReservas.MaximumSize = new System.Drawing.Size(770, 10000);
-            this.pnlReservas.Name = "pnlReservas";
-            this.pnlReservas.Size = new System.Drawing.Size(770, 590);
-            this.pnlReservas.TabIndex = 1;
-            // 
             // uctPrincipalReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -97,7 +88,6 @@
             this.Name = "uctPrincipalReservas";
             this.Size = new System.Drawing.Size(900, 650);
             this.Load += new System.EventHandler(this.uctPrincipalReservas_Load);
-            this.lstReservas.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -109,6 +99,5 @@
         private System.Windows.Forms.DateTimePicker dtpListar;
         private System.Windows.Forms.Panel pnlMenu;
         private vitorrdgs.UiX.Component.UIXButton btnNova;
-        private System.Windows.Forms.Panel pnlReservas;
     }
 }

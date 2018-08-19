@@ -26,8 +26,7 @@ namespace BurgerShack.Desktop
 
         private void exibirOpcoes()
         {
-            lstOpcoes.Clear();
-
+            lstOpcoes.LimparOpcoes();
             foreach (object obj in _opcoes)
             {
                 lstOpcoes.Adicionar(ObjVisualizar.ObjListar.getCod(obj), ObjVisualizar.ObjListar.getNome(obj), ObjVisualizar.ObjListar.getImagem(obj), AppDesktop.VisualStyle.ButtonImageColor, () =>
@@ -44,6 +43,8 @@ namespace BurgerShack.Desktop
                     }
                 });
             }
+            lstOpcoes.exibirItens();
+
             exibirResultados();
         }
 

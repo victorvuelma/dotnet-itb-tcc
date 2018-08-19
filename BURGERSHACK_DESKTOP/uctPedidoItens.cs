@@ -1,15 +1,8 @@
-﻿using System;
+﻿using BurgerShack.Desktop.Util;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using vitorrdgs.UiX.Manager;
 using vitorrdgs.UiX.Component;
-using BurgerShack.Desktop.Util;
 
 namespace BurgerShack.Desktop
 {
@@ -66,7 +59,7 @@ namespace BurgerShack.Desktop
             return objIngredientes;
         }
 
-        private void editarItem(clnItem objItem)
+        private bool editarItem(clnItem objItem)
         {
             if (ObjPedido.Situacao == clnPedido.pedidoSituacao.REALIZADO)
             {
@@ -83,7 +76,7 @@ namespace BurgerShack.Desktop
                     ObjItens.Remove(objItem);
                     UtilMensagem.mostrarOk("Pedido", "Produto removido do pedido");
 
-                    exibirProdutos();
+                    return true;
                 }
                 else if (objItem.Cod == -1 && frmEditarItem.ObjItem != objItem || frmEditarItem.ObjItemIngredientes != objItemIngredientes)
                 {
@@ -96,13 +89,12 @@ namespace BurgerShack.Desktop
             {
                 UtilMensagem.mostrarOk("Pedido", "Não é possivel alterar esse item pois ele está em prepardo.");
             }
+            return false;
         }
 
         private void exibirProdutos()
         {
-            pnlProdutos.Controls.Clear();
-
-            List<Control> opcoesControles = new List<Control>();
+            lstProdutos.LimparOpcoes();
             foreach (clnItem objItem in obterItens())
             {
                 clnProduto objProduto = new clnProduto
@@ -115,32 +107,13 @@ namespace BurgerShack.Desktop
                     Cod = objProduto.CodImagem
                 }.obterPorCodigo();
 
-                UIXButton btn = new UIXButton
+                lstProdutos.Adicionar(objProduto.Cod, objProduto.Nome, objArquivo.Local, AppDesktop.VisualStyle.ButtonImageColor, () =>
                 {
-                    Description = objProduto.Nome,
-                    Name = "btnItem" + objProduto.Cod,
-                    Size = new Size(110, 110),
-                    ImageLocation = objArquivo.Local
-                };
-                btn.Click += (object sender, EventArgs e) =>
-                {
-                    editarItem(objItem);
-                };
-
-                opcoesControles.Add(btn);
+                    ;
+                    return (editarItem(objItem) ? UIXItemsList.ListResult.REMOVER : UIXItemsList.ListResult.NENHUM);
+                });
             }
-            clnUtil.adicionarControles(pnlProdutos, opcoesControles, 20);
-
-            foreach (Control control in opcoesControles)
-            {
-                if (control is Button btn)
-                {
-                    uixButton.btnApply(btn, AppDesktop.VisualStyle.ButtonImageColor);
-                }
-            }
-            opcoesControles.Clear();
-
-            pnlProdutos.BackColor = grbProdutos.BackColor;
+            lstProdutos.exibirItens();
         }
 
         private void uctPedidoProdutos_Load(object sender, EventArgs e)

@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BurgerShack.Desktop.Util;
+using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
-using BurgerShack.Desktop.Util;
 
 namespace BurgerShack.Desktop
 {
@@ -26,30 +19,18 @@ namespace BurgerShack.Desktop
 
         private void exibirMesas()
         {
-            pnlMesas.Controls.Clear();
-
-            List<Control> pedidosControles = new List<Control>();
+            lstMesas.LimparOpcoes();
             foreach (int codMesa in ObjAtendimento.CodMesas)
             {
-                UIXButton btn = new UIXButton
+                lstMesas.Adicionar(codMesa, "Mesa #" + codMesa, Properties.Resources.mesauso, AppDesktop.VisualStyle.ButtonColor, () =>
                 {
-                    Description = "Mesa #" + codMesa,
-                    Name = "btnMesa" + codMesa,
-                    Size = new Size(110, 110),
-                    Image = Properties.Resources.mesauso
-                };
-                btn.Click += (object sender, EventArgs e) =>
-                {
-                    removerMesa(codMesa);
-                };
-
-                pedidosControles.Add(btn);
+                    return (removerMesa(codMesa)) ? UIXItemsList.ListResult.REMOVER : UIXItemsList.ListResult.NENHUM;
+                });
             }
-            clnUtil.adicionarControles(pnlMesas, pedidosControles, 20);
-            pedidosControles.Clear();
+            lstMesas.exibirItens();
         }
 
-        private void removerMesa(int codMesa)
+        private bool removerMesa(int codMesa)
         {
             if (ObjAtendimento.CodMesas.Count > 1)
             {
@@ -57,13 +38,14 @@ namespace BurgerShack.Desktop
                 {
                     ObjAtendimento.removerMesa(codMesa);
 
-                    exibirMesas();
+                    return true;
                 }
             }
             else
             {
                 UtilMensagem.mostrarOk("Atendimento", "Não é possível remover a única mesa do Atendimento atual.");
             }
+            return false;
         }
 
         private void adicionarMesa()

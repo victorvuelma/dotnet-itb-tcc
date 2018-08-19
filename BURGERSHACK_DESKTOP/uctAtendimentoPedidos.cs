@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.Util.Data;
@@ -24,28 +23,16 @@ namespace BurgerShack.Desktop
 
         private void exibirPedidos()
         {
-            pnlPedidos.Controls.Clear();
-
-            List<Control> pedidosControles = new List<Control>();
+            lstPedidos.LimparOpcoes();
             foreach (clnPedido objPedido in ObjPedidos)
             {
-                UIXButton btn = new UIXButton
-                {
-                    Description = "Pedido " + objPedido.Cod,
-                    Name = "btnPedido" + objPedido.Cod,
-                    Size = new Size(110, 110),
-                    Image = Properties.Resources.pedido
-                };
-                btn.Click += (object sender, EventArgs e) =>
+                lstPedidos.Adicionar(objPedido.Cod, "Pedido " + objPedido.Cod, Properties.Resources.pedido, AppDesktop.VisualStyle.ButtonColor, () =>
                 {
                     abrirPedido(objPedido);
-                };
-                AppDesktop.VisualTemplate.ctlApply(btn);
-
-                pedidosControles.Add(btn);
+                    return UIXItemsList.ListResult.NENHUM;
+                });
             }
-            clnUtil.adicionarControles(pnlPedidos, pedidosControles, 20);
-            pedidosControles.Clear();
+            lstPedidos.exibirItens();
 
             atualizarValor();
         }

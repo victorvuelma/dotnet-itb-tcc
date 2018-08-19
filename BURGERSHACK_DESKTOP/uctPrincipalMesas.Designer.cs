@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grbMesas = new System.Windows.Forms.GroupBox();
-            this.pnlMesas = new System.Windows.Forms.Panel();
+            this.lstMesas = new vitorrdgs.UiX.Component.UIXItemsList();
             this.lblOcupada = new System.Windows.Forms.Label();
             this.pnlOcupada = new System.Windows.Forms.Panel();
             this.lblLivre = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             // 
             // grbMesas
             // 
-            this.grbMesas.Controls.Add(this.pnlMesas);
+            this.grbMesas.Controls.Add(this.lstMesas);
             this.grbMesas.Controls.Add(this.lblOcupada);
             this.grbMesas.Controls.Add(this.pnlOcupada);
             this.grbMesas.Controls.Add(this.lblLivre);
@@ -55,13 +55,13 @@
             // 
             // pnlMesas
             // 
-            this.pnlMesas.AutoScroll = true;
-            this.pnlMesas.Location = new System.Drawing.Point(5, 15);
-            this.pnlMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlMesas.MaximumSize = new System.Drawing.Size(880, 123077);
-            this.pnlMesas.Name = "pnlMesas";
-            this.pnlMesas.Size = new System.Drawing.Size(880, 620);
-            this.pnlMesas.TabIndex = 5;
+            this.lstMesas.AutoScroll = true;
+            this.lstMesas.Location = new System.Drawing.Point(5, 15);
+            this.lstMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lstMesas.MaximumSize = new System.Drawing.Size(880, 123077);
+            this.lstMesas.Name = "pnlMesas";
+            this.lstMesas.Size = new System.Drawing.Size(880, 620);
+            this.lstMesas.TabIndex = 5;
             // 
             // lblOcupada
             // 
@@ -122,6 +122,6 @@
         private System.Windows.Forms.Panel pnlOcupada;
         private System.Windows.Forms.Label lblLivre;
         private System.Windows.Forms.Panel pnlLivre;
-        private System.Windows.Forms.Panel pnlMesas;
+        private vitorrdgs.UiX.Component.UIXItemsList lstMesas;
     }
 }

@@ -34,7 +34,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
-            this.pnlOpcoes = new System.Windows.Forms.Panel();
+            this.lstOpcoes = new vitorrdgs.UiX.Component.UIXItemsList();
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grbPesquisa = new System.Windows.Forms.GroupBox();
             this.lblPesquisaRes = new System.Windows.Forms.Label();
@@ -102,21 +102,21 @@
             // 
             // grbOpcoes
             // 
-            this.grbOpcoes.Controls.Add(this.pnlOpcoes);
+            this.grbOpcoes.Controls.Add(this.lstOpcoes);
             this.grbOpcoes.Location = new System.Drawing.Point(5, 170);
             this.grbOpcoes.Name = "grbOpcoes";
             this.grbOpcoes.Size = new System.Drawing.Size(540, 370);
             this.grbOpcoes.TabIndex = 5;
             this.grbOpcoes.TabStop = false;
             // 
-            // pnlOpcoes
+            // lstOpcoes
             // 
-            this.pnlOpcoes.AutoScroll = true;
-            this.pnlOpcoes.Location = new System.Drawing.Point(5, 15);
-            this.pnlOpcoes.MaximumSize = new System.Drawing.Size(530, 1000);
-            this.pnlOpcoes.Name = "pnlOpcoes";
-            this.pnlOpcoes.Size = new System.Drawing.Size(530, 350);
-            this.pnlOpcoes.TabIndex = 0;
+            this.lstOpcoes.AutoScroll = true;
+            this.lstOpcoes.Location = new System.Drawing.Point(5, 15);
+            this.lstOpcoes.MaximumSize = new System.Drawing.Size(530, 1000);
+            this.lstOpcoes.Name = "lstOpcoes";
+            this.lstOpcoes.Size = new System.Drawing.Size(530, 350);
+            this.lstOpcoes.TabIndex = 0;
             // 
             // hdrUIX
             // 
@@ -225,7 +225,7 @@
         private System.Windows.Forms.GroupBox grbDetalhes;
         private System.Windows.Forms.GroupBox grbOpcoes;
         private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
-        private System.Windows.Forms.Panel pnlOpcoes;
+        private vitorrdgs.UiX.Component.UIXItemsList lstOpcoes;
         private System.Windows.Forms.PictureBox picImagem;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblDesc;

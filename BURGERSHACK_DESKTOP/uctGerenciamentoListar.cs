@@ -31,7 +31,23 @@ namespace BurgerShack.Desktop
             dgvItens.ClearSelection();
 
             CallbackObter.call(dgvItens, txtPesquisar.Text, !chkInativo.Checked);
-            lblPesquisaRes.Text = dgvItens.Rows.Count + " resultados encontrados.";
+            exibirResultados();
+        }
+
+        private void exibirResultados()
+        {
+            if (dgvItens.Rows.Count == 1)
+            {
+                lblPesquisaRes.Text = "1 resultado encontrado.";
+            }
+            else if (dgvItens.Rows.Count == 0)
+            {
+                lblPesquisaRes.Text = "Nenhum resultado encontrado.";
+            }
+            else
+            {
+                lblPesquisaRes.Text = dgvItens.Rows.Count + " resultados encontrados.";
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -41,7 +57,7 @@ namespace BurgerShack.Desktop
                 pesquisar();
             }
         }
-
+        
         public void atualizar()
         {
             dgvItens.Rows.Clear();

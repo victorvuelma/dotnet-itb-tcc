@@ -21,14 +21,12 @@ namespace BurgerShack.Desktop
 
         private void exibirReservas()
         {
-            pnlReservas.Controls.Clear();
-
             List<clnReserva> objReservas = new clnReserva
             {
                 Agendado = dtpListar.Value.Date
             }.obterPorDataAgendada();
 
-            lstReservas.Clear();
+            lstReservas.LimparOpcoes();
             foreach (clnReserva objReserva in objReservas)
             {
                 lstReservas.Adicionar(objReserva.Cod, "RESERVA " + objReserva.Cod, Properties.Resources.reserva, AppDesktop.VisualStyle.BoxColor, () =>
@@ -37,6 +35,7 @@ namespace BurgerShack.Desktop
                     return UIXItemsList.ListResult.NENHUM;
                 });
             }
+            lstReservas.exibirItens();
         }
 
         private void abrirReserva(clnReserva objReserva)

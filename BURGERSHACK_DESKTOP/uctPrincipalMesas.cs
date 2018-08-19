@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BurgerShack.Desktop.Util;
+using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Property;
-using BurgerShack.Desktop.Util;
 
 namespace BurgerShack.Desktop
 {
@@ -23,35 +16,16 @@ namespace BurgerShack.Desktop
 
         private void exibirMesas()
         {
-            pnlMesas.Controls.Clear();
-
-            List<Control> mesaControles = new List<Control>();
+            lstMesas.LimparOpcoes();
             foreach (clnMesa objMesa in new clnMesa().obterMesas())
             {
-                UIXButton btn = new UIXButton
-                {
-                    Description = "MESA " + objMesa.Cod,
-                    Name = "btnMesa" + objMesa.Cod,
-                    Size = new Size(100, 100)
-                };
-                if (objMesa.Situacao == clnMesa.mesaSituacao.DISPONIVEL)
-                {
-                    btn.Image = Properties.Resources.mesa;
-                }
-                else
-                {
-                    btn.ForeColor = pnlOcupada.BackColor;
-                    btn.Image = Properties.Resources.mesauso;
-                }
-                btn.Click += (object sender, EventArgs e) =>
+                lstMesas.Adicionar(objMesa.Cod, "Mesa " + objMesa.Cod, (objMesa.Situacao == clnMesa.mesaSituacao.DISPONIVEL ? Properties.Resources.mesa : Properties.Resources.mesauso), AppDesktop.VisualStyle.ButtonColor, () =>
                 {
                     abrirMesa(objMesa);
-                };
-
-                mesaControles.Add(btn);
+                    return UIXItemsList.ListResult.NENHUM;
+                });
             }
-            clnUtil.adicionarControles(pnlMesas, mesaControles, 20);
-            mesaControles.Clear();
+            lstMesas.exibirItens();
         }
 
         private void abrirMesa(clnMesa objMesa)

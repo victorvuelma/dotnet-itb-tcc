@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.grbMesas = new System.Windows.Forms.GroupBox();
-            this.pnlMesas = new System.Windows.Forms.Panel();
+            this.lstMesas = new vitorrdgs.UiX.Component.UIXItemsList();
             this.btnAdicionar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbMesas.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbMesas
             // 
-            this.grbMesas.Controls.Add(this.pnlMesas);
+            this.grbMesas.Controls.Add(this.lstMesas);
             this.grbMesas.Location = new System.Drawing.Point(5, 5);
             this.grbMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbMesas.Name = "grbMesas";
@@ -48,12 +48,12 @@
             // 
             // pnlMesas
             // 
-            this.pnlMesas.Location = new System.Drawing.Point(5, 20);
-            this.pnlMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlMesas.MaximumSize = new System.Drawing.Size(480, 10000);
-            this.pnlMesas.Name = "pnlMesas";
-            this.pnlMesas.Size = new System.Drawing.Size(480, 510);
-            this.pnlMesas.TabIndex = 4;
+            this.lstMesas.Location = new System.Drawing.Point(5, 20);
+            this.lstMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lstMesas.MaximumSize = new System.Drawing.Size(480, 10000);
+            this.lstMesas.Name = "pnlMesas";
+            this.lstMesas.Size = new System.Drawing.Size(480, 510);
+            this.lstMesas.TabIndex = 4;
             // 
             // btnAdicionar
             // 
@@ -88,7 +88,7 @@
 
         #endregion
         private System.Windows.Forms.GroupBox grbMesas;
-        private System.Windows.Forms.Panel pnlMesas;
+        private vitorrdgs.UiX.Component.UIXItemsList lstMesas;
         private vitorrdgs.UiX.Component.UIXButton btnAdicionar;
     }
 }

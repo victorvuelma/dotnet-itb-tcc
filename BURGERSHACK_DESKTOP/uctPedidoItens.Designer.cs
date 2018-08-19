@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.grbProdutos = new System.Windows.Forms.GroupBox();
-            this.pnlProdutos = new System.Windows.Forms.Panel();
+            this.lstProdutos = new vitorrdgs.UiX.Component.UIXItemsList();
             this.grbProdutos.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbProdutos
             // 
-            this.grbProdutos.Controls.Add(this.pnlProdutos);
+            this.grbProdutos.Controls.Add(this.lstProdutos);
             this.grbProdutos.Location = new System.Drawing.Point(5, 5);
             this.grbProdutos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbProdutos.Name = "grbProdutos";
@@ -47,11 +47,11 @@
             // 
             // pnlProdutos
             // 
-            this.pnlProdutos.Location = new System.Drawing.Point(5, 20);
-            this.pnlProdutos.MaximumSize = new System.Drawing.Size(430, 1000);
-            this.pnlProdutos.Name = "pnlProdutos";
-            this.pnlProdutos.Size = new System.Drawing.Size(430, 560);
-            this.pnlProdutos.TabIndex = 0;
+            this.lstProdutos.Location = new System.Drawing.Point(5, 20);
+            this.lstProdutos.MaximumSize = new System.Drawing.Size(430, 1000);
+            this.lstProdutos.Name = "pnlProdutos";
+            this.lstProdutos.Size = new System.Drawing.Size(430, 560);
+            this.lstProdutos.TabIndex = 0;
             // 
             // uctPedidoItens
             // 
@@ -71,6 +71,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbProdutos;
-        private System.Windows.Forms.Panel pnlProdutos;
+        private vitorrdgs.UiX.Component.UIXItemsList lstProdutos;
     }
 }

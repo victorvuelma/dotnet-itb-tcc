@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using BurgerShack.Desktop.Numboard;
 using BurgerShack.Desktop.Util;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
@@ -299,7 +293,7 @@ namespace BurgerShack.Desktop
 
         private void uctPedidoAdicionar_Load(object sender, EventArgs e)
         {
-            clnUtil.definirNumBoard(txtQuantidade);
+            ControlNumboard.definirNumBoard(txtQuantidade);
 
             grbProduto.Hide();
             grbDetalhes.Hide();
