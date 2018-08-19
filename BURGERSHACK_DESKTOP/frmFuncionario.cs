@@ -176,7 +176,7 @@ namespace BurgerShack.Desktop
 
         private void definirImagemPadrao()
         {
-            picImagem.ImageLocation = clnArquivo.tempImage(global::BurgerShack.Desktop.Properties.Resources.ingrediente);
+            picImagem.ImageLocation = clnArquivo.tempImage(global::BurgerShack.Desktop.Properties.Resources.imagem);
         }
 
         private void adicionarImagem()

@@ -52,7 +52,7 @@ namespace BurgerShack.Desktop
 
         private void definirImagemPadrao()
         {
-            picImagem.ImageLocation = clnArquivo.tempImage(Properties.Resources.produto);
+            picImagem.ImageLocation = clnArquivo.tempImage(Properties.Resources.imagem);
         }
 
         private void adicionarImagem()

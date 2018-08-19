@@ -171,7 +171,6 @@
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Util\clnUtilFormValidar.cs" />
     <Compile Include="frmConta.cs">
       <SubType>Form</SubType>
@@ -379,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFuncionario.resx">
       <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngrediente.resx">
+      <DependentUpon>frmIngrediente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPagamento.resx">
       <DependentUpon>frmPagamento.cs</DependentUpon>

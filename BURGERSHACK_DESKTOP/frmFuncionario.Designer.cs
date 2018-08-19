@@ -146,7 +146,7 @@
             this.mtbTelRes.Mask = "";
             this.mtbTelRes.MaxLength = 32767;
             this.mtbTelRes.Name = "mtbTelRes";
-            this.mtbTelRes.Size = new System.Drawing.Size(195, 20);
+            this.mtbTelRes.Size = new System.Drawing.Size(195, 21);
             this.mtbTelRes.TabIndex = 14;
             this.mtbTelRes.ValidatingType = null;
             // 
@@ -162,7 +162,7 @@
             this.txtRG.Multiline = false;
             this.txtRG.Name = "txtRG";
             this.txtRG.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtRG.Size = new System.Drawing.Size(205, 20);
+            this.txtRG.Size = new System.Drawing.Size(205, 21);
             this.txtRG.TabIndex = 13;
             // 
             // txtEmail
@@ -191,7 +191,7 @@
             this.mtbTelCel.Mask = "";
             this.mtbTelCel.MaxLength = 32767;
             this.mtbTelCel.Name = "mtbTelCel";
-            this.mtbTelCel.Size = new System.Drawing.Size(180, 20);
+            this.mtbTelCel.Size = new System.Drawing.Size(180, 21);
             this.mtbTelCel.TabIndex = 11;
             this.mtbTelCel.ValidatingType = null;
             // 
@@ -219,7 +219,7 @@
             this.mtbCPF.Mask = "";
             this.mtbCPF.MaxLength = 32767;
             this.mtbCPF.Name = "mtbCPF";
-            this.mtbCPF.Size = new System.Drawing.Size(170, 20);
+            this.mtbCPF.Size = new System.Drawing.Size(170, 21);
             this.mtbCPF.TabIndex = 9;
             this.mtbCPF.ValidatingType = null;
             // 
@@ -250,7 +250,7 @@
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNome.Size = new System.Drawing.Size(380, 20);
+            this.txtNome.Size = new System.Drawing.Size(380, 21);
             this.txtNome.TabIndex = 7;
             // 
             // hdrUIX
@@ -465,11 +465,11 @@
             this.cboCargo.Campo = "Cargo*";
             this.cboCargo.FormattingEnabled = true;
             this.cboCargo.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.cboCargo.Location = new System.Drawing.Point(5, 45);
+            this.cboCargo.Location = new System.Drawing.Point(5, 46);
             this.cboCargo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboCargo.Name = "cboCargo";
             this.cboCargo.SelectedItem = null;
-            this.cboCargo.Size = new System.Drawing.Size(380, 36);
+            this.cboCargo.Size = new System.Drawing.Size(380, 25);
             this.cboCargo.TabIndex = 2;
             // 
             // cboSituacao
@@ -482,7 +482,7 @@
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboSituacao.Name = "cboSituacao";
             this.cboSituacao.SelectedItem = null;
-            this.cboSituacao.Size = new System.Drawing.Size(190, 30);
+            this.cboSituacao.Size = new System.Drawing.Size(190, 25);
             this.cboSituacao.TabIndex = 1;
             // 
             // txtSalario
@@ -497,7 +497,7 @@
             this.txtSalario.Multiline = false;
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSalario.Size = new System.Drawing.Size(180, 20);
+            this.txtSalario.Size = new System.Drawing.Size(180, 26);
             this.txtSalario.TabIndex = 0;
             // 
             // frmFuncionario

@@ -35,7 +35,7 @@
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.btnCliEncontrar = new vitorrdgs.UiX.Component.UIXButton();
-            this.mtbCliCPF =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbCliCPF = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.grbValorTotal = new System.Windows.Forms.GroupBox();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.grbValorPagar = new System.Windows.Forms.GroupBox();
@@ -226,7 +226,8 @@
             this.cboBandeira.Location = new System.Drawing.Point(170, 20);
             this.cboBandeira.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboBandeira.Name = "cboBandeira";
-            this.cboBandeira.Size = new System.Drawing.Size(164, 20);
+            this.cboBandeira.SelectedItem = null;
+            this.cboBandeira.Size = new System.Drawing.Size(164, 25);
             this.cboBandeira.TabIndex = 1;
             // 
             // cboMetodo
@@ -238,7 +239,8 @@
             this.cboMetodo.Location = new System.Drawing.Point(5, 20);
             this.cboMetodo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboMetodo.Name = "cboMetodo";
-            this.cboMetodo.Size = new System.Drawing.Size(155, 20);
+            this.cboMetodo.SelectedItem = null;
+            this.cboMetodo.Size = new System.Drawing.Size(155, 25);
             this.cboMetodo.TabIndex = 0;
             this.cboMetodo.Leave += new System.EventHandler(this.cboMetodo_Leave);
             // 
@@ -309,7 +311,7 @@
             this.txtDinheiro.Multiline = false;
             this.txtDinheiro.Name = "txtDinheiro";
             this.txtDinheiro.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDinheiro.Size = new System.Drawing.Size(150, 20);
+            this.txtDinheiro.Size = new System.Drawing.Size(150, 21);
             this.txtDinheiro.TabIndex = 0;
             // 
             // frmPagamento

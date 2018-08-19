@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngrediente));
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
@@ -81,7 +80,7 @@
             // 
             this.btnExcluir.Description = "Excluir";
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Image = null;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.ImageLocation = null;
             this.btnExcluir.Location = new System.Drawing.Point(5, 105);
@@ -176,6 +175,7 @@
             this.cboTipo.Location = new System.Drawing.Point(170, 50);
             this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTipo.Name = "cboTipo";
+            this.cboTipo.SelectedItem = null;
             this.cboTipo.Size = new System.Drawing.Size(185, 25);
             this.cboTipo.TabIndex = 9;
             // 
@@ -205,14 +205,15 @@
             this.cboSituacao.Location = new System.Drawing.Point(5, 20);
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboSituacao.Name = "cboSituacao";
-            this.cboSituacao.Size = new System.Drawing.Size(180, 30);
+            this.cboSituacao.SelectedItem = null;
+            this.cboSituacao.Size = new System.Drawing.Size(180, 25);
             this.cboSituacao.TabIndex = 20;
             // 
             // btnImgRemover
             // 
             this.btnImgRemover.Description = "Remover";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnImgRemover.Image")));
+            this.btnImgRemover.Image = null;
             this.btnImgRemover.ImageLocation = null;
             this.btnImgRemover.Location = new System.Drawing.Point(10, 20);
             this.btnImgRemover.Name = "btnImgRemover";

@@ -31,7 +31,7 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
-            this.btnAcao = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnEditar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
             this.txtEmail = new vitorrdgs.UiX.Component.UIXTextBox();
             this.mtbTelCel = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
@@ -48,7 +48,7 @@
             // 
             this.pnlMenu.Controls.Add(this.btnExcluir);
             this.pnlMenu.Controls.Add(this.btnVoltar);
-            this.pnlMenu.Controls.Add(this.btnAcao);
+            this.pnlMenu.Controls.Add(this.btnEditar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 300);
@@ -80,24 +80,24 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
-            this.btnVoltar.Text = "Cancelar";
+            this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnAcao
+            // btnEditar
             // 
-            this.btnAcao.Description = "Salvar";
-            this.btnAcao.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAcao.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
-            this.btnAcao.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAcao.ImageLocation = null;
-            this.btnAcao.Location = new System.Drawing.Point(5, 5);
-            this.btnAcao.Name = "btnAcao";
-            this.btnAcao.Size = new System.Drawing.Size(90, 90);
-            this.btnAcao.TabIndex = 0;
-            this.btnAcao.Text = "Editar";
-            this.btnAcao.UseVisualStyleBackColor = true;
-            this.btnAcao.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnEditar.Description = "Salvar";
+            this.btnEditar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnEditar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.ImageLocation = null;
+            this.btnEditar.Location = new System.Drawing.Point(5, 5);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(90, 90);
+            this.btnEditar.TabIndex = 0;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbInformacoes
             // 
@@ -155,7 +155,7 @@
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.SelectedItem = null;
-            this.cboGenero.Size = new System.Drawing.Size(102, 94);
+            this.cboGenero.Size = new System.Drawing.Size(101, 26);
             this.cboGenero.TabIndex = 10;
             // 
             // mtbCPF
@@ -218,7 +218,7 @@
             // 
             // frmCliente
             // 
-            this.AcceptButton = this.btnAcao;
+            this.AcceptButton = this.btnEditar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 350);
@@ -243,7 +243,7 @@
         private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private vitorrdgs.UiX.Component.UIXButton btnVoltar;
-        private vitorrdgs.UiX.Component.UIXButton btnAcao;
+        private vitorrdgs.UiX.Component.UIXButton btnEditar;
         private System.Windows.Forms.GroupBox grbInformacoes;
         private vitorrdgs.UiX.Component.UIXTextBox txtNome;
         private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbDataNasc;

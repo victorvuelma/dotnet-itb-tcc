@@ -37,6 +37,8 @@ namespace BurgerShack.Desktop
 
                 Hide();
                 Close();
+
+                Application.Restart();
                 return;
             }
             List<clnAcesso> objAcessos = new clnAcesso { }.obterTodos();
@@ -53,6 +55,8 @@ namespace BurgerShack.Desktop
 
                 Hide();
                 Close();
+
+                Application.Restart();
                 return;
             }
 

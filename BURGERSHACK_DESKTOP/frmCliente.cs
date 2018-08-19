@@ -95,7 +95,13 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (btnAcao.Text == "Salvar" && UtilMensagem.mostrarSimNao("Alteração de Cliente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                if (btnEditar.Text == "Salvar")
+                {
+                    if (UtilMensagem.mostrarSimNao("Alteração de Cliente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                    {
+                        Close();
+                    }
+                } else
                 {
                     Close();
                 }
@@ -109,7 +115,7 @@ namespace BurgerShack.Desktop
                 ObjCliente.Ativo = false;
                 ObjCliente.alterar();
 
-                btnAcao.Hide();
+                btnEditar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(grbInformacoes);
             }
@@ -122,7 +128,7 @@ namespace BurgerShack.Desktop
                 ObjCliente.Ativo = true;
                 ObjCliente.alterar();
 
-                btnAcao.Show();
+                btnEditar.Show();
                 UtilButton.excluir(btnExcluir);
                 UtilForm.Enable(grbInformacoes);
             }
@@ -157,14 +163,15 @@ namespace BurgerShack.Desktop
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
                     btnExcluir.Show();
-                    UtilButton.alterar(btnAcao);
+                    UtilButton.alterar(btnEditar);
+                    UtilButton.voltar(btnVoltar);
                     if (ObjCliente.Ativo)
                     {
                         UtilButton.excluir(btnExcluir);
                     }
                     else
                     {
-                        btnAcao.Hide();
+                        btnEditar.Hide();
                         UtilButton.restaurar(btnExcluir);
                     }
                 }
@@ -173,14 +180,15 @@ namespace BurgerShack.Desktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (btnAcao.Text == "Salvar")
+            if (btnEditar.Text == "Salvar")
             {
                 salvar();
             }
             else
             {
                 UtilForm.Enable(grbInformacoes);
-                UtilButton.salvar(btnAcao);
+                UtilButton.cancelar(btnEditar);
+                UtilButton.salvar(btnEditar);
             }
         }
 

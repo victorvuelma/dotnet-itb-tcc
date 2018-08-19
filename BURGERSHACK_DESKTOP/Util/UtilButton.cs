@@ -29,6 +29,16 @@ namespace BurgerShack.Desktop.Util
             botao(btn, Properties.Resources.alterar, "Restaurar", AppDesktop.VisualStyle.ButtonColor);
         }
 
+        public static void voltar(UIXButton btn)
+        {
+            botao(btn, Properties.Resources.voltar, "Voltar", AppDesktop.VisualStyle.ButtonColor);
+        }
+
+        public static void cancelar(UIXButton btn)
+        {
+            botao(btn, Properties.Resources.voltar, "Cancelar", AppDesktop.VisualStyle.ButtonWarningColor);
+        }
+
         private static void botao(UIXButton btn, Image img, String text, uixSet colorSet)
         {
             btn.Image = img;
