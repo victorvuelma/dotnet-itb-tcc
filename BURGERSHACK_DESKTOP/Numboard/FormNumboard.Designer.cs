@@ -1,6 +1,6 @@
-﻿namespace BurgerShack.Desktop
+﻿namespace BurgerShack.Desktop.Numboard
 {
-    partial class frmUtilNumBoard
+    partial class FormNumboard
     {
         /// <summary>
         /// Required designer variable.
@@ -237,7 +237,7 @@
             this.mtbNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbNum_KeyPress);
             this.mtbNum.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mtbNum_KeyUp);
             // 
-            // frmUtilNumBoard
+            // frmNumboard
             // 
             this.AcceptButton = this.btnConfirmar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);

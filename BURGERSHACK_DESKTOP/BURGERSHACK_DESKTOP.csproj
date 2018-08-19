@@ -159,6 +159,7 @@
     <Compile Include="clnTipo.cs" />
     <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilListar.cs" />
+    <Compile Include="Numboard\ControlNumboard.cs" />
     <Compile Include="Util\UtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
@@ -292,11 +293,11 @@
     <Compile Include="frmUtilSelecionar.Designer.cs">
       <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUtilNumBoard.cs">
+    <Compile Include="Numboard\FormNumboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUtilNumBoard.Designer.cs">
-      <DependentUpon>frmUtilNumBoard.cs</DependentUpon>
+    <Compile Include="Numboard\FormNumboard.Designer.cs">
+      <DependentUpon>FormNumboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -329,12 +330,6 @@
     </Compile>
     <Compile Include="uctPedidoAdicionar.Designer.cs">
       <DependentUpon>uctPedidoAdicionar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="uctPrincipalCardapio.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uctPrincipalCardapio.Designer.cs">
-      <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </Compile>
     <Compile Include="uctPrincipalReservas.cs">
       <SubType>UserControl</SubType>
@@ -415,8 +410,8 @@
     <EmbeddedResource Include="frmTipo.resx">
       <DependentUpon>frmTipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUtilNumBoard.resx">
-      <DependentUpon>frmUtilNumBoard.cs</DependentUpon>
+    <EmbeddedResource Include="Numboard\FormNumboard.resx">
+      <DependentUpon>FormNumboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUtilSelecionar.resx">
       <DependentUpon>frmUtilSelecionar.cs</DependentUpon>
@@ -437,9 +432,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uctPedidoAdicionar.resx">
       <DependentUpon>uctPedidoAdicionar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uctPrincipalCardapio.resx">
-      <DependentUpon>uctPrincipalCardapio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctPrincipalReservas.resx">
       <DependentUpon>uctPrincipalReservas.cs</DependentUpon>

@@ -16,87 +16,6 @@ namespace BurgerShack.Desktop
     class clnUtil
     {
 
-        private static frmUtilNumBoard frmNumBoard;
-
-        // ---- NUMBOARD
-        public static void definirNumBoard(ControlCollection controls)
-        {
-            foreach (Control control in controls)
-            {
-                if (control is UIXMaskedTextBox mtb)
-                {
-                    definirNumBoard(mtb);
-                }
-                else if (control is UIXTextBox txt)
-                {
-                    definirNumBoard(txt);
-                }
-
-                definirNumBoard(control.Controls);
-            }
-        }
-
-        public static void definirNumBoard(UIXTextBox txt)
-        {
-            switch (txt.Mode)
-            {
-                case uixEnum.uixTextBoxMode.DOUBLE:
-                    definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.DOUBLE);
-                    break;
-                case uixEnum.uixTextBoxMode.MONEY:
-                    definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.MONEY);
-                    break;
-                case uixEnum.uixTextBoxMode.INT:
-                    definirNumBoard(txt.txt, frmUtilNumBoard.NumBoardMode.INT);
-                    break;
-            }
-        }
-
-        public static void definirNumBoard(UIXMaskedTextBox mtb)
-        {
-            definirNumBoard(mtb.mtb, frmUtilNumBoard.NumBoardMode.INT);
-        }
-
-        public static void definirNumBoard(TextBoxBase input, frmUtilNumBoard.NumBoardMode mode)
-        {
-            input.MouseClick += (object sender, MouseEventArgs args) =>
-            {
-                abrirNumBoard(input, mode);
-            };
-            input.Enter += (object sender, EventArgs args) =>
-            {
-                if (!input.Focused)
-                    abrirNumBoard(input, mode);
-            };
-        }
-
-        public static void abrirNumBoard(TextBoxBase input, frmUtilNumBoard.NumBoardMode mode)
-        {
-            if (frmNumBoard == null)
-            {
-                frmNumBoard = new frmUtilNumBoard
-                {
-                    Input = input,
-                    Mode = mode
-                };
-            }
-            else if (frmNumBoard.Input != input)
-            {
-                frmNumBoard.Mode = mode;
-                frmNumBoard.Input = input;
-            }
-
-            if (frmNumBoard.Input.Equals(input) && frmNumBoard.Visible)
-            {
-                frmNumBoard.Hide();
-            }
-            else
-            {
-                frmNumBoard.Show();
-            }
-        }
-        // ---- NUMBOARD
-
         // ---- ENDERECO
         public static void addUFs(ComboBox cbo)
         {
@@ -197,32 +116,6 @@ namespace BurgerShack.Desktop
             dict.Add(chaveNova, conteudoNova);
         }
 
-        public static void adicionarControles(Panel panel, List<Control> controls, int espaco)
-        {
-            panel.Hide();
-
-            int X = espaco / 2;
-            int Y = espaco / 2;
-            foreach (Control controle in controls)
-            {
-                controle.Location = new Point(X, Y);
-                panel.Controls.Add(controle);
-                X += espaco;
-                X += controle.Width;
-                if ((X + controle.Width) >= panel.MaximumSize.Width)
-                {
-                    X = espaco / 2;
-                    Y += espaco;
-                    Y += controle.Height;
-                }
-            }
-
-            AppDesktop.VisualTemplate.ctlApply(panel);
-            UtilForm.UpdateIndexes(panel.Controls);
-
-            panel.Show();
-        }
-
         public static void atualizarForm(Form form)
         {
             UIXHeader hdr = null;
@@ -246,7 +139,7 @@ namespace BurgerShack.Desktop
                 form.AcceptButton = null;
             }
 
-            definirNumBoard(form.Controls);
+            Numboard.ControlNumboard.definirNumBoard(form.Controls);
         }
 
         public static void definirBotaoConfirmacao(ControlCollection controls, IButtonControl acceptButton)

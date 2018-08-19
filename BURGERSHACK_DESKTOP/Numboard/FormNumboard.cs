@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Form;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Desktop.Numboard
 {
-    public partial class frmUtilNumBoard : Form
+    public partial class FormNumboard : Form
     {
 
         public enum NumBoardMode
@@ -39,21 +39,16 @@ namespace BurgerShack.Desktop
         }
         public NumBoardMode Mode { get => _mode; set => _mode = value; }
 
-        public frmUtilNumBoard()
+        public FormNumboard()
         {
             InitializeComponent();
         }
 
-        private void focar()
+        private void adicionar(char conteudo)
         {
+            definir(clnUtil.obterConteudo(mtbNum) + conteudo);
+
             mtbNum.Focus();
-        }
-
-        private void adicionar(char numero)
-        {
-            definir(clnUtil.obterConteudo(mtbNum) + numero);
-
-            focar();
         }
 
         private void definir(string num)
@@ -159,7 +154,7 @@ namespace BurgerShack.Desktop
                 definir("");
             }
 
-            focar();
+            mtbNum.Focus();
         }
 
         private void frmUtilNumBoard_Load(object sender, EventArgs e)
@@ -202,7 +197,7 @@ namespace BurgerShack.Desktop
 
         public new void Show()
         {
-            if (Mode == frmUtilNumBoard.NumBoardMode.INT)
+            if (Mode == FormNumboard.NumBoardMode.INT)
             {
                 btnPoint.Hide();
             }
@@ -211,10 +206,14 @@ namespace BurgerShack.Desktop
                 btnPoint.Show();
             }
 
-            base.Show();
-            atualizarInput();
+                    base.Show();
+
+            mtbNum.Mask = "";
+            mtbNum.Text = "";
             Focus();
-            focar();
+            mtbNum.Focus();
+
+            atualizarInput();
         }
 
         private void mtbNum_KeyUp(object sender, KeyEventArgs e)
