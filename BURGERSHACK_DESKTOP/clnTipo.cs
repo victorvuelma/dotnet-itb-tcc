@@ -65,7 +65,7 @@ namespace BurgerShack.Desktop
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table(Tipo.ToString() + "_tipo");
-            objInsert.Insert.val("nome", Nome);
+            objInsert.Value.val("nome", Nome);
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
@@ -74,7 +74,7 @@ namespace BurgerShack.Desktop
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table(Tipo.ToString() + "_tipo");
-            objUpdate.Set.val("nome", Nome);
+            objUpdate.Value.val("nome", Nome);
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);

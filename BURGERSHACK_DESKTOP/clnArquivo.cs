@@ -67,7 +67,7 @@ namespace BurgerShack.Desktop
 
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("arquivo");
-            objInsert.Insert.val("conteudo", conteudo);
+            objInsert.Value.val("conteudo", conteudo);
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
 

@@ -93,7 +93,7 @@ namespace BurgerShack.Desktop
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("produto_ingrediente");
-            objInsert.Insert.val("id_produto", CodProduto)
+            objInsert.Value.val("id_produto", CodProduto)
                             .val("id_ingrediente", CodIngrediente)
                             .val("quantidade", Quantidade)
                             .val("alterar", UtilConvert.ToBit(Alterar))
@@ -106,7 +106,7 @@ namespace BurgerShack.Desktop
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto_ingrediente");
-            objUpdate.Set.val("quantidade", Quantidade)
+            objUpdate.Value.val("quantidade", Quantidade)
                             .val("alterar", UtilConvert.ToBit(Alterar))
                             .val("remover", UtilConvert.ToBit(Remover));
             objUpdate.Where.where("id", Cod);

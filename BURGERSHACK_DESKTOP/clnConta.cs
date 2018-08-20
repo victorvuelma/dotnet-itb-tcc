@@ -81,7 +81,7 @@ namespace BurgerShack.Desktop
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("conta");
-            objInsert.Insert.val("id_atendimento", CodAtendimento)
+            objInsert.Value.val("id_atendimento", CodAtendimento)
                             .val("id_funcionario", CodFuncionario)
                             .val("desconto", Desconto)
                             .val("valor", Valor)

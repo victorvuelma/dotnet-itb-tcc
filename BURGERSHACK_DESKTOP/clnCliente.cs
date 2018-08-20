@@ -103,7 +103,7 @@ namespace BurgerShack.Desktop
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("cliente");
-            objInsert.Insert.val("id_funcionario", CodFuncionario)
+            objInsert.Value.val("id_funcionario", CodFuncionario)
                             .val("nome", Nome)
                             .val("cpf", Cpf)
                             .val("data_nascimento", DataNascimento)
@@ -120,7 +120,7 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("cliente");
             objUpdate.Where.where("id", Cod);
-            objUpdate.Set.val("nome", Nome)
+            objUpdate.Value.val("nome", Nome)
                             .val("data_nascimento", DataNascimento)
                             .val("genero", Genero)
                             .val("tel_cel", TelCelular)

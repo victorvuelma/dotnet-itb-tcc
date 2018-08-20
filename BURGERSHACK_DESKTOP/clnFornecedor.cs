@@ -111,7 +111,7 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("fornecedor");
             objUpdate.Where.where("id", Cod);
-            objUpdate.Set.val("razao_social", RazaoSocial)
+            objUpdate.Value.val("razao_social", RazaoSocial)
                          .val("email", Email)
                          .val("telefone", Telefone)
                          .val("ativo", UtilConvert.ToBit(Ativo))
@@ -130,7 +130,7 @@ namespace BurgerShack.Desktop
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("fornecedor");
-            objInsert.Insert.val("razao_social", RazaoSocial)
+            objInsert.Value.val("razao_social", RazaoSocial)
                             .val("cnpj", Cnpj)
                             .val("email", Email)
                             .val("telefone", Telefone)

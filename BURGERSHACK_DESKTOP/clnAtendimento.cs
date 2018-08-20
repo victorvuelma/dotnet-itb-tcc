@@ -87,7 +87,7 @@ namespace BurgerShack.Desktop
         public void gravar()
         {
             sqlInsert objInsert = new sqlInsert();
-            objInsert.Insert.val("id_cliente", CodCliente)
+            objInsert.Value.val("id_cliente", CodCliente)
                             .val("id_funcionario", CodFuncionario)
                             .val("id_reserva", CodReserva)
                             .val("inicio", Inicio)
@@ -102,7 +102,7 @@ namespace BurgerShack.Desktop
         public void alterar()
         {
             sqlUpdate objUpdate = new sqlUpdate();
-            objUpdate.Set.val("fim", Fim)
+            objUpdate.Value.val("fim", Fim)
                          .val("situacao", prefixo(Situacao));
             objUpdate.Where.where("id", Cod);
             objUpdate.table("atendimento");
@@ -117,7 +117,7 @@ namespace BurgerShack.Desktop
                 CodMesas.Add(codMesa);
                 sqlInsert objInsert = new sqlInsert();
                 objInsert.table("atendimento_mesa");
-                objInsert.Insert.val("id_atendimento", Cod)
+                objInsert.Value.val("id_atendimento", Cod)
                                 .val("id_mesa", codMesa);
                 objInsert.execute(App.DatabaseSql);
 

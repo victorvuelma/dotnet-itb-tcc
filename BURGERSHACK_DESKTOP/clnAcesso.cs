@@ -100,7 +100,7 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("acesso");
             objUpdate.Where.where("id_funcionario", CodFuncionario);
-            objUpdate.Set.val("hash", Hash)
+            objUpdate.Value.val("hash", Hash)
                          .val("usuario", Usuario)
                          .val("ativo", UtilConvert.ToBit(Ativo));
 
@@ -108,7 +108,7 @@ namespace BurgerShack.Desktop
             {
                 sqlInsert objInsert = new sqlInsert();
                 objInsert.table("acesso");
-                objInsert.Insert.val("hash", Hash)
+                objInsert.Value.val("hash", Hash)
                                 .val("usuario", Usuario)
                                 .val("id_funcionario", CodFuncionario)
                                 .val("ativo", UtilConvert.ToBit(Ativo));

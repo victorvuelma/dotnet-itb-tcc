@@ -117,7 +117,7 @@ namespace BurgerShack.Desktop
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("produto");
-            objInsert.Insert.val("id_imagem", CodImagem)
+            objInsert.Value.val("id_imagem", CodImagem)
                             .val("id_tipo", CodTipo)
                             .val("nome", Nome)
                             .val("descricao", Descricao)
@@ -132,7 +132,7 @@ namespace BurgerShack.Desktop
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto");
-            objUpdate.Set.val("id_imagem", CodImagem)
+            objUpdate.Value.val("id_imagem", CodImagem)
                          .val("id_tipo", CodTipo)
                          .val("nome", Nome)
                          .val("descricao", Descricao)
