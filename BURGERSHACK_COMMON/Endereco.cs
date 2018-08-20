@@ -17,8 +17,7 @@ namespace BurgerShack.Common
 
     public class Endereco
     {
-
-
+        
         private static ViaCEP ViaCEP = new ViaCEP();
 
         public static Endereco obterEndereco(String cep)
@@ -70,16 +69,16 @@ namespace BurgerShack.Common
         public Endereco obterPorCep()
         {
             sqlSelect objSelect = new sqlSelect();
-            objSelect.table("localidade");
-            objSelect.Columns.select("logradouro.nome_completo", "logradouro")
-                             .select("logradouro.complemento", "complemento")
-                             .select("bairro.nome", "bairro")
-                             .select("localidade.nome", "localidade")
-                             .select("localidade.uf", "uf");
-            objSelect.Where.where("localidade.cep", CEP, sqlElementWhere.whereAssociation.OR)
-                           .where("logradouro.cep", CEP);
-            objSelect.Join.fullJoin("logradouro", "id_localidade", "localidade.id")
-                          .fullJoin("bairro", "id", "logradouro.id_bairro");
+            objSelect.table("endereco_localidade");
+            objSelect.Columns.select("endereco_logradouro.nome_completo", "logradouro")
+                             .select("endereco_logradouro.complemento", "complemento")
+                             .select("endereco_bairro.nome", "bairro")
+                             .select("endereco_localidade.nome", "localidade")
+                             .select("endereco_localidade.uf", "uf");
+            objSelect.Where.where("endereco_localidade.cep", CEP, sqlElementWhere.whereAssociation.OR)
+                           .where("endereco_logradouro.cep", CEP);
+            objSelect.Join.fullJoin("endereco_logradouro", "id_localidade", "endereco_localidade.id")
+                          .fullJoin("endereco_bairro", "id", "endereco_logradouro.id_bairro");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             Endereco objEndereco = null;
