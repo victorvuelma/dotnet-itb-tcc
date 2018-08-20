@@ -159,6 +159,12 @@
     <Compile Include="clnTipo.cs" />
     <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilListar.cs" />
+    <Compile Include="frmMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMesa.Designer.cs">
+      <DependentUpon>frmMesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Numboard\ControlNumboard.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
@@ -361,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAtendimento.resx">
       <DependentUpon>frmAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMesa.resx">
+      <DependentUpon>frmMesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>

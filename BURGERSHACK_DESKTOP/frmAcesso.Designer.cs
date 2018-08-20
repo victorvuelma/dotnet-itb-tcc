@@ -100,7 +100,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.White;
-            this.btnSalvar.Description = "Salvar";
+            this.btnSalvar.Description = "SALVAR";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageLocation = null;

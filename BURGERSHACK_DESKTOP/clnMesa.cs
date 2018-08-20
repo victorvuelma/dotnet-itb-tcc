@@ -19,16 +19,16 @@ namespace BurgerShack.Desktop
         private int _cod = -1;
         private bool _ativo = true;
 
-        private int _numero;
-        private int _pessoas;
-
         private mesaSituacao _situacao;
+
+        private int _numero;
+        private int _lugares;
 
         public int Cod { get => _cod; set => _cod = value; }
         public mesaSituacao Situacao { get => _situacao; set => _situacao = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
         public int Numero { get => _numero; set => _numero = value; }
-        public int Pessoas { get => _pessoas; set => _pessoas = value; }
+        public int Lugares { get => _lugares; set => _lugares = value; }
 
         private clnMesa obter(SqlDataReader reader) => new clnMesa
         {
@@ -36,7 +36,7 @@ namespace BurgerShack.Desktop
             Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
             Ativo = UtilConvert.ToBool(reader["ativo"]),
             Numero = UtilConvert.ToInt(reader["numero"]),
-            Pessoas = UtilConvert.ToInt(reader["pessoas"])
+            Lugares = UtilConvert.ToInt(reader["lugares"])
         };
 
         public List<clnMesa> obterMesas()
@@ -56,7 +56,24 @@ namespace BurgerShack.Desktop
         public clnMesa obterPorCodigo()
         {
             sqlSelect objSelect = new sqlSelect();
-            objSelect.table("MESA").Where.where("id", Cod);
+            objSelect.table("MESA");
+            objSelect.Where.where("id", Cod);
+
+            clnMesa objMesa = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+                objMesa = obter(reader);
+            reader.Close();
+
+            return objMesa;
+        }
+
+        public clnMesa obterPorNumero()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("MESA");
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("numero", Numero);
 
             clnMesa objMesa = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -87,13 +104,24 @@ namespace BurgerShack.Desktop
         internal void alterar()
         {
             sqlUpdate objUpdate = new sqlUpdate();
-            objUpdate.table("MESA");
+            objUpdate.table("mesa");
             objUpdate.Where.where("id", Cod);
             objUpdate.Set.val("situacao", prefixo(Situacao))
                          .val("ativo", UtilConvert.ToBit(Ativo))
-                         .val("pessoas", Pessoas)
+                         .val("lugares", Lugares)
                          .val("numero", Numero);
             objUpdate.execute(App.DatabaseSql);
+        }
+
+        internal void gravar()
+        {
+            sqlInsert objInsert = new sqlInsert();
+            objInsert.table("mesa");
+            objInsert.Insert.val("situacao", prefixo(Situacao))
+                            .val("ativo", UtilConvert.ToBit(Ativo))
+                            .val("lugares", Lugares)
+                            .val("numero", Numero);
+            Cod = objInsert.execute(App.DatabaseSql);
         }
 
         private char prefixo(mesaSituacao situacao)
