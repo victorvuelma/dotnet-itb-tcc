@@ -77,12 +77,11 @@
             // 
             // chkInativo
             // 
-            this.chkInativo.AutoSize = true;
-            this.chkInativo.Location = new System.Drawing.Point(371, 71);
+            this.chkInativo.Location = new System.Drawing.Point(350, 75);
             this.chkInativo.Name = "chkInativo";
-            this.chkInativo.Size = new System.Drawing.Size(113, 20);
+            this.chkInativo.Size = new System.Drawing.Size(134, 20);
             this.chkInativo.TabIndex = 2;
-            this.chkInativo.Text = "Exibir os inativos";
+            this.chkInativo.Text = "Somente os inativos";
             this.chkInativo.UseVisualStyleBackColor = true;
             this.chkInativo.CheckedChanged += new System.EventHandler(this.chkInativo_CheckedChanged);
             // 
@@ -90,7 +89,7 @@
             // 
             this.lblPesquisaRes.Location = new System.Drawing.Point(5, 75);
             this.lblPesquisaRes.Name = "lblPesquisaRes";
-            this.lblPesquisaRes.Size = new System.Drawing.Size(480, 20);
+            this.lblPesquisaRes.Size = new System.Drawing.Size(330, 20);
             this.lblPesquisaRes.TabIndex = 4;
             // 
             // txtPesquisar
@@ -111,7 +110,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Description = "Pesquisar";
+            this.btnPesquisar.Description = "PESQUISAR";
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
             this.btnPesquisar.Image = global::BurgerShack.Desktop.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
@@ -119,13 +118,13 @@
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(80, 80);
             this.btnPesquisar.TabIndex = 2;
-            this.btnPesquisar.Text = "btnUIX1";
+            this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnNovo
             // 
-            this.btnNovo.Description = "Novo";
+            this.btnNovo.Description = "NOVO";
             this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
             this.btnNovo.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnNovo.ImageLocation = null;
@@ -133,7 +132,7 @@
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(100, 100);
             this.btnNovo.TabIndex = 1;
-            this.btnNovo.Text = "btnUIX1";
+            this.btnNovo.Text = "NOVO";
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
@@ -151,7 +150,6 @@
             this.grbItens.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.grbPesquisa.ResumeLayout(false);
-            this.grbPesquisa.PerformLayout();
             this.ResumeLayout(false);
 
         }

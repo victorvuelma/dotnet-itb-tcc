@@ -104,7 +104,8 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("ingrediente");
-            objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
 
             List<clnIngrediente> objIngredientes = new List<clnIngrediente>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);

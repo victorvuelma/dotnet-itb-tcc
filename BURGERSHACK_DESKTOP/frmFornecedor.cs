@@ -130,8 +130,7 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
-                UtilForm.Disable(grbInformacoes);
-                UtilForm.Disable(grbEndereco);
+                UtilForm.Disable(this);
             }
         }
 
@@ -174,8 +173,7 @@ namespace BurgerShack.Desktop
                 txtEndBairro.Text = ObjFornecedor.EndBairro;
                 txtEndCidade.Text = ObjFornecedor.EndLocalidade;
                 cboEndUF.Text = ObjFornecedor.EndUF;
-                UtilForm.Disable(grbInformacoes);
-                UtilForm.Disable(grbEndereco);
+                UtilForm.Disable(this);
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
@@ -203,8 +201,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                UtilForm.Enable(grbInformacoes);
-                UtilForm.Enable(grbEndereco);
+                UtilForm.Enable(this);
                 mtbCNPJ.Enabled = false;
 
                 UtilButton.cancelar(btnVoltar);

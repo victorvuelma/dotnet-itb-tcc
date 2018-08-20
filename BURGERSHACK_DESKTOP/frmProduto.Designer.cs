@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
-            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
-            this.grbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.btnAlterar = new vitorrdgs.UiX.Component.UIXButton();
+            this.grbDados = new System.Windows.Forms.GroupBox();
             this.cboSituacao = new vitorrdgs.UiX.Component.UIXComboBox();
             this.txtDesc = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtValor = new vitorrdgs.UiX.Component.UIXTextBox();
@@ -48,7 +47,7 @@
             this.btnIngredienteAdd = new vitorrdgs.UiX.Component.UIXButton();
             this.btnIngredientes = new vitorrdgs.UiX.Component.UIXButton();
             this.pnlMenu.SuspendLayout();
-            this.grbDadosPessoais.SuspendLayout();
+            this.grbDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.grbImagem.SuspendLayout();
             this.grbIngredientes.SuspendLayout();
@@ -72,7 +71,7 @@
             // 
             this.pnlMenu.Controls.Add(this.btnExcluir);
             this.pnlMenu.Controls.Add(this.btnVoltar);
-            this.pnlMenu.Controls.Add(this.btnSalvar);
+            this.pnlMenu.Controls.Add(this.btnAlterar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 300);
@@ -80,9 +79,9 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Description = "Excluir";
+            this.btnExcluir.Description = "EXCLUIR";
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.ImageLocation = null;
             this.btnExcluir.Location = new System.Drawing.Point(5, 105);
@@ -96,7 +95,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Description = "Cancelar";
+            this.btnVoltar.Description = "CANCELAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -108,37 +107,37 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnSalvar
+            // btnAlterar
             // 
-            this.btnSalvar.Description = "Salvar";
-            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.ImageLocation = null;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 205);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnAlterar.Description = "SALVAR";
+            this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlterar.ImageLocation = null;
+            this.btnAlterar.Location = new System.Drawing.Point(5, 205);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(90, 90);
+            this.btnAlterar.TabIndex = 0;
+            this.btnAlterar.Text = "Salvar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // grbDadosPessoais
+            // grbDados
             // 
-            this.grbDadosPessoais.Controls.Add(this.cboSituacao);
-            this.grbDadosPessoais.Controls.Add(this.txtDesc);
-            this.grbDadosPessoais.Controls.Add(this.txtValor);
-            this.grbDadosPessoais.Controls.Add(this.cboTipo);
-            this.grbDadosPessoais.Controls.Add(this.txtNome);
-            this.grbDadosPessoais.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDadosPessoais.Location = new System.Drawing.Point(105, 55);
-            this.grbDadosPessoais.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDadosPessoais.Name = "grbDadosPessoais";
-            this.grbDadosPessoais.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDadosPessoais.Size = new System.Drawing.Size(390, 185);
-            this.grbDadosPessoais.TabIndex = 7;
-            this.grbDadosPessoais.TabStop = false;
-            this.grbDadosPessoais.Text = "DADOS";
+            this.grbDados.Controls.Add(this.cboSituacao);
+            this.grbDados.Controls.Add(this.txtDesc);
+            this.grbDados.Controls.Add(this.txtValor);
+            this.grbDados.Controls.Add(this.cboTipo);
+            this.grbDados.Controls.Add(this.txtNome);
+            this.grbDados.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDados.Location = new System.Drawing.Point(105, 55);
+            this.grbDados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbDados.Name = "grbDados";
+            this.grbDados.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbDados.Size = new System.Drawing.Size(390, 185);
+            this.grbDados.TabIndex = 7;
+            this.grbDados.TabStop = false;
+            this.grbDados.Text = "DADOS";
             // 
             // cboSituacao
             // 
@@ -150,6 +149,7 @@
             this.cboSituacao.Location = new System.Drawing.Point(170, 40);
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboSituacao.Name = "cboSituacao";
+            this.cboSituacao.SelectedItem = null;
             this.cboSituacao.Size = new System.Drawing.Size(215, 25);
             this.cboSituacao.TabIndex = 20;
             // 
@@ -195,6 +195,7 @@
             this.cboTipo.Location = new System.Drawing.Point(5, 150);
             this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTipo.Name = "cboTipo";
+            this.cboTipo.SelectedItem = null;
             this.cboTipo.Size = new System.Drawing.Size(380, 25);
             this.cboTipo.TabIndex = 9;
             // 
@@ -216,9 +217,9 @@
             // 
             // btnImgRemover
             // 
-            this.btnImgRemover.Description = "Remover";
+            this.btnImgRemover.Description = "REMOVER";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnImgRemover.Image")));
+            this.btnImgRemover.Image = global::BurgerShack.Desktop.Properties.Resources.remover;
             this.btnImgRemover.ImageLocation = null;
             this.btnImgRemover.Location = new System.Drawing.Point(10, 15);
             this.btnImgRemover.Name = "btnImgRemover";
@@ -230,7 +231,7 @@
             // 
             // btnImgAdicionar
             // 
-            this.btnImgAdicionar.Description = "Adicionar";
+            this.btnImgAdicionar.Description = "ADICIONAR";
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgAdicionar.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnImgAdicionar.ImageLocation = null;
@@ -282,7 +283,7 @@
             // 
             // btnIngredienteAdd
             // 
-            this.btnIngredienteAdd.Description = "Adicionar";
+            this.btnIngredienteAdd.Description = "ADICIONAR";
             this.btnIngredienteAdd.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredienteAdd.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnIngredienteAdd.ImageLocation = null;
@@ -296,7 +297,7 @@
             // 
             // btnIngredientes
             // 
-            this.btnIngredientes.Description = "Visualizar";
+            this.btnIngredientes.Description = "VISUALIZAR";
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredientes.Image = global::BurgerShack.Desktop.Properties.Resources.lista;
             this.btnIngredientes.ImageLocation = null;
@@ -310,14 +311,14 @@
             // 
             // frmProduto
             // 
-            this.AcceptButton = this.btnSalvar;
+            this.AcceptButton = this.btnAlterar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 350);
             this.Controls.Add(this.grbIngredientes);
             this.Controls.Add(this.grbImagem);
             this.Controls.Add(this.picImagem);
-            this.Controls.Add(this.grbDadosPessoais);
+            this.Controls.Add(this.grbDados);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.hdrUIX);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -328,7 +329,7 @@
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.frmIngrediente_Load);
             this.pnlMenu.ResumeLayout(false);
-            this.grbDadosPessoais.ResumeLayout(false);
+            this.grbDados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.grbImagem.ResumeLayout(false);
             this.grbIngredientes.ResumeLayout(false);
@@ -340,8 +341,8 @@
         public vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private vitorrdgs.UiX.Component.UIXButton btnVoltar;
-        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
-        public System.Windows.Forms.GroupBox grbDadosPessoais;
+        private vitorrdgs.UiX.Component.UIXButton btnAlterar;
+        public System.Windows.Forms.GroupBox grbDados;
         private vitorrdgs.UiX.Component.UIXTextBox txtValor;
         private vitorrdgs.UiX.Component.UIXComboBox cboTipo;
         private vitorrdgs.UiX.Component.UIXTextBox txtNome;

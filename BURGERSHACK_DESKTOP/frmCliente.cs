@@ -118,7 +118,7 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
-                UtilForm.Disable(grbInformacoes);
+                UtilForm.Disable(this);
             }
         }
 
@@ -158,7 +158,7 @@ namespace BurgerShack.Desktop
                 {
                     mtbDataNasc.Text = ((DateTime)ObjCliente.DataNascimento).ToString("dd/MM/yyyy");
                 }
-                UtilForm.Disable(grbInformacoes);
+                UtilForm.Disable(this);
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
@@ -186,7 +186,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                UtilForm.Enable(grbInformacoes);
+                UtilForm.Enable(this);
                 mtbCPF.Enabled = false;
 
                 UtilButton.cancelar(btnVoltar);

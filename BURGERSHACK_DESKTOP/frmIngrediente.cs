@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Data;
+using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {
@@ -154,10 +155,42 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (UtilMensagem.mostrarSimNao("Alteração de Ingrediente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                if (btnAlterar.Text == "Salvar")
+                {
+                    if (UtilMensagem.mostrarSimNao("Alteração de Ingrediente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                    {
+                        Close();
+                    }
+                }
+                else
                 {
                     Close();
                 }
+            }
+        }
+
+        private void excluir()
+        {
+            if (UtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente excluir este ingrediente?", UtilMensagem.MensagemIcone.ERRO))
+            {
+                ObjIngrediente.Ativo = false;
+                ObjIngrediente.alterar();
+
+                btnAlterar.Hide();
+                UtilButton.restaurar(btnExcluir);
+                UtilForm.Disable(this);
+            }
+        }
+
+        private void restaurar()
+        {
+            if (UtilMensagem.mostrarSimNao("Ingrediente", "Você deseja realmente restaurar este ingrediente?", UtilMensagem.MensagemIcone.OK))
+            {
+                ObjIngrediente.Ativo = true;
+                ObjIngrediente.alterar();
+
+                btnAlterar.Show();
+                UtilButton.excluir(btnExcluir);
             }
         }
 
@@ -169,7 +202,7 @@ namespace BurgerShack.Desktop
 
             if (ObjIngrediente != null)
             {
-                hdrUIX.Title = App.Name + " - Alterando Ingrediente " + ObjIngrediente.Cod;
+                hdrUIX.Title = App.Name + " - Ingrediente " + ObjIngrediente.Cod;
 
                 clnArquivo objArquivo = new clnArquivo
                 {
@@ -196,6 +229,24 @@ namespace BurgerShack.Desktop
                 }
                 cboSituacao.Text = ObjIngrediente.Situacao.ToString();
                 lblEstoque.Text = "Estoque: " + ingredienteEstoque;
+
+                UtilForm.Disable(this);
+
+                if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
+                {
+                    btnExcluir.Show();
+                    UtilButton.alterar(btnAlterar);
+                    UtilButton.voltar(btnVoltar);
+                    if (ObjIngrediente.Ativo)
+                    {
+                        UtilButton.excluir(btnExcluir);
+                    }
+                    else
+                    {
+                        btnAlterar.Hide();
+                        UtilButton.restaurar(btnExcluir);
+                    }
+                }
             }
             else
             {
@@ -227,12 +278,30 @@ namespace BurgerShack.Desktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            salvar();
+            if (btnAlterar.Text.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+            {
+                salvar();
+            }
+            else
+            {
+                UtilForm.Enable(this);
+                grbImagem.Visible = false;
+
+                UtilButton.cancelar(btnVoltar);
+                UtilButton.salvar(btnAlterar);
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            if (ObjIngrediente.Ativo)
+            {
+                excluir();
+            }
+            else
+            {
+                restaurar();
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

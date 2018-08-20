@@ -185,9 +185,7 @@ namespace BurgerShack.Desktop
         private void desativar()
         {
             UtilButton.restaurar(btnExcluir);
-            UtilForm.Disable(grbInformacoes);
-            UtilForm.Disable(grbEndereco);
-            UtilForm.Disable(grbContrato);
+            UtilForm.Disable(this);
             grbImagem.Visible = false;
         }
 
@@ -280,8 +278,7 @@ namespace BurgerShack.Desktop
                     cboCargo.SelectedItem = cboCargo.Items.Last();
                     cboSituacao.SelectedItem = cboSituacao.Items.Last();
 
-                    UtilForm.Disable(cboCargo);
-                    UtilForm.Disable(cboSituacao);
+                    UtilForm.Disable(this);
                 }
             }
             else
@@ -348,9 +345,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                UtilForm.Enable(grbInformacoes);
-                UtilForm.Enable(grbContrato);
-                UtilForm.Enable(grbEndereco);
+                UtilForm.Enable(this);
 
                 mtbCPF.Enabled = false;
                 grbImagem.Visible = true;

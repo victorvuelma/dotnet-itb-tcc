@@ -18,6 +18,7 @@ namespace BurgerShack.Desktop
         }
 
         private int _cod = -1;
+        private bool _ativo = true;
 
         private int _codImagem = -1;
         private int _codTipo = -1;
@@ -36,6 +37,7 @@ namespace BurgerShack.Desktop
         public decimal Valor { get => _valor; set => _valor = value; }
         internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
         public int CodMercadoria { get => _codMercadoria; set => _codMercadoria = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnProduto obter(SqlDataReader reader) => new clnProduto
         {
@@ -45,7 +47,8 @@ namespace BurgerShack.Desktop
             Descricao = UtilConvert.ToString(reader["descricao"]),
             Nome = UtilConvert.ToString(reader["nome"]),
             Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
-            Valor = UtilConvert.ToDecimal(reader["valor"])
+            Valor = UtilConvert.ToDecimal(reader["valor"]),
+            Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
         public clnProduto obterPorCod()
@@ -83,7 +86,8 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");
-            objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnProduto> objProdutos = new List<clnProduto>();
@@ -118,7 +122,8 @@ namespace BurgerShack.Desktop
                             .val("nome", Nome)
                             .val("descricao", Descricao)
                             .val("valor", Valor)
-                            .val("situacao", prefixo(Situacao));
+                            .val("situacao", prefixo(Situacao))
+                            .val("ativo", UtilConvert.ToBit(Ativo));
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
@@ -132,7 +137,8 @@ namespace BurgerShack.Desktop
                          .val("nome", Nome)
                          .val("descricao", Descricao)
                          .val("valor", Valor)
-                         .val("situacao", prefixo(Situacao));
+                         .val("situacao", prefixo(Situacao))
+                         .val("ativo", UtilConvert.ToBit(Ativo));
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);

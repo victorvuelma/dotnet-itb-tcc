@@ -30,12 +30,12 @@ namespace BurgerShack.Desktop
 
         private void abrirIngredientes()
         {
-            //abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new CallbackIngredienteAlterar(), new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
+            abrirLista("Ingredientes", new CallbackIngredienteNovo(), new CallbackIngredienteObter(), new CallbackIngredienteAlterar(), true, new String[] { "Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor" });
         }
 
         private void abrirProdutos()
         {
-            //abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), new String[] { "Código", "Nome", "Situação", "Tipo", "Valor" });
+            abrirLista("Produtos", new CallbackProdutoNovo(), new CallbackProdutoObter(), new CallbackProdutoAlterar(), true, new String[] { "Código", "Nome", "Situação", "Tipo", "Valor" });
         }
 
         private void abrirClientes()
@@ -152,13 +152,14 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackIngredienteObter : IUtilCallback<DataGridView, String>
+        private class CallbackIngredienteObter : IUtilCallback<DataGridView, String, bool>
         {
-            public bool call(DataGridView dgv, string pesquisa)
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
                 clnIngrediente objIngredientes = new clnIngrediente
                 {
-                    Nome = pesquisa
+                    Nome = pesquisa,
+                    Ativo = ativo
                 };
                 foreach (clnIngrediente objIngrediente in objIngredientes.obterPorNome())
                 {
@@ -172,6 +173,7 @@ namespace BurgerShack.Desktop
                     {
                         CodMercadoria = objIngrediente.Cod
                     }.obterQuantidadePorMercadoria();
+
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
                     dgv.Rows.Add(new object[] { objIngrediente.Cod, objIngrediente.Nome, objIngrediente.Situacao, objTipo.Cod + " - " + objTipo.Nome, estoque, UtilFormatar.formatarValor(objIngrediente.Valor) });
                 }
@@ -179,9 +181,9 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackProdutoNovo : IUtilCallback<int>
+        private class CallbackProdutoNovo : IUtilCallback
         {
-            public bool call(int x)
+            public bool call()
             {
                 frmProduto frmNovoProduto = new frmProduto { };
                 frmNovoProduto.ShowDialog();
@@ -211,13 +213,14 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackProdutoObter : IUtilCallback<DataGridView, String>
+        private class CallbackProdutoObter : IUtilCallback<DataGridView, String, bool>
         {
-            public bool call(DataGridView dgv, string pesquisa)
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
                 clnProduto objProdutos = new clnProduto
                 {
-                    Nome = pesquisa
+                    Nome = pesquisa,
+                    Ativo = ativo
                 };
                 foreach (clnProduto objProduto in objProdutos.obterPorNome())
                 {
