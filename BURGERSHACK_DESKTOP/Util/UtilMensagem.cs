@@ -5,7 +5,6 @@ namespace BurgerShack.Desktop.Util
 {
     class UtilMensagem
     {
-
         public enum MensagemIcone
         {
             OK,
@@ -30,7 +29,5 @@ namespace BurgerShack.Desktop.Util
         {
             UIXMessage.mostrarOk(AppDesktop.VisualTemplate, titulo, mensagem);
         }
-
-
     }
 }

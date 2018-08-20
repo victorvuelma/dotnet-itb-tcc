@@ -69,7 +69,7 @@
             // 
             this.txtSenha.AcceptButton = null;
             this.txtSenha.AccessibleName = "Senha";
-            this.txtSenha.Campo = "Senha";
+            this.txtSenha.Campo = "Senha*";
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtSenha.Location = new System.Drawing.Point(5, 50);
@@ -85,7 +85,7 @@
             // 
             this.txtUsuario.AcceptButton = this.btnSalvar;
             this.txtUsuario.AccessibleName = "Usuário";
-            this.txtUsuario.Campo = "Usuário";
+            this.txtUsuario.Campo = "Usuário*";
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtUsuario.Location = new System.Drawing.Point(5, 20);

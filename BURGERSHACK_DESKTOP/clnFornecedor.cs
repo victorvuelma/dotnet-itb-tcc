@@ -12,7 +12,7 @@ namespace BurgerShack.Desktop
     {
 
         private int _cod;
-        private bool _ativo;
+        private bool _ativo = true;
 
         private string _razaoSocial;
         private string _cnpj;
@@ -55,7 +55,8 @@ namespace BurgerShack.Desktop
             EndCEP = UtilConvert.ToString(reader["end_cep"]),
             EndBairro = UtilConvert.ToString(reader["end_bairro"]),
             EndLocalidade = UtilConvert.ToString(reader["end_localidade"]),
-            EndUF = UtilConvert.ToString(reader["end_uf"])
+            EndUF = UtilConvert.ToString(reader["end_uf"]),
+            Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
         public clnFornecedor obterPorCod()
@@ -92,9 +93,9 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("fornecedor");
-            objSelect.Where.where("cnpj", sqlElementWhereCommon.whereOperation.LIKE, "%" + Cnpj + "%", sqlElementWhere.whereAssociation.OR)
-                           .where("razao_social", sqlElementWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%")
-                           .where("ativo", UtilConvert.ToBit(Ativo));
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("cnpj", sqlElementWhereCommon.whereOperation.LIKE, "%" + Cnpj + "%", sqlElementWhere.whereAssociation.OR)
+                           .where("razao_social", sqlElementWhereCommon.whereOperation.LIKE, "%" + RazaoSocial + "%");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnFornecedor> objFornecedor = new List<clnFornecedor>();
@@ -113,6 +114,7 @@ namespace BurgerShack.Desktop
             objUpdate.Set.val("razao_social", RazaoSocial)
                          .val("email", Email)
                          .val("telefone", Telefone)
+                         .val("ativo", UtilConvert.ToBit(Ativo))
                          .val("end_logradouro", EndLogradouro)
                          .val("end_nr", EndNumero)
                          .val("end_complemento", EndComplemento)
@@ -132,6 +134,7 @@ namespace BurgerShack.Desktop
                             .val("cnpj", Cnpj)
                             .val("email", Email)
                             .val("telefone", Telefone)
+                            .val("ativo", UtilConvert.ToBit(Ativo))
                             .val("end_logradouro", EndLogradouro)
                             .val("end_nr", EndNumero)
                             .val("end_complemento", EndComplemento)

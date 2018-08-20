@@ -158,6 +158,7 @@ namespace BurgerShack.Desktop
 
         private void fechar()
         {
+
             if (ObjFuncionario == null)
             {
                 if (UtilMensagem.mostrarSimNao("Cadastro de Funcionário", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
@@ -167,10 +168,50 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (UtilMensagem.mostrarSimNao("Alteração de Funcionário", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                if (btnAlterar.Text == "Salvar")
+                {
+                    if (UtilMensagem.mostrarSimNao("Alteração de Funcionário", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                    {
+                        Close();
+                    }
+                }
+                else
                 {
                     Close();
                 }
+            }
+        }
+
+        private void desativar()
+        {
+            UtilButton.restaurar(btnExcluir);
+            UtilForm.Disable(grbInformacoes);
+            UtilForm.Disable(grbEndereco);
+            UtilForm.Disable(grbContrato);
+            grbImagem.Visible = false;
+        }
+
+        private void excluir()
+        {
+            if (UtilMensagem.mostrarSimNao("Funcionário", "Você deseja realmente excluir este funcionário?", UtilMensagem.MensagemIcone.ERRO))
+            {
+                ObjFuncionario.Ativo = false;
+                ObjFuncionario.alterar();
+
+                btnAlterar.Hide();
+                desativar();
+            }
+        }
+
+        private void restaurar()
+        {
+            if (UtilMensagem.mostrarSimNao("Funcionário", "Você deseja realmente restaurar este funcionário?", UtilMensagem.MensagemIcone.OK))
+            {
+                ObjFuncionario.Ativo = true;
+                ObjFuncionario.alterar();
+
+                btnAlterar.Show();
+                UtilButton.excluir(btnExcluir);
             }
         }
 
@@ -230,12 +271,22 @@ namespace BurgerShack.Desktop
                 hdrUIX.Title = App.Name + " - Novo Funcionário";
 
                 definirImagemPadrao();
-                btnAcesso.Hide();
+
+                if (PrimeiroCadastro)
+                {
+                    btnAcesso.Visible = false;
+                    btnVoltar.Visible = false;
+
+                    cboCargo.SelectedItem = cboCargo.Items.Last();
+                    cboSituacao.SelectedItem = cboSituacao.Items.Last();
+
+                    UtilForm.Disable(cboCargo);
+                    UtilForm.Disable(cboSituacao);
+                }
             }
             else
             {
-                hdrUIX.Title = App.Name + " - Alterando Funcionário " + ObjFuncionario.Cod;
-                mtbCPF.Enabled = false;
+                hdrUIX.Title = App.Name + " - Funcionário " + ObjFuncionario.Cod;
 
                 txtNome.Text = ObjFuncionario.Nome;
                 mtbCPF.Text = ObjFuncionario.Cpf;
@@ -268,24 +319,45 @@ namespace BurgerShack.Desktop
                     Cod = ObjFuncionario.CodFoto
                 }.obterPorCodigo();
                 picImagem.ImageLocation = objFoto.Local;
-            }
 
-            if (PrimeiroCadastro)
-            {
-                btnAcesso.Visible = false;
-                btnVoltar.Visible = false;
+                desativar();
 
-                cboCargo.SelectedItem = cboCargo.Items.Last();
-                cboSituacao.SelectedItem = cboSituacao.Items.Last();
-
-                UtilForm.Disable(cboCargo);
-                UtilForm.Disable(cboSituacao);
+                if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
+                {
+                    btnExcluir.Show();
+                    UtilButton.alterar(btnAlterar);
+                    UtilButton.voltar(btnVoltar);
+                    if (ObjFuncionario.Ativo)
+                    {
+                        UtilButton.excluir(btnExcluir);
+                    }
+                    else
+                    {
+                        btnAlterar.Hide();
+                        UtilButton.restaurar(btnExcluir);
+                    }
+                }
             }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            salvar();
+            if (btnAlterar.Text.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+            {
+                salvar();
+            }
+            else
+            {
+                UtilForm.Enable(grbInformacoes);
+                UtilForm.Enable(grbContrato);
+                UtilForm.Enable(grbEndereco);
+
+                mtbCPF.Enabled = false;
+                grbImagem.Visible = true;
+
+                UtilButton.cancelar(btnVoltar);
+                UtilButton.salvar(btnAlterar);
+            }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -314,6 +386,18 @@ namespace BurgerShack.Desktop
         private void btnAcesso_Click(object sender, EventArgs e)
         {
             abrirAcesso();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (ObjFuncionario.Ativo)
+            {
+                excluir();
+            }
+            else
+            {
+                restaurar();
+            }
         }
     }
 }

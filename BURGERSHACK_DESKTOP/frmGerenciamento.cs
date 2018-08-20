@@ -45,7 +45,7 @@ namespace BurgerShack.Desktop
 
         private void abrirFuncionarios()
         {
-            //abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero", "Cargo", "Salário", "Situação" });
+            abrirLista("Funcionários", new CallbackFuncionarioNovo(), new CallbackFuncionarioObter(), new CallbackFuncionarioAlterar(), true, new String[] { "Código", "Nome", "CPF", "RG", "Data Nasc.", "Gênero", "Cargo", "Salário", "Situação" });
         }
 
         private void abrirFornecedores()
@@ -55,7 +55,7 @@ namespace BurgerShack.Desktop
 
         private void abrirReservas()
         {
-            abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), true, new String[] { "Código", "Pessoas", "Data", "Situação" });
+            //abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), true, new String[] { "Código", "Pessoas", "Data", "Situação" });
         }
 
         private void abrirEstoques()
@@ -284,9 +284,9 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackFuncionarioNovo : IUtilCallback<int>
+        private class CallbackFuncionarioNovo : IUtilCallback
         {
-            public bool call(int codFuncionario)
+            public bool call()
             {
                 frmFuncionario frmNovoFuncionario = new frmFuncionario();
                 frmNovoFuncionario.ShowDialog();
@@ -316,14 +316,15 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackFuncionarioObter : IUtilCallback<DataGridView, String>
+        private class CallbackFuncionarioObter : IUtilCallback<DataGridView, String, bool>
         {
-            public bool call(DataGridView dgv, string pesquisa)
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
                 clnFuncionario objFuncionarios = new clnFuncionario
                 {
                     Nome = pesquisa,
-                    Cpf = pesquisa
+                    Cpf = pesquisa,
+                    Ativo = ativo
                 };
                 foreach (clnFuncionario objFuncionario in objFuncionarios.obterPorNomeCPF())
                 {

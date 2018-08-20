@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Data;
+using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {
@@ -106,17 +107,50 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (UtilMensagem.mostrarSimNao("Alteração de Fornecedor", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                if (btnAlterar.Text == "Salvar")
+                {
+                    if (UtilMensagem.mostrarSimNao("Alteração de Fornecedor", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                    {
+                        Close();
+                    }
+                }
+                else
                 {
                     Close();
                 }
             }
         }
 
+        private void excluir()
+        {
+            if (UtilMensagem.mostrarSimNao("Fornecedor", "Você deseja realmente excluir este fornecedor?", UtilMensagem.MensagemIcone.ERRO))
+            {
+                ObjFornecedor.Ativo = false;
+                ObjFornecedor.alterar();
+
+                btnAlterar.Hide();
+                UtilButton.restaurar(btnExcluir);
+                UtilForm.Disable(grbInformacoes);
+                UtilForm.Disable(grbEndereco);
+            }
+        }
+
+        private void restaurar()
+        {
+            if (UtilMensagem.mostrarSimNao("Fornecedor", "Você deseja realmente restaurar este fornecedor?", UtilMensagem.MensagemIcone.OK))
+            {
+                ObjFornecedor.Ativo = true;
+                ObjFornecedor.alterar();
+
+                btnAlterar.Show();
+                UtilButton.excluir(btnExcluir);
+            }
+        }
+
         private void frmCliente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
-            uixButton.btnApply(btnCancelar, AppDesktop.VisualStyle.ButtonWarningColor);
+            uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             clnUtil.definirCEP(mtbEndCEP, txtEndLogradouro, txtEndBairro, txtEndCidade, cboEndUF.cbo, txtEndNr, txtEndComplemento);
 
@@ -126,8 +160,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                hdrUIX.Title = App.Name + " - Alterando Fornecedor " + ObjFornecedor.Cod;
-                mtbCNPJ.Enabled = false;
+                hdrUIX.Title = App.Name + " - Fornecedor " + ObjFornecedor.Cod;
 
                 txtRazaoSocial.Text = ObjFornecedor.RazaoSocial;
                 mtbCNPJ.Text = ObjFornecedor.Cnpj;
@@ -141,12 +174,42 @@ namespace BurgerShack.Desktop
                 txtEndBairro.Text = ObjFornecedor.EndBairro;
                 txtEndCidade.Text = ObjFornecedor.EndLocalidade;
                 cboEndUF.Text = ObjFornecedor.EndUF;
+                UtilForm.Disable(grbInformacoes);
+                UtilForm.Disable(grbEndereco);
+
+                if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
+                {
+                    btnExcluir.Show();
+                    UtilButton.alterar(btnAlterar);
+                    UtilButton.voltar(btnVoltar);
+                    if (ObjFornecedor.Ativo)
+                    {
+                        UtilButton.excluir(btnExcluir);
+                    }
+                    else
+                    {
+                        btnAlterar.Hide();
+                        UtilButton.restaurar(btnExcluir);
+                    }
+                }
             }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            salvar();
+            if (btnAlterar.Text.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+            {
+                salvar();
+            }
+            else
+            {
+                UtilForm.Enable(grbInformacoes);
+                UtilForm.Enable(grbEndereco);
+                mtbCNPJ.Enabled = false;
+
+                UtilButton.cancelar(btnVoltar);
+                UtilButton.salvar(btnAlterar);
+            }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -159,5 +222,16 @@ namespace BurgerShack.Desktop
             fechar();
         }
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (ObjFornecedor.Ativo)
+            {
+                excluir();
+            }
+            else
+            {
+                restaurar();
+            }
+        }
     }
 }

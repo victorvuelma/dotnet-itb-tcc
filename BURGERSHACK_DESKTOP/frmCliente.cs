@@ -95,13 +95,14 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (btnEditar.Text == "Salvar")
+                if (btnAlterar.Text == "Salvar")
                 {
                     if (UtilMensagem.mostrarSimNao("Alteração de Cliente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                     {
                         Close();
                     }
-                } else
+                }
+                else
                 {
                     Close();
                 }
@@ -115,7 +116,7 @@ namespace BurgerShack.Desktop
                 ObjCliente.Ativo = false;
                 ObjCliente.alterar();
 
-                btnEditar.Hide();
+                btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(grbInformacoes);
             }
@@ -128,9 +129,8 @@ namespace BurgerShack.Desktop
                 ObjCliente.Ativo = true;
                 ObjCliente.alterar();
 
-                btnEditar.Show();
+                btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
-                UtilForm.Enable(grbInformacoes);
             }
         }
 
@@ -146,24 +146,24 @@ namespace BurgerShack.Desktop
             else
             {
                 hdrUIX.Title = App.Name + " - Cliente " + ObjCliente.Cod;
-                mtbCPF.Enabled = false;
                 txtNome.Text = ObjCliente.Nome;
                 mtbCPF.Text = ObjCliente.Cpf;
-                if (ObjCliente.DataNascimento != null)
-                {
-                    mtbDataNasc.Text = ((DateTime)ObjCliente.DataNascimento).ToString("dd/MM/yyyy");
-                }
                 mtbTelCel.Text = ObjCliente.TelCelular;
                 txtEmail.Text = ObjCliente.Email;
                 if (ObjCliente.Genero != null)
                 {
                     cboGenero.Text = ObjCliente.Genero;
                 }
+                if (ObjCliente.DataNascimento != null)
+                {
+                    mtbDataNasc.Text = ((DateTime)ObjCliente.DataNascimento).ToString("dd/MM/yyyy");
+                }
                 UtilForm.Disable(grbInformacoes);
+
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
                     btnExcluir.Show();
-                    UtilButton.alterar(btnEditar);
+                    UtilButton.alterar(btnAlterar);
                     UtilButton.voltar(btnVoltar);
                     if (ObjCliente.Ativo)
                     {
@@ -171,7 +171,7 @@ namespace BurgerShack.Desktop
                     }
                     else
                     {
-                        btnEditar.Hide();
+                        btnAlterar.Hide();
                         UtilButton.restaurar(btnExcluir);
                     }
                 }
@@ -180,15 +180,17 @@ namespace BurgerShack.Desktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (btnEditar.Text == "Salvar")
+            if (btnAlterar.Text.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
             {
                 salvar();
             }
             else
             {
                 UtilForm.Enable(grbInformacoes);
-                UtilButton.cancelar(btnEditar);
-                UtilButton.salvar(btnEditar);
+                mtbCPF.Enabled = false;
+
+                UtilButton.cancelar(btnVoltar);
+                UtilButton.salvar(btnAlterar);
             }
         }
 

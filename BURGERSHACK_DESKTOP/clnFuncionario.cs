@@ -19,6 +19,7 @@ namespace BurgerShack.Desktop
         }
 
         private int _cod = -1;
+        private bool _ativo = true;
 
         private int _codCargo = -1;
         private int _codFoto = -1;
@@ -69,6 +70,7 @@ namespace BurgerShack.Desktop
         public string EndBairro { get => _endBairro; set => _endBairro = value; }
         public string EndLocalidade { get => _endLocalidade; set => _endLocalidade = value; }
         public string EndUF { get => _endUF; set => _endUF = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnFuncionario obter(SqlDataReader reader) => new clnFuncionario
         {
@@ -87,6 +89,7 @@ namespace BurgerShack.Desktop
             DataContratacao = UtilConvert.ToDateTime(reader["data_contratacao"]),
             DataDemissao = UtilConvert.ToNullableDateTime(reader["data_demissao"]),
             Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
+            Ativo = UtilConvert.ToBool(reader["ativo"]),
             EndLogradouro = UtilConvert.ToString(reader["end_logradouro"]),
             EndNumero = UtilConvert.ToString(reader["end_nr"]),
             EndComplemento = UtilConvert.ToString(reader["end_complemento"]),
@@ -130,7 +133,8 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("funcionario");
-            objSelect.Where.where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlElementWhere.whereAssociation.OR)
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("nome", sqlElementWhereCommon.whereOperation.LIKE, "%" + Nome + "%", sqlElementWhere.whereAssociation.OR)
                            .where("cpf", sqlElementWhereCommon.whereOperation.LIKE, "%" + Cpf + "%");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -174,6 +178,7 @@ namespace BurgerShack.Desktop
                             .val("data_contratacao", DataContratacao)
                             .val("data_demissao", DataDemissao)
                             .val("situacao", prefixo(Situacao))
+                            .val("ativo", UtilConvert.ToBit(Ativo))
                             .val("end_logradouro", EndLogradouro)
                             .val("end_nr", EndNumero)
                             .val("end_complemento", EndComplemento)
@@ -200,6 +205,7 @@ namespace BurgerShack.Desktop
                             .val("tel_cel", TelCel)
                             .val("email", Email)
                             .val("salario", Salario)
+                            .val("ativo", UtilConvert.ToBit(Ativo))
                             .val("data_contratacao", DataContratacao)
                             .val("data_demissao", DataDemissao)
                             .val("situacao", prefixo(Situacao))

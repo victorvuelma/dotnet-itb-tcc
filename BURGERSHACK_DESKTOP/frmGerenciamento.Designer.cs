@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnMercadorias = new vitorrdgs.UiX.Component.UIXButton();
             this.btnPagamentos = new vitorrdgs.UiX.Component.UIXButton();
             this.btnPedidos = new vitorrdgs.UiX.Component.UIXButton();
             this.btnReservas = new vitorrdgs.UiX.Component.UIXButton();
@@ -42,7 +43,6 @@
             this.btnIngredientes = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
-            this.btnMercadorias = new vitorrdgs.UiX.Component.UIXButton();
             this.uctListar = new BurgerShack.Desktop.uctGerenciamentoListar();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,20 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(300, 500);
             this.pnlMenu.TabIndex = 7;
+            // 
+            // btnMercadorias
+            // 
+            this.btnMercadorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMercadorias.Description = "Mercadorias";
+            this.btnMercadorias.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMercadorias.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
+            this.btnMercadorias.ImageLocation = null;
+            this.btnMercadorias.Location = new System.Drawing.Point(105, 205);
+            this.btnMercadorias.Name = "btnMercadorias";
+            this.btnMercadorias.Size = new System.Drawing.Size(90, 90);
+            this.btnMercadorias.TabIndex = 17;
+            this.btnMercadorias.Text = "Mercadorias";
+            this.btnMercadorias.UseVisualStyleBackColor = true;
             // 
             // btnPagamentos
             // 
@@ -164,7 +178,7 @@
             this.btnFornecedores.HoverColor = System.Drawing.Color.Transparent;
             this.btnFornecedores.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
             this.btnFornecedores.ImageLocation = null;
-            this.btnFornecedores.Location = new System.Drawing.Point(3, 105);
+            this.btnFornecedores.Location = new System.Drawing.Point(5, 105);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(90, 90);
             this.btnFornecedores.TabIndex = 10;
@@ -235,7 +249,7 @@
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Description = "Sair";
+            this.btnVoltar.Description = "Voltar";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -261,28 +275,14 @@
             this.hdrUIX.Title = "Gerenciamento";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
-            // btnMercadorias
-            // 
-            this.btnMercadorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMercadorias.Description = "Mercadorias";
-            this.btnMercadorias.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMercadorias.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
-            this.btnMercadorias.ImageLocation = null;
-            this.btnMercadorias.Location = new System.Drawing.Point(105, 205);
-            this.btnMercadorias.Name = "btnMercadorias";
-            this.btnMercadorias.Size = new System.Drawing.Size(90, 90);
-            this.btnMercadorias.TabIndex = 17;
-            this.btnMercadorias.Text = "Mercadorias";
-            this.btnMercadorias.UseVisualStyleBackColor = true;
-            // 
-            // uctGerenciamentoListar1
+            // uctListar
             // 
             this.uctListar.Colunas = null;
             this.uctListar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uctListar.Inativos = false;
             this.uctListar.Location = new System.Drawing.Point(300, 50);
             this.uctListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uctListar.Name = "uctGerenciamentoListar1";
+            this.uctListar.Name = "uctListar";
             this.uctListar.Size = new System.Drawing.Size(700, 500);
             this.uctListar.TabIndex = 8;
             // 

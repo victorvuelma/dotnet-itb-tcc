@@ -160,7 +160,6 @@
     <Compile Include="clnUtilConta.cs" />
     <Compile Include="clnUtilListar.cs" />
     <Compile Include="Numboard\ControlNumboard.cs" />
-    <Compile Include="Util\UtilMensagem.cs" />
     <Compile Include="clnMesa.cs" />
     <Compile Include="clnPedido.cs" />
     <Compile Include="clnItem.cs" />
@@ -356,6 +355,7 @@
       <DependentUpon>uctAtendimentoPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\UtilButton.cs" />
+    <Compile Include="Util\UtilMensagem.cs" />
     <EmbeddedResource Include="frmAcesso.resx">
       <DependentUpon>frmAcesso.cs</DependentUpon>
     </EmbeddedResource>

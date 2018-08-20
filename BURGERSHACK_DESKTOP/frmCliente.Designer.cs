@@ -31,7 +31,7 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
-            this.btnEditar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnAlterar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
             this.txtEmail = new vitorrdgs.UiX.Component.UIXTextBox();
             this.mtbTelCel = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
@@ -48,7 +48,7 @@
             // 
             this.pnlMenu.Controls.Add(this.btnExcluir);
             this.pnlMenu.Controls.Add(this.btnVoltar);
-            this.pnlMenu.Controls.Add(this.btnEditar);
+            this.pnlMenu.Controls.Add(this.btnAlterar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 300);
@@ -76,7 +76,7 @@
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
-            this.btnVoltar.Location = new System.Drawing.Point(5, 205);
+            this.btnVoltar.Location = new System.Drawing.Point(5, 5);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
@@ -84,20 +84,20 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnEditar
+            // btnAlterar
             // 
-            this.btnEditar.Description = "Salvar";
-            this.btnEditar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnEditar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.ImageLocation = null;
-            this.btnEditar.Location = new System.Drawing.Point(5, 5);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(90, 90);
-            this.btnEditar.TabIndex = 0;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnAlterar.Description = "Salvar";
+            this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlterar.ImageLocation = null;
+            this.btnAlterar.Location = new System.Drawing.Point(5, 205);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(90, 90);
+            this.btnAlterar.TabIndex = 0;
+            this.btnAlterar.Text = "Editar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbInformacoes
             // 
@@ -218,7 +218,7 @@
             // 
             // frmCliente
             // 
-            this.AcceptButton = this.btnEditar;
+            this.AcceptButton = this.btnAlterar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 350);
@@ -243,7 +243,7 @@
         private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private vitorrdgs.UiX.Component.UIXButton btnVoltar;
-        private vitorrdgs.UiX.Component.UIXButton btnEditar;
+        private vitorrdgs.UiX.Component.UIXButton btnAlterar;
         private System.Windows.Forms.GroupBox grbInformacoes;
         private vitorrdgs.UiX.Component.UIXTextBox txtNome;
         private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbDataNasc;
