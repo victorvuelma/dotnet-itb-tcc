@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
@@ -23,7 +24,7 @@ namespace BurgerShack.Desktop
             uctListar.CallbackAlterar = callbackAlterar;
             uctListar.Inativos = inativos;
 
-            hdrUIX.Title = "Gerenciamento :: " + tipo;
+            hdrUIX.Title = App.Name + " - Gerenciamento :: " + tipo;
 
             uctListar.atualizar();
         }
@@ -60,7 +61,7 @@ namespace BurgerShack.Desktop
 
         private void abrirEstoques()
         {
-            //abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), false, new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor" });
+            abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), false, new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor" });
         }
 
         private void sair()
@@ -489,9 +490,9 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackEstoqueObter : IUtilCallback<DataGridView, String>
+        private class CallbackEstoqueObter : IUtilCallback<DataGridView, String, bool>
         {
-            public bool call(DataGridView dgv, string pesquisa)
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
                 clnEstoque objEstoques = new clnEstoque();
                 foreach (clnEstoque objEstoque in objEstoques.obterEstoques())

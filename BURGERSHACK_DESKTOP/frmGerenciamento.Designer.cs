@@ -70,11 +70,11 @@
             // btnMercadorias
             // 
             this.btnMercadorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMercadorias.Description = "Mercadorias";
+            this.btnMercadorias.Description = "MERCADORIAS";
             this.btnMercadorias.HoverColor = System.Drawing.Color.Transparent;
             this.btnMercadorias.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
             this.btnMercadorias.ImageLocation = null;
-            this.btnMercadorias.Location = new System.Drawing.Point(105, 205);
+            this.btnMercadorias.Location = new System.Drawing.Point(105, 5);
             this.btnMercadorias.Name = "btnMercadorias";
             this.btnMercadorias.Size = new System.Drawing.Size(90, 90);
             this.btnMercadorias.TabIndex = 17;
@@ -84,11 +84,11 @@
             // btnPagamentos
             // 
             this.btnPagamentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPagamentos.Description = "Pagamentos";
+            this.btnPagamentos.Description = "PAGAMENTOS";
             this.btnPagamentos.HoverColor = System.Drawing.Color.Transparent;
             this.btnPagamentos.Image = global::BurgerShack.Desktop.Properties.Resources.pagamento;
             this.btnPagamentos.ImageLocation = null;
-            this.btnPagamentos.Location = new System.Drawing.Point(5, 305);
+            this.btnPagamentos.Location = new System.Drawing.Point(205, 305);
             this.btnPagamentos.Name = "btnPagamentos";
             this.btnPagamentos.Size = new System.Drawing.Size(90, 90);
             this.btnPagamentos.TabIndex = 16;
@@ -99,7 +99,7 @@
             // btnPedidos
             // 
             this.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPedidos.Description = "Pedidos";
+            this.btnPedidos.Description = "PEDIDOS";
             this.btnPedidos.HoverColor = System.Drawing.Color.Transparent;
             this.btnPedidos.Image = global::BurgerShack.Desktop.Properties.Resources.pedido;
             this.btnPedidos.ImageLocation = null;
@@ -114,7 +114,7 @@
             // btnReservas
             // 
             this.btnReservas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReservas.Description = "Reservas";
+            this.btnReservas.Description = "RESERVAS";
             this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
             this.btnReservas.Image = global::BurgerShack.Desktop.Properties.Resources.reserva;
             this.btnReservas.ImageLocation = null;
@@ -130,7 +130,7 @@
             // btnAtendimentos
             // 
             this.btnAtendimentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAtendimentos.Description = "Atendimentos";
+            this.btnAtendimentos.Description = "ATENDIMENTOS";
             this.btnAtendimentos.HoverColor = System.Drawing.Color.Transparent;
             this.btnAtendimentos.Image = global::BurgerShack.Desktop.Properties.Resources.atendimento;
             this.btnAtendimentos.ImageLocation = null;
@@ -144,11 +144,11 @@
             // btnMesas
             // 
             this.btnMesas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMesas.Description = "Mesas";
+            this.btnMesas.Description = "MESAS";
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesas.Image = global::BurgerShack.Desktop.Properties.Resources.mesa;
             this.btnMesas.ImageLocation = null;
-            this.btnMesas.Location = new System.Drawing.Point(205, 305);
+            this.btnMesas.Location = new System.Drawing.Point(5, 305);
             this.btnMesas.Name = "btnMesas";
             this.btnMesas.Size = new System.Drawing.Size(90, 90);
             this.btnMesas.TabIndex = 12;
@@ -159,11 +159,11 @@
             // btnEstoque
             // 
             this.btnEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEstoque.Description = "Estoque";
+            this.btnEstoque.Description = "ESTOQUE";
             this.btnEstoque.HoverColor = System.Drawing.Color.Transparent;
             this.btnEstoque.Image = global::BurgerShack.Desktop.Properties.Resources.estoque;
             this.btnEstoque.ImageLocation = null;
-            this.btnEstoque.Location = new System.Drawing.Point(105, 305);
+            this.btnEstoque.Location = new System.Drawing.Point(105, 105);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(90, 90);
             this.btnEstoque.TabIndex = 11;
@@ -174,7 +174,7 @@
             // btnFornecedores
             // 
             this.btnFornecedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFornecedores.Description = "Fornecedores";
+            this.btnFornecedores.Description = "FORNECEDORES";
             this.btnFornecedores.HoverColor = System.Drawing.Color.Transparent;
             this.btnFornecedores.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
             this.btnFornecedores.ImageLocation = null;
@@ -189,7 +189,7 @@
             // btnFuncionarios
             // 
             this.btnFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFuncionarios.Description = "Funcionários";
+            this.btnFuncionarios.Description = "FUNCIONÁRIOS";
             this.btnFuncionarios.HoverColor = System.Drawing.Color.Transparent;
             this.btnFuncionarios.Image = global::BurgerShack.Desktop.Properties.Resources.funcionario;
             this.btnFuncionarios.ImageLocation = null;
@@ -204,7 +204,7 @@
             // btnClientes
             // 
             this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClientes.Description = "Clientes";
+            this.btnClientes.Description = "CLIENTES";
             this.btnClientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnClientes.Image = global::BurgerShack.Desktop.Properties.Resources.cliente;
             this.btnClientes.ImageLocation = null;
@@ -219,11 +219,11 @@
             // btnProdutos
             // 
             this.btnProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProdutos.Description = "Produtos";
+            this.btnProdutos.Description = "PRODUTOS";
             this.btnProdutos.HoverColor = System.Drawing.Color.Transparent;
             this.btnProdutos.Image = global::BurgerShack.Desktop.Properties.Resources.produto;
             this.btnProdutos.ImageLocation = null;
-            this.btnProdutos.Location = new System.Drawing.Point(105, 105);
+            this.btnProdutos.Location = new System.Drawing.Point(105, 305);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(90, 90);
             this.btnProdutos.TabIndex = 7;
@@ -234,11 +234,11 @@
             // btnIngredientes
             // 
             this.btnIngredientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIngredientes.Description = "Ingredientes";
+            this.btnIngredientes.Description = "INGREDIENTES";
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredientes.Image = global::BurgerShack.Desktop.Properties.Resources.ingrediente;
             this.btnIngredientes.ImageLocation = null;
-            this.btnIngredientes.Location = new System.Drawing.Point(105, 5);
+            this.btnIngredientes.Location = new System.Drawing.Point(105, 205);
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Size = new System.Drawing.Size(90, 90);
             this.btnIngredientes.TabIndex = 6;
@@ -249,7 +249,7 @@
             // btnVoltar
             // 
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Description = "Voltar";
+            this.btnVoltar.Description = "VOLTAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
