@@ -154,7 +154,7 @@
             this.btnMesas.TabIndex = 12;
             this.btnMesas.Text = "Mesas";
             this.btnMesas.UseVisualStyleBackColor = true;
-            this.btnMesas.Visible = false;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // btnEstoque
             // 

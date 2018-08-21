@@ -374,7 +374,7 @@ namespace BurgerShack.Desktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (btnAlterar.Text.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+            if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
             {
                 salvar();
             }

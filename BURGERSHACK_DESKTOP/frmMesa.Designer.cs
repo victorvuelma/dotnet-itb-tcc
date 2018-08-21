@@ -34,8 +34,9 @@
             this.btnAlterar = new vitorrdgs.UiX.Component.UIXButton();
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
-            this.txtLugares = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtNumero = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtLugares = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.lblSituacao = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +112,7 @@
             // 
             // grbInformacoes
             // 
+            this.grbInformacoes.Controls.Add(this.lblSituacao);
             this.grbInformacoes.Controls.Add(this.txtNumero);
             this.grbInformacoes.Controls.Add(this.txtLugares);
             this.grbInformacoes.Location = new System.Drawing.Point(105, 55);
@@ -120,11 +122,26 @@
             this.grbInformacoes.TabStop = false;
             this.grbInformacoes.Text = "INFORMAÇÕES";
             // 
+            // txtNumero
+            // 
+            this.txtNumero.AcceptButton = null;
+            this.txtNumero.Campo = "Número*";
+            this.txtNumero.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
+            this.txtNumero.Location = new System.Drawing.Point(5, 70);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtNumero.MaxLength = 32767;
+            this.txtNumero.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
+            this.txtNumero.Multiline = false;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNumero.Size = new System.Drawing.Size(280, 40);
+            this.txtNumero.TabIndex = 1;
+            // 
             // txtLugares
             // 
             this.txtLugares.AcceptButton = null;
             this.txtLugares.Campo = "Lugares*";
-            this.txtLugares.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
+            this.txtLugares.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
             this.txtLugares.Location = new System.Drawing.Point(5, 20);
             this.txtLugares.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLugares.MaxLength = 32767;
@@ -132,23 +149,17 @@
             this.txtLugares.Multiline = false;
             this.txtLugares.Name = "txtLugares";
             this.txtLugares.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLugares.Size = new System.Drawing.Size(280, 21);
+            this.txtLugares.Size = new System.Drawing.Size(280, 40);
             this.txtLugares.TabIndex = 0;
             // 
-            // txtNumero
+            // lblSituacao
             // 
-            this.txtNumero.AcceptButton = null;
-            this.txtNumero.Campo = "Número*";
-            this.txtNumero.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.txtNumero.Location = new System.Drawing.Point(5, 50);
-            this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtNumero.MaxLength = 32767;
-            this.txtNumero.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
-            this.txtNumero.Multiline = false;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNumero.Size = new System.Drawing.Size(280, 26);
-            this.txtNumero.TabIndex = 1;
+            this.lblSituacao.AutoSize = true;
+            this.lblSituacao.Location = new System.Drawing.Point(5, 120);
+            this.lblSituacao.Name = "lblSituacao";
+            this.lblSituacao.Size = new System.Drawing.Size(60, 16);
+            this.lblSituacao.TabIndex = 2;
+            this.lblSituacao.Text = "Situação:";
             // 
             // frmMesa
             // 
@@ -168,6 +179,7 @@
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.pnlMenu.ResumeLayout(false);
             this.grbInformacoes.ResumeLayout(false);
+            this.grbInformacoes.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +194,6 @@
         private System.Windows.Forms.GroupBox grbInformacoes;
         private vitorrdgs.UiX.Component.UIXTextBox txtLugares;
         private vitorrdgs.UiX.Component.UIXTextBox txtNumero;
+        private System.Windows.Forms.Label lblSituacao;
     }
 }

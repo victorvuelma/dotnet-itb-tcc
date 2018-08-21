@@ -85,16 +85,16 @@ namespace BurgerShack.Desktop
                 if (valorPago < objConta.Valor)
                 {
                     lblSituacao.Text = "Aguardando pagamento para finalizar atendimento.";
-                    grbSituacao.Show();
+                    grbSituacao.Enabled = true;
                 }
                 else
                 {
-                    grbSituacao.Hide();
+                    grbSituacao.Enabled = false;
                 }
             }
             else
             {
-                grbSituacao.Hide();
+                grbSituacao.Enabled = false;
             }
         }
 

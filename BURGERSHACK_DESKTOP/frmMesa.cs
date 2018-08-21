@@ -22,7 +22,9 @@ namespace BurgerShack.Desktop
             InitializeComponent();
 
             _validar = new clnUtilFormValidar();
-            
+            _validar.addValidacao(txtLugares, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.QUANTIDADE });
+            _validar.addValidacao(txtNumero, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.QUANTIDADE });
+
         }
 
         private void salvar()
@@ -41,18 +43,13 @@ namespace BurgerShack.Desktop
                     {
                         clnMesa objMesa = new clnMesa
                         {
-                            CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
-                            Nome = txtNome.Text,
-                            Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text),
-                            DataNascimento = UtilConvert.ObterNullableData(mtbDataNasc.Text),
-                            Email = txtEmail.Text,
-                            TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text),
-                            Genero = cboGenero.Text,
-                            Cadastro = DateTime.Now
+                            Numero = UtilConvert.ToInt(txtNumero.Text),
+                            Lugares = UtilConvert.ToInt(txtLugares.Text),
+                            Situacao = clnMesa.mesaSituacao.DISPONIVEL
                         };
                         objMesa.gravar();
                         ObjMesa = objMesa;
-                        UtilMensagem.mostrarOk("Cadastro de Mesa", "Mesa cadastrado com sucesso!");
+                        UtilMensagem.mostrarOk("Cadastro de Mesa", "Mesa cadastrada com sucesso!");
                         Close();
                     }
                     else
@@ -63,11 +60,9 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    ObjMesa.Nome = txtNome.Text;
-                    ObjMesa.DataNascimento = UtilConvert.ObterNullableData(mtbDataNasc.Text);
-                    ObjMesa.Email = txtEmail.Text;
-                    ObjMesa.TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text);
-                    ObjMesa.Genero = cboGenero.Text;
+                    ObjMesa.Numero = UtilConvert.ToInt(txtNumero.Text);
+                    ObjMesa.Lugares = UtilConvert.ToInt(txtLugares.Text);
+
                     ObjMesa.alterar();
                     UtilMensagem.mostrarOk("Alteração de Mesa", "Mesa alterada com sucesso!");
                     Close();
@@ -133,20 +128,15 @@ namespace BurgerShack.Desktop
             if (ObjMesa == null)
             {
                 hdrUIX.Title = App.Name + " - Nova Mesa";
+
+                lblSituacao.Text = "Situação: " + clnMesa.mesaSituacao.DISPONIVEL.ToString();
             }
             else
             {
                 hdrUIX.Title = App.Name + " - Mesa " + ObjMesa.Cod;
                 txtLugares.Text = UtilConvert.ToString(ObjMesa.Lugares);
                 txtNumero.Text = UtilConvert.ToString(ObjMesa.Numero);
-                txtNome.Text = ObjMesa.Nome;
-                mtbCPF.Text = ObjMesa.Cpf;
-                mtbTelCel.Text = ObjMesa.TelCelular;
-                txtEmail.Text = ObjMesa.Email;
-                if (ObjMesa.Genero != null)
-                {
-                    cboGenero.Text = ObjMesa.Genero;
-                }
+                lblSituacao.Text = "Situação: " + UtilConvert.ToString(ObjMesa.Situacao);
                 UtilForm.Disable(this);
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
@@ -169,7 +159,7 @@ namespace BurgerShack.Desktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (btnAlterar.Text.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+            if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
             {
                 salvar();
             }

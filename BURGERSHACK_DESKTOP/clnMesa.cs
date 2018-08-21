@@ -43,6 +43,7 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA");
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnMesa> objMesas = new List<clnMesa>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -53,7 +54,7 @@ namespace BurgerShack.Desktop
             return objMesas;
         }
 
-        public clnMesa obterPorCodigo()
+        public clnMesa obterPorCod()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA");

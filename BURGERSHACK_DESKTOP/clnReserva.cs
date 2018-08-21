@@ -125,8 +125,8 @@ namespace BurgerShack.Desktop
             objSelect.Columns.select("mesa.id");
             objSelect.Join.innerJoin("reserva_mesa", "id_mesa", "mesa.id")
                           .innerJoin("reserva", "id", "reserva_mesa.id_reserva");
-            objSelect.Where.where("reserva.agendado", sqlElementWhereCommon.whereOperation.MAJOR_EQUALS, Agendado)
-                           .where("reserva.agendado", sqlElementWhereCommon.whereOperation.LESS, Agendado.AddDays(1))
+            objSelect.Where.between("reserva.agendado", Agendado, Agendado.AddDays(1))
+                           .where("reserva.ativo", UtilConvert.ToBit(Ativo))
                            .where("reserva.situacao", sqlElementWhereCommon.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
 
             List<int> objMesas = new List<int>();

@@ -79,7 +79,7 @@ namespace BurgerShack.Desktop
                         clnMesa objMesa = new clnMesa
                         {
                             Cod = codMesa
-                        }.obterPorCodigo();
+                        }.obterPorCod();
                         objMesa.Situacao = clnMesa.mesaSituacao.DISPONIVEL;
                         objMesa.alterar();
                     }

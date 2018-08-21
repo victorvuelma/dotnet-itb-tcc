@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
             this.btnAcesso = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
             this.btnAlterar = new vitorrdgs.UiX.Component.UIXButton();
@@ -58,7 +59,6 @@
             this.cboCargo = new vitorrdgs.UiX.Component.UIXComboBox();
             this.cboSituacao = new vitorrdgs.UiX.Component.UIXComboBox();
             this.txtSalario = new vitorrdgs.UiX.Component.UIXTextBox();
-            this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.grbEndereco.SuspendLayout();
@@ -78,9 +78,24 @@
             this.pnlMenu.Size = new System.Drawing.Size(100, 400);
             this.pnlMenu.TabIndex = 5;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Description = "EXCLUIR";
+            this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
+            this.btnExcluir.ImageLocation = null;
+            this.btnExcluir.Location = new System.Drawing.Point(5, 205);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(90, 90);
+            this.btnExcluir.TabIndex = 8;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Visible = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // btnAcesso
             // 
-            this.btnAcesso.Description = "Acesso";
+            this.btnAcesso.Description = "ACESSO";
             this.btnAcesso.HoverColor = System.Drawing.Color.Transparent;
             this.btnAcesso.Image = global::BurgerShack.Desktop.Properties.Resources.entrar;
             this.btnAcesso.ImageLocation = null;
@@ -95,7 +110,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Description = "Cancelar";
+            this.btnVoltar.Description = "CANCELAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -109,7 +124,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Description = "Salvar";
+            this.btnAlterar.Description = "SALVAR";
             this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -209,7 +224,7 @@
             this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.SelectedItem = null;
-            this.cboGenero.Size = new System.Drawing.Size(105, 30);
+            this.cboGenero.Size = new System.Drawing.Size(105, 25);
             this.cboGenero.TabIndex = 10;
             // 
             // mtbCPF
@@ -270,7 +285,7 @@
             this.hdrUIX.Title = "Funcionário";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
             // 
-            // grpEndereco
+            // grbEndereco
             // 
             this.grbEndereco.Controls.Add(this.txtEndComplemento);
             this.grbEndereco.Controls.Add(this.txtEndCidade);
@@ -282,7 +297,7 @@
             this.grbEndereco.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbEndereco.Location = new System.Drawing.Point(105, 305);
             this.grbEndereco.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbEndereco.Name = "grpEndereco";
+            this.grbEndereco.Name = "grbEndereco";
             this.grbEndereco.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbEndereco.Size = new System.Drawing.Size(390, 140);
             this.grbEndereco.TabIndex = 7;
@@ -414,7 +429,7 @@
             // 
             // btnImgAdicionar
             // 
-            this.btnImgAdicionar.Description = "Adicionar";
+            this.btnImgAdicionar.Description = "ADICIONAR";
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgAdicionar.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnImgAdicionar.ImageLocation = null;
@@ -428,7 +443,7 @@
             // 
             // btnImgRemover
             // 
-            this.btnImgRemover.Description = "Remover";
+            this.btnImgRemover.Description = "REMOVER";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgRemover.Image = global::BurgerShack.Desktop.Properties.Resources.remover;
             this.btnImgRemover.ImageLocation = null;
@@ -502,21 +517,6 @@
             this.txtSalario.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSalario.Size = new System.Drawing.Size(180, 26);
             this.txtSalario.TabIndex = 0;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Description = "Excluir";
-            this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
-            this.btnExcluir.ImageLocation = null;
-            this.btnExcluir.Location = new System.Drawing.Point(5, 205);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(90, 90);
-            this.btnExcluir.TabIndex = 8;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Visible = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // frmFuncionario
             // 

@@ -56,12 +56,17 @@ namespace BurgerShack.Desktop
 
         private void abrirReservas()
         {
-            //abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), true, new String[] { "Código", "Pessoas", "Data", "Situação" });
+            abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), false, new String[] { "Código", "Pessoas", "Data", "Situação" });
         }
 
         private void abrirEstoques()
         {
             abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), false, new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor" });
+        }
+
+        private void abrirMesas()
+        {
+            abrirLista("Mesas", new CallbackMesaNovo(), new CallbackMesaObter(), new CallbackMesaAlterar(), true, new String[] { "Código", "Número", "Lugares", "Situação" });
         }
 
         private void sair()
@@ -119,6 +124,11 @@ namespace BurgerShack.Desktop
         private void btnReservas_Click(object sender, EventArgs e)
         {
             abrirReservas();
+        }
+
+        private void btnMesas_Click(object sender, EventArgs e)
+        {
+            abrirMesas();
         }
 
         private class CallbackIngredienteNovo : IUtilCallback
@@ -514,6 +524,54 @@ namespace BurgerShack.Desktop
             }
         }
 
+        private class CallbackMesaNovo : IUtilCallback
+        {
+            public bool call()
+            {
+                frmMesa frmMesaNovo = new frmMesa();
+                frmMesaNovo.ShowDialog();
+                return frmMesaNovo.ObjMesa != null;
+            }
+        }
+
+        private class CallbackMesaAlterar : IUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnMesa objMesa = new clnMesa
+                {
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objMesa != null)
+                {
+                    frmMesa frmAlterarMesa = new frmMesa
+                    {
+                        ObjMesa = objMesa
+                    };
+                    frmAlterarMesa.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackMesaObter : IUtilCallback<DataGridView, String, bool>
+        {
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
+            {
+                clnMesa objMesas = new clnMesa
+                {
+                    Ativo = ativo
+                };
+                foreach (clnMesa objMesa in objMesas.obterMesas())
+                {
+                    //"Código", "Número", "Lugares", "Situação"
+                    dgv.Rows.Add(new object[] { objMesa.Cod, objMesa.Numero, objMesa.Lugares, objMesa.Situacao });
+                }
+                return false;
+            }
+        }
 
     }
 }

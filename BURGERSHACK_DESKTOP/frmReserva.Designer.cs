@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnExcluir = new vitorrdgs.UiX.Component.UIXButton();
             this.btnAtendimento = new vitorrdgs.UiX.Component.UIXButton();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
-            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnAlterar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbCliente = new System.Windows.Forms.GroupBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.btnCliEncontrar = new vitorrdgs.UiX.Component.UIXButton();
-            this.mtbCliCPF =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbCliCPF = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.grbReserva = new System.Windows.Forms.GroupBox();
-            this.mtbHora =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbHora = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.txtPessoas = new vitorrdgs.UiX.Component.UIXTextBox();
-            this.mtbData =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbData = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.grbMesas = new System.Windows.Forms.GroupBox();
             this.btnMesaVer = new vitorrdgs.UiX.Component.UIXButton();
             this.btnMesaAdd = new vitorrdgs.UiX.Component.UIXButton();
@@ -56,17 +57,34 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnExcluir);
             this.pnlMenu.Controls.Add(this.btnAtendimento);
             this.pnlMenu.Controls.Add(this.btnVoltar);
-            this.pnlMenu.Controls.Add(this.btnSalvar);
+            this.pnlMenu.Controls.Add(this.btnAlterar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(100, 300);
+            this.pnlMenu.Size = new System.Drawing.Size(100, 400);
             this.pnlMenu.TabIndex = 5;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Description = "EXCLUIR";
+            this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.ImageLocation = null;
+            this.btnExcluir.Location = new System.Drawing.Point(5, 205);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(90, 90);
+            this.btnExcluir.TabIndex = 8;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Visible = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAtendimento
             // 
-            this.btnAtendimento.Description = "Atendimento";
+            this.btnAtendimento.Description = "ATENDIMENTO";
             this.btnAtendimento.HoverColor = System.Drawing.Color.Transparent;
             this.btnAtendimento.Image = global::BurgerShack.Desktop.Properties.Resources.atendimento;
             this.btnAtendimento.ImageLocation = null;
@@ -74,12 +92,13 @@
             this.btnAtendimento.Name = "btnAtendimento";
             this.btnAtendimento.Size = new System.Drawing.Size(90, 90);
             this.btnAtendimento.TabIndex = 7;
+            this.btnAtendimento.Text = "ATENDIMENTO";
             this.btnAtendimento.UseVisualStyleBackColor = true;
             this.btnAtendimento.Click += new System.EventHandler(this.btnAtendimento_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Description = "Cancelar";
+            this.btnVoltar.Description = "CANCELAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -87,22 +106,24 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(90, 90);
             this.btnVoltar.TabIndex = 6;
+            this.btnVoltar.Text = "CANCELAR";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnSalvar
+            // btnAlterar
             // 
-            this.btnSalvar.Description = "Salvar";
-            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.ImageLocation = null;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 205);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnAlterar.Description = "SALVAR";
+            this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlterar.ImageLocation = null;
+            this.btnAlterar.Location = new System.Drawing.Point(5, 305);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(90, 90);
+            this.btnAlterar.TabIndex = 0;
+            this.btnAlterar.Text = "SALVAR";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbCliente
             // 
@@ -125,7 +146,7 @@
             // 
             // btnCliEncontrar
             // 
-            this.btnCliEncontrar.Description = "Encontrar";
+            this.btnCliEncontrar.Description = "ENCONTRAR";
             this.btnCliEncontrar.HoverColor = System.Drawing.Color.Transparent;
             this.btnCliEncontrar.Image = global::BurgerShack.Desktop.Properties.Resources.cliente;
             this.btnCliEncontrar.ImageLocation = null;
@@ -133,6 +154,7 @@
             this.btnCliEncontrar.Name = "btnCliEncontrar";
             this.btnCliEncontrar.Size = new System.Drawing.Size(80, 80);
             this.btnCliEncontrar.TabIndex = 7;
+            this.btnCliEncontrar.Text = "ENCONTRAR";
             this.btnCliEncontrar.UseVisualStyleBackColor = true;
             this.btnCliEncontrar.Click += new System.EventHandler(this.btnCliEncontrar_Click);
             // 
@@ -146,7 +168,7 @@
             this.mtbCliCPF.Mask = "";
             this.mtbCliCPF.MaxLength = 32767;
             this.mtbCliCPF.Name = "mtbCliCPF";
-            this.mtbCliCPF.Size = new System.Drawing.Size(245, 20);
+            this.mtbCliCPF.Size = new System.Drawing.Size(245, 21);
             this.mtbCliCPF.TabIndex = 0;
             this.mtbCliCPF.ValidatingType = null;
             // 
@@ -172,7 +194,7 @@
             this.mtbHora.Mask = "";
             this.mtbHora.MaxLength = 32767;
             this.mtbHora.Name = "mtbHora";
-            this.mtbHora.Size = new System.Drawing.Size(97, 20);
+            this.mtbHora.Size = new System.Drawing.Size(97, 21);
             this.mtbHora.TabIndex = 9;
             this.mtbHora.ValidatingType = null;
             // 
@@ -180,16 +202,16 @@
             // 
             this.txtPessoas.AcceptButton = null;
             this.txtPessoas.AccessibleName = "Pessoas";
-            this.txtPessoas.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtPessoas.Campo = "Pessoas";
             this.txtPessoas.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtPessoas.Location = new System.Drawing.Point(230, 20);
             this.txtPessoas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPessoas.MaxLength = 32767;
+            this.txtPessoas.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtPessoas.Multiline = false;
             this.txtPessoas.Name = "txtPessoas";
             this.txtPessoas.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPessoas.Size = new System.Drawing.Size(104, 20);
+            this.txtPessoas.Size = new System.Drawing.Size(104, 21);
             this.txtPessoas.TabIndex = 10;
             // 
             // mtbData
@@ -202,7 +224,7 @@
             this.mtbData.Mask = "";
             this.mtbData.MaxLength = 32767;
             this.mtbData.Name = "mtbData";
-            this.mtbData.Size = new System.Drawing.Size(116, 20);
+            this.mtbData.Size = new System.Drawing.Size(116, 21);
             this.mtbData.TabIndex = 8;
             this.mtbData.ValidatingType = null;
             this.mtbData.Validated += new System.EventHandler(this.mtbData_Validated);
@@ -220,7 +242,7 @@
             // 
             // btnMesaVer
             // 
-            this.btnMesaVer.Description = "Visualizar";
+            this.btnMesaVer.Description = "VISUALIZAR";
             this.btnMesaVer.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesaVer.Image = global::BurgerShack.Desktop.Properties.Resources.lista;
             this.btnMesaVer.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -229,12 +251,13 @@
             this.btnMesaVer.Name = "btnMesaVer";
             this.btnMesaVer.Size = new System.Drawing.Size(70, 70);
             this.btnMesaVer.TabIndex = 11;
+            this.btnMesaVer.Text = "VISUALIZAR";
             this.btnMesaVer.UseVisualStyleBackColor = true;
             this.btnMesaVer.Click += new System.EventHandler(this.btnMesaVer_Click);
             // 
             // btnMesaAdd
             // 
-            this.btnMesaAdd.Description = "Adicionar";
+            this.btnMesaAdd.Description = "ADICIONAR";
             this.btnMesaAdd.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesaAdd.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnMesaAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -243,6 +266,7 @@
             this.btnMesaAdd.Name = "btnMesaAdd";
             this.btnMesaAdd.Size = new System.Drawing.Size(70, 70);
             this.btnMesaAdd.TabIndex = 10;
+            this.btnMesaAdd.Text = "ADICIONAR";
             this.btnMesaAdd.UseVisualStyleBackColor = true;
             this.btnMesaAdd.Click += new System.EventHandler(this.btnMesaAdd_Click);
             // 
@@ -273,7 +297,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Description = "Cancelar";
+            this.btnCancelar.Description = "CANCELAR";
             this.btnCancelar.HoverColor = System.Drawing.Color.Transparent;
             this.btnCancelar.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -282,12 +306,13 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(70, 70);
             this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Description = "Confirmar";
+            this.btnConfirmar.Description = "CONFIRMAR";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
             this.btnConfirmar.Image = global::BurgerShack.Desktop.Properties.Resources.confirmar;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -296,15 +321,16 @@
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(70, 70);
             this.btnConfirmar.TabIndex = 10;
+            this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmReserva
             // 
-            this.AcceptButton = this.btnSalvar;
+            this.AcceptButton = this.btnAlterar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 350);
+            this.ClientSize = new System.Drawing.Size(450, 450);
             this.Controls.Add(this.grbSituacao);
             this.Controls.Add(this.grbMesas);
             this.Controls.Add(this.grbReserva);
@@ -330,7 +356,7 @@
         #endregion
 
         private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
-        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
+        private vitorrdgs.UiX.Component.UIXButton btnAlterar;
         private vitorrdgs.UiX.Component.UIXButton btnVoltar;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.GroupBox grbCliente;
@@ -348,5 +374,6 @@
         private System.Windows.Forms.GroupBox grbSituacao;
         private vitorrdgs.UiX.Component.UIXButton btnCancelar;
         private vitorrdgs.UiX.Component.UIXButton btnConfirmar;
+        private vitorrdgs.UiX.Component.UIXButton btnExcluir;
     }
 }

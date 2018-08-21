@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Data;
+using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {
@@ -85,7 +86,14 @@ namespace BurgerShack.Desktop
         {
             if (ObjReserva.Cod != -1)
             {
-                if (UtilMensagem.mostrarSimNao("Alteração de Reserva", "Deseja descartar as alterações realizadas?", UtilMensagem.MensagemIcone.INFO))
+                if (btnAlterar.Text == "Salvar")
+                {
+                    if (UtilMensagem.mostrarSimNao("Alteração de Reserva", "Deseja descartar as alterações realizadas?", UtilMensagem.MensagemIcone.INFO))
+                    {
+                        Close();
+                    }
+                }
+                else
                 {
                     Close();
                 }
@@ -111,7 +119,7 @@ namespace BurgerShack.Desktop
                     clnMesa objMesa = new clnMesa
                     {
                         Cod = codMesa
-                    }.obterPorCodigo();
+                    }.obterPorCod();
 
                     if (objMesa != null)
                     {
@@ -274,7 +282,7 @@ namespace BurgerShack.Desktop
                     clnMesa objMesa = new clnMesa
                     {
                         Cod = codMesa
-                    }.obterPorCodigo();
+                    }.obterPorCod();
 
                     if (objMesa.Situacao == clnMesa.mesaSituacao.OCUPADA)
                     {
@@ -319,7 +327,7 @@ namespace BurgerShack.Desktop
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CONFIRMADA;
                 ObjReserva.alterar();
                 UtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!");
-                grbSituacao.Hide();
+                grbSituacao.Enabled = false;
             }
         }
 
@@ -334,13 +342,51 @@ namespace BurgerShack.Desktop
             }
         }
 
+        private void excluir()
+        {
+            if (UtilMensagem.mostrarSimNao("Reserva", "Você deseja realmente excluir esta reserva?", UtilMensagem.MensagemIcone.ERRO))
+            {
+                ObjReserva.Ativo = false;
+                ObjReserva.Situacao = clnReserva.reservaSituacao.CANCELADA;
+                ObjReserva.alterar();
+
+                btnAlterar.Hide();
+                UtilButton.restaurar(btnExcluir);
+                UtilForm.Disable(this);
+            }
+        }
+
+        private void restaurar()
+        {
+            if (UtilMensagem.mostrarSimNao("Reserva", "Você deseja realmente restaurar esta reserva?", UtilMensagem.MensagemIcone.OK))
+            {
+                ObjReserva.Ativo = true;
+                ObjReserva.alterar();
+
+                btnAlterar.Show();
+                UtilButton.excluir(btnExcluir);
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (ObjReserva.Ativo)
+            {
+                excluir();
+            }
+            else
+            {
+                restaurar();
+            }
+        }
+
         private void frmReserva_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
             uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             btnAtendimento.Hide();
-            grbSituacao.Hide();
+            grbSituacao.Enabled = false;
 
             if (ObjReserva == null)
             {
@@ -350,10 +396,8 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                hdrUIX.Title = App.Name + " - Alterando Reserva " + ObjReserva.Cod;
+                hdrUIX.Title = App.Name + " - Reserva " + ObjReserva.Cod;
                 mtbCliCPF.Enabled = false;
-                mtbHora.Enabled = false;
-                mtbData.Enabled = false;
                 btnCliEncontrar.Hide();
 
                 clnCliente objCliente = new clnCliente
@@ -367,24 +411,21 @@ namespace BurgerShack.Desktop
                 mtbHora.Text = UtilFormatar.formatarHora(ObjReserva.Agendado);
                 txtPessoas.Text = UtilConvert.ToString(ObjReserva.Pessoas);
 
-                if (ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
+                UtilForm.Disable(this);
+
+                if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
-                    grbMesas.Hide();
-                }
-                if (ObjReserva.Situacao == clnReserva.reservaSituacao.CANCELADA || ObjReserva.Situacao == clnReserva.reservaSituacao.UTILIZADA)
-                {
-                    txtPessoas.Enabled = false;
-                    btnSalvar.Hide();
-                }
-                else
-                {
-                    if (ObjReserva.Situacao == clnReserva.reservaSituacao.MARCADA)
+                    btnExcluir.Show();
+                    UtilButton.alterar(btnAlterar);
+                    UtilButton.voltar(btnVoltar);
+                    if (ObjReserva.Ativo)
                     {
-                        grbSituacao.Show();
+                        UtilButton.excluir(btnExcluir);
                     }
-                    if (ObjReserva.Agendado.Day.Equals(DateTime.Now.Day))
+                    else
                     {
-                        btnAtendimento.Show();
+                        btnAlterar.Hide();
+                        UtilButton.restaurar(btnExcluir);
                     }
                 }
             }
@@ -417,7 +458,38 @@ namespace BurgerShack.Desktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            salvar();
+            if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+            {
+                salvar();
+            }
+            else
+            {
+                UtilForm.Enable(this);
+                mtbCliCPF.Enabled = false;
+                if (ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
+                {
+                    grbMesas.Hide();
+                }
+                if (ObjReserva.Situacao == clnReserva.reservaSituacao.CANCELADA || ObjReserva.Situacao == clnReserva.reservaSituacao.UTILIZADA)
+                {
+                    txtPessoas.Enabled = false;
+                    btnAlterar.Hide();
+                }
+                else
+                {
+                    if (ObjReserva.Situacao == clnReserva.reservaSituacao.MARCADA)
+                    {
+                        grbSituacao.Enabled = true;
+                    }
+                    if (ObjReserva.Agendado.Day.Equals(DateTime.Now.Day))
+                    {
+                        btnAtendimento.Show();
+                    }
+                }
+
+                UtilButton.cancelar(btnVoltar);
+                UtilButton.salvar(btnAlterar);
+            }
         }
 
         private void mtbData_Validated(object sender, EventArgs e)
