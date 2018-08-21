@@ -123,32 +123,32 @@ namespace BurgerShack.Desktop
                             "\n" + "CNPJ: " + UtilFormatar.formatarCNPJ(objFornecedor.Cnpj);
         }
 
-        private void definirIngrediente(clnIngrediente objIngrediente)
+        private void definirMercadoria(clnMercadoria objMercadoria)
         {
-            ObjEstoque.CodMercadoria = objIngrediente.Cod;
+            ObjEstoque.CodMercadoria = objMercadoria.Cod;
 
             int estoqueAtual = new clnEstoque
             {
-                CodMercadoria = objIngrediente.Cod
+                CodMercadoria = objMercadoria.Cod
             }.obterQuantidadePorMercadoria();
 
-            lblIngrediente.Text = "Ingrediente " + objIngrediente.Cod +
-                            "\n" + "Nome: " + objIngrediente.Nome +
-                            "\n" + "Valor: " + objIngrediente.Valor;
+            lblMercadoria.Text = "Mercadoria " + objMercadoria.Cod +
+                            "\n" + "Descricao: " + objMercadoria.Descricao +
+                            "\n" + "Código de Barras: " + objMercadoria.CodigoBarras;
         }
 
-        private void selecionarIngrediente()
+        private void selecionarMercadoria()
         {
-            clnIngrediente objIngredientes = new clnIngrediente();
+            clnMercadoria objMercadorias = new clnMercadoria();
 
-            clnIngrediente.clnListar objListar = new clnIngrediente.clnListar
+            clnMercadoria.clnListar objListar = new clnMercadoria.clnListar
             {
-                Icone = Properties.Resources.ingrediente,
-                Titulo = "Selecione o Ingrediente",
-                Opcoes = objIngredientes.obterIngredientes()
+                Icone = Properties.Resources.mercadoria,
+                Titulo = "Selecione o Mercadoria",
+                Opcoes = objMercadorias.obterMercadorias()
             };
 
-            clnUtilSelecionar<clnIngrediente> objSelecionar = new clnUtilSelecionar<clnIngrediente>
+            clnUtilSelecionar<clnMercadoria> objSelecionar = new clnUtilSelecionar<clnMercadoria>
             {
                 Quantidade = 0,
                 ObjListar = objListar
@@ -162,7 +162,7 @@ namespace BurgerShack.Desktop
 
             if (objSelecionar.Selecionado != null)
             {
-                definirIngrediente(objSelecionar.Selecionado);
+                definirMercadoria(objSelecionar.Selecionado);
             }
         }
 
@@ -191,16 +191,16 @@ namespace BurgerShack.Desktop
                 }
                 btnFornEncontrar.Hide();
 
-                clnIngrediente objIngrediente = new clnIngrediente
+                clnMercadoria objMercadoria = new clnMercadoria
                 {
                     Cod = ObjEstoque.CodMercadoria
                 }.obterPorCod();
 
-                if (objIngrediente != null)
+                if (objMercadoria != null)
                 {
-                    definirIngrediente(objIngrediente);
+                    definirMercadoria(objMercadoria);
                 }
-                btnIngSelecionar.Hide();
+                btnMercadoria.Hide();
 
             }
             else
@@ -213,7 +213,7 @@ namespace BurgerShack.Desktop
 
         private void btnIngSelecionar_Click(object sender, EventArgs e)
         {
-            selecionarIngrediente();
+            selecionarMercadoria();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

@@ -243,7 +243,7 @@
             // 
             this.btnAcompanhamento.Description = "Guarnição";
             this.btnAcompanhamento.HoverColor = System.Drawing.Color.Transparent;
-            this.btnAcompanhamento.Image = global::BurgerShack.Desktop.Properties.Resources.batatas;
+            this.btnAcompanhamento.Image = global::BurgerShack.Desktop.Properties.Resources.acompanhamento;
             this.btnAcompanhamento.ImageLocation = null;
             this.btnAcompanhamento.Location = new System.Drawing.Point(115, 20);
             this.btnAcompanhamento.Name = "btnAcompanhamento";
@@ -257,7 +257,7 @@
             // 
             this.btnLanche.Description = "Lanche";
             this.btnLanche.HoverColor = System.Drawing.Color.Transparent;
-            this.btnLanche.Image = global::BurgerShack.Desktop.Properties.Resources.hamburger;
+            this.btnLanche.Image = global::BurgerShack.Desktop.Properties.Resources.lanche;
             this.btnLanche.ImageLocation = null;
             this.btnLanche.Location = new System.Drawing.Point(5, 20);
             this.btnLanche.Name = "btnLanche";

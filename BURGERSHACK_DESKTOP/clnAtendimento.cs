@@ -69,7 +69,7 @@ namespace BurgerShack.Desktop
             reader.Close();
         }
 
-        public clnAtendimento obterPorCodigo()
+        public clnAtendimento obterPorCod()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("atendimento");
@@ -84,16 +84,32 @@ namespace BurgerShack.Desktop
             return objAtendimento;
         }
 
+        internal List<clnAtendimento> obterAtendimentos()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("atendimento");
+
+            List<clnAtendimento> objAtendimentos = new List<clnAtendimento>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+            {
+                objAtendimentos.Add(obter(reader));
+            }
+            reader.Close();
+
+            return objAtendimentos;
+        }
+
         public void gravar()
         {
             sqlInsert objInsert = new sqlInsert();
+            objInsert.table("atendimento");
             objInsert.Value.val("id_cliente", CodCliente)
                             .val("id_funcionario", CodFuncionario)
                             .val("id_reserva", CodReserva)
                             .val("inicio", Inicio)
                             .val("fim", Fim)
                             .val("situacao", prefixo(Situacao));
-            objInsert.table("atendimento");
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
             this.obterMesas();

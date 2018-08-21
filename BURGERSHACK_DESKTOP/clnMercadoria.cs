@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
@@ -39,6 +40,19 @@ namespace BurgerShack.Desktop
             return objMercadoria;
         }
 
+        internal List<clnMercadoria> obterMercadorias()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("mercadoria");
+            objSelect.Where.where("id", Cod);
 
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            List<clnMercadoria> objMercadorias = new List<clnMercadoria>();
+            while (reader.Read())
+                objMercadorias.Add(obter(reader));
+            reader.Close();
+
+            return objMercadorias;
+        }
     }
 }

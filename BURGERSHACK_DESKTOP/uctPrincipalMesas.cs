@@ -40,7 +40,7 @@ namespace BurgerShack.Desktop
                     objAtendimento = new clnAtendimento
                     {
                         Cod = (int)codAtendimento
-                    }.obterPorCodigo();
+                    }.obterPorCod();
                 }
             }
             else

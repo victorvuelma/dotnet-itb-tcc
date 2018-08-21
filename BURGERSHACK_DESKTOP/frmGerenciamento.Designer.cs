@@ -72,7 +72,7 @@
             this.btnMercadorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMercadorias.Description = "MERCADORIAS";
             this.btnMercadorias.HoverColor = System.Drawing.Color.Transparent;
-            this.btnMercadorias.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
+            this.btnMercadorias.Image = global::BurgerShack.Desktop.Properties.Resources.mercadoria;
             this.btnMercadorias.ImageLocation = null;
             this.btnMercadorias.Location = new System.Drawing.Point(105, 5);
             this.btnMercadorias.Name = "btnMercadorias";
@@ -80,6 +80,7 @@
             this.btnMercadorias.TabIndex = 17;
             this.btnMercadorias.Text = "Mercadorias";
             this.btnMercadorias.UseVisualStyleBackColor = true;
+            this.btnMercadorias.Visible = false;
             // 
             // btnPagamentos
             // 
@@ -109,7 +110,7 @@
             this.btnPedidos.TabIndex = 15;
             this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = true;
-            this.btnPedidos.Visible = false;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // btnReservas
             // 
@@ -124,7 +125,6 @@
             this.btnReservas.TabIndex = 14;
             this.btnReservas.Text = "Reservas";
             this.btnReservas.UseVisualStyleBackColor = true;
-            this.btnReservas.Visible = false;
             this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
             // btnAtendimentos
@@ -140,6 +140,7 @@
             this.btnAtendimentos.TabIndex = 13;
             this.btnAtendimentos.Text = "Atendimentos";
             this.btnAtendimentos.UseVisualStyleBackColor = true;
+            this.btnAtendimentos.Click += new System.EventHandler(this.btnAtendimentos_Click);
             // 
             // btnMesas
             // 

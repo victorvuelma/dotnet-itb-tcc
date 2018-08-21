@@ -63,6 +63,16 @@ namespace BurgerShack.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acompanhamento {
+            get {
+                object obj = ResourceManager.GetObject("acompanhamento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adicionar {
             get {
                 object obj = ResourceManager.GetObject("adicionar", resourceCulture);
@@ -103,59 +113,9 @@ namespace BurgerShack.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap batatas {
-            get {
-                object obj = ResourceManager.GetObject("batatas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap batatas1 {
-            get {
-                object obj = ResourceManager.GetObject("batatas1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap batatas2 {
-            get {
-                object obj = ResourceManager.GetObject("batatas2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bebida {
             get {
                 object obj = ResourceManager.GetObject("bebida", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bebida1 {
-            get {
-                object obj = ResourceManager.GetObject("bebida1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bebida2 {
-            get {
-                object obj = ResourceManager.GetObject("bebida2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +156,16 @@ namespace BurgerShack.Desktop.Properties {
         internal static System.Drawing.Bitmap conta {
             get {
                 object obj = ResourceManager.GetObject("conta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar {
+            get {
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,16 +263,6 @@ namespace BurgerShack.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hamburger {
-            get {
-                object obj = ResourceManager.GetObject("hamburger", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap imagem {
             get {
                 object obj = ResourceManager.GetObject("imagem", resourceCulture);
@@ -343,16 +303,6 @@ namespace BurgerShack.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ingrediente1 {
-            get {
-                object obj = ResourceManager.GetObject("ingrediente1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lanche {
             get {
                 object obj = ResourceManager.GetObject("lanche", resourceCulture);
@@ -386,6 +336,16 @@ namespace BurgerShack.Desktop.Properties {
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mercadoria {
+            get {
+                object obj = ResourceManager.GetObject("mercadoria", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,16 +413,6 @@ namespace BurgerShack.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap produto1 {
-            get {
-                object obj = ResourceManager.GetObject("produto1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap remover {
             get {
                 object obj = ResourceManager.GetObject("remover", resourceCulture);
@@ -506,16 +456,6 @@ namespace BurgerShack.Desktop.Properties {
         internal static System.Drawing.Bitmap sobremesa {
             get {
                 object obj = ResourceManager.GetObject("sobremesa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sorvete {
-            get {
-                object obj = ResourceManager.GetObject("sorvete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

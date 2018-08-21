@@ -16,17 +16,21 @@ namespace BurgerShack.Desktop
             InitializeComponent();
         }
 
-        private void abrirLista(String tipo, IUtilCallback callbackNovo, IUtilCallback<DataGridView, String, bool> callbackObter, IUtilCallback<DataGridViewRow> callbackAlterar, bool inativos, String[] colunas)
+        private void abrirLista(String titulo, IUtilCallback callbackNovo, IUtilCallback<DataGridView, String, bool> callbackObter, IUtilCallback<DataGridViewRow> callbackAlterar, bool inativos, String[] colunas)
         {
-            uctListar.CallbackNovo = callbackNovo;
-            uctListar.Colunas = colunas;
-            uctListar.CallbackObter = callbackObter;
-            uctListar.CallbackAlterar = callbackAlterar;
-            uctListar.Inativos = inativos;
+            titulo = App.Name + " - Gerenciamento :: " + titulo;
+            if (!hdrUIX.Title.Equals(titulo, StringComparison.InvariantCultureIgnoreCase))
+            {
+                uctListar.CallbackNovo = callbackNovo;
+                uctListar.Colunas = colunas;
+                uctListar.CallbackObter = callbackObter;
+                uctListar.CallbackAlterar = callbackAlterar;
+                uctListar.Inativos = inativos;
 
-            hdrUIX.Title = App.Name + " - Gerenciamento :: " + tipo;
+                hdrUIX.Title = titulo;
 
-            uctListar.atualizar();
+                uctListar.atualizar();
+            }
         }
 
         private void abrirIngredientes()
@@ -56,17 +60,27 @@ namespace BurgerShack.Desktop
 
         private void abrirReservas()
         {
-            abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), false, new String[] { "Código", "Pessoas", "Data", "Situação" });
+            abrirLista("Reservas", new CallbackReservaNovo(), new CallbackReservaObter(), new CallbackReservaAlterar(), true, new String[] { "Código", "Pessoas", "Data", "Situação" });
         }
 
         private void abrirEstoques()
         {
-            abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), false, new String[] { "Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor" });
+            abrirLista("Estoques", new CallbackEstoqueNovo(), new CallbackEstoqueObter(), new CallbackEstoqueAlterar(), false, new String[] { "Código", "Mercadoria", "Fornecedor", "Quantidade", "Validade", "Valor" });
         }
 
         private void abrirMesas()
         {
             abrirLista("Mesas", new CallbackMesaNovo(), new CallbackMesaObter(), new CallbackMesaAlterar(), true, new String[] { "Código", "Número", "Lugares", "Situação" });
+        }
+
+        private void abrirAtendimentos()
+        {
+            abrirLista("Atendimentos", null, new CallbackAtendimentoObter(), new CallbackAtendimentoAlterar(), false, new String[] { "Código", "Número", "Lugares", "Situação" });
+        }
+
+        private void abrirPedidos()
+        {
+            abrirLista("Pedidos", null, new CallbackPedidoObter(), new CallbackPedidoAlterar(), false, new String[] { "Código", "Número", "Lugares", "Situação" });
         }
 
         private void sair()
@@ -129,6 +143,16 @@ namespace BurgerShack.Desktop
         private void btnMesas_Click(object sender, EventArgs e)
         {
             abrirMesas();
+        }
+
+        private void btnAtendimentos_Click(object sender, EventArgs e)
+        {
+            abrirAtendimentos();
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            abrirPedidos();
         }
 
         private class CallbackIngredienteNovo : IUtilCallback
@@ -448,8 +472,7 @@ namespace BurgerShack.Desktop
                     objReservas = new clnReserva
                     {
                         Agendado = (DateTime)data,
-                        Ativo = !ativo
-
+                        Ativo = ativo
                     }.obterPorDataAgendada();
                 }
                 else
@@ -517,7 +540,7 @@ namespace BurgerShack.Desktop
                         Cod = objEstoque.CodFornecedor
                     }.obterPorCod();
 
-                    //"Código", "Ingrediente", "Fornecedor", "Quantidade", "Validade", "Valor"
+                    //"Código", "Mercadoria", "Fornecedor", "Quantidade", "Validade", "Valor"
                     dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, UtilFormatar.formatarData(objEstoque.Validade), UtilFormatar.formatarValor(objEstoque.Valor) });
                 }
                 return false;
@@ -568,6 +591,84 @@ namespace BurgerShack.Desktop
                 {
                     //"Código", "Número", "Lugares", "Situação"
                     dgv.Rows.Add(new object[] { objMesa.Cod, objMesa.Numero, objMesa.Lugares, objMesa.Situacao });
+                }
+                return false;
+            }
+        }
+
+        private class CallbackAtendimentoAlterar : IUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnAtendimento objAtendimento = new clnAtendimento
+                {
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objAtendimento != null)
+                {
+                    frmAtendimento frmAlterarAtendimento = new frmAtendimento
+                    {
+                        ObjAtendimento = objAtendimento
+                    };
+                    frmAlterarAtendimento.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackAtendimentoObter : IUtilCallback<DataGridView, String, bool>
+        {
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
+            {
+                clnAtendimento objAtendimentos = new clnAtendimento
+                {
+
+                };
+                foreach (clnAtendimento objAtendimento in objAtendimentos.obterAtendimentos())
+                {
+                    //"Código", "Inicio", "Fim", "Situação"
+                    dgv.Rows.Add(new object[] { objAtendimento.Cod, UtilFormatar.formatarDataHora(objAtendimento.Inicio), UtilFormatar.formatarDataHora(objAtendimento.Fim), objAtendimento.Situacao });
+                }
+                return false;
+            }
+        }
+
+        private class CallbackPedidoAlterar : IUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnAtendimento objAtendimento = new clnAtendimento
+                {
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objAtendimento != null)
+                {
+                    frmAtendimento frmAlterarAtendimento = new frmAtendimento
+                    {
+                        ObjAtendimento = objAtendimento
+                    };
+                    frmAlterarAtendimento.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackPedidoObter : IUtilCallback<DataGridView, String, bool>
+        {
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
+            {
+                clnAtendimento objAtendimentos = new clnAtendimento
+                {
+
+                };
+                foreach (clnAtendimento objAtendimento in objAtendimentos.obterAtendimentos())
+                {
+                    //"Código", "Inicio", "Fim", "Situação"
+                    dgv.Rows.Add(new object[] { objAtendimento.Cod, UtilFormatar.formatarDataHora(objAtendimento.Inicio), UtilFormatar.formatarDataHora(objAtendimento.Fim), objAtendimento.Situacao });
                 }
                 return false;
             }

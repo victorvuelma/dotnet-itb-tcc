@@ -33,21 +33,21 @@
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
             this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbEntrada = new System.Windows.Forms.GroupBox();
-            this.mtbValidade =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.mtbValidade = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.txtValor = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtQuantidade = new vitorrdgs.UiX.Component.UIXTextBox();
             this.grbFornecedor = new System.Windows.Forms.GroupBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.btnFornEncontrar = new vitorrdgs.UiX.Component.UIXButton();
-            this.mtbFornCNPJ =new vitorrdgs.UiX.Component.UIXMaskedTextBox();
-            this.grbIngrediente = new System.Windows.Forms.GroupBox();
-            this.lblIngrediente = new System.Windows.Forms.Label();
+            this.mtbFornCNPJ = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
+            this.grbMercadoria = new System.Windows.Forms.GroupBox();
+            this.lblMercadoria = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnIngSelecionar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnMercadoria = new vitorrdgs.UiX.Component.UIXButton();
             this.pnlMenu.SuspendLayout();
             this.grbEntrada.SuspendLayout();
             this.grbFornecedor.SuspendLayout();
-            this.grbIngrediente.SuspendLayout();
+            this.grbMercadoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // hdrUIX
@@ -75,7 +75,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Description = "Cancelar";
+            this.btnVoltar.Description = "CANCELAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -89,7 +89,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Description = "Salvar";
+            this.btnSalvar.Description = "SALVAR";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -184,7 +184,7 @@
             // 
             // btnFornEncontrar
             // 
-            this.btnFornEncontrar.Description = "Encontrar";
+            this.btnFornEncontrar.Description = "ENCONTRAR";
             this.btnFornEncontrar.HoverColor = System.Drawing.Color.Transparent;
             this.btnFornEncontrar.Image = global::BurgerShack.Desktop.Properties.Resources.fornecedor;
             this.btnFornEncontrar.ImageLocation = null;
@@ -210,24 +210,24 @@
             this.mtbFornCNPJ.TabIndex = 0;
             this.mtbFornCNPJ.ValidatingType = null;
             // 
-            // grbIngrediente
+            // grbMercadoria
             // 
-            this.grbIngrediente.Controls.Add(this.lblIngrediente);
-            this.grbIngrediente.Controls.Add(this.label1);
-            this.grbIngrediente.Controls.Add(this.btnIngSelecionar);
-            this.grbIngrediente.Location = new System.Drawing.Point(105, 160);
-            this.grbIngrediente.Name = "grbIngrediente";
-            this.grbIngrediente.Size = new System.Drawing.Size(340, 100);
-            this.grbIngrediente.TabIndex = 31;
-            this.grbIngrediente.TabStop = false;
-            this.grbIngrediente.Text = "INGREDIENTE";
+            this.grbMercadoria.Controls.Add(this.lblMercadoria);
+            this.grbMercadoria.Controls.Add(this.label1);
+            this.grbMercadoria.Controls.Add(this.btnMercadoria);
+            this.grbMercadoria.Location = new System.Drawing.Point(105, 160);
+            this.grbMercadoria.Name = "grbMercadoria";
+            this.grbMercadoria.Size = new System.Drawing.Size(340, 100);
+            this.grbMercadoria.TabIndex = 31;
+            this.grbMercadoria.TabStop = false;
+            this.grbMercadoria.Text = "MERCADORIA";
             // 
-            // lblIngrediente
+            // lblMercadoria
             // 
-            this.lblIngrediente.Location = new System.Drawing.Point(5, 20);
-            this.lblIngrediente.Name = "lblIngrediente";
-            this.lblIngrediente.Size = new System.Drawing.Size(245, 75);
-            this.lblIngrediente.TabIndex = 9;
+            this.lblMercadoria.Location = new System.Drawing.Point(5, 20);
+            this.lblMercadoria.Name = "lblMercadoria";
+            this.lblMercadoria.Size = new System.Drawing.Size(245, 75);
+            this.lblMercadoria.TabIndex = 9;
             // 
             // label1
             // 
@@ -236,19 +236,19 @@
             this.label1.Size = new System.Drawing.Size(245, 75);
             this.label1.TabIndex = 8;
             // 
-            // btnIngSelecionar
+            // btnMercadoria
             // 
-            this.btnIngSelecionar.Description = "Selecionar";
-            this.btnIngSelecionar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnIngSelecionar.Image = global::BurgerShack.Desktop.Properties.Resources.ingrediente;
-            this.btnIngSelecionar.ImageLocation = null;
-            this.btnIngSelecionar.Location = new System.Drawing.Point(255, 15);
-            this.btnIngSelecionar.Name = "btnIngSelecionar";
-            this.btnIngSelecionar.Size = new System.Drawing.Size(80, 80);
-            this.btnIngSelecionar.TabIndex = 7;
-            this.btnIngSelecionar.Text = "Selecionar";
-            this.btnIngSelecionar.UseVisualStyleBackColor = true;
-            this.btnIngSelecionar.Click += new System.EventHandler(this.btnIngSelecionar_Click);
+            this.btnMercadoria.Description = "SELECIONAR";
+            this.btnMercadoria.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMercadoria.Image = global::BurgerShack.Desktop.Properties.Resources.mercadoria;
+            this.btnMercadoria.ImageLocation = null;
+            this.btnMercadoria.Location = new System.Drawing.Point(255, 15);
+            this.btnMercadoria.Name = "btnMercadoria";
+            this.btnMercadoria.Size = new System.Drawing.Size(80, 80);
+            this.btnMercadoria.TabIndex = 7;
+            this.btnMercadoria.Text = "Selecionar";
+            this.btnMercadoria.UseVisualStyleBackColor = true;
+            this.btnMercadoria.Click += new System.EventHandler(this.btnIngSelecionar_Click);
             // 
             // frmEstoque
             // 
@@ -256,7 +256,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 350);
-            this.Controls.Add(this.grbIngrediente);
+            this.Controls.Add(this.grbMercadoria);
             this.Controls.Add(this.grbFornecedor);
             this.Controls.Add(this.grbEntrada);
             this.Controls.Add(this.pnlMenu);
@@ -271,7 +271,7 @@
             this.pnlMenu.ResumeLayout(false);
             this.grbEntrada.ResumeLayout(false);
             this.grbFornecedor.ResumeLayout(false);
-            this.grbIngrediente.ResumeLayout(false);
+            this.grbMercadoria.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -287,12 +287,12 @@
         private System.Windows.Forms.Label lblFornecedor;
         private vitorrdgs.UiX.Component.UIXButton btnFornEncontrar;
         private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbFornCNPJ;
-        private System.Windows.Forms.GroupBox grbIngrediente;
+        private System.Windows.Forms.GroupBox grbMercadoria;
         private System.Windows.Forms.Label label1;
-        private vitorrdgs.UiX.Component.UIXButton btnIngSelecionar;
+        private vitorrdgs.UiX.Component.UIXButton btnMercadoria;
         private vitorrdgs.UiX.Component.UIXTextBox txtValor;
         private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbValidade;
-        private System.Windows.Forms.Label lblIngrediente;
+        private System.Windows.Forms.Label lblMercadoria;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

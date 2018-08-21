@@ -177,6 +177,11 @@
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />
     <Compile Include="clnUtil.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Util\clnUtilFormValidar.cs" />
     <Compile Include="frmConta.cs">
       <SubType>Form</SubType>
@@ -303,11 +308,6 @@
     </Compile>
     <Compile Include="Numboard\FormNumboard.Designer.cs">
       <DependentUpon>FormNumboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="uctGerenciamentoListar.cs">
       <SubType>UserControl</SubType>
@@ -494,9 +494,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hamburger.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\adicionar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -545,7 +542,7 @@
     <None Include="Resources\sobremesa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\batatas.png" />
+    <None Include="Resources\acompanhamento.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bebida.png" />
@@ -557,15 +554,7 @@
     <None Include="Resources\cliente.png" />
     <None Include="Resources\salvar.png" />
     <None Include="Resources\reserva.png" />
-    <None Include="Resources\sorvete.png" />
-    <None Include="Resources\batatas2.png" />
-    <None Include="Resources\bebida2.png" />
-    <None Include="Resources\produto-lanche.png" />
     <None Include="Resources\lanche.png" />
-    <None Include="Resources\produto1.png" />
-    <None Include="Resources\batatas1.png" />
-    <None Include="Resources\bebida1.png" />
-    <None Include="Resources\ingrediente1.png" />
     <None Include="Resources\produto.png" />
     <None Include="Resources\ingrediente.png" />
     <None Include="Resources\pedido.png" />
@@ -596,7 +585,12 @@
   <ItemGroup>
     <None Include="Resources\imagem-erro.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mercadoria.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
