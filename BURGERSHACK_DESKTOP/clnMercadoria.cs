@@ -54,5 +54,28 @@ namespace BurgerShack.Desktop
 
             return objMercadorias;
         }
+
+        internal class clnListar : clnUtilListar<clnMercadoria>
+        {
+            internal override int Cod(clnMercadoria val)
+            {
+                return val.Cod;
+            }
+
+            internal override string Detalhes(clnMercadoria val)
+            {
+                return "Código de barras: " + val.CodigoBarras;
+            }
+
+            internal override string Imagem(clnMercadoria val)
+            {
+                return clnArquivo.tempImage(Properties.Resources.mercadoria);
+            }
+
+            internal override string Nome(clnMercadoria val)
+            {
+                return val.Descricao;
+            }
+        }
     }
 }
