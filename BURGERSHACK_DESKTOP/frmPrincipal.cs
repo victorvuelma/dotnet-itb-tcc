@@ -1,13 +1,6 @@
 ﻿using BurgerShack.Common;
 using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 
@@ -28,21 +21,21 @@ namespace BurgerShack.Desktop
 
         private void abrirMesas()
         {
-            uctPrincipalMesas uctMesas = new uctPrincipalMesas{};
+            uctPrincipalMesas uctMesas = new uctPrincipalMesas { };
 
             alterarConteudo(uctMesas, "Mesas");
         }
 
         private void abrirReservas()
         {
-            uctPrincipalReservas uctMesas = new uctPrincipalReservas{};
+            uctPrincipalReservas uctMesas = new uctPrincipalReservas { };
 
             alterarConteudo(uctMesas, "Reservas");
         }
 
         private void abrirGerenciamento()
         {
-            frmGerenciamento frmGerenciamento = new frmGerenciamento{};
+            frmGerenciamento frmGerenciamento = new frmGerenciamento { };
             frmGerenciamento.ShowDialog();
         }
 
@@ -108,6 +101,24 @@ namespace BurgerShack.Desktop
         private void btnGerenciamento_Click(object sender, EventArgs e)
         {
             abrirGerenciamento();
+        }
+
+        private void btnSenha_Click(object sender, EventArgs e)
+        {
+            frmConfirmar frmConfirmar = new frmConfirmar();
+            frmConfirmar.ShowDialog();
+
+            if (frmConfirmar.Confirmado)
+            {
+                clnAcesso objAcesso = new clnAcesso
+                {
+                    CodFuncionario = AppDesktop.FuncionarioAtual.Cod
+                }.obterPorFuncionario();
+                
+                frmAcesso frmAlterarSenha = new frmAcesso();
+                frmAlterarSenha.ObjAcesso = objAcesso;
+                frmAlterarSenha.ShowDialog();
+            }
         }
     }
 }

@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Drawing;
+﻿using BurgerShack.Common;
+using System;
 using vitorrdgs.UiX;
-using vitorrdgs.SqlMaster;
-using System.Windows.Forms;
-using BurgerShack.Common;
 using vitorrdgs.UiX.Property;
 
 namespace BurgerShack.Desktop
@@ -33,10 +25,10 @@ namespace BurgerShack.Desktop
 
         internal static void startup()
         {
-                        App.DatabaseSql.ExceptionCall = (Exception ex) =>
-            {
-                throw ex;
-            };
+            App.DatabaseSql.ExceptionCall = (Exception ex) =>
+                {
+                    throw ex;
+                };
         }
 
     }

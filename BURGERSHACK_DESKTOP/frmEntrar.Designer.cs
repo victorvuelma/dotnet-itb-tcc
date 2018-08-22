@@ -121,7 +121,7 @@
             // 
             this.btnEntrar.Description = "Acessar";
             this.btnEntrar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnEntrar.Image = global::BurgerShack.Desktop.Properties.Resources.entrar;
+            this.btnEntrar.Image = global::BurgerShack.Desktop.Properties.Resources.acesso;
             this.btnEntrar.ImageLocation = null;
             this.btnEntrar.Location = new System.Drawing.Point(380, 155);
             this.btnEntrar.Name = "btnEntrar";

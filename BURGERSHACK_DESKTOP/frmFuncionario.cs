@@ -232,23 +232,29 @@ namespace BurgerShack.Desktop
 
         private void abrirAcesso()
         {
-            clnAcesso objAcesso = new clnAcesso
-            {
-                CodFuncionario = ObjFuncionario.Cod
-            }.obterPorFuncionario();
+            frmConfirmar frmConfirmar = new frmConfirmar();
+            frmConfirmar.ShowDialog();
 
-            if (objAcesso == null)
+            if (frmConfirmar.Confirmado)
             {
-                objAcesso = new clnAcesso
+                clnAcesso objAcesso = new clnAcesso
                 {
                     CodFuncionario = ObjFuncionario.Cod
+                }.obterPorFuncionario();
+
+                if (objAcesso == null)
+                {
+                    objAcesso = new clnAcesso
+                    {
+                        CodFuncionario = ObjFuncionario.Cod
+                    };
+                }
+                frmAcesso frmAcesso = new frmAcesso
+                {
+                    ObjAcesso = objAcesso
                 };
+                frmAcesso.ShowDialog();
             }
-            frmAcesso frmAcesso = new frmAcesso
-            {
-                ObjAcesso = objAcesso
-            };
-            frmAcesso.ShowDialog();
         }
 
         private void frmCliente_Load(object sender, EventArgs e)

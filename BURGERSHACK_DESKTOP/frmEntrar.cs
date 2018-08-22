@@ -48,7 +48,7 @@ namespace BurgerShack.Desktop
                 frmAcesso.ObjAcesso = new clnAcesso
                 {
                     CodFuncionario = objFuncionarios.First().Cod,
-                    Hash = "",
+                    Senha = "",
                     Usuario = ""
                 };
                 frmAcesso.ShowDialog();
@@ -91,10 +91,10 @@ namespace BurgerShack.Desktop
                 clnAcesso objAcesso = new clnAcesso
                 {
                     Usuario = txtUsuario.Text,
-                    Hash = txtSenha.Text
+                    Senha = txtSenha.Text
                 };
 
-                int? codFuncionario = objAcesso.acessar();
+                int? codFuncionario = objAcesso.autenticarPorUsuario();
 
                 if (codFuncionario != null)
                 {

@@ -30,6 +30,7 @@
         {
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnSenha = new vitorrdgs.UiX.Component.UIXButton();
             this.btnReservas = new vitorrdgs.UiX.Component.UIXButton();
             this.btnSair = new vitorrdgs.UiX.Component.UIXButton();
             this.btnGerenciamento = new vitorrdgs.UiX.Component.UIXButton();
@@ -47,6 +48,7 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Controls.Add(this.btnSenha);
             this.pnlMenu.Controls.Add(this.btnReservas);
             this.pnlMenu.Controls.Add(this.btnSair);
             this.pnlMenu.Controls.Add(this.btnGerenciamento);
@@ -56,9 +58,23 @@
             this.pnlMenu.Size = new System.Drawing.Size(100, 650);
             this.pnlMenu.TabIndex = 5;
             // 
+            // btnSenha
+            // 
+            this.btnSenha.Description = "MUDAR SENHA";
+            this.btnSenha.HoverColor = System.Drawing.Color.Transparent;
+            this.btnSenha.Image = global::BurgerShack.Desktop.Properties.Resources.acesso;
+            this.btnSenha.ImageLocation = null;
+            this.btnSenha.Location = new System.Drawing.Point(5, 455);
+            this.btnSenha.Name = "btnSenha";
+            this.btnSenha.Size = new System.Drawing.Size(90, 90);
+            this.btnSenha.TabIndex = 8;
+            this.btnSenha.Text = "MUDAR SENHA";
+            this.btnSenha.UseVisualStyleBackColor = true;
+            this.btnSenha.Click += new System.EventHandler(this.btnSenha_Click);
+            // 
             // btnReservas
             // 
-            this.btnReservas.Description = "Reservas";
+            this.btnReservas.Description = "RESERVAS";
             this.btnReservas.HoverColor = System.Drawing.Color.Transparent;
             this.btnReservas.Image = global::BurgerShack.Desktop.Properties.Resources.reserva;
             this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -67,12 +83,13 @@
             this.btnReservas.Name = "btnReservas";
             this.btnReservas.Size = new System.Drawing.Size(90, 90);
             this.btnReservas.TabIndex = 7;
+            this.btnReservas.Text = "RESERVAS";
             this.btnReservas.UseVisualStyleBackColor = true;
             this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
             // btnSair
             // 
-            this.btnSair.Description = "Sair";
+            this.btnSair.Description = "SAIR";
             this.btnSair.HoverColor = System.Drawing.Color.Transparent;
             this.btnSair.Image = global::BurgerShack.Desktop.Properties.Resources.sair;
             this.btnSair.ImageLocation = null;
@@ -80,25 +97,27 @@
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(90, 90);
             this.btnSair.TabIndex = 6;
+            this.btnSair.Text = "SAIR";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnGerenciamento
             // 
-            this.btnGerenciamento.Description = "Gerenciar";
+            this.btnGerenciamento.Description = "GERENCIAR";
             this.btnGerenciamento.HoverColor = System.Drawing.Color.Transparent;
             this.btnGerenciamento.Image = global::BurgerShack.Desktop.Properties.Resources.gerenciador;
             this.btnGerenciamento.ImageLocation = null;
-            this.btnGerenciamento.Location = new System.Drawing.Point(5, 455);
+            this.btnGerenciamento.Location = new System.Drawing.Point(5, 355);
             this.btnGerenciamento.Name = "btnGerenciamento";
             this.btnGerenciamento.Size = new System.Drawing.Size(90, 90);
             this.btnGerenciamento.TabIndex = 2;
+            this.btnGerenciamento.Text = "GERENCIAR";
             this.btnGerenciamento.UseVisualStyleBackColor = true;
             this.btnGerenciamento.Click += new System.EventHandler(this.btnGerenciamento_Click);
             // 
             // btnMesas
             // 
-            this.btnMesas.Description = "Mesas";
+            this.btnMesas.Description = "MESAS";
             this.btnMesas.HoverColor = System.Drawing.Color.Transparent;
             this.btnMesas.Image = global::BurgerShack.Desktop.Properties.Resources.mesa;
             this.btnMesas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -107,6 +126,7 @@
             this.btnMesas.Name = "btnMesas";
             this.btnMesas.Size = new System.Drawing.Size(90, 90);
             this.btnMesas.TabIndex = 0;
+            this.btnMesas.Text = "MESAS";
             this.btnMesas.UseVisualStyleBackColor = true;
             this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
@@ -153,5 +173,6 @@
         private vitorrdgs.UiX.Component.UIXButton btnGerenciamento;
         private vitorrdgs.UiX.Component.UIXButton btnMesas;
         private vitorrdgs.UiX.Component.UIXButton btnReservas;
+        private vitorrdgs.UiX.Component.UIXButton btnSenha;
     }
 }

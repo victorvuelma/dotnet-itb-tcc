@@ -30,7 +30,6 @@ namespace BurgerShack.Desktop
             clnUtil.atualizarForm(this);
 
             txtUsuario.Text = ObjAcesso.Usuario;
-            txtSenha.Text = ObjAcesso.Hash;
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)
@@ -63,7 +62,7 @@ namespace BurgerShack.Desktop
                 if (objAcessoUsuario == null || objAcessoUsuario.CodFuncionario == ObjAcesso.CodFuncionario)
                 {
                     ObjAcesso.Usuario = txtUsuario.Text;
-                    ObjAcesso.Hash = txtSenha.Text;
+                    ObjAcesso.Senha = txtSenha.Text;
                     ObjAcesso.gravar();
 
                     UtilMensagem.mostrarOk("Acesso", "Acesso gravado com sucesso!");

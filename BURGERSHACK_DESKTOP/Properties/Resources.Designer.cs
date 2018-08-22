@@ -63,6 +63,16 @@ namespace BurgerShack.Desktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acesso {
+            get {
+                object obj = ResourceManager.GetObject("acesso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap acompanhamento {
             get {
                 object obj = ResourceManager.GetObject("acompanhamento", resourceCulture);
@@ -166,16 +176,6 @@ namespace BurgerShack.Desktop.Properties {
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap entrar {
-            get {
-                object obj = ResourceManager.GetObject("entrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

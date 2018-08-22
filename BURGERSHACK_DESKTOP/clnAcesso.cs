@@ -1,14 +1,10 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
 using System.Data.SqlClient;
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
+using vitorrdgs.Util.Hash;
 
 namespace BurgerShack.Desktop
 {
@@ -19,33 +15,51 @@ namespace BurgerShack.Desktop
         private bool _ativo = true;
 
         private String _usuario;
-        private String _hash;
+        private String _senha;
 
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public string Usuario { get => _usuario; set => _usuario = value; }
-        public string Hash { get => _hash; set => _hash = value; }
+        public string Senha { private get => Hash.HASH.cyph(_senha); set => _senha = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnAcesso obter(SqlDataReader reader) => new clnAcesso
         {
             CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
-            Hash = UtilConvert.ToString(reader["hash"]),
+            Usuario = UtilConvert.ToString(reader["usuario"]),
             Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
-        public int? acessar()
+        public int? autenticarPorUsuario()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");
             objSelect.Columns.select("id_funcionario");
             objSelect.Where.where("usuario", Usuario)
-                           .where("hash", Hash)
-                           .where("ativo", 1);
+                           .where("hash", Senha)
+                           .where("ativo", UtilConvert.ToBit(Ativo));
 
             int? codFuncionario = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
                 codFuncionario = UtilConvert.ToInt(reader["id_funcionario"]);
+            reader.Close();
+
+            return codFuncionario;
+        }
+
+        public int? autenticarPorCodigo()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("acesso");
+            objSelect.Columns.select("usuario");
+            objSelect.Where.where("id_funcionario", CodFuncionario)
+                           .where("hash", Senha)
+                           .where("ativo", UtilConvert.ToBit(Ativo));
+
+            int? codFuncionario = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+                codFuncionario = UtilConvert.ToInt(reader["usuario"]);
             reader.Close();
 
             return codFuncionario;
@@ -100,18 +114,18 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("acesso");
             objUpdate.Where.where("id_funcionario", CodFuncionario);
-            objUpdate.Value.val("hash", Hash)
-                         .val("usuario", Usuario)
-                         .val("ativo", UtilConvert.ToBit(Ativo));
+            objUpdate.Value.val("hash", Senha)
+                           .val("usuario", Usuario)
+                           .val("ativo", UtilConvert.ToBit(Ativo));
 
             if (objUpdate.execute(App.DatabaseSql) == 0)
             {
                 sqlInsert objInsert = new sqlInsert();
                 objInsert.table("acesso");
-                objInsert.Value.val("hash", Hash)
-                                .val("usuario", Usuario)
-                                .val("id_funcionario", CodFuncionario)
-                                .val("ativo", UtilConvert.ToBit(Ativo));
+                objInsert.Value.val("hash", Senha)
+                               .val("usuario", Usuario)
+                               .val("id_funcionario", CodFuncionario)
+                               .val("ativo", UtilConvert.ToBit(Ativo));
 
                 objInsert.execute(App.DatabaseSql);
             }
