@@ -18,7 +18,6 @@ namespace BurgerShack.Desktop
             InitializeComponent();
 
             txtSenha.txt.PasswordChar = '*';
-            hdrUIX.Title = App.Name + " - Gerenciar Acesso";
 
             _validar = new clnUtilFormValidar();
             _validar.addValidacao(txtUsuario, clnUtilFormValidar.Validacao.OBRIGATORIO);
@@ -30,6 +29,14 @@ namespace BurgerShack.Desktop
             clnUtil.atualizarForm(this);
 
             txtUsuario.Text = ObjAcesso.Usuario;
+
+            if(txtUsuario.Text == "")
+            {
+                hdrUIX.Title = App.Name + " - Novo Acesso";
+            } else
+            {
+                hdrUIX.Title = App.Name + " - Alterar Acesso";
+            }
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

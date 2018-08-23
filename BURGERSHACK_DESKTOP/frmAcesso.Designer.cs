@@ -69,7 +69,7 @@
             // 
             this.txtSenha.AcceptButton = null;
             this.txtSenha.AccessibleName = "Senha";
-            this.txtSenha.Campo = "Senha*";
+            this.txtSenha.Campo = "Nova Senha*";
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtSenha.Location = new System.Drawing.Point(5, 50);
@@ -122,7 +122,6 @@
             this.grbAcesso.Size = new System.Drawing.Size(340, 90);
             this.grbAcesso.TabIndex = 16;
             this.grbAcesso.TabStop = false;
-            this.grbAcesso.Text = "INFORMAÇÕES DE ACESSO";
             // 
             // frmAcesso
             // 

@@ -51,7 +51,7 @@
             // 
             this.txtSenha.AcceptButton = null;
             this.txtSenha.AccessibleName = "Senha";
-            this.txtSenha.Campo = "Senha*";
+            this.txtSenha.Campo = "Senha Atual*";
             this.txtSenha.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
             this.txtSenha.Location = new System.Drawing.Point(5, 55);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
