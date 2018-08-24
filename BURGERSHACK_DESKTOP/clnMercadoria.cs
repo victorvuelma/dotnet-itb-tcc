@@ -43,10 +43,28 @@ namespace BurgerShack.Desktop
             return objMercadoria;
         }
 
+        public clnMercadoria obterPorCodigoBarras()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("mercadoria");
+            objSelect.Where.where("codigo_barras", CodigoBarras);
+
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            clnMercadoria objMercadoria = null;
+            if (reader.Read())
+                objMercadoria = obter(reader);
+            reader.Close();
+
+            return objMercadoria;
+        }
+
         internal List<clnMercadoria> obterMercadorias()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("mercadoria");
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("descricao", "%" + Descricao + "%", vitorrdgs.SqlMaster.Element.Where.sqlElementWhere.whereAssociation.OR)
+                           .where("codigo_barras", CodigoBarras);
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnMercadoria> objMercadorias = new List<clnMercadoria>();

@@ -22,8 +22,8 @@ namespace BurgerShack.Desktop
             InitializeComponent();
 
             _validar = new clnUtilFormValidar();
-            _validar.addValidacao(txtLugares, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.QUANTIDADE });
-            _validar.addValidacao(txtNumero, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.QUANTIDADE });
+            _validar.addValidacao(txtDescricao, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO });
+            _validar.addValidacao(txtCodigoBarras, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.QUANTIDADE });
 
         }
 
@@ -31,21 +31,19 @@ namespace BurgerShack.Desktop
         {
             if (_validar.validar(this))
             {
-                clnMesa objMesaNumero = new clnMesa
+                clnMercadoria objMercadoriaCodigoBarras = new clnMercadoria
                 {
-                    Numero = UtilConvert.ToInt(txtNumero.Text),
-                    Ativo = true
-                }.obterPorNumero();
+                    CodigoBarras = UtilConvert.ToInt(txtCodigoBarras.Text)
+                }.obterPorCodigoBarras();
 
                 if (ObjMercadoria == null)
                 {
-                    if (objMesaNumero == null)
+                    if (objMercadoriaCodigoBarras == null)
                     {
                         clnMercadoria objMercadoria = new clnMercadoria
                         {
-                            Numero = UtilConvert.ToInt(txtNumero.Text),
-                            Lugares = UtilConvert.ToInt(txtLugares.Text),
-                            Situacao = clnMesa.mesaSituacao.DISPONIVEL
+                            Descricao = txtDescricao.Text,
+                            CodigoBarras = UtilConvert.ToInt(txtCodigoBarras.Text)
                         };
                         objMercadoria.gravar();
                         ObjMercadoria = objMercadoria;
@@ -54,14 +52,14 @@ namespace BurgerShack.Desktop
                     }
                     else
                     {
-                        UtilMensagem.mostrarOk("Cadastro de Mesa", "Não foi possível cadastrar a mesa, o NÚMERO já está cadastrado!");
-                        txtNumero.Focus();
+                        UtilMensagem.mostrarOk("Cadastro de Mercadoria", "Não foi possível cadastrar a mercadoria, o CÓDIGO DE BARRAS já está cadastrado!");
+                        txtCodigoBarras.Focus();
                     }
                 }
                 else
                 {
-                    ObjMercadoria.Numero = UtilConvert.ToInt(txtNumero.Text);
-                    ObjMercadoria.Lugares = UtilConvert.ToInt(txtLugares.Text);
+                    ObjMercadoria.Descricao = txtDescricao.Text;
+                    ObjMercadoria.CodigoBarras = UtilConvert.ToInt(txtCodigoBarras.Text);
 
                     ObjMercadoria.alterar();
                     UtilMensagem.mostrarOk("Alteração de Mercadoria", "Mercadoria alterada com sucesso!");
@@ -134,9 +132,8 @@ namespace BurgerShack.Desktop
             else
             {
                 hdrUIX.Title = App.Name + " - Mercadoria " + ObjMercadoria.Cod;
-                txtLugares.Text = UtilConvert.ToString(ObjMercadoria.Lugares);
-                txtNumero.Text = UtilConvert.ToString(ObjMercadoria.Numero);
-                lblSituacao.Text = "Situação: " + UtilConvert.ToString(ObjMercadoria.Situacao);
+                txtDescricao.Text = ObjMercadoria.Descricao;
+                txtCodigoBarras.Text = UtilConvert.ToString(ObjMercadoria.CodigoBarras);
                 UtilForm.Disable(this);
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)

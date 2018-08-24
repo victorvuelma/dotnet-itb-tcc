@@ -35,8 +35,8 @@
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
             this.lblSituacao = new System.Windows.Forms.Label();
-            this.txtNumero = new vitorrdgs.UiX.Component.UIXTextBox();
-            this.txtLugares = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtCodigoBarras = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.txtDescricao = new vitorrdgs.UiX.Component.UIXTextBox();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.SuspendLayout();
@@ -113,8 +113,8 @@
             // grbInformacoes
             // 
             this.grbInformacoes.Controls.Add(this.lblSituacao);
-            this.grbInformacoes.Controls.Add(this.txtNumero);
-            this.grbInformacoes.Controls.Add(this.txtLugares);
+            this.grbInformacoes.Controls.Add(this.txtCodigoBarras);
+            this.grbInformacoes.Controls.Add(this.txtDescricao);
             this.grbInformacoes.Location = new System.Drawing.Point(105, 55);
             this.grbInformacoes.Name = "grbInformacoes";
             this.grbInformacoes.Size = new System.Drawing.Size(290, 150);
@@ -131,35 +131,35 @@
             this.lblSituacao.TabIndex = 2;
             this.lblSituacao.Text = "Situação:";
             // 
-            // txtNumero
+            // txtCodigoBarras
             // 
-            this.txtNumero.AcceptButton = null;
-            this.txtNumero.Campo = "Número*";
-            this.txtNumero.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
-            this.txtNumero.Location = new System.Drawing.Point(5, 70);
-            this.txtNumero.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtNumero.MaxLength = 32767;
-            this.txtNumero.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
-            this.txtNumero.Multiline = false;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNumero.Size = new System.Drawing.Size(280, 40);
-            this.txtNumero.TabIndex = 1;
+            this.txtCodigoBarras.AcceptButton = null;
+            this.txtCodigoBarras.Campo = "Código de Barras*";
+            this.txtCodigoBarras.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
+            this.txtCodigoBarras.Location = new System.Drawing.Point(5, 70);
+            this.txtCodigoBarras.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtCodigoBarras.MaxLength = 32767;
+            this.txtCodigoBarras.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
+            this.txtCodigoBarras.Multiline = false;
+            this.txtCodigoBarras.Name = "txtCodigoBarras";
+            this.txtCodigoBarras.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCodigoBarras.Size = new System.Drawing.Size(280, 40);
+            this.txtCodigoBarras.TabIndex = 1;
             // 
-            // txtLugares
+            // txtDescricao
             // 
-            this.txtLugares.AcceptButton = null;
-            this.txtLugares.Campo = "Lugares*";
-            this.txtLugares.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
-            this.txtLugares.Location = new System.Drawing.Point(5, 20);
-            this.txtLugares.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtLugares.MaxLength = 32767;
-            this.txtLugares.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
-            this.txtLugares.Multiline = false;
-            this.txtLugares.Name = "txtLugares";
-            this.txtLugares.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLugares.Size = new System.Drawing.Size(280, 40);
-            this.txtLugares.TabIndex = 0;
+            this.txtDescricao.AcceptButton = null;
+            this.txtDescricao.Campo = "Descrição*";
+            this.txtDescricao.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
+            this.txtDescricao.Location = new System.Drawing.Point(5, 20);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescricao.MaxLength = 32767;
+            this.txtDescricao.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
+            this.txtDescricao.Multiline = false;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDescricao.Size = new System.Drawing.Size(280, 40);
+            this.txtDescricao.TabIndex = 0;
             // 
             // frmMercadoria
             // 
@@ -192,8 +192,8 @@
         private vitorrdgs.UiX.Component.UIXButton btnAlterar;
         private vitorrdgs.UiX.Component.UIXButton btnExcluir;
         private System.Windows.Forms.GroupBox grbInformacoes;
-        private vitorrdgs.UiX.Component.UIXTextBox txtLugares;
-        private vitorrdgs.UiX.Component.UIXTextBox txtNumero;
+        private vitorrdgs.UiX.Component.UIXTextBox txtDescricao;
+        private vitorrdgs.UiX.Component.UIXTextBox txtCodigoBarras;
         private System.Windows.Forms.Label lblSituacao;
     }
 }

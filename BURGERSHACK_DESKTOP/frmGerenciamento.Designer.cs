@@ -80,7 +80,7 @@
             this.btnMercadorias.TabIndex = 17;
             this.btnMercadorias.Text = "Mercadorias";
             this.btnMercadorias.UseVisualStyleBackColor = true;
-            this.btnMercadorias.Visible = false;
+            this.btnMercadorias.Click += new System.EventHandler(this.btnMercadorias_Click);
             // 
             // btnPagamentos
             // 

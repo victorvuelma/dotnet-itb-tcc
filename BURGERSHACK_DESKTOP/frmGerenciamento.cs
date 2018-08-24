@@ -83,6 +83,11 @@ namespace BurgerShack.Desktop
             abrirLista("Pedidos", null, new CallbackPedidoObter(), new CallbackPedidoAlterar(), false, new String[] { "Código", "Número", "Lugares", "Situação" });
         }
 
+        private void abrirMercadorias()
+        {
+            abrirLista("Mercadorias", new CallbackMercadoriaNovo(), new CallbackMercadoriaObter(), new CallbackMercadoriaAlterar(), true, new String[] { "Código", "Descrição", "Código de Barras" });
+        }
+
         private void sair()
         {
             Close();
@@ -153,6 +158,11 @@ namespace BurgerShack.Desktop
         private void btnPedidos_Click(object sender, EventArgs e)
         {
             abrirPedidos();
+        }
+
+        private void btnMercadorias_Click(object sender, EventArgs e)
+        {
+            abrirMercadorias();
         }
 
         private class CallbackIngredienteNovo : IUtilCallback
@@ -669,6 +679,57 @@ namespace BurgerShack.Desktop
                 {
                     //"Código", "Inicio", "Fim", "Situação"
                     dgv.Rows.Add(new object[] { objAtendimento.Cod, UtilFormatar.formatarDataHora(objAtendimento.Inicio), UtilFormatar.formatarDataHora(objAtendimento.Fim), objAtendimento.Situacao });
+                }
+                return false;
+            }
+        }
+
+        private class CallbackMercadoriaNovo : IUtilCallback
+        {
+            public bool call()
+            {
+                frmMercadoria frmMercadoria = new frmMercadoria();
+                frmMercadoria.ShowDialog();
+                return frmMercadoria.ObjMercadoria != null;
+            }
+        }
+
+        private class CallbackMercadoriaAlterar : IUtilCallback<DataGridViewRow>
+        {
+            public bool call(DataGridViewRow row)
+            {
+                clnMercadoria objMercadoria = new clnMercadoria
+                {
+                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
+                }.obterPorCod();
+
+                if (objMercadoria != null)
+                {
+                    frmMercadoria frmAlterarMercadoria = new frmMercadoria
+                    {
+                        ObjMercadoria = objMercadoria
+                    };
+                    frmAlterarMercadoria.ShowDialog();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private class CallbackMercadoriaObter : IUtilCallback<DataGridView, String, bool>
+        {
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
+            {
+                clnMercadoria objMercadorias = new clnMercadoria
+                {
+                    Ativo = ativo,
+                    Descricao = pesquisa,
+                    CodigoBarras = (UtilValidar.validarInt(pesquisa) ? UtilConvert.ToInt(pesquisa) : 0)
+                };
+                foreach (clnMercadoria objMercadoria in objMercadorias.obterMercadorias())
+                {
+                    //"Código", "Descrição", "Código de Barras"
+                    dgv.Rows.Add(new object[] { objMercadoria.Cod, objMercadoria.Descricao, objMercadoria.CodigoBarras });
                 }
                 return false;
             }
