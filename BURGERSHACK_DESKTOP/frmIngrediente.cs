@@ -155,7 +155,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (btnAlterar.Text == "Salvar")
+                if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (UtilMensagem.mostrarSimNao("Alteração de Ingrediente", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                     {

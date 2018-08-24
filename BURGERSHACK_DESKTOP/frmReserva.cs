@@ -86,7 +86,7 @@ namespace BurgerShack.Desktop
         {
             if (ObjReserva.Cod != -1)
             {
-                if (btnAlterar.Text == "Salvar")
+                if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (UtilMensagem.mostrarSimNao("Alteração de Reserva", "Deseja descartar as alterações realizadas?", UtilMensagem.MensagemIcone.INFO))
                     {

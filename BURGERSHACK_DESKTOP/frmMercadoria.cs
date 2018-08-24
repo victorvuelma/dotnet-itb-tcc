@@ -8,16 +8,16 @@ using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {
-    public partial class frmMesa : Form
+    public partial class frmMercadoria : Form
     {
 
         private clnUtilFormValidar _validar;
 
-        private clnMesa _objMesa;
+        private clnMercadoria _objMercadoria;
 
-        internal clnMesa ObjMesa { get => _objMesa; set => _objMesa = value; }
+        internal clnMercadoria ObjMercadoria { get => _objMercadoria; set => _objMercadoria = value; }
 
-        public frmMesa()
+        public frmMercadoria()
         {
             InitializeComponent();
 
@@ -37,19 +37,19 @@ namespace BurgerShack.Desktop
                     Ativo = true
                 }.obterPorNumero();
 
-                if (ObjMesa == null)
+                if (ObjMercadoria == null)
                 {
                     if (objMesaNumero == null)
                     {
-                        clnMesa objMesa = new clnMesa
+                        clnMercadoria objMercadoria = new clnMercadoria
                         {
                             Numero = UtilConvert.ToInt(txtNumero.Text),
                             Lugares = UtilConvert.ToInt(txtLugares.Text),
                             Situacao = clnMesa.mesaSituacao.DISPONIVEL
                         };
-                        objMesa.gravar();
-                        ObjMesa = objMesa;
-                        UtilMensagem.mostrarOk("Cadastro de Mesa", "Mesa cadastrada com sucesso!");
+                        objMercadoria.gravar();
+                        ObjMercadoria = objMercadoria;
+                        UtilMensagem.mostrarOk("Cadastro de Mercadoria", "Mercadoria cadastrada com sucesso!");
                         Close();
                     }
                     else
@@ -60,11 +60,11 @@ namespace BurgerShack.Desktop
                 }
                 else
                 {
-                    ObjMesa.Numero = UtilConvert.ToInt(txtNumero.Text);
-                    ObjMesa.Lugares = UtilConvert.ToInt(txtLugares.Text);
+                    ObjMercadoria.Numero = UtilConvert.ToInt(txtNumero.Text);
+                    ObjMercadoria.Lugares = UtilConvert.ToInt(txtLugares.Text);
 
-                    ObjMesa.alterar();
-                    UtilMensagem.mostrarOk("Alteração de Mesa", "Mesa alterada com sucesso!");
+                    ObjMercadoria.alterar();
+                    UtilMensagem.mostrarOk("Alteração de Mercadoria", "Mercadoria alterada com sucesso!");
                     Close();
                 }
             }
@@ -72,9 +72,9 @@ namespace BurgerShack.Desktop
 
         private void fechar()
         {
-            if (ObjMesa == null)
+            if (ObjMercadoria == null)
             {
-                if (UtilMensagem.mostrarSimNao("Cadastro de Mesa", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
+                if (UtilMensagem.mostrarSimNao("Cadastro de Mercadoria", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
                     Close();
                 }
@@ -83,7 +83,7 @@ namespace BurgerShack.Desktop
             {
                 if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    if (UtilMensagem.mostrarSimNao("Alteração de Mesa", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                    if (UtilMensagem.mostrarSimNao("Alteração de Mercadoria", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
                     {
                         Close();
                     }
@@ -97,10 +97,10 @@ namespace BurgerShack.Desktop
 
         private void excluir()
         {
-            if (UtilMensagem.mostrarSimNao("Mesa", "Você deseja realmente excluir esta mesa?", UtilMensagem.MensagemIcone.ERRO))
+            if (UtilMensagem.mostrarSimNao("Mercadoria", "Você deseja realmente excluir esta mercadoria?", UtilMensagem.MensagemIcone.ERRO))
             {
-                ObjMesa.Ativo = false;
-                ObjMesa.alterar();
+                ObjMercadoria.Ativo = false;
+                ObjMercadoria.alterar();
 
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
@@ -110,10 +110,10 @@ namespace BurgerShack.Desktop
 
         private void restaurar()
         {
-            if (UtilMensagem.mostrarSimNao("Mesa", "Você deseja realmente restaurar esta mesa?", UtilMensagem.MensagemIcone.OK))
+            if (UtilMensagem.mostrarSimNao("Mercadoria", "Você deseja realmente restaurar esta mercadoria?", UtilMensagem.MensagemIcone.OK))
             {
-                ObjMesa.Ativo = true;
-                ObjMesa.alterar();
+                ObjMercadoria.Ativo = true;
+                ObjMercadoria.alterar();
 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
@@ -125,18 +125,18 @@ namespace BurgerShack.Desktop
             clnUtil.atualizarForm(this);
             uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
-            if (ObjMesa == null)
+            if (ObjMercadoria == null)
             {
-                hdrUIX.Title = App.Name + " - Nova Mesa";
+                hdrUIX.Title = App.Name + " - Nova Mercadoria";
 
                 lblSituacao.Text = "Situação: " + clnMesa.mesaSituacao.DISPONIVEL.ToString();
             }
             else
             {
-                hdrUIX.Title = App.Name + " - Mesa " + ObjMesa.Cod;
-                txtLugares.Text = UtilConvert.ToString(ObjMesa.Lugares);
-                txtNumero.Text = UtilConvert.ToString(ObjMesa.Numero);
-                lblSituacao.Text = "Situação: " + UtilConvert.ToString(ObjMesa.Situacao);
+                hdrUIX.Title = App.Name + " - Mercadoria " + ObjMercadoria.Cod;
+                txtLugares.Text = UtilConvert.ToString(ObjMercadoria.Lugares);
+                txtNumero.Text = UtilConvert.ToString(ObjMercadoria.Numero);
+                lblSituacao.Text = "Situação: " + UtilConvert.ToString(ObjMercadoria.Situacao);
                 UtilForm.Disable(this);
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
@@ -144,7 +144,7 @@ namespace BurgerShack.Desktop
                     btnExcluir.Show();
                     UtilButton.alterar(btnAlterar);
                     UtilButton.voltar(btnVoltar);
-                    if (ObjMesa.Ativo)
+                    if (ObjMercadoria.Ativo)
                     {
                         UtilButton.excluir(btnExcluir);
                     }
@@ -184,7 +184,7 @@ namespace BurgerShack.Desktop
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (ObjMesa.Ativo)
+            if (ObjMercadoria.Ativo)
             {
                 excluir();
             }

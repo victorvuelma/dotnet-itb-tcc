@@ -10,6 +10,7 @@ namespace BurgerShack.Desktop
     {
 
         private int _cod = -1;
+        private bool _ativo = true;
 
         private string _descricao;
         private int _codigoBarras;
@@ -17,12 +18,14 @@ namespace BurgerShack.Desktop
         public int Cod { get => _cod; set => _cod = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
         public int CodigoBarras { get => _codigoBarras; set => _codigoBarras = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnMercadoria obter(SqlDataReader reader) => new clnMercadoria
         {
             Cod = UtilConvert.ToInt(reader["id"]),
             Descricao = UtilConvert.ToString(reader["descricao"]),
-            CodigoBarras = UtilConvert.ToInt(reader["codigo_barras"])
+            CodigoBarras = UtilConvert.ToInt(reader["codigo_barras"]),
+            Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
         public clnMercadoria obterPorCod()
@@ -44,7 +47,6 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("mercadoria");
-            objSelect.Where.where("id", Cod);
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnMercadoria> objMercadorias = new List<clnMercadoria>();
@@ -53,6 +55,29 @@ namespace BurgerShack.Desktop
             reader.Close();
 
             return objMercadorias;
+        }
+
+        internal void alterar()
+        {
+            sqlUpdate objUpdate = new sqlUpdate();
+            objUpdate.table("mercadoria");
+            objUpdate.Where.where("id", Cod);
+            objUpdate.Value.val("ativo", UtilConvert.ToBit(Ativo))
+                           .val("descricao", Descricao)
+                           .val("codigo_barras", CodigoBarras);
+
+            objUpdate.execute(App.DatabaseSql);
+        }
+
+        internal void gravar()
+        {
+            sqlInsert objInsert = new sqlInsert();
+            objInsert.table("mercadoria");
+            objInsert.Value.val("ativo", UtilConvert.ToBit(Ativo))
+                           .val("descricao", Descricao)
+                           .val("codigo_barras", CodigoBarras);
+
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         internal class clnListar : clnUtilListar<clnMercadoria>
@@ -77,5 +102,6 @@ namespace BurgerShack.Desktop
                 return val.Descricao;
             }
         }
+
     }
 }

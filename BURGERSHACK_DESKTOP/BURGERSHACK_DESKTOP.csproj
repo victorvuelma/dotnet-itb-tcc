@@ -165,6 +165,12 @@
     <Compile Include="frmConfirmar.Designer.cs">
       <DependentUpon>frmConfirmar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMercadoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMercadoria.Designer.cs">
+      <DependentUpon>frmMercadoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAtendimento.resx">
       <DependentUpon>frmAtendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMercadoria.resx">
+      <DependentUpon>frmMercadoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMesa.resx">
       <DependentUpon>frmMesa.cs</DependentUpon>
