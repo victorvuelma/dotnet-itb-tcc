@@ -90,6 +90,8 @@ namespace BurgerShack.Desktop
 
             grbDetalhes.Show();
             btnConfirmar.Show();
+
+            txtQuantidade.Focus();
         }
 
         private void realizaPesquisa()
@@ -149,6 +151,8 @@ namespace BurgerShack.Desktop
 
             hdrUIX.Title = App.Name + " - " + ObjSelecionar.ObjListar.Titulo;
             hdrUIX.Image = ObjSelecionar.ObjListar.Icone;
+
+            txtPesquisar.Focus();
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

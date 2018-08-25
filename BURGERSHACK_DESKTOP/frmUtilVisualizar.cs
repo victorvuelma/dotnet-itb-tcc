@@ -91,6 +91,8 @@ namespace BurgerShack.Desktop
             realizaPesquisa();
             hdrUIX.Title = App.Name + " - " + ObjVisualizar.ObjListar.Titulo;
             hdrUIX.Image = ObjVisualizar.ObjListar.Icone;
+
+            txtPesquisar.Focus();
         }
 
         private void txtPesquisa_Leave(object sender, EventArgs e)

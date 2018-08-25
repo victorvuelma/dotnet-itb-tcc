@@ -264,6 +264,8 @@ namespace BurgerShack.Desktop
             carregarMetodos();
 
             grbDinheiro.Hide();
+
+            mtbCliCPF.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

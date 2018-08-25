@@ -429,6 +429,8 @@ namespace BurgerShack.Desktop
                     }
                 }
             }
+
+            mtbCliCPF.Focus();
         }
 
         private void btnCliEncontrar_Click(object sender, EventArgs e)

@@ -191,6 +191,8 @@ namespace BurgerShack.Desktop
                     }
                 }
             }
+
+            txtRazaoSocial.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

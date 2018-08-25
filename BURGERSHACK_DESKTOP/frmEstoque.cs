@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Data;
+using vitorrdgs.Util.Form;
 
 namespace BurgerShack.Desktop
 {
@@ -72,7 +73,14 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (UtilMensagem.mostrarSimNao("Alteração de Estoque", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    if (UtilMensagem.mostrarSimNao("Alteração de Estoque", "Deseja cancelar as alterações?", UtilMensagem.MensagemIcone.ERRO))
+                    {
+                        Close();
+                    }
+                }
+                else
                 {
                     Close();
                 }
@@ -202,6 +210,11 @@ namespace BurgerShack.Desktop
                 }
                 btnMercadoria.Hide();
 
+                UtilForm.Disable(this);
+
+                UtilButton.alterar(btnAlterar);
+                UtilButton.voltar(btnVoltar);
+
             }
             else
             {
@@ -218,12 +231,18 @@ namespace BurgerShack.Desktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            salvar();
-        }
+            if (btnAlterar.Description.Equals("Salvar", StringComparison.InvariantCultureIgnoreCase))
+            {
+                salvar();
+            }
+            else
+            {
+                UtilForm.Enable(this);
+                mtbFornCNPJ.Enabled = false;
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
+                UtilButton.cancelar(btnVoltar);
+                UtilButton.salvar(btnAlterar);
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

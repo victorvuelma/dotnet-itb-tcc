@@ -43,7 +43,7 @@
             // 
             this.picVer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picVer.Image = global::BurgerShack.Desktop.Properties.Resources.eye;
-            this.picVer.Location = new System.Drawing.Point(465, 120);
+            this.picVer.Location = new System.Drawing.Point(465, 110);
             this.picVer.Name = "picVer";
             this.picVer.Size = new System.Drawing.Size(20, 20);
             this.picVer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -55,9 +55,9 @@
             // picUser
             // 
             this.picUser.Image = global::BurgerShack.Desktop.Properties.Resources.usuarios;
-            this.picUser.Location = new System.Drawing.Point(30, 80);
+            this.picUser.Location = new System.Drawing.Point(20, 70);
             this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(150, 150);
+            this.picUser.Size = new System.Drawing.Size(160, 160);
             this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picUser.TabIndex = 13;
             this.picUser.TabStop = false;
@@ -92,7 +92,7 @@
             this.txtSenha.Campo = "Senha";
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.txtSenha.Location = new System.Drawing.Point(190, 120);
+            this.txtSenha.Location = new System.Drawing.Point(190, 110);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtSenha.Multiline = false;
@@ -108,7 +108,7 @@
             this.txtUsuario.Campo = "Usuário";
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.txtUsuario.Location = new System.Drawing.Point(190, 80);
+            this.txtUsuario.Location = new System.Drawing.Point(190, 70);
             this.txtUsuario.MaxLength = 32767;
             this.txtUsuario.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtUsuario.Multiline = false;
@@ -119,13 +119,13 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Description = "Acessar";
+            this.btnEntrar.Description = "ACESSAR";
             this.btnEntrar.HoverColor = System.Drawing.Color.Transparent;
             this.btnEntrar.Image = global::BurgerShack.Desktop.Properties.Resources.acesso;
             this.btnEntrar.ImageLocation = null;
-            this.btnEntrar.Location = new System.Drawing.Point(380, 155);
+            this.btnEntrar.Location = new System.Drawing.Point(370, 145);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(80, 80);
+            this.btnEntrar.Size = new System.Drawing.Size(90, 90);
             this.btnEntrar.TabIndex = 15;
             this.btnEntrar.Text = "btnvitorrdgs.UiX1";
             this.btnEntrar.UseVisualStyleBackColor = false;

@@ -170,6 +170,8 @@ namespace BurgerShack.Desktop
             {
                 grbIngredientes.Hide();
             }
+
+            txtQuantidade.Focus();
         }
 
         private void hdrUIX_Close(object sender, EventArgs e)

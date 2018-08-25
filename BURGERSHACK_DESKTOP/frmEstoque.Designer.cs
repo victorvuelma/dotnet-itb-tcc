@@ -31,7 +31,7 @@
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnVoltar = new vitorrdgs.UiX.Component.UIXButton();
-            this.btnSalvar = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnAlterar = new vitorrdgs.UiX.Component.UIXButton();
             this.grbEntrada = new System.Windows.Forms.GroupBox();
             this.mtbValidade = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.txtValor = new vitorrdgs.UiX.Component.UIXTextBox();
@@ -67,7 +67,7 @@
             // pnlMenu
             // 
             this.pnlMenu.Controls.Add(this.btnVoltar);
-            this.pnlMenu.Controls.Add(this.btnSalvar);
+            this.pnlMenu.Controls.Add(this.btnAlterar);
             this.pnlMenu.Location = new System.Drawing.Point(0, 50);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(100, 300);
@@ -89,18 +89,18 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Description = "SALVAR";
-            this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.ImageLocation = null;
-            this.btnSalvar.Location = new System.Drawing.Point(5, 205);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 90);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnAlterar.Description = "SALVAR";
+            this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlterar.ImageLocation = null;
+            this.btnAlterar.Location = new System.Drawing.Point(5, 205);
+            this.btnAlterar.Name = "btnSalvar";
+            this.btnAlterar.Size = new System.Drawing.Size(90, 90);
+            this.btnAlterar.TabIndex = 0;
+            this.btnAlterar.Text = "Salvar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grbEntrada
             // 
@@ -252,7 +252,7 @@
             // 
             // frmEstoque
             // 
-            this.AcceptButton = this.btnSalvar;
+            this.AcceptButton = this.btnAlterar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 350);
@@ -280,7 +280,7 @@
         public vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private System.Windows.Forms.Panel pnlMenu;
         private vitorrdgs.UiX.Component.UIXButton btnVoltar;
-        private vitorrdgs.UiX.Component.UIXButton btnSalvar;
+        private vitorrdgs.UiX.Component.UIXButton btnAlterar;
         public System.Windows.Forms.GroupBox grbEntrada;
         private vitorrdgs.UiX.Component.UIXTextBox txtQuantidade;
         private System.Windows.Forms.GroupBox grbFornecedor;

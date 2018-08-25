@@ -143,6 +143,8 @@ namespace BurgerShack.Desktop
             txtQuantidade.Hide();
 
             exibirIngrediente(ObjItemIngrediente);
+
+            txtQuantidade.Focus();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)

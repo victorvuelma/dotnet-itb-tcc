@@ -540,7 +540,7 @@ namespace BurgerShack.Desktop
                 clnEstoque objEstoques = new clnEstoque();
                 foreach (clnEstoque objEstoque in objEstoques.obterEstoques())
                 {
-                    clnIngrediente objIngrediente = new clnIngrediente
+                    clnMercadoria objMercadoria = new clnMercadoria
                     {
                         Cod = objEstoque.CodMercadoria
                     }.obterPorCod();
@@ -551,7 +551,7 @@ namespace BurgerShack.Desktop
                     }.obterPorCod();
 
                     //"Código", "Mercadoria", "Fornecedor", "Quantidade", "Validade", "Valor"
-                    dgv.Rows.Add(new object[] { objEstoque.Cod, objIngrediente.Nome, objFornecedor.RazaoSocial, objEstoque.Quantidade, UtilFormatar.formatarData(objEstoque.Validade), UtilFormatar.formatarValor(objEstoque.Valor) });
+                    dgv.Rows.Add(new object[] { objEstoque.Cod, objMercadoria.Descricao, objFornecedor.RazaoSocial, objEstoque.Quantidade, UtilFormatar.formatarData(objEstoque.Validade), UtilFormatar.formatarValor(objEstoque.Valor) });
                 }
                 return false;
             }

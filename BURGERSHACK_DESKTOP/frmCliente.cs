@@ -139,6 +139,7 @@ namespace BurgerShack.Desktop
             clnUtil.atualizarForm(this);
             uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
+            txtNome.Focus();
             if (ObjCliente == null)
             {
                 hdrUIX.Title = App.Name + " - Novo Cliente";

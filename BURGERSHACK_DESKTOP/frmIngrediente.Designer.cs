@@ -78,7 +78,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Description = "Excluir";
+            this.btnExcluir.Description = "EXCLUIR";
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
             this.btnExcluir.Image = null;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -94,7 +94,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Description = "Cancelar";
+            this.btnVoltar.Description = "CANCELAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -108,7 +108,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Description = "Salvar";
+            this.btnAlterar.Description = "SALVAR";
             this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -211,9 +211,9 @@
             // 
             // btnImgRemover
             // 
-            this.btnImgRemover.Description = "Remover";
+            this.btnImgRemover.Description = "REMOVER";
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
-            this.btnImgRemover.Image = null;
+            this.btnImgRemover.Image = global::BurgerShack.Desktop.Properties.Resources.remover;
             this.btnImgRemover.ImageLocation = null;
             this.btnImgRemover.Location = new System.Drawing.Point(10, 20);
             this.btnImgRemover.Name = "btnImgRemover";
@@ -225,7 +225,7 @@
             // 
             // btnImgAdicionar
             // 
-            this.btnImgAdicionar.Description = "Adicionar";
+            this.btnImgAdicionar.Description = "ADICIONAR";
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgAdicionar.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnImgAdicionar.ImageLocation = null;

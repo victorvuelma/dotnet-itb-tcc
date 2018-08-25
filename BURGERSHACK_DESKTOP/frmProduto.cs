@@ -355,6 +355,8 @@ namespace BurgerShack.Desktop
             }
 
             carregarTipos();
+
+            txtNome.Focus();
         }
 
         private void btnTipo_Click(object sender, EventArgs e)

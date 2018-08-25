@@ -152,6 +152,8 @@ namespace BurgerShack.Desktop
                     }
                 }
             }
+
+            txtDescricao.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

@@ -258,6 +258,8 @@ namespace BurgerShack.Desktop
                 btnExcluir.Hide();
             }
 
+            txtNome.Focus();
+
             carregarTipos();
         }
 

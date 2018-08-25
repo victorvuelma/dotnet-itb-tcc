@@ -99,7 +99,6 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.White;
             this.btnSalvar.Description = "SALVAR";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
@@ -127,7 +126,6 @@
             // 
             this.AcceptButton = this.btnSalvar;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(350, 250);
             this.Controls.Add(this.grbAcesso);
             this.Controls.Add(this.btnSalvar);

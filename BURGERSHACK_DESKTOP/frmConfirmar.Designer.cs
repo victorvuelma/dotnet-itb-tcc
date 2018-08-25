@@ -65,7 +65,6 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.White;
             this.btnConfirmar.Description = "CONFIRMAR";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
             this.btnConfirmar.Image = global::BurgerShack.Desktop.Properties.Resources.confirmar;
@@ -82,7 +81,6 @@
             // 
             this.AcceptButton = this.btnConfirmar;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(350, 200);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.btnConfirmar);

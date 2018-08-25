@@ -120,6 +120,8 @@ namespace BurgerShack.Desktop
             {
                 btnRemover.Description = "Remover";
             }
+
+            txtQuantidade.Focus();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
