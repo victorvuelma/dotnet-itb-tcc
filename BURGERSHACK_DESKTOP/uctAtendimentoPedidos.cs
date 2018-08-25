@@ -78,7 +78,7 @@ namespace BurgerShack.Desktop
 
             if (objConta != null)
             {
-                btnNovoPedido.Hide();
+                btnNovo.Hide();
 
                 decimal valorPago = clnUtilConta.calcularValorPago(objConta.CodAtendimento);
 
@@ -123,6 +123,8 @@ namespace BurgerShack.Desktop
             exibirPedidos();
 
             atualizarSituacao();
+
+            btnNovo.Focus();
         }
 
         private void btnNovoPedido_Click(object sender, EventArgs e)

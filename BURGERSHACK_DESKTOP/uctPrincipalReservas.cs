@@ -50,6 +50,8 @@ namespace BurgerShack.Desktop
         private void uctPrincipalReservas_Load(object sender, EventArgs e)
         {
             exibirReservas();
+
+            btnNova.Focus();
         }
 
         private void dtpListar_ValueChanged(object sender, EventArgs e)

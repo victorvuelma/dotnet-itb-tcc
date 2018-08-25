@@ -147,6 +147,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctGerenciamentoListar";
             this.Size = new System.Drawing.Size(700, 500);
+            this.Load += new System.EventHandler(this.uctGerenciamentoListar_Load);
             this.grbItens.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.grbPesquisa.ResumeLayout(false);

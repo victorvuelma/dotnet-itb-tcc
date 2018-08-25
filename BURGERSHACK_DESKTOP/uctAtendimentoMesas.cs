@@ -80,6 +80,8 @@ namespace BurgerShack.Desktop
         private void uctAtendimentoPedidos_Load(object sender, EventArgs e)
         {
             exibirMesas();
+
+            btnAdicionar.Focus();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

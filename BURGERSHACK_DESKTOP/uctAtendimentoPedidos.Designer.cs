@@ -30,7 +30,7 @@
         {
             this.grbPedidos = new System.Windows.Forms.GroupBox();
             this.lstPedidos = new vitorrdgs.UiX.Component.UIXItemsList();
-            this.btnNovoPedido = new vitorrdgs.UiX.Component.UIXButton();
+            this.btnNovo = new vitorrdgs.UiX.Component.UIXButton();
             this.lblValor = new System.Windows.Forms.Label();
             this.grbValor = new System.Windows.Forms.GroupBox();
             this.grbSituacao = new System.Windows.Forms.GroupBox();
@@ -63,17 +63,17 @@
             // 
             // btnNovoPedido
             // 
-            this.btnNovoPedido.Description = "Novo Pedido";
-            this.btnNovoPedido.HoverColor = System.Drawing.Color.Transparent;
-            this.btnNovoPedido.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
-            this.btnNovoPedido.ImageLocation = null;
-            this.btnNovoPedido.Location = new System.Drawing.Point(395, 545);
-            this.btnNovoPedido.Name = "btnNovoPedido";
-            this.btnNovoPedido.Size = new System.Drawing.Size(100, 100);
-            this.btnNovoPedido.TabIndex = 9;
-            this.btnNovoPedido.Text = "Novo Pedido";
-            this.btnNovoPedido.UseVisualStyleBackColor = true;
-            this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
+            this.btnNovo.Description = "Novo Pedido";
+            this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
+            this.btnNovo.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
+            this.btnNovo.ImageLocation = null;
+            this.btnNovo.Location = new System.Drawing.Point(395, 545);
+            this.btnNovo.Name = "btnNovoPedido";
+            this.btnNovo.Size = new System.Drawing.Size(100, 100);
+            this.btnNovo.TabIndex = 9;
+            this.btnNovo.Text = "Novo Pedido";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovoPedido_Click);
             // 
             // lblValor
             // 
@@ -120,7 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grbSituacao);
             this.Controls.Add(this.grbValor);
-            this.Controls.Add(this.btnNovoPedido);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.grbPedidos);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -137,7 +137,7 @@
         #endregion
         private System.Windows.Forms.GroupBox grbPedidos;
         private vitorrdgs.UiX.Component.UIXItemsList lstPedidos;
-        private vitorrdgs.UiX.Component.UIXButton btnNovoPedido;
+        private vitorrdgs.UiX.Component.UIXButton btnNovo;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.GroupBox grbValor;
         private System.Windows.Forms.GroupBox grbSituacao;

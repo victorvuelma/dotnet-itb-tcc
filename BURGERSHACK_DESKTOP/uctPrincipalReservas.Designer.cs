@@ -100,7 +100,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "uctPrincipalReservas";
-            this.Size = new System.Drawing.Size(900, 650);
+            this.Size = new System.Drawing.Size(900, 651);
             this.Load += new System.EventHandler(this.uctPrincipalReservas_Load);
             this.pnlMenu.ResumeLayout(false);
             this.grbReservas.ResumeLayout(false);

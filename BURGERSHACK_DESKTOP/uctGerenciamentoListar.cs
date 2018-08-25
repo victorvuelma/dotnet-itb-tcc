@@ -98,5 +98,10 @@ namespace BurgerShack.Desktop
         {
             pesquisar();
         }
+
+        private void uctGerenciamentoListar_Load(object sender, EventArgs e)
+        {
+            txtPesquisar.Focus();
+        }
     }
 }

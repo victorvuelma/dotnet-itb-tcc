@@ -297,6 +297,8 @@ namespace BurgerShack.Desktop
 
             grbProduto.Hide();
             grbDetalhes.Hide();
+
+            txtQuantidade.Focus();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
