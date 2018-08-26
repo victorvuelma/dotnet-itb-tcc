@@ -2,13 +2,6 @@
 
 using BurgerShack.Desktop.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Data;
@@ -77,14 +70,15 @@ namespace BurgerShack.Desktop
                         UtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.");
                         return;
                     }
-                    int codForma = -1;
+                    int codForma = codForma = cboBandeira.Items[0].Id;
                     if (cboBandeira.Visible)
                     {
                         codForma = cboBandeira.SelectedItem.Id;
                     }
-                    else
+                    string cpf = "";
+                    if (UtilValidar.validarCPF(mtbCliCPF.Text))
                     {
-                        codForma = cboBandeira.Items[0].Id;
+                        cpf = UtilFormatar.retirarFormatacao(mtbCliCPF.Text);
                     }
 
                     ObjPagamento = new clnPagamento
@@ -93,7 +87,8 @@ namespace BurgerShack.Desktop
                         CodConta = ObjConta.CodAtendimento,
                         Data = DateTime.Now,
                         Valor = obterValorPago(),
-                        CodCliente = CodCliente
+                        CodCliente = CodCliente,
+                        Cpf = cpf
                     };
                     ObjPagamento.gravar();
 
@@ -139,7 +134,7 @@ namespace BurgerShack.Desktop
                 {
                     if (UtilMensagem.mostrarSimNao("Cliente", "Cliente não encontrado, deseja cadastrar?", UtilMensagem.MensagemIcone.INFO))
                     {
-                        frmCliente frmNovoCliente = new frmCliente{};
+                        frmCliente frmNovoCliente = new frmCliente { };
                         frmNovoCliente.mtbCPF.Text = mtbCliCPF.Text;
                         frmNovoCliente.ShowDialog();
 
@@ -271,11 +266,6 @@ namespace BurgerShack.Desktop
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             salvar();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
