@@ -135,6 +135,11 @@ namespace BurgerShack.Desktop
         {
             ObjEstoque.CodMercadoria = objMercadoria.Cod;
 
+            exibirMercadoria(objMercadoria);
+        }
+
+        private void exibirMercadoria(clnMercadoria objMercadoria)
+        {
             int estoqueAtual = new clnEstoque
             {
                 CodMercadoria = objMercadoria.Cod
@@ -152,7 +157,7 @@ namespace BurgerShack.Desktop
             clnMercadoria.clnListar objListar = new clnMercadoria.clnListar
             {
                 Icone = Properties.Resources.mercadoria,
-                Titulo = "Selecione o Mercadoria",
+                Titulo = "Selecione a Mercadoria",
                 Opcoes = objMercadorias.obterMercadorias()
             };
 

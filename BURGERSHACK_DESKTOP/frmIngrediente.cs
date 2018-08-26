@@ -70,25 +70,32 @@ namespace BurgerShack.Desktop
         {
             if (_validar.validar(this))
             {
-                if (ObjIngrediente == null)
+                if (ObjIngrediente.Cod == -1)
                 {
-                    clnArquivo objArquivo = new clnArquivo
+                    if (ObjIngrediente.CodMercadoria != -1)
                     {
-                        Local = picImagem.ImageLocation
-                    };
-                    objArquivo.gravar();
+                        clnArquivo objArquivo = new clnArquivo
+                        {
+                            Local = picImagem.ImageLocation
+                        };
+                        objArquivo.gravar();
 
-                    ObjIngrediente = new clnIngrediente
+                        ObjIngrediente = new clnIngrediente
+                        {
+                            Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE,
+                            Nome = txtNome.Text,
+                            CodTipo = cboTipo.SelectedItem.Id,
+                            CodImagem = objArquivo.Cod,
+                            Valor = UtilConvert.ToDecimal(txtValor.Text),
+                            CodMercadoria = ObjIngrediente.CodMercadoria
+                        };
+
+                        ObjIngrediente.gravar();
+                        UtilMensagem.mostrarOk("Cadastro de Ingrediente", "Ingrediente cadastrado com sucesso!");
+                    } else
                     {
-                        Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE,
-                        Nome = txtNome.Text,
-                        CodTipo = cboTipo.SelectedItem.Id,
-                        CodImagem = objArquivo.Cod,
-                        Valor = UtilConvert.ToDecimal(txtValor.Text)
-                    };
-
-                    ObjIngrediente.gravar();
-                    UtilMensagem.mostrarOk("Cadastro de Ingrediente", "Ingrediente cadastrado com sucesso!");
+                        UtilMensagem.mostrarOk("Cadastro de Ingrediente", "É necessário informar uma mercadoria!");
+                    }
                 }
                 else
                 {
@@ -110,7 +117,7 @@ namespace BurgerShack.Desktop
                     ObjIngrediente.Nome = txtNome.Text;
                     ObjIngrediente.Valor = UtilConvert.ToDecimal(txtValor.Text);
                     ObjIngrediente.Situacao = (clnIngrediente.ingredienteSituacao)Enum.Parse(typeof(clnIngrediente.ingredienteSituacao), cboSituacao.Text);
-
+                    
                     ObjIngrediente.alterar();
 
                     clnEstoque objEstoque = new clnEstoque
@@ -137,16 +144,64 @@ namespace BurgerShack.Desktop
             foreach (clnTipo objTipo in new clnTipo { Tipo = clnTipo.tipo.INGREDIENTE }.obterTipos())
             {
                 cboTipo.add(objTipo.Cod, objTipo.Cod + " - " + objTipo.Nome);
-                if (ObjIngrediente != null && ObjIngrediente.CodTipo.Equals(objTipo.Cod))
+                if (ObjIngrediente.Cod != -1 && ObjIngrediente.CodTipo.Equals(objTipo.Cod))
                 {
                     definirTipo(objTipo);
                 }
             }
         }
 
+        private void definirMercadoria(clnMercadoria objMercadoria)
+        {
+            ObjIngrediente.CodMercadoria = objMercadoria.Cod;
+
+            exbirMercadoria(objMercadoria);
+        }
+
+        private void exbirMercadoria(clnMercadoria objMercadoria)
+        {
+            int estoqueAtual = new clnEstoque
+            {
+                CodMercadoria = objMercadoria.Cod
+            }.obterQuantidadePorMercadoria();
+
+            lblMercadoria.Text = "Mercadoria " + objMercadoria.Cod +
+                            "\n" + "Descricao: " + objMercadoria.Descricao +
+                            "\n" + "Código de Barras: " + objMercadoria.CodigoBarras;
+        }
+
+        private void selecionarMercadoria()
+        {
+            clnMercadoria objMercadorias = new clnMercadoria();
+
+            clnMercadoria.clnListar objListar = new clnMercadoria.clnListar
+            {
+                Icone = Properties.Resources.mercadoria,
+                Titulo = "Selecione a Mercadoria",
+                Opcoes = objMercadorias.obterMercadorias()
+            };
+
+            clnUtilSelecionar<clnMercadoria> objSelecionar = new clnUtilSelecionar<clnMercadoria>
+            {
+                Quantidade = 0,
+                ObjListar = objListar
+            };
+
+            frmUtilSelecionar frmSelecionar = new frmUtilSelecionar
+            {
+                ObjSelecionar = objSelecionar
+            };
+            frmSelecionar.ShowDialog();
+
+            if (objSelecionar.Selecionado != null)
+            {
+                definirMercadoria(objSelecionar.Selecionado);
+            }
+        }
+
         private void fechar()
         {
-            if (ObjIngrediente == null)
+            if (ObjIngrediente.Cod == -1)
             {
                 if (UtilMensagem.mostrarSimNao("Cadastro de Ingrediente", "Deseja cancelar o cadastro?", UtilMensagem.MensagemIcone.ERRO))
                 {
@@ -177,6 +232,8 @@ namespace BurgerShack.Desktop
                 ObjIngrediente.alterar();
 
                 btnAlterar.Hide();
+                grbImagem.Hide();
+                btnMercadoria.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
             }
@@ -209,6 +266,12 @@ namespace BurgerShack.Desktop
                     Cod = ObjIngrediente.CodImagem
                 }.obterPorCodigo();
 
+                clnMercadoria objMercadoria = new clnMercadoria
+                {
+                    Cod = ObjIngrediente.CodMercadoria
+                }.obterPorCod();
+
+                exbirMercadoria(objMercadoria);
                 txtNome.Text = ObjIngrediente.Nome;
                 txtValor.Text = ObjIngrediente.Valor.ToString();
                 picImagem.ImageLocation = objArquivo.Local;
@@ -231,6 +294,8 @@ namespace BurgerShack.Desktop
                 lblEstoque.Text = "Estoque: " + ingredienteEstoque;
 
                 UtilForm.Disable(this);
+                grbImagem.Hide();
+                btnMercadoria.Hide();
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
@@ -251,6 +316,8 @@ namespace BurgerShack.Desktop
             else
             {
                 hdrUIX.Title = App.Name + " - Novo Ingrediente";
+
+                ObjIngrediente = new clnIngrediente();
 
                 definirImagemPadrao();
 
@@ -287,7 +354,8 @@ namespace BurgerShack.Desktop
             else
             {
                 UtilForm.Enable(this);
-                grbImagem.Visible = false;
+                grbImagem.Show();
+                btnMercadoria.Show();
 
                 UtilButton.cancelar(btnVoltar);
                 UtilButton.salvar(btnAlterar);
@@ -314,6 +382,11 @@ namespace BurgerShack.Desktop
         private void hdrUIX_Close(object sender, EventArgs e)
         {
             fechar();
+        }
+
+        private void btnMercadoria_Click(object sender, EventArgs e)
+        {
+            selecionarMercadoria();
         }
     }
 }

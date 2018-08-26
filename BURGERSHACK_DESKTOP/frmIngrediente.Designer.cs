@@ -45,11 +45,16 @@
             this.grbImagem = new System.Windows.Forms.GroupBox();
             this.grbSituacao = new System.Windows.Forms.GroupBox();
             this.lblEstoque = new System.Windows.Forms.Label();
+            this.grbMercadoria = new System.Windows.Forms.GroupBox();
+            this.lblMercadoria = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnMercadoria = new vitorrdgs.UiX.Component.UIXButton();
             this.pnlMenu.SuspendLayout();
             this.grbDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.grbImagem.SuspendLayout();
             this.grbSituacao.SuspendLayout();
+            this.grbMercadoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // hdrUIX
@@ -61,7 +66,7 @@
             this.hdrUIX.Location = new System.Drawing.Point(0, 0);
             this.hdrUIX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hdrUIX.Name = "hdrUIX";
-            this.hdrUIX.Size = new System.Drawing.Size(500, 50);
+            this.hdrUIX.Size = new System.Drawing.Size(650, 50);
             this.hdrUIX.TabIndex = 0;
             this.hdrUIX.Title = "Ingrediente";
             this.hdrUIX.Close += new System.EventHandler(this.hdrUIX_Close);
@@ -132,7 +137,7 @@
             this.grbDados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbDados.Name = "grbDados";
             this.grbDados.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDados.Size = new System.Drawing.Size(390, 90);
+            this.grbDados.Size = new System.Drawing.Size(340, 90);
             this.grbDados.TabIndex = 7;
             this.grbDados.TabStop = false;
             this.grbDados.Text = "DADOS";
@@ -162,7 +167,7 @@
             this.txtValor.Multiline = false;
             this.txtValor.Name = "txtValor";
             this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtValor.Size = new System.Drawing.Size(160, 26);
+            this.txtValor.Size = new System.Drawing.Size(150, 26);
             this.txtValor.TabIndex = 19;
             // 
             // cboTipo
@@ -172,11 +177,11 @@
             this.cboTipo.Campo = "Tipo*";
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.cboTipo.Location = new System.Drawing.Point(170, 50);
+            this.cboTipo.Location = new System.Drawing.Point(165, 50);
             this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.SelectedItem = null;
-            this.cboTipo.Size = new System.Drawing.Size(185, 25);
+            this.cboTipo.Size = new System.Drawing.Size(170, 25);
             this.cboTipo.TabIndex = 9;
             // 
             // txtNome
@@ -192,7 +197,7 @@
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNome.Size = new System.Drawing.Size(380, 21);
+            this.txtNome.Size = new System.Drawing.Size(330, 21);
             this.txtNome.TabIndex = 2;
             // 
             // cboSituacao
@@ -206,7 +211,7 @@
             this.cboSituacao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboSituacao.Name = "cboSituacao";
             this.cboSituacao.SelectedItem = null;
-            this.cboSituacao.Size = new System.Drawing.Size(180, 25);
+            this.cboSituacao.Size = new System.Drawing.Size(170, 25);
             this.cboSituacao.TabIndex = 20;
             // 
             // btnImgRemover
@@ -215,7 +220,7 @@
             this.btnImgRemover.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgRemover.Image = global::BurgerShack.Desktop.Properties.Resources.remover;
             this.btnImgRemover.ImageLocation = null;
-            this.btnImgRemover.Location = new System.Drawing.Point(10, 20);
+            this.btnImgRemover.Location = new System.Drawing.Point(5, 20);
             this.btnImgRemover.Name = "btnImgRemover";
             this.btnImgRemover.Size = new System.Drawing.Size(80, 80);
             this.btnImgRemover.TabIndex = 28;
@@ -229,7 +234,7 @@
             this.btnImgAdicionar.HoverColor = System.Drawing.Color.Transparent;
             this.btnImgAdicionar.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnImgAdicionar.ImageLocation = null;
-            this.btnImgAdicionar.Location = new System.Drawing.Point(100, 20);
+            this.btnImgAdicionar.Location = new System.Drawing.Point(90, 20);
             this.btnImgAdicionar.Name = "btnImgAdicionar";
             this.btnImgAdicionar.Size = new System.Drawing.Size(80, 80);
             this.btnImgAdicionar.TabIndex = 26;
@@ -240,9 +245,9 @@
             // picImagem
             // 
             this.picImagem.Image = global::BurgerShack.Desktop.Properties.Resources.imagem;
-            this.picImagem.Location = new System.Drawing.Point(305, 150);
+            this.picImagem.Location = new System.Drawing.Point(460, 55);
             this.picImagem.Name = "picImagem";
-            this.picImagem.Size = new System.Drawing.Size(190, 190);
+            this.picImagem.Size = new System.Drawing.Size(180, 180);
             this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagem.TabIndex = 27;
             this.picImagem.TabStop = false;
@@ -252,11 +257,11 @@
             this.grbImagem.Controls.Add(this.btnImgAdicionar);
             this.grbImagem.Controls.Add(this.btnImgRemover);
             this.grbImagem.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbImagem.Location = new System.Drawing.Point(106, 235);
+            this.grbImagem.Location = new System.Drawing.Point(460, 240);
             this.grbImagem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbImagem.Name = "grbImagem";
             this.grbImagem.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbImagem.Size = new System.Drawing.Size(190, 105);
+            this.grbImagem.Size = new System.Drawing.Size(180, 105);
             this.grbImagem.TabIndex = 20;
             this.grbImagem.TabStop = false;
             this.grbImagem.Text = "IMAGEM";
@@ -266,28 +271,69 @@
             this.grbSituacao.Controls.Add(this.lblEstoque);
             this.grbSituacao.Controls.Add(this.cboSituacao);
             this.grbSituacao.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSituacao.Location = new System.Drawing.Point(105, 150);
+            this.grbSituacao.Location = new System.Drawing.Point(105, 155);
             this.grbSituacao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbSituacao.Name = "grbSituacao";
             this.grbSituacao.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbSituacao.Size = new System.Drawing.Size(190, 85);
+            this.grbSituacao.Size = new System.Drawing.Size(340, 60);
             this.grbSituacao.TabIndex = 30;
             this.grbSituacao.TabStop = false;
             this.grbSituacao.Text = "SITUAÇÃO";
             // 
             // lblEstoque
             // 
-            this.lblEstoque.Location = new System.Drawing.Point(5, 50);
+            this.lblEstoque.Location = new System.Drawing.Point(180, 20);
             this.lblEstoque.Name = "lblEstoque";
-            this.lblEstoque.Size = new System.Drawing.Size(180, 25);
+            this.lblEstoque.Size = new System.Drawing.Size(150, 25);
             this.lblEstoque.TabIndex = 21;
+            // 
+            // grbMercadoria
+            // 
+            this.grbMercadoria.Controls.Add(this.lblMercadoria);
+            this.grbMercadoria.Controls.Add(this.label1);
+            this.grbMercadoria.Controls.Add(this.btnMercadoria);
+            this.grbMercadoria.Location = new System.Drawing.Point(105, 225);
+            this.grbMercadoria.Name = "grbMercadoria";
+            this.grbMercadoria.Size = new System.Drawing.Size(340, 100);
+            this.grbMercadoria.TabIndex = 32;
+            this.grbMercadoria.TabStop = false;
+            this.grbMercadoria.Text = "MERCADORIA";
+            // 
+            // lblMercadoria
+            // 
+            this.lblMercadoria.Location = new System.Drawing.Point(5, 20);
+            this.lblMercadoria.Name = "lblMercadoria";
+            this.lblMercadoria.Size = new System.Drawing.Size(245, 75);
+            this.lblMercadoria.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(5, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 75);
+            this.label1.TabIndex = 8;
+            // 
+            // btnMercadoria
+            // 
+            this.btnMercadoria.Description = "SELECIONAR";
+            this.btnMercadoria.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMercadoria.Image = global::BurgerShack.Desktop.Properties.Resources.mercadoria;
+            this.btnMercadoria.ImageLocation = null;
+            this.btnMercadoria.Location = new System.Drawing.Point(255, 15);
+            this.btnMercadoria.Name = "btnMercadoria";
+            this.btnMercadoria.Size = new System.Drawing.Size(80, 80);
+            this.btnMercadoria.TabIndex = 7;
+            this.btnMercadoria.Text = "Selecionar";
+            this.btnMercadoria.UseVisualStyleBackColor = true;
+            this.btnMercadoria.Click += new System.EventHandler(this.btnMercadoria_Click);
             // 
             // frmIngrediente
             // 
             this.AcceptButton = this.btnAlterar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 350);
+            this.ClientSize = new System.Drawing.Size(650, 350);
+            this.Controls.Add(this.grbMercadoria);
             this.Controls.Add(this.grbSituacao);
             this.Controls.Add(this.grbImagem);
             this.Controls.Add(this.picImagem);
@@ -306,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.grbImagem.ResumeLayout(false);
             this.grbSituacao.ResumeLayout(false);
+            this.grbMercadoria.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -328,6 +375,10 @@
         public System.Windows.Forms.GroupBox grbSituacao;
         private System.Windows.Forms.Label lblEstoque;
         private vitorrdgs.UiX.Component.UIXButton btnExcluir;
+        private System.Windows.Forms.GroupBox grbMercadoria;
+        private System.Windows.Forms.Label lblMercadoria;
+        private System.Windows.Forms.Label label1;
+        private vitorrdgs.UiX.Component.UIXButton btnMercadoria;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }

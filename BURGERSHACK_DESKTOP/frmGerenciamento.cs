@@ -762,7 +762,7 @@ namespace BurgerShack.Desktop
                         Cod = objPagamento.CodForma
                     }.obterPorCodigo();
 
-                    dgv.Rows.Add(new object[] { objPagamento.Cod, UtilFormatar.formatarData(objPagamento.Data), objForma.Nome, UtilFormatar.formatarValor(objPagamento.Valor), UtilFormatar.formatarCPF(objPagamento.Cpf)k });
+                    dgv.Rows.Add(new object[] { objPagamento.Cod, UtilFormatar.formatarData(objPagamento.Data), objForma.Nome, UtilFormatar.formatarValor(objPagamento.Valor), UtilFormatar.formatarCPF(objPagamento.Cpf) });
                 }
                 return false;
             }
