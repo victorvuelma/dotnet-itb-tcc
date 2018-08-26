@@ -22,7 +22,7 @@ namespace BurgerShack.Desktop
 
         private int _codImagem = -1;
         private int _codTipo = -1;
-        private int _codMercadoria = -1;
+        private int? _codMercadoria = -1;
 
         private string _nome;
         private string _descricao;
@@ -36,7 +36,7 @@ namespace BurgerShack.Desktop
         public string Descricao { get => _descricao; set => _descricao = value; }
         public decimal Valor { get => _valor; set => _valor = value; }
         internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
-        public int CodMercadoria { get => _codMercadoria; set => _codMercadoria = value; }
+        public int? CodMercadoria { get => _codMercadoria; set => _codMercadoria = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnProduto obter(SqlDataReader reader) => new clnProduto
@@ -48,7 +48,8 @@ namespace BurgerShack.Desktop
             Nome = UtilConvert.ToString(reader["nome"]),
             Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
             Valor = UtilConvert.ToDecimal(reader["valor"]),
-            Ativo = UtilConvert.ToBool(reader["ativo"])
+            Ativo = UtilConvert.ToBool(reader["ativo"]),
+            CodMercadoria = UtilConvert.ToNullableInt(reader["id_mercadoria"])
         };
 
         public clnProduto obterPorCod()
@@ -150,20 +151,32 @@ namespace BurgerShack.Desktop
             {
                 clnProduto.produtoSituacao novaSituacao = clnProduto.produtoSituacao.DISPONIVEL;
 
-                List<clnProdutoIngrediente> objProdutoIngredientes = new clnProdutoIngrediente
+                if (CodMercadoria != null)
                 {
-                    CodProduto = Cod
-                }.obterPorProduto();
-
-                if (CodMercadoria != -1)
-                {
-                    clnMercadoria objMercadoria = new clnMercadoria
+                    int estoqueAtual = new clnEstoque
                     {
-                        Cod = CodMercadoria
-                    }.obterPorCod();
+                        CodMercadoria = (int)CodMercadoria
+                    }.obterQuantidadePorMercadoria();
+
+                    if (Situacao != clnProduto.produtoSituacao.INDISPONIVEL)
+                    {
+                        if (estoqueAtual > 0)
+                        {
+                            novaSituacao = clnProduto.produtoSituacao.DISPONIVEL;
+                        }
+                        else
+                        {
+                            novaSituacao = clnProduto.produtoSituacao.FORADEESTOQUE;
+                        }
+                    }
                 }
                 else
                 {
+                    List<clnProdutoIngrediente> objProdutoIngredientes = new clnProdutoIngrediente
+                    {
+                        CodProduto = Cod
+                    }.obterPorProduto();
+
                     foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes)
                     {
                         clnIngrediente objIngrediente = new clnIngrediente

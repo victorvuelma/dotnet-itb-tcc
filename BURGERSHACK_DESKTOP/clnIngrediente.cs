@@ -48,7 +48,8 @@ namespace BurgerShack.Desktop
                 Nome = UtilConvert.ToString(reader["nome"]),
                 Valor = UtilConvert.ToDecimal(reader["valor"]),
                 Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
-                Ativo = UtilConvert.ToBool(reader["ativo"])
+                Ativo = UtilConvert.ToBool(reader["ativo"]),
+                CodMercadoria = UtilConvert.ToInt(reader["id_mercadoria"])
             };
 
             return objIngrediente;
@@ -139,6 +140,7 @@ namespace BurgerShack.Desktop
                             .val("id_imagem", CodImagem)
                             .val("nome", Nome)
                             .val("valor", Valor)
+                            .val("id_mercadoria", CodMercadoria)
                             .val("situacao", prefixo(Situacao))
                             .val("ativo", UtilConvert.ToBit(Ativo));
 
@@ -153,6 +155,7 @@ namespace BurgerShack.Desktop
                         .val("id_imagem", CodImagem)
                         .val("nome", Nome)
                         .val("valor", Valor)
+                        .val("id_mercadoria", CodMercadoria)
                         .val("situacao", prefixo(Situacao))
                         .val("ativo", UtilConvert.ToBit(Ativo));
             objUpdate.Where.where("id", Cod);
