@@ -95,7 +95,7 @@
             this.btnPagamentos.TabIndex = 16;
             this.btnPagamentos.Text = "Pagamentos";
             this.btnPagamentos.UseVisualStyleBackColor = true;
-            this.btnPagamentos.Visible = false;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
             // 
             // btnPedidos
             // 

@@ -16,6 +16,8 @@ namespace BurgerShack.Desktop
         private int _codConta = -1;
         private int? _codCliente = null;
 
+        private string _cpf;
+
         private decimal _valor;
         private DateTime _data;
 
@@ -25,6 +27,7 @@ namespace BurgerShack.Desktop
         public int? CodCliente { get => _codCliente; set => _codCliente = value; }
         public decimal Valor { get => _valor; set => _valor = value; }
         public DateTime Data { get => _data; set => _data = value; }
+        public string Cpf { get => _cpf; set => _cpf = value; }
 
         private clnPagamento obter(SqlDataReader reader) => new clnPagamento
         {
@@ -33,7 +36,8 @@ namespace BurgerShack.Desktop
             CodForma = UtilConvert.ToInt(reader["id_forma"]),
             CodCliente = UtilConvert.ToNullableInt(reader["id_cliente"]),
             Valor = UtilConvert.ToDecimal(reader["valor"]),
-            Data = UtilConvert.ToDateTime(reader["data"])
+            Data = UtilConvert.ToDateTime(reader["data"]),
+            Cpf = UtilConvert.ToString(reader["cpf"])
         };
 
         public clnPagamento obterPorCod()
@@ -74,10 +78,15 @@ namespace BurgerShack.Desktop
                             .val("id_cliente", CodCliente)
                             .val("id_forma", CodForma)
                             .val("valor", Valor)
-                            .val("data", Data);
+                            .val("data", Data)
+                            .val("cpf", Cpf);
 
             objInsert.execute(App.DatabaseSql);
         }
 
+        internal IEnumerable<clnPagamento> obterPagamentosPorCpf()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

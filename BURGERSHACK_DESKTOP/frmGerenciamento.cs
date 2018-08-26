@@ -88,6 +88,11 @@ namespace BurgerShack.Desktop
             abrirLista("Mercadorias", new CallbackMercadoriaNovo(), new CallbackMercadoriaObter(), new CallbackMercadoriaAlterar(), true, new String[] { "Código", "Descrição", "Código de Barras" });
         }
 
+        private void abrirPagamentos()
+        {
+            abrirLista("Pagamentos", null, new CallbackPagamentoObter(), null, false, new String[] { "Código", "Data", "Forma", "Valor", "Cpf" });
+        }
+
         private void sair()
         {
             Close();
@@ -163,6 +168,11 @@ namespace BurgerShack.Desktop
         private void btnMercadorias_Click(object sender, EventArgs e)
         {
             abrirMercadorias();
+        }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            abrirPagamentos();
         }
 
         private class CallbackIngredienteNovo : IUtilCallback
@@ -734,6 +744,30 @@ namespace BurgerShack.Desktop
                 return false;
             }
         }
+
+        private class CallbackPagamentoObter : IUtilCallback<DataGridView, String, bool>
+        {
+            public bool call(DataGridView dgv, string pesquisa, bool ativo)
+            {
+                clnPagamento objPagamentos = new clnPagamento
+                {
+                    Cpf = UtilFormatar.retirarFormatacao(pesquisa)
+                };
+                foreach (clnPagamento objPagamento in objPagamentos.obterPagamentosPorCpf())
+                {
+                    //"Código", "Data", "Forma", "Valor", "Cpf"
+
+                    clnPagamentoForma objForma = new clnPagamentoForma
+                    {
+                        Cod = objPagamento.CodForma
+                    }.obterPorCodigo();
+
+                    dgv.Rows.Add(new object[] { objPagamento.Cod, UtilFormatar.formatarData(objPagamento.Data), objForma.Nome, UtilFormatar.formatarValor(objPagamento.Valor), UtilFormatar.formatarCPF(objPagamento.Cpf)k });
+                }
+                return false;
+            }
+        }
+
 
     }
 }
