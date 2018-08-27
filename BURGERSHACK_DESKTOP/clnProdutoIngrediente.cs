@@ -120,13 +120,6 @@ namespace BurgerShack.Desktop
             objUpdate.execute(App.DatabaseSql);
         }
 
-        internal void remover()
-        {
-            Ativo = false;
-
-            alterar();
-        }
-
         public class clnListar : clnUtilListar<clnProdutoIngrediente>
         {
 
