@@ -111,6 +111,7 @@ namespace BurgerShack.Desktop
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
 
             atualizarIngredientes();
+            atualizarProdutos();
         }
 
         public void alterar()
