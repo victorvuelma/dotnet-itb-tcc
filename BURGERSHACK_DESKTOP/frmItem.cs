@@ -53,7 +53,12 @@ namespace BurgerShack.Desktop
         {
             List<clnItemIngrediente> objItemIngredientes = obterIngredientes();
 
-            if (ObjItemIngredientes.Count > 0)
+            clnProduto objProduto = new clnProduto
+            {
+                Cod = ObjItem.CodProduto
+            }.obterPorCod();
+
+            if (objProduto.CodMercadoria == null)
             {
                 clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
                 {
@@ -166,7 +171,7 @@ namespace BurgerShack.Desktop
 
             exibirProduto(objProduto, ObjItem);
 
-            if (ObjItemIngredientes.Count == 0)
+            if (objProduto.CodMercadoria != null)
             {
                 grbIngredientes.Hide();
             }
