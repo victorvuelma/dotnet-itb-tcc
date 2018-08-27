@@ -86,7 +86,17 @@ namespace BurgerShack.Desktop
 
         internal IEnumerable<clnPagamento> obterPagamentosPorCpf()
         {
-            throw new NotImplementedException();
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("pagamento");
+            objSelect.Where.where("cpf", "%" + Cpf + "%");
+
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            List<clnPagamento> objPagamentos = new List<clnPagamento>();
+            while (reader.Read())
+                objPagamentos.Add(obter(reader));
+            reader.Close();
+
+            return objPagamentos;
         }
     }
 }
