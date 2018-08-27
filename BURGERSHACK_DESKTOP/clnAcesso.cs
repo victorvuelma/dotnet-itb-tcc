@@ -47,7 +47,7 @@ namespace BurgerShack.Desktop
             return codFuncionario;
         }
 
-        public int? autenticarPorCodigo()
+        public string autenticarPorCodigo()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");
@@ -56,13 +56,13 @@ namespace BurgerShack.Desktop
                            .where("hash", Senha)
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
-            int? codFuncionario = null;
+            string usuario = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             if (reader.Read())
-                codFuncionario = UtilConvert.ToInt(reader["usuario"]);
+                usuario = UtilConvert.ToString(reader["usuario"]);
             reader.Close();
 
-            return codFuncionario;
+            return usuario;
         }
 
         internal clnAcesso obterPorUsuario()

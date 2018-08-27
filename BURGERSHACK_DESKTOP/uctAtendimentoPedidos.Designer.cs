@@ -52,23 +52,26 @@
             this.grbPedidos.TabStop = false;
             this.grbPedidos.Text = "PEDIDOS";
             // 
-            // pnlPedidos
+            // lstPedidos
             // 
+            this.lstPedidos.ItemsSize = 100;
+            this.lstPedidos.ItemsSpace = 10;
             this.lstPedidos.Location = new System.Drawing.Point(5, 20);
             this.lstPedidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstPedidos.MaximumSize = new System.Drawing.Size(480, 10000);
-            this.lstPedidos.Name = "pnlPedidos";
+            this.lstPedidos.Name = "lstPedidos";
+            this.lstPedidos.PosIndex = 0;
             this.lstPedidos.Size = new System.Drawing.Size(480, 510);
             this.lstPedidos.TabIndex = 4;
             // 
-            // btnNovoPedido
+            // btnNovo
             // 
-            this.btnNovo.Description = "Novo Pedido";
+            this.btnNovo.Description = "NOVO PEDIDO";
             this.btnNovo.HoverColor = System.Drawing.Color.Transparent;
             this.btnNovo.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnNovo.ImageLocation = null;
             this.btnNovo.Location = new System.Drawing.Point(395, 545);
-            this.btnNovo.Name = "btnNovoPedido";
+            this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(100, 100);
             this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "Novo Pedido";
@@ -103,12 +106,13 @@
             this.grbSituacao.Size = new System.Drawing.Size(170, 95);
             this.grbSituacao.TabIndex = 12;
             this.grbSituacao.TabStop = false;
+            this.grbSituacao.Visible = false;
             // 
-            // label1
+            // lblSituacao
             // 
             this.lblSituacao.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSituacao.Location = new System.Drawing.Point(5, 20);
-            this.lblSituacao.Name = "label1";
+            this.lblSituacao.Name = "lblSituacao";
             this.lblSituacao.Size = new System.Drawing.Size(160, 65);
             this.lblSituacao.TabIndex = 10;
             this.lblSituacao.Text = "Situação Top Aqui";

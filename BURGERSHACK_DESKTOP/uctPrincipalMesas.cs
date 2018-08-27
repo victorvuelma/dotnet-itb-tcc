@@ -50,7 +50,8 @@ namespace BurgerShack.Desktop
                     objAtendimento = new clnAtendimento
                     {
                         Inicio = DateTime.Now,
-                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO
+                        Situacao = clnAtendimento.atendimentoSituacao.ANDAMENTO,
+                        CodFuncionario = AppDesktop.FuncionarioAtual.Cod
                     };
                     objAtendimento.gravar();
 

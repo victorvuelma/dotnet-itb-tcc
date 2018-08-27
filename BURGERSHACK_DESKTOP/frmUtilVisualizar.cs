@@ -38,6 +38,9 @@ namespace BurgerShack.Desktop
                             _opcoes.Remove(obj);
                             exibirResultados();
                             return UIXItemsList.ListResult.REMOVER;
+                        case clnUtilVisualizar.VisualizarResult.FECHAR:
+                            Close();
+                            return UIXItemsList.ListResult.NENHUM;
                         default:
                             return UIXItemsList.ListResult.NENHUM;
                     }
