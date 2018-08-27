@@ -18,6 +18,7 @@ namespace BurgerShack.Desktop
     {
 
         private int _cod = -1;
+        private bool _ativo = true;
 
         private int _codProduto = -1;
         private int _codIngrediente = -1;
@@ -33,6 +34,7 @@ namespace BurgerShack.Desktop
         public bool Remover { get => _remover; set => _remover = value; }
         public bool Alterar { get => _alterar; set => _alterar = value; }
         public int Quantidade { get => _quantidade; set => _quantidade = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnProdutoIngrediente obter(SqlDataReader reader) => new clnProdutoIngrediente
         {
@@ -41,7 +43,8 @@ namespace BurgerShack.Desktop
             CodIngrediente = UtilConvert.ToInt(reader["id_ingrediente"]),
             Quantidade = UtilConvert.ToInt(reader["quantidade"]),
             Remover = UtilConvert.ToBool(reader["remover"]),
-            Alterar = UtilConvert.ToBool(reader["alterar"])
+            Alterar = UtilConvert.ToBool(reader["alterar"]),
+            Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
         public clnProdutoIngrediente obterPorCod()
@@ -63,7 +66,8 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto_ingrediente");
-            objSelect.Where.where("id_produto", CodProduto);
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("id_produto", CodProduto);
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnProdutoIngrediente> objProdutoIngredientes = new List<clnProdutoIngrediente>();
@@ -96,6 +100,7 @@ namespace BurgerShack.Desktop
             objInsert.Value.val("id_produto", CodProduto)
                             .val("id_ingrediente", CodIngrediente)
                             .val("quantidade", Quantidade)
+                            .val("ativo", UtilConvert.ToBit(Ativo))
                             .val("alterar", UtilConvert.ToBit(Alterar))
                             .val("remover", UtilConvert.ToBit(Remover));
 
@@ -107,8 +112,9 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto_ingrediente");
             objUpdate.Value.val("quantidade", Quantidade)
-                            .val("alterar", UtilConvert.ToBit(Alterar))
-                            .val("remover", UtilConvert.ToBit(Remover));
+                           .val("ativo", UtilConvert.ToBit(Ativo))
+                           .val("alterar", UtilConvert.ToBit(Alterar))
+                           .val("remover", UtilConvert.ToBit(Remover));
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);
@@ -116,11 +122,9 @@ namespace BurgerShack.Desktop
 
         internal void remover()
         {
-            sqlDelete objDelete = new sqlDelete();
-            objDelete.table("produto_ingrediente");
-            objDelete.Where.where("id", Cod);
+            Ativo = false;
 
-            objDelete.execute(App.DatabaseSql);
+            alterar();
         }
 
         public class clnListar : clnUtilListar<clnProdutoIngrediente>
