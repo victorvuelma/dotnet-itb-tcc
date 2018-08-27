@@ -283,8 +283,6 @@ namespace BurgerShack.Desktop
 
                     cboCargo.SelectedItem = cboCargo.Items.Last();
                     cboSituacao.SelectedItem = cboSituacao.Items.Last();
-
-                    UtilForm.Disable(this);
                 }
             }
             else
