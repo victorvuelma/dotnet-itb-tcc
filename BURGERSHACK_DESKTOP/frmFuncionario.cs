@@ -356,7 +356,8 @@ namespace BurgerShack.Desktop
                 UtilForm.Enable(this);
 
                 mtbCPF.Enabled = false;
-                grbImagem.Visible = true;
+                grbImagem.Show();
+                btnAcesso.Show();
 
                 UtilButton.cancelar(btnVoltar);
                 UtilButton.salvar(btnAlterar);
