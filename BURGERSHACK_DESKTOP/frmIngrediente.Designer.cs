@@ -147,7 +147,7 @@
             this.btnTipo.BackgroundImage = global::BurgerShack.Desktop.Properties.Resources.alterar;
             this.btnTipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTipo.Image = global::BurgerShack.Desktop.Properties.Resources.alterar;
-            this.btnTipo.Location = new System.Drawing.Point(360, 50);
+            this.btnTipo.Location = new System.Drawing.Point(310, 50);
             this.btnTipo.Name = "btnTipo";
             this.btnTipo.Size = new System.Drawing.Size(25, 25);
             this.btnTipo.TabIndex = 29;
@@ -181,7 +181,7 @@
             this.cboTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.SelectedItem = null;
-            this.cboTipo.Size = new System.Drawing.Size(170, 25);
+            this.cboTipo.Size = new System.Drawing.Size(140, 25);
             this.cboTipo.TabIndex = 9;
             // 
             // txtNome

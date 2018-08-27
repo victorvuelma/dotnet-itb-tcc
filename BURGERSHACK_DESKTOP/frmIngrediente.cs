@@ -95,6 +95,7 @@ namespace BurgerShack.Desktop
                     } else
                     {
                         UtilMensagem.mostrarOk("Cadastro de Ingrediente", "É necessário informar uma mercadoria!");
+                        return;
                     }
                 }
                 else
