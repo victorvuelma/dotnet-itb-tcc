@@ -22,7 +22,7 @@ namespace BurgerShack.Desktop
 
         private int _codImagem = -1;
         private int _codTipo = -1;
-        private int? _codMercadoria = -1;
+        private int? _codMercadoria = null;
 
         private string _nome;
         private string _descricao;

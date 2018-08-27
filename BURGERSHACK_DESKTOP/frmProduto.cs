@@ -248,8 +248,9 @@ namespace BurgerShack.Desktop
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
-                grbIngredientes.Visible = false;
-                grbImagem.Visible = false;
+                grbIngredientes.Hide();
+                grbImagem.Hide();
+                btnMercadoria.Hide();
             }
         }
 
@@ -351,6 +352,17 @@ namespace BurgerShack.Desktop
             }
         }
 
+        private bool verificarIngredientes()
+        {
+            if (ObjProduto.CodMercadoria == null || UtilMensagem.mostrarSimNao("Produto", "Iremos remover a mercadoria associada a este produto para realizar esta ação, você tem certeza disso?"))
+            {
+                lblMercadoria.Text = "";
+                ObjProduto.CodMercadoria = null;
+                return true;
+            }
+            return false;
+        }
+
         private void frmIngrediente_Load(object sender, EventArgs e)
         {
             clnUtil.atualizarForm(this);
@@ -390,10 +402,6 @@ namespace BurgerShack.Desktop
                     }.obterPorCod();
 
                     exbirMercadoria(objMercadoria);
-                    grbIngredientes.Hide();
-                } else
-                {
-                    grbMercadoria.Hide();
                 }
 
                 UtilForm.Disable(this);
@@ -460,13 +468,8 @@ namespace BurgerShack.Desktop
             {
                 UtilForm.Enable(this);
                 grbImagem.Show();
-                if (ObjProduto.CodMercadoria == null)
-                {
-                    grbIngredientes.Show();
-                } else
-                {
-                    grbMercadoria.Show();
-                }
+                grbIngredientes.Show();
+                grbMercadoria.Show();
 
                 UtilButton.cancelar(btnVoltar);
                 UtilButton.salvar(btnAlterar);
@@ -497,12 +500,18 @@ namespace BurgerShack.Desktop
 
         private void btnIngredienteAdd_Click(object sender, EventArgs e)
         {
-            adicionarIngrediente();
+            if (verificarIngredientes())
+            {
+                adicionarIngrediente();
+            }
         }
 
         private void btnIngredienteRemover_Click(object sender, EventArgs e)
         {
-            exibirIngredientes();
+            if (verificarIngredientes())
+            {
+                exibirIngredientes();
+            }
         }
 
         private void btnMercadoria_Click(object sender, EventArgs e)
