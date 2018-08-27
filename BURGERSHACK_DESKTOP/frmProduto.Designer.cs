@@ -46,11 +46,15 @@
             this.grbIngredientes = new System.Windows.Forms.GroupBox();
             this.btnIngredienteAdd = new vitorrdgs.UiX.Component.UIXButton();
             this.btnIngredientes = new vitorrdgs.UiX.Component.UIXButton();
+            this.grbMercadoria = new System.Windows.Forms.GroupBox();
+            this.lblMercadoria = new System.Windows.Forms.Label();
+            this.btnMercadoria = new vitorrdgs.UiX.Component.UIXButton();
             this.pnlMenu.SuspendLayout();
             this.grbDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.grbImagem.SuspendLayout();
             this.grbIngredientes.SuspendLayout();
+            this.grbMercadoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // hdrUIX
@@ -134,7 +138,7 @@
             this.grbDados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbDados.Name = "grbDados";
             this.grbDados.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDados.Size = new System.Drawing.Size(390, 185);
+            this.grbDados.Size = new System.Drawing.Size(395, 185);
             this.grbDados.TabIndex = 7;
             this.grbDados.TabStop = false;
             this.grbDados.Text = "DADOS";
@@ -272,11 +276,11 @@
             this.grbIngredientes.Controls.Add(this.btnIngredienteAdd);
             this.grbIngredientes.Controls.Add(this.btnIngredientes);
             this.grbIngredientes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbIngredientes.Location = new System.Drawing.Point(105, 245);
+            this.grbIngredientes.Location = new System.Drawing.Point(325, 245);
             this.grbIngredientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbIngredientes.Name = "grbIngredientes";
             this.grbIngredientes.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbIngredientes.Size = new System.Drawing.Size(190, 100);
+            this.grbIngredientes.Size = new System.Drawing.Size(175, 100);
             this.grbIngredientes.TabIndex = 29;
             this.grbIngredientes.TabStop = false;
             this.grbIngredientes.Text = "INGREDIENTES";
@@ -287,7 +291,7 @@
             this.btnIngredienteAdd.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredienteAdd.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnIngredienteAdd.ImageLocation = null;
-            this.btnIngredienteAdd.Location = new System.Drawing.Point(100, 15);
+            this.btnIngredienteAdd.Location = new System.Drawing.Point(90, 15);
             this.btnIngredienteAdd.Name = "btnIngredienteAdd";
             this.btnIngredienteAdd.Size = new System.Drawing.Size(80, 80);
             this.btnIngredienteAdd.TabIndex = 26;
@@ -301,7 +305,7 @@
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredientes.Image = global::BurgerShack.Desktop.Properties.Resources.lista;
             this.btnIngredientes.ImageLocation = null;
-            this.btnIngredientes.Location = new System.Drawing.Point(10, 15);
+            this.btnIngredientes.Location = new System.Drawing.Point(5, 15);
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Size = new System.Drawing.Size(80, 80);
             this.btnIngredientes.TabIndex = 28;
@@ -309,12 +313,45 @@
             this.btnIngredientes.UseVisualStyleBackColor = true;
             this.btnIngredientes.Click += new System.EventHandler(this.btnIngredienteRemover_Click);
             // 
+            // grbMercadoria
+            // 
+            this.grbMercadoria.Controls.Add(this.lblMercadoria);
+            this.grbMercadoria.Controls.Add(this.btnMercadoria);
+            this.grbMercadoria.Location = new System.Drawing.Point(105, 245);
+            this.grbMercadoria.Name = "grbMercadoria";
+            this.grbMercadoria.Size = new System.Drawing.Size(215, 100);
+            this.grbMercadoria.TabIndex = 33;
+            this.grbMercadoria.TabStop = false;
+            this.grbMercadoria.Text = "MERCADORIA";
+            // 
+            // lblMercadoria
+            // 
+            this.lblMercadoria.Location = new System.Drawing.Point(5, 20);
+            this.lblMercadoria.Name = "lblMercadoria";
+            this.lblMercadoria.Size = new System.Drawing.Size(125, 75);
+            this.lblMercadoria.TabIndex = 9;
+            // 
+            // btnMercadoria
+            // 
+            this.btnMercadoria.Description = "SELECIONAR";
+            this.btnMercadoria.HoverColor = System.Drawing.Color.Transparent;
+            this.btnMercadoria.Image = global::BurgerShack.Desktop.Properties.Resources.mercadoria;
+            this.btnMercadoria.ImageLocation = null;
+            this.btnMercadoria.Location = new System.Drawing.Point(130, 15);
+            this.btnMercadoria.Name = "btnMercadoria";
+            this.btnMercadoria.Size = new System.Drawing.Size(80, 80);
+            this.btnMercadoria.TabIndex = 7;
+            this.btnMercadoria.Text = "Selecionar";
+            this.btnMercadoria.UseVisualStyleBackColor = true;
+            this.btnMercadoria.Click += new System.EventHandler(this.btnMercadoria_Click);
+            // 
             // frmProduto
             // 
             this.AcceptButton = this.btnAlterar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 350);
+            this.Controls.Add(this.grbMercadoria);
             this.Controls.Add(this.grbIngredientes);
             this.Controls.Add(this.grbImagem);
             this.Controls.Add(this.picImagem);
@@ -333,6 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.grbImagem.ResumeLayout(false);
             this.grbIngredientes.ResumeLayout(false);
+            this.grbMercadoria.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -356,6 +394,9 @@
         public System.Windows.Forms.GroupBox grbIngredientes;
         private vitorrdgs.UiX.Component.UIXButton btnIngredienteAdd;
         private vitorrdgs.UiX.Component.UIXButton btnIngredientes;
+        private System.Windows.Forms.GroupBox grbMercadoria;
+        private System.Windows.Forms.Label lblMercadoria;
+        private vitorrdgs.UiX.Component.UIXButton btnMercadoria;
         //private uctProdutoRemover uctPedidoRemover1;
     }
 }
