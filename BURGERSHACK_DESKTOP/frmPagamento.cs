@@ -36,7 +36,6 @@ namespace BurgerShack.Desktop
             txtValor.txt.TextChanged += (object sender, EventArgs args) =>
             {
                 atualizarTroco();
-                atualizarRestante();
             };
 
             _validar = new clnUtilFormValidar();
@@ -84,7 +83,7 @@ namespace BurgerShack.Desktop
                     ObjPagamento = new clnPagamento
                     {
                         CodForma = codForma,
-                        CodConta = ObjConta.CodAtendimento,
+                        CodConta = ObjConta.Cod,
                         Data = DateTime.Now,
                         Valor = obterValorPago(),
                         CodCliente = CodCliente,
@@ -214,7 +213,7 @@ namespace BurgerShack.Desktop
 
         private decimal obterValorAPagar()
         {
-            decimal valor = clnUtilConta.calcularValor(ObjConta) - clnUtilConta.calcularValorPago(ObjConta.CodAtendimento);
+            decimal valor = clnUtilConta.calcularValor(ObjConta) - clnUtilConta.calcularValorPago(ObjConta.Cod);
 
             return valor;
         }
@@ -229,13 +228,7 @@ namespace BurgerShack.Desktop
         private void atualizarTroco()
         {
             decimal valorPago = obterDinheiro() - obterValorPago();
-            lblTroco.Text = "Troco: " + UtilFormatar.formatarValor(valorPago);
-        }
-
-        private void atualizarRestante()
-        {
-            decimal valorRestante = obterValorAPagar() - obterValorPago();
-            lblValorRestante.Text = UtilFormatar.formatarValor(valorRestante);
+            lblTroco.Text = "Troco: " + UtilFormatar.formatarValor((valorPago > 0 ? valorPago : 0));
         }
 
         private void frmIngrediente_Load(object sender, EventArgs e)

@@ -94,10 +94,13 @@ namespace BurgerShack.Desktop
         {
             foreach (Control control in controls)
             {
-                control.ResetText();
-                if (control is DataGridView)
+                if (!(control is Label || control is UserControl || control is Button))
                 {
-                    ((DataGridView)control).Rows.Clear();
+                    control.ResetText();
+                    if (control is DataGridView)
+                    {
+                        ((DataGridView)control).Rows.Clear();
+                    }
                 }
             }
         }

@@ -64,7 +64,7 @@ namespace BurgerShack.Desktop
         {
             if (ObjConta != null)
             {
-                decimal valorPago = clnUtilConta.calcularValorPago(ObjConta.CodAtendimento);
+                decimal valorPago = clnUtilConta.calcularValorPago(ObjConta.Cod);
 
                 lblValorPago.Text = "Valor Pago: " + UtilFormatar.formatarValor(valorPago);
 

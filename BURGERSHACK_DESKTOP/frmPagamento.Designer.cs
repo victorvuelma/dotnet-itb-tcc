@@ -43,9 +43,6 @@
             this.grbMeio = new System.Windows.Forms.GroupBox();
             this.cboBandeira = new vitorrdgs.UiX.Component.UIXComboBox();
             this.cboMetodo = new vitorrdgs.UiX.Component.UIXComboBox();
-            this.grbValorRestante = new System.Windows.Forms.GroupBox();
-            this.lblValorRestante = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.grbDinheiro = new System.Windows.Forms.GroupBox();
             this.lblTroco = new System.Windows.Forms.Label();
             this.txtDinheiro = new vitorrdgs.UiX.Component.UIXTextBox();
@@ -54,7 +51,6 @@
             this.grbValorTotal.SuspendLayout();
             this.grbValorPagar.SuspendLayout();
             this.grbMeio.SuspendLayout();
-            this.grbValorRestante.SuspendLayout();
             this.grbDinheiro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +79,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Description = "Cancelar";
+            this.btnVoltar.Description = "CANCELAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -97,7 +93,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Description = "Salvar";
+            this.btnSalvar.Description = "SALVAR";
             this.btnSalvar.HoverColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -131,7 +127,7 @@
             // 
             // btnCliEncontrar
             // 
-            this.btnCliEncontrar.Description = "Encontrar";
+            this.btnCliEncontrar.Description = "ENCONTRAR";
             this.btnCliEncontrar.HoverColor = System.Drawing.Color.Transparent;
             this.btnCliEncontrar.Image = global::BurgerShack.Desktop.Properties.Resources.cliente;
             this.btnCliEncontrar.ImageLocation = null;
@@ -229,6 +225,7 @@
             this.cboBandeira.SelectedItem = null;
             this.cboBandeira.Size = new System.Drawing.Size(164, 25);
             this.cboBandeira.TabIndex = 1;
+            this.cboBandeira.Visible = false;
             // 
             // cboMetodo
             // 
@@ -244,37 +241,6 @@
             this.cboMetodo.TabIndex = 0;
             this.cboMetodo.Leave += new System.EventHandler(this.cboMetodo_Leave);
             // 
-            // grbValorRestante
-            // 
-            this.grbValorRestante.Controls.Add(this.lblValorRestante);
-            this.grbValorRestante.Controls.Add(this.label1);
-            this.grbValorRestante.Location = new System.Drawing.Point(270, 275);
-            this.grbValorRestante.Name = "grbValorRestante";
-            this.grbValorRestante.Size = new System.Drawing.Size(175, 70);
-            this.grbValorRestante.TabIndex = 33;
-            this.grbValorRestante.TabStop = false;
-            this.grbValorRestante.Text = "VALOR RESTANTE";
-            // 
-            // lblValorRestante
-            // 
-            this.lblValorRestante.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorRestante.Location = new System.Drawing.Point(5, 20);
-            this.lblValorRestante.Name = "lblValorRestante";
-            this.lblValorRestante.Size = new System.Drawing.Size(165, 45);
-            this.lblValorRestante.TabIndex = 33;
-            this.lblValorRestante.Text = "0,00";
-            this.lblValorRestante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 35);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "0,00";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // grbDinheiro
             // 
             this.grbDinheiro.Controls.Add(this.lblTroco);
@@ -284,7 +250,7 @@
             this.grbDinheiro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbDinheiro.Name = "grbDinheiro";
             this.grbDinheiro.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDinheiro.Size = new System.Drawing.Size(160, 65);
+            this.grbDinheiro.Size = new System.Drawing.Size(340, 60);
             this.grbDinheiro.TabIndex = 8;
             this.grbDinheiro.TabStop = false;
             this.grbDinheiro.Text = "DINHEIRO";
@@ -292,9 +258,9 @@
             // lblTroco
             // 
             this.lblTroco.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTroco.Location = new System.Drawing.Point(5, 40);
+            this.lblTroco.Location = new System.Drawing.Point(160, 15);
             this.lblTroco.Name = "lblTroco";
-            this.lblTroco.Size = new System.Drawing.Size(150, 20);
+            this.lblTroco.Size = new System.Drawing.Size(175, 40);
             this.lblTroco.TabIndex = 34;
             this.lblTroco.Text = "Troco: 0,00";
             this.lblTroco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,7 +270,7 @@
             this.txtDinheiro.AcceptButton = null;
             this.txtDinheiro.Campo = "Dinheiro*";
             this.txtDinheiro.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.txtDinheiro.Location = new System.Drawing.Point(5, 15);
+            this.txtDinheiro.Location = new System.Drawing.Point(5, 25);
             this.txtDinheiro.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtDinheiro.MaxLength = 32767;
             this.txtDinheiro.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.MONEY;
@@ -321,7 +287,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 350);
             this.Controls.Add(this.grbDinheiro);
-            this.Controls.Add(this.grbValorRestante);
             this.Controls.Add(this.grbValorPagar);
             this.Controls.Add(this.grbValorTotal);
             this.Controls.Add(this.grbCliente);
@@ -340,7 +305,6 @@
             this.grbValorTotal.ResumeLayout(false);
             this.grbValorPagar.ResumeLayout(false);
             this.grbMeio.ResumeLayout(false);
-            this.grbValorRestante.ResumeLayout(false);
             this.grbDinheiro.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -362,11 +326,8 @@
         public System.Windows.Forms.GroupBox grbMeio;
         private vitorrdgs.UiX.Component.UIXComboBox cboMetodo;
         private vitorrdgs.UiX.Component.UIXComboBox cboBandeira;
-        private System.Windows.Forms.GroupBox grbValorRestante;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.GroupBox grbDinheiro;
         private vitorrdgs.UiX.Component.UIXTextBox txtDinheiro;
-        private System.Windows.Forms.Label lblValorRestante;
         private System.Windows.Forms.Label lblTroco;
     }
 }
