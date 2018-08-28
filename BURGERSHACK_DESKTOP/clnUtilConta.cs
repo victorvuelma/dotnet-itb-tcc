@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
@@ -186,7 +187,14 @@ namespace BurgerShack.Desktop
 
         public static IEnumerable<string> obterTemplate()
         {
-            return File.ReadLines(global::BurgerShack.Common.Properties.Resources.html_template_conta);
+            StringReader reader = new StringReader(BurgerShack.Common.Properties.Resources.html_template_conta);
+            String line = "";
+            List<string> lines = new List<string>();
+            while ((line = reader.ReadLine()) != null)
+            {
+                lines.Add(line);
+            }
+            return lines;
         }
 
     }
