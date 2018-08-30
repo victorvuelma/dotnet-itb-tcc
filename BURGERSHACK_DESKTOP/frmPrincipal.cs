@@ -35,8 +35,13 @@ namespace BurgerShack.Desktop
 
         private void abrirGerenciamento()
         {
-            frmGerenciamento frmGerenciamento = new frmGerenciamento { };
-            frmGerenciamento.ShowDialog();
+            frmConfirmar frmConfirmar = new frmConfirmar();
+            frmConfirmar.ShowDialog();
+            if (frmConfirmar.Confirmado)
+            {
+                frmGerenciamento frmGerenciamento = new frmGerenciamento { };
+                frmGerenciamento.ShowDialog();
+            }
         }
 
         private void sair()
@@ -114,7 +119,7 @@ namespace BurgerShack.Desktop
                 {
                     CodFuncionario = AppDesktop.FuncionarioAtual.Cod
                 }.obterPorFuncionario();
-                
+
                 frmAcesso frmAlterarSenha = new frmAcesso();
                 frmAlterarSenha.ObjAcesso = objAcesso;
                 frmAlterarSenha.ShowDialog();

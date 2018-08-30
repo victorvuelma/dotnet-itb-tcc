@@ -327,7 +327,7 @@ namespace BurgerShack.Desktop
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CONFIRMADA;
                 ObjReserva.alterar();
                 UtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!");
-                grbSituacao.Enabled = false;
+                grbSituacao.Hide();
             }
         }
 
@@ -386,7 +386,7 @@ namespace BurgerShack.Desktop
             uixButton.btnApply(btnVoltar, AppDesktop.VisualStyle.ButtonWarningColor);
 
             btnAtendimento.Hide();
-            grbSituacao.Enabled = false;
+            grbSituacao.Hide();
 
             if (ObjReserva == null)
             {
@@ -481,7 +481,7 @@ namespace BurgerShack.Desktop
                 {
                     if (ObjReserva.Situacao == clnReserva.reservaSituacao.MARCADA)
                     {
-                        grbSituacao.Enabled = true;
+                        grbSituacao.Show();
                     }
                     if (ObjReserva.Agendado.Day.Equals(DateTime.Now.Day))
                     {
