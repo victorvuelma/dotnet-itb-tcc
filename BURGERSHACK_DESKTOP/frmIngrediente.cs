@@ -373,6 +373,7 @@ namespace BurgerShack.Desktop
             {
                 restaurar();
             }
+            UtilButton.voltar(btnVoltar);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

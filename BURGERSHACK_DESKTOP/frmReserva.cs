@@ -378,6 +378,7 @@ namespace BurgerShack.Desktop
             {
                 restaurar();
             }
+            UtilButton.voltar(btnVoltar);
         }
 
         private void frmReserva_Load(object sender, EventArgs e)

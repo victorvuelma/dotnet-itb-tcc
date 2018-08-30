@@ -215,6 +215,7 @@ namespace BurgerShack.Desktop
             {
                 restaurar();
             }
+            UtilButton.voltar(btnVoltar);
         }
     }
 }
