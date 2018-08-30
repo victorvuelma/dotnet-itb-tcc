@@ -196,6 +196,13 @@ namespace BurgerShack.Desktop
                 ObjFuncionario.Ativo = false;
                 ObjFuncionario.alterar();
 
+                clnAcesso objAcesso = new clnAcesso
+                {
+                    CodFuncionario = ObjFuncionario.Cod,
+                    Ativo = false
+                };
+                objAcesso.alterarEstado();
+
                 btnAlterar.Hide();
                 desativar();
             }
@@ -208,6 +215,13 @@ namespace BurgerShack.Desktop
                 ObjFuncionario.Ativo = true;
                 ObjFuncionario.alterar();
 
+                clnAcesso objAcesso = new clnAcesso
+                {
+                    CodFuncionario = ObjFuncionario.Cod,
+                    Ativo = true
+                };
+                objAcesso.alterarEstado();
+                
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
             }

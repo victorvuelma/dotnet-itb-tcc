@@ -131,5 +131,15 @@ namespace BurgerShack.Desktop
             }
         }
 
+        public void alterarEstado()
+        {
+            sqlUpdate objUpdate = new sqlUpdate();
+            objUpdate.table("acesso");
+            objUpdate.Where.where("id_funcionario", CodFuncionario);
+            objUpdate.Value.val("ativo", UtilConvert.ToBit(Ativo));
+
+            objUpdate.execute(App.DatabaseSql);
+        }
+
     }
 }
