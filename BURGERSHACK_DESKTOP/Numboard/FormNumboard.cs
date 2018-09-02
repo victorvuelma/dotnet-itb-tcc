@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Manager;
 using vitorrdgs.Util.Form;
@@ -206,7 +200,7 @@ namespace BurgerShack.Desktop.Numboard
                 btnPoint.Show();
             }
 
-                    base.Show();
+            base.Show();
 
             mtbNum.Mask = "";
             mtbNum.Text = "";
@@ -214,6 +208,11 @@ namespace BurgerShack.Desktop.Numboard
             mtbNum.Focus();
 
             atualizarInput();
+
+            if(mtbNum.Mask == "")
+            {
+                mtbNum.SelectionStart = mtbNum.Text.Length;
+            }
         }
 
         private void mtbNum_KeyUp(object sender, KeyEventArgs e)

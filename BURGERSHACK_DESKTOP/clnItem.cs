@@ -87,7 +87,9 @@ namespace BurgerShack.Desktop
 
         internal void remover()
         {
-            throw new NotImplementedException();
+            Situacao = itemSituacao.CANCELADO;
+
+            alterar();
         }
 
         public char prefixo(itemSituacao situacao)

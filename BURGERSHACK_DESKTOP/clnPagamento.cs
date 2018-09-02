@@ -75,11 +75,11 @@ namespace BurgerShack.Desktop
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("pagamento");
             objInsert.Value.val("id_conta", CodConta)
-                            .val("id_cliente", CodCliente)
-                            .val("id_forma", CodForma)
-                            .val("valor", Valor)
-                            .val("data", Data)
-                            .val("cpf", Cpf);
+                           .val("id_cliente", CodCliente)
+                           .val("id_forma", CodForma)
+                           .val("valor", Valor)
+                           .val("data", Data)
+                           .val("cpf", Cpf);
 
             objInsert.execute(App.DatabaseSql);
         }

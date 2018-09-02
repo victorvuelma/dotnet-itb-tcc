@@ -58,7 +58,7 @@ namespace BurgerShack.Desktop
                 Cod = ObjItem.CodProduto
             }.obterPorCod();
 
-            if (objProduto.CodMercadoria == null)
+            if (objItemIngredientes.Count > 0)
             {
                 clnItemIngrediente.clnListar objListar = new clnItemIngrediente.clnListar
                 {
@@ -127,8 +127,7 @@ namespace BurgerShack.Desktop
                 {
                     Quantidade = objSelecionar.Quantidade,
                     CodIngrediente = objSelecionar.Selecionado.Cod,
-                    CodItem = ((ObjItem != null) ? ObjItem.Cod : -1),
-                    CodProdutoIngrediente = 0
+                    CodItem = ((ObjItem != null) ? ObjItem.Cod : -1)
                 };
                 if (objItemIngrediente.CodItem != -1)
                 {
@@ -219,52 +218,54 @@ namespace BurgerShack.Desktop
         {
             public clnUtilVisualizar.VisualizarResult call(frmItem frmItem, clnItemIngrediente objItemIngrediente)
             {
+                clnProdutoIngrediente objProdutoIngrediente = null;
                 if (objItemIngrediente.CodProdutoIngrediente != null)
                 {
-                    clnProdutoIngrediente objProdutoIngrediente = new clnProdutoIngrediente
+                    objProdutoIngrediente = new clnProdutoIngrediente
                     {
                         Cod = (int)objItemIngrediente.CodProdutoIngrediente
                     }.obterPorCod();
+                }
 
-                    if (objProdutoIngrediente == null || objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
+                if (objProdutoIngrediente == null || objProdutoIngrediente.Alterar || objProdutoIngrediente.Remover)
+                {
+                    frmItemIngrediente frmIngrediente = new frmItemIngrediente
                     {
-                        frmItemIngrediente frmIngrediente = new frmItemIngrediente
-                        {
-                            ObjItemIngrediente = objItemIngrediente
-                        };
-                        frmIngrediente.btnAlterar.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Alterar;
-                        frmIngrediente.btnRemover.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Remover;
-                        frmIngrediente.ShowDialog();
+                        ObjItemIngrediente = objItemIngrediente
+                    };
+                    frmIngrediente.btnAlterar.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Alterar;
+                    frmIngrediente.btnRemover.Visible = objProdutoIngrediente == null || objProdutoIngrediente.Remover;
+                    frmIngrediente.ShowDialog();
 
-                        if (frmIngrediente.ObjItemIngrediente == null)
+                    if (frmIngrediente.ObjItemIngrediente == null)
+                    {
+                        if (objItemIngrediente.CodItem != -1)
                         {
-                            if (objItemIngrediente.CodItem != -1)
-                            {
-                                objItemIngrediente.remover();
-                            }
-                            frmItem.ObjItemIngredientes.Remove(objItemIngrediente);
+                            objItemIngrediente.remover();
                         }
-                        else if (!objItemIngrediente.Equals(frmIngrediente.ObjItemIngrediente))
-                        {
-                            if (objItemIngrediente.CodItem != -1)
-                            {
-                                if (frmIngrediente.ObjItemIngrediente.CodIngrediente != objItemIngrediente.CodIngrediente)
-                                {
-                                    objItemIngrediente.remover();
-                                    frmIngrediente.ObjItemIngrediente.gravar();
-                                }
-                                else
-                                {
-                                    frmIngrediente.ObjItemIngrediente.alterar();
-                                }
-                            }
-                            clnUtil.listTrocar(frmItem.ObjItemIngredientes, objItemIngrediente, frmIngrediente.ObjItemIngrediente);
-                        }
+                        frmItem.ObjItemIngredientes.Remove(objItemIngrediente);
                     }
                     else
                     {
-                        UtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
+                        if (objItemIngrediente.CodItem != -1)
+                        {
+                            if (frmIngrediente.ObjItemIngrediente.CodIngrediente != objItemIngrediente.CodIngrediente)
+                            {
+                                objItemIngrediente.remover();
+                                frmIngrediente.ObjItemIngrediente.gravar();
+                            }
+                            else
+                            {
+                                frmIngrediente.ObjItemIngrediente.CodProdutoIngrediente = objItemIngrediente.CodIngrediente;
+                                frmIngrediente.ObjItemIngrediente.alterar();
+                            }
+                        }
+                        clnUtil.listTrocar(frmItem.ObjItemIngredientes, objItemIngrediente, frmIngrediente.ObjItemIngrediente);
                     }
+                }
+                else
+                {
+                    UtilMensagem.mostrarOk("Ingredientes", "Esse ingrediente não pode ser alterado ou removido.");
                 }
                 return clnUtilVisualizar.VisualizarResult.FECHAR;
             }

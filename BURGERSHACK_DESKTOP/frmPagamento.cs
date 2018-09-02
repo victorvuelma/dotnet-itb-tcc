@@ -69,7 +69,7 @@ namespace BurgerShack.Desktop
                         UtilMensagem.mostrarOk("Pagamento", "Não é possivel realizar um pagamento com o valor maior do que o necessário.");
                         return;
                     }
-                    int codForma = codForma = cboBandeira.Items[0].Id;
+                    int codForma  = cboBandeira.Items[0].Id;
                     if (cboBandeira.Visible)
                     {
                         codForma = cboBandeira.SelectedItem.Id;

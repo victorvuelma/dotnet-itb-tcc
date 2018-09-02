@@ -72,9 +72,9 @@ namespace BurgerShack.Desktop
                 frmEditarItem.ShowDialog();
 
                 if (frmEditarItem.ObjItem == null)
-                {
-                    ObjItens.Remove(objItem);
+                {                    
                     UtilMensagem.mostrarOk("Pedido", "Produto removido do pedido");
+                    exibirProdutos();
 
                     return true;
                 }

@@ -63,10 +63,7 @@ namespace BurgerShack.Desktop
             };
             frmAbrirPedido.ShowDialog();
 
-            if (frmAbrirPedido.ObjPedido != objPedido && objPedido.Cod != -1)
-            {
-                objPedido.alterar();
-            }
+            exibirPedidos();
         }
 
         private void atualizarSituacao()

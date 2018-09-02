@@ -25,8 +25,9 @@ namespace BurgerShack.Desktop
 
         internal static void startup()
         {
-            App.DatabaseSql.ExceptionCall = (Exception ex) =>
+            App.DatabaseSql.ExceptionCall = (Exception ex, string detail) =>
                 {
+                    Console.WriteLine(detail);
                     throw ex;
                 };
         }

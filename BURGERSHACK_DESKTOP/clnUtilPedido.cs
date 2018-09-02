@@ -21,7 +21,7 @@ namespace BurgerShack.Desktop
             }
         }
 
-        public static void adicionarIngrediente(clnItem objItem, clnItemIngrediente objIngrediente)
+        public static void adicionarIngrediente(clnItem objItem, clnItemIngrediente objNovoIngrediente)
         {
             clnItemIngrediente objIngredientes = new clnItemIngrediente
             {
@@ -30,29 +30,29 @@ namespace BurgerShack.Desktop
 
             foreach (clnItemIngrediente objItemIngrediente in objIngredientes.obterPorItem())
             {
-                if (objItemIngrediente.CodIngrediente == objIngrediente.CodIngrediente)
+                if (objItemIngrediente.CodIngrediente == objNovoIngrediente.CodIngrediente)
                 {
-                    objItemIngrediente.Quantidade += objIngrediente.Quantidade;
+                    objItemIngrediente.Quantidade += objNovoIngrediente.Quantidade;
                     objItemIngrediente.alterar();
                     return;
                 }
             }
 
-            objIngrediente.gravar();
+            objNovoIngrediente.gravar();
         }
 
-        public static void adicionarIngrediente(List<clnItemIngrediente> objItemIngredientes, clnItemIngrediente objIngrediente)
+        public static void adicionarIngrediente(List<clnItemIngrediente> objItemIngredientes, clnItemIngrediente objNovoIngrediente)
         {
             foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes)
             {
-                if (objItemIngrediente.CodIngrediente == objIngrediente.CodIngrediente)
+                if (objItemIngrediente.CodIngrediente == objNovoIngrediente.CodIngrediente)
                 {
-                    objItemIngrediente.Quantidade += objIngrediente.Quantidade;
+                    objItemIngrediente.Quantidade += objNovoIngrediente.Quantidade;
                     return;
                 }
             }
 
-            objItemIngredientes.Add(objIngrediente);
+            objItemIngredientes.Add(objNovoIngrediente);
         }
 
         public static decimal calcularValor(clnAtendimento objAtendimento)
