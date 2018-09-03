@@ -68,7 +68,7 @@ namespace BurgerShack.Desktop
             ObjItem = objPedido;
             ObjItemIngredientes = objIngredientes;
 
-            if (objProduto.CodMercadoria == null)
+            if (objProduto.CodMercadoria != null)
             {
                 grbIngredientes.Hide();
             }

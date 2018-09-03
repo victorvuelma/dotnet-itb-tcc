@@ -297,6 +297,7 @@ namespace BurgerShack.Desktop
                 UtilForm.Disable(this);
                 grbImagem.Hide();
                 btnMercadoria.Hide();
+                btnTipo.Hide();
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
@@ -322,7 +323,7 @@ namespace BurgerShack.Desktop
 
                 definirImagemPadrao();
 
-                grbSituacao.Enabled = false;
+                grbSituacao.Hide();
                 btnExcluir.Hide();
             }
 
@@ -357,6 +358,7 @@ namespace BurgerShack.Desktop
                 UtilForm.Enable(this);
                 grbImagem.Show();
                 btnMercadoria.Show();
+                btnTipo.Show();
 
                 UtilButton.cancelar(btnVoltar);
                 UtilButton.salvar(btnAlterar);

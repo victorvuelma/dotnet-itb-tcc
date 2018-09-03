@@ -127,6 +127,8 @@ namespace BurgerShack.Desktop
                             .val("ativo", UtilConvert.ToBit(Ativo));
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
+
+            atualizarEstoque();
         }
 
         public void alterar()
@@ -134,12 +136,13 @@ namespace BurgerShack.Desktop
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto");
             objUpdate.Value.val("id_imagem", CodImagem)
-                         .val("id_tipo", CodTipo)
-                         .val("nome", Nome)
-                         .val("descricao", Descricao)
-                         .val("valor", Valor)
-                         .val("situacao", prefixo(Situacao))
-                         .val("ativo", UtilConvert.ToBit(Ativo));
+                             .val("id_tipo", CodTipo)
+                             .val("nome", Nome)
+                             .val("descricao", Descricao)
+                             .val("valor", Valor)
+                             .val("situacao", prefixo(Situacao))
+                             .val("ativo", UtilConvert.ToBit(Ativo))
+                             .val("id_mercadoria", CodMercadoria);
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);

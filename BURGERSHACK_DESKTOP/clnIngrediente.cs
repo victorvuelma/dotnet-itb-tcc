@@ -145,6 +145,8 @@ namespace BurgerShack.Desktop
                             .val("ativo", UtilConvert.ToBit(Ativo));
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
+
+            atualizarEstoque(true);
         }
 
         internal void alterar()

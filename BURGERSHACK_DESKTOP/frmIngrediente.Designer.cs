@@ -85,7 +85,7 @@
             // 
             this.btnExcluir.Description = "EXCLUIR";
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.Image = null;
+            this.btnExcluir.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.ImageLocation = null;
             this.btnExcluir.Location = new System.Drawing.Point(5, 105);

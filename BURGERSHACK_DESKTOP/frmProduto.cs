@@ -87,7 +87,8 @@ namespace BurgerShack.Desktop
                         CodTipo = cboTipo.SelectedItem.Id,
                         CodImagem = objArquivo.Cod,
                         Valor = UtilConvert.ToDecimal(txtValor.Text),
-                        Descricao = txtDesc.Text
+                        Descricao = txtDesc.Text,
+                        CodMercadoria = ObjProduto.CodMercadoria
                     };
                     ObjProduto.gravar();
 
@@ -177,17 +178,35 @@ namespace BurgerShack.Desktop
 
             if (objSelecionar.Selecionado != null)
             {
-                if (ObjProdutoIngredientes.Count == 0 || UtilMensagem.mostrarSimNao("Produto", "Iremos remover todos os ingredientes deste produto para realizar esta ação, você tem certeza disso?"))
+                List<clnProdutoIngrediente> objProdutoIngredientes = null;
+                if (ObjProduto.Cod == -1)
                 {
-                    foreach (clnProdutoIngrediente objProdutoIngrediente in ObjProdutoIngredientes)
+                    objProdutoIngredientes = ObjProdutoIngredientes;
+                }
+                else
+                {
+                    objProdutoIngredientes = new clnProdutoIngrediente
                     {
-                        if (objProdutoIngrediente.Cod != -1)
+                        CodProduto = ObjProduto.Cod
+                    }.obterPorProduto();
+                }
+
+                if (objProdutoIngredientes.Count == 0 || UtilMensagem.mostrarSimNao("Produto", "Iremos remover todos os ingredientes deste produto para realizar esta ação, você tem certeza disso?"))
+                {
+                    if (ObjProdutoIngredientes != null)
+                    {
+                        ObjProdutoIngredientes.Clear();
+                    } else
+                    {
+                        foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes)
                         {
-                            objProdutoIngrediente.Ativo = false;
-                            objProdutoIngrediente.alterar();
+                            if (objProdutoIngrediente.Cod != -1)
+                            {
+                                objProdutoIngrediente.Ativo = false;
+                                objProdutoIngrediente.alterar();
+                            }
                         }
                     }
-                    ObjProdutoIngredientes.Clear();
 
                     definirMercadoria(objSelecionar.Selecionado);
                 }
@@ -469,7 +488,7 @@ namespace BurgerShack.Desktop
                 UtilForm.Enable(this);
                 grbImagem.Show();
                 grbIngredientes.Show();
-                grbMercadoria.Show();
+                btnMercadoria.Show();
 
                 UtilButton.cancelar(btnVoltar);
                 UtilButton.salvar(btnAlterar);
