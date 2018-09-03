@@ -13,18 +13,18 @@ namespace BurgerShack.Desktop
         private bool _ativo = true;
 
         private string _descricao;
-        private int _codigoBarras;
+        private string _codigoBarras;
 
         public int Cod { get => _cod; set => _cod = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
-        public int CodigoBarras { get => _codigoBarras; set => _codigoBarras = value; }
+        public string CodigoBarras { get => _codigoBarras; set => _codigoBarras = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
 
         private clnMercadoria obter(SqlDataReader reader) => new clnMercadoria
         {
             Cod = UtilConvert.ToInt(reader["id"]),
             Descricao = UtilConvert.ToString(reader["descricao"]),
-            CodigoBarras = UtilConvert.ToInt(reader["codigo_barras"]),
+            CodigoBarras = UtilConvert.ToString(reader["codigo_barras"]),
             Ativo = UtilConvert.ToBool(reader["ativo"])
         };
 
@@ -64,7 +64,7 @@ namespace BurgerShack.Desktop
             objSelect.table("mercadoria");
             objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
                            .where("descricao", "%" + Descricao + "%", vitorrdgs.SqlMaster.Element.Where.sqlElementWhere.whereAssociation.OR)
-                           .where("codigo_barras", CodigoBarras);
+                           .where("codigo_barras", "%" + CodigoBarras + "%");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnMercadoria> objMercadorias = new List<clnMercadoria>();

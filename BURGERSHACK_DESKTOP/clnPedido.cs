@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
@@ -75,6 +76,20 @@ namespace BurgerShack.Desktop
                             .val("situacao", prefixo(Situacao));
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
+        }
+
+        internal List<clnPedido> obterPedidos()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("pedido");
+
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            List<clnPedido> objPedidos = new List<clnPedido>();
+            while (reader.Read())
+                objPedidos.Add(obter(reader));
+            reader.Close();
+
+            return objPedidos;
         }
 
         private char prefixo(pedidoSituacao situacao)

@@ -80,7 +80,7 @@ namespace BurgerShack.Desktop
 
         private void abrirPedidos()
         {
-            abrirLista("Pedidos", null, new CallbackPedidoObter(), new CallbackPedidoAlterar(), false, new String[] { "Código", "Número", "Lugares", "Situação" });
+            abrirLista("Pedidos", null, new CallbackPedidoObter(), null, false, new String[] { "Código", "Valor", "Situação" });
         }
 
         private void abrirMercadorias()
@@ -655,40 +655,17 @@ namespace BurgerShack.Desktop
             }
         }
 
-        private class CallbackPedidoAlterar : IUtilCallback<DataGridViewRow>
-        {
-            public bool call(DataGridViewRow row)
-            {
-                clnAtendimento objAtendimento = new clnAtendimento
-                {
-                    Cod = UtilConvert.ToInt(row.Cells[0].Value)
-                }.obterPorCod();
-
-                if (objAtendimento != null)
-                {
-                    frmAtendimento frmAlterarAtendimento = new frmAtendimento
-                    {
-                        ObjAtendimento = objAtendimento
-                    };
-                    frmAlterarAtendimento.ShowDialog();
-                    return true;
-                }
-                return false;
-            }
-        }
-
         private class CallbackPedidoObter : IUtilCallback<DataGridView, String, bool>
         {
             public bool call(DataGridView dgv, string pesquisa, bool ativo)
             {
-                clnAtendimento objAtendimentos = new clnAtendimento
+                clnPedido objPedidos = new clnPedido
                 {
-
                 };
-                foreach (clnAtendimento objAtendimento in objAtendimentos.obterAtendimentos())
+                foreach (clnPedido objPedido in objPedidos.obterPedidos())
                 {
-                    //"Código", "Inicio", "Fim", "Situação"
-                    dgv.Rows.Add(new object[] { objAtendimento.Cod, UtilFormatar.formatarDataHora(objAtendimento.Inicio), UtilFormatar.formatarDataHora(objAtendimento.Fim), objAtendimento.Situacao });
+                    //"Código", "Valor", "Situação"
+                    dgv.Rows.Add(new object[] { objPedido.Cod, UtilFormatar.formatarValor(objPedido.Valor), objPedido.Situacao });
                 }
                 return false;
             }
@@ -734,7 +711,7 @@ namespace BurgerShack.Desktop
                 {
                     Ativo = ativo,
                     Descricao = pesquisa,
-                    CodigoBarras = (UtilValidar.validarInt(pesquisa) ? UtilConvert.ToInt(pesquisa) : 0)
+                    CodigoBarras = pesquisa
                 };
                 foreach (clnMercadoria objMercadoria in objMercadorias.obterMercadorias())
                 {

@@ -33,7 +33,7 @@ namespace BurgerShack.Desktop
             {
                 clnMercadoria objMercadoriaCodigoBarras = new clnMercadoria
                 {
-                    CodigoBarras = UtilConvert.ToInt(txtCodigoBarras.Text)
+                    CodigoBarras = txtCodigoBarras.Text
                 }.obterPorCodigoBarras();
 
                 if (ObjMercadoria == null)
@@ -43,7 +43,7 @@ namespace BurgerShack.Desktop
                         clnMercadoria objMercadoria = new clnMercadoria
                         {
                             Descricao = txtDescricao.Text,
-                            CodigoBarras = UtilConvert.ToInt(txtCodigoBarras.Text)
+                            CodigoBarras = txtCodigoBarras.Text
                         };
                         objMercadoria.gravar();
                         ObjMercadoria = objMercadoria;
@@ -59,7 +59,7 @@ namespace BurgerShack.Desktop
                 else
                 {
                     ObjMercadoria.Descricao = txtDescricao.Text;
-                    ObjMercadoria.CodigoBarras = UtilConvert.ToInt(txtCodigoBarras.Text);
+                    ObjMercadoria.CodigoBarras = txtCodigoBarras.Text;
 
                     ObjMercadoria.alterar();
                     UtilMensagem.mostrarOk("Alteração de Mercadoria", "Mercadoria alterada com sucesso!");
