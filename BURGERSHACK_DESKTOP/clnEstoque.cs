@@ -116,12 +116,12 @@ namespace BurgerShack.Desktop
 
         public void alterar()
         {
-            sqlUpdate objInsert = new sqlUpdate();
-            objInsert.table("estoque");
-            objInsert.Where.where("id", Cod);
-            objInsert.Value.val("quantidade", Quantidade);
+            sqlUpdate objUpdate = new sqlUpdate();
+            objUpdate.table("estoque");
+            objUpdate.Where.where("id", Cod);
+            objUpdate.Value.val("quantidade", Quantidade);
 
-            objInsert.execute(App.DatabaseSql);
+            objUpdate.execute(App.DatabaseSql);
 
             atualizarIngredientes();
             atualizarProdutos();

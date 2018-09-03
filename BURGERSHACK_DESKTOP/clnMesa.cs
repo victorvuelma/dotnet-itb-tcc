@@ -122,7 +122,7 @@ namespace BurgerShack.Desktop
                             .val("ativo", UtilConvert.ToBit(Ativo))
                             .val("lugares", Lugares)
                             .val("numero", Numero);
-            Cod = objInsert.execute(App.DatabaseSql);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         private char prefixo(mesaSituacao situacao)

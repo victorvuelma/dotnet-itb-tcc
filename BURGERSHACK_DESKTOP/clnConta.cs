@@ -88,7 +88,7 @@ namespace BurgerShack.Desktop
                             .val("ativo", UtilConvert.ToBit(Ativo))
                             .val("taxa_servico", UtilConvert.ToBit(TaxaServico));
 
-            objInsert.execute(App.DatabaseSql);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
 

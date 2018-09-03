@@ -81,7 +81,7 @@ namespace BurgerShack.Desktop
                            .val("data", Data)
                            .val("cpf", Cpf);
 
-            objInsert.execute(App.DatabaseSql);
+            Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
         internal IEnumerable<clnPagamento> obterPagamentosPorCpf()
