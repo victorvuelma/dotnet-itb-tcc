@@ -75,7 +75,7 @@ namespace BurgerShack.Desktop
 
         private void abrirAtendimentos()
         {
-            abrirLista("Atendimentos", null, new CallbackAtendimentoObter(), new CallbackAtendimentoAlterar(), false, new String[] { "Código", "Número", "Lugares", "Situação" });
+            abrirLista("Atendimentos", null, new CallbackAtendimentoObter(), new CallbackAtendimentoAlterar(), false, new String[] { "Código", "Inicio", "Fim", "Situação" });
         }
 
         private void abrirPedidos()

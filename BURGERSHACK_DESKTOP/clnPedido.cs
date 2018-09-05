@@ -1,5 +1,4 @@
 ﻿using BurgerShack.Common;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
@@ -118,5 +117,53 @@ namespace BurgerShack.Desktop
             }
         }
 
+        internal void finalizar()
+        {
+            Situacao = pedidoSituacao.PRONTO;
+            alterar();
+
+            clnItem objItens = new clnItem()
+            {
+                CodPedido = Cod
+            };
+            foreach (clnItem objItem in objItens.obterPorPedido())
+            {
+                clnProduto objProduto = new clnProduto
+                {
+                    Cod = objItem.CodProduto
+                }.obterPorCod();
+
+                if (objProduto.CodMercadoria != null)
+                {
+                    clnEstoque objEstoque = new clnEstoque()
+                    {
+                        CodMercadoria = (int)objProduto.CodMercadoria
+                    };
+                    objEstoque.baixarEstoque(objItem.Quantidade);
+                }
+                else
+                {
+                    clnItemIngrediente objItemIngredientes = new clnItemIngrediente
+                    {
+                        CodItem = objItem.Cod
+                    };
+                    foreach (clnItemIngrediente objItemIngrediente in objItemIngredientes.obterPorItem())
+                    {
+                        clnIngrediente objIngrediente = new clnIngrediente
+                        {
+                            Cod = objItemIngrediente.CodIngrediente
+                        }.obterPorCod();
+                        if (objIngrediente != null)
+                        {
+                            clnEstoque objEstoque = new clnEstoque
+                            {
+                                CodMercadoria = objIngrediente.CodMercadoria
+                            };
+                            objEstoque.baixarEstoque(objItem.Quantidade * objItemIngrediente.Quantidade);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -71,7 +71,8 @@ namespace BurgerShack.Desktop
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");
-            objSelect.Where.where("id_tipo", CodTipo)
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("id_tipo", CodTipo)
                            .where("situacao", prefixo(Situacao));
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);

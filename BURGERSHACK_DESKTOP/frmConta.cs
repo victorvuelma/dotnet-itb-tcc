@@ -110,8 +110,7 @@ namespace BurgerShack.Desktop
 
                 foreach (clnPedido objPedido in objPedidos.obterPorAtendimento())
                 {
-                    objPedido.Situacao = clnPedido.pedidoSituacao.PRONTO;
-                    objPedido.alterar();
+                    objPedido.finalizar();
                 }
 
                 btnFinalizar.Hide();

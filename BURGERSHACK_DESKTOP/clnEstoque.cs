@@ -1,13 +1,7 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using System.Data.SqlClient;
-using vitorrdgs.SqlMaster;
-
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element;
 using vitorrdgs.Util.Data;
@@ -80,6 +74,22 @@ namespace BurgerShack.Desktop
             return objEstoques;
         }
 
+        public List<clnEstoque> obterEstoquesPorMercadoria()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("estoque");
+            objSelect.Where.where("id_mercadoria", CodMercadoria);
+            objSelect.Order.order("validade", sqlElementOrder.orderOperation.ASC);
+
+            List<clnEstoque> objEstoques = new List<clnEstoque>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objEstoques.Add(obter(reader));
+            reader.Close();
+
+            return objEstoques;
+        }
+
         public int obterQuantidadePorMercadoria()
         {
             sqlSelect objSelect = new sqlSelect();
@@ -127,6 +137,33 @@ namespace BurgerShack.Desktop
             atualizarProdutos();
         }
 
+        public void baixarEstoque(int quantidade)
+        {
+            List<clnEstoque> objEstoques = new clnEstoque
+            {
+                CodMercadoria = CodMercadoria
+            }.obterEstoquesPorMercadoria();
+
+            while(quantidade >= 1 && objEstoques.Count >= 1)
+            {
+                clnEstoque objEstoque = objEstoques[0];
+                if(objEstoque.Quantidade >= 0)
+                {
+                    if(objEstoque.Quantidade >= quantidade)
+                    {
+                        objEstoque.Quantidade -= quantidade;
+                        quantidade -= quantidade;
+                    } else
+                    {
+                        objEstoque.Quantidade -= objEstoque.Quantidade;
+                        quantidade -= objEstoque.Quantidade;
+                    }
+                    objEstoque.alterar();
+                    objEstoques.RemoveAt(0);
+                }
+            }
+        }
+
         public void atualizarIngredientes()
         {
             List<clnIngrediente> objIngredientes = new clnIngrediente
@@ -134,7 +171,7 @@ namespace BurgerShack.Desktop
                 CodMercadoria = CodMercadoria
             }.obterPorMercadoria();
 
-            foreach(clnIngrediente objIngrediente in objIngredientes)
+            foreach (clnIngrediente objIngrediente in objIngredientes)
             {
                 objIngrediente.atualizarEstoque(true);
             }
