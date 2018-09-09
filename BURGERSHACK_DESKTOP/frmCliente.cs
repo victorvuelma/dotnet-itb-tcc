@@ -24,14 +24,10 @@ namespace BurgerShack.Desktop
             _validar = new clnUtilFormValidar();
             _validar.addValidacao(txtNome, clnUtilFormValidar.Validacao.OBRIGATORIO);
             _validar.addValidacao(mtbCPF, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.CPF });
-            _validar.addValidacao(mtbDataNasc, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.DATA, clnUtilFormValidar.Validacao.DATA_NASC });
             _validar.addValidacao(mtbTelCel, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.CELULAR });
             _validar.addValidacao(txtEmail, clnUtilFormValidar.Validacao.EMAIL);
-            _validar.addValidacao(cboGenero, clnUtilFormValidar.Validacao.OBRIGATORIO);
 
             mtbCPF.Mask = UtilMask.MASK_CPF;
-            mtbDataNasc.Mask = UtilMask.MASK_DATA;
-            cboGenero.addRange(new String[] { "M", "F" });
             mtbTelCel.Mask = UtilMask.MASK_CEL;
         }
 
@@ -53,10 +49,8 @@ namespace BurgerShack.Desktop
                             CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
                             Nome = txtNome.Text,
                             Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text),
-                            DataNascimento = UtilConvert.ObterNullableData(mtbDataNasc.Text),
                             Email = txtEmail.Text,
                             TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text),
-                            Genero = cboGenero.Text,
                             Cadastro = DateTime.Now
                         };
                         objCliente.gravar();
@@ -73,10 +67,8 @@ namespace BurgerShack.Desktop
                 else
                 {
                     ObjCliente.Nome = txtNome.Text;
-                    ObjCliente.DataNascimento = UtilConvert.ObterNullableData(mtbDataNasc.Text);
                     ObjCliente.Email = txtEmail.Text;
                     ObjCliente.TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text);
-                    ObjCliente.Genero = cboGenero.Text;
                     ObjCliente.alterar();
                     UtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!");
                     Close();
@@ -151,14 +143,6 @@ namespace BurgerShack.Desktop
                 mtbCPF.Text = ObjCliente.Cpf;
                 mtbTelCel.Text = ObjCliente.TelCelular;
                 txtEmail.Text = ObjCliente.Email;
-                if (ObjCliente.Genero != null)
-                {
-                    cboGenero.Text = ObjCliente.Genero;
-                }
-                if (ObjCliente.DataNascimento != null)
-                {
-                    mtbDataNasc.Text = ((DateTime)ObjCliente.DataNascimento).ToString("dd/MM/yyyy");
-                }
                 UtilForm.Disable(this);
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)

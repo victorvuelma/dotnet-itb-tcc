@@ -45,7 +45,7 @@ namespace BurgerShack.Desktop
 
         private void abrirClientes()
         {
-            abrirLista("Clientes", new CallbackClienteNovo(), new CallbackClienteObter(), new CallbackClienteAlterar(), true, new String[] { "Código", "Nome", "CPF", "Celular", "Data Nasc.", "Gênero", "Email" });
+            abrirLista("Clientes", new CallbackClienteNovo(), new CallbackClienteObter(), new CallbackClienteAlterar(), true, new String[] { "Código", "Nome", "CPF", "Celular", "Email" });
         }
 
         private void abrirFuncionarios()
@@ -335,8 +335,8 @@ namespace BurgerShack.Desktop
                 };
                 foreach (clnCliente objCliente in objClientes.obterPorNomeCPF())
                 {
-                    //"Código", "Nome", "CPF", "Celular", "Data Nasc", "Genero", "Email"
-                    dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, UtilFormatar.formatarCPF(objCliente.Cpf), UtilFormatar.formatarCelular(objCliente.TelCelular), UtilFormatar.formatarData(objCliente.DataNascimento), objCliente.Genero, objCliente.Email });
+                    //"Código", "Nome", "CPF", "Celular", "Email"
+                    dgv.Rows.Add(new object[] { objCliente.Cod, objCliente.Nome, UtilFormatar.formatarCPF(objCliente.Cpf), UtilFormatar.formatarCelular(objCliente.TelCelular),  objCliente.Email });
                 }
                 return false;
             }

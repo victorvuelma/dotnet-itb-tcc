@@ -35,9 +35,7 @@
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
             this.txtEmail = new vitorrdgs.UiX.Component.UIXTextBox();
             this.mtbTelCel = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
-            this.cboGenero = new vitorrdgs.UiX.Component.UIXComboBox();
             this.mtbCPF = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
-            this.mtbDataNasc = new vitorrdgs.UiX.Component.UIXMaskedTextBox();
             this.txtNome = new vitorrdgs.UiX.Component.UIXTextBox();
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
             this.pnlMenu.SuspendLayout();
@@ -56,7 +54,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Description = "Excluir";
+            this.btnExcluir.Description = "EXCLUIR";
             this.btnExcluir.HoverColor = System.Drawing.Color.Transparent;
             this.btnExcluir.Image = global::BurgerShack.Desktop.Properties.Resources.excluir;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -72,7 +70,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Description = "Cancelar";
+            this.btnVoltar.Description = "CANCELAR";
             this.btnVoltar.HoverColor = System.Drawing.Color.Transparent;
             this.btnVoltar.Image = global::BurgerShack.Desktop.Properties.Resources.voltar;
             this.btnVoltar.ImageLocation = null;
@@ -86,7 +84,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Description = "Salvar";
+            this.btnAlterar.Description = "SALVAR";
             this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.salvar;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -103,9 +101,7 @@
             // 
             this.grbInformacoes.Controls.Add(this.txtEmail);
             this.grbInformacoes.Controls.Add(this.mtbTelCel);
-            this.grbInformacoes.Controls.Add(this.cboGenero);
             this.grbInformacoes.Controls.Add(this.mtbCPF);
-            this.grbInformacoes.Controls.Add(this.mtbDataNasc);
             this.grbInformacoes.Controls.Add(this.txtNome);
             this.grbInformacoes.Location = new System.Drawing.Point(105, 55);
             this.grbInformacoes.Name = "grbInformacoes";
@@ -120,7 +116,7 @@
             this.txtEmail.AccessibleName = "E-mail";
             this.txtEmail.Campo = "E-mail";
             this.txtEmail.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.txtEmail.Location = new System.Drawing.Point(5, 121);
+            this.txtEmail.Location = new System.Drawing.Point(5, 90);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
@@ -144,20 +140,6 @@
             this.mtbTelCel.TabIndex = 11;
             this.mtbTelCel.ValidatingType = null;
             // 
-            // cboGenero
-            // 
-            this.cboGenero.AcceptButton = null;
-            this.cboGenero.AccessibleName = "Gênero*";
-            this.cboGenero.Campo = "Genero*";
-            this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.cboGenero.Location = new System.Drawing.Point(283, 90);
-            this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboGenero.Name = "cboGenero";
-            this.cboGenero.SelectedItem = null;
-            this.cboGenero.Size = new System.Drawing.Size(101, 26);
-            this.cboGenero.TabIndex = 10;
-            // 
             // mtbCPF
             // 
             this.mtbCPF.AcceptButton = null;
@@ -171,20 +153,6 @@
             this.mtbCPF.Size = new System.Drawing.Size(170, 26);
             this.mtbCPF.TabIndex = 9;
             this.mtbCPF.ValidatingType = null;
-            // 
-            // mtbDataNasc
-            // 
-            this.mtbDataNasc.AcceptButton = null;
-            this.mtbDataNasc.AccessibleName = "Data de Nascimento";
-            this.mtbDataNasc.Campo = "Data de Nascimento";
-            this.mtbDataNasc.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.mtbDataNasc.Location = new System.Drawing.Point(5, 90);
-            this.mtbDataNasc.Mask = "";
-            this.mtbDataNasc.MaxLength = 32767;
-            this.mtbDataNasc.Name = "mtbDataNasc";
-            this.mtbDataNasc.Size = new System.Drawing.Size(270, 26);
-            this.mtbDataNasc.TabIndex = 8;
-            this.mtbDataNasc.ValidatingType = null;
             // 
             // txtNome
             // 
@@ -246,8 +214,6 @@
         private vitorrdgs.UiX.Component.UIXButton btnAlterar;
         private System.Windows.Forms.GroupBox grbInformacoes;
         private vitorrdgs.UiX.Component.UIXTextBox txtNome;
-        private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbDataNasc;
-        private vitorrdgs.UiX.Component.UIXComboBox cboGenero;
         private vitorrdgs.UiX.Component.UIXTextBox txtEmail;
         private vitorrdgs.UiX.Component.UIXMaskedTextBox mtbTelCel;
         public vitorrdgs.UiX.Component.UIXMaskedTextBox mtbCPF;

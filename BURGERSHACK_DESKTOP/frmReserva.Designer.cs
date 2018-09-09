@@ -227,7 +227,7 @@
             this.mtbData.Size = new System.Drawing.Size(116, 21);
             this.mtbData.TabIndex = 8;
             this.mtbData.ValidatingType = null;
-            this.mtbData.Validated += new System.EventHandler(this.mtbData_Validated);
+            this.mtbData.TextChange += new System.EventHandler(this.mtbData_TextChange);
             // 
             // grbMesas
             // 

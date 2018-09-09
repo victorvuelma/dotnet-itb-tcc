@@ -19,9 +19,6 @@ namespace BurgerShack.Desktop
         private String _nome;
         private String _cpf;
 
-        private DateTime? _dataNascimento;
-        private string _genero;
-
         private string _telCelular;
         private string _email;
 
@@ -31,8 +28,6 @@ namespace BurgerShack.Desktop
         public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public string Cpf { get => _cpf; set => _cpf = value; }
-        public DateTime? DataNascimento { get => _dataNascimento; set => _dataNascimento = value; }
-        public string Genero { get => _genero; set => _genero = value; }
         public string TelCelular { get => _telCelular; set => _telCelular = value; }
         public string Email { get => _email; set => _email = value; }
         public DateTime Cadastro { get => _cadastro; set => _cadastro = value; }
@@ -44,8 +39,6 @@ namespace BurgerShack.Desktop
             CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
             Nome = UtilConvert.ToString(reader["nome"]),
             Cpf = UtilConvert.ToString(reader["cpf"]),
-            DataNascimento = UtilConvert.ToNullableDateTime(reader["data_nascimento"]),
-            Genero = UtilConvert.ToString(reader["genero"]),
             TelCelular = UtilConvert.ToString(reader["tel_cel"]),
             Email = UtilConvert.ToString(reader["email"]),
             Cadastro = UtilConvert.ToDateTime(reader["cadastro"]),
@@ -106,8 +99,6 @@ namespace BurgerShack.Desktop
             objInsert.Value.val("id_funcionario", CodFuncionario)
                             .val("nome", Nome)
                             .val("cpf", Cpf)
-                            .val("data_nascimento", DataNascimento)
-                            .val("genero", Genero)
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
                             .val("cadastro", Cadastro)
@@ -121,8 +112,6 @@ namespace BurgerShack.Desktop
             objUpdate.table("cliente");
             objUpdate.Where.where("id", Cod);
             objUpdate.Value.val("nome", Nome)
-                            .val("data_nascimento", DataNascimento)
-                            .val("genero", Genero)
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
                             .val("ativo", UtilConvert.ToBit(Ativo));
