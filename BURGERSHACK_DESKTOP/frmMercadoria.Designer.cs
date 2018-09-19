@@ -37,6 +37,7 @@
             this.lblSituacao = new System.Windows.Forms.Label();
             this.txtCodigoBarras = new vitorrdgs.UiX.Component.UIXTextBox();
             this.txtDescricao = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.chkBaixar = new System.Windows.Forms.CheckBox();
             this.pnlMenu.SuspendLayout();
             this.grbInformacoes.SuspendLayout();
             this.SuspendLayout();
@@ -112,12 +113,13 @@
             // 
             // grbInformacoes
             // 
+            this.grbInformacoes.Controls.Add(this.chkBaixar);
             this.grbInformacoes.Controls.Add(this.lblSituacao);
             this.grbInformacoes.Controls.Add(this.txtCodigoBarras);
             this.grbInformacoes.Controls.Add(this.txtDescricao);
             this.grbInformacoes.Location = new System.Drawing.Point(105, 55);
             this.grbInformacoes.Name = "grbInformacoes";
-            this.grbInformacoes.Size = new System.Drawing.Size(290, 150);
+            this.grbInformacoes.Size = new System.Drawing.Size(290, 180);
             this.grbInformacoes.TabIndex = 6;
             this.grbInformacoes.TabStop = false;
             this.grbInformacoes.Text = "INFORMAÇÕES";
@@ -161,6 +163,18 @@
             this.txtDescricao.Size = new System.Drawing.Size(280, 40);
             this.txtDescricao.TabIndex = 0;
             // 
+            // chkBaixar
+            // 
+            this.chkBaixar.AutoSize = true;
+            this.chkBaixar.Checked = true;
+            this.chkBaixar.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkBaixar.Location = new System.Drawing.Point(10, 150);
+            this.chkBaixar.Name = "chkBaixar";
+            this.chkBaixar.Size = new System.Drawing.Size(163, 20);
+            this.chkBaixar.TabIndex = 3;
+            this.chkBaixar.Text = "Baixar automaticamente";
+            this.chkBaixar.UseVisualStyleBackColor = true;
+            // 
             // frmMercadoria
             // 
             this.AcceptButton = this.btnAlterar;
@@ -195,5 +209,6 @@
         private vitorrdgs.UiX.Component.UIXTextBox txtDescricao;
         private vitorrdgs.UiX.Component.UIXTextBox txtCodigoBarras;
         private System.Windows.Forms.Label lblSituacao;
+        private System.Windows.Forms.CheckBox chkBaixar;
     }
 }

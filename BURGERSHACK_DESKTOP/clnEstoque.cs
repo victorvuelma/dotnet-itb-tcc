@@ -139,54 +139,79 @@ namespace BurgerShack.Desktop
 
         public void baixarEstoque(int quantidade)
         {
-            List<clnEstoque> objEstoques = new clnEstoque
+            clnMercadoria objMercadoria = new clnMercadoria
             {
-                CodMercadoria = CodMercadoria
-            }.obterEstoquesPorMercadoria();
+                Cod = CodMercadoria
+            }.obterPorCod();
 
-            while(quantidade >= 1 && objEstoques.Count >= 1)
+            if (objMercadoria != null && objMercadoria.Baixar)
             {
-                clnEstoque objEstoque = objEstoques[0];
-                if(objEstoque.Quantidade >= 0)
+                List<clnEstoque> objEstoques = new clnEstoque
                 {
-                    if(objEstoque.Quantidade >= quantidade)
+                    CodMercadoria = CodMercadoria
+                }.obterEstoquesPorMercadoria();
+
+                while (quantidade >= 1 && objEstoques.Count >= 1)
+                {
+                    clnEstoque objEstoque = objEstoques[0];
+                    if (objEstoque.Quantidade >= 0)
                     {
-                        objEstoque.Quantidade -= quantidade;
-                        quantidade -= quantidade;
-                    } else
-                    {
-                        objEstoque.Quantidade -= objEstoque.Quantidade;
-                        quantidade -= objEstoque.Quantidade;
+                        if (objEstoque.Quantidade >= quantidade)
+                        {
+                            objEstoque.Quantidade -= quantidade;
+                            quantidade -= quantidade;
+                        }
+                        else
+                        {
+                            objEstoque.Quantidade -= objEstoque.Quantidade;
+                            quantidade -= objEstoque.Quantidade;
+                        }
+                        objEstoque.alterar();
+                        objEstoques.RemoveAt(0);
                     }
-                    objEstoque.alterar();
-                    objEstoques.RemoveAt(0);
                 }
             }
         }
 
         public void atualizarIngredientes()
         {
-            List<clnIngrediente> objIngredientes = new clnIngrediente
+            clnMercadoria objMercadoria = new clnMercadoria
             {
-                CodMercadoria = CodMercadoria
-            }.obterPorMercadoria();
+                Cod = CodMercadoria
+            }.obterPorCod();
 
-            foreach (clnIngrediente objIngrediente in objIngredientes)
+            if (objMercadoria != null && objMercadoria.Baixar)
             {
-                objIngrediente.atualizarEstoque(true);
+                List<clnIngrediente> objIngredientes = new clnIngrediente
+                {
+                    CodMercadoria = CodMercadoria
+                }.obterPorMercadoria();
+
+                foreach (clnIngrediente objIngrediente in objIngredientes)
+                {
+                    objIngrediente.atualizarEstoque(true);
+                }
             }
         }
 
         public void atualizarProdutos()
         {
-            List<clnProduto> objProdutos = new clnProduto
+            clnMercadoria objMercadoria = new clnMercadoria
             {
-                CodMercadoria = CodMercadoria
-            }.obterPorMercadoria();
+                Cod = CodMercadoria
+            }.obterPorCod();
 
-            foreach (clnProduto objProduto in objProdutos)
+            if (objMercadoria != null && objMercadoria.Baixar)
             {
-                objProduto.atualizarEstoque();
+                List<clnProduto> objProdutos = new clnProduto
+                {
+                    CodMercadoria = CodMercadoria
+                }.obterPorMercadoria();
+
+                foreach (clnProduto objProduto in objProdutos)
+                {
+                    objProduto.atualizarEstoque();
+                }
             }
         }
 

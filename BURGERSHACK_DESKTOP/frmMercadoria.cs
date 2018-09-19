@@ -43,7 +43,8 @@ namespace BurgerShack.Desktop
                         clnMercadoria objMercadoria = new clnMercadoria
                         {
                             Descricao = txtDescricao.Text,
-                            CodigoBarras = txtCodigoBarras.Text
+                            CodigoBarras = txtCodigoBarras.Text,
+                            Baixar = chkBaixar.Checked
                         };
                         objMercadoria.gravar();
                         ObjMercadoria = objMercadoria;
@@ -60,6 +61,7 @@ namespace BurgerShack.Desktop
                 {
                     ObjMercadoria.Descricao = txtDescricao.Text;
                     ObjMercadoria.CodigoBarras = txtCodigoBarras.Text;
+                    ObjMercadoria.Baixar = chkBaixar.Checked;
 
                     ObjMercadoria.alterar();
                     UtilMensagem.mostrarOk("Alteração de Mercadoria", "Mercadoria alterada com sucesso!");
@@ -134,6 +136,7 @@ namespace BurgerShack.Desktop
                 hdrUIX.Title = App.Name + " - Mercadoria " + ObjMercadoria.Cod;
                 txtDescricao.Text = ObjMercadoria.Descricao;
                 txtCodigoBarras.Text = UtilConvert.ToString(ObjMercadoria.CodigoBarras);
+                chkBaixar.Checked = ObjMercadoria.Baixar;
                 UtilForm.Disable(this);
 
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)

@@ -15,17 +15,21 @@ namespace BurgerShack.Desktop
         private string _descricao;
         private string _codigoBarras;
 
+        private bool _baixar = true;
+
         public int Cod { get => _cod; set => _cod = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
         public string CodigoBarras { get => _codigoBarras; set => _codigoBarras = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
+        public bool Baixar { get => _baixar; set => _baixar = value; }
 
         private clnMercadoria obter(SqlDataReader reader) => new clnMercadoria
         {
             Cod = UtilConvert.ToInt(reader["id"]),
             Descricao = UtilConvert.ToString(reader["descricao"]),
             CodigoBarras = UtilConvert.ToString(reader["codigo_barras"]),
-            Ativo = UtilConvert.ToBool(reader["ativo"])
+            Ativo = UtilConvert.ToBool(reader["ativo"]),
+            Baixar = UtilConvert.ToBool(reader["baixar"])
         };
 
         public clnMercadoria obterPorCod()
@@ -82,6 +86,7 @@ namespace BurgerShack.Desktop
             objUpdate.Where.where("id", Cod);
             objUpdate.Value.val("ativo", UtilConvert.ToBit(Ativo))
                            .val("descricao", Descricao)
+                           .val("baixar", UtilConvert.ToBit(Baixar))
                            .val("codigo_barras", CodigoBarras);
 
             objUpdate.execute(App.DatabaseSql);
@@ -92,6 +97,7 @@ namespace BurgerShack.Desktop
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("mercadoria");
             objInsert.Value.val("ativo", UtilConvert.ToBit(Ativo))
+                           .val("baixar", UtilConvert.ToBit(Baixar))
                            .val("descricao", Descricao)
                            .val("codigo_barras", CodigoBarras);
 
