@@ -1,0 +1,99 @@
+﻿body {
+    font-family: Arial;
+    color: white;
+    margin: 0px;
+}
+
+header {
+    overflow: hidden;
+    background-color: #3A5168;
+    padding: 0px 10px;
+    color: white;
+}
+
+    header a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+        header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+            width: 10px;
+        }
+
+    header img {
+        padding: 0px 5px;
+        margin-top: 5px;
+        width: 100px;
+    }
+
+    header a:hover {
+        background-color: #2C3E50;
+        color: white;
+    }
+
+    header a.active {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    header figure {
+        height: 10px;
+    }
+
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+.grid-container {
+    display: inline-flex;
+    grid-gap: 10px 10px;
+    grid-template-columns: auto;
+    background-color: white;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid #dbdbdb;
+    padding: 0px 0px 0px 0px;
+    font-size: 30px;
+    text-align: center;
+    width: 250px;
+}
+
+    .grid-item h5 {
+        width: 100%;
+        text-align: center;
+        min-height: 20px;
+        font-size: 0.5em;
+        display: block;
+        margin: 0 auto;
+        background-color: #34495E;
+    }
+
+    .grid-item picture img {
+        width: 150px;
+    }

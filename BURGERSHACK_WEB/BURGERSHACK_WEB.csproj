@@ -67,6 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="index.cshtml" />
+    <Content Include="Resources\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css" />
+    <Content Include="Resources\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Resources\css\bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="Resources\css\bootstrap\bootstrap.css" />
+    <Content Include="Resources\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Resources\css\default.css" />
+    <Content Include="Resources\css\style1024.css" />
+    <Content Include="Resources\css\style1025.css" />
+    <Content Include="Resources\css\style480.css" />
+    <Content Include="Resources\css\style768.css" />
+    <Content Include="Resources\img\logo.png" />
+    <Content Include="Resources\img\products\Shack Beef.png" />
+    <Content Include="Resources\img\products\Shack Cheese.png" />
+    <Content Include="Resources\img\products\Shack Gourmet.png" />
+    <Content Include="Resources\img\products\Shack Hamburguer.png" />
+    <Content Include="Resources\img\slider\slider-1.png" />
+    <Content Include="Resources\js\bootstrap\bootstrap.bundle.js" />
+    <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js" />
+    <Content Include="Resources\js\bootstrap\bootstrap.js" />
+    <Content Include="Resources\js\bootstrap\bootstrap.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +96,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Resources\css\bootstrap\bootstrap-grid.css.map" />
+    <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css.map" />
+    <Content Include="Resources\css\bootstrap\bootstrap-reboot.css.map" />
+    <Content Include="Resources\css\bootstrap\bootstrap-reboot.min.css.map" />
+    <Content Include="Resources\css\bootstrap\bootstrap.css.map" />
+    <Content Include="Resources\css\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Resources\img\slider\slider-1.psd" />
+    <Content Include="Resources\js\bootstrap\bootstrap.bundle.js.map" />
+    <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js.map" />
+    <Content Include="Resources\js\bootstrap\bootstrap.js.map" />
+    <Content Include="Resources\js\bootstrap\bootstrap.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
