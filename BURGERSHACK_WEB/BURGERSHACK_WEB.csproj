@@ -81,6 +81,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BURGERSHACK_COMMON\BURGERSHACK_COMMON.csproj">
+      <Project>{452f8db0-90e2-4013-bfcc-c95ef01fb806}</Project>
+      <Name>BURGERSHACK_COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLMASTER\SQLMASTER.csproj">
+      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
+      <Name>SQLMASTER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UTIL\UTIL.csproj">
+      <Project>{94c33f17-938d-4605-8715-0bf21c28a997}</Project>
+      <Name>UTIL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

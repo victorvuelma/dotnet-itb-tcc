@@ -490,25 +490,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\COMMON\SQLMASTER\SQLMASTER.csproj">
-      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
-      <Name>SQLMASTER</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\COMMON\UIX\UIX.csproj">
-      <Project>{23c69ba9-632d-47df-b963-927e43f5f800}</Project>
-      <Name>UIX</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\COMMON\UTIL\UTIL.csproj">
-      <Project>{94c33f17-938d-4605-8715-0bf21c28a997}</Project>
-      <Name>UTIL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\COMMON\UTIL_FORM\UTIL_FORM.csproj">
-      <Project>{36f01f19-26eb-4bdc-9398-fcb26c29b062}</Project>
-      <Name>UTIL_FORM</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BURGERSHACK_COMMON\BURGERSHACK_COMMON.csproj">
       <Project>{452f8db0-90e2-4013-bfcc-c95ef01fb806}</Project>
       <Name>BURGERSHACK_COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLMASTER\SQLMASTER.csproj">
+      <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
+      <Name>SQLMASTER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIX\UIX.csproj">
+      <Project>{23c69ba9-632d-47df-b963-927e43f5f800}</Project>
+      <Name>UIX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UTIL\UTIL.csproj">
+      <Project>{94c33f17-938d-4605-8715-0bf21c28a997}</Project>
+      <Name>UTIL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UTIL_FORM\UTIL_FORM.csproj">
+      <Project>{36f01f19-26eb-4bdc-9398-fcb26c29b062}</Project>
+      <Name>UTIL_FORM</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
