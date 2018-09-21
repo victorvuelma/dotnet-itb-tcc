@@ -67,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="index.cshtml" />
+    <Content Include="index.html" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.css" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css" />
     <Content Include="Resources\css\bootstrap\bootstrap-reboot.css" />
