@@ -105,7 +105,7 @@ namespace BurgerShack.Desktop
                 clnArquivo objArquivo = new clnArquivo
                 {
                     Cod = objProduto.CodImagem
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 lstProdutos.Adicionar(objProduto.Cod, objProduto.Nome, objArquivo.Local, AppDesktop.VisualStyle.ButtonImageColor, () =>
                 {

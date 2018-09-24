@@ -99,7 +99,7 @@ namespace BurgerShack.Desktop
             clnArquivo objArquivo = new clnArquivo
             {
                 Cod = objIngrediente.CodImagem
-            }.obterPorCodigo();
+            }.obterPorCod();
 
             picIngrediente.ImageLocation = objArquivo.Local;
             lblNome.Text = objIngrediente.Nome;
