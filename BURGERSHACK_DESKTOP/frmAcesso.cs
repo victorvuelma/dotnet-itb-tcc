@@ -33,6 +33,7 @@ namespace BurgerShack.Desktop
             if(txtUsuario.Text == "")
             {
                 hdrUIX.Title = App.Name + " - Novo Acesso";
+                txtSenha.Campo = "Senha*";
                 txtUsuario.Focus();
             } else
             {

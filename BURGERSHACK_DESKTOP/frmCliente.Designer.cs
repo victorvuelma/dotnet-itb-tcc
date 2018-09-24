@@ -105,7 +105,7 @@
             this.grbInformacoes.Controls.Add(this.txtNome);
             this.grbInformacoes.Location = new System.Drawing.Point(105, 55);
             this.grbInformacoes.Name = "grbInformacoes";
-            this.grbInformacoes.Size = new System.Drawing.Size(390, 150);
+            this.grbInformacoes.Size = new System.Drawing.Size(390, 120);
             this.grbInformacoes.TabIndex = 6;
             this.grbInformacoes.TabStop = false;
             this.grbInformacoes.Text = "INFORMAÇÕES DO CLIENTE";

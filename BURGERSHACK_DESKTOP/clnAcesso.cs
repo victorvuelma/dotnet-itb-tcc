@@ -34,8 +34,8 @@ namespace BurgerShack.Desktop
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");
             objSelect.Columns.select("id_funcionario");
-            objSelect.Where.where("usuario", Usuario)
-                           .where("hash", Senha)
+            objSelect.Where.where("usuario", vitorrdgs.SqlMaster.Element.Where.sqlElementWhereCommon.whereOperation.EQUALS, Usuario)
+                           .where("hash", vitorrdgs.SqlMaster.Element.Where.sqlElementWhereCommon.whereOperation.EQUALS, Senha)
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
             int? codFuncionario = null;
@@ -53,7 +53,7 @@ namespace BurgerShack.Desktop
             objSelect.table("acesso");
             objSelect.Columns.select("usuario");
             objSelect.Where.where("id_funcionario", CodFuncionario)
-                           .where("hash", Senha)
+                           .where("hash", vitorrdgs.SqlMaster.Element.Where.sqlElementWhereCommon.whereOperation.EQUALS, Senha)
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
             string usuario = null;
