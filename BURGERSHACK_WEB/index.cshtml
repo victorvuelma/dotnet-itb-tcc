@@ -11,27 +11,37 @@
     <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
     <link rel="shortcut icon" href="" type="image/x-icon">
     <!-- CSS PADRÃO -->
-    <link href="/Resources/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="/Resources/css/default.css" rel=stylesheet>
+    <link rel="stylesheet" type="text/css" href="Resources/css/default.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Resources/css/bootstrap/bootstrap.min.css">
     <!-- Telas Responsivas -->
     <link rel=stylesheet media="screen and (max-width:480px)" href="/Resources/css/style480.css">
     <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="/Resources/css/style768.css">
     <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="/Resources/css/style1024.css">
     <link rel=stylesheet media="screen and (min-width:1025px)" href="/Resources/css/style1025.css">
+    <!-- API Google Maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
     <!-- Bootstrap-->
 </head>
 <body>
+    <!-- CONTEÚDO -->
     <div id=container>
+        <!-- CABEÇALHO -->
         <header>
-            <img src="Resources/img/logo.png" />
-            <div class="header-right">
-                <a class="active" href="index.html">Inicio</a>
-                <a href="#grid">Catalogo</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#login">Login</a>
-                <a href="#register">Registrar-se</a>
+            <div class="container">
+                <img src="Resources/img/logo.png" />
+                <div class="header-right">
+                    <a class="active" href="index.cshtml">Inicio</a>
+                    <a href="#grid">Catalogo</a>
+                    <a href="#about">Sobre</a>
+                    <a href="~/Pages/login.cshtml">Login</a>
+                    <a href="#register">Registrar-se</a>
+                </div>
             </div>
         </header>
+
+        <!-- SLIDES -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -43,10 +53,10 @@
                     <img class="d-block w-100" src="Resources/img/slider/slider-1.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="Resources/img/slider/slider-1.png" alt="Second slide">
+                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="Resources/img/slider/slider-1.png" alt="Third slide">
+                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -58,81 +68,160 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <main class="col-9" id="grid">
-            <section class="grid-container">
-                <div class='grid-item'>
-                    <picture>
-                        <img src='Resources/img/products/Shack Beef.png'>
-                    </picture>
-                    <h5>Shack Beef R$50,00</h5>
+        <br />
+        <!-- GRID DE PRODUTOS -->
+        <section id="grid" style="margin-left: 75px;">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
                 </div>
-                <div class='grid-item'>
-                    <picture>
-                        <img src='Resources/img/products/Shack Cheese.png'>
-                    </picture>
-                    <h5>Shack Cheese R$50,00</h5>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
                 </div>
-                <div class='grid-item'>
-                    <picture>
-                        <img src='Resources/img/products/Shack Gourmet.png'>
-                    </picture>
-                    <h5>Shack Gourmet R$50,00</h5>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
                 </div>
-                <div class='grid-item'>
-                    <picture>
-                        <img src='Resources/img/products/Shack Hamburguer.png'>
-                    </picture>
-                    <h5>Shack Hamburguer R$50,00</h5>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
                 </div>
-                <div class='grid-item'>
-                    <picture>
-                        <img src='Resources/img/products/Shack Beef.png'>
-                    </picture>
-                    <h5>Shack Beef R$50,00</h5>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
                 </div>
-            </section>
-        </main>
-        <div class="panel panel-default">
-            <div id="text-carousel" class="carousel slide" data-ride="carousel">
-                <!-- Wrapper for slides -->
-                <div class="row">
-                    <div class="col-xs-offset-3 col-xs-6">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="carousel-content">
-                                    <div>
-                                        <p>Sapiente, ducimus, voluptas, mollitia voluptatibus nemo explicabo sit blanditiis laborum dolore illum fuga veniam quae expedita libero accusamus quas harum ex numquam necessitatibus provident deleniti tenetur iusto officiis recusandae corporis culpa quaerat?</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="carousel-content">
-                                    <div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, sint fuga temporibus nam saepe delectus expedita vitae magnam necessitatibus dolores tempore consequatur dicta cumque repellendus eligendi ducimus placeat! </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="carousel-content">
-                                    <div>
-                                        <p>Sapiente, ducimus, voluptas, mollitia voluptatibus nemo explicabo sit blanditiis laborum dolore illum fuga veniam quae expedita libero accusamus quas harum ex numquam necessitatibus provident deleniti tenetur iusto officiis recusandae corporis culpa quaerat?</p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+                </div>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+                </div>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+                </div>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+                </div>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+                <div class="card-body">
+                    <h5 class="card-title">Shack Gourmet</h5>
+                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+                </div>
+                <div class="panel-price">
+                    <div class="panel-body"><b>R$: 19,90</b></div>
+                </div>
+            </div>
+        </section>
 
+        <section id="about">
+            <!-- FEEDBACK SLIDES -->
+            <div class="panel panel-default">
+                <div id="text-carousel" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="row">
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="carousel-content">
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="carousel-content">
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="carousel-content">
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+                    <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#text-carousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
-                <a class="left carousel-control" href="#text-carousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#text-carousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
+            </div>
+        </section>
 
+        <!-- FEEDBACK SEND-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-centraliza">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="w-100 p-3, form-control" id="inputfirstName" placeholder="Primeiro Nome">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="w-100 p-3, form-control" id="inputSecondName" placeholder="Segundo Nome">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="w-100 p-3 form-control" id="inputEmail" placeholder="Email" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém.</small>>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="w-100 p-3, form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deixe seu feedback"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%">Enviar</button>
+                    </form>
+                </div>
             </div>
         </div>
+
+        <!-- RODAPÉ -->
+        <footer></footer>
     </div>
+
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Resources/js/bootstrap/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

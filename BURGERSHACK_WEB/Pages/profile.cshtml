@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang=pt-br>
+<head>
+    <title></title>
+    <meta charset=UTF-8> <!-- ISO-8859-1 -->
+    <meta name=viewport content="width=device-width, initial-scale=1.0"> <!-- Para não travar o zoom -->
+    <meta name=description content=""> <!-- No máximo 360 caracteres, pode haver falhas com mais de 160 caracteres-->
+    <meta name=keywords content=""> <!-- Opcional -->
+    <meta name=author content=''>
+    <meta name=application-name content=StackOverflow>
+    <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- CSS PADRÃO -->
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Resources/css/bootstrap/bootstrap.min.css">
+    <!-- Telas Responsivas -->
+    <link rel=stylesheet media="screen and (max-width:480px)" href="/Resources/css/style480.css">
+    <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="/Resources/css/style768.css">
+    <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="/Resources/css/style1024.css">
+    <link rel=stylesheet media="screen and (min-width:1025px)" href="/Resources/css/style1025.css">
+    <!-- API Google Maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <!-- Bootstrap-->
+</head>
+<body>
+    <div id="container">
+
+        <div id=container>
+            <!-- CABEÇALHO -->
+            <header>
+                <div class="container">
+                    <img src="~/Resources/img/logo.png" />
+                    <div class="header-right">
+                        <a href="~/index.cshtml">Inicio</a>
+                        <a href="~/index.cshtml">Catalogo</a>
+                        <a href="~/index.cshtml">Sobre</a>
+                        <a href="~/Pages/login.cshtml">Login</a>
+                        <a href="#register">Registrar-se</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 col-centraliza">
+                    <h3>Desejo me cadastrar</h3>
+                    <div class="form-inline">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadName" placeholder="Nome da Pessoa">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadCPF" placeholder="CPF da Pessoa">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadEmail" placeholder="E-mail da Pessoa">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputNumeroCartao" placeholder="Número do Cartão - ***" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadSenha" placeholder="Senha - ****" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadSobrenome" placeholder="Sobrenome da Pessoa" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadDataNascimento" placeholder="Data de Nascimento da Pessa" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadTelefoneCelular" placeholder="Telefone Celular da Pessoa" />
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col" id="colcolumn1">
+                                                <div class="form-group'">
+                                                    <input type="text" class="form-control" id="inputCadDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
+                                                </div>
+                                            </div>
+                                            <div class="col" id="colcolumn1">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="inputCadCVV" placeholder="CVV - ***" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>
+                                                    <button type="submit" class="btn btn-default">Alterar</button>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- RODAPÉ -->
+    <footer></footer>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Resources/js/bootstrap/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</body>
+</html>

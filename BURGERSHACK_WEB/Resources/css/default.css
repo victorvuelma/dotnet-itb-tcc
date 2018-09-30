@@ -1,14 +1,77 @@
 ﻿body {
     font-family: Arial;
     color: white;
-    margin:0px;
+    margin: 0px;
 }
+
 header {
     overflow: hidden;
     background-color: #3A5168;
     padding: 0px 10px;
     color: white;
 }
+
+h3 {
+    color: #3A5168 !important;
+}
+
+.card {
+    margin: 0px 5px 20px 5px;
+}
+
+.form-inline .form-group {
+    margin-bottom: 16px !important;
+    margin-right: 10px;
+}
+
+#sel1 {
+    margin-top: -16px;
+    width: 35% !important;
+}
+textarea#textareaReservaInformacoes{
+    border-radius: 10px !important;
+}
+#reserva {
+    padding: 6px 0px 6px 0px;
+    margin: 0px 0px 0px 0px;
+}
+#colcolumn1 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.btn {
+    margin-left: 20px;
+    width: 150px;
+    background-color: #3A5168;
+    color: white;
+    border-radius: 100px !important;
+}
+
+.checkbox {
+    color: #3A5168;
+}
+
+.form-control {
+    width: 100% !important;
+    border-radius: 100px !important;
+}
+
+.col-centraliza {
+    margin: auto;
+    margin-top: 50px;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+footer {
+    background-color: #3A5168 !important;
+    color: white;
+    margin-top: 25px;
+    height: 280px;
+}
+
 header a {
     float: left;
     color: white;
@@ -16,36 +79,51 @@ header a {
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
-    line-height: 25px;  
+    line-height: 25px;
 }
-header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-    width: 10px;
-}
+
+    header a.logo {
+        font-size: 25px;
+        font-weight: bold;
+        width: 10px;
+    }
+
 header img {
     padding: 0px 5px;
     margin-top: 5px;
     width: 100px;
 }
+
 header a:hover {
     background-color: #2C3E50;
     color: white;
 }
+
 header a.active {
     background-color: dodgerblue;
     color: white;
 }
+
 header figure {
-    height:10px;
+    height: 10px;
 }
+
 .header-right {
     float: right;
 }
+
+.panel-price {
+    background-color: #34495E;
+    height: 30px;
+    text-align: center;
+    line-height: 35px;
+}
+
 .panel.panel-default {
     background-color: #34495E;
-    height: 180px;
+    height: 250px;
 }
+
 @media screen and (max-width: 500px) {
     header a {
         float: none;
@@ -61,34 +139,3 @@ header figure {
 [class*="col-"] {
     width: 100%;
 }
-
-.grid-container {
-    display: inline-grid;
-    grid-gap: 10px 10px;
-    grid-template-columns: auto;
-    background-color: white;
-    padding: 10px;
-}
-
-.grid-item {
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px solid #dbdbdb;
-    padding: 0px 0px 0px 0px;
-    font-size: 30px;
-    text-align: center;
-    width: 250px;
-}
-
-    .grid-item h5 {
-        width: 100%;
-        text-align: center;
-        min-height: 20px;
-        font-size: 0.5em;
-        display: block;
-        margin: 0 auto;
-        background-color: #34495E;
-    }
-
-    .grid-item picture img {
-        width: 150px;
-    }

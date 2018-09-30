@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -53,6 +56,21 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -67,7 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="index.cshtml" />
+    <Content Include="Resources\css\animate.css" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.css" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css" />
     <Content Include="Resources\css\bootstrap\bootstrap-reboot.css" />
@@ -75,6 +93,7 @@
     <Content Include="Resources\css\bootstrap\bootstrap.css" />
     <Content Include="Resources\css\bootstrap\bootstrap.min.css" />
     <Content Include="Resources\css\default.css" />
+    <Content Include="Resources\css\media-queries.css" />
     <Content Include="Resources\css\style1024.css" />
     <Content Include="Resources\css\style1025.css" />
     <Content Include="Resources\css\style480.css" />
@@ -85,16 +104,28 @@
     <Content Include="Resources\img\products\Shack Gourmet.png" />
     <Content Include="Resources\img\products\Shack Hamburguer.png" />
     <Content Include="Resources\img\slider\slider-1.png" />
+    <Content Include="Resources\img\slider\slider-2.png" />
     <Content Include="Resources\js\bootstrap\bootstrap.bundle.js" />
     <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js" />
     <Content Include="Resources\js\bootstrap\bootstrap.js" />
     <Content Include="Resources\js\bootstrap\bootstrap.min.js" />
+    <Content Include="Resources\js\jquery-3.2.1.min.js" />
+    <Content Include="Resources\js\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Resources\js\jquery.backstretch.js" />
+    <Content Include="Resources\js\jquery.backstretch.min.js" />
+    <Content Include="Resources\js\maps.js" />
+    <Content Include="Resources\js\retina-1.1.0.js" />
+    <Content Include="Resources\js\retina-1.1.0.min.js" />
+    <Content Include="Resources\js\scripts.js" />
+    <Content Include="Resources\js\wow.js" />
+    <Content Include="Resources\js\wow.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.css.map" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css.map" />
@@ -107,6 +138,9 @@
     <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js.map" />
     <Content Include="Resources\js\bootstrap\bootstrap.js.map" />
     <Content Include="Resources\js\bootstrap\bootstrap.min.js.map" />
+    <Content Include="Pages\login.cshtml" />
+    <Content Include="Pages\reserva.cshtml" />
+    <Content Include="Pages\profile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

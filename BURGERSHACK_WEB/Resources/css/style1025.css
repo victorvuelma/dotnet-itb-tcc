@@ -3,7 +3,11 @@ body {
     color: white;
     margin: 0px;
 }
-
+footer {
+    background-color: #3A5168 !important;
+    padding: 0px 10px;
+    color: white;
+}
 header {
     overflow: hidden;
     background-color: #3A5168;
@@ -12,7 +16,7 @@ header {
 }
 .panel.panel-default {
     background-color: #34495E;
-    height: 180px;
+    height: 250px;
 }
     header a {
         float: left;
