@@ -32,7 +32,7 @@ namespace BurgerShack.Desktop
             Tipo = Tipo
         };
 
-        public clnTipo obterPorCodigo()
+        public clnTipo obterPorCod()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table(Tipo.ToString() + "_tipo");

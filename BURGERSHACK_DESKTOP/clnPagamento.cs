@@ -84,7 +84,7 @@ namespace BurgerShack.Desktop
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
-        internal IEnumerable<clnPagamento> obterPagamentosPorCpf()
+        internal List<clnPagamento> obterPagamentosPorCpf()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("pagamento");

@@ -30,7 +30,7 @@ namespace BurgerShack.Desktop
             Desconto = UtilConvert.ToNullableDouble(reader["desconto"])
         };
 
-        public clnPagamentoForma obterPorCodigo()
+        public clnPagamentoForma obterPorCod()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("pagamento_forma");

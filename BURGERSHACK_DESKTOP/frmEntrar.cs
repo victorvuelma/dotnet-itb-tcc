@@ -35,9 +35,6 @@ namespace BurgerShack.Desktop
                 frmFuncionario.PrimeiroCadastro = true;
                 frmFuncionario.ShowDialog();
 
-                Hide();
-                Close();
-
                 Application.Restart();
                 return;
             }
@@ -52,9 +49,6 @@ namespace BurgerShack.Desktop
                     Usuario = ""
                 };
                 frmAcesso.ShowDialog();
-
-                Hide();
-                Close();
 
                 Application.Restart();
                 return;

@@ -35,7 +35,7 @@ namespace BurgerShack.Desktop
 
         }
 
-        public clnArquivo obterPorCodigo()
+        public clnArquivo obterPorCod()
         {
             string arquivo = CACHE.obter(Convert.ToString(Cod));
             if (arquivo != null)

@@ -142,7 +142,7 @@ namespace BurgerShack.Desktop
                 {
                     Tipo = Tipo,
                     Cod = Convert.ToInt32(cod)
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 if (objTipo != null)
                 {
@@ -167,7 +167,7 @@ namespace BurgerShack.Desktop
                 {
                     Tipo = Tipo,
                     Cod = Convert.ToInt32(cod)
-                }.obterPorCodigo();
+                }.obterPorCod();
 
                 if (objTipo != null)
                 {

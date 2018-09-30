@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util;
 using vitorrdgs.Util.Data;
+using vitorrdgs.Util.Hash;
 
 namespace BurgerShack.Desktop
 {
@@ -94,6 +96,8 @@ namespace BurgerShack.Desktop
 
         public void gravar()
         {
+            String senha = UtilRandom.gerar(10);
+                       
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("cliente");
             objInsert.Value.val("id_funcionario", CodFuncionario)
@@ -102,8 +106,11 @@ namespace BurgerShack.Desktop
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
                             .val("cadastro", Cadastro)
+                            .val("hash", Hash.HASH.cyph(senha))
                             .val("ativo", UtilConvert.ToBit(Ativo));
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
+
+            informarSenha(senha);
         }
 
         public void alterar()
@@ -116,6 +123,11 @@ namespace BurgerShack.Desktop
                             .val("email", Email)
                             .val("ativo", UtilConvert.ToBit(Ativo));
             objUpdate.execute(App.DatabaseSql);
+        }
+
+        private void informarSenha(String senha)
+        {
+            //TODO: USE SMTP TO SEND PASSWORD
         }
 
     }

@@ -64,7 +64,7 @@ namespace BurgerShack.Desktop
                     clnArquivo objArquivoAtual = new clnArquivo
                     {
                         Cod = ObjFuncionario.CodFoto
-                    }.obterPorCodigo();
+                    }.obterPorCod();
                     if (!objArquivoAtual.Local.Equals(picImagem.ImageLocation))
                     {
                         objArquivo = new clnArquivo
@@ -332,7 +332,7 @@ namespace BurgerShack.Desktop
                 clnArquivo objFoto = new clnArquivo
                 {
                     Cod = ObjFuncionario.CodFoto
-                }.obterPorCodigo();
+                }.obterPorCod();
                 picImagem.ImageLocation = objFoto.Local;
 
                 desativar();

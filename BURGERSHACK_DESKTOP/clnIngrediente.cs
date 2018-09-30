@@ -253,7 +253,7 @@ namespace BurgerShack.Desktop
                 clnArquivo objArquivo = new clnArquivo
                 {
                     Cod = obj.CodImagem
-                }.obterPorCodigo();
+                }.obterPorCod();
                 return objArquivo.Local;
             }
 

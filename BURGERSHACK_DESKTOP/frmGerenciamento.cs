@@ -222,7 +222,7 @@ namespace BurgerShack.Desktop
                     {
                         Cod = objIngrediente.CodTipo,
                         Tipo = clnTipo.tipo.INGREDIENTE
-                    }.obterPorCodigo();
+                    }.obterPorCod();
 
                     int estoque = new clnEstoque
                     {
@@ -283,7 +283,7 @@ namespace BurgerShack.Desktop
                     {
                         Cod = objProduto.CodTipo,
                         Tipo = clnTipo.tipo.PRODUTO
-                    }.obterPorCodigo();
+                    }.obterPorCod();
                     //"Código", "Nome", "Situacao", "Tipo", "Estoque", "Valor"
                     dgv.Rows.Add(new object[] { objProduto.Cod, objProduto.Nome, objProduto.Situacao, objTipo.Cod + " - " + objTipo.Nome, UtilFormatar.formatarValor(objProduto.Valor) });
                 }
@@ -737,7 +737,7 @@ namespace BurgerShack.Desktop
                     clnPagamentoForma objForma = new clnPagamentoForma
                     {
                         Cod = objPagamento.CodForma
-                    }.obterPorCodigo();
+                    }.obterPorCod();
 
                     dgv.Rows.Add(new object[] { objPagamento.Cod, UtilFormatar.formatarData(objPagamento.Data), objForma.Nome, UtilFormatar.formatarValor(objPagamento.Valor), UtilFormatar.formatarCPF(objPagamento.Cpf) });
                 }
