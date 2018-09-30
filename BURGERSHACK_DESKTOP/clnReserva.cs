@@ -23,7 +23,7 @@ namespace BurgerShack.Desktop
         private bool _ativo = true;
 
         private int _codCliente = -1;
-        private int _codFuncionario = -1;
+        private int? _codFuncionario = -1;
         private List<int> _codMesas = new List<int>();
 
         private reservaSituacao _situacao;
@@ -34,7 +34,7 @@ namespace BurgerShack.Desktop
 
         public int Cod { get => _cod; set => _cod = value; }
         public int CodCliente { get => _codCliente; set => _codCliente = value; }
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+        public int? CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public List<int> CodMesas { get => _codMesas; set => _codMesas = value; }
         internal reservaSituacao Situacao { get => _situacao; set => _situacao = value; }
         public int Pessoas { get => _pessoas; set => _pessoas = value; }
@@ -48,7 +48,7 @@ namespace BurgerShack.Desktop
             {
                 Cod = UtilConvert.ToInt(reader["id"]),
                 CodCliente = UtilConvert.ToInt(reader["id_cliente"]),
-                CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
+                CodFuncionario = UtilConvert.ToNullableInt(reader["id_funcionario"]),
                 Situacao = situacao(UtilConvert.ToChar(reader["situacao"])),
                 Pessoas = UtilConvert.ToInt(reader["pessoas"]),
                 Agendado = UtilConvert.ToDateTime(reader["agendado"]),
