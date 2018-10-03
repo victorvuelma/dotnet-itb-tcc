@@ -1,28 +1,31 @@
 ﻿<!DOCTYPE html>
 <html lang=pt-br>
 <head>
-    <title></title>
+    <title>BurgerShack</title>
     <meta charset=UTF-8> <!-- ISO-8859-1 -->
     <meta name=viewport content="width=device-width, initial-scale=1.0"> <!-- Para não travar o zoom -->
     <meta name=description content=""> <!-- No máximo 360 caracteres, pode haver falhas com mais de 160 caracteres-->
     <meta name=keywords content=""> <!-- Opcional -->
-    <meta name=author content=''>
-    <meta name=application-name content=StackOverflow>
+    <meta name=author content="Caio Silva and vitorrdgs">
+    <meta name=application-name content="BurgerShack">
     <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
     <link rel="shortcut icon" href="" type="image/x-icon">
     <!-- CSS PADRÃO -->
-    <link rel="stylesheet" type="text/css" href="Resources/css/default.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="/Resources/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap/bootstrap.min.css">
+
     <!-- Telas Responsivas -->
-    <link rel=stylesheet media="screen and (max-width:480px)" href="/Resources/css/style480.css">
-    <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="/Resources/css/style768.css">
-    <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="/Resources/css/style1024.css">
-    <link rel=stylesheet media="screen and (min-width:1025px)" href="/Resources/css/style1025.css">
-    <!-- API Google Maps-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <link rel=stylesheet media="screen and (max-width:480px)" href="~/Resources/css/style480.css">
+    <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="~/Resources/css/style768.css">
+    <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="~/Resources/css/style1024.css">
+    <link rel=stylesheet media="screen and (min-width:1025px)" href="~/Resources/css/style1025.css">
+
     <!-- Bootstrap-->
+    <script src="~/Resources/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Resources/js/popper.min.js"></script>
+    <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- CONTEÚDO -->
@@ -32,11 +35,10 @@
             <div class="container">
                 <img src="Resources/img/logo.png" />
                 <div class="header-right">
-                    <a class="active" href="index.cshtml">Inicio</a>
-                    <a href="#grid">Catalogo</a>
-                    <a href="#about">Sobre</a>
-                    <a href="~/Pages/login.cshtml">Login</a>
-                    <a href="#register">Registrar-se</a>
+                    <a class="active" href="index.cshtml">Início</a>
+                    <a href="#catalogo">Catálogo</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="~/Pages/acessar.cshtml">Acessar</a>
                 </div>
             </div>
         </header>
@@ -50,27 +52,28 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="Resources/img/slider/slider-1.png" alt="First slide">
+                    <img class="d-block w-100" src="~/Resources/img/slider/slider-1.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+                    <img class="d-block w-100" src="~/Resources/img/slider/slider-1.png" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+                    <img class="d-block w-100" src="~/Resources/img/slider/slider-1.png" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">Retroceder</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">Avançar</span>
             </a>
         </div>
         <br />
+
         <!-- GRID DE PRODUTOS -->
-        <section id="grid" style="margin-left: 75px;">
+        <section id="catalogo" style="margin-left: 75px;">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
                 <div class="card-body">
@@ -153,7 +156,7 @@
             </div>
         </section>
 
-        <section id="about">
+        <section id="sobre">
             <!-- FEEDBACK SLIDES -->
             <div class="panel panel-default">
                 <div id="text-carousel" class="carousel slide" data-ride="carousel">
@@ -220,10 +223,5 @@
         <!-- RODAPÉ -->
         <footer></footer>
     </div>
-
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/Resources/js/bootstrap/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </body>
 </html>

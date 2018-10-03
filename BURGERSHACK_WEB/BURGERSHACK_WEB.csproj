@@ -141,9 +141,10 @@
     <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js.map" />
     <Content Include="Resources\js\bootstrap\bootstrap.js.map" />
     <Content Include="Resources\js\bootstrap\bootstrap.min.js.map" />
-    <Content Include="Pages\login.cshtml" />
+    <Content Include="Pages\acessar.cshtml" />
     <Content Include="Pages\reserva.cshtml" />
-    <Content Include="Pages\profile.cshtml" />
+    <Content Include="Pages\perfil.cshtml" />
+    <Content Include="Resources\js\popper.min.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
