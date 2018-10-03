@@ -69,7 +69,9 @@
                             </div>
                             <div class="form-group" style="margin-right: 0px;">
                                 <label style="width:100px;">
+                                    <!--
                                     <button type="submit" class="btn btn-default" style="margin-left: 0px">Verificar</button>
+                                     -->
                                 </label>
                             </div>
                         </form>
@@ -77,17 +79,41 @@
                     <div class="form-group">
                         <textarea class="form-control" style="border-radius: 10px" id="textareaReservaInformacoes" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-default" style="width: 100%; margin: 0px;">Realizar Reserva</button>
+                    <a href="~/Pages/perfil.cshtml">
+                        <button type="submit" class="btn btn-default" style="width: 100%; margin: 0px;">Realizar Reserva</button>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- RODAPÉ -->
-    <footer></footer>
-    </div>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/Resources/js/bootstrap/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <footer>
+        <div class="container">
+            <br /><br />
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul>
+                        <b>Sobre o Burger Shack</b></br></br>
+                        <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul>
+                        <b>Contatos</b></br></br>
+                        <p>facebook.com/burguershack</p>
+                        <p>(11) 4998-5255</p>
+                        <p>sac@burgershack.com</p>
+                        <p>Avenida Pompéia nº 50, São Paulo - SP</p>
+
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <b>Localização</b>
+                    <img src="~/Resources/img/Screenshot_4.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

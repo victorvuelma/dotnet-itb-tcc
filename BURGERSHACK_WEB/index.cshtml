@@ -35,10 +35,10 @@
             <div class="container">
                 <img src="Resources/img/logo.png" />
                 <div class="header-right">
-                    <a class="active" href="index.cshtml">Início</a>
+                    <a href="index.cshtml">Início</a>
                     <a href="#catalogo">Catálogo</a>
                     <a href="#sobre">Sobre</a>
-                    <a href="~/Pages/acessar.cshtml">Acessar</a>
+                    <a class="active" href="~/Pages/acessar.cshtml">Acessar</a>
                 </div>
             </div>
         </header>
@@ -158,15 +158,16 @@
 
         <section id="sobre">
             <!-- FEEDBACK SLIDES -->
+            <!--
             <div class="panel panel-default">
                 <div id="text-carousel" class="carousel slide" data-ride="carousel">
-                    <!-- Wrapper for slides -->
                     <div class="row">
                         <div class="col-xs-offset-3 col-xs-6">
                             <div class="carousel-inner">
                                 <div class="item active">
                                     <div class="carousel-content">
                                         <div>
+                                            Depot
                                         </div>
                                     </div>
                                 </div>
@@ -194,6 +195,7 @@
                     </a>
                 </div>
             </div>
+            -->
         </section>
 
         <!-- FEEDBACK SEND-->
@@ -221,7 +223,33 @@
         </div>
 
         <!-- RODAPÉ -->
-        <footer></footer>
+        <footer>
+            <div class="container">
+                <br /><br />
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ul>
+                            <b>Sobre o Burger Shack</b></br></br>
+                            <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <b>Contatos</b></br></br>
+                            <p>facebook.com/burguershack</p>
+                            <p>(11) 4998-5255</p>
+                            <p>sac@burgershack.com</p>
+                            <p>Avenida Pompéia nº 50, São Paulo - SP</p>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Localização</b>
+                        <img src="~/Resources/img/Screenshot_4.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

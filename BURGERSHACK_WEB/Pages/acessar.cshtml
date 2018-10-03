@@ -48,7 +48,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-centraliza">
-                    <form role="form">
+                    <form role="form" action="~/Pages/perfil.cshtml" method="post">
                         <h3>Já sou resgistrado</h3>
                         <div class="form-group">
                             <input type="text" class="form-control" id="inputLoginCPF" placeholder="CPF" />
@@ -70,7 +70,7 @@
                     <div class="form-inline">
                         <div class="row">
                             <div class="col-md-6">
-                                <form role="form">
+                                <form role="form" method="post" action="~/Pages/perfil.cshtml">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputCadName" placeholder="Primeiro Nome">
                                     </div>
@@ -89,7 +89,7 @@
                                 </form>
                             </div>
                             <div class="col-md-6">
-                                <form role="form">
+                                <form role="form" method="get" action="~/Pages/perfil.cshtml">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputCadSobrenome" placeholder="Sobrenome" />
                                     </div>
@@ -132,7 +132,32 @@
         </div>
     </div>
     <!-- RODAPÉ -->
-    <footer></footer>
-    </div>
+    <footer>
+        <div class="container">
+            <br /><br />
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul>
+                        <b>Sobre o Burger Shack</b></br></br>
+                        <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul>
+                        <b>Contatos</b></br></br>
+                        <p>facebook.com/burguershack</p>
+                        <p>(11) 4998-5255</p>
+                        <p>sac@burgershack.com</p>
+                        <p>Avenida Pompéia nº 50, São Paulo - SP</p>
+
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <b>Localização</b>
+                    <img src="~/Resources/img/Screenshot_4.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
