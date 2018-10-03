@@ -145,6 +145,7 @@
     <Content Include="Pages\reserva.cshtml" />
     <Content Include="Pages\perfil.cshtml" />
     <Content Include="Resources\js\popper.min.js" />
+    <Content Include="Pages\cadastro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

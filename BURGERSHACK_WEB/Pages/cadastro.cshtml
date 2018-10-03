@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang=pt-br>
+<head>
+    <title>BurgerShack - Cadastrar</title>
+    <meta charset=UTF-8> <!-- ISO-8859-1 -->
+    <meta name=viewport content="width=device-width, initial-scale=1.0"> <!-- Para não travar o zoom -->
+    <meta name=description content=""> <!-- No máximo 360 caracteres, pode haver falhas com mais de 160 caracteres-->
+    <meta name=keywords content=""> <!-- Opcional -->
+    <meta name=author content="Caio Silva and vitorrdgs">
+    <meta name=application-name content="BurgerShack">
+    <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- CSS PADRÃO -->
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap/bootstrap.min.css">
+
+    <!-- Telas Responsivas -->
+    <link rel=stylesheet media="screen and (max-width:480px)" href="~/Resources/css/style480.css">
+    <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="~/Resources/css/style768.css">
+    <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="~/Resources/css/style1024.css">
+    <link rel=stylesheet media="screen and (min-width:1025px)" href="~/Resources/css/style1025.css">
+
+    <!-- Bootstrap-->
+    <script src="~/Resources/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Resources/js/popper.min.js"></script>
+    <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="container">
+
+        <div id=container>
+            <!-- CABEÇALHO -->
+            <header>
+                <div class="container">
+                    <img src="~/Resources/img/logo.png" />
+                    <div class="header-right">
+                        <a href="~/index.cshtml">Início</a>
+                        <a href="~/index.cshtml#catalogo">Catálogo</a>
+                        <a href="~/index.cshtml#sobre">Sobre</a>
+                        <a class="active" href="~/Pages/acessar.cshtml">Acessar</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-centraliza">
+                    <h3>Desejo me cadastrar</h3>
+                    <br /><br />
+                    <div class="form-inline">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form role="form" method="post" action="~/Pages/perfil.cshtml">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadName" placeholder="Primeiro Nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadCPF" placeholder="CPF">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadEmail" placeholder="E-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputNumeroCartao" placeholder="Número do Cartão" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadSenha" placeholder="Senha" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <form role="form" method="get" action="~/Pages/perfil.cshtml">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadSobrenome" placeholder="Sobrenome" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadDataNascimento" placeholder="Data de Nascimento" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="inputCadTelefoneCelular" placeholder="Telefone Celular" />
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col" id="colcolumn1">
+                                                <div class="form-group'">
+                                                    <input type="text" class="form-control" id="inputCadDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
+                                                </div>
+                                            </div>
+                                            <div class="col" id="colcolumn1">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="inputCadCVV" placeholder="CVV" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>
+                                                    <button type="submit" class="btn btn-default">Registrar-se</button>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <br /><br />
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul>
+                        <b>Sobre o Burger Shack</b></br></br>
+                        <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul>
+                        <b>Contatos</b></br></br>
+                        <p>facebook.com/burguershack</p>
+                        <p>(11) 4998-5255</p>
+                        <p>sac@burgershack.com</p>
+                        <p>Avenida Pompéia nº 50, São Paulo - SP</p>
+
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <b>Localização</b>
+                    <img src="~/Resources/img/Screenshot_4.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
