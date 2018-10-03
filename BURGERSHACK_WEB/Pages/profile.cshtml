@@ -15,6 +15,10 @@
     <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
     <link rel="stylesheet" type="text/css" href="/Resources/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/listbox.css">
+    <!-- SCRIPTS -->
+    <script src="~/Resources/js/listbox-scrollable.js"></script>
+    <script src="~/Resources/js/listbox.js"></script>
     <!-- Telas Responsivas -->
     <link rel=stylesheet media="screen and (max-width:480px)" href="/Resources/css/style480.css">
     <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="/Resources/css/style768.css">
@@ -47,49 +51,49 @@
             <div class="row">
 
                 <div class="col-md-6 col-centraliza">
-                    <h3 class="text-center">Meu Perfil</h3>
+                    <h3>Meu Perfil</h3>
                     <div class="form-inline">
                         <div class="row">
                             <div class="col-md-6">
                                 <form role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadName" placeholder="Nome da Pessoa">
+                                        <input type="text" class="form-control" id="inputProfileName" placeholder="Nome da Pessoa">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadCPF" placeholder="CPF da Pessoa">
+                                        <input type="text" class="form-control" id="inputProfileCPF" placeholder="CPF da Pessoa">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadEmail" placeholder="E-mail da Pessoa">
+                                        <input type="text" class="form-control" id="inputProfileEmail" placeholder="E-mail da Pessoa">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputNumeroCartao" placeholder="Número do Cartão - ***" />
+                                        <input type="text" class="form-control" id="inputProfileCartao" placeholder="Número do Cartão - ***" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadSenha" placeholder="Senha - ****" />
+                                        <input type="text" class="form-control" id="inputProfileSenha" placeholder="Senha - ****" />
                                     </div>
                                 </form>
                             </div>
                             <div class="col-md-6">
                                 <form role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadSobrenome" placeholder="Sobrenome da Pessoa" />
+                                        <input type="text" class="form-control" id="inputProfileSobrenome" placeholder="Sobrenome da Pessoa" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadDataNascimento" placeholder="Data de Nascimento da Pessa" />
+                                        <input type="text" class="form-control" id="inputProfileDataNascimento" placeholder="Data de Nascimento da Pessa" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadTelefoneCelular" placeholder="Telefone Celular da Pessoa" />
+                                        <input type="text" class="form-control" id="inputProfileTelefoneCelular" placeholder="Telefone Celular da Pessoa" />
                                     </div>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col" id="colcolumn1">
                                                 <div class="form-group'">
-                                                    <input type="text" class="form-control" id="inputCadDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
+                                                    <input type="text" class="form-control" id="inputProfileDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
                                                 </div>
                                             </div>
                                             <div class="col" id="colcolumn1">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" id="inputCadCVV" placeholder="CVV - ***" />
+                                                    <input type="text" class="form-control" id="inputProfileCVV" placeholder="CVV - ***" />
                                                 </div>
                                             </div>
                                         </div>
@@ -105,9 +109,25 @@
                                     </div>
                                 </form>
                             </div>
+
                         </div>
                     </div>
 
+                </div>
+                <div class="col-md-6 col-centraliza">
+                    <h3>Minhas Reservas</h3>
+                    <div class="row">
+                        <div class="left-area">
+                            <ul id="ss_elem_list"
+                                tabindex="0"
+                                role="listbox"
+                                aria-labelledby="ss_elem">
+                                <li id="ss_elem_Np" role="option">
+                                    Informações Reserva 1
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>

@@ -93,6 +93,9 @@
     <Content Include="Resources\css\bootstrap\bootstrap.css" />
     <Content Include="Resources\css\bootstrap\bootstrap.min.css" />
     <Content Include="Resources\css\default.css" />
+    <Content Include="Resources\js\listbox-scrollable.js" />
+    <Content Include="Resources\css\listbox.css" />
+    <Content Include="Resources\js\listbox.js" />
     <Content Include="Resources\css\media-queries.css" />
     <Content Include="Resources\css\style1024.css" />
     <Content Include="Resources\css\style1025.css" />
