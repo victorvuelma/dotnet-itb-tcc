@@ -11,7 +11,7 @@ using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnConta
     {

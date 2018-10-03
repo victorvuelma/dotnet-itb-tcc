@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnTipo
+    public class clnTipo
     {
 
         public enum tipo
@@ -23,7 +23,7 @@ namespace BurgerShack.Desktop
 
         public int Cod { get => _cod; set => _cod = value; }
         public String Nome { get => _nome; set => _nome = value; }
-        internal tipo Tipo { get => _tipo; set => _tipo = value; }
+        public tipo Tipo { get => _tipo; set => _tipo = value; }
 
         private clnTipo obter(SqlDataReader reader) => new clnTipo
         {
@@ -70,7 +70,7 @@ namespace BurgerShack.Desktop
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
-        internal void alterar()
+        public void alterar()
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table(Tipo.ToString() + "_tipo");

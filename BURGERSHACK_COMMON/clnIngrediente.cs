@@ -6,7 +6,7 @@ using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnIngrediente
     {
@@ -86,7 +86,7 @@ namespace BurgerShack.Desktop
             return objIngredientes;
         }
 
-        internal List<clnIngrediente> obterIngredientes()
+        public List<clnIngrediente> obterIngredientes()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("ingrediente");
@@ -101,7 +101,7 @@ namespace BurgerShack.Desktop
         }
 
 
-        internal List<clnIngrediente> obterPorNome()
+        public List<clnIngrediente> obterPorNome()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("ingrediente");
@@ -149,7 +149,7 @@ namespace BurgerShack.Desktop
             atualizarEstoque(true);
         }
 
-        internal void alterar()
+        public void alterar()
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("ingrediente");

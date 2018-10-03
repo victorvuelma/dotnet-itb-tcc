@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnMesa
     {
@@ -85,7 +85,7 @@ namespace BurgerShack.Desktop
             return objMesa;
         }
 
-        internal int? obterCodAtendimento()
+        public int? obterCodAtendimento()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("ATENDIMENTO");
@@ -102,7 +102,7 @@ namespace BurgerShack.Desktop
             return codAtendimento;
         }
 
-        internal void alterar()
+        public void alterar()
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("mesa");
@@ -114,7 +114,7 @@ namespace BurgerShack.Desktop
             objUpdate.execute(App.DatabaseSql);
         }
 
-        internal void gravar()
+        public void gravar()
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("mesa");
@@ -151,7 +151,7 @@ namespace BurgerShack.Desktop
             }
         }
 
-        internal List<clnMesa> obterPorSituacao()
+        public List<clnMesa> obterPorSituacao()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA").Where.where("situacao", prefixo(Situacao));

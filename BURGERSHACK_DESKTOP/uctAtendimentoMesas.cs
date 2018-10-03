@@ -1,4 +1,5 @@
-﻿using BurgerShack.Desktop.Util;
+﻿using BurgerShack.Common;
+using BurgerShack.Desktop.Util;
 using System;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;

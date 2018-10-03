@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnMercadoria
+    public class clnMercadoria
     {
 
         private int _cod = -1;
@@ -62,7 +62,7 @@ namespace BurgerShack.Desktop
             return objMercadoria;
         }
 
-        internal List<clnMercadoria> obterMercadorias()
+        public List<clnMercadoria> obterMercadorias()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("mercadoria");
@@ -79,7 +79,7 @@ namespace BurgerShack.Desktop
             return objMercadorias;
         }
 
-        internal void alterar()
+        public void alterar()
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("mercadoria");
@@ -92,7 +92,7 @@ namespace BurgerShack.Desktop
             objUpdate.execute(App.DatabaseSql);
         }
 
-        internal void gravar()
+        public void gravar()
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("mercadoria");
@@ -104,7 +104,7 @@ namespace BurgerShack.Desktop
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
-        internal class clnListar : clnUtilListar<clnMercadoria>
+        public class clnListar : clnUtilListar<clnMercadoria>
         {
             internal override int Cod(clnMercadoria val)
             {

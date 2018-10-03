@@ -6,9 +6,9 @@ using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnFuncionario
+    public class clnFuncionario
     {
 
         public enum funcionarioSituacao
@@ -62,7 +62,7 @@ namespace BurgerShack.Desktop
         public decimal Salario { get => _salario; set => _salario = value; }
         public DateTime DataContratacao { get => _dataContratacao; set => _dataContratacao = value; }
         public DateTime? DataDemissao { get => _dataDemissao; set => _dataDemissao = value; }
-        internal funcionarioSituacao Situacao { get => _situacao; set => _situacao = value; }
+        public funcionarioSituacao Situacao { get => _situacao; set => _situacao = value; }
         public string EndLogradouro { get => _endLogradouro; set => _endLogradouro = value; }
         public string EndNumero { get => _endNumero; set => _endNumero = value; }
         public string EndComplemento { get => _endComplemento; set => _endComplemento = value; }

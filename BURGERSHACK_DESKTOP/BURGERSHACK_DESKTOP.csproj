@@ -143,22 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clnAcesso.cs" />
-    <Compile Include="clnArquivo.cs" />
-    <Compile Include="clnAtendimento.cs" />
-    <Compile Include="clnCargo.cs" />
-    <Compile Include="clnCliente.cs" />
-    <Compile Include="clnConta.cs" />
-    <Compile Include="clnEstoque.cs" />
-    <Compile Include="clnFornecedor.cs" />
-    <Compile Include="clnFuncionario.cs" />
-    <Compile Include="clnIngrediente.cs" />
-    <Compile Include="clnMercadoria.cs" />
-    <Compile Include="clnPagamento.cs" />
-    <Compile Include="clnPagamentoForma.cs" />
-    <Compile Include="clnTipo.cs" />
     <Compile Include="clnUtilConta.cs" />
-    <Compile Include="clnUtilListar.cs" />
     <Compile Include="frmConfirmar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,13 +163,6 @@
       <DependentUpon>frmMesa.cs</DependentUpon>
     </Compile>
     <Compile Include="Numboard\ControlNumboard.cs" />
-    <Compile Include="clnMesa.cs" />
-    <Compile Include="clnPedido.cs" />
-    <Compile Include="clnItem.cs" />
-    <Compile Include="clnItemIngrediente.cs" />
-    <Compile Include="clnProduto.cs" />
-    <Compile Include="clnProdutoIngrediente.cs" />
-    <Compile Include="clnReserva.cs" />
     <Compile Include="clnUtilPedido.cs" />
     <Compile Include="clnUtilVisualizar.cs" />
     <Compile Include="clnUtilSelecionar.cs" />

@@ -12,7 +12,7 @@ using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnItemIngrediente
     {
@@ -75,7 +75,7 @@ namespace BurgerShack.Desktop
             objUpdate.execute(App.DatabaseSql);
         }
 
-        internal void remover()
+        public void remover()
         {
             sqlDelete objDelete = new sqlDelete();
             objDelete.table("item_ingrediente");

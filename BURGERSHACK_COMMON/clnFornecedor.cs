@@ -6,9 +6,9 @@ using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnFornecedor
+    public class clnFornecedor
     {
 
         private int _cod;

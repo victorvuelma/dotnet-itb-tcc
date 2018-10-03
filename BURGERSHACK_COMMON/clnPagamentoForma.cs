@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnPagamentoForma
+    public class clnPagamentoForma
     {
 
         private int _cod;

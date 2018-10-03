@@ -1,4 +1,5 @@
-﻿using vitorrdgs.Util;
+﻿using BurgerShack.Common;
+using vitorrdgs.Util;
 
 namespace BurgerShack.Desktop
 {

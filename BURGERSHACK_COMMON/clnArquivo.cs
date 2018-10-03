@@ -6,9 +6,9 @@ using System.IO;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnArquivo
+    public class clnArquivo
     {
 
         public static UtilCache CACHE = new UtilCache("arquivo");

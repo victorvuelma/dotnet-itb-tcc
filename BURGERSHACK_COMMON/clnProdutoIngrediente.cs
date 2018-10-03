@@ -12,7 +12,7 @@ using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnProdutoIngrediente
     {
@@ -93,7 +93,7 @@ namespace BurgerShack.Desktop
             return objProdutoIngredientes;
         }
 
-        internal void gravar()
+        public void gravar()
         {
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("produto_ingrediente");
@@ -107,7 +107,7 @@ namespace BurgerShack.Desktop
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
-        internal void alterar()
+        public void alterar()
         {
             sqlUpdate objUpdate = new sqlUpdate();
             objUpdate.table("produto_ingrediente");

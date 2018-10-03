@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnItem
     {
@@ -85,7 +85,7 @@ namespace BurgerShack.Desktop
             objUpdate.execute(App.DatabaseSql);
         }
 
-        internal void remover()
+        public void remover()
         {
             Situacao = itemSituacao.CANCELADO;
 

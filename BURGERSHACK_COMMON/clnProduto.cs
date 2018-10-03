@@ -5,7 +5,7 @@ using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnProduto
     {
@@ -35,7 +35,7 @@ namespace BurgerShack.Desktop
         public string Nome { get => _nome; set => _nome = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
         public decimal Valor { get => _valor; set => _valor = value; }
-        internal produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
+        public produtoSituacao Situacao { get => _situacao; set => _situacao = value; }
         public int? CodMercadoria { get => _codMercadoria; set => _codMercadoria = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
 
@@ -84,7 +84,7 @@ namespace BurgerShack.Desktop
             return objProdutos;
         }
 
-        internal List<clnProduto> obterPorNome()
+        public List<clnProduto> obterPorNome()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("produto");

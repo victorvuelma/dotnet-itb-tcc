@@ -8,9 +8,9 @@ using vitorrdgs.Util;
 using vitorrdgs.Util.Data;
 using vitorrdgs.Util.Hash;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnCliente
+    public class clnCliente
     {
 
         private int _cod = -1;
@@ -77,7 +77,7 @@ namespace BurgerShack.Desktop
             return objCliente;
         }
 
-        internal List<clnCliente> obterPorNomeCPF()
+        public List<clnCliente> obterPorNomeCPF()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("cliente");

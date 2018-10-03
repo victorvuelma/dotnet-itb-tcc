@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnPagamento
     {
@@ -84,7 +84,7 @@ namespace BurgerShack.Desktop
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
-        internal List<clnPagamento> obterPagamentosPorCpf()
+        public List<clnPagamento> obterPagamentosPorCpf()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("pagamento");

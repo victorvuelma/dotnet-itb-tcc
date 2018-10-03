@@ -6,7 +6,7 @@ using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnReserva
     {
@@ -36,7 +36,7 @@ namespace BurgerShack.Desktop
         public int CodCliente { get => _codCliente; set => _codCliente = value; }
         public int? CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public List<int> CodMesas { get => _codMesas; set => _codMesas = value; }
-        internal reservaSituacao Situacao { get => _situacao; set => _situacao = value; }
+        public reservaSituacao Situacao { get => _situacao; set => _situacao = value; }
         public int Pessoas { get => _pessoas; set => _pessoas = value; }
         public DateTime Agendado { get => _agendado; set => _agendado = value; }
         public DateTime Agendamento { get => _agendamento; set => _agendamento = value; }
@@ -176,7 +176,7 @@ namespace BurgerShack.Desktop
             objUpdate.execute(App.DatabaseSql);
         }
 
-        internal void addMesa(int mesa)
+        public void addMesa(int mesa)
         {
             if (!CodMesas.Contains(mesa))
             {
@@ -193,7 +193,7 @@ namespace BurgerShack.Desktop
             }
         }
 
-        internal void removerMesa(int mesa)
+        public void removerMesa(int mesa)
         {
             if (CodMesas.Contains(mesa))
             {

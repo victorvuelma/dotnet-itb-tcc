@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnPedido
     {
@@ -77,7 +77,7 @@ namespace BurgerShack.Desktop
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
         }
 
-        internal List<clnPedido> obterPedidos()
+        public List<clnPedido> obterPedidos()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("pedido");
@@ -117,7 +117,7 @@ namespace BurgerShack.Desktop
             }
         }
 
-        internal void finalizar()
+        public void finalizar()
         {
             Situacao = pedidoSituacao.PRONTO;
             alterar();

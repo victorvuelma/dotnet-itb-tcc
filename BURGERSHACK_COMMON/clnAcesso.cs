@@ -6,14 +6,14 @@ using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 using vitorrdgs.Util.Hash;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnAcesso
+    public class clnAcesso
     {
 
         private int _codFuncionario = -1;
         private bool _ativo = true;
-
+        
         private String _usuario;
         private String _senha;
 
@@ -65,7 +65,7 @@ namespace BurgerShack.Desktop
             return usuario;
         }
 
-        internal clnAcesso obterPorUsuario()
+        public clnAcesso obterPorUsuario()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");
@@ -80,7 +80,7 @@ namespace BurgerShack.Desktop
             return objAcesso;
         }
 
-        internal clnAcesso obterPorFuncionario()
+        public clnAcesso obterPorFuncionario()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");
@@ -95,7 +95,7 @@ namespace BurgerShack.Desktop
             return objAcesso;
         }
 
-        internal List<clnAcesso> obterTodos()
+        public List<clnAcesso> obterTodos()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("acesso");

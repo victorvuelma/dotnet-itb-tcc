@@ -10,7 +10,7 @@ using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
     public class clnAtendimento
     {
@@ -84,7 +84,7 @@ namespace BurgerShack.Desktop
             return objAtendimento;
         }
 
-        internal List<clnAtendimento> obterAtendimentos()
+        public List<clnAtendimento> obterAtendimentos()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("atendimento");

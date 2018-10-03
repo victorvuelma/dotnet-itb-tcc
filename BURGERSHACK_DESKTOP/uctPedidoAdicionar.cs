@@ -1,4 +1,5 @@
-﻿using BurgerShack.Desktop.Numboard;
+﻿using BurgerShack.Common;
+using BurgerShack.Desktop.Numboard;
 using BurgerShack.Desktop.Util;
 using System;
 using System.Collections.Generic;

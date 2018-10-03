@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
-namespace BurgerShack.Desktop
+namespace BurgerShack.Common
 {
-    class clnCargo
+    public class clnCargo
     {
 
         private int _cod = -1;
