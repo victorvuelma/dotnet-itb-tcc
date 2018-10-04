@@ -28,91 +28,105 @@
     <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-    <div id="container">
-
-        <div id=container>
-            <!-- CABEÇALHO -->
-            <header>
-                <div class="container">
-                    <img src="~/Resources/img/logo.png" />
-                    <div class="header-right">
-                        <a href="~/index.cshtml">Início</a>
-                        <a href="~/index.cshtml#catalogo">Catálogo</a>
-                        <a href="~/index.cshtml#sobre">Sobre</a>
-                        <a class="active" href="~/Pages/acessar.cshtml">Acessar</a>
-                    </div>
+    <!-- CABEÇALHO -->
+    <!-- CABEÇALHO -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="~/index.cshtml">
+                    <img src="~/Resources/img/logo.png" width="100" height="35" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="~/index.cshtml">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/index.cshtml#catalogo">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/index.cshtml#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Pages/acessar.cshtml">Acessar</a>
+                        </li>
+                    </ul>
                 </div>
-            </header>
-        </div>
+            </div>
+        </nav>
+    </header>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-centraliza">
-                    <h3>Desejo me cadastrar</h3>
-                    <br /><br />
-                    <div class="form-inline">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <form role="form" method="post" action="~/Pages/perfil.cshtml">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadName" placeholder="Primeiro Nome">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadCPF" placeholder="CPF">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadEmail" placeholder="E-mail">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputNumeroCartao" placeholder="Número do Cartão" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadSenha" placeholder="Senha" />
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-6">
-                                <form role="form" method="get" action="~/Pages/perfil.cshtml">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadSobrenome" placeholder="Sobrenome" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadDataNascimento" placeholder="Data de Nascimento" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputCadTelefoneCelular" placeholder="Telefone Celular" />
-                                    </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col" id="colcolumn1">
-                                                <div class="form-group'">
-                                                    <input type="text" class="form-control" id="inputCadDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
-                                                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-centraliza">
+                <h3>Desejo me cadastrar</h3>
+                <br /><br />
+                <div class="form-inline">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form" method="post" action="~/Pages/perfil.cshtml">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCadName" placeholder="Primeiro Nome">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCadCPF" placeholder="CPF">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCadEmail" placeholder="E-mail">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputNumeroCartao" placeholder="Número do Cartão" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCadSenha" placeholder="Senha" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <form role="form" method="get" action="~/Pages/perfil.cshtml">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCadSobrenome" placeholder="Sobrenome" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCadDataNascimento" placeholder="Data de Nascimento" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputCadTelefoneCelular" placeholder="Telefone Celular" />
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col" id="colcolumn1">
+                                            <div class="form-group'">
+                                                <input type="text" class="form-control" id="inputCadDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
                                             </div>
-                                            <div class="col" id="colcolumn1">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="inputCadCVV" placeholder="CVV" />
-                                                </div>
+                                        </div>
+                                        <div class="col" id="colcolumn1">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="inputCadCVV" placeholder="CVV" />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col">
-                                                <label>
-                                                    <button type="submit" class="btn btn-default">Registrar-se</button>
-                                                </label>
-                                            </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>
+                                                <button type="submit" class="btn btn-default">Registrar-se</button>
+                                            </label>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- RODAPÉ -->
     <footer>
         <div class="container">
@@ -136,7 +150,7 @@
                 </div>
                 <div class="col-md-4">
                     <b>Localização</b>
-                    <img src="~/Resources/img/Screenshot_4.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
+                    <img src="~/Resources/img/mapa.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
                 </div>
             </div>
         </div>

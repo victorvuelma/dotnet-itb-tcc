@@ -4,12 +4,10 @@
     margin: 0px;
 }
 
-header {
-    overflow: hidden;
-    background-color: #3A5168;
-    padding: 0px 10px;
-    color: white;
+.navbar {
+    background-color: #3A5168;    
 }
+
 
 h3 {
     color: #3A5168 !important;
@@ -28,17 +26,21 @@ h3 {
     margin-top: -16px;
     width: 35% !important;
 }
-textarea#textareaReservaInformacoes{
+
+textarea#textareaReservaInformacoes {
     border-radius: 10px !important;
 }
+
 #reserva {
     padding: 6px 0px 6px 0px;
     margin: 0px 0px 0px 0px;
 }
+
 #colcolumn1 {
     padding-left: 0px;
     padding-right: 0px;
 }
+
 .btn {
     margin-left: 20px;
     width: 150px;
@@ -72,46 +74,6 @@ footer {
     height: 280px;
 }
 
-header a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-}
-
-    header a.logo {
-        font-size: 25px;
-        font-weight: bold;
-        width: 10px;
-    }
-
-header img {
-    padding: 0px 5px;
-    margin-top: 5px;
-    width: 100px;
-}
-
-header a:hover {
-    background-color: #2C3E50;
-    color: white;
-}
-
-header a.active {
-    background-color: dodgerblue;
-    color: white;
-}
-
-header figure {
-    height: 10px;
-}
-
-.header-right {
-    float: right;
-}
-
 .panel-price {
     background-color: #34495E;
     height: 30px;
@@ -122,18 +84,6 @@ header figure {
 .panel.panel-default {
     background-color: #34495E;
     height: 250px;
-}
-
-@media screen and (max-width: 500px) {
-    header a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .header-right {
-        float: none;
-    }
 }
 
 [class*="col-"] {

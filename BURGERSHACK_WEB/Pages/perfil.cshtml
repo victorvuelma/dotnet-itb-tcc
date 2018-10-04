@@ -28,113 +28,125 @@
     <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-    <div id="container">
 
-        <div id=container>
-            <!-- CABEÇALHO -->
-            <header>
-                <div class="container">
-                    <img src="~/Resources/img/logo.png" />
-                    <div class="header-right">
-                        <a href="~/index.cshtml">Início</a>
-                        <a href="~/index.cshtml#catalogo">Catálogo</a>
-                        <a href="~/index.cshtml#sobre">Sobre</a>
-                        <a class="active" href="~/Pages/acessar.cshtml">Acessar</a>
-                    </div>
+    <!-- CABEÇALHO -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="~/index.cshtml">
+                    <img src="~/Resources/img/logo.png" width="100" height="35" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="~/index.cshtml">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/index.cshtml#catalogo">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/index.cshtml#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Pages/acessar.cshtml">Acessar</a>
+                        </li>
+                    </ul>
                 </div>
-            </header>
-        </div>
+            </div>
+        </nav>
+    </header>
 
-        <div class="container">
-            <div class="row">
+    <div class="container">
+        <div class="row">
 
-                <div class="col-md-6 col-centraliza">
-                    <h3>Meu Perfil</h3>
-                    <div class="form-inline">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileName" placeholder="Nome da Pessoa">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileCPF" placeholder="CPF da Pessoa">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileEmail" placeholder="E-mail da Pessoa">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileCartao" placeholder="Número do Cartão - ***" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileSenha" placeholder="Senha - ****" />
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-6">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileSobrenome" placeholder="Sobrenome da Pessoa" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileDataNascimento" placeholder="Data de Nascimento da Pessa" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputProfileTelefoneCelular" placeholder="Telefone Celular da Pessoa" />
-                                    </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col" id="colcolumn1">
-                                                <div class="form-group'">
-                                                    <input type="text" class="form-control" id="inputProfileDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
-                                                </div>
-                                            </div>
-                                            <div class="col" id="colcolumn1">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="inputProfileCVV" placeholder="CVV - ***" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col">
-                                                <label>
-                                                    <button type="submit" class="btn btn-default">Alterar</button>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-6 col-centraliza">
-                    <h3>Minhas Reservas</h3>
+            <div class="col-md-6 col-centraliza">
+                <h3>Meu Perfil</h3>
+                <div class="form-inline">
                     <div class="row">
-                        <div class="left-area">
-                            <ul id="ss_elem_list"
-                                tabindex="0"
-                                role="listbox"
-                                aria-labelledby="ss_elem">
-                                <li id="ss_elem_Np" role="option">
-                                    Informações Reserva 1
-                                </li>
-                            </ul>
+                        <div class="col-md-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileName" placeholder="Nome da Pessoa">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileCPF" placeholder="CPF da Pessoa">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileEmail" placeholder="E-mail da Pessoa">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileCartao" placeholder="Número do Cartão - ***" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileSenha" placeholder="Senha - ****" />
+                                </div>
+                            </form>
                         </div>
+                        <div class="col-md-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileSobrenome" placeholder="Sobrenome da Pessoa" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileDataNascimento" placeholder="Data de Nascimento da Pessa" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputProfileTelefoneCelular" placeholder="Telefone Celular da Pessoa" />
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col" id="colcolumn1">
+                                            <div class="form-group'">
+                                                <input type="text" class="form-control" id="inputProfileDataVencimento" placeholder="Data de Validade" style="font-size: 13px;" />
+                                            </div>
+                                        </div>
+                                        <div class="col" id="colcolumn1">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="inputProfileCVV" placeholder="CVV - ***" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>
+                                                <button type="submit" class="btn btn-default">Alterar</button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
-                    <a href="~/Pages/reserva.cshtml">
-                        <button class="btn btn-default">Nova Reserva</button>
-                    </a>
                 </div>
 
             </div>
+            <div class="col-md-6 col-centraliza">
+                <h3>Minhas Reservas</h3>
+                <div class="row">
+                    <div class="left-area">
+                        <ul id="ss_elem_list"
+                            tabindex="0"
+                            role="listbox"
+                            aria-labelledby="ss_elem">
+                            <li id="ss_elem_Np" role="option">
+                                Informações Reserva 1
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="~/Pages/reserva.cshtml">
+                    <button class="btn btn-default">Nova Reserva</button>
+                </a>
+            </div>
         </div>
     </div>
-    </div>
+
     <!-- RODAPÉ -->
     <footer>
         <div class="container">
@@ -158,7 +170,7 @@
                 </div>
                 <div class="col-md-4">
                     <b>Localização</b>
-                    <img src="~/Resources/img/Screenshot_4.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
+                    <img src="~/Resources/img/mapa.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
                 </div>
             </div>
         </div>

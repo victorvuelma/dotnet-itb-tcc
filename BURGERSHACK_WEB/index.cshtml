@@ -11,10 +11,10 @@
     <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
     <link rel="shortcut icon" href="" type="image/x-icon">
     <!-- CSS PADRÃO -->
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
 
     <!-- Telas Responsivas -->
     <link rel=stylesheet media="screen and (max-width:480px)" href="~/Resources/css/style480.css">
@@ -28,20 +28,35 @@
     <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-    <!-- CONTEÚDO -->
-    <div id=container>
-        <!-- CABEÇALHO -->
-        <header>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <img src="Resources/img/logo.png" />
-                <div class="header-right">
-                    <a href="index.cshtml">Início</a>
-                    <a href="#catalogo">Catálogo</a>
-                    <a href="#sobre">Sobre</a>
-                    <a class="active" href="~/Pages/acessar.cshtml">Acessar</a>
+                <a class="navbar-brand" href="#">
+                    <img src="~/Resources/img/logo.png" width="100" height="35" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#catalogo">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Pages/acessar.cshtml">Acessar</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </nav>
 
         <!-- SLIDES -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -70,186 +85,186 @@
                 <span class="sr-only">Avançar</span>
             </a>
         </div>
-        <br />
+    </header>
+    <br />
 
-        <!-- GRID DE PRODUTOS -->
-        <section id="catalogo" style="margin-left: 75px;">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+    <!-- GRID DE PRODUTOS -->
+    <section id="catalogo" style="margin-left: 75px;">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
-                <div class="card-body">
-                    <h5 class="card-title">Shack Gourmet</h5>
-                    <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
-                </div>
-                <div class="panel-price">
-                    <div class="panel-body"><b>R$: 19,90</b></div>
-                </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
             </div>
-        </section>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+            </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+            </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+            </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="Resources/img/products/Shack Gourmet - 286x180.png" alt="Shack Gourmet">
+            <div class="card-body">
+                <h5 class="card-title">Shack Gourmet</h5>
+                <p class="card-text">● Alface, Tomate e Cebola <br /> ● Frango <br /> ● Bacon <br /> ● Cheddar e Barbecue <br /> ● Hambúrguer</p>
+            </div>
+            <div class="panel-price">
+                <div class="panel-body"><b>R$: 19,90</b></div>
+            </div>
+        </div>
+    </section>
 
-        <section id="sobre">
-            <!-- FEEDBACK SLIDES -->
-            <!--
-            <div class="panel panel-default">
-                <div id="text-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="row">
-                        <div class="col-xs-offset-3 col-xs-6">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="carousel-content">
-                                        <div>
-                                            Depot
-                                        </div>
+    <section id="sobre">
+        <!-- FEEDBACK SLIDES -->
+        <!--
+        <div class="panel panel-default">
+            <div id="text-carousel" class="carousel slide" data-ride="carousel">
+                <div class="row">
+                    <div class="col-xs-offset-3 col-xs-6">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="carousel-content">
+                                    <div>
+                                        Depot
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="carousel-content">
-                                        <div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="carousel-content">
-                                        <div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
+                            <div class="item">
+                                <div class="carousel-content">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="carousel-content">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <a class="left carousel-control" href="#text-carousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#text-carousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
                 </div>
+                <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#text-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
-            -->
-        </section>
+        </div>
+        -->
+    </section>
 
-        <!-- FEEDBACK SEND-->
+    <!-- FEEDBACK SEND-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-centraliza">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="w-100 p-3, form-control" id="inputfirstName" placeholder="Primeiro Nome">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="w-100 p-3, form-control" id="inputSecondName" placeholder="Segundo Nome">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="w-100 p-3 form-control" id="inputEmail" placeholder="Email" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém.</small>>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="w-100 p-3, form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deixe seu feedback"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
         <div class="container">
+            <br /><br />
             <div class="row">
-                <div class="col-md-6 col-centraliza">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="w-100 p-3, form-control" id="inputfirstName" placeholder="Primeiro Nome">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="w-100 p-3, form-control" id="inputSecondName" placeholder="Segundo Nome">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="w-100 p-3 form-control" id="inputEmail" placeholder="Email" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém.</small>>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="w-100 p-3, form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deixe seu feedback"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width:100%">Enviar</button>
-                    </form>
+                <div class="col-sm-4">
+                    <ul>
+                        <b>Sobre o Burger Shack</b></br></br>
+                        <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul>
+                        <b>Contatos</b></br></br>
+                        <p>facebook.com/burguershack</p>
+                        <p>(11) 4998-5255</p>
+                        <p>sac@burgershack.com</p>
+                        <p>Avenida Pompéia nº 50, São Paulo - SP</p>
+
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <b>Localização</b>
+                    <img src="~/Resources/img/mapa.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
                 </div>
             </div>
         </div>
-
-        <!-- RODAPÉ -->
-        <footer>
-            <div class="container">
-                <br /><br />
-                <div class="row">
-                    <div class="col-sm-4">
-                        <ul>
-                            <b>Sobre o Burger Shack</b></br></br>
-                            <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3">
-                        <ul>
-                            <b>Contatos</b></br></br>
-                            <p>facebook.com/burguershack</p>
-                            <p>(11) 4998-5255</p>
-                            <p>sac@burgershack.com</p>
-                            <p>Avenida Pompéia nº 50, São Paulo - SP</p>
-
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <b>Localização</b>
-                        <img src="~/Resources/img/Screenshot_4.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>
