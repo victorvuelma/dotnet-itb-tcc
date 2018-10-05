@@ -85,6 +85,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\css\all.css" />
+    <Content Include="Resources\css\all.min.css" />
     <Content Include="Resources\css\animate.css" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.css" />
     <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css" />
@@ -93,6 +95,8 @@
     <Content Include="Resources\css\bootstrap\bootstrap.css" />
     <Content Include="Resources\css\bootstrap\bootstrap.min.css" />
     <Content Include="Resources\css\default.css" />
+    <Content Include="Resources\img\favicon.png" />
+    <Content Include="Resources\img\logo.png" />
     <Content Include="Resources\js\listbox-scrollable.js" />
     <Content Include="Resources\css\listbox.css" />
     <Content Include="Resources\js\listbox.js" />
@@ -101,7 +105,6 @@
     <Content Include="Resources\css\style1025.css" />
     <Content Include="Resources\css\style480.css" />
     <Content Include="Resources\css\style768.css" />
-    <Content Include="Resources\img\logo.png" />
     <Content Include="Resources\img\products\Shack Beef.png" />
     <Content Include="Resources\img\products\Shack Cheese.png" />
     <Content Include="Resources\img\products\Shack Gourmet.png" />
@@ -122,6 +125,9 @@
     <Content Include="Resources\js\scripts.js" />
     <Content Include="Resources\js\wow.js" />
     <Content Include="Resources\js\wow.min.js" />
+    <Content Include="Resources\webfonts\fa-brands-400.svg" />
+    <Content Include="Resources\webfonts\fa-regular-400.svg" />
+    <Content Include="Resources\webfonts\fa-solid-900.svg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -141,11 +147,23 @@
     <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js.map" />
     <Content Include="Resources\js\bootstrap\bootstrap.js.map" />
     <Content Include="Resources\js\bootstrap\bootstrap.min.js.map" />
-    <Content Include="Pages\acessar.cshtml" />
-    <Content Include="Pages\reserva.cshtml" />
-    <Content Include="Pages\perfil.cshtml" />
+    <Content Include="acessar.cshtml" />
+    <Content Include="reserva.cshtml" />
+    <Content Include="perfil.cshtml" />
     <Content Include="Resources\js\popper.min.js" />
-    <Content Include="Pages\cadastro.cshtml" />
+    <Content Include="cadastro.cshtml" />
+    <Content Include="Resources\webfonts\fa-brands-400.eot" />
+    <Content Include="Resources\webfonts\fa-brands-400.ttf" />
+    <Content Include="Resources\webfonts\fa-brands-400.woff" />
+    <Content Include="Resources\webfonts\fa-brands-400.woff2" />
+    <Content Include="Resources\webfonts\fa-regular-400.eot" />
+    <Content Include="Resources\webfonts\fa-regular-400.ttf" />
+    <Content Include="Resources\webfonts\fa-regular-400.woff" />
+    <Content Include="Resources\webfonts\fa-regular-400.woff2" />
+    <Content Include="Resources\webfonts\fa-solid-900.eot" />
+    <Content Include="Resources\webfonts\fa-solid-900.ttf" />
+    <Content Include="Resources\webfonts\fa-solid-900.woff" />
+    <Content Include="Resources\webfonts\fa-solid-900.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang=pt-br>
 <head>
-    <title>BurgerShack - Reserva</title>
+    <title>BurgerShack - Acessar</title>
     <meta charset=UTF-8> <!-- ISO-8859-1 -->
     <meta name=viewport content="width=device-width, initial-scale=1.0"> <!-- Para não travar o zoom -->
     <meta name=description content=""> <!-- No máximo 360 caracteres, pode haver falhas com mais de 160 caracteres-->
@@ -9,12 +9,13 @@
     <meta name=author content="Caio Silva and vitorrdgs">
     <meta name=application-name content="BurgerShack">
     <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Resources/img/favicon.png" type="image/x-icon">
     <!-- CSS PADRÃO -->
     <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/all.min.css" />
 
     <!-- Telas Responsivas -->
     <link rel=stylesheet media="screen and (max-width:480px)" href="~/Resources/css/style480.css">
@@ -28,14 +29,12 @@
     <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-
-    <!-- CABEÇALHO -->
     <!-- CABEÇALHO -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="~/index.cshtml">
-                    <img src="~/Resources/img/logo.png" width="100" height="35" alt="">
+                    <img class="navbar-logo" src="~/Resources/img/logo.png" alt="Logo do BurgerShack">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,16 +42,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="~/index.cshtml">Início</a>
+                            <a class="nav-link" href="~/index.cshtml"><i class="fa fa-home"></i> Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/index.cshtml#catalogo">Catálogo</a>
+                            <a class="nav-link" href="~/index.cshtml#catalogo"><i class="fa fa-bars"></i> Catálogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/index.cshtml#sobre">Sobre</a>
+                            <a class="nav-link" href="~/index.cshtml#sobre"><i class="fa fa-info"></i> Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/Pages/acessar.cshtml">Acessar</a>
+                            <a class="nav-link" href="~/acessar.cshtml"><i class="fa fa-sign-in-alt"></i> Acessar</a>
                         </li>
                     </ul>
                 </div>
@@ -60,70 +59,51 @@
         </nav>
     </header>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-centraliza">
-                <h3 class="text-center">Nova Reserva</h3>
-                <div class="row">
-                    <form role="form" class="form-inline">
+    <!-- CONTEUDO -->
+    <section>
+        <h2>Já sou Cadastrado</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-center">
+                    <h4>Informe seus Dados:</h4>
+                    <form role="form" action="~/perfil.cshtml" method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputReservaCPF" placeholder="Confirme seu CPF">
+                            <input type="text" class="form-control" id="inputLoginCPF" placeholder="CPF" />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputReservaQuantidade" placeholder="Quantidade de Pessoas">
+                            <input type="text" class="form-control" id="inputLoginSenha" placeholder="Senha" />
                         </div>
-                    </form>
-                </div>
-                <div class="row">
-                    <form role="form" class="form-inline">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="inputReservaCPF" placeholder="DD/MM/AAAA">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="inputReservaQuantidade" placeholder="HH:MM">
-                        </div>
-                        <div class="form-group" style="margin-right: 0px;">
-                            <label style="width:100px;">
-                                <!--
-                                <button type="submit" class="btn btn-default" style="margin-left: 0px">Verificar</button>
-                                 -->
+                        <div class="checkbox float-right">
+                            <label>
+                                <input type="checkbox" /> Lembrar Senha
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in-alt"></i> Acessar</button>
                             </label>
                         </div>
                     </form>
+                    <a href="~/cadastro.cshtml">
+                        <button class="btn btn-default"><i class="fa fa-user-plus"></i> Cadastre-se</button>
+                    </a>
                 </div>
-                <div class="form-group">
-                    <textarea class="form-control" style="border-radius: 10px" id="textareaReservaInformacoes" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)"></textarea>
-                </div>
-                <a href="~/Pages/perfil.cshtml">
-                    <button type="submit" class="btn btn-default" style="width: 100%; margin: 0px;">Realizar Reserva</button>
-                </a>
             </div>
-        </div>
-    </div>
+    </section>
 
     <!-- RODAPÉ -->
     <footer>
         <div class="container">
-            <br /><br />
             <div class="row">
-                <div class="col-sm-4">
-                    <ul>
-                        <b>Sobre o Burger Shack</b></br></br>
-                        <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
-                    </ul>
+                <div class="col-sm-12 col-md-4">
+                    <h5>Sobre o Burger Shack</h5>
+                    <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
                 </div>
-                <div class="col-sm-3">
-                    <ul>
-                        <b>Contatos</b></br></br>
-                        <p>facebook.com/burguershack</p>
-                        <p>(11) 4998-5255</p>
-                        <p>sac@burgershack.com</p>
-                        <p>Avenida Pompéia nº 50, São Paulo - SP</p>
-
-                    </ul>
+                <div class="col-sm-12 col-md-4">
+                    <h5>Contatos</h5>
+                    <p><i class="fa fa-facebook-square"></i> facebook.com/burguershack</p>
+                    <p><i class="fa fa-phone"></i> (11) 4998-5255</p>
+                    <p><i class="fa fa-envelope"></i> sac@burgershack.com</p>
+                    <p><i class="fa fa-location-arrow"></i> Avenida Pompéia nº 50, São Paulo - SP</p>
                 </div>
-                <div class="col-md-4">
-                    <b>Localização</b>
+                <div class="col-sm-12 col-md-4">
+                    <h5>Localização</h5>
                     <img src="~/Resources/img/mapa.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
                 </div>
             </div>

@@ -1,11 +1,5 @@
-﻿body {
-    font-family: Arial;
-    color: white;
-    margin: 0px;
-}
-
-[class*="col-"] {
-    width: 100%;
+﻿.navbar-brand {
+    margin: auto;
 }
 
 .grid-container {
@@ -25,16 +19,16 @@
     width: 250px;
 }
 
-    .grid-item h5 {
-        width: 100%;
-        text-align: center;
-        min-height: 20px;
-        font-size: 0.5em;
-        display: block;
-        margin: 0 auto;
-        background-color: #34495E;
-    }
+.grid-item h5 {
+    width: 100%;
+    text-align: center;
+    min-height: 20px;
+    font-size: 0.5em;
+    display: block;
+    margin: 0 auto;
+    background-color: #34495E;
+}
 
-    .grid-item picture img {
-        width: 150px;
-    }
+.grid-item picture img {
+    width: 150px;
+}

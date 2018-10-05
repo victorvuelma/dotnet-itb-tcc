@@ -1,20 +1,59 @@
 ﻿body {
-    font-family: Arial;
     color: white;
     margin: 0px;
 }
 
-.navbar {
-    background-color: #3A5168;    
+textarea {
+    border-radius: 15px !important; 
 }
 
+.navbar {
+    background-color: #34495E;
+}
 
-h3 {
-    color: #3A5168 !important;
+.navbar-logo {
+    height: 45px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+section h2 {
+    padding: 20px 0px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    background-color: #3A5168;
+    color: white;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.card-body {
+    padding-bottom: 0.5em;
+}
+
+.card h5 {
+    font-weight: bold;
 }
 
 .card {
-    margin: 0px 5px 20px 5px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.panel-price {
+    background-color: #34495E;
+    height: 30px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
 }
 
 .form-inline .form-group {
@@ -25,10 +64,6 @@ h3 {
 #sel1 {
     margin-top: -16px;
     width: 35% !important;
-}
-
-textarea#textareaReservaInformacoes {
-    border-radius: 10px !important;
 }
 
 #reserva {
@@ -42,50 +77,40 @@ textarea#textareaReservaInformacoes {
 }
 
 .btn {
-    margin-left: 20px;
-    width: 150px;
     background-color: #3A5168;
     color: white;
+    min-width: 150px;
     border-radius: 100px !important;
+    text-transform: uppercase;
+    font-weight: bold !important;
 }
 
 .checkbox {
     color: #3A5168;
 }
 
-.form-control {
+input {
     width: 100% !important;
     border-radius: 100px !important;
 }
 
-.col-centraliza {
+.col-center {
     margin: auto;
-    margin-top: 50px;
 }
 
-.card-text {
-    text-align: justify;
+section {
+    padding-bottom: 15px;
 }
 
 footer {
-    background-color: #3A5168 !important;
+    background-color: #34495E;
     color: white;
     margin-top: 25px;
-    height: 280px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.panel-price {
-    background-color: #34495E;
-    height: 30px;
-    text-align: center;
-    line-height: 35px;
-}
-
-.panel.panel-default {
-    background-color: #34495E;
-    height: 250px;
-}
-
-[class*="col-"] {
-    width: 100%;
-}
+    footer h5 {
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
