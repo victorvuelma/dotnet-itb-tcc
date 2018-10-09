@@ -85,22 +85,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\css\all.css" />
-    <Content Include="Resources\css\all.min.css" />
-    <Content Include="Resources\css\animate.css" />
-    <Content Include="Resources\css\bootstrap\bootstrap-grid.css" />
-    <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css" />
-    <Content Include="Resources\css\bootstrap\bootstrap-reboot.css" />
-    <Content Include="Resources\css\bootstrap\bootstrap-reboot.min.css" />
-    <Content Include="Resources\css\bootstrap\bootstrap.css" />
-    <Content Include="Resources\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Resources\css\fontawesome.min.css" />
+    <Content Include="Resources\css\bootstrap.min.css" />
     <Content Include="Resources\css\default.css" />
     <Content Include="Resources\img\favicon.png" />
     <Content Include="Resources\img\logo.png" />
-    <Content Include="Resources\js\listbox-scrollable.js" />
-    <Content Include="Resources\css\listbox.css" />
-    <Content Include="Resources\js\listbox.js" />
-    <Content Include="Resources\css\media-queries.css" />
     <Content Include="Resources\css\style1024.css" />
     <Content Include="Resources\css\style1025.css" />
     <Content Include="Resources\css\style480.css" />
@@ -111,20 +100,10 @@
     <Content Include="Resources\img\products\Shack Hamburguer.png" />
     <Content Include="Resources\img\slider\slider-1.png" />
     <Content Include="Resources\img\slider\slider-2.png" />
-    <Content Include="Resources\js\bootstrap\bootstrap.bundle.js" />
-    <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js" />
-    <Content Include="Resources\js\bootstrap\bootstrap.js" />
-    <Content Include="Resources\js\bootstrap\bootstrap.min.js" />
+    <Content Include="Resources\js\bootstrap.min.js" />
     <Content Include="Resources\js\jquery-3.2.1.min.js" />
-    <Content Include="Resources\js\jquery-migrate-3.0.0.min.js" />
-    <Content Include="Resources\js\jquery.backstretch.js" />
-    <Content Include="Resources\js\jquery.backstretch.min.js" />
-    <Content Include="Resources\js\maps.js" />
-    <Content Include="Resources\js\retina-1.1.0.js" />
-    <Content Include="Resources\js\retina-1.1.0.min.js" />
-    <Content Include="Resources\js\scripts.js" />
-    <Content Include="Resources\js\wow.js" />
-    <Content Include="Resources\js\wow.min.js" />
+    <Content Include="Resources\js\jquery.mask.min.js" />
+    <Content Include="Resources\js\script.js" />
     <Content Include="Resources\webfonts\fa-brands-400.svg" />
     <Content Include="Resources\webfonts\fa-regular-400.svg" />
     <Content Include="Resources\webfonts\fa-solid-900.svg" />
@@ -136,20 +115,10 @@
   <ItemGroup>
     <Content Include="index.cshtml" />
     <None Include="packages.config" />
-    <Content Include="Resources\css\bootstrap\bootstrap-grid.css.map" />
-    <Content Include="Resources\css\bootstrap\bootstrap-grid.min.css.map" />
-    <Content Include="Resources\css\bootstrap\bootstrap-reboot.css.map" />
-    <Content Include="Resources\css\bootstrap\bootstrap-reboot.min.css.map" />
-    <Content Include="Resources\css\bootstrap\bootstrap.css.map" />
-    <Content Include="Resources\css\bootstrap\bootstrap.min.css.map" />
     <Content Include="Resources\img\slider\slider-1.psd" />
-    <Content Include="Resources\js\bootstrap\bootstrap.bundle.js.map" />
-    <Content Include="Resources\js\bootstrap\bootstrap.bundle.min.js.map" />
-    <Content Include="Resources\js\bootstrap\bootstrap.js.map" />
-    <Content Include="Resources\js\bootstrap\bootstrap.min.js.map" />
     <Content Include="acessar.cshtml" />
     <Content Include="reserva.cshtml" />
-    <Content Include="perfil.cshtml" />
+    <Content Include="conta.cshtml" />
     <Content Include="Resources\js\popper.min.js" />
     <Content Include="cadastro.cshtml" />
     <Content Include="Resources\webfonts\fa-brands-400.eot" />

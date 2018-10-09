@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang=pt-br>
 <head>
-    <title>BurgerShack - Nova Reserva</title>
+    <title>BurgerShack - Minha Conta</title>
     <meta charset=UTF-8> <!-- ISO-8859-1 -->
     <meta name=viewport content="width=device-width, initial-scale=1.0"> <!-- Para não travar o zoom -->
     <meta name=description content=""> <!-- No máximo 360 caracteres, pode haver falhas com mais de 160 caracteres-->
@@ -55,33 +55,71 @@
     </header>
 
     <!-- CONTEUDO -->
-    <section id="reserva">
-        <h2>Nova Reserva</h2>
+    <section id="conta">
+        <h2>Minha Conta</h2>
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-8 col-lg-6 col-center">
-                    <form role="form" class="form">
-                        <h3>Informações da reserva</h3>
+                <div class="col-lg-6 col-md-8 col-sm-12 col-centraliza">
+                    <h3>Meus Dados</h3>
+                    <form class="form" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="inputContaNome" placeholder="Nome Completo" required value="Victor Rodrigues" />
+                        </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="inputReservaCPF" placeholder="Confirme seu CPF" data-mask="000.000.000-00" required>
+                                    <input type="email" class="form-control" id="inputContaEmail" placeholder="E-mail" required disabled value="rodrigues.victor@outlook.com" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="inputReservaLugares" placeholder="Lugares" required value="2">
+                                    <input type="password" class="form-control" id="inputContaSenha" placeholder="Senha" required value="123" />
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="date" class="form-control" id="inputReservaData" required value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")">
+                            <input type="text" class="form-control" id="inputContaCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="11964145152" />
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control w-100" id="textReservaInformacoes" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)"></textarea>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="inputContaNascimento" placeholder="Data de Nascimento" required value="2001-06-22" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputContaCPF" placeholder="CPF" data-mask="000.000.000-00" required disabled value="49762768809" />
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-thumbtack"></i> Realizar Reserva</button>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputContaCartao" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="5234507671915750" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="inputContaValidade" placeholder="Data de Validade" data-mask="00/00" required value="12/12" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" id="inputContaCVV" placeholder="CVV" size="3" required value="123" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default float-right"><i class="fas fa-exchange-alt"></i> Alterar</button>
                     </form>
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-12 col-centraliza">
+                    <h3>Minhas Reservas</h3>
+                    <p>Nenhuma reserva encontrada</p>
+                    <a href="~/reserva.cshtml" class="btn btn-primary" role="button"><i class="fas fa-thumbtack"></i> Nova Reserva</a>
                 </div>
             </div>
         </div>

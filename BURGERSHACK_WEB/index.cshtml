@@ -10,23 +10,17 @@
     <meta name=application-name content="BurgerShack">
     <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
     <link rel="shortcut icon" href="~/Resources/img/favicon.png" type="image/x-icon">
-    <!-- CSS PADRÃO -->
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/all.min.css" />
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/fontawesome.min.css" />
 
     <!-- Telas Responsivas -->
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
     <link rel=stylesheet media="screen and (max-width:480px)" href="~/Resources/css/style480.css">
     <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="~/Resources/css/style768.css">
     <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="~/Resources/css/style1024.css">
     <link rel=stylesheet media="screen and (min-width:1025px)" href="~/Resources/css/style1025.css">
-
-    <!-- Bootstrap-->
-    <script src="~/Resources/js/jquery-3.2.1.min.js"></script>
-    <script src="~/Resources/js/popper.min.js"></script>
-    <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- CABEÇALHO -->
@@ -42,16 +36,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#"><i class="fa fa-home"></i> Início</a>
+                            <a class="nav-link" href="#"><i class="fas fa-home"></i> Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#catalogo"><i class="fa fa-bars"></i> Catálogo</a>
+                            <a class="nav-link" href="#catalogo"><i class="fas fa-bars"></i> Catálogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#sobre"><i class="fa fa-info"></i> Sobre</a>
+                            <a class="nav-link" href="#sobre"><i class="fas fa-info"></i> Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/acessar.cshtml"><i class="fa fa-sign-in-alt"></i> Acessar</a>
+                            <a class="nav-link" href="~/acessar.cshtml"><i class="fas fa-sign-in-alt"></i> Acessar</a>
                         </li>
                     </ul>
                 </div>
@@ -200,48 +194,45 @@
         </div>
         -->
     </section>
-    
+
     <!-- FEEDBACK SEND-->
-    <section id="feedback">
-        <h2>Deixe seu Feedback <i class="fa fa-smile"></i></h2>
+    <section id="feedback-send">
+        <h2>Deixe seu Feedback <i class="fas fa-smile"></i></h2>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-6 col-sm-12 col-center">
                     <form>
                         <div class="form-group">
-                            <input type="text" class="w-100 p-3, form-control" id="inputfirstName" placeholder="Primeiro Nome">
+                            <input type="text" class="form-control" id="inputFeedbackNome" placeholder="Primeiro Nome" required />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="w-100 p-3, form-control" id="inputSecondName" placeholder="Segundo Nome">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="w-100 p-3 form-control" id="inputEmail" placeholder="Email" aria-describedby="emailHelp">
+                            <input type="email" class="form-control" id="inputFeedbackEmail" placeholder="Email" aria-describedby="emailHelp" required />
                             <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém.</small>
                         </div>
                         <div class="form-group">
-                            <textarea class="w-100 p-3 form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deixe seu feedback"></textarea>
+                            <textarea class="w-100 form-control" id="inputFeedbackText" rows="3" placeholder="Deixe seu feedback" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-paper-plane"></i> Enviar</button>
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Enviar</button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>   
+    </section>
 
     <!-- RODAPÉ -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                        <h5>Sobre o Burger Shack</h5>
-                        <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
+                    <h5>Sobre o Burger Shack</h5>
+                    <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
-                        <h5>Contatos</h5>
-                        <p><i class="fa fa-facebook-square"></i> facebook.com/burguershack</p>
-                        <p><i class="fa fa-phone"></i> (11) 4998-5255</p>
-                        <p><i class="fa fa-envelope"></i> sac@burgershack.com</p>
-                        <p><i class="fa fa-location-arrow"></i> Avenida Pompéia nº 50, São Paulo - SP</p>
+                    <h5>Contatos</h5>
+                    <p><i class="fab fa-facebook-square"></i> facebook.com/burguershack</p>
+                    <p><i class="fas fa-phone"></i> (11) 4998-5255</p>
+                    <p><i class="fas fa-envelope"></i> sac@burgershack.com</p>
+                    <p><i class="fas fa-location-arrow"></i> Avenida Pompéia nº 50, São Paulo - SP</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Localização</h5>
@@ -250,5 +241,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript-->
+    <script src="~/Resources/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Resources/js/jquery.mask.min.js"></script>
+    <script src="~/Resources/js/popper.min.js"></script>
+    <script src="~/Resources/js/bootstrap.min.js"></script>
+    <script src="~/Resources/js/script.js"></script>
 </body>
 </html>

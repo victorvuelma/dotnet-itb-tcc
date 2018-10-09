@@ -8,25 +8,20 @@
     <meta name=keywords content=""> <!-- Opcional -->
     <meta name=author content="Caio Silva and vitorrdgs">
     <meta name=application-name content="BurgerShack">
+
     <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
     <link rel="shortcut icon" href="~/Resources/img/favicon.png" type="image/x-icon">
-    <!-- CSS PADRÃO -->
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/media-queries.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/all.min.css" />
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/fontawesome.min.css" />
 
     <!-- Telas Responsivas -->
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
     <link rel=stylesheet media="screen and (max-width:480px)" href="~/Resources/css/style480.css">
     <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="~/Resources/css/style768.css">
     <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="~/Resources/css/style1024.css">
     <link rel=stylesheet media="screen and (min-width:1025px)" href="~/Resources/css/style1025.css">
-
-    <!-- Bootstrap-->
-    <script src="~/Resources/js/jquery-3.2.1.min.js"></script>
-    <script src="~/Resources/js/popper.min.js"></script>
-    <script src="~/Resources/js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- CABEÇALHO -->
@@ -42,16 +37,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="~/index.cshtml"><i class="fa fa-home"></i> Início</a>
+                            <a class="nav-link" href="~/index.cshtml"><i class="fas fa-home"></i> Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/index.cshtml#catalogo"><i class="fa fa-bars"></i> Catálogo</a>
+                            <a class="nav-link" href="~/index.cshtml#catalogo"><i class="fas fa-bars"></i> Catálogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/index.cshtml#sobre"><i class="fa fa-info"></i> Sobre</a>
+                            <a class="nav-link" href="~/index.cshtml#sobre"><i class="fas fa-info"></i> Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/acessar.cshtml"><i class="fa fa-sign-in-alt"></i> Acessar</a>
+                            <a class="nav-link" href="~/acessar.cshtml"><i class="fas fa-sign-in-alt"></i> Acessar</a>
                         </li>
                     </ul>
                 </div>
@@ -60,31 +55,26 @@
     </header>
 
     <!-- CONTEUDO -->
-    <section>
+    <section id="acessar">
         <h2>Já sou Cadastrado</h2>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-center">
-                    <h4>Informe seus Dados:</h4>
-                    <form role="form" action="~/perfil.cshtml" method="post">
+                    <form role="form" action="~/conta.cshtml" method="post">
+                        <h4>Informe seus Dados:</h4>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputLoginCPF" placeholder="CPF" />
+                            <input type="text" class="form-control" id="inputLoginCPF" placeholder="CPF" data-mask="000.000.000-00" required />
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputLoginSenha" placeholder="Senha" />
+                            <input type="password" class="form-control" id="inputLoginSenha" placeholder="Senha" required />
                         </div>
-                        <div class="checkbox float-right">
-                            <label>
-                                <input type="checkbox" /> Lembrar Senha
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in-alt"></i> Acessar</button>
-                            </label>
-                        </div>
+
+                        <a href="~/cadastro.cshtml" class="btn btn-primary" role="button"><i class="fas fa-user-plus"></i> Cadastre-se</a>
+                        <button type="submit" class="btn btn-default float-right"><i class="fas fa-sign-in-alt"></i> Acessar</button>
                     </form>
-                    <a href="~/cadastro.cshtml">
-                        <button class="btn btn-default"><i class="fa fa-user-plus"></i> Cadastre-se</button>
-                    </a>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- RODAPÉ -->
@@ -97,10 +87,10 @@
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>
-                    <p><i class="fa fa-facebook-square"></i> facebook.com/burguershack</p>
-                    <p><i class="fa fa-phone"></i> (11) 4998-5255</p>
-                    <p><i class="fa fa-envelope"></i> sac@burgershack.com</p>
-                    <p><i class="fa fa-location-arrow"></i> Avenida Pompéia nº 50, São Paulo - SP</p>
+                    <p><i class="fab fa-facebook-square"></i> facebook.com/burguershack</p>
+                    <p><i class="fas fa-phone"></i> (11) 4998-5255</p>
+                    <p><i class="fas fa-envelope"></i> sac@burgershack.com</p>
+                    <p><i class="fas fa-location-arrow"></i> Avenida Pompéia nº 50, São Paulo - SP</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Localização</h5>
@@ -109,5 +99,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript-->
+    <script src="~/Resources/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Resources/js/jquery.mask.min.js"></script>
+    <script src="~/Resources/js/popper.min.js"></script>
+    <script src="~/Resources/js/bootstrap.min.js"></script>
+    <script src="~/Resources/js/script.js"></script>
 </body>
 </html>
