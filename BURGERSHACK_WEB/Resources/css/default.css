@@ -73,11 +73,6 @@ input {
     border-radius: 100px !important;
 }
 
-.form-control:disabled {
-    background-color: #bdc3c7;
-    opacity: 0.75;
-}
-
 .col-center {
     margin: auto;
 }
