@@ -1,5 +1,4 @@
-﻿using BurgerShack.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
@@ -24,6 +23,10 @@ namespace BurgerShack.Common
         private string _telCelular;
         private string _email;
 
+        private string _cartaoNumero;
+        private string _cartaoValidade;
+        private string _cartaoCVV;
+
         private DateTime _cadastro;
 
         public int Cod { get => _cod; set => _cod = value; }
@@ -34,6 +37,9 @@ namespace BurgerShack.Common
         public string Email { get => _email; set => _email = value; }
         public DateTime Cadastro { get => _cadastro; set => _cadastro = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
+        public string CartaoNumero { get => _cartaoNumero; set => _cartaoNumero = value; }
+        public string CartaoValidade { get => _cartaoValidade; set => _cartaoValidade = value; }
+        public string CartaoCVV { get => _cartaoCVV; set => _cartaoCVV = value; }
 
         private clnCliente obter(SqlDataReader reader) => new clnCliente
         {
@@ -44,7 +50,10 @@ namespace BurgerShack.Common
             TelCelular = UtilConvert.ToString(reader["tel_cel"]),
             Email = UtilConvert.ToString(reader["email"]),
             Cadastro = UtilConvert.ToDateTime(reader["cadastro"]),
-            Ativo = UtilConvert.ToBool(reader["ativo"])
+            Ativo = UtilConvert.ToBool(reader["ativo"]),
+            CartaoNumero = UtilConvert.ToString(reader["cartao_numero"]),
+            CartaoValidade = UtilConvert.ToString(reader["cartao_validade"]),
+            CartaoCVV = UtilConvert.ToString(reader["cartao_cvv"])
         };
 
         public clnCliente obterPorCod()
@@ -97,7 +106,7 @@ namespace BurgerShack.Common
         public void gravar()
         {
             String senha = UtilRandom.gerar(10);
-                       
+
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("cliente");
             objInsert.Value.val("id_funcionario", CodFuncionario)
@@ -105,6 +114,9 @@ namespace BurgerShack.Common
                             .val("cpf", Cpf)
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
+                            .val("cartao_numero", CartaoNumero)
+                            .val("cartao_validade", CartaoValidade)
+                            .val("cartao_cvv", CartaoCVV)
                             .val("cadastro", Cadastro)
                             .val("hash", Hash.HASH.cyph(senha))
                             .val("ativo", UtilConvert.ToBit(Ativo));
@@ -121,6 +133,9 @@ namespace BurgerShack.Common
             objUpdate.Value.val("nome", Nome)
                             .val("tel_cel", TelCelular)
                             .val("email", Email)
+                            .val("cartao_numero", CartaoNumero)
+                            .val("cartao_validade", CartaoValidade)
+                            .val("cartao_cvv", CartaoCVV)
                             .val("ativo", UtilConvert.ToBit(Ativo));
             objUpdate.execute(App.DatabaseSql);
         }
