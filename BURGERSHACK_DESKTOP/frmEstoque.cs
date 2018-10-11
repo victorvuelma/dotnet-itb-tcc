@@ -186,7 +186,7 @@ namespace BurgerShack.Desktop
 
             if (ObjEstoque != null)
             {
-                hdrUIX.Title = App.Name + " - Alterando Estoque " + ObjEstoque.Cod;
+                hdrUIX.Title = App.Name + " - Estoque " + ObjEstoque.Cod;
 
                 txtQuantidade.Text = UtilConvert.ToString(ObjEstoque.Quantidade);
                 txtValor.Text = ObjEstoque.Valor.ToString();
