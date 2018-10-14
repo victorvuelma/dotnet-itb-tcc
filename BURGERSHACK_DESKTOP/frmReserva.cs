@@ -226,6 +226,7 @@ namespace BurgerShack.Desktop
                             ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
                             ObjReserva.Agendado = dataAgendada;
                             ObjReserva.Agendamento = DateTime.Now;
+                            ObjReserva.Informacoes = txtInformacoes.Text;
 
                             ObjReserva.gravar();
 
@@ -236,6 +237,7 @@ namespace BurgerShack.Desktop
                     else if (txtPessoas.Enabled)
                     {
                         ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
+                        ObjReserva.Informacoes = txtInformacoes.Text;
                         ObjReserva.alterar();
 
                         UtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!");
@@ -418,6 +420,7 @@ namespace BurgerShack.Desktop
                 mtbData.Text = UtilFormatar.formatarData(ObjReserva.Agendado);
                 mtbHora.Text = UtilFormatar.formatarHora(ObjReserva.Agendado);
                 txtPessoas.Text = UtilConvert.ToString(ObjReserva.Pessoas);
+                txtInformacoes.Text = ObjReserva.Informacoes;
 
                 UtilForm.Disable(this);
 

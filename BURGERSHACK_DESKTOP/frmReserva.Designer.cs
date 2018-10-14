@@ -48,6 +48,7 @@
             this.grbSituacao = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new vitorrdgs.UiX.Component.UIXButton();
             this.btnConfirmar = new vitorrdgs.UiX.Component.UIXButton();
+            this.txtInformacoes = new vitorrdgs.UiX.Component.UIXTextBox();
             this.pnlMenu.SuspendLayout();
             this.grbCliente.SuspendLayout();
             this.grbReserva.SuspendLayout();
@@ -174,12 +175,13 @@
             // 
             // grbReserva
             // 
+            this.grbReserva.Controls.Add(this.txtInformacoes);
             this.grbReserva.Controls.Add(this.mtbHora);
             this.grbReserva.Controls.Add(this.txtPessoas);
             this.grbReserva.Controls.Add(this.mtbData);
             this.grbReserva.Location = new System.Drawing.Point(105, 155);
             this.grbReserva.Name = "grbReserva";
-            this.grbReserva.Size = new System.Drawing.Size(340, 55);
+            this.grbReserva.Size = new System.Drawing.Size(340, 140);
             this.grbReserva.TabIndex = 9;
             this.grbReserva.TabStop = false;
             this.grbReserva.Text = "RESERVA";
@@ -233,7 +235,7 @@
             // 
             this.grbMesas.Controls.Add(this.btnMesaVer);
             this.grbMesas.Controls.Add(this.btnMesaAdd);
-            this.grbMesas.Location = new System.Drawing.Point(105, 250);
+            this.grbMesas.Location = new System.Drawing.Point(105, 300);
             this.grbMesas.Name = "grbMesas";
             this.grbMesas.Size = new System.Drawing.Size(165, 90);
             this.grbMesas.TabIndex = 12;
@@ -288,7 +290,7 @@
             // 
             this.grbSituacao.Controls.Add(this.btnCancelar);
             this.grbSituacao.Controls.Add(this.btnConfirmar);
-            this.grbSituacao.Location = new System.Drawing.Point(280, 250);
+            this.grbSituacao.Location = new System.Drawing.Point(280, 300);
             this.grbSituacao.Name = "grbSituacao";
             this.grbSituacao.Size = new System.Drawing.Size(165, 90);
             this.grbSituacao.TabIndex = 13;
@@ -324,6 +326,21 @@
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // txtInformacoes
+            // 
+            this.txtInformacoes.AcceptButton = null;
+            this.txtInformacoes.Campo = "Informações";
+            this.txtInformacoes.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
+            this.txtInformacoes.Location = new System.Drawing.Point(5, 50);
+            this.txtInformacoes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtInformacoes.MaxLength = 32767;
+            this.txtInformacoes.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
+            this.txtInformacoes.Multiline = true;
+            this.txtInformacoes.Name = "txtInformacoes";
+            this.txtInformacoes.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtInformacoes.Size = new System.Drawing.Size(330, 80);
+            this.txtInformacoes.TabIndex = 11;
             // 
             // frmReserva
             // 
@@ -375,5 +392,6 @@
         private vitorrdgs.UiX.Component.UIXButton btnCancelar;
         private vitorrdgs.UiX.Component.UIXButton btnConfirmar;
         private vitorrdgs.UiX.Component.UIXButton btnExcluir;
+        private vitorrdgs.UiX.Component.UIXTextBox txtInformacoes;
     }
 }

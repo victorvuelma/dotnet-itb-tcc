@@ -32,6 +32,8 @@ namespace BurgerShack.Common
         private DateTime _agendado;
         private DateTime _agendamento;
 
+        private string _informacoes;
+
         public int Cod { get => _cod; set => _cod = value; }
         public int CodCliente { get => _codCliente; set => _codCliente = value; }
         public int? CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
@@ -41,6 +43,7 @@ namespace BurgerShack.Common
         public DateTime Agendado { get => _agendado; set => _agendado = value; }
         public DateTime Agendamento { get => _agendamento; set => _agendamento = value; }
         public bool Ativo { get => _ativo; set => _ativo = value; }
+        public string Informacoes { get => _informacoes; set => _informacoes = value; }
 
         private clnReserva obter(SqlDataReader reader)
         {
@@ -53,6 +56,7 @@ namespace BurgerShack.Common
                 Pessoas = UtilConvert.ToInt(reader["pessoas"]),
                 Agendado = UtilConvert.ToDateTime(reader["agendado"]),
                 Agendamento = UtilConvert.ToDateTime(reader["agendamento"]),
+                Informacoes = UtilConvert.ToString(reader["informacoes"]),
                 Ativo = UtilConvert.ToBool(reader["ativo"])
             };
             objReserva.obterMesas();
@@ -147,6 +151,7 @@ namespace BurgerShack.Common
                             .val("situacao", prefixo(Situacao))
                             .val("pessoas", Pessoas)
                             .val("agendado", Agendado)
+                            .val("informacoes", Informacoes)
                             .val("agendamento", Agendamento);
 
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
@@ -172,7 +177,8 @@ namespace BurgerShack.Common
             objUpdate.table("reserva");
             objUpdate.Where.where("id", Cod);
             objUpdate.Value.val("pessoas", Pessoas)
-                         .val("situacao", prefixo(Situacao));
+                           .val("ativo", UtilConvert.ToBit(Ativo))
+                           .val("situacao", prefixo(Situacao));
             objUpdate.execute(App.DatabaseSql);
         }
 
