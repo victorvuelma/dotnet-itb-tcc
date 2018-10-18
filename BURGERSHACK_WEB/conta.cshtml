@@ -63,51 +63,48 @@
                     <h3>Meus Dados</h3>
                     <form class="form" role="form">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputContaNome" placeholder="Nome Completo" required value="Victor Rodrigues" />
+                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required value="Victor Rodrigues" />
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="inputContaEmail" placeholder="E-mail" required disabled value="rodrigues.victor@outlook.com" />
+                                    <input type="email" class="form-control" placeholder="E-mail" required disabled value="rodrigues.victor@outlook.com" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="inputContaSenha" placeholder="Senha" required value="123" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="inputContaCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="11964145152" />
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="date" class="form-control" id="inputContaNascimento" placeholder="Data de Nascimento" required value="2001-06-22" />
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="inputContaCPF" placeholder="CPF" data-mask="000.000.000-00" required disabled value="49762768809" />
+                                    <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required value="123" />
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="inputContaCartao" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="5234507671915750" />
+                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="11964145152" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="CPF" data-mask="000.000.000-00" required disabled value="49762768809" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="5234507671915750" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="inputContaValidade" placeholder="Data de Validade" data-mask="00/00" required value="12/12" />
+                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required value="12/12" />
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="inputContaCVV" placeholder="CVV" size="3" required value="123" />
+                                            <input type="number" class="form-control" name="txtCartaoCVV" placeholder="CVV" size="3" required value="123" />
                                         </div>
                                     </div>
                                 </div>

@@ -62,51 +62,48 @@
                     <form role="form" method="post" action="~/conta.cshtml">
                         <h4>Informe seus Dados:</h4>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputCadastroNome" placeholder="Nome Completo" required />
+                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required />
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="inputCadastroEmail" placeholder="E-mail" required />
+                                    <input type="email" class="form-control" name="txtEmail" placeholder="E-mail" required />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="inputCadastroSenha" placeholder="Senha" required />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="inputCadadastroCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required />
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="date" class="form-control" id="inputCadadastroNascimento" placeholder="Data de Nascimento" required />
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="inputCadadastroCPF" placeholder="CPF" data-mask="000.000.000-00" required />
+                                    <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required />
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="inputCadastroCartao" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required />
+                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="inputCadastroValidade" placeholder="Data de Validade" data-mask="00/00" required />
+                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required />
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="inputCadastroCVV" placeholder="CVV" size="3" required />
+                                            <input type="number" class="form-control" name="txtCartaoCVV" placeholder="CVV" size="3" required />
                                         </div>
                                     </div>
                                 </div>

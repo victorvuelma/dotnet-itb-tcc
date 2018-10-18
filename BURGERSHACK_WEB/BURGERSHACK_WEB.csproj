@@ -145,6 +145,10 @@
       <Project>{452f8db0-90e2-4013-bfcc-c95ef01fb806}</Project>
       <Name>BURGERSHACK_COMMON</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BURGERSHACK_WEB_BLL\BURGERSHACK_WEB_BLL.csproj">
+      <Project>{0d5885a2-f7bc-4eb4-a3e3-ed867c5b30ad}</Project>
+      <Name>BURGERSHACK_WEB_BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQLMASTER\SQLMASTER.csproj">
       <Project>{888ac877-43d7-4a2f-a1ef-255c3e215cd0}</Project>
       <Name>SQLMASTER</Name>
