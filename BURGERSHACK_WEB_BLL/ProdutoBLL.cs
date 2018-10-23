@@ -4,11 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using vitorrdgs.Util.Data;
 
-namespace BURGERSHACK_WEB_BLL
+namespace BurgerShack.Web.Bll
 {
     public class ProdutoBLL
     {
+
+        public List<clnProduto> obterTodos()
+        {
+            return new clnProduto {
+                Situacao = clnProduto.produtoSituacao.DISPONIVEL,
+                Ativo = true
+            }.obterPorSituacao();
+        }
 
         public string listarProdutos(List<clnProduto> objProdutos)
         {
@@ -19,20 +28,55 @@ namespace BURGERSHACK_WEB_BLL
             {
                 StringBuilder builder = new StringBuilder();
 
-                foreach (clnProduto objProduto in objProdutos)
-                {
+                foreach (clnProduto objProduto in objProdutos) { 
+
+                    clnArquivo objImagem = new clnArquivo
+                    {
+                        Cod = objProduto.CodImagem
+                    }.obterPorCod();
+
+                    StringBuilder produtoBuilder = new StringBuilder();
+
+                    produtoBuilder.Append("<div class='col-md-6 col-lg-4 col-sm-12'>");
+                    produtoBuilder.Append("<div class='card'>");
+                    if (objImagem != null && objImagem.Conteudo != null)
+                    {
+                        produtoBuilder.Append("<img class='card-img-top' src='data:image/jpeg;base64,").Append(Convert.ToBase64String(objImagem.Conteudo)).Append("' alt='").Append(objProduto.Nome).Append("'>");
+                    }
+                    produtoBuilder.Append("<div class='card-body'>");
+                    produtoBuilder.Append("<h5>").Append(objProduto.Nome).Append("</h5>");
+                    produtoBuilder.Append("<p>").Append(objProduto.Descricao).Append("</p>");
+
                     List<clnProdutoIngrediente> objProdutoIngredientes = new clnProdutoIngrediente
                     {
                         CodProduto = objProduto.Cod
                     }.obterPorProduto();
 
-                    foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes)
+                    if (objProdutoIngredientes.Count > 0)
                     {
-                        clnIngrediente objIngrediente = new clnIngrediente
+                        produtoBuilder.Append("Ingredientes:");
+                        produtoBuilder.Append("<ul>");
+
+                        foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes)
                         {
-                            Cod = objProdutoIngrediente.CodIngrediente
-                        }.obterPorCod();
+                            clnIngrediente objIngrediente = new clnIngrediente
+                            {
+                                Cod = objProdutoIngrediente.CodIngrediente
+                            }.obterPorCod();
+
+                            produtoBuilder.Append("<li>").Append(objIngrediente.Nome).Append("</li>");
+                        }
+
+                        produtoBuilder.Append("</ul>");
+
                     }
+
+                    produtoBuilder.Append("</div>");
+                    produtoBuilder.Append("<div class='panel-price'>").Append(UtilFormatar.formatarValor(objProduto.Valor)).Append("</div>");
+                    produtoBuilder.Append("</div>");
+                    produtoBuilder.Append("</div>");
+
+                    builder.Append(produtoBuilder);
                 }
 
                 return builder.ToString();

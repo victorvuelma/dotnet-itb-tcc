@@ -1,4 +1,12 @@
-﻿textarea {
+﻿.card img {
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-right: 15%;
+    padding-left: 15%;
+    background-color: white;
+}
+
+textarea {
     border-radius: 15px !important;
 }
 

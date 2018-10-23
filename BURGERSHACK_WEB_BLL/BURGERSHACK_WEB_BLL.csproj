@@ -7,8 +7,8 @@
     <ProjectGuid>{0D5885A2-F7BC-4EB4-A3E3-ED867C5B30AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BURGERSHACK_WEB_BLL</RootNamespace>
-    <AssemblyName>BURGERSHACK_WEB_BLL</AssemblyName>
+    <RootNamespace>BurgerShack.Web.Bll</RootNamespace>
+    <AssemblyName>BurgerShackWebBll</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

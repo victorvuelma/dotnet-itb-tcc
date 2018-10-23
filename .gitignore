@@ -1,5 +1,6 @@
 # PROJECT GIT IGNORE
 AppLocal.cs
+*.temp
 
 
 # Created by https://www.gitignore.io/api/git,windows,aspnetcore,visualstudio

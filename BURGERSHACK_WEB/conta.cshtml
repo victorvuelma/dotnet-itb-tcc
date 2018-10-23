@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@using BurgerShack.Web.Bll;
+@using BurgerShack.Common;
+@{ 
+    ClienteBLL clienteBLL = new ClienteBLL();
+
+    clnCliente objCliente = clienteBLL.obterCliente();
+
+    ReservaBLL reservaBLL = new ReservaBLL();
+
+    string reservasTabela = reservaBLL.listarReservas(objCliente.Cod);
+}
+
+<!DOCTYPE html>
 <html lang=pt-br>
 <head>
     <title>BurgerShack - Minha Conta</title>
@@ -63,48 +75,48 @@
                     <h3>Meus Dados</h3>
                     <form class="form" role="form">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required value="Victor Rodrigues" />
+                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required value="@objCliente.Nome" />
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="E-mail" required disabled value="rodrigues.victor@outlook.com" />
+                                    <input type="email" class="form-control" placeholder="E-mail" required disabled value="@objCliente.Email" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required value="123" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="11964145152" />
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="CPF" data-mask="000.000.000-00" required disabled value="49762768809" />
+                                    <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required value="123123" />
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="5234507671915750" />
+                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="@objCliente.TelCelular" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="CPF" data-mask="000.000.000-00" required disabled value="@objCliente.Cpf" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="@objCliente.CartaoNumero" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required value="12/12" />
+                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required value="@objCliente.CartaoValidade" />
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="txtCartaoCVV" placeholder="CVV" size="3" required value="123" />
+                                            <input type="number" class="form-control" name="txtCartaoCVV" placeholder="CVV" size="3" required value="@objCliente.CartaoCVV" />
                                         </div>
                                     </div>
                                 </div>
@@ -114,8 +126,20 @@
                     </form>
                 </div>
                 <div class="col-lg-6 col-md-8 col-sm-12 col-centraliza">
-                    <h3>Minhas Reservas</h3>
-                    <p>Nenhuma reserva encontrada</p>
+                    <h3>Reservas</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Data</th>
+                                <th>Lugares</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @Html.Raw(@reservasTabela)
+                        </tbody>
+                    </table>
                     <a href="~/reserva.cshtml" class="btn btn-primary" role="button"><i class="fas fa-thumbtack"></i> Nova Reserva</a>
                 </div>
             </div>

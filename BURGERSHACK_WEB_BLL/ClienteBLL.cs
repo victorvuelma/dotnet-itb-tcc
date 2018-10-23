@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BurgerShack.Common;
 
-namespace BURGERSHACK_WEB_BLL
+namespace BurgerShack.Web.Bll
 {
-    public class CategoriaBLL
+    public class ClienteBLL
     {
+
+        public clnCliente obterCliente()
+        {
+            return new clnCliente { Cod = 1 }.obterPorCod();
+        }
+
     }
 }
