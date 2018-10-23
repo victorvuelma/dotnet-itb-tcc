@@ -180,7 +180,7 @@ namespace BurgerShack.Common
                 Cod = CodMercadoria
             }.obterPorCod();
 
-            if (objMercadoria != null && objMercadoria.Baixar)
+            if (objMercadoria != null)
             {
                 List<clnIngrediente> objIngredientes = new clnIngrediente
                 {
@@ -201,7 +201,7 @@ namespace BurgerShack.Common
                 Cod = CodMercadoria
             }.obterPorCod();
 
-            if (objMercadoria != null && objMercadoria.Baixar)
+            if (objMercadoria != null)
             {
                 List<clnProduto> objProdutos = new clnProduto
                 {

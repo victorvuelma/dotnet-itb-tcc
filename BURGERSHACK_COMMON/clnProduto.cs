@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
@@ -115,6 +116,23 @@ namespace BurgerShack.Common
             return objProdutos;
         }
 
+        public List<clnProduto> obterPorSituacao()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("produto");
+            objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
+                           .where("situacao", prefixo(Situacao));
+
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            List<clnProduto> objProdutos = new List<clnProduto>();
+            while (reader.Read())
+                objProdutos.Add(obter(reader));
+            reader.Close();
+
+            return objProdutos;
+        }
+
+
         public void gravar()
         {
             sqlInsert objInsert = new sqlInsert();
@@ -147,6 +165,8 @@ namespace BurgerShack.Common
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);
+
+            atualizarEstoque();
         }
 
         public void atualizarEstoque()

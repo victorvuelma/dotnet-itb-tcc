@@ -16,9 +16,11 @@ namespace BurgerShack.Common
         private int _cod = -1;
 
         private String _local;
+        private byte[] _conteudo;
 
         public int Cod { get => _cod; set => _cod = value; }
         public String Local { get => _local; set => _local = value; }
+        public byte[] Conteudo { get => _conteudo; set => _conteudo = value; }
 
         private static int tempId = 0;
 
@@ -40,7 +42,7 @@ namespace BurgerShack.Common
             string arquivo = CACHE.obter(Convert.ToString(Cod));
             if (arquivo != null)
             {
-                return new clnArquivo { Cod = Cod, Local = arquivo };
+                return new clnArquivo { Cod = Cod, Local = arquivo, Conteudo = File.ReadAllBytes(arquivo) };
             }
             else
             {
@@ -50,14 +52,17 @@ namespace BurgerShack.Common
 
                 SqlDataReader reader = objSelect.execute(App.DatabaseSql);
 
+                byte[] conteudo = null;
+
                 if (reader.Read())
                 {
-                    arquivo = CACHE.guardar(Convert.ToString(Cod), (byte[])reader["conteudo"]);
+                    conteudo = (byte[])reader["conteudo"];
+                    arquivo = CACHE.guardar(Convert.ToString(Cod), conteudo);
                     reader.Close();
-                    return new clnArquivo { Cod = Cod, Local = arquivo };
+                    return new clnArquivo { Cod = Cod, Local = arquivo, Conteudo = conteudo};
                 }
 
-                return new clnArquivo { Cod = Cod, Local = "" };
+                return new clnArquivo { Cod = Cod, Local = "", Conteudo = conteudo };
             }
         }
 

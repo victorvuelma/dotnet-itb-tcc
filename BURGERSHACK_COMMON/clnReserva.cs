@@ -20,6 +20,7 @@ namespace BurgerShack.Common
         }
 
         private int _cod = -1;
+
         private bool _ativo = true;
 
         private int _codCliente = -1;
@@ -96,6 +97,22 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
             objSelect.Where.between("agendado", Agendado, Agendado.AddDays(1))
+                           .where("ativo", UtilConvert.ToBit(Ativo));
+
+            List<clnReserva> objReservas = new List<clnReserva>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objReservas.Add(obter(reader));
+            reader.Close();
+
+            return objReservas;
+        }
+
+        public List<clnReserva> obterPorCliente()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("reserva");
+            objSelect.Where.where("id_cliente", CodCliente)
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnReserva> objReservas = new List<clnReserva>();

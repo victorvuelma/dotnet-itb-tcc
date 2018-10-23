@@ -163,6 +163,8 @@ namespace BurgerShack.Common
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);
+
+            atualizarEstoque(true);
         }
 
         public void atualizarEstoque(bool produtos)
@@ -172,18 +174,23 @@ namespace BurgerShack.Common
                 CodMercadoria = CodMercadoria
             }.obterQuantidadePorMercadoria();
 
+            ingredienteSituacao novaSituacao = Situacao;
+
             if (Situacao != clnIngrediente.ingredienteSituacao.INDISPONIVEL)
             {
                 if (estoqueAtual > 0)
                 {
-                    Situacao = clnIngrediente.ingredienteSituacao.DISPONIVEL;
+                    novaSituacao = clnIngrediente.ingredienteSituacao.DISPONIVEL;
                 }
                 else
                 {
-                    Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE;
+                    novaSituacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE;
                 }
             }
-            alterar();
+            if(novaSituacao != Situacao)
+            {
+                alterar();
+            }
 
             if (produtos)
             {
