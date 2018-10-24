@@ -24,7 +24,7 @@ namespace BurgerShack.Desktop
             _validar = new clnUtilFormValidar();
             _validar.addValidacao(txtQuantidade, clnUtilFormValidar.Validacao.OBRIGATORIO);
             _validar.addValidacao(txtValor, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.VALOR });
-            _validar.addValidacao(mtbValidade, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.DATA });
+            _validar.addValidacao(mtbValidade, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.DATA, clnUtilFormValidar.Validacao.DATA_FUTURA });
             _validar.addValidacao(mtbFornCNPJ, new clnUtilFormValidar.Validacao[] { clnUtilFormValidar.Validacao.OBRIGATORIO, clnUtilFormValidar.Validacao.CNPJ });
 
             mtbFornCNPJ.Mask = UtilMask.MASK_CNPJ;

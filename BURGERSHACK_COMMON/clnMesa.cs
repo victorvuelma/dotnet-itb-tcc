@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
@@ -163,6 +164,17 @@ namespace BurgerShack.Common
             reader.Close();
 
             return objMesas;
+        }
+
+        internal int obterLugares()
+        {
+            int lugares = 0;
+
+            foreach(clnMesa objMesa in obterMesas()) {
+                lugares += objMesa.Lugares;
+            }
+
+            return lugares;
         }
 
         public class clnListar : clnUtilListar<clnMesa>

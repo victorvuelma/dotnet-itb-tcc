@@ -1,5 +1,4 @@
-﻿using BurgerShack.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
@@ -122,6 +121,43 @@ namespace BurgerShack.Common
             reader.Close();
 
             return objReservas;
+        }
+
+        public List<clnReserva> obterPorClienteDataSituacao()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("reserva");
+            objSelect.Where.where("id_cliente", CodCliente)
+                           .between("agendado", Agendado, Agendado.AddDays(1))
+                           .where("situacao", sqlElementWhereCommon.whereOperation.UNEQUAL, prefixo(Situacao))
+                           .where("ativo", UtilConvert.ToBit(Ativo));
+
+            List<clnReserva> objReservas = new List<clnReserva>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objReservas.Add(obter(reader));
+            reader.Close();
+
+            return objReservas;
+        }
+
+        public int obterLugaresDisponiveis()
+        {
+            int lugares = new clnMesa().obterLugares();
+
+            List<int> codMesas = obterMesasReservadas();
+            foreach(int codMesa in codMesas)
+            {
+                clnMesa objMesa = new clnMesa
+                {
+                    Cod = codMesa
+                }.obterPorCod();
+
+                lugares -= objMesa.Lugares;
+            }
+
+            return lugares;
+
         }
 
         public List<clnReserva> obterReservas()
