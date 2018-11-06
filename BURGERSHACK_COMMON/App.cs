@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Drawing;
 using vitorrdgs.SqlMaster;
 
 namespace BurgerShack.Common
@@ -23,6 +17,7 @@ namespace BurgerShack.Common
         };
         private static sqlDatabase _databaseSql = new sqlDatabase
         {
+            ExceptionCall = (Exception ex, string error) => { throw ex; },
             Credential = DatabaseSqlCredential
         };
 

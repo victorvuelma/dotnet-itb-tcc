@@ -1,5 +1,4 @@
-﻿using BurgerShack.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
@@ -13,7 +12,7 @@ namespace BurgerShack.Common
 
         private int _codFuncionario = -1;
         private bool _ativo = true;
-        
+
         private String _usuario;
         private String _senha;
 

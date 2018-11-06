@@ -17,7 +17,7 @@ namespace BurgerShack.Web.Bll
             {
                 List<clnReserva> objReservas = new clnReserva
                 {
-                    CodCliente = clienteBLL.obterCodCliente()
+                    CodCliente = clienteBLL.obterCliente().Cod
                 }.obterPorCliente();
 
                 if (objReservas.Count == 0)
@@ -56,54 +56,54 @@ namespace BurgerShack.Web.Bll
                 clnCliente objCliente = clienteBLL.obterCliente();
                 if (UtilValidar.vazio(cpf))
                 {
-                    errosBuilder.AppendLine("É necessário informar um CPF.");
+                    errosBuilder.Append("É necessário informar um CPF.");
                 }
                 else if (!UtilValidar.validarCPF(cpf))
                 {
-                    errosBuilder.AppendLine("O CPF informado é inválido.");
+                    errosBuilder.Append("O CPF informado é inválido.");
                 }
-                else if (!UtilFormatar.retirarFormatacao(cpf).Equals(objCliente.Cpf))
+                else if (!cpf.Equals(objCliente.Cpf))
                 {
-                    errosBuilder.AppendLine("O CPF foi informado incorretamente.");
+                    errosBuilder.Append("O CPF foi informado incorretamente.");
                 }
 
                 if (UtilValidar.vazio(dataStr))
                 {
-                    errosBuilder.AppendLine("É necessário informar uma data.");
+                    errosBuilder.Append("É necessário informar uma data.");
                 }
                 else if (!UtilValidar.validarData(dataStr))
                 {
-                    errosBuilder.AppendLine("A data informada é inválida.");
+                    errosBuilder.Append("A data informada é inválida.");
                 }
                 else if (!UtilValidar.validarDataFutura(dataStr))
                 {
-                    errosBuilder.AppendLine("A data informada é inválida.");
+                    errosBuilder.Append("A data informada é inválida.");
                 }
 
                 if (UtilValidar.vazio(lugaresStr))
                 {
-                    errosBuilder.AppendLine("É necessário informar os lugares.");
+                    errosBuilder.Append("É necessário informar os lugares.");
                 }
                 else if (!UtilValidar.validarValor(lugaresStr))
                 {
-                    errosBuilder.AppendLine("É necessário informar um valor válido para os lugares.");
+                    errosBuilder.Append("É necessário informar um valor válido para os lugares.");
                 }
                 else
                 {
                     int lugares = UtilConvert.ToInt(lugaresStr);
                     if (lugares < 2)
                     {
-                        errosBuilder.AppendLine("É necessário reservar no minimo 2 lugares.");
+                        errosBuilder.Append("É necessário reservar no minimo 2 lugares.");
                     }
                     else if (lugares > 8)
                     {
-                        errosBuilder.AppendLine("Não é possível reservar mais que 8 lugares.");
+                        errosBuilder.Append("Não é possível reservar mais que 8 lugares.");
                     }
                 }
 
                 if (informacoes.Length > 256)
                 {
-                    errosBuilder.AppendLine("O limite de informações é de 256 caracteres.");
+                    errosBuilder.Append("O limite de informações é de 256 caracteres.");
                 }
 
                 if (errosBuilder.Length == 0)
@@ -114,7 +114,7 @@ namespace BurgerShack.Web.Bll
                     //TODAS AS INFORMAÇÕE ESTÃO OK, VALIDE SE NÃO TEM RESERVA E SE É POSSÍVEL
                     List<clnReserva> objReservas = new clnReserva
                     {
-                        CodCliente = clienteBLL.obterCodCliente(),
+                        CodCliente = clienteBLL.obterCliente().Cod,
                         Agendado = data,
                         Ativo = true,
                         Situacao = clnReserva.reservaSituacao.CANCELADA
@@ -122,7 +122,7 @@ namespace BurgerShack.Web.Bll
 
                     if (objReservas.Count > 0)
                     {
-                        errosBuilder.AppendLine("Você já realizou uma reserva para esta data!");
+                        errosBuilder.Append("Você já realizou uma reserva para esta data!");
                     }
                     else
                     {
@@ -135,10 +135,11 @@ namespace BurgerShack.Web.Bll
 
                         if (lugares > lugaresDisponiveis)
                         {
-                            errosBuilder.AppendLine("Não existem lugares disponiveis para esta data");
+                            errosBuilder.Append("Não existem lugares disponiveis para esta data");
                         }
                     }
                 }
+
                 return errosBuilder.ToString();
             }
             else
@@ -147,11 +148,54 @@ namespace BurgerShack.Web.Bll
             }
         }
 
-        public void atribuirMesas(int codReserva, int lugares)
+        public void atribuirMesas(clnReserva objReserva, int lugares)
         {
-            while(lugares > 0)
+            while (lugares > 0)
             {
+                List<clnMesa> objMesas = new clnMesa().obterOrdenadoPorLugares();
+                List<int> codMesasReservas = new clnReserva
+                {
+                    Agendado = objReserva.Agendado
+                }.obterMesasReservadas();
+
+                objMesas.RemoveAll(objMesa => codMesasReservas.Contains(objMesa.Cod));
+
+                objReserva.addMesa(objMesas[0].Cod);
+
+                lugares -= objMesas[0].Lugares;
+                objMesas.RemoveAt(0);
+
                 // IRÁ ATRIBUIR AS MESAS AUTOMATICAMENTE.
+            }
+        }
+
+        public string novaReserva(string cpf, string dataStr, string lugaresStr, string informacoes)
+        {
+            cpf = UtilFormatar.retirarFormatacao(cpf);
+
+            string validar = validarDados(cpf, dataStr, lugaresStr, informacoes);
+
+            if (string.IsNullOrEmpty(validar))
+            {
+                clnReserva objReserva = new clnReserva
+                {
+                    Informacoes = informacoes,
+                    Pessoas = UtilConvert.ToInt(lugaresStr),
+                    CodCliente = clienteBLL.obterCliente().Cod,
+                    Agendado = UtilConvert.ObterData(dataStr),
+                    Agendamento = DateTime.Now.Date,
+                    Situacao = clnReserva.reservaSituacao.MARCADA
+                };
+
+                objReserva.gravar();
+                atribuirMesas(objReserva, UtilConvert.ToInt(lugaresStr));
+
+
+                return "1Reserva realizada com sucesso";
+            }
+            else
+            {
+                return "0" + validar;
             }
         }
 

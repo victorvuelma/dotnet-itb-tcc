@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Data;
 using System.Data.SqlClient;
@@ -12,7 +8,7 @@ namespace vitorrdgs.SqlMaster
     public class sqlDatabase
     {
 
-        private Action< Exception, string> _exceptionCall;
+        private Action<Exception, string> _exceptionCall;
 
         private sqlCredential _credential;
 
@@ -24,7 +20,7 @@ namespace vitorrdgs.SqlMaster
             string connStr = "Data Source=" + Credential.Source + ";Initial Catalog=" + Credential.Database + ";User Id=" + Credential.User + ";Password=" + Credential.Pass;
 
             try
-            {               
+            {
                 SqlConnection conn = new SqlConnection(connStr);
                 conn.Open();
                 return conn;
@@ -47,7 +43,7 @@ namespace vitorrdgs.SqlMaster
         public SqlCommand getCommand(String query)
         {
             try
-            {   
+            {
                 return new SqlCommand(query, connect());
             }
             catch (Exception ex)

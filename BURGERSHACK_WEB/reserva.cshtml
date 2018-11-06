@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using BurgerShack.Web.Bll;
+
+<!DOCTYPE html>
 <html lang=pt-br>
 <head>
     <title>BurgerShack - Nova Reserva</title>
@@ -8,12 +10,10 @@
     <meta name=keywords content=""> <!-- Opcional -->
     <meta name=author content="Caio Silva and vitorrdgs">
     <meta name=application-name content="BurgerShack">
-    <!-- favicon, ícone que será exibido no navegador. Resolução: 8x8 - 16x16 - 32x32px com extensão .ico -->
     <link rel="shortcut icon" href="~/Resources/img/favicon.png" type="image/x-icon">
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" type="text/css" href="~/Resources/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/fontawesome.min.css" />
 
     <!-- Telas Responsivas -->
     <link rel="stylesheet" type="text/css" href="~/Resources/css/default.css">
@@ -21,9 +21,13 @@
     <link rel=stylesheet media="screen and (min-width:481px) and (max-width:768px)" href="~/Resources/css/style768.css">
     <link rel=stylesheet media="screen and (min-width:769px) and (max-width:1024px)" href="~/Resources/css/style1024.css">
     <link rel=stylesheet media="screen and (min-width:1025px)" href="~/Resources/css/style1025.css">
+
+    <!-- OUTROS COMPONENTES-->
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/Resources/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="~/Resources/css/nprogress.css" />
 </head>
 <body>
-
     <!-- CABEÇALHO -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -60,25 +64,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-8 col-lg-6 col-center">
-                    <form role="form" class="form">
+                    <form role="form" class="form" method="post">
                         <h3>Informações da reserva</h3>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="inputReservaCPF" placeholder="Confirme seu CPF" data-mask="000.000.000-00" required>
+                                    <input type="text" class="form-control" name="inputCpf" placeholder="Confirme seu CPF" data-mask="000.000.000-00" required>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="inputReservaLugares" placeholder="Lugares" required value="2">
+                                    <input type="number" class="form-control" name="inputLugares" placeholder="Lugares" required value="2">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="date" class="form-control" id="inputReservaData" required value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")">
+                            <input type="date" class="form-control" name="inputData" required value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control w-100" id="textReservaInformacoes" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)"></textarea>
+                            <textarea class="form-control w-100" name="inputInfo" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-thumbtack"></i> Realizar Reserva</button>
                     </form>
@@ -92,29 +96,78 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                    <h5>Sobre o Burger Shack</h5>
-                    <p>O Burguer Shack é um ambiente de refeição, temos promoções e eventos com frequêcia, há um local para comer no local, podendo reservar mesas atráves do aplicativo, web e por telefone</p>
+                    <h5>Sobre o BurgerShack</h5>
+                                        <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>
-                    <p><i class="fab fa-facebook-square"></i> facebook.com/burguershack</p>
+                    <p><i class="fab fa-facebook-square"></i> facebook.com/burgershack</p>
                     <p><i class="fas fa-phone"></i> (11) 4998-5255</p>
                     <p><i class="fas fa-envelope"></i> sac@burgershack.com</p>
-                    <p><i class="fas fa-location-arrow"></i> Avenida Pompéia nº 50, São Paulo - SP</p>
+                    <p><i class="fas fa-location-arrow"></i> Calçada dos Lírios, 196 - Alphaville - Barueri</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Localização</h5>
-                    <img src="~/Resources/img/mapa.png" alt="Nossa Localização" class="img-thumbnail img-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.002715489375!2d-46.85149998502341!3d-23.496411684715152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf023ca8364ffb%3A0x94549a2e18bfe648!2sCal%C3%A7ada+dos+L%C3%ADrios%2C+196+-+Alphaville+Comercial%2C+Barueri+-+SP%2C+06453-034!5e0!3m2!1spt-BR!2sbr!4v1541470650518" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript-->
-    <script src="~/Resources/js/jquery-3.2.1.min.js"></script>
-    <script src="~/Resources/js/jquery.mask.min.js"></script>
-    <script src="~/Resources/js/popper.min.js"></script>
-    <script src="~/Resources/js/bootstrap.min.js"></script>
-    <script src="~/Resources/js/script.js"></script>
+    <script type="text/javascript" src="~/Resources/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Resources/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/Resources/js/nprogress.js"></script>
+    <script type="text/javascript" src="~/Resources/js/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="~/Resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Resources/js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="~/Resources/js/script.js"></script>
+
+    @{
+        ClienteBLL clienteBLL = new ClienteBLL();
+
+        if (!clienteBLL.autenticado())
+        {
+            HttpContext.Current.Response.Redirect("acessar.cshtml");
+            return;
+        }
+
+        if (Request.HttpMethod == "POST")
+        {
+            string cpf = Request.Params["inputCpf"];
+            string dataStr = Request.Params["inputData"];
+            string lugaresStr = Request.Params["inputLugares"];
+            string informacoes = Request.Params["inputInfo"];
+
+            ReservaBLL reservaBLL = new ReservaBLL();
+
+            string resultado = reservaBLL.novaReserva(cpf, dataStr, lugaresStr, informacoes);
+
+            if (resultado.StartsWith("1"))
+            {
+                <script type="text/javascript">
+                    swal({
+                    title: 'Tudo certo!',
+                        html: '@Html.Raw(resultado.Substring(1, resultado.Length - 1).Replace(".", ".<br/>"))',
+                        type: 'success'
+                    }).then((result) => {
+                        document.location = 'conta.cshtml'
+                        });
+                </script>
+            }
+            else
+            {
+                <script type="text/javascript">
+                    swal({
+                    title: 'Ops...',
+                        html: '@Html.Raw(resultado.Substring(1, resultado.Length - 1).Replace(".", ".<br/>"))',
+                        type: 'error'
+                    });
+                </script>
+            }
+
+        }
+    }
+
 </body>
 </html>

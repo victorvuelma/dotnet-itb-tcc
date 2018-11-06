@@ -166,6 +166,22 @@ namespace BurgerShack.Common
             return objMesas;
         }
 
+        public List<clnMesa> obterOrdenadoPorLugares()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("MESA");
+            objSelect.Where.where("ativo", Ativo);
+            objSelect.Order.order("lugares", vitorrdgs.SqlMaster.Element.sqlElementOrder.orderOperation.DESC);
+
+            List<clnMesa> objMesas = new List<clnMesa>();
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            while (reader.Read())
+                objMesas.Add(obter(reader));
+            reader.Close();
+
+            return objMesas;
+        }
+
         internal int obterLugares()
         {
             int lugares = 0;

@@ -88,22 +88,22 @@
     <Content Include="Resources\css\fontawesome.min.css" />
     <Content Include="Resources\css\bootstrap.min.css" />
     <Content Include="Resources\css\default.css" />
+    <Content Include="Resources\css\nprogress.css" />
     <Content Include="Resources\img\favicon.png" />
     <Content Include="Resources\img\logo.png" />
     <Content Include="Resources\css\style1024.css" />
     <Content Include="Resources\css\style1025.css" />
     <Content Include="Resources\css\style480.css" />
     <Content Include="Resources\css\style768.css" />
-    <Content Include="Resources\img\products\Shack Beef.png" />
-    <Content Include="Resources\img\products\Shack Cheese.png" />
-    <Content Include="Resources\img\products\Shack Gourmet.png" />
-    <Content Include="Resources\img\products\Shack Hamburguer.png" />
     <Content Include="Resources\img\slider\slider-1.png" />
     <Content Include="Resources\img\slider\slider-2.png" />
     <Content Include="Resources\js\bootstrap.min.js" />
     <Content Include="Resources\js\jquery-3.2.1.min.js" />
     <Content Include="Resources\js\jquery.mask.min.js" />
+    <Content Include="Resources\js\nprogress.js" />
     <Content Include="Resources\js\script.js" />
+    <Content Include="Resources\js\sweetalert2.all.min.js" />
+    <Content Include="Resources\css\sweetalert2.min.css" />
     <Content Include="Resources\webfonts\fa-brands-400.svg" />
     <Content Include="Resources\webfonts\fa-regular-400.svg" />
     <Content Include="Resources\webfonts\fa-solid-900.svg" />
@@ -133,6 +133,7 @@
     <Content Include="Resources\webfonts\fa-solid-900.ttf" />
     <Content Include="Resources\webfonts\fa-solid-900.woff" />
     <Content Include="Resources\webfonts\fa-solid-900.woff2" />
+    <Content Include="Resources\css\bootstrap.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

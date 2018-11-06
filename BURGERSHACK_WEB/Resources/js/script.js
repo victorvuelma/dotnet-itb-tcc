@@ -13,7 +13,7 @@ function autoHeight() {
 
     if (docHeight > footerPos) {
 
-        var margin =  docHeight - footerPos + 25;
+        var margin = docHeight - footerPos + 25;
 
         $('footer').css({
             marginTop: margin
@@ -24,6 +24,10 @@ function autoHeight() {
 // onDocumentReady function bind
 $(document).ready(function () {
     autoHeight();
+
+    $(document)
+        .ajaxStart(NProgress.start)
+        .ajaxStop(NProgress.done);
 });
 
 // onResize bind of the function

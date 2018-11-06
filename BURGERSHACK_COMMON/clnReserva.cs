@@ -23,7 +23,7 @@ namespace BurgerShack.Common
         private bool _ativo = true;
 
         private int _codCliente = -1;
-        private int? _codFuncionario = -1;
+        private int? _codFuncionario = null;
         private List<int> _codMesas = new List<int>();
 
         private reservaSituacao _situacao;
@@ -95,7 +95,7 @@ namespace BurgerShack.Common
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
-            objSelect.Where.between("agendado", Agendado, Agendado.AddDays(1))
+            objSelect.Where.between("agendado", Agendado, Agendado)
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnReserva> objReservas = new List<clnReserva>();
@@ -128,7 +128,7 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
             objSelect.Where.where("id_cliente", CodCliente)
-                           .between("agendado", Agendado, Agendado.AddDays(1))
+                           .between("agendado", Agendado, Agendado)
                            .where("situacao", sqlElementWhereCommon.whereOperation.UNEQUAL, prefixo(Situacao))
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
@@ -182,7 +182,7 @@ namespace BurgerShack.Common
             objSelect.Columns.select("mesa.id");
             objSelect.Join.innerJoin("reserva_mesa", "id_mesa", "mesa.id")
                           .innerJoin("reserva", "id", "reserva_mesa.id_reserva");
-            objSelect.Where.between("reserva.agendado", Agendado, Agendado.AddDays(1))
+            objSelect.Where.between("reserva.agendado", Agendado, Agendado)
                            .where("reserva.ativo", UtilConvert.ToBit(Ativo))
                            .where("reserva.situacao", sqlElementWhereCommon.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
 

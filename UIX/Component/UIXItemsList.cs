@@ -109,12 +109,9 @@ namespace vitorrdgs.UiX.Component
                 exibirItem(item);
             }
 
-            if (Controls.Count > Items.Count)
+            while (Controls.Count > Items.Count)
             {
-                for (int i = Items.Count - 1; i >= Controls.Count; i++)
-                {
-                    Controls.RemoveAt(i);
-                }
+                Controls.RemoveAt(Controls.Count - 1);
             }
             AutoRender = true;
         }

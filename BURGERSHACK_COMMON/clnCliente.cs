@@ -5,7 +5,6 @@ using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util;
 using vitorrdgs.Util.Data;
-using vitorrdgs.Util.Hash;
 
 namespace BurgerShack.Common
 {
@@ -19,6 +18,7 @@ namespace BurgerShack.Common
 
         private String _nome;
         private String _cpf;
+        private String _hash;
 
         private string _telCelular;
         private string _email;
@@ -40,6 +40,7 @@ namespace BurgerShack.Common
         public string CartaoNumero { get => _cartaoNumero; set => _cartaoNumero = value; }
         public string CartaoValidade { get => _cartaoValidade; set => _cartaoValidade = value; }
         public string CartaoCVV { get => _cartaoCVV; set => _cartaoCVV = value; }
+        public string Hash { get => _hash; set => _hash = vitorrdgs.Util.Hash.Hash.HASH.cyph(value); }
 
         private clnCliente obter(SqlDataReader reader) => new clnCliente
         {
@@ -61,6 +62,22 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("cliente");
             objSelect.Where.where("id", Cod);
+
+            clnCliente objCliente = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+                objCliente = obter(reader);
+            reader.Close();
+
+            return objCliente;
+        }
+
+        public clnCliente autenticarPorCPF()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("cliente");
+            objSelect.Where.where("cpf", Cpf)
+                           .where("hash", sqlElementWhereCommon.whereOperation.EQUALS,Hash);
 
             clnCliente objCliente = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -105,7 +122,13 @@ namespace BurgerShack.Common
 
         public void gravar()
         {
-            String senha = UtilRandom.gerar(10);
+            if (String.IsNullOrEmpty(Hash))
+            {
+                string senha = UtilRandom.gerar(10);
+                informarSenha(senha);
+
+                Hash = senha;
+            }
 
             sqlInsert objInsert = new sqlInsert();
             objInsert.table("cliente");
@@ -118,11 +141,9 @@ namespace BurgerShack.Common
                             .val("cartao_validade", CartaoValidade)
                             .val("cartao_cvv", CartaoCVV)
                             .val("cadastro", Cadastro)
-                            .val("hash", Hash.HASH.cyph(senha))
+                            .val("hash", Hash)
                             .val("ativo", UtilConvert.ToBit(Ativo));
             Cod = objInsert.executeWithOutput(App.DatabaseSql);
-
-            informarSenha(senha);
         }
 
         public void alterar()
@@ -137,6 +158,12 @@ namespace BurgerShack.Common
                             .val("cartao_validade", CartaoValidade)
                             .val("cartao_cvv", CartaoCVV)
                             .val("ativo", UtilConvert.ToBit(Ativo));
+
+            if (!String.IsNullOrEmpty(Hash))
+            {
+                objUpdate.Value.val("hash", Hash);
+            }
+
             objUpdate.execute(App.DatabaseSql);
         }
 

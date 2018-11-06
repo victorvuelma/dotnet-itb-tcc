@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace vitorrdgs.Util.Data
 {
@@ -49,7 +45,14 @@ namespace vitorrdgs.Util.Data
 
         public static string ToString(object val) => Convert.ToString(val);
 
-        public static DateTime ObterData(object val) => DateTime.ParseExact(Convert.ToString(val), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+        public static DateTime ObterData(object val)
+        {
+            if (DateTime.TryParseExact(Convert.ToString(val), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result))
+            {
+                return result;
+            }
+                return DateTime.ParseExact(Convert.ToString(val), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+        }
 
         public static DateTime? ObterNullableData(object val)
         {

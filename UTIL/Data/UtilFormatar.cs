@@ -19,7 +19,7 @@ namespace vitorrdgs.Util.Data
         {
             if (UtilValidar.vazio(texto))
                 return "";
-            return new String(texto.Where(Char.IsDigit).ToArray());
+            return new String(texto.Trim().Where(Char.IsNumber).ToArray());
         }
 
         public static String formatarValor(decimal valor)
