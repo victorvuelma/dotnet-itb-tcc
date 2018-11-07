@@ -1,4 +1,5 @@
 ﻿using BurgerShack.Common;
+using System;
 using System.Text;
 using System.Web;
 using vitorrdgs.Util.Data;
@@ -74,6 +75,9 @@ namespace BurgerShack.Web.Bll
                 errosBuilder.Append("É necessário informar a validade do cartão.");
             }
             else if (cartaoValidade.ToString().Length != 5)
+            {
+                errosBuilder.Append("A validade do cartão informada é inválida.");
+            } else if (!UtilValidar.validarCartaoValidade(cartaoValidade))
             {
                 errosBuilder.Append("A validade do cartão informada é inválida.");
             }
@@ -199,6 +203,65 @@ namespace BurgerShack.Web.Bll
             else
             {
                 return "0Você não está autenticado";
+            }
+        }
+
+        public string cadastrar(string nome, string email, string senha, string cpf, string celular,
+            string cartaoNumero, string cartaoValidade, string cartaoCVV)
+        {
+            if (!autenticado())
+            {
+                cartaoNumero = UtilFormatar.retirarFormatacao(cartaoNumero);
+                cpf = UtilFormatar.retirarFormatacao(cpf);
+
+                string validar = validarDados(nome, email, senha, cpf, celular, cartaoNumero, cartaoValidade, cartaoCVV);
+
+                if (string.IsNullOrEmpty(validar))
+                {
+                    clnCliente objClienteEmail = new clnCliente
+                    {
+                        Email = email
+                    }.obterPorEmail();
+                    if (objClienteEmail != null)
+                    {
+                        validar += "E-mail já cadastrado.";
+                    }
+
+                    clnCliente objClienteCPF = new clnCliente
+                    {
+                        Cpf = cpf
+                    }.obterPorCPF();
+                    if (objClienteCPF != null)
+                    {
+                        validar += "CPF já cadastrado.";
+                    }
+
+                    if (string.IsNullOrEmpty(validar))
+                    {
+                        clnCliente objCliente = new clnCliente
+                        {
+                            Nome = nome,
+                            Email = email,
+                            Hash = senha,
+                            Ativo = true,
+                            TelCelular = UtilFormatar.retirarFormatacao(celular),
+                            Cpf = cpf,
+                            Cadastro = DateTime.Now,
+                            CartaoCVV = UtilFormatar.retirarFormatacao(cartaoCVV),
+                            CartaoNumero = UtilFormatar.retirarFormatacao(cartaoNumero),
+                            CartaoValidade = UtilFormatar.retirarFormatacao(cartaoValidade)
+                        };
+                        objCliente.gravar();
+
+                        HttpContext.Current.Session["clienteAutenticado"] = (clnCliente)objCliente;
+                        return "1Cadastrado com sucesso!";
+                    }
+                }
+                return "0" + validar;
+            }
+            else
+            {
+                return "0Você já está autenticado";
             }
         }
 

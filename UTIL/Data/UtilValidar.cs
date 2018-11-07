@@ -93,6 +93,15 @@ namespace vitorrdgs.Util.Data
             }
         }
 
+        public static bool validarCartaoValidade(String validade)
+        {
+            if (DateTime.TryParseExact(validade, "MM/yy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result)){
+                return result.Date >= DateTime.Now.Date;
+            }
+            return false;
+        }
+
+
         public static bool validarCEP(String cep)
         {
             try

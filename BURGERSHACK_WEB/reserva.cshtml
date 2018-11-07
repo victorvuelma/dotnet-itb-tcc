@@ -28,6 +28,31 @@
     <link rel="stylesheet" href="~/Resources/css/nprogress.css" />
 </head>
 <body>
+    @{
+        string resultado = "";
+
+        ClienteBLL clienteBLL = new ClienteBLL();
+
+        if (!clienteBLL.autenticado())
+        {
+            Response.Redirect("acessar.cshtml");
+        }
+        else
+        {
+            if (Request.HttpMethod == "POST")
+            {
+                string cpf = Request.Params["inputCpf"];
+                string dataStr = Request.Params["inputData"];
+                string lugaresStr = Request.Params["inputLugares"];
+                string informacoes = Request.Params["inputInfo"];
+
+                ReservaBLL reservaBLL = new ReservaBLL();
+
+                resultado = reservaBLL.novaReserva(cpf, dataStr, lugaresStr, informacoes);
+            }
+        }
+    }
+
     <!-- CABEÇALHO -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -97,7 +122,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <h5>Sobre o BurgerShack</h5>
-                                        <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
+                    <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>
@@ -122,27 +147,9 @@
     <script type="text/javascript" src="~/Resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Resources/js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="~/Resources/js/script.js"></script>
-
     @{
-        ClienteBLL clienteBLL = new ClienteBLL();
-
-        if (!clienteBLL.autenticado())
+        if (!String.IsNullOrEmpty(resultado))
         {
-            HttpContext.Current.Response.Redirect("acessar.cshtml");
-            return;
-        }
-
-        if (Request.HttpMethod == "POST")
-        {
-            string cpf = Request.Params["inputCpf"];
-            string dataStr = Request.Params["inputData"];
-            string lugaresStr = Request.Params["inputLugares"];
-            string informacoes = Request.Params["inputInfo"];
-
-            ReservaBLL reservaBLL = new ReservaBLL();
-
-            string resultado = reservaBLL.novaReserva(cpf, dataStr, lugaresStr, informacoes);
-
             if (resultado.StartsWith("1"))
             {
                 <script type="text/javascript">
@@ -165,9 +172,7 @@
                     });
                 </script>
             }
-
         }
     }
-
 </body>
 </html>

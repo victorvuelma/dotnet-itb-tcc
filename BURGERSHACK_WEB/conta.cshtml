@@ -1,23 +1,5 @@
 ﻿@using BurgerShack.Web.Bll;
 @using BurgerShack.Common;
-
-@{
-    ClienteBLL clienteBLL = new ClienteBLL();
-
-    if (!clienteBLL.autenticado())
-    {
-        HttpContext.Current.Response.Redirect("acessar.cshtml");
-        return;
-    }
-
-    clnCliente objCliente = clienteBLL.obterCliente();
-
-    ReservaBLL reservaBLL = new ReservaBLL();
-
-    string reservasTabela = reservaBLL.listarReservas();
-
-}
-
 <!DOCTYPE html>
 <html lang=pt-br>
 <head>
@@ -46,6 +28,38 @@
     <link rel="stylesheet" href="~/Resources/css/nprogress.css" />
 </head>
 <body>
+    @{
+        string resultado = "";
+
+        ClienteBLL clienteBLL = new ClienteBLL();
+        clnCliente objCliente = new clnCliente();
+        string reservasTabela = "";
+
+        if (!clienteBLL.autenticado())
+        {
+            Response.Redirect("acessar.cshtml");
+        }
+        else
+        {
+            if (Request.HttpMethod == "POST")
+            {
+                string nome = Request.Params["txtNome"];
+                string senha = Request.Params["txtSenha"];
+                string celular = Request.Params["txtCelular"];
+                string cartaoNumero = Request.Params["txtCartaoNumero"];
+                string cartaoValidade = Request.Params["txtCartaoValidade"];
+                string cartaoCVV = Request.Params["txtCartaoCVV"];
+
+                resultado = clienteBLL.alterar(nome, senha, celular, cartaoNumero, cartaoValidade, cartaoCVV);
+            }
+
+            objCliente = clienteBLL.obterCliente();
+
+            ReservaBLL reservaBLL = new ReservaBLL();
+
+            reservasTabela = reservaBLL.listarReservas();
+        }
+    }
 
     <!-- CABEÇALHO -->
     <header>
@@ -164,7 +178,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <h5>Sobre o BurgerShack</h5>
-                                        <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
+                    <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>
@@ -189,19 +203,9 @@
     <script type="text/javascript" src="~/Resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Resources/js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="~/Resources/js/script.js"></script>
-
     @{
-        if (Request.HttpMethod == "POST")
+        if (!String.IsNullOrEmpty(resultado))
         {
-            string nome = Request.Params["txtNome"];
-            string senha = Request.Params["txtSenha"];
-            string celular = Request.Params["txtCelular"];
-            string cartaoNumero = Request.Params["txtCartaoNumero"];
-            string cartaoValidade = Request.Params["txtCartaoValidade"];
-            string cartaoCVV = Request.Params["txtCartaoCVV"];
-
-            string resultado = clienteBLL.alterar(nome, senha, celular, cartaoNumero, cartaoValidade, cartaoCVV);
-
             if (resultado.StartsWith("1"))
             {
                 <script type="text/javascript">
@@ -209,8 +213,6 @@
                         title: 'Tudo certo!',
                         html: '@Html.Raw(resultado.Substring(1, resultado.Length - 1).Replace(".", ".<br/>"))',
                         type: 'success'
-                    }).then((result) => {
-                        document.location = 'conta.cshtml'
                     });
                 </script>
             }

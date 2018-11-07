@@ -14,7 +14,7 @@ namespace BurgerShack.Common
         private int _cod = -1;
         private bool _ativo = true;
 
-        private int _codFuncionario = -1;
+        private int? _codFuncionario = null;
 
         private String _nome;
         private String _cpf;
@@ -30,7 +30,7 @@ namespace BurgerShack.Common
         private DateTime _cadastro;
 
         public int Cod { get => _cod; set => _cod = value; }
-        public int CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
+        public int? CodFuncionario { get => _codFuncionario; set => _codFuncionario = value; }
         public string Nome { get => _nome; set => _nome = value; }
         public string Cpf { get => _cpf; set => _cpf = value; }
         public string TelCelular { get => _telCelular; set => _telCelular = value; }
@@ -45,7 +45,7 @@ namespace BurgerShack.Common
         private clnCliente obter(SqlDataReader reader) => new clnCliente
         {
             Cod = UtilConvert.ToInt(reader["id"]),
-            CodFuncionario = UtilConvert.ToInt(reader["id_funcionario"]),
+            CodFuncionario = UtilConvert.ToNullableInt(reader["id_funcionario"]),
             Nome = UtilConvert.ToString(reader["nome"]),
             Cpf = UtilConvert.ToString(reader["cpf"]),
             TelCelular = UtilConvert.ToString(reader["tel_cel"]),
@@ -93,6 +93,21 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("cliente");
             objSelect.Where.where("cpf", Cpf);
+
+            clnCliente objCliente = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+                objCliente = obter(reader);
+            reader.Close();
+
+            return objCliente;
+        }
+
+        public clnCliente obterPorEmail()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("cliente");
+            objSelect.Where.where("email", Email);
 
             clnCliente objCliente = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
