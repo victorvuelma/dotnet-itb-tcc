@@ -150,22 +150,20 @@ namespace BurgerShack.Web.Bll
 
         public void atribuirMesas(clnReserva objReserva, int lugares)
         {
-            while (lugares > 0)
+            List<clnMesa> objMesas = new clnMesa().obterOrdenadoPorLugares();
+            List<int> codMesasReservas = new clnReserva
             {
-                List<clnMesa> objMesas = new clnMesa().obterOrdenadoPorLugares();
-                List<int> codMesasReservas = new clnReserva
-                {
-                    Agendado = objReserva.Agendado
-                }.obterMesasReservadas();
+                Agendado = objReserva.Agendado
+            }.obterMesasReservadas();
 
-                objMesas.RemoveAll(objMesa => codMesasReservas.Contains(objMesa.Cod));
+            objMesas.RemoveAll(objMesa => codMesasReservas.Contains(objMesa.Cod));
 
+            while (lugares > 0 && objMesas.Count > 0)
+            {
                 objReserva.addMesa(objMesas[0].Cod);
 
                 lugares -= objMesas[0].Lugares;
                 objMesas.RemoveAt(0);
-
-                // IRÁ ATRIBUIR AS MESAS AUTOMATICAMENTE.
             }
         }
 
