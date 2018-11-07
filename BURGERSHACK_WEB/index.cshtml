@@ -1,10 +1,9 @@
 ﻿@using BurgerShack.Web.Bll;
-
-
 @{
+    ClienteBLL clienteBLL = new ClienteBLL();
     ProdutoBLL produtoBLL = new ProdutoBLL();
 
-    String listaHtml = produtoBLL.listarProdutos(produtoBLL.obterTodos());
+    String produtosLista = produtoBLL.listarProdutos(produtoBLL.obterTodos());
 }
 <!DOCTYPE html>
 <html lang=pt-br>
@@ -46,18 +45,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-home"></i> Início</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#catalogo"><i class="fas fa-bars"></i> Catálogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#sobre"><i class="fas fa-info"></i> Sobre</a>
+                            <a class="nav-link" href="#feedback"><i class="fas fa-smile"></i> Feedback</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="~/acessar.cshtml"><i class="fas fa-sign-in-alt"></i> Acessar</a>
-                        </li>
+                        @{
+                            if (clienteBLL.autenticado())
+                            {
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="~/conta.cshtml"><i class="fas fa-user-alt"></i> Minha Conta</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="~/acessar.cshtml"><i class="fas fa-sign-in-alt"></i> Acessar</a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -97,12 +107,13 @@
         <h2>Catálogo</h2>
         <div class="container">
             <div class="row">
-                @Html.Raw(listaHtml)
+                @Html.Raw(produtosLista)
             </div>
+        </div>
     </section>
 
-    <!-- FEEDBACK SEND-->
-    <section id="feedback-send">
+    <!-- FEEDBACK-->
+    <section id="feedback">
         <h2>Deixe seu Feedback <i class="fas fa-smile"></i></h2>
         <div class="container">
             <div class="row">
@@ -131,7 +142,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <h5>Sobre o BurgerShack</h5>
-                                        <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
+                    <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>

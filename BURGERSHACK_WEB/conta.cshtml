@@ -1,5 +1,38 @@
 ﻿@using BurgerShack.Web.Bll;
 @using BurgerShack.Common;
+
+@{
+    ClienteBLL clienteBLL = new ClienteBLL();
+    clnCliente objCliente = new clnCliente();
+
+    string resultado = "";
+    string reservasTabela = "";
+
+    if (!clienteBLL.autenticado())
+    {
+        Response.Redirect("acessar.cshtml");
+    }
+    else
+    {
+        if (Request.HttpMethod == "POST")
+        {
+            string nome = Request.Params["txtNome"];
+            string senha = Request.Params["txtSenha"];
+            string celular = Request.Params["txtCelular"];
+            string cartaoNumero = Request.Params["txtCartaoNumero"];
+            string cartaoValidade = Request.Params["txtCartaoValidade"];
+            string cartaoCVV = Request.Params["txtCartaoCVV"];
+
+            resultado = clienteBLL.alterar(nome, senha, celular, cartaoNumero, cartaoValidade, cartaoCVV);
+        }
+
+        objCliente = clienteBLL.obterCliente();
+
+        ReservaBLL reservaBLL = new ReservaBLL();
+
+        reservasTabela = reservaBLL.listarReservas();
+    }
+}
 <!DOCTYPE html>
 <html lang=pt-br>
 <head>
@@ -28,44 +61,11 @@
     <link rel="stylesheet" href="~/Resources/css/nprogress.css" />
 </head>
 <body>
-    @{
-        string resultado = "";
-
-        ClienteBLL clienteBLL = new ClienteBLL();
-        clnCliente objCliente = new clnCliente();
-        string reservasTabela = "";
-
-        if (!clienteBLL.autenticado())
-        {
-            Response.Redirect("acessar.cshtml");
-        }
-        else
-        {
-            if (Request.HttpMethod == "POST")
-            {
-                string nome = Request.Params["txtNome"];
-                string senha = Request.Params["txtSenha"];
-                string celular = Request.Params["txtCelular"];
-                string cartaoNumero = Request.Params["txtCartaoNumero"];
-                string cartaoValidade = Request.Params["txtCartaoValidade"];
-                string cartaoCVV = Request.Params["txtCartaoCVV"];
-
-                resultado = clienteBLL.alterar(nome, senha, celular, cartaoNumero, cartaoValidade, cartaoCVV);
-            }
-
-            objCliente = clienteBLL.obterCliente();
-
-            ReservaBLL reservaBLL = new ReservaBLL();
-
-            reservasTabela = reservaBLL.listarReservas();
-        }
-    }
-
     <!-- CABEÇALHO -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="~/index.cshtml">
+                <a class="navbar-brand" href="index.cshtml#">
                     <img class="navbar-logo" src="~/Resources/img/logo.png" alt="Logo do BurgerShack">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,18 +73,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="~/index.cshtml"><i class="fas fa-home"></i> Início</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.cshtml#"><i class="fas fa-home"></i> Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/index.cshtml#catalogo"><i class="fas fa-bars"></i> Catálogo</a>
+                            <a class="nav-link" href="index.cshtml#catalogo"><i class="fas fa-bars"></i> Catálogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="~/index.cshtml#sobre"><i class="fas fa-info"></i> Sobre</a>
+                            <a class="nav-link" href="index.cshtml#feedback"><i class="fas fa-smile"></i> Feedback</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="~/acessar.cshtml"><i class="fas fa-sign-in-alt"></i> Acessar</a>
-                        </li>
+                        @{
+                            if (clienteBLL.autenticado())
+                            {
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="~/conta.cshtml"><i class="fas fa-user-alt"></i> Minha Conta</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="~/acessar.cshtml"><i class="fas fa-sign-in-alt"></i> Acessar</a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>

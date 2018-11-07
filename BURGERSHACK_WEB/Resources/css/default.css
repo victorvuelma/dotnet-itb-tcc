@@ -45,6 +45,7 @@ ul {
 .card-body {
     padding-bottom: 0.5em;
     background-color: #3A5168;
+    text-align: justify;
 }
 
 .card h5 {
@@ -101,4 +102,5 @@ footer {
     margin-top: 25px;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-align: justify;
 }
