@@ -90,7 +90,7 @@ namespace BurgerShack.Web.Bll
             conteudo.Append("<br/>Informamos que recebemos o seu Feedback e se for necessário entraremos em contato novamente para mais detalhes!");
             conteudo.Append("<br/>");
             conteudo.Append("<br/>Atenciosamente,");
-            conteudo.Append("<br/>Equipe ").Append(App.Name).Append(".");
+            conteudo.Append("<br/>Equipe ").Append("<a href='").Append(App.Webiste).Append("'>").Append(App.Name).Append("</a>").Append(".");
             conteudo.Append("<br/>");
             conteudo.Append("<br/>(Esta mensagem é automática)");
 

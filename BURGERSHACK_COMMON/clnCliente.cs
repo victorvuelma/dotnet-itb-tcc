@@ -196,12 +196,11 @@ namespace BurgerShack.Common
             informativo.Append("<br/>Senha: ").Append(senha);
             informativo.Append("<br/>");
             informativo.Append("<br/>Atenciosamente,");
-            informativo.Append("<br/>Equipe ").Append(App.Name).Append(".");
-            informativo.Append("<br/><a href='").Append(App.Webiste).Append("'>").Append(App.Name).Append("</a>");
+            informativo.Append("<br/>Equipe ").Append("<a href='").Append(App.Webiste).Append("'>").Append(App.Name).Append("</a>").Append(".");
             informativo.Append("<br/>");
             informativo.Append("<br/>(Esta mensagem é automática)");
 
-            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, App.Name + " - Recebemos o seu Feedback!", informativo.ToString());
+            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, App.Name + " - Bem-vindo!", informativo.ToString());
         }
     }
 

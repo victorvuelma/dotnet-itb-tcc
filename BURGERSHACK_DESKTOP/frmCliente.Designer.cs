@@ -114,7 +114,7 @@
             // 
             this.txtEmail.AcceptButton = null;
             this.txtEmail.AccessibleName = "E-mail";
-            this.txtEmail.Campo = "E-mail";
+            this.txtEmail.Campo = "E-mail*";
             this.txtEmail.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtEmail.Location = new System.Drawing.Point(5, 90);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
