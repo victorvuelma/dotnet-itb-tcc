@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Text;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util;
@@ -77,7 +78,7 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("cliente");
             objSelect.Where.where("cpf", Cpf)
-                           .where("hash", sqlElementWhereCommon.whereOperation.EQUALS,Hash);
+                           .where("hash", sqlElementWhereCommon.whereOperation.EQUALS, Hash);
 
             clnCliente objCliente = null;
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -140,6 +141,7 @@ namespace BurgerShack.Common
             if (String.IsNullOrEmpty(Hash))
             {
                 string senha = UtilRandom.gerar(10);
+
                 informarSenha(senha);
 
                 Hash = senha;
@@ -184,8 +186,23 @@ namespace BurgerShack.Common
 
         private void informarSenha(String senha)
         {
-            //TODO: USE SMTP TO SEND PASSWORD
-        }
+            StringBuilder informativo = new StringBuilder();
+            informativo.Append("Olá ").Append(Nome);
+            informativo.Append("<br/>");
+            informativo.Append("<br/>Seja bem-vindo ao ").Append(App.Name).Append("!");
+            informativo.Append("<br/>Você foi cadastrado em nosso sistema, permitindo o acesso via nosso website e nosso Aplicativo para Android.");
+            informativo.Append("<br/>");
+            informativo.Append("<br/>Realize o acesso com o seu CPF e sua senha:");
+            informativo.Append("<br/>Senha: ").Append(senha);
+            informativo.Append("<br/>");
+            informativo.Append("<br/>Atenciosamente,");
+            informativo.Append("<br/>Equipe ").Append(App.Name).Append(".");
+            informativo.Append("<br/><a href='").Append(App.Webiste).Append("'>").Append(App.Name).Append("</a>");
+            informativo.Append("<br/>");
+            informativo.Append("<br/>(Esta mensagem é automática)");
 
+            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, App.Name + " - Recebemos o seu Feedback!", informativo.ToString());
+        }
     }
+
 }

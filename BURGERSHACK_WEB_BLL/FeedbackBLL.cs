@@ -69,35 +69,32 @@ namespace BurgerShack.Web.Bll
         {
             StringBuilder conteudo = new StringBuilder();
             conteudo.Append("Um novo feedback foi recebido!");
-            conteudo.Append("<br /> ");
-            conteudo.Append("<br />Nome: ");
-            conteudo.AppendLine(nome);
-            conteudo.Append("<br /> ");
-            conteudo.Append("<br />E-mail: ");
-            conteudo.AppendLine(email);
-            conteudo.Append("<br /> ");
-            conteudo.Append("<br />Mensagem: ");
-            conteudo.AppendLine(mensagem);
-            conteudo.Append("<br /> ");
-            conteudo.Append("<br />(Esta mensagem é automática)");
+            conteudo.Append("<br/>");
+            conteudo.Append("<br/>Nome: ").Append(nome);
+            conteudo.Append("<br/>");
+            conteudo.Append("<br/>E-mail: ").Append(email);
+            conteudo.Append("<br/>");
+            conteudo.Append("<br/>Mensagem: ").Append(mensagem);
+            conteudo.Append("<br/>");
+            conteudo.Append("<br/>(Esta mensagem é automática)");
 
-            return App.EmailClient.SendEmail(nome, email, App.EmailClient.CredentialUser, "BurgerShack - Novo Feedback Recebido!", conteudo.ToString());
+            return App.EmailClient.SendEmail(nome, email, App.EmailClient.CredentialEmail, App.Name + " - Novo Feedback Recebido!", conteudo.ToString());
         }
 
         private string enviarEmailDeRecebimento(string nome, string email)
         {
             StringBuilder conteudo = new StringBuilder();
-            conteudo.Append("Olá " + nome);
-            conteudo.Append("<br /> ");
-            conteudo.Append("<br />Obrigado por enviar o seu Feedback!");
-            conteudo.Append("<br />Informamos que recebemos o seu Feedback e se for necessário entraremos em contato novamente para mais detalhes!");
-            conteudo.Append("<br /> ");
-            conteudo.Append("<br />Atenciosamente,");
-            conteudo.Append("<br />BurgerShack Hamburgueria.");
-            conteudo.Append("<br /> ");
-            conteudo.Append("<br />(Esta mensagem é automática)");
+            conteudo.Append("Olá ").Append(nome);
+            conteudo.Append("<br/>");
+            conteudo.Append("<br/>Obrigado por enviar o seu Feedback!");
+            conteudo.Append("<br/>Informamos que recebemos o seu Feedback e se for necessário entraremos em contato novamente para mais detalhes!");
+            conteudo.Append("<br/>");
+            conteudo.Append("<br/>Atenciosamente,");
+            conteudo.Append("<br/>Equipe ").Append(App.Name).Append(".");
+            conteudo.Append("<br/>");
+            conteudo.Append("<br/>(Esta mensagem é automática)");
 
-            return App.EmailClient.SendEmail("BurgerShack", "burgershackhamburgueria@gmail.com", email, "BurgerShack - Recebemos o seu Feedback!", conteudo.ToString());
+            return App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, email, App.Name + " - Recebemos o seu Feedback!", conteudo.ToString());
         }
 
     }

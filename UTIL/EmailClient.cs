@@ -14,13 +14,13 @@ namespace vitorrdgs.Util
         private bool _smtpSsl = true;
         private int _smtpPort = 587;
 
-        private string _credentialUser;
+        private string _credentialEmail;
         private string _credentialPassword;
 
         public string SmtpHost { get => _smtpHost; set => _smtpHost = value; }
         public bool SmtpSsl { get => _smtpSsl; set => _smtpSsl = value; }
         public int SmtpPort { get => _smtpPort; set => _smtpPort = value; }
-        public string CredentialUser { get => _credentialUser; set => _credentialUser = value; }
+        public string CredentialEmail { get => _credentialEmail; set => _credentialEmail = value; }
         public string CredentialPassword { get => _credentialPassword; set => _credentialPassword = value; }
 
         public string SendEmail(string senderName, string senderEmail, string receiverEmail, string title, string content)
@@ -42,7 +42,7 @@ namespace vitorrdgs.Util
 
             NetworkCredential objCredential = new NetworkCredential
             {
-                UserName = CredentialUser,
+                UserName = CredentialEmail,
                 Password = CredentialPassword
             };
 
