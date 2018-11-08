@@ -13,14 +13,14 @@
     {
         if (Request.HttpMethod == "POST")
         {
-            string nome = Request.Params["txtNome"];
-            string email = Request.Params["txtEmail"];
-            string senha = Request.Params["txtSenha"];
-            string cpf = Request.Params["txtCPF"];
-            string celular = Request.Params["txtCelular"];
-            string cartaoNumero = Request.Params["txtCartaoNumero"];
-            string cartaoValidade = Request.Params["txtCartaoValidade"];
-            string cartaoCVV = Request.Params["txtCartaoCVV"];
+            string nome = Request.Form["txtNome"];
+            string email = Request.Form["txtEmail"];
+            string senha = Request.Form["txtSenha"];
+            string cpf = Request.Form["txtCPF"];
+            string celular = Request.Form["txtCelular"];
+            string cartaoNumero = Request.Form["txtCartaoNumero"];
+            string cartaoValidade = Request.Form["txtCartaoValidade"];
+            string cartaoCVV = Request.Form["txtCartaoCVV"];
 
             resultado = clienteBLL.cadastrar(nome, email, senha, cpf, celular, cartaoNumero, cartaoValidade, cartaoCVV);
         }
@@ -104,48 +104,48 @@
                     <form role="form" method="post">
                         <h4>Informe seus Dados:</h4>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required value="@Request.Params["txtNome"]" />
+                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required value="@Request.Form["txtNome"]" />
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="txtEmail" placeholder="E-mail" required value="@Request.Params["txtEmail"]" />
+                                    <input type="email" class="form-control" name="txtEmail" placeholder="E-mail" required value="@Request.Form["txtEmail"]" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required value="@Request.Params["txtSenha"]" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" required value="@Request.Params["txtCPF"]" />
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="@Request.Params["txtCelular"]" />
+                                    <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required value="@Request.Form["txtSenha"]" />
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="@Request.Params["txtCartaoNumero"]" />
+                                    <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" required value="@Request.Form["txtCPF"]" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="@Request.Form["txtCelular"]" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="@Request.Form["txtCartaoNumero"]" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required value="@Request.Params["txtCartaoValidade"]" />
+                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required value="@Request.Form["txtCartaoValidade"]" />
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="txtCartaoCVV" placeholder="CVV" data-mask="000" required value="@Request.Params["txtCartaoCVV"]" />
+                                            <input type="text" class="form-control" name="txtCartaoCVV" placeholder="CVV" data-mask="000" required value="@Request.Form["txtCartaoCVV"]" />
                                         </div>
                                     </div>
                                 </div>

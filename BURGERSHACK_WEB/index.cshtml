@@ -3,7 +3,19 @@
     ClienteBLL clienteBLL = new ClienteBLL();
     ProdutoBLL produtoBLL = new ProdutoBLL();
 
+    string resultado = "";
     String produtosLista = produtoBLL.listarProdutos(produtoBLL.obterTodos());
+
+    if (Request.HttpMethod == "POST")
+    {
+        string nome = Request.Form["txtNome"];
+        string email = Request.Form["txtEmail"];
+        string mensagem = Request.Form["txtMensagem"];
+
+        FeedbackBLL feedbackBLL = new FeedbackBLL();
+
+        resultado = feedbackBLL.enviarFeedback(nome, email, mensagem);
+    }
 }
 <!DOCTYPE html>
 <html lang=pt-br>
@@ -118,16 +130,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-6 col-sm-12 col-center">
-                    <form>
+                    <form role="form" action="~/index.cshtml" method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputFeedbackNome" placeholder="Primeiro Nome" required />
+                            <input type="text" class="form-control" name="txtNome" placeholder="Nome" required />
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="inputFeedbackEmail" placeholder="Email" aria-describedby="emailHelp" required />
+                            <input type="email" class="form-control" name="txtEmail" placeholder="Email" aria-describedby="emailHelp" required />
                             <small id="emailHelp" class="form-text text-muted">Nós nunca vamos compartilhar seu e-mail com ninguém.</small>
                         </div>
                         <div class="form-group">
-                            <textarea class="w-100 form-control" id="inputFeedbackText" rows="3" placeholder="Deixe seu feedback" required></textarea>
+                            <textarea class="w-100 form-control" name="txtMensagem" rows="3" placeholder="Deixe seu feedback" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Enviar</button>
                     </form>
@@ -167,5 +179,30 @@
     <script type="text/javascript" src="~/Resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Resources/js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="~/Resources/js/script.js"></script>
+    @{
+        if (!String.IsNullOrEmpty(resultado))
+        {
+            if (resultado.StartsWith("1"))
+            {
+                <script type="text/javascript">
+                    swal({
+                    title: 'Tudo certo!',
+                        html: '@Html.Raw(resultado.Substring(1, resultado.Length - 1).Replace(".", ".<br/>"))',
+                        type: 'success'
+                    });
+                </script>
+            }
+            else
+            {
+                <script type="text/javascript">
+                    swal({
+                    title: 'Ops...',
+                        html: '@Html.Raw(resultado.Substring(1, resultado.Length - 1).Replace(".", ".<br/>"))',
+                        type: 'error'
+                    });
+                </script>
+            }
+        }
+    }
 </body>
 </html>

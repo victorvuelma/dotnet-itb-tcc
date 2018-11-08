@@ -17,7 +17,7 @@ namespace BurgerShack.Web.Bll
             {
                 errosBuilder.Append("É necessário informar o nome.");
             }
-            else if (nome.Length <= 10)
+            else if (nome.Length < 10)
             {
                 errosBuilder.Append("O nome informádo é invalido.");
             }

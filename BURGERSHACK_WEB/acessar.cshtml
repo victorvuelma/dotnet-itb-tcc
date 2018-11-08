@@ -9,7 +9,7 @@
     {
         if (clienteBLL.autenticado())
         {
-            string acao = Request.Params["acao"];
+            string acao = Request.Form["acao"];
             if (!String.IsNullOrEmpty(acao) && acao == "sair")
             {
                 clienteBLL.sair();
@@ -28,8 +28,8 @@
         }
         else
         {
-            string cpf = Request.Params["txtCPF"];
-            string senha = Request.Params["txtSenha"];
+            string cpf = Request.Form["txtCPF"];
+            string senha = Request.Form["txtSenha"];
 
             resultado = clienteBLL.autenticar(cpf, senha);
         }
@@ -113,7 +113,7 @@
                     <form role="form" action="~/acessar.cshtml" method="post">
                         <h4>Informe seus Dados:</h4>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" value="@Request.Params["txtCPF"]" required />
+                            <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" value="@Request.Form["txtCPF"]" required />
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required />

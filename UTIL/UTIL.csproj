@@ -132,6 +132,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailClient.cs" />
     <Compile Include="Hash\Hash.cs" />
     <Compile Include="Hash\HashMD5.cs" />
     <Compile Include="Data\UtilCache.cs" />

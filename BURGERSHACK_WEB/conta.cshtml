@@ -16,12 +16,12 @@
     {
         if (Request.HttpMethod == "POST")
         {
-            string nome = Request.Params["txtNome"];
-            string senha = Request.Params["txtSenha"];
-            string celular = Request.Params["txtCelular"];
-            string cartaoNumero = Request.Params["txtCartaoNumero"];
-            string cartaoValidade = Request.Params["txtCartaoValidade"];
-            string cartaoCVV = Request.Params["txtCartaoCVV"];
+            string nome = Request.Form["txtNome"];
+            string senha = Request.Form["txtSenha"];
+            string celular = Request.Form["txtCelular"];
+            string cartaoNumero = Request.Form["txtCartaoNumero"];
+            string cartaoValidade = Request.Form["txtCartaoValidade"];
+            string cartaoCVV = Request.Form["txtCartaoCVV"];
 
             resultado = clienteBLL.alterar(nome, senha, celular, cartaoNumero, cartaoValidade, cartaoCVV);
         }
