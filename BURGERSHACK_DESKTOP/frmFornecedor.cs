@@ -52,7 +52,7 @@ namespace BurgerShack.Desktop
 
                     if (objFornecedorCNPJ == null)
                     {
-                        clnFornecedor objFornecedor = new clnFornecedor
+                        ObjFornecedor = new clnFornecedor
                         {
                             RazaoSocial = txtRazaoSocial.Text,
                             Cnpj = UtilFormatar.retirarFormatacao(mtbCNPJ.Text),
@@ -66,8 +66,7 @@ namespace BurgerShack.Desktop
                             EndLocalidade = txtEndCidade.Text,
                             EndUF = cboEndUF.Text
                         };
-                        objFornecedor.gravar();
-                        ObjFornecedor = objFornecedor;
+                        ObjFornecedor.gravar();
                         UtilMensagem.mostrarOk("Cadastro de Fornecedor", "Fornecedor cadastrado com sucesso!");
                         Close();
                     }

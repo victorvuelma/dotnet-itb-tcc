@@ -35,28 +35,40 @@ namespace BurgerShack.Desktop
         {
             if (_validar.validar(this))
             {
-                clnCliente objClienteCPF = new clnCliente
-                {
-                    Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text)
-                }.obterPorCPF();
-
                 if (ObjCliente == null)
                 {
+                    clnCliente objClienteCPF = new clnCliente
+                    {
+                        Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text)
+                    }.obterPorCPF();
+
                     if (objClienteCPF == null)
                     {
-                        clnCliente objCliente = new clnCliente
+                        clnCliente objClienteEmail = new clnCliente
                         {
-                            CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
-                            Nome = txtNome.Text,
-                            Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text),
-                            Email = txtEmail.Text,
-                            TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text),
-                            Cadastro = DateTime.Now
-                        };
-                        objCliente.gravar();
-                        ObjCliente = objCliente;
-                        UtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!");
-                        Close();
+                            Email = txtEmail.Text
+                        }.obterPorEmail();
+
+                        if (objClienteEmail == null)
+                        {
+                            ObjCliente = new clnCliente
+                            {
+                                CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
+                                Nome = txtNome.Text,
+                                Cpf = UtilFormatar.retirarFormatacao(mtbCPF.Text),
+                                Email = txtEmail.Text,
+                                TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text),
+                                Cadastro = DateTime.Now
+                            };
+                            ObjCliente.gravar();
+                            UtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!");
+                            Close();
+                        }
+                        else
+                        {
+                            UtilMensagem.mostrarOk("Cadastro de Cliente", "Não foi possível cadastrar o cliente, o email já está cadastrado!");
+                            mtbCPF.Focus();
+                        }
                     }
                     else
                     {
@@ -173,6 +185,7 @@ namespace BurgerShack.Desktop
             {
                 UtilForm.Enable(this);
                 mtbCPF.Enabled = false;
+                txtEmail.Enabled = false;
 
                 UtilButton.cancelar(btnVoltar);
                 UtilButton.salvar(btnAlterar);

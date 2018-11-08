@@ -96,7 +96,7 @@ namespace BurgerShack.Desktop
 
                     if (objFuncionarioCpf == null)
                     {
-                        clnFuncionario objFuncionario = new clnFuncionario
+                        ObjFuncionario = new clnFuncionario
                         {
                             CodCargo = codCargo,
                             CodFoto = objArquivo.Cod,
@@ -119,8 +119,8 @@ namespace BurgerShack.Desktop
                             EndLocalidade = txtEndCidade.Text,
                             EndUF = cboEndUF.Text
                         };
-                        objFuncionario.gravar();
-                        ObjFuncionario = objFuncionario;
+                        ObjFuncionario.gravar();
+
                         UtilMensagem.mostrarOk("Cadastro de Funcionário", "Funcionário cadastrado com sucesso!");
                         Close();
                     }

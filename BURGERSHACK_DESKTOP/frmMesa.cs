@@ -41,14 +41,14 @@ namespace BurgerShack.Desktop
                 {
                     if (objMesaNumero == null)
                     {
-                        clnMesa objMesa = new clnMesa
+                        ObjMesa = new clnMesa
                         {
                             Numero = UtilConvert.ToInt(txtNumero.Text),
                             Lugares = UtilConvert.ToInt(txtLugares.Text),
                             Situacao = clnMesa.mesaSituacao.DISPONIVEL
                         };
-                        objMesa.gravar();
-                        ObjMesa = objMesa;
+                        ObjMesa.gravar();
+
                         UtilMensagem.mostrarOk("Cadastro de Mesa", "Mesa cadastrada com sucesso!");
                         Close();
                     }

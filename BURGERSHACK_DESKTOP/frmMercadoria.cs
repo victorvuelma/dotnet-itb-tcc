@@ -40,14 +40,14 @@ namespace BurgerShack.Desktop
                 {
                     if (objMercadoriaCodigoBarras == null)
                     {
-                        clnMercadoria objMercadoria = new clnMercadoria
+                        ObjMercadoria = new clnMercadoria
                         {
                             Descricao = txtDescricao.Text,
                             CodigoBarras = txtCodigoBarras.Text,
                             Baixar = chkBaixar.Checked
                         };
-                        objMercadoria.gravar();
-                        ObjMercadoria = objMercadoria;
+                        ObjMercadoria.gravar();
+
                         UtilMensagem.mostrarOk("Cadastro de Mercadoria", "Mercadoria cadastrada com sucesso!");
                         Close();
                     }
