@@ -1,4 +1,6 @@
 ﻿@using BurgerShack.Web.Bll;
+@using BurgerShack.Common;
+
 @{
     ClienteBLL clienteBLL = new ClienteBLL();
     ProdutoBLL produtoBLL = new ProdutoBLL();
@@ -20,13 +22,13 @@
 <!DOCTYPE html>
 <html lang=pt-br>
 <head>
-    <title>BurgerShack</title>
+    <title>@App.Name</title>
     <meta charset=UTF-8> <!-- ISO-8859-1 -->
     <meta name=viewport content="width=device-width, initial-scale=1.0"> <!-- Para não travar o zoom -->
     <meta name=description content=""> <!-- No máximo 360 caracteres, pode haver falhas com mais de 160 caracteres-->
     <meta name=keywords content=""> <!-- Opcional -->
     <meta name=author content="Caio Silva and vitorrdgs">
-    <meta name=application-name content="BurgerShack">
+    <meta name=application-name content="@App.Name">
     <link rel="shortcut icon" href="~/Resources/img/favicon.png" type="image/x-icon">
 
     <!-- BOOTSTRAP -->
@@ -50,7 +52,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img class="navbar-logo" src="~/Resources/img/logo.png" alt="Logo do BurgerShack">
+                    <img class="navbar-logo" src="~/Resources/img/logo.png" alt="Logo do @App.Name">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -153,14 +155,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                    <h5>Sobre o BurgerShack</h5>
-                    <p>O BurgerShack é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
+                    <h5>Sobre o @App.Name</h5>
+                    <p>O @App.Name é uma hamburgueria localizada no centro comercial de Alphaville, possuimos mesas para consumo, onde é possível realizar sua reserva por meio do telefone, website ou de nosso aplicativo.</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>
-                    <p><i class="fab fa-facebook-square"></i> facebook.com/burgershack</p>
+                    <p><i class="fab fa-facebook-square"></i> facebook.com/@App.Name</p>
                     <p><i class="fas fa-phone"></i> (11) 4998-5255</p>
-                    <p><i class="fas fa-envelope"></i> sac@burgershack.com</p>
+                    <p><i class="fas fa-envelope"></i> sac@@App.Name.com</p>
                     <p><i class="fas fa-location-arrow"></i> Calçada dos Lírios, 196 - Alphaville - Barueri</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
