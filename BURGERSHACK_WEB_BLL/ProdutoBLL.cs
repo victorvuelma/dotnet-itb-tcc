@@ -1,9 +1,7 @@
 ﻿using BurgerShack.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Web.Bll
@@ -13,22 +11,25 @@ namespace BurgerShack.Web.Bll
 
         public List<clnProduto> obterTodos()
         {
-            return new clnProduto {
+            return new clnProduto
+            {
                 Situacao = clnProduto.produtoSituacao.DISPONIVEL,
                 Ativo = true
             }.obterPorSituacao();
         }
 
-        public string listarProdutos(List<clnProduto> objProdutos)
+        public string exibirProdutos(List<clnProduto> objProdutos)
         {
-           if(objProdutos.Count == 0)
+            if (objProdutos.Count == 0)
             {
                 return "<h3>Não há produtos cadastrados.</h3>";
-            } else
+            }
+            else
             {
                 StringBuilder builder = new StringBuilder();
 
-                foreach (clnProduto objProduto in objProdutos) { 
+                foreach (clnProduto objProduto in objProdutos)
+                {
 
                     clnArquivo objImagem = new clnArquivo
                     {
@@ -81,6 +82,34 @@ namespace BurgerShack.Web.Bll
 
                 return builder.ToString();
             }
+        }
+
+        public string listarProdutos()
+        {
+            StringBuilder listarBuilder = new StringBuilder();
+
+            List<clnProduto> objProdutos = obterTodos();
+
+            foreach (clnProduto objProduto in objProdutos)
+            {
+                if (listarBuilder.Length > 0)
+                {
+                    listarBuilder.AppendLine("$");
+                }
+                listarBuilder.Append(objProduto.Cod);
+                listarBuilder.Append("&").Append(objProduto.Nome);
+                listarBuilder.Append("&").Append(objProduto.Descricao);
+                listarBuilder.Append("&").Append(objProduto.Valor);
+                listarBuilder.Append("&").Append(objProduto.CodTipo);
+
+                clnArquivo objArquivo = new clnArquivo
+                {
+                    Cod = objProduto.Cod
+                }.obterPorCod();
+                listarBuilder.Append("&").Append(Convert.ToBase64String(objArquivo.Conteudo));
+            }
+
+            return listarBuilder.ToString();
         }
 
     }

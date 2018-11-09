@@ -1,0 +1,24 @@
+﻿@using BurgerShack.Web.Bll;
+@using BurgerShack.Common;
+
+@{
+    string response = "NULL";
+
+    if (Request.HttpMethod == "GET")
+    {
+        string action = Request.Params["action"];
+
+        if (!String.IsNullOrEmpty(action))
+        {
+            switch (action)
+            {
+                case "produtos":
+                    ProdutoBLL produtoBLL = new ProdutoBLL();
+
+                    response = produtoBLL.listarProdutos();
+                    break;
+            }
+        }
+    }
+}
+@Html.Raw(response)

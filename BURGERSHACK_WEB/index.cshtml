@@ -6,7 +6,7 @@
     ProdutoBLL produtoBLL = new ProdutoBLL();
 
     string resultado = "";
-    String produtosLista = produtoBLL.listarProdutos(produtoBLL.obterTodos());
+    String produtosLista = produtoBLL.exibirProdutos(produtoBLL.obterTodos());
 
     if (Request.HttpMethod == "POST")
     {
@@ -162,7 +162,7 @@
                     <h5>Contatos</h5>
                     <p><i class="fab fa-facebook-square"></i> facebook.com/@BurgerShack.Common.App.Name</p>
                     <p><i class="fas fa-phone"></i> (11) 4998-5255</p>
-                    <p><i class="fas fa-envelope"></i> sac@@BurgerShack.Common.App.Name.com</p>
+                    <p><i class="fas fa-envelope"></i> @BurgerShack.Common.App.EmailClient.CredentialEmail</p>
                     <p><i class="fas fa-location-arrow"></i> Calçada dos Lírios, 196 - Alphaville - Barueri</p>
                 </div>
                 <div class="col-sm-12 col-md-4">
