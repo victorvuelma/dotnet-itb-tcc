@@ -8,7 +8,7 @@ namespace BurgerShack.Web.Bll
     public class FeedbackBLL
     {
 
-        public string validarDados(string nome, string email, string mensagem)
+        private string validarDados(string nome, string email, string mensagem)
         {
             StringBuilder errosBuilder = new StringBuilder();
             if (UtilValidar.vazio(nome))

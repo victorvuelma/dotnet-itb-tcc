@@ -9,7 +9,7 @@ namespace BurgerShack.Web.Bll
     public class ClienteBLL
     {
 
-        public string validarDados(string nome, string email, string senha, string cpf,
+        private string validarDados(string nome, string email, string senha, string cpf,
             string celular, string cartaoNumero, string cartaoValidade, string cartaoCVV)
         {
             StringBuilder errosBuilder = new StringBuilder();
@@ -94,7 +94,7 @@ namespace BurgerShack.Web.Bll
             return errosBuilder.ToString();
         }
 
-        public string validarDadosLogin(string cpf, string senha)
+        private string validarDadosLogin(string cpf, string senha)
         {
             if (!autenticado())
             {

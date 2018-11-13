@@ -11,7 +11,7 @@ namespace BurgerShack.Web.Bll
 
         private ClienteBLL clienteBLL = new ClienteBLL();
 
-        public string listarReservas()
+        public string exibirReservas()
         {
             if (clienteBLL.autenticado())
             {
@@ -47,13 +47,47 @@ namespace BurgerShack.Web.Bll
             }
         }
 
-        public string validarDados(string cpf, string dataStr, string lugaresStr, string informacoes)
+        public string listarReservas(int? codCliente)
         {
-            if (clienteBLL.autenticado())
+            if (codCliente != null)
+            {
+                List<clnReserva> objReservas = new clnReserva
+                {
+                    CodCliente = (int)codCliente
+                }.obterPorCliente();
+
+                if (objReservas.Count == 0)
+                {
+                    return "<tr><td colspan='4'>Não foi encontrada nenhuma reserva.</td></tr>";
+                }
+                else
+                {
+                    StringBuilder builder = new StringBuilder();
+
+                    foreach (clnReserva objReserva in objReservas)
+                    {
+                        builder.Append("<tr>");
+                        builder.Append("<td scope='row'>").Append(objReserva.Cod).Append("</td>");
+                        builder.Append("<td>").Append(UtilFormatar.formatarData(objReserva.Agendado)).Append("</td>");
+                        builder.Append("<td>").Append(objReserva.Pessoas).Append("</td>");
+                        builder.Append("<td>").Append(objReserva.Situacao).Append("</td>");
+                        builder.Append("</tr>");
+                    }
+
+                    return builder.ToString();
+                }
+            } else
+            {
+                return "0Cliente não informado";
+            }
+        }
+        
+        private string validarDados(string cpf, string dataStr, string lugaresStr, string informacoes, clnCliente objCliente)
+        {
+            if (objCliente != null)
             {
                 StringBuilder errosBuilder = new StringBuilder();
 
-                clnCliente objCliente = clienteBLL.obterCliente();
                 if (UtilValidar.vazio(cpf))
                 {
                     errosBuilder.Append("É necessário informar um CPF.");
@@ -114,7 +148,7 @@ namespace BurgerShack.Web.Bll
                     //TODAS AS INFORMAÇÕE ESTÃO OK, VALIDE SE NÃO TEM RESERVA E SE É POSSÍVEL
                     List<clnReserva> objReservas = new clnReserva
                     {
-                        CodCliente = clienteBLL.obterCliente().Cod,
+                        CodCliente = objCliente.Cod,
                         Agendado = data,
                         Ativo = true,
                         Situacao = clnReserva.reservaSituacao.CANCELADA
@@ -148,7 +182,7 @@ namespace BurgerShack.Web.Bll
             }
         }
 
-        public void atribuirMesas(clnReserva objReserva, int lugares)
+        private void atribuirMesas(clnReserva objReserva, int lugares)
         {
             List<clnMesa> objMesas = new clnMesa().obterOrdenadoPorLugares();
             List<int> codMesasReservas = new clnReserva
@@ -167,11 +201,28 @@ namespace BurgerShack.Web.Bll
             }
         }
 
-        public string novaReserva(string cpf, string dataStr, string lugaresStr, string informacoes)
+        public string novaReserva(string cpf, string dataStr, string lugaresStr, string informacoes, int? codCliente)
         {
             cpf = UtilFormatar.retirarFormatacao(cpf);
 
-            string validar = validarDados(cpf, dataStr, lugaresStr, informacoes);
+            clnCliente objCliente;
+            if (clienteBLL.autenticado())
+            {
+                objCliente = clienteBLL.obterCliente();
+            }
+            else if (codCliente != null)
+            {
+                objCliente = new clnCliente
+                {
+                    Cod = (int)codCliente
+                }.obterPorCod();
+            }
+            else
+            {
+                return "0Cliente não informado";
+            }
+
+            string validar = validarDados(cpf, dataStr, lugaresStr, informacoes, objCliente);
 
             if (string.IsNullOrEmpty(validar))
             {
@@ -179,7 +230,7 @@ namespace BurgerShack.Web.Bll
                 {
                     Informacoes = informacoes,
                     Pessoas = UtilConvert.ToInt(lugaresStr),
-                    CodCliente = clienteBLL.obterCliente().Cod,
+                    CodCliente = objCliente.Cod,
                     Agendado = UtilConvert.ObterData(dataStr),
                     Agendamento = DateTime.Now.Date,
                     Situacao = clnReserva.reservaSituacao.MARCADA
