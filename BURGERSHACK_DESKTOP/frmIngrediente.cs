@@ -120,12 +120,7 @@ namespace BurgerShack.Desktop
                     ObjIngrediente.Situacao = (clnIngrediente.ingredienteSituacao)Enum.Parse(typeof(clnIngrediente.ingredienteSituacao), cboSituacao.Text);
                     
                     ObjIngrediente.alterar();
-
-                    clnEstoque objEstoque = new clnEstoque
-                    {
-                        CodMercadoria = ObjIngrediente.Cod
-                    };
-                    objEstoque.atualizarIngredientes();
+                    ObjIngrediente.atualizarEstoque(true);
 
                     UtilMensagem.mostrarOk("Altereção de Ingrediente", "Ingrediente alterado com sucesso!");
                 }

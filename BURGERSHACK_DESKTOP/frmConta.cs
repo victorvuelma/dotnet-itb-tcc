@@ -102,7 +102,7 @@ namespace BurgerShack.Desktop
                     Valor = clnUtilPedido.calcularValor(ObjAtendimento)
                 };
                 ObjConta.gravar();
-
+                
                 clnPedido objPedidos = new clnPedido
                 {
                     CodAtendimento = ObjAtendimento.Cod
@@ -116,6 +116,8 @@ namespace BurgerShack.Desktop
                 btnFinalizar.Hide();
                 grbAlterar.Hide();
                 btnPagamento.Show();
+                
+                Numboard.ControlNumboard.esconderNumBoard();
             }
         }
 

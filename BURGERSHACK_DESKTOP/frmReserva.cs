@@ -260,7 +260,7 @@ namespace BurgerShack.Desktop
             if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text))
             {
                 DateTime dataAgendada = UtilConvert.ObterData(mtbData.Text).Date;
-                if (!ObjReserva.Agendado.Equals(dataAgendada))
+                if (ObjReserva.Agendado.CompareTo(dataAgendada) != 0)
                 {
                     ObjReserva.Agendado = dataAgendada;
 
@@ -549,7 +549,10 @@ namespace BurgerShack.Desktop
 
         private void mtbData_TextChange(object sender, EventArgs e)
         {
-            tentarDefinirData();
+            if (Visible && mtbData.Enabled)
+            {
+                tentarDefinirData();
+            }
         }
     }
 }

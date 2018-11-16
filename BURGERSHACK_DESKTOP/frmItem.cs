@@ -161,7 +161,7 @@ namespace BurgerShack.Desktop
             clnUtil.atualizarForm(this);
             uixButton.btnApply(btnRemover, AppDesktop.VisualStyle.ButtonWarningColor);
 
-            hdrUIX.Title = App.Name + "- Pedido :: Alterando Item " + ObjItem.Cod;
+            hdrUIX.Title = App.Name + " - Pedido :: Alterando Item " + ObjItem.Cod;
 
             clnProduto objProduto = new clnProduto
             {

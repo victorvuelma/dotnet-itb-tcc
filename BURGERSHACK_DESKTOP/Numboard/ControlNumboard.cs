@@ -14,6 +14,11 @@ namespace BurgerShack.Desktop.Numboard
     {
         private static FormNumboard frmNumboard;
 
+        public static void esconderNumBoard()
+        {
+            frmNumboard.Hide();
+        }
+
         public static void definirNumBoard(ControlCollection controls)
         {
             foreach (Control control in controls)

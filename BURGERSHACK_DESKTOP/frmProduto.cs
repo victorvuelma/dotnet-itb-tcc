@@ -428,6 +428,9 @@ namespace BurgerShack.Desktop
                 grbImagem.Hide();
                 btnMercadoria.Hide();
 
+                grbMercadoria.Show();
+                lblMercadoria.Show();
+
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
                     btnExcluir.Show();

@@ -163,8 +163,6 @@ namespace BurgerShack.Common
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);
-
-            atualizarEstoque(true);
         }
 
         public void atualizarEstoque(bool produtos)
@@ -189,6 +187,7 @@ namespace BurgerShack.Common
             }
             if(novaSituacao != Situacao)
             {
+                Situacao = novaSituacao;
                 alterar();
             }
 
