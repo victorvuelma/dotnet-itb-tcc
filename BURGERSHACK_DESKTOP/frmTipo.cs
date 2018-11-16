@@ -86,7 +86,7 @@ namespace BurgerShack.Desktop
 
             exibirTipos();
 
-            hdrUIX.Title = App.Name + " - Tipos de  " + Tipo.ToString().ToLower();
+            hdrUIX.Title = App.Name + " - Tipos de " + Tipo.ToString().ToLower();
         }
 
         private void dgvTipos_CellClick(object sender, DataGridViewCellEventArgs e)

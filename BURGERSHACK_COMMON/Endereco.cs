@@ -1,43 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Caelum.Stella.CSharp.Http;
+using System;
 using System.Data.SqlClient;
-using vitorrdgs.SqlMaster;
-using Caelum.Stella.CSharp.Http;
 using vitorrdgs.SqlMaster.Command;
-using vitorrdgs.SqlMaster.Element;
-using vitorrdgs.Util.Data;
 using vitorrdgs.SqlMaster.Element.Where;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Common
 {
 
     public class Endereco
     {
-        
+
         private static ViaCEP ViaCEP = new ViaCEP();
 
         public static Endereco obterEndereco(String cep)
         {
-            Endereco objEndereco = new Endereco
+            try
             {
-                CEP = UtilFormatar.retirarFormatacao(cep)
-            }.obterPorCep();
-            if (objEndereco == null)
-            {
-                try
+                Endereco objEndereco = new Endereco
                 {
-                    return Endereco.Transform(ViaCEP.GetEndereco(cep));
-                }
-                catch (Exception)
-                {
-                    return null;
-                }
+                    CEP = UtilFormatar.retirarFormatacao(cep)
+                }.obterPorCep();
+
+                if (objEndereco != null)
+                    return objEndereco;
             }
-            return objEndereco;
+            catch (Exception)
+            {
+            }
+            try
+            {
+                return Endereco.Transform(ViaCEP.GetEndereco(cep));
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         private string _logradouro;

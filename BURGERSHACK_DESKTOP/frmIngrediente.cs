@@ -279,7 +279,7 @@ namespace BurgerShack.Desktop
 
                 int ingredienteEstoque = new clnEstoque
                 {
-                    CodMercadoria = ObjIngrediente.Cod
+                    CodMercadoria = objMercadoria.Cod
                 }.obterQuantidadePorMercadoria();
 
                 if (ObjIngrediente.Situacao == clnIngrediente.ingredienteSituacao.FORADEESTOQUE)
