@@ -51,7 +51,7 @@ namespace vitorrdgs.Util.Data
             {
                 return result;
             }
-                return DateTime.ParseExact(Convert.ToString(val), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            return DateTime.ParseExact(Convert.ToString(val), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         }
 
         public static DateTime? ObterNullableData(object val)

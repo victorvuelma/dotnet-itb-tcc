@@ -2,6 +2,7 @@
 using Caelum.Stella.CSharp.Http.Exceptions;
 using Caelum.Stella.CSharp.Validation;
 using System;
+using System.Net.Mail;
 using System.Text.RegularExpressions;
 
 namespace vitorrdgs.Util.Data
@@ -37,7 +38,12 @@ namespace vitorrdgs.Util.Data
 
         public static bool validarDataFutura(String data)
         {
-            return UtilConvert.ObterData(data).CompareTo(DateTime.Now.Date) >= 0;
+            return validarDataFutura(UtilConvert.ObterData(data));
+        }
+
+        public static bool validarDataFutura(DateTime data)
+        {
+            return data.Date.CompareTo(DateTime.Now.Date) >= 0;
         }
 
         public static bool validarHora(String hora)
@@ -84,7 +90,7 @@ namespace vitorrdgs.Util.Data
         {
             try
             {
-                System.Net.Mail.MailAddress mailAddress = new System.Net.Mail.MailAddress(mail);
+                MailAddress mailAddress = new MailAddress(mail);
                 return mailAddress.Address.ToLower().Equals(mail.ToLower());
             }
             catch (Exception)
@@ -96,7 +102,7 @@ namespace vitorrdgs.Util.Data
         public static bool validarCartaoValidade(String validade)
         {
             if (DateTime.TryParseExact(validade, "MM/yy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result)){
-                return result.Date >= DateTime.Now.Date;
+                return validarDataFutura(result.Date);
             }
             return false;
         }
