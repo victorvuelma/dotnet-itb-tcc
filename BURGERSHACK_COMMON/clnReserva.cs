@@ -123,7 +123,7 @@ namespace BurgerShack.Common
             return objReservas;
         }
 
-        public List<clnReserva> obterPorClienteDataSituacao()
+        public List<clnReserva> obterPorClienteData()
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
