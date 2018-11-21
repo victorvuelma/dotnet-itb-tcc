@@ -80,7 +80,7 @@ namespace BurgerShack.Desktop
                         };
                         objArquivo.gravar();
 
-                        ObjIngrediente = new clnIngrediente
+                        clnIngrediente objIngrediente = new clnIngrediente
                         {
                             Situacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE,
                             Nome = txtNome.Text,
@@ -89,10 +89,12 @@ namespace BurgerShack.Desktop
                             Valor = UtilConvert.ToDecimal(txtValor.Text),
                             CodMercadoria = ObjIngrediente.CodMercadoria
                         };
+                        objIngrediente.gravar();
+                        ObjIngrediente = objIngrediente;
 
-                        ObjIngrediente.gravar();
                         UtilMensagem.mostrarOk("Cadastro de Ingrediente", "Ingrediente cadastrado com sucesso!");
-                    } else
+                    }
+                    else
                     {
                         UtilMensagem.mostrarOk("Cadastro de Ingrediente", "É necessário informar uma mercadoria!");
                         return;
@@ -118,7 +120,7 @@ namespace BurgerShack.Desktop
                     ObjIngrediente.Nome = txtNome.Text;
                     ObjIngrediente.Valor = UtilConvert.ToDecimal(txtValor.Text);
                     ObjIngrediente.Situacao = (clnIngrediente.ingredienteSituacao)Enum.Parse(typeof(clnIngrediente.ingredienteSituacao), cboSituacao.Text);
-                    
+
                     ObjIngrediente.alterar();
                     ObjIngrediente.atualizarEstoque(true);
 
@@ -232,6 +234,9 @@ namespace BurgerShack.Desktop
                 btnMercadoria.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
+
+                UtilMensagem.mostrarOk("Ingrediente", "Ingrediente excluido com sucesso.");
+                Close();
             }
         }
 
@@ -244,6 +249,9 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
+
+                UtilMensagem.mostrarOk("Ingrediente", "Ingrediente restaurado com sucesso.");
+                Close();
             }
         }
 

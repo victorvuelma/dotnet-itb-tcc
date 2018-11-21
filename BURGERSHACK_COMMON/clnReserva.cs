@@ -129,7 +129,6 @@ namespace BurgerShack.Common
             objSelect.table("reserva");
             objSelect.Where.where("id_cliente", CodCliente)
                            .where("CONVERT(DATE, AGENDADO)", Agendado)
-                           .where("situacao", sqlElementWhereCommon.whereOperation.UNEQUAL, prefixo(Situacao))
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnReserva> objReservas = new List<clnReserva>();
@@ -146,7 +145,7 @@ namespace BurgerShack.Common
             int lugares = new clnMesa().obterLugares();
 
             List<int> codMesas = obterMesasReservadas();
-            foreach(int codMesa in codMesas)
+            foreach (int codMesa in codMesas)
             {
                 clnMesa objMesa = new clnMesa
                 {
@@ -231,6 +230,8 @@ namespace BurgerShack.Common
             objUpdate.Where.where("id", Cod);
             objUpdate.Value.val("pessoas", Pessoas)
                            .val("ativo", UtilConvert.ToBit(Ativo))
+                           .val("informacoes", Informacoes)
+                           .val("agendado", Agendado)
                            .val("situacao", prefixo(Situacao));
             objUpdate.execute(App.DatabaseSql);
         }
@@ -284,7 +285,7 @@ namespace BurgerShack.Common
             }
         }
 
-        private char prefixo(reservaSituacao situacao)
+        public char prefixo(reservaSituacao situacao)
         {
             switch (situacao)
             {

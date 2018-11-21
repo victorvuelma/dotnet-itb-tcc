@@ -51,7 +51,7 @@ namespace BurgerShack.Desktop
 
                         if (objClienteEmail == null)
                         {
-                            ObjCliente = new clnCliente
+                            clnCliente objCliente = new clnCliente
                             {
                                 CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
                                 Nome = txtNome.Text,
@@ -60,7 +60,9 @@ namespace BurgerShack.Desktop
                                 TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text),
                                 Cadastro = DateTime.Now
                             };
-                            ObjCliente.gravar();
+                            objCliente.gravar();
+                            ObjCliente = objCliente;
+
                             UtilMensagem.mostrarOk("Cadastro de Cliente", "Cliente cadastrado com sucesso!");
                             Close();
                         }
@@ -82,6 +84,7 @@ namespace BurgerShack.Desktop
                     ObjCliente.Email = txtEmail.Text;
                     ObjCliente.TelCelular = UtilFormatar.retirarFormatacao(mtbTelCel.Text);
                     ObjCliente.alterar();
+
                     UtilMensagem.mostrarOk("Alteração de Cliente", "Cliente alterado com sucesso!");
                     Close();
                 }
@@ -123,6 +126,9 @@ namespace BurgerShack.Desktop
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
+
+                UtilMensagem.mostrarOk("Cliente", "Cliente excluido com sucesso.");
+                Close();
             }
         }
 
@@ -135,6 +141,9 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
+
+                UtilMensagem.mostrarOk("Cliente", "Cliente restaurado com sucesso.");
+                Close();
             }
         }
 

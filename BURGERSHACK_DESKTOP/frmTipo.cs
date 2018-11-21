@@ -125,6 +125,7 @@ namespace BurgerShack.Desktop
                         Tipo = Tipo
                     };
                     objTipo.gravar();
+
                     UtilMensagem.mostrarOk("Tipo", "Tipo gravado com sucesso!");
                     exibirTipos();
                     definirPadrao();

@@ -35,12 +35,13 @@ namespace BurgerShack.Desktop
 
         public override clnUtilVisualizar.VisualizarResult execute(object obj)
         {
-            if (Obj == null && typeof(O).Equals(typeof(clnUtilVisualizar)))
-            {
-                Obj = (O)(object)this;
-            }
             if (Callback != null && obj != null && obj is V val)
             {
+                if (Obj == null && typeof(O).Equals(typeof(clnUtilVisualizar)))
+                {
+                    Obj = (O)(object)this;
+                }
+
                 return Callback.call(Obj, val);
             }
             return clnUtilVisualizar.VisualizarResult.NENHUM;

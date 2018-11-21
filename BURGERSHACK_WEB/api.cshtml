@@ -1,5 +1,6 @@
 ﻿@using BurgerShack.Web.Bll;
 @using BurgerShack.Common;
+@using vitorrdgs.Util.Data;
 
 @{
     string response = "NULL";
@@ -16,6 +17,43 @@
                     ProdutoBLL produtoBLL = new ProdutoBLL();
 
                     response = produtoBLL.listarProdutos();
+                    break;
+                case "login":
+                    String cpf = Request.Params["cpf"];
+                    String senha = Request.Params["senha"];
+
+                    ClienteBLL clienteBLL = new ClienteBLL();
+
+                    response = clienteBLL.autenticar(cpf, senha);
+                    if (response.StartsWith("1"))
+                    {
+                        clnCliente objCliente = clienteBLL.obterCliente();
+                        response += "&" + objCliente.Cod;
+                        response += "&" + objCliente.Nome;
+                        response += "&" + UtilFormatar.formatarCPF(objCliente.Cpf);
+                        response += "&" + objCliente.Email;
+                        response += "&" + UtilFormatar.formatarCelular(objCliente.TelCelular);
+                        response += "&" + UtilFormatar.formatarDataHora(objCliente.Cadastro);
+                    }
+                    break;
+                case "reservas":
+                    String codCliente = Request.Params["cliente"];
+
+                    ReservaBLL reservaBLL = new ReservaBLL();
+
+                    response = reservaBLL.listarReservas(codCliente);
+                    break;
+                case "novareserva":
+                    String cliente = Request.Params["cliente"];
+                    String clienteCpf = Request.Params["cpf"];
+                    String data = Request.Params["data"];
+                    String hora = Request.Params["hora"];
+                    String lugares = Request.Params["lugares"];
+                    String info = Request.Params["info"];
+
+                    ReservaBLL novaReservaBLL = new ReservaBLL();
+
+                    response = novaReservaBLL.novaReserva(clienteCpf, data, hora, lugares, info, cliente);
                     break;
             }
         }

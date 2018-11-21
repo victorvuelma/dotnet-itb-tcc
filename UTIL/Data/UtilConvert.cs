@@ -45,13 +45,19 @@ namespace vitorrdgs.Util.Data
 
         public static string ToString(object val) => Convert.ToString(val);
 
-        public static DateTime ObterData(object val)
+        public static DateTime ObterData(object data)
         {
-            if (DateTime.TryParseExact(Convert.ToString(val), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result))
+            if (DateTime.TryParseExact(Convert.ToString(data), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result))
             {
                 return result;
             }
-            return DateTime.ParseExact(Convert.ToString(val), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            return DateTime.ParseExact(Convert.ToString(data), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+        }
+
+        public static DateTime ObterDataHora(object data, object hora)
+        {
+            DateTime time = ObterHora(hora);
+            return ObterData(data).AddHours(time.Hour).AddMinutes(time.Minute);
         }
 
         public static DateTime? ObterNullableData(object val)

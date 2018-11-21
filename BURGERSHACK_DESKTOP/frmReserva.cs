@@ -136,7 +136,7 @@ namespace BurgerShack.Desktop
                 clnUtilVisualizar<clnReserva, clnMesa> objVisualizar = new clnUtilVisualizar<clnReserva, clnMesa>
                 {
                     Obj = ObjReserva,
-                    Callback = new CallbackRemover(),
+                    Callback = (btnMesaAdd.Visible ? new CallbackRemover() : null),
                     ObjListar = objListar
                 };
 
@@ -146,9 +146,15 @@ namespace BurgerShack.Desktop
                 };
                 frmVisualizar.ShowDialog();
             }
-            else if (UtilMensagem.mostrarSimNao("Mesas", "Esta reserva não possui nenhuma mesa, deseja adicionar?", UtilMensagem.MensagemIcone.OK))
+            else if (btnMesaAdd.Visible)
             {
-                adicionarMesa();
+                if (UtilMensagem.mostrarSimNao("Mesas", "Esta reserva não possui nenhuma mesa, deseja adicionar?", UtilMensagem.MensagemIcone.OK))
+                {
+                    adicionarMesa();
+                }
+            } else
+            {
+                UtilMensagem.mostrarOk("Mesas", "Esta reserva não possui nenhuma mesa.");
             }
         }
 
@@ -201,7 +207,7 @@ namespace BurgerShack.Desktop
         {
             if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text))
             {
-                return UtilConvert.ObterNullableData(mtbData.Text);
+                return UtilConvert.ObterDataHora(mtbData.Text, mtbHora.Text);
             }
             return null;
         }
@@ -216,19 +222,18 @@ namespace BurgerShack.Desktop
                     {
                         if (ObjReserva.CodCliente != -1 || encontrarCliente())
                         {
-                            DateTime dataAgendada = (DateTime)obterDataAgendada();
-                            DateTime horaAgendada = UtilConvert.ObterHora(mtbHora.Text);
-                            dataAgendada = dataAgendada.AddHours(horaAgendada.Hour);
-                            dataAgendada = dataAgendada.AddMinutes(horaAgendada.Minute);
+                            clnReserva objReserva = new clnReserva
+                            {
+                                CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
+                                Situacao = clnReserva.reservaSituacao.MARCADA,
+                                Pessoas = UtilConvert.ToInt(txtPessoas.Text),
+                                Agendado = (DateTime)obterDataAgendada(),
+                                Agendamento = DateTime.Now,
+                                Informacoes = txtInformacoes.Text
+                            };
 
-                            ObjReserva.CodFuncionario = AppDesktop.FuncionarioAtual.Cod;
-                            ObjReserva.Situacao = clnReserva.reservaSituacao.MARCADA;
-                            ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
-                            ObjReserva.Agendado = dataAgendada;
-                            ObjReserva.Agendamento = DateTime.Now;
-                            ObjReserva.Informacoes = txtInformacoes.Text;
-
-                            ObjReserva.gravar();
+                            objReserva.gravar();
+                            ObjReserva = objReserva;
 
                             UtilMensagem.mostrarOk("Nova Reserva", "Reserva realizada com sucesso!");
                             Close();
@@ -238,6 +243,7 @@ namespace BurgerShack.Desktop
                     {
                         ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
                         ObjReserva.Informacoes = txtInformacoes.Text;
+                        ObjReserva.Agendado = (DateTime)obterDataAgendada();
                         ObjReserva.alterar();
 
                         UtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!");
@@ -328,8 +334,10 @@ namespace BurgerShack.Desktop
             {
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CONFIRMADA;
                 ObjReserva.alterar();
+
                 UtilMensagem.mostrarOk("Reserva", "Reserva CONFIRMADA com sucesso!");
                 grbSituacao.Hide();
+                Close();
             }
         }
 
@@ -339,6 +347,7 @@ namespace BurgerShack.Desktop
             {
                 ObjReserva.Situacao = clnReserva.reservaSituacao.CANCELADA;
                 ObjReserva.alterar();
+
                 UtilMensagem.mostrarOk("Reserva", "Reserva CANCELADA com sucesso!");
                 Close();
             }
@@ -355,6 +364,9 @@ namespace BurgerShack.Desktop
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
+
+                UtilMensagem.mostrarOk("Reserva", "Reserva excluida com sucesso.");
+                Close();
             }
         }
 
@@ -369,11 +381,15 @@ namespace BurgerShack.Desktop
                 {
                     txtPessoas.Enabled = false;
                     btnAlterar.Hide();
-                } else
+                }
+                else
                 {
                     btnAlterar.Show();
                 }
                 UtilButton.excluir(btnExcluir);
+
+                UtilMensagem.mostrarOk("Reserva", "Reserva restaurada com sucesso.");
+                Close();
             }
         }
 
@@ -408,6 +424,7 @@ namespace BurgerShack.Desktop
             {
                 hdrUIX.Title = App.Name + " - Reserva " + ObjReserva.Cod;
                 mtbCliCPF.Enabled = false;
+                mtbData.Enabled = false;
                 btnCliEncontrar.Hide();
 
                 clnCliente objCliente = new clnCliente
@@ -423,11 +440,8 @@ namespace BurgerShack.Desktop
                 txtInformacoes.Text = ObjReserva.Informacoes;
 
                 UtilForm.Disable(this);
+                btnMesaAdd.Hide();
 
-                if (ObjReserva.Situacao != clnReserva.reservaSituacao.MARCADA)
-                {
-                    grbMesas.Hide();
-                }
                 if (ObjReserva.Situacao == clnReserva.reservaSituacao.CANCELADA || ObjReserva.Situacao == clnReserva.reservaSituacao.UTILIZADA)
                 {
                     txtPessoas.Enabled = false;
@@ -500,6 +514,11 @@ namespace BurgerShack.Desktop
             {
                 UtilForm.Enable(this);
                 mtbCliCPF.Enabled = false;
+                mtbData.Enabled = false;
+                if (ObjReserva.Situacao == clnReserva.reservaSituacao.MARCADA)
+                {
+                    btnMesaAdd.Show();
+                }
 
                 UtilButton.cancelar(btnVoltar);
                 UtilButton.salvar(btnAlterar);

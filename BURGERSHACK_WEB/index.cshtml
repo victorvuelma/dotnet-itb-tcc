@@ -6,7 +6,7 @@
     ProdutoBLL produtoBLL = new ProdutoBLL();
 
     string resultado = "";
-    String produtosLista = produtoBLL.exibirProdutos(produtoBLL.obterTodos());
+    String produtosLista = produtoBLL.exibirProdutos(0);
 
     if (Request.HttpMethod == "POST")
     {

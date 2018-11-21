@@ -1,6 +1,4 @@
-﻿using BurgerShack.Common;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
@@ -139,6 +137,7 @@ namespace BurgerShack.Common
             objInsert.table("produto");
             objInsert.Value.val("id_imagem", CodImagem)
                             .val("id_tipo", CodTipo)
+                             .val("id_mercadoria", CodMercadoria)
                             .val("nome", Nome)
                             .val("descricao", Descricao)
                             .val("valor", Valor)
@@ -156,12 +155,12 @@ namespace BurgerShack.Common
             objUpdate.table("produto");
             objUpdate.Value.val("id_imagem", CodImagem)
                              .val("id_tipo", CodTipo)
+                             .val("id_mercadoria", CodMercadoria)
                              .val("nome", Nome)
                              .val("descricao", Descricao)
                              .val("valor", Valor)
                              .val("situacao", prefixo(Situacao))
-                             .val("ativo", UtilConvert.ToBit(Ativo))
-                             .val("id_mercadoria", CodMercadoria);
+                             .val("ativo", UtilConvert.ToBit(Ativo));
             objUpdate.Where.where("id", Cod);
 
             objUpdate.execute(App.DatabaseSql);

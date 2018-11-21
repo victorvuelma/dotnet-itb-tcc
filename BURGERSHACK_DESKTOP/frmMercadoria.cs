@@ -40,13 +40,14 @@ namespace BurgerShack.Desktop
                 {
                     if (objMercadoriaCodigoBarras == null)
                     {
-                        ObjMercadoria = new clnMercadoria
+                        clnMercadoria objMercadoria = new clnMercadoria
                         {
                             Descricao = txtDescricao.Text,
                             CodigoBarras = txtCodigoBarras.Text,
                             Baixar = chkBaixar.Checked
                         };
-                        ObjMercadoria.gravar();
+                        objMercadoria.gravar();
+                        ObjMercadoria = objMercadoria;
 
                         UtilMensagem.mostrarOk("Cadastro de Mercadoria", "Mercadoria cadastrada com sucesso!");
                         Close();
@@ -62,8 +63,8 @@ namespace BurgerShack.Desktop
                     ObjMercadoria.Descricao = txtDescricao.Text;
                     ObjMercadoria.CodigoBarras = txtCodigoBarras.Text;
                     ObjMercadoria.Baixar = chkBaixar.Checked;
-
                     ObjMercadoria.alterar();
+
                     UtilMensagem.mostrarOk("Alteração de Mercadoria", "Mercadoria alterada com sucesso!");
                     Close();
                 }
@@ -105,6 +106,9 @@ namespace BurgerShack.Desktop
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
+
+                UtilMensagem.mostrarOk("Mercadoria", "Mercadoria excluida com sucesso.");
+                Close();
             }
         }
 
@@ -117,6 +121,9 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
+
+                UtilMensagem.mostrarOk("Mercadoria", "Mercadoria restaurada com sucesso.");
+                Close();
             }
         }
 

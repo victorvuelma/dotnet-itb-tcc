@@ -80,7 +80,7 @@ namespace BurgerShack.Desktop
                     };
                     objArquivo.gravar();
 
-                    ObjProduto = new clnProduto
+                    clnProduto objProduto = new clnProduto
                     {
                         Situacao = ((ObjProdutoIngredientes.Count == 0) ? clnProduto.produtoSituacao.DISPONIVEL : clnProduto.produtoSituacao.FORADEESTOQUE),
                         Nome = txtNome.Text,
@@ -90,14 +90,14 @@ namespace BurgerShack.Desktop
                         Descricao = txtDesc.Text,
                         CodMercadoria = ObjProduto.CodMercadoria
                     };
-                    ObjProduto.gravar();
+                    objProduto.gravar();
+                    ObjProduto = objProduto;
 
                     foreach (clnProdutoIngrediente objProdutoIngrediente in ObjProdutoIngredientes)
                     {
                         objProdutoIngrediente.CodProduto = ObjProduto.Cod;
                         objProdutoIngrediente.gravar();
                     }
-
                     ObjProduto.atualizarEstoque();
 
                     UtilMensagem.mostrarOk("Cadastro de Produto", "Produto cadastrado com sucesso!");
@@ -270,6 +270,9 @@ namespace BurgerShack.Desktop
                 grbIngredientes.Hide();
                 grbImagem.Hide();
                 btnMercadoria.Hide();
+                
+                UtilMensagem.mostrarOk("Produto", "Produto excluido com sucesso.");
+                Close();
             }
         }
 
@@ -282,6 +285,9 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
+                
+                UtilMensagem.mostrarOk("Produto", "Produto excluido com sucesso.");
+                Close();
             }
         }
 
@@ -426,11 +432,14 @@ namespace BurgerShack.Desktop
                 UtilForm.Disable(this);
                 grbIngredientes.Hide();
                 grbImagem.Hide();
-                btnMercadoria.Hide();
-
-                grbMercadoria.Show();
-                lblMercadoria.Show();
-
+                if(ObjProduto.CodMercadoria != null)
+                {
+                    btnMercadoria.Hide();
+                } else
+                {
+                    grbMercadoria.Hide();
+                }
+                
                 if (AppDesktop.FuncionarioAtual.CodCargo >= 3)
                 {
                     btnExcluir.Show();
@@ -491,6 +500,7 @@ namespace BurgerShack.Desktop
                 UtilForm.Enable(this);
                 grbImagem.Show();
                 grbIngredientes.Show();
+                grbMercadoria.Show();
                 btnMercadoria.Show();
 
                 UtilButton.cancelar(btnVoltar);

@@ -186,9 +186,6 @@ namespace vitorrdgs.UiX.Component
             Items.Remove(item);
 
             exibirItens();
-
-            if (Controls.Count > 0)
-                Controls.RemoveAt(Controls.Count - 1);
         }
 
         private void uctUtilListar_Load(object sender, EventArgs e)

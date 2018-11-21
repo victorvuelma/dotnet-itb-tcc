@@ -35,7 +35,7 @@ namespace vitorrdgs.UiX.Component
             UIXMessage msg = create(template, title, message, Properties.Resources.info);
 
             msg.btnOption1.Hide();
-            msg.btnOption2.Text = "Ok";
+            msg.btnOption2.Text = "OK";
 
             msg.ShowDialog();
 
@@ -46,8 +46,8 @@ namespace vitorrdgs.UiX.Component
         {
             UIXMessage msg = create(template, title, message, Properties.Resources.confirmar);
 
-            msg.btnOption1.Text = "Não";
-            msg.btnOption2.Text = "Sim";
+            msg.btnOption1.Text = "NÃO";
+            msg.btnOption2.Text = "SIM";
 
             uixButton.btnApply(msg.btnOption1, template.Style.ButtonWarningColor);
 

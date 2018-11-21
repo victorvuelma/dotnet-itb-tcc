@@ -37,7 +37,7 @@ namespace BurgerShack.Desktop
             {
                 if (ObjEstoque.Cod == -1)
                 {
-                    ObjEstoque = new clnEstoque
+                    clnEstoque objEstoque = new clnEstoque
                     {
                         CodFornecedor = ObjEstoque.CodFornecedor,
                         CodMercadoria = ObjEstoque.CodMercadoria,
@@ -47,7 +47,8 @@ namespace BurgerShack.Desktop
                         Total = UtilConvert.ToInt(txtQuantidade.Text),
                         Valor = UtilConvert.ToDecimal(txtValor.Text)
                     };
-                    ObjEstoque.gravar();
+                    objEstoque.gravar();
+                    ObjEstoque = objEstoque;
 
                     UtilMensagem.mostrarOk("Cadastro de Estoque", "Estoque cadastrado com sucesso!");
                 }

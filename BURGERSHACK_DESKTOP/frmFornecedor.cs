@@ -52,7 +52,7 @@ namespace BurgerShack.Desktop
 
                     if (objFornecedorCNPJ == null)
                     {
-                        ObjFornecedor = new clnFornecedor
+                        clnFornecedor objFornecedor = new clnFornecedor
                         {
                             RazaoSocial = txtRazaoSocial.Text,
                             Cnpj = UtilFormatar.retirarFormatacao(mtbCNPJ.Text),
@@ -66,7 +66,9 @@ namespace BurgerShack.Desktop
                             EndLocalidade = txtEndCidade.Text,
                             EndUF = cboEndUF.Text
                         };
-                        ObjFornecedor.gravar();
+                        objFornecedor.gravar();
+                        ObjFornecedor = objFornecedor;
+
                         UtilMensagem.mostrarOk("Cadastro de Fornecedor", "Fornecedor cadastrado com sucesso!");
                         Close();
                     }
@@ -89,6 +91,7 @@ namespace BurgerShack.Desktop
                     ObjFornecedor.EndLocalidade = txtEndCidade.Text;
                     ObjFornecedor.EndUF = cboEndUF.Text;
                     ObjFornecedor.alterar();
+
                     UtilMensagem.mostrarOk("Alteração de Fornecedor", "Fornecedor alterado com sucesso!");
                     Close();
                 }
@@ -130,6 +133,9 @@ namespace BurgerShack.Desktop
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
+
+                UtilMensagem.mostrarOk("Fornecedor", "Fornecedor excluido com sucesso.");
+                Close();
             }
         }
 
@@ -142,6 +148,9 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
+                
+                UtilMensagem.mostrarOk("Fornecedor", "Fornecedor restaurado com sucesso.");
+                Close();
             }
         }
 

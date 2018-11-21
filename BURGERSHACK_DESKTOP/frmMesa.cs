@@ -41,13 +41,14 @@ namespace BurgerShack.Desktop
                 {
                     if (objMesaNumero == null)
                     {
-                        ObjMesa = new clnMesa
+                        clnMesa objMesa = new clnMesa
                         {
                             Numero = UtilConvert.ToInt(txtNumero.Text),
                             Lugares = UtilConvert.ToInt(txtLugares.Text),
                             Situacao = clnMesa.mesaSituacao.DISPONIVEL
                         };
-                        ObjMesa.gravar();
+                        objMesa.gravar();
+                        ObjMesa = objMesa;
 
                         UtilMensagem.mostrarOk("Cadastro de Mesa", "Mesa cadastrada com sucesso!");
                         Close();
@@ -62,8 +63,8 @@ namespace BurgerShack.Desktop
                 {
                     ObjMesa.Numero = UtilConvert.ToInt(txtNumero.Text);
                     ObjMesa.Lugares = UtilConvert.ToInt(txtLugares.Text);
-
                     ObjMesa.alterar();
+
                     UtilMensagem.mostrarOk("Alteração de Mesa", "Mesa alterada com sucesso!");
                     Close();
                 }
@@ -105,6 +106,9 @@ namespace BurgerShack.Desktop
                 btnAlterar.Hide();
                 UtilButton.restaurar(btnExcluir);
                 UtilForm.Disable(this);
+
+                UtilMensagem.mostrarOk("Mesa", "Mesa excluida com sucesso.");
+                Close();
             }
         }
 
@@ -117,6 +121,9 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
+
+                UtilMensagem.mostrarOk("Mesa", "Mesa restaurada com sucesso.");
+                Close();
             }
         }
 

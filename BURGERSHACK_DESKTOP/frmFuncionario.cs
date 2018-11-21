@@ -96,7 +96,7 @@ namespace BurgerShack.Desktop
 
                     if (objFuncionarioCpf == null)
                     {
-                        ObjFuncionario = new clnFuncionario
+                        clnFuncionario objFuncionario = new clnFuncionario
                         {
                             CodCargo = codCargo,
                             CodFoto = objArquivo.Cod,
@@ -119,7 +119,8 @@ namespace BurgerShack.Desktop
                             EndLocalidade = txtEndCidade.Text,
                             EndUF = cboEndUF.Text
                         };
-                        ObjFuncionario.gravar();
+                        objFuncionario.gravar();
+                        ObjFuncionario = objFuncionario;
 
                         UtilMensagem.mostrarOk("Cadastro de Funcionário", "Funcionário cadastrado com sucesso!");
                         Close();
@@ -150,6 +151,7 @@ namespace BurgerShack.Desktop
                     ObjFuncionario.EndLocalidade = txtEndCidade.Text;
                     ObjFuncionario.EndUF = cboEndUF.Text;
                     ObjFuncionario.alterar();
+
                     UtilMensagem.mostrarOk("Alteração de Funcionário", "Funcionário alterado com sucesso!");
                     Close();
                 }
@@ -205,6 +207,9 @@ namespace BurgerShack.Desktop
 
                 btnAlterar.Hide();
                 desativar();
+
+                UtilMensagem.mostrarOk("Funcionário", "Funcionário excluido com sucesso.");
+                Close();
             }
         }
 
@@ -224,6 +229,9 @@ namespace BurgerShack.Desktop
                 
                 btnAlterar.Show();
                 UtilButton.excluir(btnExcluir);
+
+                UtilMensagem.mostrarOk("Funcionário", "Funcionário restaurado com sucesso.");
+                Close();
             }
         }
 

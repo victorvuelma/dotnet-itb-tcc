@@ -80,7 +80,7 @@ namespace BurgerShack.Desktop
                         cpf = UtilFormatar.retirarFormatacao(mtbCliCPF.Text);
                     }
 
-                    ObjPagamento = new clnPagamento
+                    clnPagamento objPagamento = new clnPagamento
                     {
                         CodForma = codForma,
                         CodConta = ObjConta.Cod,
@@ -89,7 +89,8 @@ namespace BurgerShack.Desktop
                         CodCliente = CodCliente,
                         Cpf = cpf
                     };
-                    ObjPagamento.gravar();
+                    objPagamento.gravar();
+                    ObjPagamento = objPagamento;
 
                     UtilMensagem.mostrarOk("Novo pagamento", "Pagamento registrado com sucesso!");
                     Close();

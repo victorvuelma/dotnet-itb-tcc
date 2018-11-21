@@ -16,12 +16,13 @@
         {
             string cpf = Request.Form["inputCpf"];
             string dataStr = Request.Form["inputData"];
+            string horaStr = Request.Form["inputHora"];
             string lugaresStr = Request.Form["inputLugares"];
             string informacoes = Request.Form["inputInfo"];
 
             ReservaBLL reservaBLL = new ReservaBLL();
 
-            resultado = reservaBLL.novaReserva(cpf, dataStr, lugaresStr, informacoes, null);
+            resultado = reservaBLL.novaReserva(cpf, dataStr, horaStr, lugaresStr, informacoes, null);
         }
     }
 }
@@ -114,8 +115,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <input type="date" class="form-control" name="inputData" required value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" name="inputData" required value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="time" class="form-control" name="inputHora" required value="">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control w-100" name="inputInfo" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)"></textarea>

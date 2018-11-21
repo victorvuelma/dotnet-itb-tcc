@@ -16,49 +16,49 @@ namespace vitorrdgs.Util.Data
         private static CPFValidator _cpfValidator = new CPFValidator();
         private static CNPJValidator _cnpjValidator = new CNPJValidator();
 
-        public static bool validarCelular(String cel)
+        public static bool validarCelular(String val)
         {
-            return Regex.IsMatch(cel, REGEX_CEL);
+            return Regex.IsMatch(val, REGEX_CEL);
         }
 
-        public static bool validarTelefone(String cel)
+        public static bool validarTelefone(String val)
         {
-            return Regex.IsMatch(cel, REGEX_TEL);
+            return Regex.IsMatch(val, REGEX_TEL);
         }
 
-        public static bool validarData(String data)
+        public static bool validarData(String val)
         {
-            return DateTime.TryParseExact(data, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime resultReq) || DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
+            return DateTime.TryParseExact(val, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime resultReq) || DateTime.TryParseExact(val, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
         }
 
-        public static bool validarDataNasc(String data)
+        public static bool validarDataNasc(String val)
         {
-            return UtilConvert.ObterData(data).CompareTo(DateTime.Now.Date) < 0;
+            return UtilConvert.ObterData(val).CompareTo(DateTime.Now.Date) < 0;
         }
 
-        public static bool validarDataFutura(String data)
+        public static bool validarDataFutura(String val)
         {
-            return validarDataFutura(UtilConvert.ObterData(data));
+            return validarDataFutura(UtilConvert.ObterData(val));
         }
 
-        public static bool validarDataFutura(DateTime data)
+        public static bool validarDataFutura(DateTime val)
         {
-            return data.Date.CompareTo(DateTime.Now.Date) >= 0;
+            return val.Date.CompareTo(DateTime.Now.Date) >= 0;
         }
 
-        public static bool validarHora(String hora)
+        public static bool validarHora(String val)
         {
-            return DateTime.TryParseExact(hora, "HH:mm", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
+            return DateTime.TryParseExact(val, "HH:mm", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result);
         }
 
-        public static bool vazio(String str)
+        public static bool vazio(String val)
         {
-            return str == null || String.IsNullOrWhiteSpace(str);
+            return val == null || String.IsNullOrWhiteSpace(val);
         }
 
-        public static bool validarInt(String inteiro)
+        public static bool validarInt(String val)
         {
-            return Int32.TryParse(inteiro, out int r);
+            return Int32.TryParse(val, out int r);
         }
 
         public static bool validarValor(String val)
@@ -76,22 +76,22 @@ namespace vitorrdgs.Util.Data
             return Decimal.TryParse(val, out decimal r);
         }
 
-        public static bool validarCPF(String cpf)
+        public static bool validarCPF(String val)
         {
-            return _cpfValidator.IsValid(cpf);
+            return _cpfValidator.IsValid(val);
         }
 
-        public static bool validarCNPJ(String cnpj)
+        public static bool validarCNPJ(String val)
         {
-            return _cnpjValidator.IsValid(cnpj);
+            return _cnpjValidator.IsValid(val);
         }
 
-        public static bool validarEmail(String mail)
+        public static bool validarEmail(String val)
         {
             try
             {
-                MailAddress mailAddress = new MailAddress(mail);
-                return mailAddress.Address.ToLower().Equals(mail.ToLower());
+                MailAddress mailAddress = new MailAddress(val);
+                return mailAddress.Address.ToLower().Equals(val.ToLower());
             }
             catch (Exception)
             {
@@ -99,20 +99,20 @@ namespace vitorrdgs.Util.Data
             }
         }
 
-        public static bool validarCartaoValidade(String validade)
+        public static bool validarCartaoValidade(String val)
         {
-            if (DateTime.TryParseExact(validade, "MM/yy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result)){
+            if (DateTime.TryParseExact(val, "MM/yy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal, out DateTime result)){
                 return validarDataFutura(result.Date);
             }
             return false;
         }
 
 
-        public static bool validarCEP(String cep)
+        public static bool validarCEP(String val)
         {
             try
             {
-                new CEP(cep);
+                new CEP(val);
                 return true;
             }
             catch (InvalidZipCodeFormat)

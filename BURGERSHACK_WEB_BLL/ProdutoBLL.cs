@@ -8,21 +8,30 @@ namespace BurgerShack.Web.Bll
 {
     public class ProdutoBLL
     {
-
-        public List<clnProduto> obterTodos()
+        public string exibirProdutos(int codTipo)
         {
-            return new clnProduto
+            List<clnProduto> objProdutos = null;
+            if (codTipo == 0)
             {
-                Situacao = clnProduto.produtoSituacao.DISPONIVEL,
-                Ativo = true
-            }.obterPorSituacao();
-        }
+                objProdutos = new clnProduto
+                {
+                    Situacao = clnProduto.produtoSituacao.DISPONIVEL,
+                    Ativo = true
+                }.obterPorSituacao();
+            }
+            else
+            {
+                objProdutos = new clnProduto
+                {
+                    Situacao = clnProduto.produtoSituacao.DISPONIVEL,
+                    Ativo = true,
+                    CodTipo = codTipo
+                }.obterPorTipoSituacao();
+            }
 
-        public string exibirProdutos(List<clnProduto> objProdutos)
-        {
-            if (objProdutos.Count == 0)
+            if (objProdutos == null || objProdutos.Count == 0)
             {
-                return "<h3>Não há produtos cadastrados.</h3>";
+                return "<div class='col-12'><h3>Não há produtos cadastrados.</h3></div>";
             }
             else
             {
@@ -46,6 +55,7 @@ namespace BurgerShack.Web.Bll
                     }
                     produtoBuilder.Append("<div class='card-body'>");
                     produtoBuilder.Append("<h5>").Append(objProduto.Nome).Append("</h5>");
+                    produtoBuilder.Append("<small>").Append(tipoNome(objProduto.CodTipo)).Append("</small>");
                     produtoBuilder.Append("<p>").Append(objProduto.Descricao).Append("</p>");
 
                     List<clnProdutoIngrediente> objProdutoIngredientes = new clnProdutoIngrediente
@@ -65,7 +75,7 @@ namespace BurgerShack.Web.Bll
                                 Cod = objProdutoIngrediente.CodIngrediente
                             }.obterPorCod();
 
-                            produtoBuilder.Append("<li>").Append(objIngrediente.Nome).Append("</li>");
+                            produtoBuilder.Append("<li>").Append(objProdutoIngrediente.Quantidade).Append(" ").Append(objIngrediente.Nome).Append("</li>");
                         }
 
                         produtoBuilder.Append("</ul>");
@@ -88,7 +98,11 @@ namespace BurgerShack.Web.Bll
         {
             StringBuilder listarBuilder = new StringBuilder();
 
-            List<clnProduto> objProdutos = obterTodos();
+            List<clnProduto> objProdutos = new clnProduto
+            {
+                Situacao = clnProduto.produtoSituacao.DISPONIVEL,
+                Ativo = true
+            }.obterPorSituacao();
 
             foreach (clnProduto objProduto in objProdutos)
             {
@@ -104,12 +118,28 @@ namespace BurgerShack.Web.Bll
 
                 clnArquivo objArquivo = new clnArquivo
                 {
-                    Cod = objProduto.Cod
+                    Cod = objProduto.CodImagem
                 }.obterPorCod();
                 listarBuilder.Append("&").Append(Convert.ToBase64String(objArquivo.Conteudo));
             }
 
             return listarBuilder.ToString();
+        }
+
+        private string tipoNome(int tipo)
+        {
+            switch (tipo)
+            {
+                case 1:
+                    return "Lanche";
+                case 2:
+                    return "Acompanhamento";
+                case 3:
+                    return "Bebida";
+                case 4:
+                    return "Sobremesa";
+            }
+            return "";
         }
 
     }
