@@ -96,7 +96,7 @@ namespace BurgerShack.Desktop
             public clnUtilVisualizar.VisualizarResult call(clnAtendimento objAtendimento, clnMesa objMesa)
             {
                 objAtendimento.adicionarMesa(objMesa.Cod);
-                UtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Cod + " adicionada ao atendimento.");
+                UtilMensagem.mostrarOk("Atendimento", "Mesa " + objMesa.Numero + " adicionada ao atendimento.");
                 return clnUtilVisualizar.VisualizarResult.FECHAR;
             }
         }

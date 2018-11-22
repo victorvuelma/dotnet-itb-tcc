@@ -140,7 +140,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                hdrUIX.Title = App.Name + " - Mesa " + ObjMesa.Cod;
+                hdrUIX.Title = App.Name + " - Mesa " + ObjMesa.Numero;
                 txtLugares.Text = UtilConvert.ToString(ObjMesa.Lugares);
                 txtNumero.Text = UtilConvert.ToString(ObjMesa.Numero);
                 lblSituacao.Text = "Situação: " + UtilConvert.ToString(ObjMesa.Situacao);

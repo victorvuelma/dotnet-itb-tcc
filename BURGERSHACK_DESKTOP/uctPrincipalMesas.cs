@@ -20,7 +20,7 @@ namespace BurgerShack.Desktop
             lstMesas.LimparOpcoes();
             foreach (clnMesa objMesa in new clnMesa().obterMesas())
             {
-                lstMesas.Adicionar(objMesa.Cod, "Mesa " + objMesa.Cod, (objMesa.Situacao == clnMesa.mesaSituacao.DISPONIVEL ? Properties.Resources.mesa : Properties.Resources.mesauso), AppDesktop.VisualStyle.ButtonColor, () =>
+                lstMesas.Adicionar(objMesa.Cod, "Mesa " + objMesa.Numero, (objMesa.Situacao == clnMesa.mesaSituacao.DISPONIVEL ? Properties.Resources.mesa : Properties.Resources.mesauso), AppDesktop.VisualStyle.ButtonColor, () =>
                 {
                     abrirMesa(objMesa);
                     return UIXItemsList.ListResult.NENHUM;
@@ -46,7 +46,7 @@ namespace BurgerShack.Desktop
             }
             else
             {
-                if (UtilMensagem.mostrarSimNao("Atendimento", "Você deseja iniciar um novo atendimento para a Mesa " + objMesa.Cod + "?", UtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Atendimento", "Você deseja iniciar um novo atendimento para a Mesa " + objMesa.Numero + "?", UtilMensagem.MensagemIcone.INFO))
                 {
                     objAtendimento = new clnAtendimento
                     {

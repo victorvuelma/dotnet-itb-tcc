@@ -551,7 +551,7 @@ namespace BurgerShack.Desktop
         {
             public clnUtilVisualizar.VisualizarResult call(clnReserva objReserva, clnMesa objMesa)
             {
-                if (UtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Cod + " da Reserva?", UtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Reserva", "Deseja realmente remover a mesa " + objMesa.Numero + " da Reserva?", UtilMensagem.MensagemIcone.INFO))
                 {
                     objReserva.removerMesa(objMesa.Cod);
                     return clnUtilVisualizar.VisualizarResult.REMOVER;
@@ -565,7 +565,7 @@ namespace BurgerShack.Desktop
             public clnUtilVisualizar.VisualizarResult call(clnReserva objReserva, clnMesa objMesa)
             {
                 objReserva.addMesa(objMesa.Cod);
-                if (UtilMensagem.mostrarSimNao("Mesas", "Mesa " + objMesa.Cod + " adicionada a reserva. Deseja adicionar mais mesas?", UtilMensagem.MensagemIcone.INFO))
+                if (UtilMensagem.mostrarSimNao("Mesas", "Mesa " + objMesa.Numero + " adicionada a reserva. Deseja adicionar mais mesas?", UtilMensagem.MensagemIcone.INFO))
                 {
                     return clnUtilVisualizar.VisualizarResult.REMOVER;
                 }

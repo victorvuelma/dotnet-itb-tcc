@@ -1,6 +1,4 @@
-﻿using BurgerShack.Common;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
@@ -45,6 +43,7 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA");
             objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo));
+            objSelect.Order.order("numero");
 
             List<clnMesa> objMesas = new List<clnMesa>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -155,7 +154,9 @@ namespace BurgerShack.Common
         public List<clnMesa> obterPorSituacao()
         {
             sqlSelect objSelect = new sqlSelect();
-            objSelect.table("MESA").Where.where("situacao", prefixo(Situacao));
+            objSelect.table("MESA");
+            objSelect.Where.where("situacao", prefixo(Situacao));
+            objSelect.Order.order("numero");
 
             List<clnMesa> objMesas = new List<clnMesa>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -171,7 +172,8 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("MESA");
             objSelect.Where.where("ativo", Ativo);
-            objSelect.Order.order("lugares", vitorrdgs.SqlMaster.Element.sqlElementOrder.orderOperation.DESC);
+            objSelect.Order.order("numero")
+                           .order("lugares", vitorrdgs.SqlMaster.Element.sqlElementOrder.orderOperation.DESC);
 
             List<clnMesa> objMesas = new List<clnMesa>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -186,7 +188,8 @@ namespace BurgerShack.Common
         {
             int lugares = 0;
 
-            foreach(clnMesa objMesa in obterMesas()) {
+            foreach (clnMesa objMesa in obterMesas())
+            {
                 lugares += objMesa.Lugares;
             }
 
@@ -212,7 +215,7 @@ namespace BurgerShack.Common
 
             internal override string Nome(clnMesa obj)
             {
-                return "Mesa " + obj.Cod;
+                return "Mesa " + obj.Numero;
             }
         }
 
