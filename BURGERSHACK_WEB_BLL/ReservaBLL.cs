@@ -22,7 +22,7 @@ namespace BurgerShack.Web.Bll
 
                 if (objReservas.Count == 0)
                 {
-                    return "<tr><td colspan='4'>Não foi encontrada nenhuma reserva.</td></tr>";
+                    return "<tr><td colspan='3'>Não foi encontrada nenhuma reserva.</td></tr>";
                 }
                 else
                 {
@@ -31,7 +31,6 @@ namespace BurgerShack.Web.Bll
                     foreach (clnReserva objReserva in objReservas)
                     {
                         builder.Append("<tr>");
-                        builder.Append("<td scope='row'>").Append(objReserva.Cod).Append("</td>");
                         builder.Append("<td>").Append(UtilFormatar.formatarDataHora(objReserva.Agendado)).Append("</td>");
                         builder.Append("<td>").Append(objReserva.Pessoas).Append("</td>");
                         builder.Append("<td>").Append(objReserva.Situacao).Append("</td>");
@@ -158,8 +157,7 @@ namespace BurgerShack.Web.Bll
                     {
                         CodCliente = objCliente.Cod,
                         Agendado = data,
-                        Ativo = true,
-                        Situacao = clnReserva.reservaSituacao.CANCELADA
+                        Ativo = true
                     }.obterPorClienteData();
 
                     if (objReservas.Count > 0)
@@ -236,6 +234,12 @@ namespace BurgerShack.Web.Bll
 
             if (string.IsNullOrEmpty(validar))
             {
+                if (string.IsNullOrEmpty(informacoes))
+                {
+                    informacoes = "Sem informações adicionais";
+                }
+
+
                 clnReserva objReserva = new clnReserva
                 {
                     Informacoes = informacoes,

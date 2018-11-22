@@ -1,6 +1,7 @@
 ﻿@using BurgerShack.Web.Bll;
 @using BurgerShack.Common;
 @using vitorrdgs.Util.Data;
+@using System.Text;
 
 @{
     string response = "NULL";
@@ -20,7 +21,7 @@
                     break;
                 case "login":
                     String cpf = Request.Params["cpf"];
-                    String senha = Request.Params["senha"];
+                    String senha = Encoding.UTF8.GetString(Convert.FromBase64String(Request.Params["senha"]));
 
                     ClienteBLL clienteBLL = new ClienteBLL();
 
@@ -49,7 +50,7 @@
                     String data = Request.Params["data"];
                     String hora = Request.Params["hora"];
                     String lugares = Request.Params["lugares"];
-                    String info = Request.Params["info"];
+                    String info = Encoding.UTF8.GetString(Convert.FromBase64String(Request.Params["info"]));
 
                     ReservaBLL novaReservaBLL = new ReservaBLL();
 

@@ -95,7 +95,7 @@ namespace BurgerShack.Common
         {
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
-            objSelect.Where.where("CONVERT(DATE, AGENDADO)", Agendado)
+            objSelect.Where.where("CONVERT(DATE, AGENDADO)", Agendado.Date)
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnReserva> objReservas = new List<clnReserva>();
@@ -113,6 +113,7 @@ namespace BurgerShack.Common
             objSelect.table("reserva");
             objSelect.Where.where("id_cliente", CodCliente)
                            .where("ativo", UtilConvert.ToBit(Ativo));
+            objSelect.Order.order("agendado");
 
             List<clnReserva> objReservas = new List<clnReserva>();
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
@@ -128,7 +129,7 @@ namespace BurgerShack.Common
             sqlSelect objSelect = new sqlSelect();
             objSelect.table("reserva");
             objSelect.Where.where("id_cliente", CodCliente)
-                           .where("CONVERT(DATE, AGENDADO)", Agendado)
+                           .where("CONVERT(DATE, AGENDADO)", Agendado.Date)
                            .where("ativo", UtilConvert.ToBit(Ativo));
 
             List<clnReserva> objReservas = new List<clnReserva>();

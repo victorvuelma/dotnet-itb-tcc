@@ -111,24 +111,24 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="number" class="form-control" name="inputLugares" placeholder="Lugares" required value="2">
+                                    <input type="number" class="form-control" name="inputLugares" placeholder="Lugares" required value="@((Request.Form["inputLugares"] == null)? "2" : Request.Form["inputLugares"])">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="date" class="form-control" name="inputData" required value="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")">
+                                    <input type="date" class="form-control" name="inputData" required value="@((Request.Form["inputData"] == null)? DateTime.Today.AddDays(1).ToString("yyyy-MM-dd") : Request.Form["inputData"])">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="time" class="form-control" name="inputHora" required value="">
+                                    <input type="time" class="form-control" name="inputHora" required value="@((Request.Form["inputHora"] == null)? "20:00" : Request.Form["inputHora"])">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control w-100" name="inputInfo" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)"></textarea>
+                            <textarea class="form-control w-100" name="inputInfo" rows="3" placeholder="Informações da reserva. (Ex: 2 cadeiras de crianças, lugar acessível para cadeirante etc..)">@Request.Form["inputInfo"]</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-thumbtack"></i> Realizar Reserva</button>
                     </form>
