@@ -39,7 +39,9 @@
             // 
             // lstReservas
             // 
-            this.lstReservas.ItemsSize = 100;
+            this.lstReservas.AutoRender = true;
+            this.lstReservas.AutoScroll = true;
+            this.lstReservas.ItemsSize = 120;
             this.lstReservas.ItemsSpace = 10;
             this.lstReservas.Location = new System.Drawing.Point(5, 20);
             this.lstReservas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

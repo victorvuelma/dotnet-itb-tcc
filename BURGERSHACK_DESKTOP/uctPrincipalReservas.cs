@@ -1,14 +1,9 @@
-﻿using System;
+﻿using BurgerShack.Common;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using vitorrdgs.UiX.Component;
-using BurgerShack.Common;
+using vitorrdgs.Util.Data;
 
 namespace BurgerShack.Desktop
 {
@@ -30,7 +25,14 @@ namespace BurgerShack.Desktop
             lstReservas.LimparOpcoes();
             foreach (clnReserva objReserva in objReservas)
             {
-                lstReservas.Adicionar(objReserva.Cod, "RESERVA " + objReserva.Cod, Properties.Resources.reserva, AppDesktop.VisualStyle.BoxColor, () =>
+                clnCliente objCliente = new clnCliente
+                {
+                    Cod = objReserva.CodCliente
+                }.obterPorCod();
+
+                lstReservas.Adicionar(objReserva.Cod, "RESERVA " + objReserva.Cod + "\n"
+                    + objCliente.Nome.Split(' ')[0] + " - " + UtilFormatar.formatarHora(objReserva.Agendado),
+                    Properties.Resources.reserva, AppDesktop.VisualStyle.BoxColor, () =>
                 {
                     abrirReserva(objReserva);
                     return UIXItemsList.ListResult.NENHUM;
@@ -62,7 +64,7 @@ namespace BurgerShack.Desktop
 
         private void btnNova_Click(object sender, EventArgs e)
         {
-            new frmReserva{}.ShowDialog();
+            new frmReserva { }.ShowDialog();
         }
     }
 }

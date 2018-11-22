@@ -218,6 +218,12 @@ namespace BurgerShack.Desktop
             {
                 if (ObjReserva.CodMesas.Count > 0)
                 {
+                    String informacoes = txtInformacoes.Text;
+                    if (string.IsNullOrEmpty(informacoes))
+                    {
+                        informacoes = "Sem informações adicionais.";
+                    }
+
                     if (ObjReserva.Cod == -1)
                     {
                         if (ObjReserva.CodCliente != -1 || encontrarCliente())
@@ -229,7 +235,8 @@ namespace BurgerShack.Desktop
                                 Pessoas = UtilConvert.ToInt(txtPessoas.Text),
                                 Agendado = (DateTime)obterDataAgendada(),
                                 Agendamento = DateTime.Now,
-                                Informacoes = txtInformacoes.Text
+                                CodCliente = ObjReserva.CodCliente,
+                                Informacoes = informacoes
                             };
 
                             objReserva.gravar();

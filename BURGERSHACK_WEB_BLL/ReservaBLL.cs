@@ -236,10 +236,9 @@ namespace BurgerShack.Web.Bll
             {
                 if (string.IsNullOrEmpty(informacoes))
                 {
-                    informacoes = "Sem informações adicionais";
+                    informacoes = "Sem informações adicionais.";
                 }
-
-
+                
                 clnReserva objReserva = new clnReserva
                 {
                     Informacoes = informacoes,
