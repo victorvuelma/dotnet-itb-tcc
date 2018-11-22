@@ -160,7 +160,7 @@ namespace BurgerShack.Web.Bll
                         Agendado = data,
                         Ativo = true,
                         Situacao = clnReserva.reservaSituacao.CANCELADA
-                    }.obterPorClienteDataSituacao();
+                    }.obterPorClienteData();
 
                     if (objReservas.Count > 0)
                     {
