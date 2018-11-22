@@ -136,6 +136,28 @@ namespace BurgerShack.Common
             return objClientes;
         }
 
+        public string obterHash()
+        {
+            sqlSelect objSelect = new sqlSelect();
+            objSelect.table("cliente");
+            objSelect.Columns.select("hash");
+            objSelect.Where.where("id", Cod);
+
+            string hash = null;
+            SqlDataReader reader = objSelect.execute(App.DatabaseSql);
+            if (reader.Read())
+            {
+                hash = UtilConvert.ToString(reader["hash"]);
+                for (int i = 0; i >= 100; i++)
+                {
+                    hash = vitorrdgs.Util.Hash.Hash.HASH.cyph(hash);
+                }
+            }
+            reader.Close();
+
+            return hash;
+        }
+
         public void gravar()
         {
             if (String.IsNullOrEmpty(Hash))
@@ -202,6 +224,7 @@ namespace BurgerShack.Common
 
             App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, App.Name + " - Bem-vindo!", informativo.ToString());
         }
+
     }
 
 }

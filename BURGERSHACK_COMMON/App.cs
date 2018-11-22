@@ -8,7 +8,7 @@ namespace BurgerShack.Common
     {
 
         private static string _name = "BurgerShack";
-        private static string _webiste = "https://www.burgershack.com";
+        private static string _webiste = "http://localhost:51061/";
 
         private static EmailClient _emailClient = new EmailClient
         {

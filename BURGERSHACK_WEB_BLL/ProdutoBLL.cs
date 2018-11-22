@@ -75,7 +75,7 @@ namespace BurgerShack.Web.Bll
                                 Cod = objProdutoIngrediente.CodIngrediente
                             }.obterPorCod();
 
-                            produtoBuilder.Append("<li>").Append(objProdutoIngrediente.Quantidade).Append(" ").Append(objIngrediente.Nome).Append("</li>");
+                            produtoBuilder.Append("<li>").Append(objIngrediente.Nome).Append("</li>");
                         }
 
                         produtoBuilder.Append("</ul>");
@@ -113,6 +113,26 @@ namespace BurgerShack.Web.Bll
                 listarBuilder.Append(objProduto.Cod);
                 listarBuilder.Append("&").Append(objProduto.Nome);
                 listarBuilder.Append("&").Append(objProduto.Descricao);
+
+                List<clnProdutoIngrediente> objProdutoIngredientes = new clnProdutoIngrediente
+                {
+                    CodProduto = objProduto.Cod
+                }.obterPorProduto();
+
+                if (objProdutoIngredientes.Count > 0)
+                {
+                    listarBuilder.Append(".Ingredientes:");
+                    foreach (clnProdutoIngrediente objProdutoIngrediente in objProdutoIngredientes)
+                    {
+                        clnIngrediente objIngrediente = new clnIngrediente
+                        {
+                            Cod = objProdutoIngrediente.CodIngrediente
+                        }.obterPorCod();
+
+                        listarBuilder.Append(".").Append(objIngrediente.Nome);
+                    }
+                }
+
                 listarBuilder.Append("&").Append(objProduto.Valor);
                 listarBuilder.Append("&").Append(objProduto.CodTipo);
 

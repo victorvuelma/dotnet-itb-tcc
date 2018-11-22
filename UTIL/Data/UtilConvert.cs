@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace vitorrdgs.Util.Data
 {
@@ -81,6 +82,16 @@ namespace vitorrdgs.Util.Data
         public static bool ToBool(object val) => Convert.ToBoolean(val);
 
         public static object ToBit(object val) => (val.Equals(true) ? 1 : 0);
+
+        public static String ToBase64(string val)
+        {
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(val));
+        }
+
+        public static String FromBase64(string val)
+        {
+            return Encoding.UTF8.GetString(Convert.FromBase64String(val));
+        }
 
     }
 }

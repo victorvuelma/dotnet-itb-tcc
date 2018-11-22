@@ -121,6 +121,8 @@ namespace BurgerShack.Common
             objSelect.table("produto");
             objSelect.Where.where("ativo", UtilConvert.ToBit(Ativo))
                            .where("situacao", prefixo(Situacao));
+            objSelect.Order.order("id_tipo")
+                           .order("nome");
 
             SqlDataReader reader = objSelect.execute(App.DatabaseSql);
             List<clnProduto> objProdutos = new List<clnProduto>();

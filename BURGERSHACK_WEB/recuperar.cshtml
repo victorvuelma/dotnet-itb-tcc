@@ -10,14 +10,22 @@
     {
         if (clienteBLL.autenticado())
         {
-            string acao = Request.Params["acao"];
-            if (acao != null && acao.Equals("sair"))
+            Response.Redirect("conta.cshtml");
+        }
+        else
+        {
+            string token = Request.Params["token"];
+
+            if (token != null)
             {
-                clienteBLL.sair();
+                if (!clienteBLL.tokenValidade(token))
+                {
+                    resultado = "0O token informado expirou.";
+                }
             }
             else
             {
-                Response.Redirect("conta.cshtml");
+                Response.Redirect("esqueci.cshtml");
             }
         }
     }
@@ -29,17 +37,19 @@
         }
         else
         {
-            string cpf = Request.Form["txtCPF"];
-            string senha = Request.Form["txtSenha"];
-
-            resultado = clienteBLL.autenticar(cpf, senha);
+            string token = Request.Params["token"];
+            string email = Request.Params["email"];
+            string cpf = Request.Params["txtCpf"];
+            string senha = Request.Params["txtSenha"];
+            
+            resultado = clienteBLL.recuperarSenha(token, email, cpf, senha);
         }
     }
 }
 <!DOCTYPE html>
 <html lang=pt-br>
 <head>
-    <title>@BurgerShack.Common.App.Name - Acessar</title>
+    <title>@BurgerShack.Common.App.Name - Recuperar sua Conta</title>
     <meta charset=UTF-8> <!-- ISO-8859-1 -->
     <meta name=viewport content="width=device-width, initial-scale=1.0"> <!-- Para não travar o zoom -->
     <meta name=description content=""> <!-- No máximo 360 caracteres, pode haver falhas com mais de 160 caracteres-->
@@ -107,22 +117,25 @@
 
     <!-- CONTEUDO -->
     <section id="acessar">
-        <h2>Já sou Cadastrado</h2>
+        <h2>Recuperar Conta</h2>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-center">
-                    <form role="form" action="~/acessar.cshtml" method="post">
+                    <form role="form" action="~/recuperar.cshtml" method="post">
                         <h4>Informe seus Dados:</h4>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" value="@Request.Form["txtCPF"]" required />
+                            <input type="text" class="form-control" name="txtCpf" placeholder="CPF" data-mask="000.000.000-00" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="Email" class="form-control" name="email" placeholder="Email" value="@Request.Params["email"]" required />
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required />
                         </div>
-                        <a href="~/cadastro.cshtml" class="btn btn-primary" role="button"><i class="fas fa-user-plus"></i> Cadastre-se</a>
-                        <button type="submit" class="btn btn-default float-right"><i class="fas fa-sign-in-alt"></i> Acessar</button>
+                        <input type="hidden" name="token" value="@Request.Params["token"]" />
+
+                        <button type="submit" class="btn btn-default float-right"><i class="fas fa-key"></i> Alterar Senha</button>
                     </form>
-                    <a href="~/esqueci.cshtml">Esqueceu sua senha? Clique aqui.</a>
                 </div>
             </div>
         </div>
@@ -170,7 +183,7 @@
                         html: '@Html.Raw(resultado.Substring(1, resultado.Length - 1).Replace(".", ".<br/>"))',
                         type: 'success'
                     }).then((result) => {
-                        document.location = 'conta.cshtml'
+                        document.location = 'acessar.cshtml'
                         });
                 </script>
             }

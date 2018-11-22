@@ -66,7 +66,7 @@ namespace BurgerShack.Web.Bll
                         listarBuilder.AppendLine("$");
                     }
                     listarBuilder.Append(objReserva.Cod);
-                    listarBuilder.Append("&").Append(objReserva.Agendado.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
+                    listarBuilder.Append("&").Append(new DateTimeOffset(objReserva.Agendado).ToUnixTimeMilliseconds());
                     listarBuilder.Append("&").Append(objReserva.Pessoas);
                     listarBuilder.Append("&").Append(objReserva.Informacoes);
                     listarBuilder.Append("&").Append(objReserva.prefixo(objReserva.Situacao));

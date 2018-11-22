@@ -21,7 +21,7 @@
                     break;
                 case "login":
                     String cpf = Request.Params["cpf"];
-                    String senha = Encoding.UTF8.GetString(Convert.FromBase64String(Request.Params["senha"]));
+                    String senha = UtilConvert.FromBase64(Request.Params["senha"]);
 
                     ClienteBLL clienteBLL = new ClienteBLL();
 
@@ -50,7 +50,7 @@
                     String data = Request.Params["data"];
                     String hora = Request.Params["hora"];
                     String lugares = Request.Params["lugares"];
-                    String info = Encoding.UTF8.GetString(Convert.FromBase64String(Request.Params["info"]));
+                    String info = UtilConvert.FromBase64(Request.Params["info"]);
 
                     ReservaBLL novaReservaBLL = new ReservaBLL();
 

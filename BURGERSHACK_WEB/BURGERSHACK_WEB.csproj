@@ -113,6 +113,7 @@
   <ItemGroup>
     <Content Include="index.cshtml" />
     <Content Include="api.cshtml" />
+    <Content Include="recuperar.cshtml" />
     <None Include="packages.config" />
     <Content Include="Resources\img\slider\slider-1.psd" />
     <Content Include="acessar.cshtml" />
@@ -133,6 +134,7 @@
     <Content Include="Resources\webfonts\fa-solid-900.woff" />
     <Content Include="Resources\webfonts\fa-solid-900.woff2" />
     <Content Include="Resources\css\bootstrap.min.css.map" />
+    <Content Include="esqueci.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
