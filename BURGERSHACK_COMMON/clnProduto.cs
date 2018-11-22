@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Text;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util.Data;
@@ -253,12 +254,19 @@ namespace BurgerShack.Common
 
             internal override string Detalhes(clnProduto obj)
             {
-                string detalhes = "";
-                detalhes += "Categoria: " + obj.CodTipo;
-                detalhes += "\n";
-                detalhes += "Código: " + obj.Cod;
+                clnTipo objTipo = new clnTipo
+                {
+                    Cod = obj.CodTipo,
+                    Tipo = clnTipo.tipo.PRODUTO
+                }.obterPorCod();
 
-                return detalhes;
+                StringBuilder detalhes = new StringBuilder();
+                detalhes.Append("Código: ").Append(obj.Cod);
+                detalhes.Append("\n").Append("Tipo: ").Append(objTipo.Nome);
+                detalhes.Append("\n").Append("Valor: ").Append(UtilFormatar.formatarValor(obj.Valor));
+                detalhes.Append("\n").Append("Descrição: ").Append(obj.Descricao);
+
+                return detalhes.ToString();
             }
 
             internal override string Imagem(clnProduto obj)

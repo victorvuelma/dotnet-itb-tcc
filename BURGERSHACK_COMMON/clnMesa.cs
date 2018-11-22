@@ -198,6 +198,8 @@ namespace BurgerShack.Common
 
         public class clnListar : clnUtilListar<clnMesa>
         {
+            private string _imagem = clnArquivo.tempImage(Properties.Resources.mesa);
+
             internal override int Cod(clnMesa obj)
             {
                 return obj.Cod;
@@ -205,12 +207,12 @@ namespace BurgerShack.Common
 
             internal override string Detalhes(clnMesa obj)
             {
-                return "";
+                return "Lugares: " + obj.Lugares;
             }
 
             internal override string Imagem(clnMesa obj)
             {
-                return clnArquivo.tempImage(Properties.Resources.mesa);
+                return _imagem;
             }
 
             internal override string Nome(clnMesa obj)

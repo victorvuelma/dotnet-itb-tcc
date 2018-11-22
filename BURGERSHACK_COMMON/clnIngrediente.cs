@@ -1,7 +1,7 @@
-﻿using BurgerShack.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Text;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.SqlMaster.Element.Where;
 using vitorrdgs.Util.Data;
@@ -185,7 +185,7 @@ namespace BurgerShack.Common
                     novaSituacao = clnIngrediente.ingredienteSituacao.FORADEESTOQUE;
                 }
             }
-            if(novaSituacao != Situacao)
+            if (novaSituacao != Situacao)
             {
                 Situacao = novaSituacao;
                 alterar();
@@ -248,10 +248,18 @@ namespace BurgerShack.Common
 
             internal override string Detalhes(clnIngrediente obj)
             {
-                string detalhes = "";
-                detalhes += "Valor: " + obj.Valor;
+                clnTipo objTipo = new clnTipo
+                {
+                    Cod = obj.CodTipo,
+                    Tipo = clnTipo.tipo.INGREDIENTE
+                }.obterPorCod();
 
-                return detalhes;
+                StringBuilder detalhesBuilder = new StringBuilder();
+                detalhesBuilder.Append("Código: ").Append(obj.Cod);
+                detalhesBuilder.Append("\n").Append("Tipo: ").Append(obj.Nome);
+                detalhesBuilder.Append("\n").Append("Valor: ").Append(UtilFormatar.formatarValor(obj.Valor));
+
+                return detalhesBuilder.ToString();
             }
 
             internal override string Imagem(clnIngrediente obj)
@@ -260,6 +268,7 @@ namespace BurgerShack.Common
                 {
                     Cod = obj.CodImagem
                 }.obterPorCod();
+
                 return objArquivo.Local;
             }
 
@@ -267,6 +276,7 @@ namespace BurgerShack.Common
             {
                 return obj.Nome;
             }
+
         }
 
     }

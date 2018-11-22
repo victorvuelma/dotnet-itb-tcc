@@ -244,7 +244,7 @@ namespace BurgerShack.Desktop
         {
             OpenFileDialog objDialog = new OpenFileDialog
             {
-                Filter = "png|*.png"
+                Filter = "png|*.png|jpg|*.jpg"
             };
             if (objDialog.ShowDialog() == DialogResult.OK)
             {

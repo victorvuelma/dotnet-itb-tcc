@@ -110,7 +110,7 @@
             // 
             // btnIngredienteAdd
             // 
-            this.btnIngredienteAdd.Description = "Adicionar";
+            this.btnIngredienteAdd.Description = "ADICIONAR";
             this.btnIngredienteAdd.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredienteAdd.Image = global::BurgerShack.Desktop.Properties.Resources.adicionar;
             this.btnIngredienteAdd.ImageLocation = null;
@@ -124,7 +124,7 @@
             // 
             // btnIngredientes
             // 
-            this.btnIngredientes.Description = "Visualizar";
+            this.btnIngredientes.Description = "VISUALIZAR";
             this.btnIngredientes.HoverColor = System.Drawing.Color.Transparent;
             this.btnIngredientes.Image = global::BurgerShack.Desktop.Properties.Resources.lista;
             this.btnIngredientes.ImageLocation = null;
@@ -138,7 +138,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Description = "Alterar";
+            this.btnAlterar.Description = "ALTERAR";
             this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
             this.btnAlterar.Image = global::BurgerShack.Desktop.Properties.Resources.alterar;
             this.btnAlterar.ImageLocation = null;
@@ -153,27 +153,27 @@
             // txtAdicional
             // 
             this.txtAdicional.AcceptButton = null;
-            this.txtAdicional.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtAdicional.Campo = "Informações Adicionais";
             this.txtAdicional.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.UP;
             this.txtAdicional.Location = new System.Drawing.Point(110, 100);
             this.txtAdicional.MaxLength = 32767;
+            this.txtAdicional.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
             this.txtAdicional.Multiline = true;
             this.txtAdicional.Name = "txtAdicional";
             this.txtAdicional.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAdicional.Size = new System.Drawing.Size(210, 85);
+            this.txtAdicional.Size = new System.Drawing.Size(210, 88);
             this.txtAdicional.TabIndex = 1;
             // 
             // txtQuantidade
             // 
             this.txtQuantidade.AcceptButton = null;
             this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtQuantidade.Campo = "Quantidade";
             this.txtQuantidade.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
             this.txtQuantidade.Location = new System.Drawing.Point(110, 70);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.INT;
             this.txtQuantidade.Multiline = false;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -213,7 +213,7 @@
             // 
             // btnSobremesa
             // 
-            this.btnSobremesa.Description = "Sobremesa";
+            this.btnSobremesa.Description = "SOBREMESA";
             this.btnSobremesa.HoverColor = System.Drawing.Color.Transparent;
             this.btnSobremesa.Image = global::BurgerShack.Desktop.Properties.Resources.sobremesa;
             this.btnSobremesa.ImageLocation = null;
@@ -227,7 +227,7 @@
             // 
             // btnBebida
             // 
-            this.btnBebida.Description = "Bebida";
+            this.btnBebida.Description = "BEBIDA";
             this.btnBebida.HoverColor = System.Drawing.Color.Transparent;
             this.btnBebida.Image = global::BurgerShack.Desktop.Properties.Resources.bebida;
             this.btnBebida.ImageLocation = null;
@@ -241,7 +241,7 @@
             // 
             // btnAcompanhamento
             // 
-            this.btnAcompanhamento.Description = "Guarnição";
+            this.btnAcompanhamento.Description = "ACOMPANHAMENTO";
             this.btnAcompanhamento.HoverColor = System.Drawing.Color.Transparent;
             this.btnAcompanhamento.Image = global::BurgerShack.Desktop.Properties.Resources.acompanhamento;
             this.btnAcompanhamento.ImageLocation = null;
@@ -249,13 +249,13 @@
             this.btnAcompanhamento.Name = "btnAcompanhamento";
             this.btnAcompanhamento.Size = new System.Drawing.Size(90, 90);
             this.btnAcompanhamento.TabIndex = 1;
-            this.btnAcompanhamento.Text = "btnUIX1";
+            this.btnAcompanhamento.Text = "ACOMPANHAMENTO";
             this.btnAcompanhamento.UseVisualStyleBackColor = true;
             this.btnAcompanhamento.Click += new System.EventHandler(this.btnAcompanhamento_Click);
             // 
             // btnLanche
             // 
-            this.btnLanche.Description = "Lanche";
+            this.btnLanche.Description = "LANCHE";
             this.btnLanche.HoverColor = System.Drawing.Color.Transparent;
             this.btnLanche.Image = global::BurgerShack.Desktop.Properties.Resources.lanche;
             this.btnLanche.ImageLocation = null;
@@ -286,7 +286,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Description = "Confirmar";
+            this.btnConfirmar.Description = "CONFIRMAR";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
             this.btnConfirmar.Image = global::BurgerShack.Desktop.Properties.Resources.confirmar;
             this.btnConfirmar.ImageLocation = null;

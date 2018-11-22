@@ -60,7 +60,7 @@ namespace BurgerShack.Desktop
         {
             OpenFileDialog objDialog = new OpenFileDialog
             {
-                Filter = "png|*.png"
+                Filter = "png|*.png|jpg|*.jpg"
             };
             if (objDialog.ShowDialog() == DialogResult.OK)
             {
@@ -227,8 +227,7 @@ namespace BurgerShack.Desktop
                 CodMercadoria = objMercadoria.Cod
             }.obterQuantidadePorMercadoria();
 
-            lblMercadoria.Text = "Mercadoria " + objMercadoria.Cod +
-                            "\n" + "Descricao: " + objMercadoria.Descricao +
+            lblMercadoria.Text = objMercadoria.Descricao +
                             "\n" + "Código de Barras: " + objMercadoria.CodigoBarras;
         }
 

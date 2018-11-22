@@ -127,9 +127,8 @@ namespace BurgerShack.Desktop
         private void definirFornecedor(clnFornecedor objFornecedor)
         {
             ObjEstoque.CodFornecedor = objFornecedor.Cod;
-            lblFornecedor.Text = "Fornecedor " + objFornecedor.Cod +
-                            "\n" + "Razão Social: " + objFornecedor.RazaoSocial +
-                            "\n" + "CNPJ: " + UtilFormatar.formatarCNPJ(objFornecedor.Cnpj);
+            lblFornecedor.Text =  objFornecedor.RazaoSocial +
+                            "\n" + "Email: " + objFornecedor.Email;
         }
 
         private void definirMercadoria(clnMercadoria objMercadoria)

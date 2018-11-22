@@ -1,6 +1,6 @@
-﻿using BurgerShack.Common;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Text;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
@@ -106,24 +106,29 @@ namespace BurgerShack.Common
 
         public class clnListar : clnUtilListar<clnMercadoria>
         {
-            internal override int Cod(clnMercadoria val)
+            private string _imagem = clnArquivo.tempImage(Properties.Resources.mercadoria);
+
+            internal override int Cod(clnMercadoria obj)
             {
-                return val.Cod;
+                return obj.Cod;
             }
 
-            internal override string Detalhes(clnMercadoria val)
+            internal override string Detalhes(clnMercadoria obj)
             {
-                return "Código de barras: " + val.CodigoBarras;
+                StringBuilder detalhesBuilder = new StringBuilder();
+                detalhesBuilder.Append("Código de barras: ").Append(obj.CodigoBarras);
+                detalhesBuilder.Append("\n").Append("Descrição: ").Append(obj.Descricao);
+                return detalhesBuilder.ToString();
             }
 
-            internal override string Imagem(clnMercadoria val)
+            internal override string Imagem(clnMercadoria obj)
             {
-                return clnArquivo.tempImage(Properties.Resources.mercadoria);
+                return _imagem;
             }
 
-            internal override string Nome(clnMercadoria val)
+            internal override string Nome(clnMercadoria obj)
             {
-                return val.Descricao;
+                return obj.Descricao;
             }
         }
 

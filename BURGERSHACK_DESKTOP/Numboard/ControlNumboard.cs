@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using vitorrdgs.UiX.Component;
 using System.Windows.Forms;
+using vitorrdgs.UiX.Component;
 using vitorrdgs.UiX.Property;
 using static System.Windows.Forms.Control;
 
@@ -16,7 +12,10 @@ namespace BurgerShack.Desktop.Numboard
 
         public static void esconderNumBoard()
         {
-            frmNumboard.Hide();
+            if (frmNumboard != null)
+            {
+                frmNumboard.Hide();
+            }
         }
 
         public static void definirNumBoard(ControlCollection controls)

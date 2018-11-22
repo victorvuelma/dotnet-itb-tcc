@@ -87,7 +87,7 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // btnSalvar
+            // btnAlterar
             // 
             this.btnAlterar.Description = "SALVAR";
             this.btnAlterar.HoverColor = System.Drawing.Color.Transparent;
@@ -95,7 +95,7 @@
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAlterar.ImageLocation = null;
             this.btnAlterar.Location = new System.Drawing.Point(5, 205);
-            this.btnAlterar.Name = "btnSalvar";
+            this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(90, 90);
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "Salvar";
@@ -177,7 +177,7 @@
             // 
             // lblFornecedor
             // 
-            this.lblFornecedor.Location = new System.Drawing.Point(5, 45);
+            this.lblFornecedor.Location = new System.Drawing.Point(5, 40);
             this.lblFornecedor.Name = "lblFornecedor";
             this.lblFornecedor.Size = new System.Drawing.Size(245, 50);
             this.lblFornecedor.TabIndex = 8;

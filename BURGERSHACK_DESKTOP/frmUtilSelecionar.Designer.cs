@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grbDetalhes = new System.Windows.Forms.GroupBox();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.txtQuantidade = new vitorrdgs.UiX.Component.UIXTextBox();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.picImagem = new System.Windows.Forms.PictureBox();
             this.grbOpcoes = new System.Windows.Forms.GroupBox();
             this.lstOpcoes = new vitorrdgs.UiX.Component.UIXItemsList();
             this.hdrUIX = new vitorrdgs.UiX.Component.UIXHeader();
@@ -41,64 +36,16 @@
             this.txtPesquisar = new vitorrdgs.UiX.Component.UIXTextBox();
             this.btnPesquisar = new vitorrdgs.UiX.Component.UIXButton();
             this.btnConfirmar = new vitorrdgs.UiX.Component.UIXButton();
-            this.grbDetalhes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
+            this.picImagem = new System.Windows.Forms.PictureBox();
+            this.txtQuantidade = new vitorrdgs.UiX.Component.UIXTextBox();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.grbDetalhes = new System.Windows.Forms.GroupBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.grbOpcoes.SuspendLayout();
             this.grbPesquisa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
+            this.grbDetalhes.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // grbDetalhes
-            // 
-            this.grbDetalhes.Controls.Add(this.lblDesc);
-            this.grbDetalhes.Controls.Add(this.txtQuantidade);
-            this.grbDetalhes.Controls.Add(this.lblNome);
-            this.grbDetalhes.Controls.Add(this.picImagem);
-            this.grbDetalhes.Location = new System.Drawing.Point(555, 55);
-            this.grbDetalhes.Name = "grbDetalhes";
-            this.grbDetalhes.Size = new System.Drawing.Size(140, 349);
-            this.grbDetalhes.TabIndex = 6;
-            this.grbDetalhes.TabStop = false;
-            // 
-            // lblDesc
-            // 
-            this.lblDesc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesc.Location = new System.Drawing.Point(10, 220);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(120, 90);
-            this.lblDesc.TabIndex = 3;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.AcceptButton = null;
-            this.txtQuantidade.AccessibleName = "Quantidade";
-            this.txtQuantidade.Campo = "Quantidade";
-            this.txtQuantidade.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
-            this.txtQuantidade.Location = new System.Drawing.Point(5, 320);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtQuantidade.MaxLength = 32767;
-            this.txtQuantidade.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
-            this.txtQuantidade.Multiline = false;
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtQuantidade.Size = new System.Drawing.Size(130, 20);
-            this.txtQuantidade.TabIndex = 2;
-            // 
-            // lblNome
-            // 
-            this.lblNome.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(10, 150);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(120, 60);
-            this.lblNome.TabIndex = 1;
-            // 
-            // picImagem
-            // 
-            this.picImagem.Location = new System.Drawing.Point(10, 20);
-            this.picImagem.Name = "picImagem";
-            this.picImagem.Size = new System.Drawing.Size(120, 120);
-            this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImagem.TabIndex = 0;
-            this.picImagem.TabStop = false;
             // 
             // grbOpcoes
             // 
@@ -111,10 +58,14 @@
             // 
             // lstOpcoes
             // 
+            this.lstOpcoes.AutoRender = true;
             this.lstOpcoes.AutoScroll = true;
+            this.lstOpcoes.ItemsSize = 100;
+            this.lstOpcoes.ItemsSpace = 10;
             this.lstOpcoes.Location = new System.Drawing.Point(5, 15);
-            this.lstOpcoes.MaximumSize = new System.Drawing.Size(530, 1000);
+            this.lstOpcoes.MaximumSize = new System.Drawing.Size(530, 10000);
             this.lstOpcoes.Name = "lstOpcoes";
+            this.lstOpcoes.PosIndex = 0;
             this.lstOpcoes.Size = new System.Drawing.Size(530, 350);
             this.lstOpcoes.TabIndex = 0;
             // 
@@ -169,7 +120,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Description = "Pesquisar";
+            this.btnPesquisar.Description = "PESQUISAR";
             this.btnPesquisar.HoverColor = System.Drawing.Color.Transparent;
             this.btnPesquisar.Image = global::BurgerShack.Desktop.Properties.Resources.pesquisar;
             this.btnPesquisar.ImageLocation = null;
@@ -183,17 +134,71 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Description = "Confirmar";
+            this.btnConfirmar.Description = "CONFIRMAR";
             this.btnConfirmar.HoverColor = System.Drawing.Color.Transparent;
             this.btnConfirmar.Image = global::BurgerShack.Desktop.Properties.Resources.confirmar;
             this.btnConfirmar.ImageLocation = null;
-            this.btnConfirmar.Location = new System.Drawing.Point(560, 410);
+            this.btnConfirmar.Location = new System.Drawing.Point(555, 400);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(130, 130);
+            this.btnConfirmar.Size = new System.Drawing.Size(140, 140);
             this.btnConfirmar.TabIndex = 5;
             this.btnConfirmar.Text = "btnUIX1";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // picImagem
+            // 
+            this.picImagem.Location = new System.Drawing.Point(10, 20);
+            this.picImagem.Name = "picImagem";
+            this.picImagem.Size = new System.Drawing.Size(120, 120);
+            this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImagem.TabIndex = 0;
+            this.picImagem.TabStop = false;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.AcceptButton = null;
+            this.txtQuantidade.AccessibleName = "Quantidade";
+            this.txtQuantidade.Campo = "Quantidade";
+            this.txtQuantidade.LabelPosition = vitorrdgs.UiX.Property.uixEnum.uixLabelPosition.SIDE;
+            this.txtQuantidade.Location = new System.Drawing.Point(6, 394);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtQuantidade.MaxLength = 32767;
+            this.txtQuantidade.Mode = vitorrdgs.UiX.Property.uixEnum.uixTextBoxMode.ALL;
+            this.txtQuantidade.Multiline = false;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtQuantidade.Size = new System.Drawing.Size(152, 26);
+            this.txtQuantidade.TabIndex = 2;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Location = new System.Drawing.Point(5, 205);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(130, 120);
+            this.lblDesc.TabIndex = 3;
+            // 
+            // grbDetalhes
+            // 
+            this.grbDetalhes.Controls.Add(this.lblDesc);
+            this.grbDetalhes.Controls.Add(this.txtQuantidade);
+            this.grbDetalhes.Controls.Add(this.lblNome);
+            this.grbDetalhes.Controls.Add(this.picImagem);
+            this.grbDetalhes.Location = new System.Drawing.Point(555, 55);
+            this.grbDetalhes.Name = "grbDetalhes";
+            this.grbDetalhes.Size = new System.Drawing.Size(140, 335);
+            this.grbDetalhes.TabIndex = 6;
+            this.grbDetalhes.TabStop = false;
+            // 
+            // lblNome
+            // 
+            this.lblNome.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(5, 150);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(130, 50);
+            this.lblNome.TabIndex = 1;
+            this.lblNome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmUtilSelecionar
             // 
@@ -213,27 +218,27 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Selecione";
             this.Load += new System.EventHandler(this.frmSelecionar_Load);
-            this.grbDetalhes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.grbOpcoes.ResumeLayout(false);
             this.grbPesquisa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
+            this.grbDetalhes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox grbDetalhes;
         private System.Windows.Forms.GroupBox grbOpcoes;
         private vitorrdgs.UiX.Component.UIXHeader hdrUIX;
         private vitorrdgs.UiX.Component.UIXItemsList lstOpcoes;
-        private System.Windows.Forms.PictureBox picImagem;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblDesc;
-        public vitorrdgs.UiX.Component.UIXTextBox txtQuantidade;
         private System.Windows.Forms.GroupBox grbPesquisa;
         private System.Windows.Forms.Label lblPesquisaRes;
         private vitorrdgs.UiX.Component.UIXTextBox txtPesquisar;
         private vitorrdgs.UiX.Component.UIXButton btnPesquisar;
         private vitorrdgs.UiX.Component.UIXButton btnConfirmar;
+        private System.Windows.Forms.PictureBox picImagem;
+        public vitorrdgs.UiX.Component.UIXTextBox txtQuantidade;
+        private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.GroupBox grbDetalhes;
+        private System.Windows.Forms.Label lblNome;
     }
 }

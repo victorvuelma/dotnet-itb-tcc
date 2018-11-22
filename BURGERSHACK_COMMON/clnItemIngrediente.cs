@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using vitorrdgs.SqlMaster;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-
-using BurgerShack.Common;
 using vitorrdgs.SqlMaster.Command;
 using vitorrdgs.Util.Data;
 
@@ -95,10 +86,7 @@ namespace BurgerShack.Common
 
             internal override string Detalhes(clnItemIngrediente obj)
             {
-                string detalhes = "";
-                detalhes += "Quantidade: " + obj.Quantidade;
-
-                return detalhes;
+                return "Quantidade: " + obj.Quantidade;
             }
 
             internal override string Imagem(clnItemIngrediente obj)
