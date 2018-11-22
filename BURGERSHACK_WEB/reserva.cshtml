@@ -106,7 +106,7 @@
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="inputCpf" placeholder="Confirme seu CPF" data-mask="000.000.000-00" required>
+                                    <input type="text" class="form-control" name="inputCpf" placeholder="Confirme seu CPF" data-mask="000.000.000-00" required value="@((Request.Form["inputCpf"] == null)? "" : Request.Form["inputCpf"])">
                                 </div>
                             </div>
                             <div class="col">
