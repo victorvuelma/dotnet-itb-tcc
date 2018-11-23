@@ -98,7 +98,6 @@
     <Content Include="Resources\js\bootstrap.min.js" />
     <Content Include="Resources\js\jquery-3.2.1.min.js" />
     <Content Include="Resources\js\jquery.mask.min.js" />
-    <Content Include="Resources\js\nprogress.js" />
     <Content Include="Resources\js\script.js" />
     <Content Include="Resources\js\sweetalert2.all.min.js" />
     <Content Include="Resources\css\sweetalert2.min.css" />
