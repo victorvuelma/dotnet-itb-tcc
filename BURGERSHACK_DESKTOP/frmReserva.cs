@@ -152,7 +152,8 @@ namespace BurgerShack.Desktop
                 {
                     adicionarMesa();
                 }
-            } else
+            }
+            else
             {
                 UtilMensagem.mostrarOk("Mesas", "Esta reserva não possui nenhuma mesa.");
             }
@@ -205,7 +206,7 @@ namespace BurgerShack.Desktop
 
         private DateTime? obterDataAgendada()
         {
-            if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text))
+            if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text) && UtilValidar.validarHora(mtbHora.Text)
             {
                 return UtilConvert.ObterDataHora(mtbData.Text, mtbHora.Text);
             }
