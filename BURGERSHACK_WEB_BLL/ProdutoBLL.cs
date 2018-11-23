@@ -8,6 +8,21 @@ namespace BurgerShack.Web.Bll
 {
     public class ProdutoBLL
     {
+
+        public string exibirTipos(int codTipo)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            for (int tipo = 0; tipo <= 4; tipo++)
+            {
+                builder.Append("<option value='").Append(tipo).Append("'")
+                    .Append((codTipo == tipo) ? " selected" : "").Append(">")
+                    .Append(tipoNome(tipo)).Append("</option>");
+            }
+
+            return builder.ToString();
+        }
+
         public string exibirProdutos(int codTipo)
         {
             List<clnProduto> objProdutos = null;
@@ -29,14 +44,13 @@ namespace BurgerShack.Web.Bll
                 }.obterPorTipoSituacao();
             }
 
+            StringBuilder builder = new StringBuilder();
             if (objProdutos == null || objProdutos.Count == 0)
             {
-                return "<div class='col-12'><h3>Não há produtos cadastrados.</h3></div>";
+                builder.Append("<div class='col-12'><h3>Não há produtos cadastrados.</h3></div>");
             }
             else
             {
-                StringBuilder builder = new StringBuilder();
-
                 foreach (clnProduto objProduto in objProdutos)
                 {
 
@@ -89,9 +103,9 @@ namespace BurgerShack.Web.Bll
 
                     builder.Append(produtoBuilder);
                 }
-
-                return builder.ToString();
             }
+
+            return builder.ToString();
         }
 
         public string listarProdutos()
@@ -159,7 +173,7 @@ namespace BurgerShack.Web.Bll
                 case 4:
                     return "Sobremesa";
             }
-            return "";
+            return "Todos";
         }
 
     }

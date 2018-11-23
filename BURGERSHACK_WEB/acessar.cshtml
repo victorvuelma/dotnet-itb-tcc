@@ -117,12 +117,14 @@
                             <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" value="@Request.Form["txtCPF"]" required />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="txtSenha" placeholder="Senha" required />
+                            <input type="password" class="form-control" name="txtSenha" placeholder="Senha" aria-describedby="ajudaSenha" required />
+                            <p id="ajudaSenha" class="form-text text-muted text-right">
+                                <a href="~/esqueci.cshtml">Esqueceu sua senha?</a>
+                            </p>
                         </div>
                         <a href="~/cadastro.cshtml" class="btn btn-primary" role="button"><i class="fas fa-user-plus"></i> Cadastre-se</a>
                         <button type="submit" class="btn btn-default float-right"><i class="fas fa-sign-in-alt"></i> Acessar</button>
-                    </form>
-                    <a href="~/esqueci.cshtml">Esqueceu sua senha? Clique aqui.</a>
+                    </form>                   
                 </div>
             </div>
         </div>

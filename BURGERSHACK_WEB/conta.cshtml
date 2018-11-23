@@ -111,7 +111,7 @@
                     <h3>Meus Dados</h3>
                     <form class="form" role="form" action="~/conta.cshtml" method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required value="@objCliente.Nome" />
+                            <input type="text" class="form-control" name="txtNome" placeholder="Nome Completo" required value="@(Request.Form["txtNome"] == null ? objCliente.Nome : Request.Form["txtNome"])" />
                         </div>
                         <div class="form-row">
                             <div class="col">
@@ -133,26 +133,26 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="@objCliente.TelCelular" />
+                                    <input type="text" class="form-control" name="txtCelular" placeholder="Telefone Celular" data-mask="(00) 00000-0000" required value="@(Request.Form["txtCelular"] == null ? objCliente.TelCelular : Request.Form["txtCelular"])" />
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="@objCliente.CartaoNumero" />
+                                    <input type="text" class="form-control" name="txtCartaoNumero" placeholder="Número do Cartão" data-mask="0000 0000 0000 0000" required value="@(Request.Form["txtCartaoNumero"] == null ? objCliente.CartaoNumero : Request.Form["txtCartaoNumero"])" />
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required value="@objCliente.CartaoValidade" />
+                                            <input type="text" class="form-control" name="txtCartaoValidade" placeholder="Data de Validade" data-mask="00/00" required value="@(Request.Form["txtCartaoValidade"] == null ? objCliente.CartaoValidade : Request.Form["txtCartaoValidade"])" />
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="txtCartaoCVV" placeholder="CVV" data-mask="000" required value="@objCliente.CartaoCVV" />
+                                            <input type="text" class="form-control" name="txtCartaoCVV" placeholder="CVV" data-mask="000" required value="@(Request.Form["txtCartaoCVV"] == null ? objCliente.CartaoCVV : Request.Form["txtCartaoCVV"])" />
                                         </div>
                                     </div>
                                 </div>
