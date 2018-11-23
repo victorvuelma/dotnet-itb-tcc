@@ -222,7 +222,7 @@ namespace BurgerShack.Common
             informativo.Append("<br/>");
             informativo.Append("<br/>(Esta mensagem é automática)");
 
-            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, App.Name + " - Bem-vindo!", informativo.ToString());
+            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, App.Name + " - Bem-vindo!", informativo, App.TemplateEmail);
         }
 
     }

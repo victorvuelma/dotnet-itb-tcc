@@ -144,6 +144,7 @@
     <Compile Include="Data\UtilValidar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilRandom.cs" />
+    <Compile Include="UtilTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

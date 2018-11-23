@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace vitorrdgs.Util
 {
@@ -22,6 +19,29 @@ namespace vitorrdgs.Util
         public int SmtpPort { get => _smtpPort; set => _smtpPort = value; }
         public string CredentialEmail { get => _credentialEmail; set => _credentialEmail = value; }
         public string CredentialPassword { get => _credentialPassword; set => _credentialPassword = value; }
+
+        public string SendEmail(string senderName, string senderEmail, string receiverEmail, string title, StringBuilder message, string template)
+        {
+            StringBuilder contentBuilder = new StringBuilder();
+
+            foreach (String line in UtilTemplate.lerTemplate(template))
+            {
+                if (line.Equals("%MENSAGEM%"))
+                {
+                    contentBuilder.Append(message);
+                }
+                else if (line.Equals("%TITULO%"))
+                {
+                    contentBuilder.Append(title);
+                }
+                else
+                {
+                    contentBuilder.Append(line);
+                }
+            }
+
+            return SendEmail(senderName, senderEmail, receiverEmail, title, contentBuilder.ToString());
+        }
 
         public string SendEmail(string senderName, string senderEmail, string receiverEmail, string title, string content)
         {
@@ -58,7 +78,8 @@ namespace vitorrdgs.Util
             try
             {
                 objSmtp.Send(objMessage);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return ex.Message;
             }

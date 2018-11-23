@@ -94,7 +94,7 @@ namespace BurgerShack.Web.Bll
             conteudo.Append("<br/>");
             conteudo.Append("<br/>(Esta mensagem é automática)");
 
-            return App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, email, App.Name + " - Recebemos o seu Feedback!", conteudo.ToString());
+            return App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, email, App.Name + " - Recebemos o seu Feedback!", conteudo, App.TemplateEmail);
         }
 
     }

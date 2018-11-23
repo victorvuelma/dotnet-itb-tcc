@@ -354,7 +354,7 @@ namespace BurgerShack.Web.Bll
             conteudo.Append("<br/>");
             conteudo.Append("<br/>(Esta mensagem é automática)");
 
-            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, objCliente.Email, App.Name + " - Esqueceu sua senha?", conteudo.ToString());
+            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, objCliente.Email, App.Name + " - Esqueceu sua senha?", conteudo, App.TemplateEmail);
         }
 
         public bool tokenValidade(string token)
