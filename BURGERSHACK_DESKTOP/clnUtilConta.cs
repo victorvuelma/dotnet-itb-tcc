@@ -189,7 +189,7 @@ namespace BurgerShack.Desktop
 
         public static IEnumerable<string> obterTemplate()
         {
-            return UtilTemplate.lerTemplate(App.TemplateConta);
+            return UtilTemplate.templateContent(App.TemplateConta);
         }
 
     }

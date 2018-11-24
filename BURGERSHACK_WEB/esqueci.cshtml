@@ -1,5 +1,6 @@
 ﻿@using BurgerShack.Web.Bll;
 @using BurgerShack.Common;
+@using vitorrdgs.Util.Data;
 
 @{
     ClienteBLL clienteBLL = new ClienteBLL();
@@ -106,10 +107,10 @@
                     <form role="form" action="~/esqueci.cshtml" method="post">
                         <h4>Informe seus dados:</h4>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="txtCPF" placeholder="Seu CPF" data-mask="000.000.000-00" required />
+                            <input type="text" class="form-control" name="txtCPF" placeholder="CPF" data-mask="000.000.000-00" required />
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="txtEmail" placeholder="Seu email" required />
+                            <input type="email" class="form-control" name="txtEmail" placeholder="Email" required />
                         </div>
 
                         <button type="submit" class="btn btn-default float-right"><i class="fas fa-unlock-alt"></i> Enviar Recuperação</button>
@@ -129,10 +130,10 @@
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>
-                    <p><a href="fb.me/@BurgerShack.Common.App.Name"><i class="fab fa-facebook-square"></i> facebook.com/@BurgerShack.Common.App.Name</a></p>
-                    <p><a href="http://api.whatsapp.com/send?phone=551149985255"><i class="fas fa-phone"></i> (11) 4998-5255</a></p>
-                    <p><a href="mailto:@BurgerShack.Common.App.EmailClient.CredentialEmail"><i class="fas fa-envelope"></i> @BurgerShack.Common.App.EmailClient.CredentialEmail</a></p>
-                    <p><a href="https://goo.gl/maps/UNELiYGVo932"><i class="fas fa-location-arrow"></i> Calçada dos Lírios, 196 - Alphaville - Barueri</a></p>
+                    <p><a href="https://fb.me/@BurgerShack.Common.App.Facebook"><i class="fab fa-facebook-square"></i> facebook.com/@BurgerShack.Common.App.Facebook</a></p>
+                    <p><a href="@BurgerShack.Common.App.Telefone"><i class="fas fa-phone"></i> @UtilFormatar.formatarTelefone(BurgerShack.Common.App.Telefone)</a></p>
+                    <p><a href="mailto:@BurgerShack.Common.App.Email"><i class="fas fa-envelope"></i> @BurgerShack.Common.App.Email</a></p>
+                    <p><a href="@BurgerShack.Common.App.EnderecoURL"><i class="fas fa-location-arrow"></i> @BurgerShack.Common.App.Endereco</a></p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Localização</h5>

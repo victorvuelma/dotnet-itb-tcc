@@ -25,7 +25,7 @@
         if (UtilValidar.validarInt(tipoStr))
         {
             codTipo = UtilConvert.ToInt(tipoStr);
-            if (codTipo < 1 || codTipo > 4)
+            if (codTipo < 0 || codTipo > 4)
             {
                 codTipo = 4;
             }
@@ -139,13 +139,13 @@
                 <div class="col-center col-lg-8 col-md-10 col-sm-12">
                     <form role="form" method="get" action="~/index.cshtml">
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-6 col-md-8">
                                 <select class="form-control" name="tipo">
                                     @Html.Raw(produtosSelect);
                                 </select>
                             </div>
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-primary"><i class="fas fa-exchange-alt"></i> Atualizar</button>
+                            <div class="col-6 col-md-4">
+                                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-exchange-alt"></i> Atualizar</button>
                             </div>
                         </div>
                     </form>
@@ -191,10 +191,10 @@
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Contatos</h5>
-                    <p><a href="fb.me/@BurgerShack.Common.App.Name"><i class="fab fa-facebook-square"></i> facebook.com/@BurgerShack.Common.App.Name</a></p>
-                    <p><a href="http://api.whatsapp.com/send?phone=551149985255"><i class="fas fa-phone"></i> (11) 4998-5255</a></p>
-                    <p><a href="mailto:@BurgerShack.Common.App.EmailClient.CredentialEmail"><i class="fas fa-envelope"></i> @BurgerShack.Common.App.EmailClient.CredentialEmail</a></p>
-                    <p><a href="https://goo.gl/maps/UNELiYGVo932"><i class="fas fa-location-arrow"></i> Calçada dos Lírios, 196 - Alphaville - Barueri</a></p>
+                    <p><a href="https://fb.me/@BurgerShack.Common.App.Facebook"><i class="fab fa-facebook-square"></i> facebook.com/@BurgerShack.Common.App.Facebook</a></p>
+                    <p><a href="tel:@BurgerShack.Common.App.Telefone"><i class="fas fa-phone"></i> @UtilFormatar.formatarTelefone(BurgerShack.Common.App.Telefone)</a></p>
+                    <p><a href="mailto:@BurgerShack.Common.App.Email"><i class="fas fa-envelope"></i> @BurgerShack.Common.App.Email</a></p>
+                    <p><a href="@BurgerShack.Common.App.EnderecoURL"><i class="fas fa-location-arrow"></i> @BurgerShack.Common.App.Endereco</a></p>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <h5>Localização</h5>
@@ -222,7 +222,7 @@
                     title: 'Tudo certo!',
                         html: '@Html.Raw(resultado.Substring(1, resultado.Length - 1).Replace(".", ".<br/>"))',
                         type: 'success'
-                    })).then((result) => {
+                    }).then((result) => {
                         document.location = 'index.cshtml'
                     });
                 </script>

@@ -1,25 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace vitorrdgs.Util
 {
     public class UtilTemplate
     {
-        public static IEnumerable<string> lerTemplate(String source)
+        public static StringBuilder parseTemplate(String source, Dictionary<string, StringBuilder> values)
         {
+            StringBuilder templateBuilder = new StringBuilder();
+
             StringReader reader = new StringReader(source);
             String line = "";
-            List<string> lines = new List<string>();
             while ((line = reader.ReadLine()) != null)
             {
-                lines.Add(line);
+                if (line.StartsWith("@"))
+                {
+                    if (values.TryGetValue(line.Substring(1), out StringBuilder val))
+                    {
+                        templateBuilder.Append(val);
+                    }
+                    else
+                    {
+                        templateBuilder.Append(line);
+                    }
+                }
+                else
+                {
+                    templateBuilder.Append(line);
+                }
             }
-            return lines;
+            return templateBuilder;
         }
 
+        public static IEnumerable<string> templateContent(string source)
+        {
+            List<String> content = new List<String>();
+
+            StringReader reader = new StringReader(source);
+            String line = "";
+            while ((line = reader.ReadLine()) != null)
+            {
+                content.Add(line);
+            }
+            return content;
+        }
     }
 }

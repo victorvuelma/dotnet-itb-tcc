@@ -87,14 +87,14 @@ namespace BurgerShack.Web.Bll
             conteudo.Append("Olá ").Append(nome);
             conteudo.Append("<br/>");
             conteudo.Append("<br/>Obrigado por enviar o seu Feedback!");
-            conteudo.Append("<br/>Informamos que recebemos o seu Feedback e se for necessário entraremos em contato novamente para mais detalhes!");
+            conteudo.Append("<br/>Se for necessário entraremos em contato novamente para mais detalhes!");
             conteudo.Append("<br/>");
             conteudo.Append("<br/>Atenciosamente,");
             conteudo.Append("<br/>Equipe ").Append("<a href='").Append(App.Webiste).Append("'>").Append(App.Name).Append("</a>").Append(".");
             conteudo.Append("<br/>");
             conteudo.Append("<br/>(Esta mensagem é automática)");
 
-            return App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, email, App.Name + " - Recebemos o seu Feedback!", conteudo, App.TemplateEmail);
+            return App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, email, "Recebemos o seu Feedback!", conteudo, App.TemplateEmail);
         }
 
     }

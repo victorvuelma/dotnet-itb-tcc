@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
@@ -22,25 +23,13 @@ namespace vitorrdgs.Util
 
         public string SendEmail(string senderName, string senderEmail, string receiverEmail, string title, StringBuilder message, string template)
         {
-            StringBuilder contentBuilder = new StringBuilder();
+            Dictionary<string, StringBuilder> values = new Dictionary<string, StringBuilder>();
+            values.Add("TITULO", new StringBuilder(title));
+            values.Add("MENSAGEM", message);
 
-            foreach (String line in UtilTemplate.lerTemplate(template))
-            {
-                if (line.Equals("%MENSAGEM%"))
-                {
-                    contentBuilder.Append(message);
-                }
-                else if (line.Equals("%TITULO%"))
-                {
-                    contentBuilder.Append(title);
-                }
-                else
-                {
-                    contentBuilder.Append(line);
-                }
-            }
+            StringBuilder content = UtilTemplate.parseTemplate(template, values);
 
-            return SendEmail(senderName, senderEmail, receiverEmail, title, contentBuilder.ToString());
+            return SendEmail(senderName, senderEmail, receiverEmail, senderName + " - " + title, content.ToString());
         }
 
         public string SendEmail(string senderName, string senderEmail, string receiverEmail, string title, string content)

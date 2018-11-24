@@ -212,17 +212,16 @@ namespace BurgerShack.Common
             informativo.Append("Olá ").Append(Nome);
             informativo.Append("<br/>");
             informativo.Append("<br/>Seja bem-vindo ao ").Append(App.Name).Append("!");
-            informativo.Append("<br/>Você foi cadastrado em nosso sistema, permitindo o acesso via nosso website e nosso Aplicativo para Android.");
+            informativo.Append("<br/>Você foi cadastrado em nosso sistema, permitindo o acesso via nosso website e nosso Aplicativo Android.");
             informativo.Append("<br/>");
-            informativo.Append("<br/>Realize o acesso com o seu CPF e sua senha:");
-            informativo.Append("<br/>Senha: ").Append(senha);
+            informativo.Append("<br/>Utilize seu CPF e esta senha para acessar o sistema: ").Append(senha);
             informativo.Append("<br/>");
             informativo.Append("<br/>Atenciosamente,");
             informativo.Append("<br/>Equipe ").Append("<a href='").Append(App.Webiste).Append("'>").Append(App.Name).Append("</a>").Append(".");
             informativo.Append("<br/>");
             informativo.Append("<br/>(Esta mensagem é automática)");
 
-            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, App.Name + " - Bem-vindo!", informativo, App.TemplateEmail);
+            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, Email, "Bem-vindo!", informativo, App.TemplateEmail);
         }
 
     }

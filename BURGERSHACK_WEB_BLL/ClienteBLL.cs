@@ -344,9 +344,8 @@ namespace BurgerShack.Web.Bll
             conteudo.Append("Olá ").Append(objCliente.Nome);
             conteudo.Append("<br/>");
             conteudo.Append("<br/>Ao que parece, você acabou esquecendo a sua senha.");
-            conteudo.Append("<br/>Utilize o link abaixo para redefinir ela:");
             conteudo.Append("<br/>");
-            conteudo.Append("<br/>").Append(App.Webiste).Append("recuperar.cshtml?token=" + token + "&email=" + objCliente.Email);
+            conteudo.Append("<br/><a href='").Append(App.Webiste).Append("recuperar.cshtml?token=" + token + "&email=" + objCliente.Email).Append("'>Clique aqui para redefinir sua senha</a>");
             conteudo.Append("<br/>Não se esqueça, o link é válido por apenas 3 horas.");
             conteudo.Append("<br/>");
             conteudo.Append("<br/>Atenciosamente,");
@@ -354,7 +353,7 @@ namespace BurgerShack.Web.Bll
             conteudo.Append("<br/>");
             conteudo.Append("<br/>(Esta mensagem é automática)");
 
-            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, objCliente.Email, App.Name + " - Esqueceu sua senha?", conteudo, App.TemplateEmail);
+            App.EmailClient.SendEmail(App.Name, App.EmailClient.CredentialEmail, objCliente.Email, "Esqueceu sua senha?", conteudo, App.TemplateEmail);
         }
 
         public bool tokenValidade(string token)
@@ -363,7 +362,7 @@ namespace BurgerShack.Web.Bll
             String[] dataHora = conteudo.Split('&')[1].Split('$');
             DateTime tokenValidade = UtilConvert.ObterDataHora(dataHora[0], dataHora[1]);
 
-            return DateTime.Now.CompareTo(tokenValidade) >= 1;
+            return tokenValidade.CompareTo(DateTime.Now) >= 1;
         }
 
         private string validarRecuperacao(string token, string email, string cpf, string senha)
