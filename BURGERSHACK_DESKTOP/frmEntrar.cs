@@ -106,7 +106,14 @@ namespace BurgerShack.Desktop
                         frmPrincipal frmPrincipal = new frmPrincipal { };
                         frmPrincipal.ShowDialog();
 
-                        Application.Restart();
+                        try
+                        {
+                            Application.Restart();
+                        }
+                        catch (Exception)
+                        {
+                            Close();
+                        }
                     }
                     else
                     {

@@ -206,6 +206,15 @@ namespace BurgerShack.Desktop
 
         private DateTime? obterDataAgendada()
         {
+            if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text))
+            {
+                return UtilConvert.ObterData(mtbData.Text);
+            }
+            return null;
+        }
+
+        private DateTime? obterDataHoraAgendada()
+        {
             if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text) && UtilValidar.validarHora(mtbHora.Text))
             {
                 return UtilConvert.ObterDataHora(mtbData.Text, mtbHora.Text);
@@ -234,10 +243,11 @@ namespace BurgerShack.Desktop
                                 CodFuncionario = AppDesktop.FuncionarioAtual.Cod,
                                 Situacao = clnReserva.reservaSituacao.MARCADA,
                                 Pessoas = UtilConvert.ToInt(txtPessoas.Text),
-                                Agendado = (DateTime)obterDataAgendada(),
+                                Agendado = (DateTime)obterDataHoraAgendada(),
                                 Agendamento = DateTime.Now,
                                 CodCliente = ObjReserva.CodCliente,
-                                Informacoes = informacoes
+                                Informacoes = informacoes,
+                                CodMesas = ObjReserva.CodMesas
                             };
 
                             objReserva.gravar();
@@ -251,7 +261,7 @@ namespace BurgerShack.Desktop
                     {
                         ObjReserva.Pessoas = UtilConvert.ToInt(txtPessoas.Text);
                         ObjReserva.Informacoes = txtInformacoes.Text;
-                        ObjReserva.Agendado = (DateTime)obterDataAgendada();
+                        ObjReserva.Agendado = (DateTime)obterDataHoraAgendada();
                         ObjReserva.alterar();
 
                         UtilMensagem.mostrarOk("Alteração de Reserva", "Reserva alterada com sucesso!");
@@ -271,18 +281,15 @@ namespace BurgerShack.Desktop
 
         private void tentarDefinirData()
         {
-            if (UtilValidar.validarData(mtbData.Text) && UtilValidar.validarDataFutura(mtbData.Text))
+            DateTime? dataAgendada = obterDataAgendada();
+            if (dataAgendada != null && ObjReserva.Agendado.CompareTo((DateTime)dataAgendada) != 0)
             {
-                DateTime dataAgendada = UtilConvert.ObterData(mtbData.Text).Date;
-                if (ObjReserva.Agendado.CompareTo(dataAgendada) != 0)
-                {
-                    ObjReserva.Agendado = dataAgendada;
+                ObjReserva.Agendado = (DateTime)dataAgendada;
 
-                    if (ObjReserva.CodMesas.Count > 0)
-                    {
-                        ObjReserva.CodMesas.Clear();
-                        UtilMensagem.mostrarOk("Mesas", "Como você alterou a data da reserva, sera necessário redefinir as mesas");
-                    }
+                if (ObjReserva.CodMesas.Count > 0)
+                {
+                    ObjReserva.CodMesas.Clear();
+                    UtilMensagem.mostrarOk("Mesas", "Como você alterou a data da reserva, sera necessário redefinir as mesas");
                 }
             }
         }

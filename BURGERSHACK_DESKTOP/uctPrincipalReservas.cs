@@ -48,6 +48,8 @@ namespace BurgerShack.Desktop
                 ObjReserva = objReserva
             };
             frmReserva.ShowDialog();
+
+            exibirReservas();
         }
 
         private void uctPrincipalReservas_Load(object sender, EventArgs e)
@@ -65,6 +67,7 @@ namespace BurgerShack.Desktop
         private void btnNova_Click(object sender, EventArgs e)
         {
             new frmReserva { }.ShowDialog();
+            exibirReservas();
         }
     }
 }

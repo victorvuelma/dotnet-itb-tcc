@@ -182,7 +182,7 @@ namespace BurgerShack.Common
             objSelect.Columns.select("mesa.id");
             objSelect.Join.innerJoin("reserva_mesa", "id_mesa", "mesa.id")
                           .innerJoin("reserva", "id", "reserva_mesa.id_reserva");
-            objSelect.Where.where("CONVERT(DATE, reserva.AGENDADO)", Agendado)
+            objSelect.Where.where("CONVERT(DATE, reserva.AGENDADO)", Agendado.Date)
                            .where("reserva.ativo", UtilConvert.ToBit(Ativo))
                            .where("reserva.situacao", sqlElementWhereCommon.whereOperation.UNEQUAL, prefixo(reservaSituacao.CANCELADA));
 
