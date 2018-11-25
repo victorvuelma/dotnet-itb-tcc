@@ -94,6 +94,7 @@
     <Content Include="Resources\css\style480.css" />
     <Content Include="Resources\css\style768.css" />
     <Content Include="Resources\img\slider\slider-1.png" />
+    <Content Include="Resources\img\slider\slider-3.png" />
     <Content Include="Resources\img\slider\slider-2.png" />
     <Content Include="Resources\js\bootstrap.min.js" />
     <Content Include="Resources\js\jquery-3.2.1.min.js" />
@@ -114,7 +115,6 @@
     <Content Include="api.cshtml" />
     <Content Include="recuperar.cshtml" />
     <None Include="packages.config" />
-    <Content Include="Resources\img\slider\slider-1.psd" />
     <Content Include="acessar.cshtml" />
     <Content Include="reserva.cshtml" />
     <Content Include="conta.cshtml" />
