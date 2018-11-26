@@ -279,7 +279,7 @@ namespace BurgerShack.Web.Bll
             String tokenCliente = gerarTokenCliente(objCliente);
 
             DateTime tempoParaRecuperar = DateTime.Now;
-            tempoParaRecuperar.AddHours(3);
+            tempoParaRecuperar = tempoParaRecuperar.AddHours(3);
 
             String tokenDataHora = UtilFormatar.formatarData(tempoParaRecuperar) + "$" + UtilFormatar.formatarHora(tempoParaRecuperar);
             String token = tokenCliente + "&" + tokenDataHora;
