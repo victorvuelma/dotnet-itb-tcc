@@ -141,9 +141,9 @@ namespace BurgerShack.Common
             return objReservas;
         }
 
-        public int obterLugaresDisponiveis()
+        public int obterLugaresReservados()
         {
-            int lugares = new clnMesa().obterLugares();
+            int lugares = 0;
 
             List<int> codMesas = obterMesasReservadas();
             foreach (int codMesa in codMesas)
@@ -153,7 +153,7 @@ namespace BurgerShack.Common
                     Cod = codMesa
                 }.obterPorCod();
 
-                lugares -= objMesa.Lugares;
+                lugares += objMesa.Lugares;
             }
 
             return lugares;

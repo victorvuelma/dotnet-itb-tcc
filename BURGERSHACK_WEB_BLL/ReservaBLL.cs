@@ -166,16 +166,25 @@ namespace BurgerShack.Web.Bll
                     }
                     else
                     {
-                        int lugaresDisponiveis = new clnReserva
+                        int lugaresTotais = new clnMesa { }.obterLugares();
+
+                        int lugaresReservados = new clnReserva
                         {
                             Agendado = data
-                        }.obterLugaresDisponiveis();
+                        }.obterLugaresReservados();
 
-                        lugaresDisponiveis = lugaresDisponiveis / 2;
-
-                        if (lugares > lugaresDisponiveis)
+                        if (lugaresReservados > (lugaresTotais / 2))
                         {
-                            errosBuilder.Append("Não existem lugares disponiveis para esta data");
+                            errosBuilder.Append("Não há lugares disponiveis para reserva via Internet nesta data.");
+                        }
+                        else
+                        {
+                            int lugaresDisponiveis = lugaresTotais - lugaresReservados;
+
+                            if (lugares > lugaresDisponiveis)
+                            {
+                                errosBuilder.Append("Não existem lugares disponiveis para esta data");
+                            }
                         }
                     }
                 }
@@ -238,7 +247,7 @@ namespace BurgerShack.Web.Bll
                 {
                     informacoes = "Sem informações adicionais.";
                 }
-                
+
                 clnReserva objReserva = new clnReserva
                 {
                     Informacoes = informacoes,

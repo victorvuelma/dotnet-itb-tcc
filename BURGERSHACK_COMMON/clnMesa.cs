@@ -184,7 +184,7 @@ namespace BurgerShack.Common
             return objMesas;
         }
 
-        internal int obterLugares()
+        public int obterLugares()
         {
             int lugares = 0;
 
